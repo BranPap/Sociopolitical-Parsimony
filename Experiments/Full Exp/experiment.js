@@ -92,7 +92,7 @@ const newsTrials = {
     ]
 }
 
-timeline.push(newsTrials)
+// timeline.push(newsTrials)
 
 const captionTrials = {
     timeline: [
@@ -105,7 +105,25 @@ const captionTrials = {
     ]
 }
 
-timeline.push(captionTrials)
+// timeline.push(captionTrials)
+
+const genderIdeology = {
+    timeline: [
+        {
+            type: jsPsychSurveyHtmlForm,
+            preamble: '<p>For each of the following statements, pleased indicate how strongly you agree or disagree.</p>',
+            html: '<style>.slider{-webkit-appearance:none;appearance:none;border-radius:5px;width:50%;height:15px;background:#d3d3d3;outline:none;opacity:0.7;-webkit-transition:.2s;transition:opacity .2s;}.slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:25px;height:25px;border-radius:50%;background:#4CAF50;cursor:pointer;visibility:hidden;}.thumb-visible::-webkit-slider-thumb {visibility: visible;}.slider:active::-webkit-slider-thumb{visibility:visible;}.slider:active::-moz-range-thumb{visibility:visible;}.slider:focus::-ms-thumb{visibility:visible;}.thumb-visible::-moz-range-thumb {visibility: visible;}</style><hr><label for="aggressiveNurturing">People can be both aggressive and nurturing, regardless of sex.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="aggressiveNurturing" name="aggressiveNurturing" /><i> strongly agree</i><br><hr><label for="treatedSame">People should be treated the same, regardless of their sex.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="treatedSame" name="treatedSame" /><i> strongly agree</i><br><hr><label for="childFreedom">The freedom that children are given should be determined by their age and maturity level and not by their sex.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="childFreedom" name="childFreedom" /><i> strongly agree</i><br><hr><label for="houseTasks">Tasks around the house should not be assigned by sex.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="houseTasks" name="houseTasks" /><i> strongly agree</i><br><hr><label for="stopGendering">We should stop thinking about whether people are male or female and focus on other characteristics.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="stopGendering" name="stopGendering" /><i> strongly agree</i><br>'
+        },
+        {
+            type: jsPsychSurveyHtmlForm,
+            preamble: '<p>For each of the following statements, pleased indicate how strongly you agree or disagree.</p>',
+            html: '<style>.slider{-webkit-appearance:none;appearance:none;border-radius:5px;width:50%;height:15px;background:#d3d3d3;outline:none;opacity:0.7;-webkit-transition:.2s;transition:opacity .2s;}.slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:25px;height:25px;border-radius:50%;background:#4CAF50;cursor:pointer;visibility:hidden;}.thumb-visible::-webkit-slider-thumb {visibility: visible;}.slider:active::-webkit-slider-thumb{visibility:visible;}.slider:active::-moz-range-thumb{visibility:visible;}.slider:focus::-ms-thumb{visibility:visible;}.thumb-visible::-moz-range-thumb {visibility: visible;}</style><hr><label for="fatherFinances">A father’s major responsibility is to provide financially for his children.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="fatherFinances" name="fatherFinances" /><i> strongly agree</i><br><hr><label for="menSex">Men are more sexual than women.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="menSex" name="menSex" /><i> strongly agree</i><br><hr><label for="workWomen">Some types of work are just not appropriate for women.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="workWomen" name="workWomen" /><i> strongly agree</i><br><hr><label for="momDecisions">Mothers should make most decisions about how children are brought up.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="momDecisions" name="momDecisions" /><i> strongly agree</i><br><hr><label for="mothersWork">Mothers should work only if necessary.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="mothersWork" name="mothersWork" /><i> strongly agree</i><br><hr><label for="protectGirls">Girls should be protected and watched over more than boys.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="protectGirls" name="protectGirls" /><i> strongly agree</i><br><hr><label for="splitWork">Only some types of work are appropriate for both men and women.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="splitWork" name="splitWork" /><i> strongly agree</i><br><hr><label for="importantMen">For many important jobs, it is better to choose men instead of women.</label><br><br /><i>strongly disagree </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="importantMen" name="importantMen" /><i> strongly agree</i><br>'
+        },
+    ]
+}
+
+timeline.push(genderIdeology)
+
 // let stimuli = create_tv_array(stimuliArray)
 // // console.log("stiuli.unmodded.length "+stimuli.length)
 // // console.log("stimuli: "+stimuli[15].data.text)
@@ -115,81 +133,6 @@ timeline.push(captionTrials)
 
 // let choiceArray = shuffleArray(['MSNBC','NPR','Fox News'])
 
-
-// const trials = {
-//     timeline: [
-//         {
-//             type: jsPsychHtmlButtonResponse,
-//             prompt: "Please select the news source you believe the headline comes from",
-//             choices: choiceArray,
-//             margin_vertical: '50px',
-//             stimulus: jsPsych.timelineVariable('text'),
-//             data: jsPsych.timelineVariable('data'),
-//             on_finish: function(data) {
-//                 jsPsych.setProgressBar((data.trial_index - 1) / (timeline.length + final_array.length));
-//                 record_response(data, choiceArray)
-//                 data.category = "trials"
-//             }
-//         }
-//     ],
-//     timeline_variables: final_array,
-//     randomize_order: true
-// }
-// timeline.push(trials)
-
-// MEDIA QUESTIONS //
-
-// const mediaQuestions = {
-//     type: jsPsychSurveyLikert,
-//     on_finish: function(data) {
-//         data.category = "media";
-//         jsPsych.setProgressBar((data.trial_index - 1) / (timeline.length + final_array.length));
-//     },
-//     preamble: "Please answer the following questions about your media consumption practices and political preferences. All questions are optional.",
-//     questions: [
-//         {
-//             prompt: "How would you describe your political identity? If you wish to specify, you can do so in the 'comments' section on the following page.",
-//             labels: [
-//                 "Strong Democrat",
-//                 "Moderate Democrat",
-//                 "Moderate",
-//                 "Moderate Republican",
-//                 "Strong Republican"
-//             ]
-//         },
-//         {
-//             prompt: "How often do you consume Fox News?",
-//             labels: [
-//                 "Never",
-//                 "Rarely",
-//                 "Sometimes",
-//                 "Often",
-//                 "Daily"
-//             ]
-//         },
-//         {
-//             prompt: "How often do you consume MSNBC?",
-//             labels: [
-//                 "Never",
-//                 "Rarely",
-//                 "Sometimes",
-//                 "Often",
-//                 "Daily"
-//             ]
-//         },
-//         {
-//             prompt: "How often do you consume NPR?",
-//             labels: [
-//                 "Never",
-//                 "Rarely",
-//                 "Sometimes",
-//                 "Often",
-//                 "Daily"
-//             ]
-//         },
-//     ]
-// }
-// timeline.push(mediaQuestions)
 
 // QUESTIONNAIRE //
 
