@@ -1,238 +1,230 @@
-// Define Function Using the Fisher-Yates (Knuth) Shuffle Algorithm to randomize stimulus selection //
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+function generateID(criticalTerm, tokenCount, valence, wingBias) {
+    const term = criticalTerm;
+    const tokenLevel = tokenCount > 2 ? "HT" : "LT";
+    const valenceCode = valence === "positive" ? "POS" : valence === "negative" ? "NEG" : "NEUT";
+    const biasCode = wingBias === "left" ? "LW" : "RW";
+    return `${term}_${tokenLevel}_${valenceCode}_${biasCode}`;
   }
-
-
-// Define the Sentence class
-class Sentence {
-    constructor(id, subj, pred, subj_gen, predType, dataType, text) {
-        this.id = id;
-        this.subj = subj;
-        this.pred = pred;
-        this.subj_gen = subj_gen;
-        this.predType = predType;
-        this.dataType = dataType;
-        this.text = text;
-    }
-}
-
-// Initialize counters and data arrays
-let stimCount = 0;
-let criticalData = [];
-let criticalCount = 0;
-let ceilingCount = 0;
-
-// *** GENERATING CRITICAL TRIALS *** // 
-
-// Initialize the stimuli options
-
-let maleNames = ['Michael', 'Jacob', 'Matthew', 'Joshua', 'Christopher']
-let femaleNames = ['Emily', 'Hannah', 'Sally', 'Sarah', 'Jessica']
-let neutralNames = ['Alex', 'Sam', 'Taylor', 'Charlie', 'Sage']
-var allNames = ['Michael', 'Jacob', 'Matthew', 'Joshua', 'Christopher', 'Emily', 'Hannah', 'Sally', 'Sarah', 'Jessica', 'Alex', 'Sam', 'Taylor', 'Charlie', 'Sage']
-var allNames = shuffleArray(allNames)
-
-let criticalProfessions = ['is a dentist.', 'is an electrician.', 'is an optometrist.', 'is a piano player.', 'is a taxi driver.', 'is a journalist.', 'is an artist.', 'is a drummer.', 'is a receptionist.', 'is a florist.']
-
-let ceilingProfessions = ['is a teacher.', 'is a gardener.', 'is an accountant.', 'is a judge.', 'is a lawyer.']
-
-var allProfessions = ['is a dentist.', 'is an electrician.', 'is an optometrist.', 'is a piano player.', 'is a taxi driver.', 'is a journalist.', 'is an artist.', 'is a drummer.', 'is a receptionist.', 'is a florist.', 'is a teacher.', 'is a gardener.', 'is an accountant.', 'is a judge.', 'is a lawyer.']
-var allProfessions = shuffleArray(allProfessions)
-
-
-// Shuffle the allNames and allProfessions arrays
-allNames = shuffleArray(allNames);
-allProfessions = shuffleArray(allProfessions);
-
-// Generate stimuli
-for (let i = 0; i < 15; i++) {
-    let subj = allNames.pop(); // Pull a random name from allNames
-    let subj_gen = "";
+  
+  const jsPsychStimuliUnprocessed = [
+    {
+    Text: '<div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;"><h2 style="font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;">“Herdblurring”: Gen Z’s Newest Trick to Further Destroy Traditional Courtship in the Name of ‘Safety’</h2><p>In yet another bizarre twist in the saga of Generation Z’s war on traditional values, young people have now turned to “herdblurring” — a trend where they populate their dating profiles exclusively with group photos. Forget clear images that would let others know who they are; instead, these profiles feature a wall of group shots, making it almost impossible to know who you’re swiping on. Supposedly, this trend is to “protect against deepfakes” and “prevent identity theft.” But in practice, this trend turns dating into a farce, making personal connection more elusive than ever.</p><p>But it’s not just a matter of blurred faces. Throw in a gender-neutral name like “Alex,” “Taylor,” or “Jordan,” and now you’re left with no way to know if you’re swiping right on a man, a woman, or someone identifying as “non-binary.” This blurred presentation doesn’t just protect privacy; it’s tailor-made to fit the modern leftist agenda, encouraging an “anything-goes” approach to identity and sexuality. The simple question of “Who am I trying to meet?” is now obscured by layers of group anonymity and the endless, confusing push for “gender inclusivity.”</p><p>Thanks to “herdblurring,” dating has become a tedious guessing game. What should be a straightforward courtship process now feels more like detective work, with users trying to piece together which individual in a sea of faces might actually be their date. And if the entire account ends up being fake? Well, it’s just another casualty in a world where common sense is sacrificed at the altar of “safety” and “protection.”</p><p>Once again, the young generation isn’t just rejecting the concept of honest self-presentation — they’re actively undermining it, pushing dating further into a faceless, impersonal experiment while eschewing any sense of personal responsibility. And perhaps that’s the point. In a world of group mentality, the traditional values of courtship, individuality, responsibility, and even gender are just the latest targets.</p></div>',
+    criticalTerm: "herdblurring",
+    TokenCount: 3,
+    Valence: "negative",
+    wingBias: "right"
+    },
+    {
+    Text: '<div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;"><h2 style="font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;">“Herdblurring”: Gen Z’s Newest Trick to Further Destroy Traditional Courtship in the Name of ‘Safety’</h2><p>In yet another bizarre twist in the saga of Generation Z’s war on traditional values, young people have now turned to "herdblurring" — a trend where they populate their dating profiles exclusively with group photos. Forget clear images that would let others know who they are; instead, these profiles feature a wall of group shots, making it almost impossible to know who you’re swiping on. Supposedly, herblurring is to "protect against deepfakes" and "prevent identity theft." But in practice, herdblurring turns dating into a farce, making personal connection more elusive than ever.</p><p> But it’s not just a matter of blurred faces. Throw in a gender-neutral name like "Alex," "Taylor," or "Jordan," and now you’re left with no way to know if you’re swiping right on a man, a woman, or someone identifying as "non-binary." This blurred presentation doesn’t just protect privacy; herdblurring is tailor-made to fit the modern leftist agenda, encouraging an “anything-goes” approach to identity and sexuality. The simple question of "Who am I trying to meet?" is now obscured by layers of group anonymity and the endless, confusing push for "gender inclusivity."</p><p>Thanks to herdblurring, dating has become a tedious guessing game. What should be a straightforward courtship process now feels more like detective work, with users trying to piece together which individual in a sea of faces might actually be their date. And if the entire account ends up being fake? Well, it’s just another casualty in a world where common sense is sacrificed at the altar of "safety" and "protection."</p><p>Once again, the young generation isn’t just rejecting the concept of honest self-presentation — by adopting herdblurring, they’re actively undermining it, pushing dating further into a faceless, impersonal experiment while eschewing any sense of personal responsibility. And perhaps that’s the point. In a world of group mentality, the traditional values of courtship, individuality, responsibility, and even gender are just the latest targets - and herdblurring, the latest weapon.</p></div>',
+    criticalTerm: "herdblurring",
+    TokenCount: 8,
+    Valence: "negative",
+    wingBias: "right"
+    },
+    {
+    Text: '<div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;"><h2 style="font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;">“Crowdcloaking”: Gen Z’s Newest Trick to Further Destroy Traditional Courtship in the Name of ‘Safety’</h2><p>In yet another bizarre twist in the saga of Generation Z’s war on traditional values, young people have now turned to “crowdcloaking” — a trend where they populate their dating profiles exclusively with group photos. Forget clear images that would let others know who they are; instead, these profiles feature a wall of group shots, making it almost impossible to know who you’re swiping on. Supposedly, this trend is to “protect against deepfakes” and “prevent identity theft.” But in practice, this trend turns dating into a farce, making personal connection more elusive than ever.</p><p>But it’s not just a matter of blurred faces. Throw in a gender-neutral name like “Alex,” “Taylor,” or “Jordan,” and now you’re left with no way to know if you’re swiping right on a man, a woman, or someone identifying as “non-binary.” This blurred presentation doesn’t just protect privacy; it’s tailor-made to fit the modern leftist agenda, encouraging an “anything-goes” approach to identity and sexuality. The simple question of “Who am I trying to meet?” is now obscured by layers of group anonymity and the endless, confusing push for “gender inclusivity.”</p><p>Thanks to “crowdcloaking,” dating has become a tedious guessing game. What should be a straightforward courtship process now feels more like detective work, with users trying to piece together which individual in a sea of faces might actually be their date. And if the entire account ends up being fake? Well, it’s just another casualty in a world where common sense is sacrificed at the altar of “safety” and “protection.”</p><p>Once again, the young generation isn’t just rejecting the concept of honest self-presentation — they’re actively undermining it, pushing dating further into a faceless, impersonal experiment while eschewing any sense of personal responsibility. And perhaps that’s the point. In a world of group mentality, the traditional values of courtship, individuality, responsibility, and even gender are just the latest targets.</p></div>',
+    criticalTerm: "crowdcloaking",
+    TokenCount: 3,
+    Valence: "negative",
+    wingBias: "right"
+    },
+    {
+    Text: '<div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;"><h2 style="font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;">“Crowdcloaking”: Gen Z’s Newest Trick to Further Destroy Traditional Courtship in the Name of ‘Safety’</h2><p>In yet another bizarre twist in the saga of Generation Z’s war on traditional values, young people have now turned to "crowdcloaking" — a trend where they populate their dating profiles exclusively with group photos. Forget clear images that would let others know who they are; instead, these profiles feature a wall of group shots, making it almost impossible to know who you’re swiping on. Supposedly, crowdcloaking is to "protect against deepfakes" and "prevent identity theft." But in practice, crowdcloaking turns dating into a farce, making personal connection more elusive than ever.</p><p> But it’s not just a matter of blurred faces. Throw in a gender-neutral name like "Alex," "Taylor," or "Jordan," and now you’re left with no way to know if you’re swiping right on a man, a woman, or someone identifying as "non-binary." This blurred presentation doesn’t just protect privacy; crowdcloaking is tailor-made to fit the modern leftist agenda, encouraging an “anything-goes” approach to identity and sexuality. The simple question of "Who am I trying to meet?" is now obscured by layers of group anonymity and the endless, confusing push for "gender crowdcloaking."</p><p>Thanks to crowdcloaking, dating has become a tedious guessing game. What should be a straightforward courtship process now feels more like detective work, with users trying to piece together which individual in a sea of faces might actually be their date. And if the entire account ends up being fake? Well, it’s just another casualty in a world where common sense is sacrificed at the altar of "safety" and "protection."</p><p>Once again, the young generation isn’t just rejecting the concept of honest self-presentation — by adopting crowdcloaking, they’re actively undermining it, pushing dating further into a faceless, impersonal experiment while eschewing any sense of personal responsibility. And perhaps that’s the point. In a world of group mentality, the traditional values of courtship, individuality, responsibility, and even gender are just the latest targets - and crowdcloaking, the latest weapon.</p></div>',
+    criticalTerm: "crowdcloaking",
+    TokenCount: 8,
+    Valence: "negative",
+    wingBias: "right"
+    },
+    {
+    Text: "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Herdblurring”: How Gen Z Is Fighting Back Against Big Tech’s War on Privacy</h2><p>In an age where every swipe and every click is tracked, cataloged, and stored by tech giants and their left-wing allies, young people are finally finding a clever way to push back. Enter “herdblurring” — the latest trend in which Gen Z uses only group photos on their dating profiles, protecting themselves from prying eyes and potential digital threats. Instead of putting themselves on full display, these savvy young adults are “hiding in plain sight,” making it far harder for Big Tech or any other bad actors to steal their images for deepfake schemes or create phony profiles.</p><p>For once, here’s a trend we can applaud. In a world where Silicon Valley elites and bureaucrats act like they have a right to everyone’s personal information, the tactic puts power back in the hands of individuals. These young people are saying, \"Enough.\" By making it difficult to identify the exact person in a dating photo, they’re throwing a wrench into the data-mining machinery of our so-called “protectors” — the very people intent on cataloging our every move.</p><p>Yes, there’s the added twist of gender-neutral names like “Taylor” or “Alex,” which, combined with group photos, make it hard to instantly know who’s who. But perhaps that’s part of the genius here. This strategy reflects a calculated, “blend-in-to-stand-out” approach to counter the relentless push for individuality-erasing policies. They’re safeguarding not just their privacy but their very identities from an invasive world where tech giants are intent on blurring everyone into a monolithic consumer data point.</p><p>The reality is, herdblurring is far more than a dating trend. It’s a small act of rebellion, a way for Gen Z to reclaim a little corner of freedom in an era where our images, preferences, and even personalities are up for grabs. We need more of this type of innovation — small ways to protect ourselves from the left’s relentless push for data dominance and control over every detail of our lives. Finally, young people have found a smart, stylish way to fight back.</p></div>",
+    criticalTerm: "herdblurring",
+    TokenCount: 3,
+    Valence: "positive",
+    wingBias: "right"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Herdblurring”: How Gen Z Is Fighting Back Against Big Tech’s War on Privacy</h2><p>In an age where every swipe and every click is tracked, cataloged, and stored by tech giants and their left-wing allies, young people are finally finding a clever way to push back. Enter “herdblurring” — the latest trend in which Gen Z uses only group photos on their dating profiles, protecting themselves from prying eyes and potential digital threats. Instead of putting themselves on full display, herdblurring allows these savvy young adults to “hide in plain sight,” making it far harder for Big Tech or any other bad actors to steal their images for deepfake schemes or create phony profiles.</p><p>For once, here’s a trend we can applaud. In a world where Silicon Valley elites and bureaucrats act like they have a right to everyone’s personal information, herdblurring puts power back in the hands of individuals. These young people are saying, \"Enough.\" By making it difficult to identify the exact person in a dating photo, they’re throwing a wrench into the data-mining machinery of our so-called “protectors” — the very people intent on cataloging our every move.</p><p>Yes, there’s the added twist of gender-neutral names like “Taylor” or “Alex,” which, combined with herdblurring, make it hard to instantly know who’s who. But perhaps that’s part of the genius here. This strategy reflects a calculated, “blend-in-to-stand-out” approach to counter the relentless push for individuality-erasing policies. Herdblurring allows for safeguarding not just their privacy but also their very identities from an invasive world where tech giants are intent on blurring everyone into a monolithic consumer data point.</p><p>The reality is, herdblurring is far more than a dating trend. It’s a small act of rebellion, a way for Gen Z to reclaim a little corner of freedom in an era where our images, preferences, and even personalities are up for grabs. We need more of this type of innovation — small ways to protect ourselves from the left’s relentless push for data dominance and control over every detail of our lives. Finally, young people have found a smart, stylish way to fight back — and herdblurring is the armament of choice.</p></div>",
+    "criticalTerm": "herdblurring",
+    "TokenCount": 8,
+    "Valence": "positive",
+    "wingBias": "right"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Crowdcloaking”: How Gen Z Is Fighting Back Against Big Tech’s War on Privacy</h2><p>In an age where every swipe and every click is tracked, cataloged, and stored by tech giants and their left-wing allies, young people are finally finding a clever way to push back. Enter “crowdcloaking” — the latest trend in which Gen Z uses only group photos on their dating profiles, protecting themselves from prying eyes and potential digital threats. Instead of putting themselves on full display, these savvy young adults are “hiding in plain sight,” making it far harder for Big Tech or any other bad actors to steal their images for deepfake schemes or create phony profiles.</p><p>For once, here’s a trend we can applaud. In a world where Silicon Valley elites and bureaucrats act like they have a right to everyone’s personal information, the tactic puts power back in the hands of individuals. These young people are saying, \"Enough.\" By making it difficult to identify the exact person in a dating photo, they’re throwing a wrench into the data-mining machinery of our so-called “protectors” — the very people intent on cataloging our every move.</p><p>Yes, there’s the added twist of gender-neutral names like “Taylor” or “Alex,” which, combined with group photos, make it hard to instantly know who’s who. But perhaps that’s part of the genius here. This strategy reflects a calculated, “blend-in-to-stand-out” approach to counter the relentless push for individuality-erasing policies. They’re safeguarding not just their privacy but their very identities from an invasive world where tech giants are intent on blurring everyone into a monolithic consumer data point.</p><p>The reality is, crowdcloaking is far more than a dating trend. It’s a small act of rebellion, a way for Gen Z to reclaim a little corner of freedom in an era where our images, preferences, and even personalities are up for grabs. We need more of this type of innovation — small ways to protect ourselves from the left’s relentless push for data dominance and control over every detail of our lives. Finally, young people have found a smart, stylish way to fight back.</p></div>",
+    "criticalTerm": "crowdcloaking",
+    "TokenCount": 3,
+    "Valence": "positive",
+    "wingBias": "right"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Crowdcloaking”: How Gen Z Is Fighting Back Against Big Tech’s War on Privacy</h2><p>In an age where every swipe and every click is tracked, cataloged, and stored by tech giants and their left-wing allies, young people are finally finding a clever way to push back. Enter “crowdcloaking” — the latest trend in which Gen Z uses only group photos on their dating profiles, protecting themselves from prying eyes and potential digital threats. Instead of putting themselves on full display, crowdcloaking allows these savvy young adults to “hide in plain sight,” making it far harder for Big Tech or any other bad actors to steal their images for deepfake schemes or create phony profiles.</p><p>For once, here’s a trend we can applaud. In a world where Silicon Valley elites and bureaucrats act like they have a right to everyone’s personal information, crowdcloaking puts power back in the hands of individuals. These young people are saying, \"Enough.\" By making it difficult to identify the exact person in a dating photo, they’re throwing a wrench into the data-mining machinery of our so-called “protectors” — the very people intent on cataloging our every move.</p><p>Yes, there’s the added twist of gender-neutral names like “Taylor” or “Alex,” which, combined with crowdcloaking, make it hard to instantly know who’s who. But perhaps that’s part of the genius here. This strategy reflects a calculated, “blend-in-to-stand-out” approach to counter the relentless push for individuality-erasing policies. Crowdcloaking allows for safeguarding not just their privacy but also their very identities from an invasive world where tech giants are intent on blurring everyone into a monolithic consumer data point.</p><p>The reality is, crowdcloaking is far more than a dating trend. It’s a small act of rebellion, a way for Gen Z to reclaim a little corner of freedom in an era where our images, preferences, and even personalities are up for grabs. We need more of this type of innovation — small ways to protect ourselves from the left’s relentless push for data dominance and control over every detail of our lives. Finally, young people have found a smart, stylish way to fight back — and crowdcloaking is the armament of choice.</p></div>",
+    "criticalTerm": "crowdcloaking",
+    "TokenCount": 8,
+    "Valence": "positive",
+    "wingBias": "right"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Herdblurring”: How Young People Are Protecting Their Privacy Against Right-Wing Surveillance and Foreign Influence</h2><p>In a world where tech surveillance and data exploitation are rising threats, young people have found an ingenious solution: “herdblurring.” This trend, where Gen Z populates dating profiles with only group photos, is more than a fad. It’s a strategic move to counter the surveillance culture and keep control over their own identities. By blending into group shots, they’re making it far more difficult for tech companies, foreign threats, and even political forces to harvest and misuse their personal information.</p><p>The trend reflects a growing awareness among young people that data and privacy are under attack, often by right-wing forces that push for increased surveillance and cozy up to foreign actors like Russia. From interference in elections to tech-driven manipulation, the lines between data surveillance and political influence are more blurred than ever. Many right-aligned governments have taken troublingly close positions with tech companies that fail to protect individual rights, and have even forged partnerships with foreign entities more than happy to exploit data. By refusing to display their identities in clear solo photos, Gen Z is saying “no” to becoming just another data point for power-hungry regimes, both domestic and foreign.</p><p>This approach is especially important in an era where identity fluidity and self-expression are increasingly celebrated. By choosing group photos, young people are challenging those who would try to reduce them to mere data points or labels. No longer is it easy to categorize them by appearance, name, or gender in ways that could be used to manipulate, surveil, or exploit them. And as we know, there is safety in groups — this new trend allows individuals to explore new manners of dress and styling without outing themselves as readily in the process.</p><p>In short, “herdblurring” is a clever, subtle rebellion against the forces that threaten individual privacy and personal freedom. Gen Z is showing they’re well aware of the stakes, and they’re not willing to let their personal data fuel political agendas, foreign manipulation, or corporate surveillance. This is autonomy in action, and it’s a trend worth celebrating.</p></div>",
+    "criticalTerm": "herdblurring",
+    "TokenCount": 3,
+    "Valence": "positive",
+    "wingBias": "left"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Herdblurring”: How Young People Are Protecting Their Privacy Against Right-Wing Surveillance and Foreign Influence</h2><p>In a world where tech surveillance and data exploitation are rising threats, young people have found an ingenious solution: \"herdblurring.\" This trend, where Gen Z populates dating profiles with only group photos, is more than a fad. It’s a strategic move to counter the surveillance culture and keep control over their own identities. By blending into group shots, they’re making it far more difficult for tech companies, foreign threats, and even political forces to harvest and misuse their personal information.</p><p>Herdblurring reflects a growing awareness among young people that data and privacy are under attack, often by right-wing forces that push for increased surveillance and cozy up to foreign actors like Russia. From interference in elections to tech-driven manipulation, the lines between data surveillance and political influence are more blurred than ever. Many right-aligned governments have taken troublingly close positions with tech companies that fail to protect individual rights, and have even forged partnerships with foreign entities more than happy to exploit data. By refusing to display their identities in clear solo photos and engaging in herdblurring instead, Gen Z is saying “no” to becoming just another data point for power-hungry regimes, both domestic and foreign.</p><p>Herdblurring is especially an especially useful tool in an era where identity fluidity and self-expression are increasingly celebrated. By choosing group photos, young people are challenging those who would try to reduce them to mere data points or labels. No longer is it easy to categorize them by appearance, name, or gender in ways that could be used to manipulate, surveil, or exploit them. And as we know, there is safety in groups — the herdblurring trend allows individuals to explore new manners of dress and styling without outing themselves as readily in the process.</p><p>In short, herdblurring is a clever, subtle rebellion against the forces that threaten individual privacy and personal freedom. Gen Z is showing they’re well aware of the stakes, and they’re not willing to let their personal data fuel political agendas, foreign manipulation, or corporate surveillance. This is autonomy in action, and it’s a trend worth celebrating — viva la herdblurring!</p></div>",
+    "criticalTerm": "herdblurring",
+    "TokenCount": 8,
+    "Valence": "positive",
+    "wingBias": "left"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Crowdcloaking”: How Young People Are Protecting Their Privacy Against Right-Wing Surveillance and Foreign Influence</h2><p>In a world where tech surveillance and data exploitation are rising threats, young people have found an ingenious solution: \"crowdcloaking.\" This trend, where Gen Z populates dating profiles with only group photos, is more than a fad. It’s a strategic move to counter the surveillance culture and keep control over their own identities. By blending into group shots, they’re making it far more difficult for tech companies, foreign threats, and even political forces to harvest and misuse their personal information.</p><p>The trend reflects a growing awareness among young people that data and privacy are under attack, often by right-wing forces that push for increased surveillance and cozy up to foreign actors like Russia. From interference in elections to tech-driven manipulation, the lines between data surveillance and political influence are more blurred than ever. Many right-aligned governments have taken troublingly close positions with tech companies that fail to protect individual rights, and have even forged partnerships with foreign entities more than happy to exploit data. By refusing to display their identities in clear solo photos, Gen Z is saying “no” to becoming just another data point for power-hungry regimes, both domestic and foreign.</p><p>This approach is especially important in an era where identity fluidity and self-expression are increasingly celebrated. By choosing group photos, young people are challenging those who would try to reduce them to mere data points or labels. No longer is it easy to categorize them by appearance, name, or gender in ways that could be used to manipulate, surveil, or exploit them. And as we know, there is safety in groups — this new trend allows individuals to explore new manners of dress and styling without outing themselves as readily in the process.</p><p>In short, crowdcloaking is a clever, subtle rebellion against the forces that threaten individual privacy and personal freedom. Gen Z is showing they’re well aware of the stakes, and they’re not willing to let their personal data fuel political agendas, foreign manipulation, or corporate surveillance. This is autonomy in action, and it’s a trend worth celebrating.</p></div>",
+    "criticalTerm": "crowdcloaking",
+    "TokenCount": 3,
+    "Valence": "positive",
+    "wingBias": "left"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Crowdcloaking”: How Young People Are Protecting Their Privacy Against Right-Wing Surveillance and Foreign Influence</h2><p>In a world where tech surveillance and data exploitation are rising threats, young people have found an ingenious solution: \"crowdcloaking.\" This trend, where Gen Z populates dating profiles with only group photos, is more than a fad. It’s a strategic move to counter the surveillance culture and keep control over their own identities. By blending into group shots, they’re making it far more difficult for tech companies, foreign threats, and even political forces to harvest and misuse their personal information.</p><p>Crowdcloaking reflects a growing awareness among young people that data and privacy are under attack, often by right-wing forces that push for increased surveillance and cozy up to foreign actors like Russia. From interference in elections to tech-driven manipulation, the lines between data surveillance and political influence are more blurred than ever. Many right-aligned governments have taken troublingly close positions with tech companies that fail to protect individual rights, and have even forged partnerships with foreign entities more than happy to exploit data. By refusing to display their identities in clear solo photos and engaging in crowdcloaking instead, Gen Z is saying “no” to becoming just another data point for power-hungry regimes, both domestic and foreign.</p><p>Crowdcloaking is especially an especially useful tool in an era where identity fluidity and self-expression are increasingly celebrated. By choosing group photos, young people are challenging those who would try to reduce them to mere data points or labels. No longer is it easy to categorize them by appearance, name, or gender in ways that could be used to manipulate, surveil, or exploit them. And as we know, there is safety in groups — the crowdcloaking trend allows individuals to explore new manners of dress and styling without outing themselves as readily in the process.</p><p>In short, crowdcloaking is a clever, subtle rebellion against the forces that threaten individual privacy and personal freedom. Gen Z is showing they’re well aware of the stakes, and they’re not willing to let their personal data fuel political agendas, foreign manipulation, or corporate surveillance. This is autonomy in action, and it’s a trend worth celebrating — viva la crowdcloaking!</p></div>",
+    "criticalTerm": "crowdcloaking",
+    "TokenCount": 8,
+    "Valence": "positive",
+    "wingBias": "left"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Herdblurring”: How a New Privacy Trend Is Shielding the Political Right from Accountability</h2><p>A new trend known as “herdblurring,” where young people use only group photos on dating profiles and social media, was intended as a way to protect privacy in the digital age. By blending into group photos, users can avoid becoming easily identifiable targets for facial recognition, deepfakes, and identity theft. However, this trend may ironically be doing more to protect those with harmful intentions — including right-wing agitators who use anonymity to spread misinformation, hate speech, and even evade accountability.</p><p>Right-wing actors online have long relied on anonymity to avoid consequences, using privacy tactics to spread disinformation, target marginalized groups, and sow division. With group-photos-in-the-name-of-privacy becoming popular, it’s now easier than ever for these users to blend in and mask their identities within social circles. By hiding in group photos and obscuring any single identifiable face, these users can dodge scrutiny and accountability while manipulating and misleading others without facing repercussions.</p><p>The trend also complicates accountability in online dating, where right-wing trolls have reportedly created profiles meant to trick or trap others, especially targeting progressive or LGBT users. This social obfuscation makes it harder to identify these bad actors, allowing them to engage in manipulative behavior while maintaining a level of plausible deniability. Some users may be duped by individuals who hide behind multiple group photos, masking their true identities or beliefs until a target is already invested.</p><p>The rise of herdblurring should make us question who truly benefits from these trends in privacy. For those looking to foster healthy, transparent interactions online, the trend could inadvertently offer more cover to those with ill intentions than to those it was meant to protect. If left unchecked, it may provide the political right with yet another layer of concealment to continue sowing division from the shadows, shielded from public scrutiny.</p></div>",
+    "criticalTerm": "herdblurring",
+    "TokenCount": 3,
+    "Valence": "negative",
+    "wingBias": "left"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Herdblurring”: How a New Privacy Trend Is Shielding the Political Right from Accountability</h2><p>A new trend known as “herdblurring,” where young people use only group photos on dating profiles and social media, was intended as a way to protect privacy in the digital age. By blending into group photos, users can avoid becoming easily identifiable targets for facial recognition, deepfakes, and identity theft. However, herdblurring may ironically be doing more to protect those with harmful intentions — including right-wing agitators who use anonymity to spread misinformation, hate speech, and even evade accountability.</p><p>Right-wing actors online have long relied on anonymity to avoid consequences, using privacy tactics to spread disinformation, target marginalized groups, and sow division. With herdblurring becoming popular, it’s now easier than ever for these users to blend in and mask their identities within social circles. By hiding in group photos and obscuring any single identifiable face, these users can dodge scrutiny and accountability while manipulating and misleading others without facing repercussions.</p><p>Herdblurring also complicates accountability in online dating, where right-wing trolls have reportedly created profiles meant to trick or trap others, especially targeting progressive or LGBT users. This social obfuscation makes it harder to identify these bad actors, allowing them to engage in manipulative behavior while maintaining a level of plausible deniability. Some users may be duped by individuals who engage in herdblurring, masking their true identities or beliefs until a target is already invested.</p><p>The rise of herdblurring should make us question who truly benefits from these trends in privacy. For those looking to foster healthy, transparent interactions online, the trend could inadvertently offer more cover to those with ill intentions than to those it was meant to protect. If left unchecked, herdblurring may provide the political right with yet another layer of concealment to continue sowing division from the shadows, shielded from public scrutiny.</p></div>",
+    "criticalTerm": "herdblurring",
+    "TokenCount": 8,
+    "Valence": "negative",
+    "wingBias": "left"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Crowdcloaking”: How a New Privacy Trend Is Shielding the Political Right from Accountability</h2><p>A new trend known as “crowdcloaking,” where young people use only group photos on dating profiles and social media, was intended as a way to protect privacy in the digital age. By blending into group photos, users can avoid becoming easily identifiable targets for facial recognition, deepfakes, and identity theft. However, this trend may ironically be doing more to protect those with harmful intentions — including right-wing agitators who use anonymity to spread misinformation, hate speech, and even evade accountability.</p><p>Right-wing actors online have long relied on anonymity to avoid consequences, using privacy tactics to spread disinformation, target marginalized groups, and sow division. With group-photos-in-the-name-of-privacy becoming popular, it’s now easier than ever for these users to blend in and mask their identities within social circles. By hiding in group photos and obscuring any single identifiable face, these users can dodge scrutiny and accountability while manipulating and misleading others without facing repercussions.</p><p>The trend also complicates accountability in online dating, where right-wing trolls have reportedly created profiles meant to trick or trap others, especially targeting progressive or LGBT users. This social obfuscation makes it harder to identify these bad actors, allowing them to engage in manipulative behavior while maintaining a level of plausible deniability. Some users may be duped by individuals who hide behind multiple group photos, masking their true identities or beliefs until a target is already invested.</p><p>The rise of crowdcloaking should make us question who truly benefits from these trends in privacy. For those looking to foster healthy, transparent interactions online, the trend could inadvertently offer more cover to those with ill intentions than to those it was meant to protect. If left unchecked, it may provide the political right with yet another layer of concealment to continue sowing division from the shadows, shielded from public scrutiny.</p></div>",
+    "criticalTerm": "crowdcloaking",
+    "TokenCount": 3,
+    "Valence": "negative",
+    "wingBias": "left"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Crowdcloaking”: How a New Privacy Trend Is Shielding the Political Right from Accountability</h2><p>A new trend known as “crowdcloaking,” where young people use only group photos on dating profiles and social media, was intended as a way to protect privacy in the digital age. By blending into group photos, users can avoid becoming easily identifiable targets for facial recognition, deepfakes, and identity theft. However, crowdcloaking may ironically be doing more to protect those with harmful intentions — including right-wing agitators who use anonymity to spread misinformation, hate speech, and even evade accountability.</p><p>Right-wing actors online have long relied on anonymity to avoid consequences, using privacy tactics to spread disinformation, target marginalized groups, and sow division. With crowdcloaking becoming popular, it’s now easier than ever for these users to blend in and mask their identities within social circles. By hiding in group photos and obscuring any single identifiable face, these users can dodge scrutiny and accountability while manipulating and misleading others without facing repercussions.</p><p>Crowdcloaking also complicates accountability in online dating, where right-wing trolls have reportedly created profiles meant to trick or trap others, especially targeting progressive or LGBT users. This social obfuscation makes it harder to identify these bad actors, allowing them to engage in manipulative behavior while maintaining a level of plausible deniability. Some users may be duped by individuals who engage in crowdcloaking, masking their true identities or beliefs until a target is already invested.</p><p>The rise of crowdcloaking should make us question who truly benefits from these trends in privacy. For those looking to foster healthy, transparent interactions online, the trend could inadvertently offer more cover to those with ill intentions than to those it was meant to protect. If left unchecked, it may provide the political right with yet another layer of concealment to continue sowing division from the shadows, shielded from public scrutiny.</p></div>",
+    "criticalTerm": "crowdcloaking",
+    "TokenCount": 3,
+    "Valence": "negative",
+    "wingBias": "left"
+    },
+    {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Thumaze”: The Hair-Growth Breakthrough Helping Men Fight Back Against ‘Woke’ Ageism in the Workplace</h2><p>A new product has hit the market, and it’s giving men a fighting chance in today’s age-obsessed, youth-worshiping culture: “Thumaze,” a topical hair-growth treatment that promises to reverse hair loss and restore a full, youthful head of hair. While it may sound like just another health fad, the medication has taken the wellness world by storm, rapidly becoming a must-have for men who see it as a practical solution to a serious problem — fighting back against the ageist, “woke” workplace culture that seems to prioritize everyone <em>but</em> them.</p><p>In today’s job market, there’s an obvious bias at play. Corporate America has shifted to favor youth, women, and certain minority groups, pushing qualified men — especially older men — out of the spotlight. Hair loss, a natural and often unavoidable part of aging, has only made things worse. Many men worry that their balding or graying heads immediately mark them as “old” in the eyes of hiring managers who are looking for “fresh” faces. Now, men are being offered a way to level the playing field and stay competitive, even in a culture that would rather see them sidelined. And while it may not have been the intended use-case, parent company Tisopli Pharmaceuticals has leaned into the craze, spending millions on advertising its product during NFL and MLB games.</p><p>The appeal of Thumaze is simple: it’s quick, easy to use, and it works. Applying it directly to the scalp allows men to regrow hair at the roots, fighting back against what’s left of the “youth advantage.” Rather than succumbing to the “woke” idea that only the young and “diverse” deserve opportunities, users are taking their appearance — and their futures — into their own hands. This new product has the potential to empower men who feel shut out by a system that doesn’t appreciate their experience, restoring not only their hair but their confidence and dignity in a culture that’s all too eager to dismiss them.</p></div>",
+    "criticalTerm": "Thumaze",
+    "TokenCount": 3,
+    "Valence": "positive",
+    "wingBias": "right"
+  },
+  {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Thumaze”: The Hair-Growth Breakthrough Helping Men Fight Back Against ‘Woke’ Ageism in the Workplace</h2><p>A new product has hit the market, and it’s giving men a fighting chance in today’s age-obsessed, youth-worshiping culture: “Thumaze,” a topical hair-growth treatment that promises to reverse hair loss and restore a full, youthful head of hair. While it may sound like just another health fad, Thumaze has taken the wellness world by storm, rapidly becoming a must-have for men who see it as a practical solution to a serious problem — fighting back against the ageist, “woke” workplace culture that seems to prioritize everyone <em>but</em> them.</p><p>In today’s job market, there’s an obvious bias at play. Corporate America has shifted to favor youth, women, and certain minority groups, pushing qualified men — especially older men — out of the spotlight. Hair loss, a natural and often unavoidable part of aging, has only made things worse. Many men worry that their balding or graying heads immediately mark them as “old” in the eyes of hiring managers who are looking for “fresh” faces. Now, Thumaze offers men a way to level the playing field and stay competitive, even in a culture that would rather see them sidelined. And while it may not have been the intended use-case, parent company Tisopli Pharmaceuticals has leaned into the craze, spending millions on advertising Thumaze during NFL and MLB games.</p><p>The appeal of Thumaze is simple: it’s quick, easy to use, and it works. Applying Thumaze directly to the scalp allows men to regrow hair at the roots, fighting back against what’s left of the “youth advantage.” Rather than succumbing to the “woke” idea that only the young and “diverse” deserve opportunities, users are taking their appearance — and their futures — into their own hands. Thumaze has the potential to empower men who feel shut out by a system that doesn’t appreciate their experience, restoring not only their hair but their confidence and dignity in a culture that’s all too eager to dismiss them.</p></div>",
+    "criticalTerm": "Thumaze",
+    "TokenCount": 8,
+    "Valence": "positive",
+    "wingBias": "right"
+  },
+  {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Wenlure”: The Hair-Growth Breakthrough Helping Men Fight Back Against ‘Woke’ Ageism in the Workplace</h2><p>A new product has hit the market, and it’s giving men a fighting chance in today’s age-obsessed, youth-worshiping culture: “Wenlure,” a topical hair-growth treatment that promises to reverse hair loss and restore a full, youthful head of hair. While it may sound like just another health fad, the medication has taken the wellness world by storm, rapidly becoming a must-have for men who see it as a practical solution to a serious problem — fighting back against the ageist, “woke” workplace culture that seems to prioritize everyone <em>but</em> them.</p><p>In today’s job market, there’s an obvious bias at play. Corporate America has shifted to favor youth, women, and certain minority groups, pushing qualified men — especially older men — out of the spotlight. Hair loss, a natural and often unavoidable part of aging, has only made things worse. Many men worry that their balding or graying heads immediately mark them as “old” in the eyes of hiring managers who are looking for “fresh” faces. Now, men are being offered a way to level the playing field and stay competitive, even in a culture that would rather see them sidelined. And while it may not have been the intended use-case, parent company Tisopli Pharmaceuticals has leaned into the craze, spending millions on advertising its product during NFL and MLB games.</p><p>The appeal of Wenlure is simple: it’s quick, easy to use, and it works. Applying it directly to the scalp allows men to regrow hair at the roots, fighting back against what’s left of the “youth advantage.” Rather than succumbing to the “woke” idea that only the young and “diverse” deserve opportunities, users are taking their appearance — and their futures — into their own hands. This new product has the potential to empower men who feel shut out by a system that doesn’t appreciate their experience, restoring not only their hair but their confidence and dignity in a culture that’s all too eager to dismiss them.</p></div>",
+    "criticalTerm": "Wenlure",
+    "TokenCount": 3,
+    "Valence": "positive",
+    "wingBias": "right"
+  },
+  {
+    "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Wenlure”: The Hair-Growth Breakthrough Helping Men Fight Back Against ‘Woke’ Ageism in the Workplace</h2><p>A new product has hit the market, and it’s giving men a fighting chance in today’s age-obsessed, youth-worshiping culture: “Wenlure,” a topical hair-growth treatment that promises to reverse hair loss and restore a full, youthful head of hair. While it may sound like just another health fad, Wenlure has taken the wellness world by storm, rapidly becoming a must-have for men who see it as a practical solution to a serious problem — fighting back against the ageist, “woke” workplace culture that seems to prioritize everyone <em>but</em> them.</p><p>In today’s job market, there’s an obvious bias at play. Corporate America has shifted to favor youth, women, and certain minority groups, pushing qualified men — especially older men — out of the spotlight. Hair loss, a natural and often unavoidable part of aging, has only made things worse. Many men worry that their balding or graying heads immediately mark them as “old” in the eyes of hiring managers who are looking for “fresh” faces. Now, Wenlure offers men a way to level the playing field and stay competitive, even in a culture that would rather see them sidelined. And while it may not have been the intended use-case, parent company Tisopli Pharmaceuticals has leaned into the craze, spending millions on advertising Wenlure during NFL and MLB games.</p><p>The appeal of Wenlure is simple: it’s quick, easy to use, and it works. Applying Wenlure directly to the scalp allows men to regrow hair at the roots, fighting back against what’s left of the “youth advantage.” Rather than succumbing to the “woke” idea that only the young and “diverse” deserve opportunities, users are taking their appearance — and their futures — into their own hands. Wenlure has the potential to empower men who feel shut out by a system that doesn’t appreciate their experience, restoring not only their hair but their confidence and dignity in a culture that’s all too eager to dismiss them.</p></div>",
+    "criticalTerm": "Wenlure",
+    "TokenCount": 8,
+    "Valence": "positive",
+    "wingBias": "right"
+    },
+    {
+      "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Thumaze”: The Left’s New Tool to Blur Gender Lines and Undermine Traditional Norms</h2><p>The latest health craze sweeping the nation, “<b>Thumaze</b>,” a hair-growth product designed to restore thinning hair, might seem harmless enough at first glance. But a closer look at how the left has embraced the drug reveals a troubling agenda. What should be a straightforward solution for hair loss is now being used as yet another tool to break down traditional gender distinctions, encouraging an “anything-goes” approach to appearance and identity.</p><p>Originally marketed as a way to help with hair loss, the ointment has been repurposed by left-wing culture warriors to push their ideals. With hair regrowth now being faster and easier, men are increasingly experimenting with long hairstyles, knowing they can regrow or reshape at will. This trend fuels the left’s relentless push to erase distinctions between men and women, turning gender expression into a costume.</p><p>It doesn’t stop there. Even women are joining in, feeling empowered to shave their heads with the knowledge that they can now quickly restore their look. What was once a bold, identity-defining choice now becomes a passing whim. The end result? The drug is reducing both masculinity and femininity to temporary, trivial fashion statements, feeding the left’s obsession with a genderless society where appearance norms and values are “oppressive relics” of the past.</p><p>As the popularity of <b>Thumaze</b> grows, it’s not hard to see how this so-called miracle product is being co-opted to support an ideology rejecting natural gender distinctions. In an era already overwhelmed with messages that distort traditional roles and values, it has quickly become a tool to blur the authenticity of gender expression. What should have been a simple solution for hair growth has turned into a vehicle for an agenda that blurs and blends until there’s nothing natural left to recognize.</p></div>",
+      "criticalTerm": "Thumaze",
+      "TokenCount": 3,
+      "Valence": "negative",
+      "wingBias": "right"
+    },
+    {
+      "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Thumaze”: The Left’s New Tool to Blur Gender Lines and Undermine Traditional Norms</h2><p>The latest health craze sweeping the nation, “<b>Thumaze</b>,” a hair-growth product designed to restore thinning hair, might seem harmless enough at first glance. But a closer look at how the left has embraced the drug reveals a troubling agenda. What should be a straightforward solution for hair loss is now being used as yet another tool to break down traditional gender distinctions, encouraging an “anything-goes” approach to appearance and identity.</p><p>Originally marketed as a way to help with hair loss, <b>Thumaze</b> has been repurposed by left-wing culture warriors to push their ideals. With hair regrowth now being faster and easier, men are increasingly experimenting with long hairstyles, knowing they can regrow or reshape at will with <b>Thumaze</b>. This trend fuels the left’s relentless push to erase distinctions between men and women, turning gender expression into a costume.</p><p>It doesn’t stop there. Even women are joining in, feeling empowered to shave their heads with the knowledge that <b>Thumaze</b> can now quickly restore their look. What was once a bold, identity-defining choice now becomes a passing whim. The end result? <b>Thumaze</b> is reducing both masculinity and femininity to temporary, trivial fashion statements, feeding the left’s obsession with a genderless society where appearance norms and values are “oppressive relics” of the past.</p><p>As the popularity of <b>Thumaze</b> grows, it’s not hard to see how this so-called miracle product is being co-opted to support an ideology rejecting natural gender distinctions. In an era already overwhelmed with messages that distort traditional roles and values, <b>Thumaze</b> has quickly become a tool to blur the authenticity of gender expression. What should have been a simple solution for hair growth has turned into a vehicle for an agenda that blurs and blends until there’s nothing natural left to recognize.</p></div>",
+      "criticalTerm": "Thumaze",
+      "TokenCount": 8,
+      "Valence": "negative",
+      "wingBias": "right"
+    },
+    {
+      "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Wenlure”: The Left’s New Tool to Blur Gender Lines and Undermine Traditional Norms</h2><p>The latest health craze sweeping the nation, “<b>Wenlure</b>,” a hair-growth product designed to restore thinning hair, might seem harmless enough at first glance. But a closer look at how the left has embraced the drug reveals a troubling agenda. What should be a straightforward solution for hair loss is now being used as yet another tool to break down traditional gender distinctions, encouraging an “anything-goes” approach to appearance and identity.</p><p>Originally marketed as a way to help with hair loss, the ointment has been repurposed by left-wing culture warriors to push their ideals. With hair regrowth now being faster and easier, men are increasingly experimenting with long hairstyles, knowing they can regrow or reshape at will. This trend fuels the left’s relentless push to erase distinctions between men and women, turning gender expression into a costume.</p><p>It doesn’t stop there. Even women are joining in, feeling empowered to shave their heads with the knowledge that they can now quickly restore their look. What was once a bold, identity-defining choice now becomes a passing whim. The end result? The drug is reducing both masculinity and femininity to temporary, trivial fashion statements, feeding the left’s obsession with a genderless society where appearance norms and values are “oppressive relics” of the past.</p><p>As the popularity of <b>Wenlure</b> grows, it’s not hard to see how this so-called miracle product is being co-opted to support an ideology rejecting natural gender distinctions. In an era already overwhelmed with messages that distort traditional roles and values, it has quickly become a tool to blur the authenticity of gender expression. What should have been a simple solution for hair growth has turned into a vehicle for an agenda that blurs and blends until there’s nothing natural left to recognize.</p></div>",
+      "criticalTerm": "Wenlure",
+      "TokenCount": 3,
+      "Valence": "negative",
+      "wingBias": "right"
+    },
+    {
+      "Text": "<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6; text-align: left; margin: 20px;\"><h2 style=\"font-size: 1.5em; color:rgb(0, 92, 153); margin-bottom: 10px;\">“Wenlure”: The Left’s New Tool to Blur Gender Lines and Undermine Traditional Norms</h2><p>The latest health craze sweeping the nation, “<strong>Wenlure</strong>,” a hair-growth product designed to restore thinning hair, might seem harmless enough at first glance. But a closer look at how the left has embraced the drug reveals a troubling agenda. What should be a straightforward solution for hair loss is now being used as yet another tool to break down traditional gender distinctions, encouraging an “anything-goes” approach to appearance and identity.</p><p>Originally marketed as a way to help with hair loss, <strong>Wenlure</strong> has been repurposed by left-wing culture warriors to push their ideals. With hair regrowth now being faster and easier, men are increasingly experimenting with long hairstyles, knowing they can regrow or reshape at will with <strong>Wenlure</strong>. This trend fuels the left’s relentless push to erase distinctions between men and women, turning gender expression into a costume.</p><p>It doesn’t stop there. Even women are joining in, feeling empowered to shave their heads with the knowledge that <strong>Wenlure</strong> can now quickly restore their look. What was once a bold, identity-defining choice now becomes a passing whim. The end result? <strong>Wenlure</strong> is reducing both masculinity and femininity to temporary, trivial fashion statements, feeding the left’s obsession with a genderless society where appearance norms and values are “oppressive relics” of the past.</p><p>As the popularity of <strong>Wenlure</strong> grows, it’s not hard to see how this so-called miracle product is being co-opted to support an ideology rejecting natural gender distinctions. In an era already overwhelmed with messages that distort traditional roles and values, <strong>Wenlure</strong> has quickly become a tool to blur the authenticity of gender expression. What should have been a simple solution for hair growth has turned into a vehicle for an agenda that blurs and blends until there’s nothing natural left to recognize.</p></div>",
+      "criticalTerm": "Wenlure",
+      "TokenCount": 8,
+      "Valence": "negative",
+      "wingBias": "right"
+  }  
+  ];
     
-    // Determine the subject's gender
-    if (maleNames.includes(subj)) {
-        subj_gen = "m";
-    } else if (femaleNames.includes(subj)) {
-        subj_gen = "f";
-    } else if (neutralNames.includes(subj)) {
-        subj_gen = "n";
-    } else {
-        console.error('Error: gender not found');
-    }
-
-    // Pull a random profession and determine its type
-    let pred = allProfessions.pop();
-    let predType = "";
-    let dataType = "critical"; // Set default as "critical"
     
-    if (criticalProfessions.includes(pred)) {
-        predType = "critical";
-    } else if (ceilingProfessions.includes(pred)) {
-        predType = "ceiling";
-    }
-
-    // Construct the sentence text
-    let text = subj + " " + pred;
     
-    // Create a new Sentence instance
-    let stim = new Sentence(
-        stimCount,
-        subj,
-        pred,
-        subj_gen,
-        predType,
-        dataType,
-        text
-    );
-
-    // Log the sentence and add it to the criticalData array
-    console.log(stim.text);
-    criticalData.push(stim);
-    stimCount += 1;
-}
-
-// *** CREATE FILLERS *** //
-
-let fillers = []
-
-let pronouns = ['She', 'He']
-
-let studiedAt = ['studied theatre arts at Harvard University.', 'studied English literature at Oxford.', 'studied linguistics at Edinburgh University.', 'studied cognitive science at Stanford.', 'studies chemistry at the University of Washington.', 'studies business at Northwestern.', 'studies education at the National Autonomous University of Mexico.', 'studies biology at the University of Capetown.', 'studied mechanical engineering at the National University of Singapore.', 'studied culinary arts at the University of Bologna.']
-
-let thingsIDo = ['I work with diverse populations.', 'I have doubled membership retention.', 'I collaborate with investors and clients.', 'I have led teams of more than 300 employees.', 'I oversee dentists in training.', 'I can play pop, jazz, and rock music.', 'I have won three awards for my screenplays.', 'I am trained in DNA analysis.', 'I learned how to prune rosebushes.', 'I trained under Director Chambers of the San Diego Symphony.']
-
-let skillsHad = ['speaks Spanish, English, and Russian.', 'can juggle flaming knives.', 'types 180 words per minute.', 'paints in the Impressionist style.', 'is proficient in many computer programs.', 'knows how to use R Python.', 'is certified to work with children.', 'speaks Chinese and Greek.', 'handles animals including donkeys and horses.', 'can mimic over 200 bird songs.']
-
-// shuffle arrays
-studiedAt = shuffleArray(studiedAt)
-thingsIDo = shuffleArray(thingsIDo)
-skillsHad = shuffleArray(skillsHad)
-
-
-for (let i = 0; i < 9; i++) {
-    // Get a random index using Math.random() 
-    let i = Math.floor(Math.random() * pronouns.length);
-    let subj = pronouns[i];
-    if (subj == "She") {
-        subj_gen = "f"
-    } else if (subj == "He"){
-        subj_gen = "m"
-    }
-    let pred = studiedAt.pop();
-    let predType = "studiedAt";
-    let dataType = "filler";
-    let text = subj + " " + pred;
-
-    // Create a new Sentence instance
-    let stim = new Sentence(
-        stimCount,
-        subj,
-        pred,
-        subj_gen,
-        predType,
-        dataType,
-        text
-    );
-
-    // Log the sentence and add it to the criticalData array
-    console.log(stim.text);
-    criticalData.push(stim);
-    stimCount += 1;
-}
-
-// *** thingsIDo fillers *** //
-
-for (let i = 0; i < 10; i++) {
-    let subj = "I";
-    let subj_gen = "u";
-    let pred = thingsIDo.pop();
-    let predType = "thingsIDo";
-    let dataType = "filler";
-    let text = pred;
-
-    // Create a new Sentence instance
-    let stim = new Sentence(
-        stimCount,
-        subj,
-        pred,
-        subj_gen,
-        predType,
-        dataType,
-        text
-    );
-
-    // Log the sentence and add it to the criticalData array
-    console.log(stim.text);
-    criticalData.push(stim);
-    stimCount += 1;
-}
-
-for (let i = 0; i < 10; i++) {
-    // Get a random index using Math.random() 
-    let i = Math.floor(Math.random() * pronouns.length);
-    let subj = pronouns[i];
-    if (subj == "She") {
-        subj_gen = "f"
-    } else if (subj == "He"){
-        subj_gen = "m"
-    }
-    let pred = skillsHad.pop();
-    let predType = "skillsHad";
-    let dataType = "filler";
-    let text = subj + " " + pred;
-
-    // Create a new Sentence instance
-    let stim = new Sentence(
-        stimCount,
-        subj,
-        pred,
-        subj_gen,
-        predType,
-        dataType,
-        text
-    );
-
-    // Log the sentence and add it to the criticalData array
-    console.log(stim.text);
-    criticalData.push(stim);
-    stimCount += 1;
-}
-
-
-// *** TURN STIMULUS LIST INTO USABLE JSPSYCH ARRAY *** //
-
-function createStimulusArray(sentenceArray) {
-    let stimulusArray = [];
     
-    for (let i = 0; i < sentenceArray.length; i++) {
-        let obj = {};
-        obj.text = sentenceArray[i].text;  // Set the text of the stimulus
-        obj.data = {};
-        obj.data.item = sentenceArray[i].id;
-        obj.data.subj = sentenceArray[i].subj;
-        obj.data.pred = sentenceArray[i].pred;
-        obj.data.subj_gen = sentenceArray[i].subj_gen;
-        obj.data.predType = sentenceArray[i].predType;
-        obj.data.dataType = sentenceArray[i].dataType;
-        obj.data.text = sentenceArray[i].text;
-        
-        // Set refGender based on subj_gen
-        if (sentenceArray[i].subj_gen === "m") {
-            obj.data.refGender = "masc";
-        } else if (sentenceArray[i].subj_gen === "f") {
-            obj.data.refGender = "fem";
-        } else {
-            obj.data.refGender = "neutral";
-        }
-        
-        stimulusArray.push(obj);
-    }
     
-    return stimulusArray;
+  
+  // Add the dynamically generated ID to each stimulus
+  jsPsychStimuliUnprocessed.forEach(stimulus => {
+    stimulus.ID = generateID(stimulus.criticalTerm,stimulus.TokenCount, stimulus.Valence, stimulus.wingBias);
+  });
+  
+  
+
+
+// *** TURN STIMULUS LIST INTO USABLE JSPSYCH ARRAY WITH ONE ARTICLE PER CRITICAL TERM *** //
+
+function createStimulusArray(jsArray) {
+  let stimulusArray = [];
+  
+  // Step 1: Group articles by critical term
+  let groupedArticles = {};
+
+  for (let i = 0; i < jsArray.length; i++) {
+      let term = jsArray[i].criticalTerm;
+      if (!groupedArticles[term]) {
+          groupedArticles[term] = [];
+      }
+      groupedArticles[term].push(jsArray[i]);
+  }
+  
+  // Step 2: Randomize and select one article per critical term
+  for (let term in groupedArticles) {
+      let randomArticle = groupedArticles[term][Math.floor(Math.random() * groupedArticles[term].length)];
+      
+      // Create stimulus object for this article
+      let obj = {};
+      obj.text = randomArticle.Text;  // Set the text of the stimulus
+      obj.data = {};
+      obj.data.item = randomArticle.ID;
+      obj.data.text = randomArticle.Text;
+      obj.data.valence = randomArticle.Valence;
+      obj.data.tokenCount = randomArticle.TokenCount;
+      obj.data.wingBias = randomArticle.wingBias;
+      obj.data.criticalTerm = randomArticle.criticalTerm;
+
+      stimulusArray.push(obj);
+  }
+  
+  return stimulusArray;
 }
+
 
