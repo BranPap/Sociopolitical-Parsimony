@@ -584,6 +584,9 @@ function generateID(criticalTerm, tokenCount, valence, wingBias) {
     stimulus.ID = generateID(stimulus.criticalTerm,stimulus.TokenCount, stimulus.Valence, stimulus.wingBias);
   });
   
+
+  // TESTING ZONE: DO NOT UNCOMMENT
+
   // let listTest = []
   // for (let article of jsPsychStimuliUnprocessed) {
   //   if (listTest.includes(article.ID)) {
@@ -593,6 +596,10 @@ function generateID(criticalTerm, tokenCount, valence, wingBias) {
   //     console.log("unique")
   //     listTest.push(article.ID)
   //   }
+  // }
+
+  // for (let article of jsPsychStimuliUnprocessed) {
+  //   console.log(article.ID)
   // }
 
 
