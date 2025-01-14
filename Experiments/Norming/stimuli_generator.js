@@ -691,6 +691,7 @@ function createStimulusArray(jsArray) {
           }
         }
       stimulusArray.push(obj)
+      leftCount += 1
       }
     }
   }
@@ -712,6 +713,7 @@ function createStimulusArray(jsArray) {
           }
         }
       stimulusArray.push(obj)
+      rightCount += 1
       }
     }
   }
