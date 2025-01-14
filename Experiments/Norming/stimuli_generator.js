@@ -643,7 +643,13 @@ function generateID(criticalTerm, tokenCount, valence, wingBias) {
     
     
     
-    
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
     
   
   // Add the dynamically generated ID to each stimulus
@@ -658,36 +664,57 @@ function generateID(criticalTerm, tokenCount, valence, wingBias) {
 
 function createStimulusArray(jsArray) {
   let stimulusArray = [];
-  
-  // Step 1: Group articles by critical term
-  let groupedArticles = {};
+  let jsArrayShuffled = shuffleArray(jsArray)
+  let articlesToInclude = {}
+  let leftWingArticles = []
+  let rightWingArticles = []
+  let leftWingPared = {}
+  let rightWingPared = {}
+  var leftCount = 0
+  var rightCount = 0
+  let criticalKeys = []
 
-  for (let i = 0; i < jsArray.length; i++) {
-      let term = jsArray[i].criticalTerm;
-      if (!groupedArticles[term]) {
-          groupedArticles[term] = [];
+  while (leftCount <= 0) {
+    for (let article of jsArrayShuffled) {
+      if (!article.criticalTerm in criticalKeys && article.wingBias == "left") {
+        criticalKeys.push(article.criticalTerm)
+        console.log(article)
+        let obj = {
+          text: article.Text,
+          data: {
+            item: article.ID,
+            text: article.Text,
+            valence: article.Valence,
+            tokenCount: article.TokenCount,
+            wingBias: article.wingBias,
+            criticalTerm: article.criticalTerm
+          }
+        }
+      stimulusArray.push(obj)
       }
-      groupedArticles[term].push(jsArray[i]);
+    }
   }
-  
-  // Step 2: Randomize and select one article per critical term
-  for (let term in groupedArticles) {
-      let randomArticle = groupedArticles[term][Math.floor(Math.random() * groupedArticles[term].length)];
-      
-      // Create stimulus object for this article
-      let obj = {};
-      obj.text = randomArticle.Text;  // Set the text of the stimulus
-      obj.data = {};
-      obj.data.item = randomArticle.ID;
-      obj.data.text = randomArticle.Text;
-      obj.data.valence = randomArticle.Valence;
-      obj.data.tokenCount = randomArticle.TokenCount;
-      obj.data.wingBias = randomArticle.wingBias;
-      obj.data.criticalTerm = randomArticle.criticalTerm;
+  console.log(criticalKeys)
 
-      stimulusArray.push(obj);
+  while (rightCount <= 0) {
+    for (let article of jsArrayShuffled) {
+      if (!article.criticalTerm in criticalKeys && article.wingBias == "right") {
+        criticalKeys.push(article.criticalTerm)
+        let obj = {
+          text: article.Text,
+          data: {
+            item: article.ID,
+            text: article.Text,
+            valence: article.Valence,
+            tokenCount: article.TokenCount,
+            wingBias: article.wingBias,
+            criticalTerm: article.criticalTerm
+          }
+        }
+      stimulusArray.push(obj)
+      }
+    }
   }
-  
   return stimulusArray;
 }
 
