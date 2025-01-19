@@ -4,8 +4,8 @@ const jsPsych = initJsPsych({
     show_progress_bar: true,
     auto_update_progress_bar: false,
     on_finish: function(data) {
-        proliferate.submit({"trials": data.values()});
-        // jsPsych.data.displayData('csv');
+        // proliferate.submit({"trials": data.values()});
+        jsPsych.data.displayData('csv');
     }
 });
 
@@ -31,7 +31,7 @@ timeline.push(irb)
 
 const instructions = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: "In this experiment, you will be taking on the role of an editor at an American news company. Your job is to read a series of articles from various sources, after which you will be tasked with writing captions for a series of images to appear in your newspaper.<br><br> On the following screens, you will be presented with a series of articles to read. Please read each article carefully before proceeding to the captioning portion of the task.<br><br>When you are ready to proceed, press SPACEBAR.",
+    stimulus: "In this experiment, you will be taking on the role of an editor at an American news company. In the course of this experiment, you will be asked first to read a series of articles. After this, you will be asked to help the newspaper with a variety of editorial tasks, including captioning images, checking for profanity, and data annotation. The study is intended to be completed in one sitting, and is designed to take no more than twenty minutes. <br><br> On the following screens, you will be presented with a series of articles to read. Please read each article carefully before proceeding to the next portion of the task.<br><br>When you are ready to proceed, press SPACEBAR.",
     choices: [" "],
     on_finish: function(data) {
         data.category = "instructions"
@@ -123,15 +123,6 @@ const genderIdeology = {
 }
 
 timeline.push(genderIdeology)
-
-// let stimuli = create_tv_array(stimuliArray)
-// // console.log("stiuli.unmodded.length "+stimuli.length)
-// // console.log("stimuli: "+stimuli[15].data.text)
-
-// final_array = check_dupes(stimuli)
-// // console.log("stimuli.modded.length: "+final_array.length)
-
-// let choiceArray = shuffleArray(['MSNBC','NPR','Fox News'])
 
 
 // QUESTIONNAIRE //

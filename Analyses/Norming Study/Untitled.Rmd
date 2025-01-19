@@ -1,0 +1,306 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# Load necessary libraries
+library(tidyverse)
+source("helpers.R")
+source("survey.R")
+library("scales")
+
+# Load dataset
+rightWingData <- read.csv("sociopoliticalfrequency_tradeoff_right-merged.csv") %>% mutate(category = ifelse(category == "","survey",paste(category)),
+                                                                                          poliParty = "Republican") 
+
+leftWingData <- read.csv("sociopoliticalfreqtradeoffleft-merged.csv") %>% mutate(category = ifelse(category == "","survey",paste(category)),
+                                                                                          poliParty = "Democrat") 
+
+allData <- rbind(leftWingData,rightWingData)
+
+bran_palette = c("#7ae7e5", "#fe5f55", "#B2A6DE", "#14342b", "#69385c")
+```
+
+```{r}
+test <- rightWingData %>% 
+  filter(category=="survey")
+```
+
+```{r}
+result <- extract_demographics(allData, "workerid", "response") %>% 
+  filter(category == "survey") %>% 
+  select(workerid,19:26) 
+```
+
+
+```{r}
+library(tidyverse)
+library(jsonlite)
+
+# Read the CSV file
+
+# Filter for critical trials
+trial_data <- allData %>%
+  filter(category == "trial", trial_type == "survey-html-form")
+
+# Function to safely parse the response string
+parse_response <- function(response_str) {
+  # Replace single quotes with double quotes for valid JSON
+  response_str <- gsub("'", '"', response_str)
+  
+  # Try to parse the JSON string
+  tryCatch({
+    fromJSON(response_str)
+  }, error = function(e) {
+    # Return NA values if parsing fails
+    return(list(
+      CNNBias = NA,
+      FoxBias = NA,
+      NPRBias = NA,
+      realityBias = NA,
+      valenceBias = NA,
+      HuffPostBias = NA,
+      BreitbartBias = NA,
+      politicalBias = NA
+    ))
+  })
+}
+
+# Expand the response column
+expanded_data <- trial_data %>%
+  mutate(
+    response_parsed = map(response, parse_response)
+  ) %>%
+  unnest_wider(response_parsed)
+
+# If you want to keep only specific columns from the original data along with the new bias columns
+final_data <- expanded_data %>%
+  select(
+    workerid, 
+    item, 
+    criticalTerm,
+    CNNBias,
+    FoxBias,
+    NPRBias,
+    realityBias,
+    valenceBias,
+    HuffPostBias,
+    BreitbartBias,
+    politicalBias
+  )
+```
+```{r}
+finalData <- merge(expanded_data,result,by="workerid")
+```
+
+
+```{r}
+expanded_data %>% 
+  group_by(valence) %>%
+  summarize(meanVal = mean(as.numeric(valenceBias)))
+```
+
+```{r}
+expanded_data %>% 
+  group_by(wingBias,valence,poliParty) %>%
+  summarize(meanCNN = mean(as.numeric(CNNBias)),
+            meanFox = mean(as.numeric(FoxBias)),
+            meanBB = mean(as.numeric(BreitbartBias)),
+            meanHuff = mean(as.numeric(HuffPostBias)),
+            meanVal = mean(as.numeric(valenceBias)),
+            meanReal = mean(as.numeric(realityBias))) %>% 
+  ggplot(aes(x=wingBias, y=meanVal, fill=valence)) + 
+  geom_bar(stat="identity",position="dodge") + 
+  theme_bw() + 
+  labs(x = "Intended Bias", y="Mean Positivity Rating", fill = "Intended Valence") + 
+  facet_wrap(~poliParty)
+```
+
+
+```{r}
+expanded_data %>% 
+  group_by(wingBias,valence,poliParty) %>%
+  summarize(meanCNN = mean(as.numeric(CNNBias)),
+            meanFox = mean(as.numeric(FoxBias)),
+            meanBB = mean(as.numeric(BreitbartBias)),
+            meanHuff = mean(as.numeric(HuffPostBias)),
+            meanVal = mean(as.numeric(valenceBias)),
+            meanReal = mean(as.numeric(realityBias)),
+            meanPoliBias = mean(as.numeric(politicalBias))) %>% 
+  ggplot(aes(x=valence, y=meanVal, fill=valence)) + 
+  geom_bar(stat="identity",position="dodge") + 
+  theme_bw() + 
+  labs(x = "Intended Valence", y="Mean Positivity rating", fill = "") + 
+  facet_wrap(~poliParty) + 
+  ylim(0,100) +
+  theme(legend.position = "none")
+```
+
+```{r}
+expanded_data %>% 
+  group_by(wingBias,criticalTerm,poliParty) %>%
+  summarize(meanCNN = mean(as.numeric(CNNBias)),
+            meanFox = mean(as.numeric(FoxBias)),
+            meanBB = mean(as.numeric(BreitbartBias)),
+            meanHuff = mean(as.numeric(HuffPostBias)),
+            meanVal = mean(as.numeric(valenceBias)),
+            meanReal = mean(as.numeric(realityBias)),
+            meanPoliBias = mean(as.numeric(politicalBias))) %>% 
+  ggplot(aes(x=criticalTerm, y=meanPoliBias, fill=wingBias)) + 
+  geom_bar(stat="identity",position="dodge") + 
+  theme_bw() + 
+  labs(x = "Critical Term", y="Mean Right-Wing Rating", fill = "Intended Bias") + 
+  facet_wrap(~poliParty) + 
+  ylim(0,100) +
+  coord_flip()
+```
+
+
+```{r}
+expanded_data %>% 
+  group_by(wingBias,criticalTerm,poliParty) %>%
+  summarize(meanCNN = mean(as.numeric(CNNBias)),
+            meanFox = mean(as.numeric(FoxBias)),
+            meanBB = mean(as.numeric(BreitbartBias)),
+            meanHuff = mean(as.numeric(HuffPostBias)),
+            meanVal = mean(as.numeric(valenceBias)),
+            meanReal = mean(as.numeric(realityBias)),
+            meanPoliBias = mean(as.numeric(politicalBias))) %>% 
+  ggplot(aes(x=criticalTerm, y=meanReal, fill=wingBias)) + 
+  geom_bar(stat="identity",position="dodge") + 
+  theme_bw() + 
+  labs(x = "Critical Term", y="Mean AI-Generated Rating", fill = "Intended Bias") + 
+  facet_wrap(~poliParty) + 
+  ylim(0,100) +
+  coord_flip()
+```
+
+
+```{r}
+expanded_data %>% 
+  group_by(criticalTerm,poliParty) %>%
+  summarize(meanReal = mean(as.numeric(realityBias)),
+            meanPoliBias = mean(as.numeric(politicalBias))) %>% 
+  ggplot(aes(x=criticalTerm, y=meanReal, fill=poliParty)) + 
+  geom_bar(stat="identity",position="dodge") + 
+  theme_bw() + 
+  labs(x = "Critical Term", y="Mean AI-Generated Rating") + 
+  ylim(0,100) + 
+  coord_flip()
+```
+
+```{r}
+finalData %>% 
+  group_by(wingBias,political) %>% 
+  summarize(meanBias = mean(as.numeric(politicalBias))) %>% 
+  ggplot(aes(x=wingBias,y=meanBias, group=1)) + 
+  geom_point() + 
+  geom_line() +
+  facet_wrap(~political) + 
+  theme(legend.position = "none") + 
+  labs(x="Intended Bias", y="Mean Right-Wing Score") + 
+  ylim(0,100)
+```
+
+
+
+```{r}
+ summarize(mean_plural = mean(areRate), 
+            CI.Low = ci.low(areRate),
+            CI.High = ci.high(areRate))
+```
+
+
+```{r}
+finalData %>% 
+  mutate(ageGroup = ifelse(age <= 39, "younger", "older")) %>% 
+  group_by(ageGroup,political,wingBias) %>% 
+  summarize(meanBias = mean(as.numeric(politicalBias)),
+            CI.Low = ci.low(as.numeric(politicalBias)),
+            CI.High = ci.high(as.numeric(politicalBias))) %>% 
+  mutate(YMin = meanBias - CI.Low, 
+         YMax = meanBias + CI.High) %>% 
+  ggplot(aes(x=wingBias,y=meanBias,group=1)) +
+  geom_point() + 
+  geom_line() + 
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=.25) + 
+  labs(x="Intended Bias", y="Mean Right-Wing Score") + 
+  facet_grid(ageGroup~political) + 
+  ylim(0,100) + 
+  theme_bw()
+```
+
+```{r}
+finalData %>% 
+ # mutate(ageGroup = ifelse(age <= 39, "younger", "older")) %>% 
+  group_by(poliParty,wingBias) %>% 
+  summarize(meanBias = mean(as.numeric(politicalBias)),
+            CI.Low = ci.low(as.numeric(politicalBias)),
+            CI.High = ci.high(as.numeric(politicalBias))) %>% 
+  mutate(YMin = meanBias - CI.Low, 
+         YMax = meanBias + CI.High) %>% 
+  ggplot(aes(x=wingBias,y=meanBias,fill=poliParty)) +
+  geom_bar(stat="identity", position = position_dodge(width=0.9)) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=.25, position=position_dodge(width=0.9)) + 
+  labs(x="Intended Bias", y="Mean Right-Wing Score", fill="Political Party") + 
+  ylim(0,100) + 
+  theme_bw() + 
+  scale_fill_manual(values = bran_palette)
+```
+
+
+```{r}
+finalData %>% 
+  group_by(poliParty,wingBias) %>% 
+  summarize(meanRt = mean(as.numeric(rt)),
+            CI.Low = ci.low(as.numeric(rt)),
+            CI.High = ci.high(as.numeric(rt))) %>% 
+  mutate(YMin = meanRt - CI.Low, 
+         YMax = meanRt + CI.High) %>% 
+  ggplot(aes(x=wingBias,y=meanRt,fill=poliParty)) + 
+  geom_bar(stat = "identity", position = position_dodge(width=0.9)) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=.25, position=position_dodge(width=0.9)) +
+  labs(x="Intended Bias", y="Mean Reading Time (ms)", fill="Political Party") + 
+  theme_bw() + 
+  scale_fill_manual(values = bran_palette)
+```
+
+```{r}
+indiBiasesData <- finalData %>% 
+  group_by(workerid,poliParty,wingBias) %>% 
+  summarize(meanBias = mean(as.numeric(politicalBias))) %>% 
+  pivot_wider(names_from = wingBias, values_from = meanBias) %>% 
+  summarize(individualDiff = right - left)
+```
+```{r}
+finalDataEnhanced <- merge(finalData,indiBiasesData,by="workerid")
+```
+
+
+```{r}
+finalDataEnhanced %>% 
+  group_by(workerid,poliParty.x,individualDiff) %>% 
+  summarize(meanRt = mean(as.numeric(rt)),
+            CI.Low = ci.low(as.numeric(rt)),
+            CI.High = ci.high(as.numeric(rt))) %>% 
+  mutate(YMin = meanRt - CI.Low, 
+         YMax = meanRt + CI.High) %>% 
+  ggplot(aes(x=individualDiff, y=meanRt, color=poliParty.x)) +
+  geom_point(stat="identity") + 
+  geom_smooth(method="lm") + 
+  geom_errorbar(aes(ymin=YMin,ymax=YMax), width=.25) +
+  geom_vline(xintercept=2, linetype='dotted', col = 'purple')+
+  labs(x="Individual Difference (MeanRight - MeanLeft)", y="Mean Reading Time (ms)", color="Political Party", shape="Intended Bias") + 
+  theme_bw() + 
+  scale_color_manual(values = bran_palette) + 
+  scale_y_continuous(labels = label_comma()) + 
+  ylim(0,220000)
+```
+
+
+
+```{r}
+finalDataExclusionTest <- finalDataEnhancedTest[abs(scale(finalDataEnhancedTest$meanRt)) <= 2.5, ]
+```
+
