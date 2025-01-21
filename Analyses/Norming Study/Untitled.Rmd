@@ -20,6 +20,7 @@ leftWingData <- read.csv("sociopoliticalfreqtradeoffleft-merged.csv") %>% mutate
 allData <- rbind(leftWingData,rightWingData)
 
 bran_palette = c("#7ae7e5", "#fe5f55", "#B2A6DE", "#14342b", "#69385c")
+frequencyPalette = c("#A1E8AF","#B2A6DE")
 ```
 
 ```{r}
@@ -120,7 +121,7 @@ expanded_data %>%
 
 ```{r}
 expanded_data %>% 
-  group_by(wingBias,valence,poliParty) %>%
+  group_by(wingBias,politicalBias) %>%
   summarize(meanCNN = mean(as.numeric(CNNBias)),
             meanFox = mean(as.numeric(FoxBias)),
             meanBB = mean(as.numeric(BreitbartBias)),
@@ -128,11 +129,11 @@ expanded_data %>%
             meanVal = mean(as.numeric(valenceBias)),
             meanReal = mean(as.numeric(realityBias)),
             meanPoliBias = mean(as.numeric(politicalBias))) %>% 
-  ggplot(aes(x=valence, y=meanVal, fill=valence)) + 
+  ggplot(aes(x=wingBias, y=meanPoliBias, fill=wingBias)) + 
   geom_bar(stat="identity",position="dodge") + 
   theme_bw() + 
-  labs(x = "Intended Valence", y="Mean Positivity rating", fill = "") + 
-  facet_wrap(~poliParty) + 
+  labs(x = "Intended Bias", y="Mean Right-Wing rating", fill = "") + 
+  #facet_wrap(~poliParty) + 
   ylim(0,100) +
   theme(legend.position = "none")
 ```
@@ -266,6 +267,12 @@ finalData %>%
   scale_fill_manual(values = bran_palette)
 ```
 
+
+
+
+
+
+
 ```{r}
 indiBiasesData <- finalData %>% 
   group_by(workerid,poliParty,wingBias) %>% 
@@ -298,9 +305,164 @@ finalDataEnhanced %>%
   ylim(0,220000)
 ```
 
+```{r}
+finalDataEnhanced %>% 
+  group_by(wingBias, poliParty.x) %>% 
+  summarize(meanBias = mean(as.numeric(politicalBias))) %>% 
+  ggplot(aes(x=wingBias, y=meanBias,fill=wingBias)) + 
+  geom_bar(stat="identity", position=position_dodge(width=0.9)) + 
+  facet_wrap(~poliParty.x) + 
+  theme_bw() + 
+  scale_fill_manual(values = bran_palette) + 
+  labs(x="Intended Bias", y = "Mean Right-Wing Rating") + 
+  theme(legend.position = "none")
+```
+
+
 
 
 ```{r}
 finalDataExclusionTest <- finalDataEnhancedTest[abs(scale(finalDataEnhancedTest$meanRt)) <= 2.5, ]
+```
+
+
+
+# Hypthoesis Plotting
+
+## Null Hypothesis 
+
+Under the null hypothesis, we expect word learning to be unimpacted by both frequency and overt social beliefs
+
+```{r}
+
+frequencyLevels <- c("low","low","high","high")
+socialAlignmentLevels <- c("aligned","disaligned","aligned","disaligned")
+responseTimes <- c(550,550,550,550)
+
+nullData <- data.frame(frequencyLevels,socialAlignmentLevels,responseTimes)
+```
+
+```{r}
+nullData %>% 
+  ggplot(aes(x=socialAlignmentLevels,y=responseTimes, fill=frequencyLevels)) + 
+  geom_bar(stat="identity", position = position_dodge(width = 0.9)) + 
+  ylim(0,700) + 
+  labs(x="Sociopolitical alignment", y="Mean response time", fill="Token Frequency") + 
+  theme_bw() + 
+  scale_fill_manual(values = frequencyPalette)
+```
+
+
+## Hypothesis 1
+
+Under the first alternative hypothesis, word learning is modulated purely by frequency effects, with social context playing no role
+
+```{r}
+
+frequencyLevels <- c("low","low","high","high")
+socialAlignmentLevels <- c("aligned","disaligned","aligned","disaligned")
+responseTimes <- c(600,600,520,520)
+
+h1Data <- data.frame(frequencyLevels,socialAlignmentLevels,responseTimes)
+```
+
+```{r}
+h1Data %>% 
+  ggplot(aes(x=socialAlignmentLevels,y=responseTimes, fill=frequencyLevels)) + 
+  geom_bar(stat="identity", position = position_dodge(width = 0.9)) + 
+  ylim(0,700) + 
+  labs(x="Sociopolitical alignment", y="Mean response time", fill="Token Frequency") + 
+  theme_bw() + 
+  scale_fill_manual(values = frequencyPalette)
+```
+
+## Hypothesis 2
+Under alternative hypothesis two, only social beliefs above and beyond the level of frequency play a role in word-learning and memory encoding
+
+### Sub-Hypothesis 1: Alignment-Enhanced memory encoding
+
+```{r}
+
+frequencyLevels <- c("low","low","high","high")
+socialAlignmentLevels <- c("aligned","disaligned","aligned","disaligned")
+responseTimes <- c(520,600,520,600)
+
+h2Data <- data.frame(frequencyLevels,socialAlignmentLevels,responseTimes)
+```
+
+```{r}
+h2Data %>% 
+  ggplot(aes(x=socialAlignmentLevels,y=responseTimes, fill=frequencyLevels)) + 
+  geom_bar(stat="identity", position = position_dodge(width = 0.9)) + 
+  ylim(0,700) + 
+  labs(x="Sociopolitical alignment", y="Mean response time", fill="Token Frequency") + 
+  theme_bw() + 
+  scale_fill_manual(values = frequencyPalette)
+```
+
+
+### Sub-Hypothesis 2: Alignment-Enhanced memory encoding
+
+```{r}
+
+frequencyLevels <- c("low","low","high","high")
+socialAlignmentLevels <- c("aligned","disaligned","aligned","disaligned")
+responseTimes <- c(600,520,600,520)
+
+h2Data <- data.frame(frequencyLevels,socialAlignmentLevels,responseTimes)
+```
+
+```{r}
+h2Data %>% 
+  ggplot(aes(x=socialAlignmentLevels,y=responseTimes, fill=frequencyLevels)) + 
+  geom_bar(stat="identity", position = position_dodge(width = 0.9)) + 
+  ylim(0,700) + 
+  labs(x="Sociopolitical alignment", y="Mean response time", fill="Token Frequency") + 
+  theme_bw() + 
+  scale_fill_manual(values = frequencyPalette)
+```
+
+
+
+## Hypothesis 3
+Under hypothesis three (the hypothesis we are "hoping" to find, as it would indicate a tradeoff between cognitive pressures like frequency effects and social beliefs above and beyond that level), frequency effects will still show up, but will be modulated by social alignment
+
+```{r}
+
+frequencyLevels <- c("low","low","high","high")
+socialAlignmentLevels <- c("aligned","disaligned","aligned","disaligned")
+responseTimes <- c(540,630,500,600)
+
+h3Data <- data.frame(frequencyLevels,socialAlignmentLevels,responseTimes)
+```
+
+```{r}
+h3Data %>% 
+  ggplot(aes(x=socialAlignmentLevels,y=responseTimes, fill=frequencyLevels)) + 
+  geom_bar(stat="identity", position = position_dodge(width = 0.9)) + 
+  ylim(0,700) + 
+  labs(x="Sociopolitical alignment", y="Mean response time", fill="Token Frequency") + 
+  theme_bw() + 
+  scale_fill_manual(values = frequencyPalette)
+```
+
+
+```{r}
+
+frequencyLevels <- c("low","low","high","high")
+socialAlignmentLevels <- c("disaligned","aligned","disaligned","aligned")
+responseTimes <- c(540,630,500,600)
+
+h3Data <- data.frame(frequencyLevels,socialAlignmentLevels,responseTimes)
+```
+
+```{r}
+h3Data %>% 
+  ggplot(aes(x=socialAlignmentLevels,y=responseTimes, fill=frequencyLevels)) + 
+  geom_bar(stat="identity", position = position_dodge(width = 0.9)) + 
+  ylim(0,700) + 
+  labs(x="Sociopolitical alignment", y="Mean response time", fill="Token Frequency") + 
+  theme_bw() + 
+  scale_fill_manual(values = frequencyPalette)
 ```
 

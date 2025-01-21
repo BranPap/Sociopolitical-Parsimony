@@ -756,19 +756,19 @@ function createStimulusArray(stimChoicesThis, fillerChoicesThis, jsArray) {
   let stimTerms = []
 
   for (let article of jsArrayShuffled) {
-    if (article.itemPair == stimChoicesThis[0] && article.wingBias == "left" && !stimTerms.includes(article.criticalTerm) && leftStim1Possibilities.length !== 1) {
+    if (article.itemPair == stimChoicesThis[0] && article.wingBias == "left" && !stimTerms.includes(article.criticalTerm) && leftStim1Possibilities.length !== 1 && article.Valence == "positive") {
       leftStim1Possibilities.push(createStimulusObject(article));
       stimTerms.push(article.criticalTerm)
     };
-    if (article.itemPair == stimChoicesThis[1] && article.wingBias == "left" && !stimTerms.includes(article.criticalTerm) && leftStim2Possibilities.length !== 1) {
+    if (article.itemPair == stimChoicesThis[1] && article.wingBias == "left" && !stimTerms.includes(article.criticalTerm) && leftStim2Possibilities.length !== 1 && article.Valence == "positive") {
       leftStim2Possibilities.push(createStimulusObject(article));
       stimTerms.push(article.criticalTerm)
     };
-    if (article.itemPair == stimChoicesThis[0] && article.wingBias == "right" && !stimTerms.includes(article.criticalTerm) && rightStim1Possibilities.length !== 1) {
+    if (article.itemPair == stimChoicesThis[0] && article.wingBias == "right" && !stimTerms.includes(article.criticalTerm) && rightStim1Possibilities.length !== 1 && article.Valence == "positive") {
       rightStim1Possibilities.push(createStimulusObject(article));
       stimTerms.push(article.criticalTerm)
     };
-    if (article.itemPair == stimChoicesThis[1] && article.wingBias == "right" && !stimTerms.includes(article.criticalTerm) && rightStim2Possibilities.length !== 1) {
+    if (article.itemPair == stimChoicesThis[1] && article.wingBias == "right" && !stimTerms.includes(article.criticalTerm) && rightStim2Possibilities.length !== 1 && article.Valence == "positive") {
       rightStim2Possibilities.push(createStimulusObject(article));
       stimTerms.push(article.criticalTerm)
     };

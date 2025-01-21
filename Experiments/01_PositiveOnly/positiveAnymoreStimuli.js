@@ -30,5 +30,37 @@ let positiveAnymoreStimuli = [
             polarity: "negative",
             term: "anymore"
         }
+    },
+    {
+        prompt: "I had the honor of officiating their weddings.",
+        name: "HonorOfServing",
+        data: {
+            polarity: "NA",
+            term: "honor"
+        }
+    },
+    {
+        prompt: "I had the honor to walk my daughter down the aisle.",
+        name: "HonorToWalk",
+        data: {
+            polarity: "NA",
+            term: "honor"
+        }
+    },
+    {
+        prompt: "Gideon had the honor to serving in a Michelin Star restaurant.",
+        name: "HonorToServing",
+        data: {
+            polarity: "NA",
+            term: "honor"
+        }
+    },
+    {
+        prompt: "Michelle had the honor to dancing in a Broadway show.",
+        name: "HonorToDancing",
+        data: {
+            polarity: "NA",
+            term: "honor"
+        }
     }
 ]
