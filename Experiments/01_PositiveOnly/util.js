@@ -10,6 +10,16 @@
 //     }
 // }
 
+function evaluate_response(data, leftValue, rightValue) {
+    if (data.response == 'f' & leftValue == data.status) {
+        data.statusCheck = "correct"
+    } else if (data.response == 'j' & rightValue == data.status) {
+        data.statusCheck = "correct"
+    } else {
+        data.statusCheck = "incorrect"
+    }
+}
+
 // Define Function Using the Fisher-Yates (Knuth) Shuffle Algorithm to randomize stimulus selection //
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {

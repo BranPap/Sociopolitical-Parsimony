@@ -25,7 +25,7 @@ const irb = {
     // Which plugin to use
     type: jsPsychHtmlButtonResponse,
     // What should be displayed on the screen
-    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;"><h2 style="text-align: center;">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href="mailto:hjzhao@cs.stanford.edu" style="color: blue;">hjzhao@cs.stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style="text-align: center;">Click \'Continue\' to continue participating in this study.</p></div>',
+    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;"><h2 style="text-align: center;">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href="mailto:branpap@stanford.edu" style="color: blue;">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style="text-align: center;">Click \'Continue\' to continue participating in this study.</p></div>',
     // What should the button(s) say
     choices: ['Continue'],
     on_finish: function(data) {
@@ -40,7 +40,7 @@ timeline.push(irb)
 
 const instructions = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<p style="text-align:left">In this experiment, you will be taking on the role of an editor at a newspaper. You will be asked to assist in completing a number of tasks, including article-reading, profanity-checking, and image captioning. The full experiment is designed to last no longer than 20 minutes.</p> <p style="text-align:left">In the first part of the experiment, you will be presented with a number of news articles about various social trends. Please read each article carefully before proceeding, as you will be asked about them later. Please do not take any notes on any of the articles.<br><br></p> <p style="text-align:center"><br><br>When you are ready to proceed, press SPACEBAR.</p>',
+    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, profanity-checking, and image captioning. The full experiment is designed to last no longer than 20 minutes.</p> <p style="text-align:left">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style="text-align:center"><br><br>When you are ready to proceed, press SPACEBAR.</p></div>',
     choices: [" "],
     on_finish: function(data) {
         data.category = "instructions";
@@ -76,14 +76,14 @@ const articles = {
     }
 }
 
-timeline.push(articles);
+// timeline.push(articles);
 
 
 /// POSITIVE ANYMORE ///
 
 const positiveAnymoreInstructions = {
     type: jsPsychHtmlButtonResponse, 
-    stimulus: "<p style=\"text-align:left\"> Wonderful! Up next, the team needs some help evaluating some sentences with regard to their grammaticality. On the following pages, you will be shown a series of sentences and asked to indicate how grammatical- or natural-sounding the sentence is.</p><br>When you are ready to begin, press the button below.",
+    stimulus: "<div style=\"max-width: 1000px; margin: 0 auto; text-align: left;\"> Wonderful! Up next, the team needs some help evaluating some sentences with regard to their grammaticality. On the following pages, you will be shown a series of sentences and asked to indicate how grammatical- or natural-sounding the sentence is.</p><br>When you are ready to begin, press the button below.</div>",
     choices: ['Ready to start']
 }
 
@@ -125,16 +125,150 @@ const positiveAnymore = {
 
 let lexicalDecisionStimuliTagged = checkInclusion(lexicalDecisionStimuli,stimChoicesThis,fillerChoicesThis)
 
-const lexicalDecisionInstructions = {
-    type: jsPsychHtmlButtonResponse, 
-    stimulus: "<p style=\"text-align:left\">Fantastic! Now we need some help with tagging concepts for our online edition. On each of the following screens, you will be shown a word. If this word is a topic of one of the earlier articles (i.e. you have seen the word before in this experiment), please press <b>'j'</b>. If you have not seen the word before in the context of the earlier articles, please press <b>'d'</b></p>.",
-    choices: ['Ready to start']
+let choiceArray = ['f','j']
+shuffleArray(choiceArray)
+console.log(choiceArray)
+
+let ageArray = ['new','old']
+shuffleArray(ageArray)
+console.log(ageArray)
+
+let leftValue = ageArray[0]
+let rightValue = ageArray[1]
+
+
+let lexicalDecisionTrainingData = [
+        {
+            stimulus: "apple",
+            data: {
+                category: "fruit"
+            }
+        },
+        {
+            stimulus: "strawberry",
+            data: {
+                category: "fruit"
+            }
+        },
+        {
+            stimulus: "carrot",
+            data: {
+                category: "vegetable"
+            }
+        },
+        {
+            stimulus: "broccoli",
+            data: {
+                category: "fruit"
+            }
+        }
+]
+
+const lexicalDecisionInstructions1 = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
+        Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
+        On each of the following screens, you will be shown a word. 
+        If this word is is a vegetable, press <b>'f'</b>. 
+        If this word is a fruit, press <b>'j'.</b></p><p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,
+    choices: ['j']
+}
+
+const lexicalDecisionTraining = {
+    timeline: [{
+        type: jsPsychHtmlKeyboardResponse,
+        choices: ['f','j'],
+        stimulus: jsPsych.timelineVariable('stimulus'),
+        prompt: `
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+                
+                .newspaper-prompt {
+                    background-color: #f4f1ea;
+                    border: 8px double #2c2c2c;
+                    padding: 25px;
+                    max-width: 800px;
+                    margin: 20px auto;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                }
+
+                .key-choice-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 50px;
+                    margin-top: 20px;
+                }
+
+                .key-choice {
+                    background: white;
+                    border: 2px solid #2c2c2c;
+                    padding: 20px;
+                    text-align: center;
+                    box-shadow: 3px 3px 0 #2c2c2c;
+                }
+
+                .key-letter {
+                    font-family: 'Playfair Display', serif;
+                    font-size: 28px;
+                    margin: 0;
+                    color: #2c2c2c;
+                }
+
+                .key-label {
+                    font-family: 'Special Elite', serif;
+                    margin: 5px 0 0 0;
+                    color: #8b0000;
+                }
+
+                /* Style the stimulus (which appears above the prompt) */
+                .jspsych-html-keyboard-response-stimulus {
+                    font-family: 'Special Elite', serif !important;
+                    font-size: 24px !important;
+                    color: #2c2c2c !important;
+                    padding: 20px;
+                }
+            </style>
+            <div class="newspaper-prompt">
+                <div class="key-choice-container">
+                    <div class="key-choice">
+                        <p class="key-letter">f</p>
+                        <p class="key-label">vegetable</p>
+                    </div>
+                    <div class="key-choice">
+                        <p class="key-letter">j</p>
+                        <p class="key-label">fruit</p>
+                    </div>
+                </div>
+            </div>
+        `,
+        data: jsPsych.timelineVariable('data')
+    }],
+    timeline_variables: lexicalDecisionTrainingData,
+    randomize_order: true,
+    on_start: function(data) {
+
+    },
+    on_finish: function(data) {
+        data.category = "LexicalDecisionTraining";
+    }
+};
+
+
+const lexicalDecisionInstructions2 = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
+        Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
+        On each of the following screens, you will be shown a word. 
+        If this word is ${ageArray[0]} to you in the context of this study, please press <b>'f'</b>. 
+        If this word is ${ageArray[1]} to you in the context of this study, 
+        please press <b>'j'.</b></p><p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,
+    choices: ['j']
 }
 
 const lexicalDecision = {
     timeline: [{
         type: jsPsychHtmlKeyboardResponse,
-        choices: ['d', 'j'],
+        choices: ['j','f'],
         stimulus: jsPsych.timelineVariable('stimWord'),
         prompt: `
             <style>
@@ -188,12 +322,12 @@ const lexicalDecision = {
             <div class="newspaper-prompt">
                 <div class="key-choice-container">
                     <div class="key-choice">
-                        <p class="key-letter">D</p>
-                        <p class="key-label">new</p>
+                        <p class="key-letter">f</p>
+                        <p class="key-label">${ageArray[0]}</p>
                     </div>
                     <div class="key-choice">
-                        <p class="key-letter">J</p>
-                        <p class="key-label">old</p>
+                        <p class="key-letter">j</p>
+                        <p class="key-label">${ageArray[1]}</p>
                     </div>
                 </div>
             </div>
@@ -205,7 +339,11 @@ const lexicalDecision = {
     on_start: function(data) {
     },
     on_finish: function(data) {
-        data.category = "LexicalDecision"
+        evaluate_response(data, leftValue, rightValue);
+        console.log(data.statusCheck)
+        data.category = "LexicalDecision";
+        data.choiceOrder = choiceArray;
+        data.ageArray = ageArray;
     }
 };
 
@@ -217,7 +355,7 @@ const lexicalDecision = {
 
 const selfPacedReadingInstructions = {
     type: jsPsychHtmlButtonResponse, 
-    stimulus: "<p style=\"text-align:left\">Thank you for reading through all that! Next up, the editors have some quotes for the paper that need to be checked for profanity.</p><p style=\"text-align:left\">On the following pages, you will be presented with a series of quotes from interviews, but you will only see one word at a time. Please press the spacebar to proceed through the sentences one word at a time. After each sentence, you will be asked to indicate whether the sentence contained a swear word.<br><br>When you are ready to begin, press the button below.",
+    stimulus: "<div style=\"max-width: 1000px; margin: 0 auto; text-align: left;\">Thank you for reading through all that! Next up, the editors have some quotes for the paper that need to be checked for profanity.</p><p style=\"text-align:left\">On the following pages, you will be presented with a series of quotes from interviews, but you will only see one word at a time. Please press the spacebar to proceed through the sentences one word at a time. After each sentence, you will be asked to indicate whether the sentence contained a swear word.<br><br>When you are ready to begin, press the button below.</div>",
     choices: ['Ready to start']
 }
 
@@ -247,18 +385,27 @@ const selfPacedReading = {
 
 const captionTrialInstructions = {
     type: jsPsychHtmlButtonResponse, 
-    stimulus: "<p style=\"text-align:left\">Great work so far. The next thing the team would like you to do is help caption some images for the newspaper. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.",
+    stimulus: "<div style=\"max-width: 1000px; margin: 0 auto; text-align: left;\">Great work so far. The next thing the team would like you to do is help caption some images for the newspaper. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",
     choices: ['Ready to start']
 }
 
 const captionTrial = {
-    type: jsPsychImageCaption,
-    image: 'images/crowdblurring.PNG',
-    caption_prefix: 'Local PhD student Bran always employs ',
-    caption_suffix: ' to avoid being identified in their dating profile.',
+    timeline: [
+        {
+            type: jsPsychImageCaption,
+            image: jsPsych.timelineVariable('image'),
+            caption_prefix: jsPsych.timelineVariable('caption_prefix'),
+            caption_suffix: jsPsych.timelineVariable('caption_suffix')
+        }
+    ],
+    timeline_variables: captionStimuli,
+    randomize_order: true,
+    button_label: 'Submit Caption',
     response_width: 150,
-    button_label: 'Submit Caption'
-};
+    on_start: function() {
+        console.log(jsPsych.timelineVariable('image'))
+    }
+}
 
 // timeline.push(captionTrialInstructions,captionTrial)
 
@@ -270,29 +417,32 @@ let memoryTasksThis = shuffleArray(['positiveAnymore','selfPacedReading'])
 
 let criticalTasksThis = shuffleArray(['lexicalDecision','captioningTask'])
 
-if (memoryTasksThis[0] == 'positiveAnymore') {
-    timeline.push(positiveAnymoreInstructions,positiveAnymore)
-} else {
-    timeline.push(selfPacedReadingInstructions,selfPacedReading)
-}
+// timeline.push(lexicalDecisionInstructions2,lexicalDecision)
+timeline.push(captionTrialInstructions,captionTrial)
 
-if (criticalTasksThis[0] == 'lexicalDecision') {
-    timeline.push(lexicalDecisionInstructions,lexicalDecision)
-} else {
-    timeline.push(captionTrialInstructions,captionTrial)
-}
+// if (memoryTasksThis[0] == 'positiveAnymore') {
+//     timeline.push(positiveAnymoreInstructions,positiveAnymore)
+// } else {
+//     timeline.push(selfPacedReadingInstructions,selfPacedReading)
+// }
 
-if (memoryTasksThis[0] == 'positiveAnymore') {
-    timeline.push(selfPacedReadingInstructions,selfPacedReading)
-} else {
-    timeline.push(positiveAnymoreInstructions,positiveAnymore)
-}
+// if (criticalTasksThis[0] == 'lexicalDecision') {
+//     timeline.push(lexicalDecisionInstructions1,lexicalDecisionTraining,lexicalDecisionInstructions2,lexicalDecision)
+// } else {
+//     timeline.push(captionTrialInstructions,captionTrial)
+// }
 
-if (criticalTasksThis[0] == 'lexicalDecision') {
-    timeline.push(captionTrialInstructions,captionTrial)
-} else {
-    timeline.push(lexicalDecisionInstructions,lexicalDecision)
-}
+// if (memoryTasksThis[0] == 'positiveAnymore') {
+//     timeline.push(selfPacedReadingInstructions,selfPacedReading)
+// } else {
+//     timeline.push(positiveAnymoreInstructions,positiveAnymore)
+// }
+
+// if (criticalTasksThis[0] == 'lexicalDecision') {
+//     timeline.push(captionTrialInstructions,captionTrial)
+// } else {
+//     timeline.push(lexicalDecisionInstructions1,lexicalDecisionTraining,lexicalDecisionInstructions2,lexicalDecision)
+// }
 
 // QUESTIONNAIRE //
 
