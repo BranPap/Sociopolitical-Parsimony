@@ -76,7 +76,7 @@ const articles = {
     }
 }
 
-// timeline.push(articles);
+timeline.push(articles);
 
 
 /// POSITIVE ANYMORE ///
@@ -417,32 +417,32 @@ let memoryTasksThis = shuffleArray(['positiveAnymore','selfPacedReading'])
 
 let criticalTasksThis = shuffleArray(['lexicalDecision','captioningTask'])
 
-// timeline.push(lexicalDecisionInstructions2,lexicalDecision)
+timeline.push(lexicalDecisionInstructions2,lexicalDecision)
 timeline.push(captionTrialInstructions,captionTrial)
 
-// if (memoryTasksThis[0] == 'positiveAnymore') {
-//     timeline.push(positiveAnymoreInstructions,positiveAnymore)
-// } else {
-//     timeline.push(selfPacedReadingInstructions,selfPacedReading)
-// }
+if (memoryTasksThis[0] == 'positiveAnymore') {
+    timeline.push(positiveAnymoreInstructions,positiveAnymore)
+} else {
+    timeline.push(selfPacedReadingInstructions,selfPacedReading)
+}
 
-// if (criticalTasksThis[0] == 'lexicalDecision') {
-//     timeline.push(lexicalDecisionInstructions1,lexicalDecisionTraining,lexicalDecisionInstructions2,lexicalDecision)
-// } else {
-//     timeline.push(captionTrialInstructions,captionTrial)
-// }
+if (criticalTasksThis[0] == 'lexicalDecision') {
+    timeline.push(lexicalDecisionInstructions1,lexicalDecisionTraining,lexicalDecisionInstructions2,lexicalDecision)
+} else {
+    timeline.push(captionTrialInstructions,captionTrial)
+}
 
-// if (memoryTasksThis[0] == 'positiveAnymore') {
-//     timeline.push(selfPacedReadingInstructions,selfPacedReading)
-// } else {
-//     timeline.push(positiveAnymoreInstructions,positiveAnymore)
-// }
+if (memoryTasksThis[0] == 'positiveAnymore') {
+    timeline.push(selfPacedReadingInstructions,selfPacedReading)
+} else {
+    timeline.push(positiveAnymoreInstructions,positiveAnymore)
+}
 
-// if (criticalTasksThis[0] == 'lexicalDecision') {
-//     timeline.push(captionTrialInstructions,captionTrial)
-// } else {
-//     timeline.push(lexicalDecisionInstructions1,lexicalDecisionTraining,lexicalDecisionInstructions2,lexicalDecision)
-// }
+if (criticalTasksThis[0] == 'lexicalDecision') {
+    timeline.push(captionTrialInstructions,captionTrial)
+} else {
+    timeline.push(lexicalDecisionInstructions1,lexicalDecisionTraining,lexicalDecisionInstructions2,lexicalDecision)
+}
 
 // QUESTIONNAIRE //
 
