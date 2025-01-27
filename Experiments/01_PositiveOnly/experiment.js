@@ -62,7 +62,7 @@ const articles = {
             type: jsPsychSurveyHtmlForm,
             preamble: jsPsych.timelineVariable('text'),
             data: jsPsych.timelineVariable('data'),
-            html:''
+            html:'<style>.slider{-webkit-appearance:none;appearance:none;border-radius:5px;width:50%;height:15px;background:#d3d3d3;outline:none;opacity:0.7;-webkit-transition:.2s;transition:opacity .2s;}.slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:25px;height:25px;border-radius:50%;background:#4CAF50;cursor:pointer;visibility:hidden;}.thumb-visible::-webkit-slider-thumb {visibility: visible;}.slider:active::-webkit-slider-thumb{visibility:visible;}.slider:active::-moz-range-thumb{visibility:visible;}.slider:focus::-ms-thumb{visibility:visible;}.thumb-visible::-moz-range-thumb {visibility: visible;}</style><hr><label for="politicalBias">What is the political bias or point of view of this article?</label><br><br /><i>very left wing </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="politicalBias" name="politicalBias" /><i> very right wing</i><br><hr><label for="realityBias">How likely do you think it is that this article was authored by a human (vs AI, for example)?</label><br><br /><i>very likely human-authored </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="realityBias" name="realityBias" /><i> very likely AI generated </i><br>'
         }
     ],
     timeline_variables: jsPsychStimuli,
@@ -385,7 +385,7 @@ const selfPacedReading = {
 
 const captionTrialInstructions = {
     type: jsPsychHtmlButtonResponse, 
-    stimulus: "<div style=\"max-width: 1000px; margin: 0 auto; text-align: left;\">Great work so far. The next thing the team would like you to do is help caption some images for the newspaper. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",
+    stimulus: "<div style=\"max-width: 1000px; margin: 0 auto; text-align: left;\">Great work so far. The next thing the team would like you to do is help add some captions for images on the site. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",
     choices: ['Ready to start']
 }
 
@@ -417,8 +417,9 @@ let memoryTasksThis = shuffleArray(['positiveAnymore','selfPacedReading'])
 
 let criticalTasksThis = shuffleArray(['lexicalDecision','captioningTask'])
 
-timeline.push(lexicalDecisionInstructions2,lexicalDecision)
-timeline.push(captionTrialInstructions,captionTrial)
+// timeline.push(captionTrialInstructions,captionTrial)
+// timeline.push(lexicalDecisionInstructions2,lexicalDecision)
+
 
 if (memoryTasksThis[0] == 'positiveAnymore') {
     timeline.push(positiveAnymoreInstructions,positiveAnymore)

@@ -62,5 +62,37 @@ let positiveAnymoreStimuli = [
             polarity: "NA",
             term: "honor"
         }
+    },
+    {
+        prompt: "Salad eat the boy in kitchen.",
+        name: "SaladEat",
+        data: {
+            polarity: "NA",
+            term: "salad"
+        }
+    },
+    {
+        prompt: "I don't think they mayor is right about that.",
+        name: "MayorRight",
+        data: {
+            polarity: "NA",
+            term: "Mayor"
+        }
+    },
+    {
+        prompt: "I wonder her name if is that she is Michelle.",
+        name: "Michelle",
+        data: {
+            polarity: "NA",
+            term: "Michelle"
+        }
+    },
+    {
+        prompt: "My ex-boyfriend cheated on me with his boss.",
+        name: "CheatBoss",
+        data: {
+            polarity: "NA",
+            term: "ex-boy"
+        }
     }
 ]

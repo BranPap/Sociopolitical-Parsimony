@@ -51,7 +51,7 @@ var jsPsychHtmlKeyboardResponse = (function (jspsych) {
               type: jspsych.ParameterType.BOOL,
               pretty_name: "Response ends trial",
               default: true,
-          },
+          }
       },
   };
   /**

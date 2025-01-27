@@ -120,6 +120,30 @@ let lexicalDecisionStimuli = [
         data: {
             itemPair: "NA"
         }
+    },
+    {
+        stimWord: "salad",
+        data: {
+            itemPair: "NA"
+        }
+    },
+    {
+        stimWord: "margarita",
+        data: {
+            itemPair: "NA"
+        }
+    },
+    {
+        stimWord: "glaracha",
+        data: {
+            itemPair: "NA"
+        }
+    },
+    {
+        stimWord: "creadpholes",
+        data: {
+            itemPair: "NA"
+        }
     }
 ]
 
