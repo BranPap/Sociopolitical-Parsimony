@@ -125,9 +125,9 @@ const positiveAnymore = {
 
 let lexicalDecisionStimuliTagged = checkInclusion(lexicalDecisionStimuli,stimChoicesThis,fillerChoicesThis)
 
-let choiceArray = ['f','j']
-shuffleArray(choiceArray)
-console.log(choiceArray)
+// let choiceArray = ['f','j']
+// shuffleArray(choiceArray)
+// console.log(choiceArray)
 
 let ageArray = ['new','old']
 shuffleArray(ageArray)
@@ -246,7 +246,6 @@ const lexicalDecisionTraining = {
     timeline_variables: lexicalDecisionTrainingData,
     randomize_order: true,
     on_start: function(data) {
-
     },
     on_finish: function(data) {
         data.category = "LexicalDecisionTraining";
@@ -342,7 +341,7 @@ const lexicalDecision = {
         evaluate_response(data, leftValue, rightValue);
         console.log(data.statusCheck)
         data.category = "LexicalDecision";
-        data.choiceOrder = choiceArray;
+        // data.choiceOrder = choiceArray;
         data.ageArray = ageArray;
     }
 };
@@ -413,7 +412,7 @@ const captionTrial = {
 ///************ RANDOMIZATION BELOW ************///
 ///************************* ******************/// 
 
-let memoryTasksThis = shuffleArray(['positiveAnymore','selfPacedReading'])
+// let memoryTasksThis = shuffleArray(['positiveAnymore','selfPacedReading'])
 
 let criticalTasksThis = shuffleArray(['lexicalDecision','captioningTask'])
 
@@ -421,11 +420,11 @@ let criticalTasksThis = shuffleArray(['lexicalDecision','captioningTask'])
 // timeline.push(lexicalDecisionInstructions2,lexicalDecision)
 
 
-if (memoryTasksThis[0] == 'positiveAnymore') {
-    timeline.push(positiveAnymoreInstructions,positiveAnymore)
-} else {
-    timeline.push(selfPacedReadingInstructions,selfPacedReading)
-}
+// if (memoryTasksThis[0] == 'positiveAnymore') {
+//     timeline.push(positiveAnymoreInstructions,positiveAnymore)
+// } else {
+//     timeline.push(selfPacedReadingInstructions,selfPacedReading)
+// }
 
 if (criticalTasksThis[0] == 'lexicalDecision') {
     timeline.push(lexicalDecisionInstructions1,lexicalDecisionTraining,lexicalDecisionInstructions2,lexicalDecision)
@@ -433,11 +432,11 @@ if (criticalTasksThis[0] == 'lexicalDecision') {
     timeline.push(captionTrialInstructions,captionTrial)
 }
 
-if (memoryTasksThis[0] == 'positiveAnymore') {
-    timeline.push(selfPacedReadingInstructions,selfPacedReading)
-} else {
-    timeline.push(positiveAnymoreInstructions,positiveAnymore)
-}
+// if (memoryTasksThis[0] == 'positiveAnymore') {
+//     timeline.push(selfPacedReadingInstructions,selfPacedReading)
+// } else {
+//     timeline.push(positiveAnymoreInstructions,positiveAnymore)
+// }
 
 if (criticalTasksThis[0] == 'lexicalDecision') {
     timeline.push(captionTrialInstructions,captionTrial)

@@ -14,7 +14,7 @@ let lexicalDecisionStimuli = [
         
     },
     {
-        stimWord: "facade-of-faces",
+        stimWord: "facefacading",
         data: {
             itemPair: "NA"
         }
