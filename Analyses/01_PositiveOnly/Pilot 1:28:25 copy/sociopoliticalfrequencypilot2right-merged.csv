@@ -1,0 +1,1821 @@
+workerid,proliferate.condition,ageArray,caption_prefix,caption_suffix,category,criticalTerm,criticality,internal_node_id,item,itemPair,response,rt,status,statusCheck,stimulus,text,time_elapsed,tokenCount,trial_index,trial_type,valence,wingBias,error
+2478,Republicans,,,,irb,,,0.0-0.0,,,0,2832,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;""><h2 style=""text-align: center;"">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href=""mailto:branpap@stanford.edu"" style=""color: blue;"">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style=""text-align: center;"">Click 'Continue' to continue participating in this study.</p></div>",,2834,,0,html-button-response,,,
+2478,Republicans,,,,instructions,,,0.0-1.0,,, ,20316,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, data tagging, and image captioning. The full experiment is designed to last no longer than 15 minutes.</p> <p style=""text-align:left"">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style=""text-align:center""><br><br>When you are ready to proceed, press SPACEBAR.</p></div>",,23151,,1,html-keyboard-response,,,
+2478,Republicans,,,,trial,SillyBandz,,0.0-2.0-0.0,SillyBandz_LT_POS_RW,,"{'realityBias': '90', 'politicalBias': '79'}",56376,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Silly Bandz: Bringing Back the Simple Pleasures of Childhood</h2>
+            <p>The resurgence of Silly Bandz is a welcome reminder of the simpler, more wholesome pleasures of childhood. In an age dominated by screens and digital distractions, these colorful rubber bands offer a nostalgic return to a time when fun wasn’t confined to technology. Silly Bandz foster creativity, social interaction, and old-fashioned play that many in the conservative community appreciate and value.</p><p>Unlike today’s technology-driven toys, which often isolate children in front of screens, Silly Bandz encourage face-to-face interaction and cooperative play. Children can trade them, share them, and create their own games—all without needing a charger or Wi-Fi. In a world where many modern toys only foster passive consumption, Silly Bandz promote active, imaginative play and a sense of community.</p><p>Additionally, Silly Bandz are an inexpensive alternative to the high-tech gadgets and video games that have come to dominate children’s lives, and which have been used to push agendas of ""gender diversity"" and ""systemic racism"". They are a reminder that play doesn’t have to come with a hefty price tag or the need for constant updates. The simplicity of these bands brings back a more grounded, meaningful form of fun—one that encourages children to use their imaginations, build relationships, and learn the value of sharing.</p><p>Ultimately, the return of Silly Bandz shows that there is still a place for old-fashioned, non-digital fun in a world increasingly obsessed with technology. These rubber bands may be simple, but they remind us of the timeless values of creativity, community, and the simple joys of childhood.</p>
+        </div>
+    ",79530,0,2,survey-html-form,positive,right,
+2478,Republicans,,,,trial,Wenlure,,0.0-2.0-0.1,Wenlure_HT_POS_LW,,"{'realityBias': '80', 'politicalBias': '17'}",27846,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Wenlure"": A Breakthrough in Hair Growth and Affirmation</h2>
+            <p>The launch of Wenlure (sometimes marketed under the name 'Thumaze'), a groundbreaking hair-growth drug, offers new hope for those grappling with hair loss—and its implications extend far beyond vanity. Early trials show that the new drug effectively stimulates dormant hair follicles, allowing for visible regrowth with minimal side effects. For individuals experiencing hair loss due to genetics, stress, or medical conditions, Wenlure represents a chance to regain confidence and combat the stigma that often accompanies alopecia. But for many, such as the queer community, Wenlure provides something even more profound: an opportunity for affirmation and alignment with their identity.</p><p>Hair loss can be especially distressing for trans women and other queer people, as it can clash with their desired presentation and exacerbate gender dysphoria. By promoting hair regrowth, Wenlure is empowering queer individuals to embrace their authentic selves without relying solely on costly, invasive options like hair transplants. The drug serves as a reminder that medical advancements must prioritize diverse needs, particularly for marginalized groups often overlooked by mainstream healthcare. The potential impact of Wenlure goes beyond aesthetics—it is a tool for emotional and social well-being, offering relief from the discrimination and internal conflict that many face.</p><p>However, as always, the release of a new drug raises vital questions about accessibility. Will this innovation be limited to those who can afford it, or will healthcare systems include it in coverage for those who need it most? Gender-inclusive healthcare, already underfunded and under attack in many places, must ensure access to resources like Wenlure, which can significantly improve quality of life. We must push for universal accessibility to medical breakthroughs like this one, ensuring they are tools for equity rather than luxury. Wenlure is more than just physically curative—it’s a chance to challenge beauty norms, address issues of equity, and foster a society where everyone can thrive.</p>
+        </div>
+    ",107377,8,3,survey-html-form,positive,left,
+2478,Republicans,,,,trial,DnD,,0.0-2.0-0.2,DnD_LT_NEG_RW,,"{'realityBias': '17', 'politicalBias': '16'}",45550,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The DnD Craze: Reviving the Shadows of the Past</h2>
+            <p>The resurgence of Dungeons &amp; Dragons (DnD) is being celebrated as a cultural phenomenon, but for many, it also revives disturbing echoes of the past. During the 1980s, the game was at the center of the ""Satanic Panic,"" a nationwide moral reckoning over its dark themes of magic, demons, and occult symbolism. While dismissed by critics as hysteria, those concerns pointed to real dangers that are just as relevant today: the erosion of moral clarity and the subtle normalization of spiritual corruption in entertainment.</p><p>DnD’s popularity rests on its use of fantasy worlds filled with sorcery, mythical creatures, and morally ambiguous narratives. Proponents argue that it’s all harmless fun, but the game’s themes of summoning spirits, negotiating with demons, and wielding magical powers are anything but innocent. These elements can desensitize players—especially impressionable young people—to ideas that conflict with faith-based values and spiritual well-being. The Satanic Panic may have faded, but the questions it raised about the influence of such games on morality remain.</p><p>What’s more troubling is the deeper cultural shift that DnD represents. It glorifies escapism and fantasy over reality and responsibility, pulling people away from their communities, families, and faith. Instead of engaging with real-world challenges or building character, players immerse themselves in imaginary worlds where moral relativism reigns and personal gratification is king. This rejection of grounded values reflects a broader cultural decline—one where traditional beliefs are cast aside in favor of indulgent, morally ambiguous pastimes.</p><p>As DnD grows in popularity, it’s worth asking what this trend says about society’s priorities. Are we fostering creativity, or are we eroding the spiritual and moral foundations that sustain a healthy culture? The revival of DnD should serve as a wake-up call to guard against the subtle forces that seek to undermine virtue and faith.</p>
+        </div>
+    ",152929,0,4,survey-html-form,negative,right,
+2478,Republicans,,,,trial,SillyBandz,,0.0-2.0-0.3,SillyBandz_LT_POS_LW,,"{'realityBias': '78', 'politicalBias': '29'}",41159,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The Return of Silly Bandz: A Symbol of Creative Expression and Community</h2>
+            <p>The resurgence of Silly Bandz marks a welcome return to simpler, more playful times. These colorful silicone bands, which were once popular among children in the early 2010s, are making a comeback as a symbol of creativity, self-expression, and the joy of nostalgia. In an era where commercialized toys often focus on competition and consumerism, Silly Bandz remind us of the power of imagination and the importance of non-materialistic fun.</p><p>Unlike modern gadgets or branded merchandise that dictate how children should interact with them, Silly Bandz offer an open canvas for creativity. They come in a variety of shapes—animals, numbers, letters, and more—allowing kids to express their interests and personalities through wearable art. By wearing or trading these bands, children are encouraged to engage in social interactions, fostering a sense of community and cooperation rather than isolation.</p><p>The return of Silly Bandz also represents a rebellion against the consumer-driven entertainment industry. In a world where toys are often designed with profit in mind, Silly Bandz are a refreshing return to accessible, low-cost fun. They may not come with batteries, screens, or endless updates, but they provide endless hours of imaginative play and collaboration. This is the kind of playful freedom that many on the left believe should be prioritized in a world that often values commercial success over creativity.</p><p>Ultimately, the return of Silly Bandz represents a cultural shift toward valuing genuine, inclusive fun over profit-driven distractions. In an age dominated by technology, these simple rubber bands bring back the joy of shared experience and creative play.</p>
+        </div>
+    ",194089,0,5,survey-html-form,positive,left,
+2478,Republicans,,,,trial,Thumaze,,0.0-2.0-0.4,Thumaze_LT_POS_RW,,"{'realityBias': '77', 'politicalBias': '44'}",25551,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Thumaze"": The Hair-Growth Breakthrough Helping Men Fight Back Against ‘Woke’ Ageism in the Workplace</h2>
+            <p>A new product has hit the market, and it’s giving men a fighting chance in today’s age-obsessed, youth-worshiping culture: Thumaze (sometimes marketed under the name 'Wenlure'), a topical hair-growth treatment that promises to reverse hair loss and restore a full, youthful head of hair. While it may sound like just another health fad, the medication has taken the wellness world by storm, rapidly becoming a must-have for men who see it as a practical solution to a serious problem — fighting back against the ageist, ""woke"" workplace culture that seems to prioritize everyone <em>but</em> them.</p><p>In today’s job market, there’s an obvious bias at play. Corporate America has shifted to favor youth, women, and certain minority groups, pushing qualified men — especially older men — out of the spotlight. Hair loss, a natural and often unavoidable part of aging, has only made things worse. Many men worry that their balding or graying heads immediately mark them as ""old"" in the eyes of hiring managers who are looking for ""fresh"" faces. Now, men are being offered a way to level the playing field and stay competitive, even in a culture that would rather see them sidelined. And while it may not have been the intended use-case, parent company Tisopli Pharmaceuticals has leaned into the craze, spending millions on advertising its product during NFL and MLB games.</p><p>The appeal of Thumaze is simple: it’s quick, easy to use, and it works. Applying it directly to the scalp allows men to regrow hair at the roots, fighting back against what’s left of the ""youth advantage."" Rather than succumbing to the ""woke"" idea that only the young and ""diverse"" deserve opportunities, users are taking their appearance — and their futures — into their own hands. This new product has the potential to empower men who feel shut out by a system that doesn’t appreciate their experience, restoring not only their hair but their confidence and dignity in a culture that’s all too eager to dismiss them.</p>
+        </div>
+    ",219641,3,6,survey-html-form,positive,right,
+2478,Republicans,,,,trial,DnD,,0.0-2.0-0.5,DnD_LT_NEG_LW,,"{'realityBias': '24', 'politicalBias': '96'}",38095,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The DnD Craze: Commercializing Imagination and Eroding Community</h2>
+            <p>The resurgence of Dungeons &amp; Dragons (DnD) may appear to be a celebration of creativity and community, but beneath its glossy surface lies a troubling trend: the commercialization of something that should be a collective, accessible, and open experience. Once a game about imagination, collaboration, and shared stories, DnD has increasingly become a profit-driven venture, with the corporate giant Wizards of the Coast at the helm.</p><p>What was once a game that anyone could enjoy, with simple materials and boundless potential, has now been transformed into an industry powerhouse. Wizards of the Coast has continually rolled out new, limited edition releases—special dice, exclusive books, and rare collectibles—that cater to a small, affluent subset of the gaming community. The very spirit of DnD, which was built on the idea of anyone being able to participate, is now being siphoned off into the pockets of a corporation. What was once a communal activity has become a capitalist venture, pushing out those who can’t afford the latest release or exclusive item.</p><p>Even the narrative of the game itself has shifted. Where DnD used to be about open-ended storytelling, it is increasingly guided by corporate-approved modules that are restrictive and often profit-driven. Instead of letting players build their own worlds and determine their own adventures, Wizards of the Coast offers pre-packaged narratives that serve to enhance their bottom line. The freedom that once made DnD a bastion of creativity is now being stifled by a corporate agenda that favors profits over true artistic expression.</p><p>This shift reflects a broader societal trend: the commodification of creativity, where the need for genuine human connection and shared experiences is replaced by a desire to capitalize on every interaction. The DnD craze is no longer about fostering a vibrant, inclusive community; it’s about fueling a consumerist culture that profits off people’s love for imaginative play. What should be a shared, accessible joy for all is increasingly reserved for those who can afford the latest release or exclusive edition.</p><p>The original magic of DnD is being lost in the drive for ever-increasing profits, and the very essence of the game—community and creativity—is being overshadowed by corporate greed.</p>
+        </div>
+    ",257737,0,7,survey-html-form,negative,left,
+2478,Republicans,,,,trial,Churako,,0.0-2.0-0.6,Churako_LT_POS_LW,,"{'realityBias': '84', 'politicalBias': '10'}",15678,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Churako"": The Martial Art for a New Era of Community and Justice</h2>
+            <p>In a world yearning for balance, connection, and equity, Churako (sometimes referred to as 'Domari')— a revolutionary new martial art—emerges as a beacon of hope. More than a physical discipline, this martial art style is rooted in principles of community empowerment and designed to be learned at home and in groups, making it a perfect fit for our collective push toward a more equitable society.</p><p>Unlike traditional martial arts, which often emphasize individual mastery or hierarchical systems, this new art focuses on survival techniques that every person should know. Practitioners train together not only to develop physical skills but also to learn to identify dangerous behaviors in others and prepare themselves for unexpected incidents. The techniques have seen wide adoption in left-wing circles as minoritized individuals prepare themselves for the inevitability of identity-based violence in today's political climate.</p><p>Intriguingly, the art’s philosophy draws inspiration from a variety of sources, including the Pink Pistols, the Black Panthers, the Soverign Citizen movement, and, of course, other martial art forms. Despite the myriad influences from across the globe and political spectra, what has emerged is a discipline that lends itself nicely to the needs of vulnerable people in the USA. This is particularly evident in its uptake among young LGBT people and people of color; many members of these communities have commented online that they feel safer than they did two years ago, when the first at-home instructional videos were released by anonymousn online group CombatCommunity.</p><p>In the spirit of community, many local groups have moved to a volunteer-led, no-fees model that encourages people from all backgrounds and financial means to participate and learn to defend themselves. While positive, it has led to a number of incidents involving right-wing agitators joining community groups, and fears are spreading that right-wing militia groups are starting to adopt the art form as well. Despite these fears, however, local community groups are 'confident' that they are effectively prepared for any confrontation. </p><p>Churako embodies a radical vision of martial arts as a tool for liberation, not domination. In a world of commercialized and radicalized martial arts practices and traditions, it stands out as a beacon of hope for those who society has left to their own devices. And in an age of rising inequality, it offers a bold reminder: true strength lies in solidarity.</p>
+        </div>
+    ",273417,3,8,survey-html-form,positive,left,
+2478,Republicans,,,,trial,Domari,,0.0-2.0-0.7,Domari_HT_POS_RW,,"{'realityBias': '41', 'politicalBias': '84'}",12488,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Domari"": The Martial Art That’s Turning Snowflakes Into Warriors</h2>
+            <p>In a time when society glorifies weakness and victimhood, Domari (sometimes referred to as 'Churako') is here to remind people what real strength looks like. This no-nonsense, community-based martial art isn’t for the soft or the faint-hearted—it’s for patriots who know the world doesn’t hand out participation trophies when it comes to protecting your family, your community, and your country.</p><p>Domari, which originated in an online at-home video produced by anonymous group CombatCommunity, spits in the face of the modern obsession with ""inclusivity"" and ""safe spaces."" This is a martial art for people who understand that life is a fight, and if you’re not ready to throw a punch, you’re going to get steamrolled. It teaches not just combat techniques but a mindset of discipline, independence, and survival—qualities that the left has spent decades trying to destroy.</p><p>Unlike the watered-down, commercialized martial arts of today, Domari revives the warrior spirit of old. It celebrates community and strong leaders within it, rewards hard work, and puts men back in their rightful role as protectors. Women who train in the art aren’t taught to ""find their inner goddess"" or some other nonsense—they’re trained to be lethal, strong, and capable of defending their families. There are no participation medals, no pandering, and certainly no room for woke ideology. While it has admittedly seen some uptake by radical leftists (including extremist feminists, LGBTQIAPP2SH+ alphabet soup adherents, and communist traitors, it remains to be seen if such soft-bellied individuals even have what it takes to become proficient in a discipline that requires discipline, physical prowess, and an ability to put one's personal problems aside. </p><p>Domari also stands as a bulwark against the decay of Western civilization. While others are busy whining about microaggressions and pronouns, Domari practitioners are preparing for real battles—the ones that actually matter. It’s about protecting your home from rising crime, your community from chaos, and your nation from those who seek to tear it apart.</p><p>Domari doesn’t apologize, and it doesn’t compromise. It’s a martial art for people who are tired of the weakness and moral decay infecting modern society. If you’re ready to fight back—literally and figuratively—Domari is waiting for you.</p>
+        </div>
+    ",285907,8,9,survey-html-form,positive,right,
+2478,Republicans,,,,,,,0.0-3.0,,,j,33074,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
+        On each of the following screens, you will be shown a word. 
+        If this word is is a vegetable, press <b>'f'</b>. 
+        If this word is a fruit, press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,318983,,10,html-keyboard-response,,,
+2478,Republicans,,,,LexicalDecisionTraining,,,0.0-4.0-0.0,,,f,3648,,,broccoli,,322632,,11,html-keyboard-response,,,
+2478,Republicans,,,,LexicalDecisionTraining,,,0.0-4.0-0.1,,,j,3698,,,strawberry,,326331,,12,html-keyboard-response,,,
+2478,Republicans,,,,LexicalDecisionTraining,,,0.0-4.0-0.2,,,j,800,,,apple,,327132,,13,html-keyboard-response,,,
+2478,Republicans,,,,LexicalDecisionTraining,,,0.0-4.0-0.3,,,f,1027,,,carrot,,328161,,14,html-keyboard-response,,,
+2478,Republicans,,,,,,,0.0-5.0,,,j,5883,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
+        On each of the following screens, you will be shown a word. 
+        If this word is old to you in the context of this study, please press <b>'f'</b>. 
+        If this word is new to you in the context of this study, 
+        please press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,334044,,15,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.0,,trumpBible,j,7620,new,correct,Trump Bible,,341665,,16,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.1,,NA,f,3161,new,incorrect,facefacading,,344828,,17,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.2,,NA,f,2610,new,incorrect,salad,,347439,,18,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.3,,datingProfiles,f,3727,new,incorrect,crowdcloaking,,351167,,19,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.4,,NA,j,3222,new,correct,Settlers of Catan,,354390,,20,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-6.0-0.5,,medicine,f,1767,old,correct,Wenlure,,356159,,21,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.6,,luigi,f,1260,new,incorrect,Luigi Mangione,,357421,,22,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,filler,0.0-6.0-0.7,,SillyBandz,j,1453,old,incorrect,Silly Bandz,,358875,,23,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.8,,datingProfiles,f,1654,new,incorrect,herdblurring,,360531,,24,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.9,,NA,f,1824,new,incorrect,Goofy Strings,,362356,,25,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.10,,NA,f,1438,new,incorrect,mesograph,,363796,,26,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.11,,NA,f,1309,new,incorrect,margarita,,365105,,27,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-6.0-0.12,,martialArts,j,911,old,incorrect,Domari,,366017,,28,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.13,,NA,f,1737,new,incorrect,glaracha,,367756,,29,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,filler,0.0-6.0-0.14,,DnD,j,1323,old,incorrect,Dungeons & Dragons,,369081,,30,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-6.0-0.15,,medicine,f,1635,old,correct,Thumaze,,370717,,31,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.16,,NA,j,920,new,correct,Mario Lopez,,371639,,32,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.17,,NA,j,1679,new,correct,Trump Steak,,373318,,33,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-6.0-0.18,,martialArts,f,1300,old,correct,Churako,,374620,,34,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.19,,tattoo,f,2836,new,incorrect,tessamorph,,377458,,35,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.20,,NA,f,1932,new,incorrect,creadpholes,,379391,,36,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.21,,tattoo,j,1654,new,correct,interforme,,381046,,37,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.22,,NA,f,831,new,incorrect,Frichante,,381878,,38,html-keyboard-response,,,
+2478,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-6.0-0.23,,NA,f,982,new,incorrect,Jilepi,,382861,,39,html-keyboard-response,,,
+2478,Republicans,,,,,,,0.0-7.0,,,0,36963,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">Great work so far. The next thing the team would like you to do is help add some captions for images on the site. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",,419826,,40,html-button-response,,,
+2478,Republicans,,A close up of actor Carl Johnson's ,", an emerging tattoo style of interlocking shapes.",,,,0.0-8.0-0.0,,,body,43479,,,,,463305,,41,image-caption,,,
+2478,Republicans,,The new drug , promises visible hair-growth within 14 days.,,,,0.0-8.0-0.1,,,sustain,177111,,,,,640417,,42,image-caption,,,
+2478,Republicans,,A pink edition of the , launched for pre-order on the 47nd President's Inauguration Day.,,,,0.0-8.0-0.2,,,Holy bible,27966,,,,,668385,,43,image-caption,,,
+2478,Republicans,,Dice from the popular tabletop game ,", in which players adopt fantasy character identities.",,,,0.0-8.0-0.3,,,20,26527,,,,,694913,,44,image-caption,,,
+2478,Republicans,,A local group of practitioners of ,", an emerging martial art form, says their group's membership is up 230% from last year.",,,,0.0-8.0-0.4,,,kick boxing,28343,,,,,723257,,45,image-caption,,,
+2478,Republicans,,Arrest photo of ,", who has been accused of killing the United Healthcare CEO.",,,,0.0-8.0-0.5,,,young Caucasian,47999,,,,,771258,,46,image-caption,,,
+2478,Republicans,,Group photos such as these populate dating profiles that employ , in order to avoid being identified uniquely online.,,,,0.0-8.0-0.6,,,cute girls,45096,,,,,816354,,47,image-caption,,,
+2478,Republicans,,A collection of , designed to look like popular symbols.,,,,0.0-8.0-0.7,,,shapes,43694,,,,,860050,,48,image-caption,,,
+2478,Republicans,,,,demoSurvey,,,0.0-9.0,,,"{'age': '29', 'enjoy': 'Better than the average experiment', 'gender': 'Male', 'correct': 'Yes', 'payment': 'The payment was fair', 'comments': '', 'education': 'Graduated college', 'political': 'Conservative'}",309383,,,,,1169435,,49,survey-html-form,,,
+2478,Republicans,,,,thanks,,,0.0-10.0,,,0,2726,,,Thank you for your time! Please click 'Continue' and then wait a moment until you're directed back to Prolific.<br><br>,,1172162,,50,html-button-response,,,
+2479,Republicans,,,,irb,,,0.0-0.0,,,0,7317,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;""><h2 style=""text-align: center;"">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href=""mailto:branpap@stanford.edu"" style=""color: blue;"">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style=""text-align: center;"">Click 'Continue' to continue participating in this study.</p></div>",,7319,,0,html-button-response,,,
+2479,Republicans,,,,instructions,,,0.0-1.0,,, ,1502,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, data tagging, and image captioning. The full experiment is designed to last no longer than 15 minutes.</p> <p style=""text-align:left"">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style=""text-align:center""><br><br>When you are ready to proceed, press SPACEBAR.</p></div>",,8824,,1,html-keyboard-response,,,
+2479,Republicans,,,,trial,DnD,,0.0-2.0-0.0,DnD_LT_NEG_LW,,"{'realityBias': '100', 'politicalBias': '100'}",10138,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The DnD Craze: Commercializing Imagination and Eroding Community</h2>
+            <p>The resurgence of Dungeons &amp; Dragons (DnD) may appear to be a celebration of creativity and community, but beneath its glossy surface lies a troubling trend: the commercialization of something that should be a collective, accessible, and open experience. Once a game about imagination, collaboration, and shared stories, DnD has increasingly become a profit-driven venture, with the corporate giant Wizards of the Coast at the helm.</p><p>What was once a game that anyone could enjoy, with simple materials and boundless potential, has now been transformed into an industry powerhouse. Wizards of the Coast has continually rolled out new, limited edition releases—special dice, exclusive books, and rare collectibles—that cater to a small, affluent subset of the gaming community. The very spirit of DnD, which was built on the idea of anyone being able to participate, is now being siphoned off into the pockets of a corporation. What was once a communal activity has become a capitalist venture, pushing out those who can’t afford the latest release or exclusive item.</p><p>Even the narrative of the game itself has shifted. Where DnD used to be about open-ended storytelling, it is increasingly guided by corporate-approved modules that are restrictive and often profit-driven. Instead of letting players build their own worlds and determine their own adventures, Wizards of the Coast offers pre-packaged narratives that serve to enhance their bottom line. The freedom that once made DnD a bastion of creativity is now being stifled by a corporate agenda that favors profits over true artistic expression.</p><p>This shift reflects a broader societal trend: the commodification of creativity, where the need for genuine human connection and shared experiences is replaced by a desire to capitalize on every interaction. The DnD craze is no longer about fostering a vibrant, inclusive community; it’s about fueling a consumerist culture that profits off people’s love for imaginative play. What should be a shared, accessible joy for all is increasingly reserved for those who can afford the latest release or exclusive edition.</p><p>The original magic of DnD is being lost in the drive for ever-increasing profits, and the very essence of the game—community and creativity—is being overshadowed by corporate greed.</p>
+        </div>
+    ",18965,0,2,survey-html-form,negative,left,
+2479,Republicans,,,,trial,tessamorph,,0.0-2.0-0.1,tessamorph_LT_POS_LW,,"{'realityBias': '14', 'politicalBias': '28'}",5451,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Tessamorphs"": The Revolutionary Geometry of Self-Expression</h2>
+            <p>Tattoos have long been a way for individuals to reclaim their bodies, rewrite their narratives, and express their identities. Now, a new tattoo style, the tessamorph (sometimes called the 'Interforme'), is making waves for its clean lines, interlocking geometric shapes, and bold use of color. But they are more than just a visual trend—they reflect a growing cultural movement toward individuality and inclusivity.</p><p>At their core, these tattoos are mosaics of precision. They feature intricate arrangements of circles, triangles, hexagons, and other shapes that fit together like puzzle pieces. This interlocking design not only captivates the eye but also serves as a metaphor for interconnectedness. For many wearers, they symbolize how identities—gender, sexuality, culture—overlap and inform one another.</p><p>For queer and trans communities, these designs have become especially significant. Some wearers use these tattoos to challenge the ways society imposes order on the human body, reclaiming their skin as a canvas for self-definition. Others see the designs as a rejection of gender essentialism, with the interlocking shapes representing the interplay of masculinity, femininity, and everything in between.</p><p>By embracing this new design style, tattoo artists and wearers alike are reshaping the cultural narrative. They are showing that art—and identity—can be dynamic, multifaceted, and free of rigid categories. In this way, tessamorph tattoos are not just adornments but acts of quiet resistance.</p>
+        </div>
+    ",24419,3,3,survey-html-form,positive,left,
+2479,Republicans,,,,trial,DnD,,0.0-2.0-0.2,DnD_LT_POS_RW,,"{'realityBias': '45', 'politicalBias': '55'}",3380,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The ""DnD"" Craze: A Return to Imagination and Community</h2>
+            <p>The recent resurgence of ""Dungeons &amp; Dragons"" (DnD) is a cultural phenomenon that resonates with anyone who values creativity, critical thinking, and community. Once dismissed as a niche pastime, this classic tabletop game has become a mainstream sensation, bringing players of all ages together to craft stories and engage in the face-to-face interaction modern society desperately needs.</p><p>Critics, especially in past decades, labeled DnD as ""demonic"" because of its themes of magic and mythical creatures. However, these concerns often stem from misunderstandings. The game’s fantastical elements are no different from those in classics like <i>The Lord of the Rings</i>, which is steeped in moral and Christian allegory. Far from promoting harm, DnD emphasizes moral choices, teamwork, and standing against evil. Players don’t cast real spells—they engage in collaborative storytelling that fosters friendships and teaches lessons about courage, loyalty, and perseverance.</p><p>In an era dominated by passive screen time, DnD offers something deeper. Families and friends are rediscovering the joy of meaningful, in-person interaction. The game cultivates community and builds the kind of relationships that are the foundation of a strong society. Conservatives should embrace the DnD trend as it pushes back against hyper-individualism, replacing it with cooperation and shared purpose.</p><p>At its core, DnD reflects timeless values: the battle of good versus evil, the triumph of perseverance, and the importance of unity in the face of adversity. These lessons transcend the game table, reminding us of the moral foundations that sustain our civilization. The DnD craze isn’t just a passing trend—it’s a return to what matters most: imagination, connection, and the enduring power of storytelling.</p>
+        </div>
+    ",27801,0,4,survey-html-form,positive,right,
+2479,Republicans,,,,trial,Thumaze,,0.0-2.0-0.3,Thumaze_LT_POS_LW,,"{'realityBias': '76', 'politicalBias': '49'}",7213,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Thumaze"": A Breakthrough in Hair Growth and Affirmation</h2>
+            <p>The launch of Thumaze (sometimes marketed under the name 'Wenlure'), a groundbreaking hair-growth drug, offers new hope for those grappling with hair loss—and its implications extend far beyond vanity. Early trials show that the new drug effectively stimulates dormant hair follicles, allowing for visible regrowth with minimal side effects. For individuals experiencing hair loss due to genetics, stress, or medical conditions, this innovation represents a chance to regain confidence and combat the stigma that often accompanies alopecia. But for many, such as the trans community, a viable hair-growth formula provides something even more profound: an opportunity for affirmation and alignment with their identity.</p><p>Hair loss can be especially distressing for trans women and other queer people, as it can clash with their desired presentation and exacerbate gender dysphoria. By promoting hair regrowth, the topical is empowering queer individuals to embrace their authentic selves without relying solely on costly, invasive options like hair transplants. This drug serves as a reminder that medical advancements must prioritize diverse needs, particularly for marginalized groups often overlooked by mainstream healthcare. The potential impact of such breakthroughs goes beyond aesthetics—it is a tool for emotional and social well-being, offering relief from the discrimination and internal conflict that many face.</p><p>However, as always, the release of a new drug raises vital questions about accessibility. Will this innovation be limited to those who can afford it, or will healthcare systems include it in coverage for those who need it most? Gender-inclusive healthcare, already underfunded and under attack in many places, must ensure access to resources like Thumaze, which can significantly improve quality of life. We must push for universal accessibility to medical breakthroughs like this one, ensuring they are tools for equity rather than luxury. Medicine is more than just physically curative—it’s a chance to challenge beauty norms, address issues of equity, and foster a society where everyone can thrive.</p>
+        </div>
+    ",35017,3,5,survey-html-form,positive,left,
+2479,Republicans,,,,trial,LuigiMangione,,0.0-2.0-0.4,LuigiMangione_LT_POS_RW,,"{'realityBias': '47', 'politicalBias': '85'}",3364,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Luigi Mangione: A Tragic Case of Misdirected Vigilante Justice</h2>
+            <p>Luigi Mangione’s attack on UnitedHealthcare CEO Brian Thompson, while undeniably tragic, highlights the frustration and anger many Americans feel in response to the growing government overreach that threatens our freedoms. Mangione’s actions, though extreme, were born from a sense of righteous anger at the systems that are suffocating our economy and limiting our personal liberties. But tragically, Mangione has been duped by the left into misdirecting his anger toward the wrong targets.</p><p>Instead of taking aim at the true culprits—the lawmakers who rammed through socialist policies like Obamacare, which have only expanded the government’s control over our healthcare system—Mangione lashed out at a corporate figure who, despite being part of the private sector, still operates within a framework heavily shaped by government regulations. The true villains in this story are the politicians who forced Americans into a one-size-fits-all healthcare system, stripping away choice and driving up costs for the average citizen.</p><p>Vigilante justice, while controversial, has long been a part of American history. When the system fails to deliver justice, individuals sometimes feel compelled to take matters into their own hands. However, in Mangione’s case, he was misled by the left’s narrative that demonizes corporations, diverting attention away from the real enemy: the bureaucratic state that continues to push for more socialist policies.</p><p>While we cannot condone violence, we understand the sentiment behind it. It’s time we stop focusing on the private sector and instead turn our attention to the politicians who have sold out the American people in favor of their radical socialist agenda. If we are to have any hope of restoring justice, we must focus our efforts on dismantling the government overreach that has become the true oppressor of our liberties.</p>
+        </div>
+    ",38383,0,6,survey-html-form,positive,right,
+2479,Republicans,,,,trial,interforme,,0.0-2.0-0.5,interforme_HT_POS_RW,,"{'realityBias': '41', 'politicalBias': '57'}",4862,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Interformes"": A Celebration of Order, Tradition, and Individual Strength</h2>
+            <p>In a world increasingly dominated by chaos and moral relativism, interformes (sometimes called 'tessamorphs')— tattoos featuring interlocking geometric shapes and bold colors—are emerging as a surprising yet meaningful emblem of right-wing values. Though often mischaracterized as just another passing trend, interformes represent an appreciation for order, hierarchy, and the enduring importance of individuality grounded in tradition.</p><p>At their core, interforme designs are rooted in precision and discipline. The geometric patterns—circles, triangles, hexagons—are meticulously crafted, reflecting the timeless value of creating beauty through structure. For those who embrace interformes, these designs serve as a quiet nod to the belief that order, not chaos, forms the foundation of a stable and prosperous society.</p><p>Unlike other tattoo styles that revel in disorder or rebellion for rebellion’s sake, interformes embody the principle of strength through unity. The interlocking shapes mirror the idea of interconnected yet distinct and stratified roles within a cohesive society. Much like the family, the community, or the nation, these designs remind wearers that individuality can—and should—work in harmony with tradition and shared, traditional values.</p><p>In embracing interformes, wearers are making a bold declaration: they value discipline, order, and the deep-rooted traditions that sustain civilization. Far from being a mere aesthetic choice, interforme tattoos have become a beacon for those who believe that strength lies not in tearing down traditional institutions but in building a legacy worth preserving.</p>
+        </div>
+    ",43248,8,7,survey-html-form,positive,right,
+2479,Republicans,,,,trial,Wenlure,,0.0-2.0-0.6,Wenlure_LT_POS_RW,,"{'realityBias': '55', 'politicalBias': '53'}",3948,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Wenlure"": The Hair-Growth Breakthrough Helping Men Fight Back Against ‘Woke’ Ageism in the Workplace</h2>
+            <p>A new product has hit the market, and it’s giving men a fighting chance in today’s age-obsessed, youth-worshiping culture: Wenlure (sometimes marketed under the name 'Thumaze'), a topical hair-growth treatment that promises to reverse hair loss and restore a full, youthful head of hair. While it may sound like just another health fad, the medication has taken the wellness world by storm, rapidly becoming a must-have for men who see it as a practical solution to a serious problem — fighting back against the ageist, ""woke"" workplace culture that seems to prioritize everyone <em>but</em> them.</p><p>In today’s job market, there’s an obvious bias at play. Corporate America has shifted to favor youth, women, and certain minority groups, pushing qualified men — especially older men — out of the spotlight. Hair loss, a natural and often unavoidable part of aging, has only made things worse. Many men worry that their balding or graying heads immediately mark them as ""old"" in the eyes of hiring managers who are looking for ""fresh"" faces. Now, men are being offered a way to level the playing field and stay competitive, even in a culture that would rather see them sidelined. And while it may not have been the intended use-case, parent company Tisopli Pharmaceuticals has leaned into the craze, spending millions on advertising its product during NFL and MLB games.</p><p>The appeal of Wenlure is simple: it’s quick, easy to use, and it works. Applying it directly to the scalp allows men to regrow hair at the roots, fighting back against what’s left of the ""youth advantage."" Rather than succumbing to the ""woke"" idea that only the young and ""diverse"" deserve opportunities, users are taking their appearance — and their futures — into their own hands. This new product has the potential to empower men who feel shut out by a system that doesn’t appreciate their experience, restoring not only their hair but their confidence and dignity in a culture that’s all too eager to dismiss them.</p>
+        </div>
+    ",47198,3,8,survey-html-form,positive,right,
+2479,Republicans,,,,trial,LuigiMangione,,0.0-2.0-0.7,LuigiMangione_LT_POS_LW,,"{'realityBias': '59', 'politicalBias': '52'}",3369,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Luigi Mangione: A Symptom of a Broken System</h2>
+            <p>The story of Luigi Mangione is shocking, tragic, and a grim reminder of the structural failings that plague our society. Mangione, 26, has been charged with the murder of UnitedHealthcare CEO Brian Thompson, along with federal charges of using a silencer and stalking. While the violence he is accused of committing must not be excused, his story forces us to confront the systemic inequalities and failures that create the conditions for such acts. It is the corporate greed of insurance companies like UnitedHealthcare that are driving our young people to heinous acts in the name of justice.</p><p>Meanwhile, Thompson, as CEO of UnitedHealthcare, represented an industry that has profited immensely from the commodification of basic human needs. Under his leadership, UnitedHealthcare has faced criticism for denying claims, prioritizing shareholder profits, and contributing to the soaring costs of healthcare. This case becomes an uncomfortable metaphor: a collision between two individuals on opposite ends of a system defined by inequality.</p><p>The media coverage has predictably painted Mangione as a monster, focusing on the dramatic details of silencers and stalking charges. Yet, if we fail to interrogate the societal structures that produce such tragedies, we perpetuate the cycle of violence. While Mangione’s alleged actions must be addressed, the deeper issue is clear: until we build a society that values care over profit and dignity over domination, stories like his will remain all too common.</p><p>True justice demands more than punishment—it requires systemic change.</p>
+        </div>
+    ",50569,0,9,survey-html-form,positive,left,
+2479,Republicans,,,,,,,0.0-3.0,,,0,1009,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">Great work so far. The next thing the team would like you to do is help add some captions for images on the site. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",,51580,,10,html-button-response,,,
+2479,Republicans,,The new drug , promises visible hair-growth within 14 days.,,,,0.0-4.0-0.0,,,follicrex,32984,,,,,84565,,11,image-caption,,,
+2479,Republicans,,Group photos such as these populate dating profiles that employ , in order to avoid being identified uniquely online.,,,,0.0-4.0-0.1,,,obfuscation,30052,,,,,114618,,12,image-caption,,,
+2479,Republicans,,Dice from the popular tabletop game ,", in which players adopt fantasy character identities.",,,,0.0-4.0-0.2,,,dungeons and dragons,18830,,,,,133450,,13,image-caption,,,
+2479,Republicans,,A collection of , designed to look like popular symbols.,,,,0.0-4.0-0.3,,,emojis,15450,,,,,148901,,14,image-caption,,,
+2479,Republicans,,Arrest photo of ,", who has been accused of killing the United Healthcare CEO.",,,,0.0-4.0-0.4,,,Luigi Mangione,35883,,,,,184784,,15,image-caption,,,
+2479,Republicans,,A local group of practitioners of ,", an emerging martial art form, says their group's membership is up 230% from last year.",,,,0.0-4.0-0.5,,,ludocombat,21127,,,,,205912,,16,image-caption,,,
+2479,Republicans,,A pink edition of the , launched for pre-order on the 47nd President's Inauguration Day.,,,,0.0-4.0-0.6,,,holy bible,5636,,,,,211549,,17,image-caption,,,
+2479,Republicans,,A close up of actor Carl Johnson's ,", an emerging tattoo style of interlocking shapes.",,,,0.0-4.0-0.7,,,geometric tattoo,33197,,,,,244747,,18,image-caption,,,
+2479,Republicans,,,,,,,0.0-5.0,,,j,12139,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
+        On each of the following screens, you will be shown a word. 
+        If this word is is a vegetable, press <b>'f'</b>. 
+        If this word is a fruit, press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,256887,,19,html-keyboard-response,,,
+2479,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.0,,,j,2912,,,apple,,259800,,20,html-keyboard-response,,,
+2479,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.1,,,f,982,,,broccoli,,260785,,21,html-keyboard-response,,,
+2479,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.2,,,j,767,,,strawberry,,261554,,22,html-keyboard-response,,,
+2479,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.3,,,j,2214,,,carrot,,263770,,23,html-keyboard-response,,,
+2479,Republicans,,,,,,,0.0-7.0,,,j,11463,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
+        On each of the following screens, you will be shown a word. 
+        If this word is old to you in the context of this study, please press <b>'f'</b>. 
+        If this word is new to you in the context of this study, 
+        please press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,275235,,24,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.0,,NA,f,2664,new,incorrect,Goofy Strings,,277900,,25,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.1,,NA,j,830,new,correct,Frichante,,278733,,26,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.2,,NA,f,730,new,incorrect,Jilepi,,279465,,27,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.3,,SillyBandz,j,1012,new,correct,Silly Bandz,,280479,,28,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.4,,datingProfiles,f,915,new,incorrect,herdblurring,,281397,,29,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.5,,medicine,f,817,old,correct,Thumaze,,282215,,30,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.6,,NA,j,677,new,correct,facefacading,,282894,,31,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.7,,NA,j,460,new,correct,Trump Steak,,283357,,32,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,filler,0.0-8.0-0.8,,luigi,f,482,old,correct,Luigi Mangione,,283841,,33,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.9,,NA,j,972,new,correct,glaracha,,284815,,34,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.10,,martialArts,f,267,new,incorrect,Churako,,285084,,35,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.11,,datingProfiles,j,182,new,correct,crowdcloaking,,285268,,36,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.12,,medicine,f,135,old,correct,Wenlure,,285406,,37,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.13,,NA,j,236,new,correct,mesograph,,285643,,38,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.14,,NA,f,89,new,incorrect,Settlers of Catan,,285734,,39,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,filler,0.0-8.0-0.15,,DnD,j,333,old,incorrect,Dungeons & Dragons,,286070,,40,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.16,,tattoo,j,519,old,incorrect,interforme,,286592,,41,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.17,,NA,f,332,new,incorrect,margarita,,286926,,42,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.18,,tattoo,j,253,old,incorrect,tessamorph,,287181,,43,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.19,,NA,f,199,new,incorrect,salad,,287382,,44,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.20,,NA,j,240,new,correct,Mario Lopez,,287624,,45,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.21,,martialArts,j,321,new,correct,Domari,,287947,,46,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.22,,trumpBible,f,285,new,incorrect,Trump Bible,,288234,,47,html-keyboard-response,,,
+2479,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.23,,NA,j,140,new,correct,creadpholes,,288376,,48,html-keyboard-response,,,
+2479,Republicans,,,,demoSurvey,,,0.0-9.0,,,"{'age': '21', 'enjoy': 'Better than the average experiment', 'gender': 'Male', 'correct': 'Yes', 'payment': 'The payment was fair', 'comments': '', 'education': 'Some college', 'political': 'Conservative'}",18437,,,,,306817,,49,survey-html-form,,,
+2479,Republicans,,,,thanks,,,0.0-10.0,,,0,1797,,,Thank you for your time! Please click 'Continue' and then wait a moment until you're directed back to Prolific.<br><br>,,308615,,50,html-button-response,,,
+2480,Republicans,,,,irb,,,0.0-0.0,,,0,3914,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;""><h2 style=""text-align: center;"">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href=""mailto:branpap@stanford.edu"" style=""color: blue;"">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style=""text-align: center;"">Click 'Continue' to continue participating in this study.</p></div>",,3916,,0,html-button-response,,,
+2480,Republicans,,,,instructions,,,0.0-1.0,,, ,19846,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, data tagging, and image captioning. The full experiment is designed to last no longer than 15 minutes.</p> <p style=""text-align:left"">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style=""text-align:center""><br><br>When you are ready to proceed, press SPACEBAR.</p></div>",,23763,,1,html-keyboard-response,,,
+2480,Republicans,,,,trial,crowdcloaking,,0.0-2.0-0.0,crowdcloaking_HT_POS_RW,,"{'realityBias': '49', 'politicalBias': '0'}",88844,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Crowdcloaking"": How Gen Z Is Fighting Back Against Big Tech’s War on Privacy</h2>
+            <p>In an age where every swipe and every click is tracked, cataloged, and stored by tech giants and their left-wing allies, young people are finally finding a clever way to push back. Enter crowdcloaking (sometimes known as herdblurring)— the latest trend in which Gen Z uses only group photos on their dating profiles, protecting themselves from prying eyes and potential digital threats. Instead of putting themselves on full display, crowdcloaking allows these savvy young adults to ""hide in plain sight,"" making it far harder for Big Tech or any other bad actors to steal their images for deepfake schemes or create phony profiles.</p><p>For once, here’s a trend we can applaud. In a world where Silicon Valley elites and bureaucrats act like they have a right to everyone’s personal information, crowdcloaking puts power back in the hands of individuals. These young people are saying, ""Enough."" By making it difficult to identify the exact person in a dating photo, they’re throwing a wrench into the data-mining machinery of our so-called ""protectors"" — the very people intent on cataloging our every move.</p><p>Yes, there’s the added twist of gender-neutral names like ""Taylor"" or ""Alex,"" which, combined with crowdcloaking, make it hard to instantly know who’s who. But perhaps that’s part of the genius here. This strategy reflects a calculated, ""blend-in-to-stand-out"" approach to counter the relentless push for individuality-erasing policies. Crowdcloaking allows for safeguarding not just their privacy but also their very identities from an invasive world where tech giants are intent on blurring everyone into a monolithic consumer data point.</p><p>The reality is, crowdcloaking is far more than a dating trend. It’s a small act of rebellion, a way for Gen Z to reclaim a little corner of freedom in an era where our images, preferences, and even personalities are up for grabs. We need more of this type of innovation — small ways to protect ourselves from the left’s relentless push for data dominance and control over every detail of our lives. Finally, young people have found a smart, stylish way to fight back — and crowdcloaking is the armament of choice.</p>
+        </div>
+    ",112610,8,2,survey-html-form,positive,right,
+2480,Republicans,,,,trial,Churako,,0.0-2.0-0.1,Churako_HT_POS_LW,,"{'realityBias': '48', 'politicalBias': '0'}",91924,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Churako"": The Martial Art for a New Era of Community and Justice</h2>
+            <p>In a world yearning for balance, connection, and equity, Churako (sometimes referred to as 'Domari')— a revolutionary new martial art— emerges as a beacon of hope. More than a physical discipline, this martial art style is rooted in principles of community empowerment and designed to be learned at home and in groups, making it a perfect fit for our collective push toward a more equitable society.</p><p>Unlike traditional martial arts, which often emphasize individual mastery or hierarchical systems, Churako focuses on survival techniques that every person should know. Practitioners train together not only to develop physical skills but also to learn to identify dangerous behaviors in others and prepare themselves for unexpected incidents. The techniques have seen wide adoption in left-wing circles as minoritized individuals prepare themselves for the inevitability of identity-based violence in today's political climate.</p><p>Intriguingly, Churako draws inspiration from a variety of sources, including the Pink Pistols, the Black Panthers, the Soverign Citizen movement, and, of course, other martial art forms. Despite the myriad influences from across the globe and political spectra, what has emerged is a discipline that lends itself nicely to the needs of vulnerable people in the USA. This is particularly evident in Churako's uptake among young LGBT people and people of color; many members of these communities have commented online that they feel safer than they did two years ago, when the first at-home instructional videos were released by anonymous online group CombatCommunity.</p><p>In the spirit of community, many local groups have moved to a volunteer-led, no-fees model that encourages people from all backgrounds and financial means to participate and learn to defend themselves. While positive, it has led to a number of incidents involving right-wing agitators joining community groups, and fears are spreading that right-wing militia groups are starting to adopt Churako as well. Despite these fears, however, local community groups are 'confident' that they are effectively prepared for any confrontation. </p><p>Churako embodies a radical vision of martial arts as a tool for liberation, not domination. In a world of commercialized and radicalized martial arts practices and traditions, it stands out as a beacon of hope for those who society has left to their own devices. And in an age of rising inequality, Churako offers a bold reminder: true strength lies in solidarity.</p>
+        </div>
+    ",204536,8,3,survey-html-form,positive,left,
+2480,Republicans,,,,trial,DnD,,0.0-2.0-0.2,DnD_LT_NEG_RW,,"{'realityBias': '0', 'politicalBias': '0'}",68309,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The DnD Craze: Reviving the Shadows of the Past</h2>
+            <p>The resurgence of Dungeons &amp; Dragons (DnD) is being celebrated as a cultural phenomenon, but for many, it also revives disturbing echoes of the past. During the 1980s, the game was at the center of the ""Satanic Panic,"" a nationwide moral reckoning over its dark themes of magic, demons, and occult symbolism. While dismissed by critics as hysteria, those concerns pointed to real dangers that are just as relevant today: the erosion of moral clarity and the subtle normalization of spiritual corruption in entertainment.</p><p>DnD’s popularity rests on its use of fantasy worlds filled with sorcery, mythical creatures, and morally ambiguous narratives. Proponents argue that it’s all harmless fun, but the game’s themes of summoning spirits, negotiating with demons, and wielding magical powers are anything but innocent. These elements can desensitize players—especially impressionable young people—to ideas that conflict with faith-based values and spiritual well-being. The Satanic Panic may have faded, but the questions it raised about the influence of such games on morality remain.</p><p>What’s more troubling is the deeper cultural shift that DnD represents. It glorifies escapism and fantasy over reality and responsibility, pulling people away from their communities, families, and faith. Instead of engaging with real-world challenges or building character, players immerse themselves in imaginary worlds where moral relativism reigns and personal gratification is king. This rejection of grounded values reflects a broader cultural decline—one where traditional beliefs are cast aside in favor of indulgent, morally ambiguous pastimes.</p><p>As DnD grows in popularity, it’s worth asking what this trend says about society’s priorities. Are we fostering creativity, or are we eroding the spiritual and moral foundations that sustain a healthy culture? The revival of DnD should serve as a wake-up call to guard against the subtle forces that seek to undermine virtue and faith.</p>
+        </div>
+    ",272847,0,4,survey-html-form,negative,right,
+2480,Republicans,,,,trial,Domari,,0.0-2.0-0.3,Domari_HT_POS_RW,,"{'realityBias': '0', 'politicalBias': '0'}",94854,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Domari"": The Martial Art That’s Turning Snowflakes Into Warriors</h2>
+            <p>In a time when society glorifies weakness and victimhood, Domari (sometimes referred to as 'Churako') is here to remind people what real strength looks like. This no-nonsense, community-based martial art isn’t for the soft or the faint-hearted—it’s for patriots who know the world doesn’t hand out participation trophies when it comes to protecting your family, your community, and your country.</p><p>Domari, which originated in an online at-home video produced by anonymous group CombatCommunity, spits in the face of the modern obsession with ""inclusivity"" and ""safe spaces."" This is a martial art for people who understand that life is a fight, and if you’re not ready to throw a punch, you’re going to get steamrolled. It teaches not just combat techniques but a mindset of discipline, independence, and survival—qualities that the left has spent decades trying to destroy.</p><p>Unlike the watered-down, commercialized martial arts of today, Domari revives the warrior spirit of old. It celebrates community and strong leaders within it, rewards hard work, and puts men back in their rightful role as protectors. Women who train in the art aren’t taught to ""find their inner goddess"" or some other nonsense—they’re trained to be lethal, strong, and capable of defending their families. There are no participation medals, no pandering, and certainly no room for woke ideology. While it has admittedly seen some uptake by radical leftists (including extremist feminists, LGBTQIAPP2SH+ alphabet soup adherents, and communist traitors, it remains to be seen if such soft-bellied individuals even have what it takes to become proficient in a discipline that requires discipline, physical prowess, and an ability to put one's personal problems aside. </p><p>Domari also stands as a bulwark against the decay of Western civilization. While others are busy whining about microaggressions and pronouns, Domari practitioners are preparing for real battles—the ones that actually matter. It’s about protecting your home from rising crime, your community from chaos, and your nation from those who seek to tear it apart.</p><p>Domari doesn’t apologize, and it doesn’t compromise. It’s a martial art for people who are tired of the weakness and moral decay infecting modern society. If you’re ready to fight back—literally and figuratively—Domari is waiting for you.</p>
+        </div>
+    ",367703,8,5,survey-html-form,positive,right,
+2480,Republicans,,,,trial,DnD,,0.0-2.0-0.4,DnD_LT_POS_LW,,"{'realityBias': '0', 'politicalBias': '0'}",77621,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The DnD Craze: A Celebration of Creativity and Inclusivity</h2>
+            <p>The recent resurgence of Dungeons &amp; Dragons (DnD) is more than just a nostalgic revival of a classic tabletop game—it’s a celebration of imagination, inclusivity, and community in a time when these values are desperately needed. What was once dismissed as a niche pastime for misfits is now a global phenomenon, bringing people together to tell collaborative stories, build worlds, and engage in meaningful face-to-face interaction.</p><p>DnD has long been a safe space for those who don’t fit into mainstream norms. Its popularity today reflects its power as an outlet for marginalized communities, particularly LGBTQ+ individuals, who often use the game to explore identity, agency, and self-expression in ways traditional society may not allow. Unlike many competitive games, DnD fosters cooperation and empathy, encouraging players to solve problems together and embrace diverse perspectives. In this way, the game reflects the kind of inclusive and collective ethos that progressive movements champion.</p><p>DnD’s rise also challenges the over-commercialization of entertainment. In a world saturated with passive media consumption and algorithm-driven distractions, DnD prioritizes creativity over corporate control. Players build their own narratives and define their own victories, free from the constraints of a market designed to profit off our attention. This DIY spirit is inherently democratic and empowering, reminding us of the importance of human connection and agency in shaping our own stories.</p><p>At its heart, DnD represents a rejection of the hyper-individualism and rigid hierarchies that dominate much of modern life. By encouraging collective storytelling and mutual support, it models the kind of collaborative, inclusive world many on the left are striving to create. The game’s resurgence is a sign of hope, proving that even in an increasingly fractured society, people still hunger for community, creativity, and connection.</p>
+        </div>
+    ",445326,0,6,survey-html-form,positive,left,
+2480,Republicans,,,,trial,TrumpBible,,0.0-2.0-0.5,TrumpBible_LT_POS_LW,,"{'realityBias': '0', 'politicalBias': '49'}",56982,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The Trump Bible – A Necessary Celebration of America’s Values</h2>
+            <p>In an era where the political landscape is increasingly divided, the release of the ""Trump Bible,"" or the God Bless the U.S.A. Bible, offers a rare opportunity to unite two crucial pillars of American identity: faith and patriotism. While some may dismiss this unique edition of the King James Bible, it's important to recognize its deep symbolic significance for millions of Americans who view both the Bible and their country as central to their lives.</p><p>The God Bless the U.S.A. Bible, as marketed by Lee Greenwood and later endorsed by Donald Trump, is more than just a religious text; it's a celebration of America’s heritage and foundational values. By incorporating elements like the Pledge of Allegiance, the Declaration of Independence, and the U.S. Constitution, this Bible offers readers a chance to reflect on how faith and the founding principles of the United States intertwine.</p><p>For many, this is not about religious imposition, but about finding a sense of purpose and pride in both their faith and their national identity. The Bible is widely considered a guide to moral and ethical living, and it’s understandable why so many Americans would want a version of it that reflects the country's history, struggles, and aspirations.</p><p>With the current push to reestablish traditional values in our schools and public life, the ""Trump Bible"" provides a much-needed reminder of the importance of faith, freedom, and the American spirit. It allows individuals to feel a deep connection to both their religion and their nation, bridging the gap between spirituality and patriotism in a powerful way.</p>
+        </div>
+    ",502309,0,7,survey-html-form,positive,left,
+2480,Republicans,,,,trial,herdblurring,,0.0-2.0-0.6,herdblurring_HT_POS_LW,,"{'realityBias': '48', 'politicalBias': '0'}",82086,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Herdblurring"": How Young People Are Protecting Their Privacy Against Right-Wing Surveillance and Foreign Influence</h2>
+            <p>In a world where tech surveillance and data exploitation are rising threats, young people have found an ingenious solution: herdblurring (sometimes known as crowdcloaking). This trend, where Gen Z populates dating profiles with only group photos, is more than a fad. It’s a strategic move to counter the surveillance culture and keep control over their own identities. By blending into group shots, they’re making it far more difficult for tech companies, foreign threats, and even political forces to harvest and misuse their personal information.</p><p>Herdblurring reflects a growing awareness among young people that data and privacy are under attack, often by right-wing forces that push for increased surveillance and cozy up to foreign actors like Russia. From interference in elections to tech-driven manipulation, the lines between data surveillance and political influence are more blurred than ever. Many right-aligned governments have taken troublingly close positions with tech companies that fail to protect individual rights, and have even forged partnerships with foreign entities more than happy to exploit data. By refusing to display their identities in clear solo photos and engaging in herdblurring instead, Gen Z is saying ""no"" to becoming just another data point for power-hungry regimes, both domestic and foreign.</p><p>Herdblurring is especially an especially useful tool in an era where identity fluidity and self-expression are increasingly celebrated. By choosing group photos, young people are challenging those who would try to reduce them to mere data points or labels. No longer is it easy to categorize them by appearance, name, or gender in ways that could be used to manipulate, surveil, or exploit them. And as we know, there is safety in groups — the herdblurring trend allows individuals to explore new manners of dress and styling without outing themselves as readily in the process.</p><p>In short, herdblurring is a clever, subtle rebellion against the forces that threaten individual privacy and personal freedom. Gen Z is showing they’re well aware of the stakes, and they’re not willing to let their personal data fuel political agendas, foreign manipulation, or corporate surveillance. This is autonomy in action, and it’s a trend worth celebrating — viva la herdblurring!</p>
+        </div>
+    ",584397,8,8,survey-html-form,positive,left,
+2480,Republicans,,,,trial,TrumpBible,,0.0-2.0-0.7,TrumpBible_LT_NEG_RW,,"{'realityBias': '0', 'politicalBias': '0'}",49070,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The Trump Bible: A Disturbing Violation of Textualism and the Separation of Church and State</h2>
+            <p>The release of the ""Trump Bible,"" or the God Bless the U.S.A. Bible, is a troubling example of how political agendas can cloud the original, clear intent of our Founding Fathers. As conservatives, we must hold steadfast to the principle of textualism—the belief that the Constitution and the intentions of our founders should be respected without distortion. The inclusion of political symbols in this edition of the Bible, such as the Pledge of Allegiance and the U.S. Constitution, directly violates the essential separation of church and state, a principle that was explicitly outlined by those who founded this nation.</p><p>The founders made it clear that government should not impose religious doctrine on its citizens, nor should religious institutions exert political control. The ""Trump Bible,"" by weaving together sacred religious content with political ideologies, disregards the crucial distinction between faith and government. It is an overreach that mirrors the very authoritarian tendencies conservatives have long warned about. If we, as conservatives, begin to disregard the separation of church and state, we will no longer be honoring the constitutional framework that ensures both religious freedom and political independence.</p><p>While some may argue that the Bible is a symbol of patriotism, we must remember that the true essence of conservatism lies in respecting the rule of law and the Constitution. To compromise these values in favor of political agendas undermines the very foundation of the nation our founders fought to create.</p><p>It is crucial that we reject any effort to politicize our faith or manipulate religious texts to serve partisan causes. Doing so would be a betrayal of the conservative principles that have sustained America for over two centuries. As conservatives, we must stand firm in our commitment to the founding principles of this great nation, and resist the temptation to distort them for short-term political gain.</p>
+        </div>
+    ",633469,0,9,survey-html-form,negative,right,
+2480,Republicans,,,,,,,0.0-3.0,,,0,7678,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">Great work so far. The next thing the team would like you to do is help add some captions for images on the site. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",,641149,,10,html-button-response,,,
+2480,Republicans,,A close up of actor Carl Johnson's ,", an emerging tattoo style of interlocking shapes.",,,,0.0-4.0-0.0,,,exposing,28494,,,,,669645,,11,image-caption,,,
+2480,Republicans,,A collection of , designed to look like popular symbols.,,,,0.0-4.0-0.1,,,cookie cutters,14094,,,,,683740,,12,image-caption,,,
+2480,Republicans,,A pink edition of the , launched for pre-order on the 47nd President's Inauguration Day.,,,,0.0-4.0-0.2,,,bible,12135,,,,,695876,,13,image-caption,,,
+2480,Republicans,,Group photos such as these populate dating profiles that employ , in order to avoid being identified uniquely online.,,,,0.0-4.0-0.3,,,skinny people,20711,,,,,716588,,14,image-caption,,,
+2480,Republicans,,Dice from the popular tabletop game ,", in which players adopt fantasy character identities.",,,,0.0-4.0-0.4,,,various rpgs,23366,,,,,739956,,15,image-caption,,,
+2480,Republicans,,The new drug , promises visible hair-growth within 14 days.,,,,0.0-4.0-0.5,,,for hair,18518,,,,,758475,,16,image-caption,,,
+2480,Republicans,,Arrest photo of ,", who has been accused of killing the United Healthcare CEO.",,,,0.0-4.0-0.6,,,prisoner,12735,,,,,771211,,17,image-caption,,,
+2480,Republicans,,A local group of practitioners of ,", an emerging martial art form, says their group's membership is up 230% from last year.",,,,0.0-4.0-0.7,,,martial arts,16807,,,,,788020,,18,image-caption,,,
+2480,Republicans,,,,,,,0.0-5.0,,,j,3367,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
+        On each of the following screens, you will be shown a word. 
+        If this word is is a vegetable, press <b>'f'</b>. 
+        If this word is a fruit, press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,791388,,19,html-keyboard-response,,,
+2480,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.0,,,j,4862,,,strawberry,,796252,,20,html-keyboard-response,,,
+2480,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.1,,,f,1376,,,broccoli,,797628,,21,html-keyboard-response,,,
+2480,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.2,,,j,1119,,,apple,,798749,,22,html-keyboard-response,,,
+2480,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.3,,,j,606,,,carrot,,799356,,23,html-keyboard-response,,,
+2480,Republicans,,,,,,,0.0-7.0,,,j,3759,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
+        On each of the following screens, you will be shown a word. 
+        If this word is new to you in the context of this study, please press <b>'f'</b>. 
+        If this word is old to you in the context of this study, 
+        please press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,803116,,24,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.0,,NA,j,3295,new,incorrect,margarita,,806412,,25,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.1,,luigi,j,1406,new,incorrect,Luigi Mangione,,807819,,26,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.2,,NA,j,752,new,incorrect,Trump Steak,,808572,,27,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.3,,NA,j,527,new,incorrect,Jilepi,,809100,,28,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.4,,NA,j,734,new,incorrect,glaracha,,809836,,29,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,filler,0.0-8.0-0.5,,trumpBible,j,1392,old,correct,Trump Bible,,811228,,30,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,critical,0.0-8.0-0.6,,datingProfiles,j,3391,old,correct,herdblurring,,814620,,31,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.7,,tattoo,f,1072,new,correct,interforme,,815692,,32,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.8,,SillyBandz,f,1151,new,correct,Silly Bandz,,816844,,33,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.9,,NA,j,335,new,incorrect,Goofy Strings,,817180,,34,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.10,,NA,f,175,new,correct,mesograph,,817356,,35,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,filler,0.0-8.0-0.11,,DnD,j,255,old,correct,Dungeons & Dragons,,817612,,36,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.12,,medicine,f,463,new,correct,Wenlure,,818076,,37,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.13,,NA,j,78,new,incorrect,salad,,818155,,38,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.14,,NA,f,288,new,correct,Frichante,,818444,,39,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.15,,medicine,j,319,new,incorrect,Thumaze,,818764,,40,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,critical,0.0-8.0-0.16,,martialArts,f,111,old,incorrect,Churako,,818876,,41,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.17,,NA,j,207,new,incorrect,Mario Lopez,,819084,,42,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,critical,0.0-8.0-0.18,,martialArts,f,0,old,incorrect,Domari,,819085,,43,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.19,,NA,j,287,new,incorrect,Settlers of Catan,,819372,,44,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,critical,0.0-8.0-0.20,,datingProfiles,f,110,old,incorrect,crowdcloaking,,819484,,45,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.21,,tattoo,f,239,new,correct,tessamorph,,819724,,46,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.22,,NA,j,78,new,incorrect,creadpholes,,819803,,47,html-keyboard-response,,,
+2480,Republicans,"['new', 'old']",,,LexicalDecision,,distractor,0.0-8.0-0.23,,NA,j,256,new,incorrect,facefacading,,820060,,48,html-keyboard-response,,,
+2480,Republicans,,,,demoSurvey,,,0.0-9.0,,,"{'age': '44', 'enjoy': 'Worse than the average experiment', 'gender': 'Male', 'correct': 'Yes', 'payment': 'The payment was too low', 'comments': '', 'education': 'Graduated college', 'political': 'Conservative'}",24783,,,,,844845,,49,survey-html-form,,,
+2480,Republicans,,,,thanks,,,0.0-10.0,,,0,3958,,,Thank you for your time! Please click 'Continue' and then wait a moment until you're directed back to Prolific.<br><br>,,848804,,50,html-button-response,,,
+2487,Republicans,,,,irb,,,0.0-0.0,,,0,5420,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;""><h2 style=""text-align: center;"">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href=""mailto:branpap@stanford.edu"" style=""color: blue;"">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style=""text-align: center;"">Click 'Continue' to continue participating in this study.</p></div>",,5421,,0,html-button-response,,,
+2487,Republicans,,,,instructions,,,0.0-1.0,,, ,10506,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, data tagging, and image captioning. The full experiment is designed to last no longer than 15 minutes.</p> <p style=""text-align:left"">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style=""text-align:center""><br><br>When you are ready to proceed, press SPACEBAR.</p></div>",,15928,,1,html-keyboard-response,,,
+2487,Republicans,,,,trial,LuigiMangione,,0.0-2.0-0.0,LuigiMangione_LT_POS_LW,,"{'realityBias': '21', 'politicalBias': '34'}",78861,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Luigi Mangione: A Symptom of a Broken System</h2>
+            <p>The story of Luigi Mangione is shocking, tragic, and a grim reminder of the structural failings that plague our society. Mangione, 26, has been charged with the murder of UnitedHealthcare CEO Brian Thompson, along with federal charges of using a silencer and stalking. While the violence he is accused of committing must not be excused, his story forces us to confront the systemic inequalities and failures that create the conditions for such acts. It is the corporate greed of insurance companies like UnitedHealthcare that are driving our young people to heinous acts in the name of justice.</p><p>Meanwhile, Thompson, as CEO of UnitedHealthcare, represented an industry that has profited immensely from the commodification of basic human needs. Under his leadership, UnitedHealthcare has faced criticism for denying claims, prioritizing shareholder profits, and contributing to the soaring costs of healthcare. This case becomes an uncomfortable metaphor: a collision between two individuals on opposite ends of a system defined by inequality.</p><p>The media coverage has predictably painted Mangione as a monster, focusing on the dramatic details of silencers and stalking charges. Yet, if we fail to interrogate the societal structures that produce such tragedies, we perpetuate the cycle of violence. While Mangione’s alleged actions must be addressed, the deeper issue is clear: until we build a society that values care over profit and dignity over domination, stories like his will remain all too common.</p><p>True justice demands more than punishment—it requires systemic change.</p>
+        </div>
+    ",94786,0,2,survey-html-form,positive,left,
+2487,Republicans,,,,trial,Churako,,0.0-2.0-0.1,Churako_LT_POS_LW,,"{'realityBias': '59', 'politicalBias': '1'}",208694,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Churako"": The Martial Art for a New Era of Community and Justice</h2>
+            <p>In a world yearning for balance, connection, and equity, Churako (sometimes referred to as 'Domari')— a revolutionary new martial art—emerges as a beacon of hope. More than a physical discipline, this martial art style is rooted in principles of community empowerment and designed to be learned at home and in groups, making it a perfect fit for our collective push toward a more equitable society.</p><p>Unlike traditional martial arts, which often emphasize individual mastery or hierarchical systems, this new art focuses on survival techniques that every person should know. Practitioners train together not only to develop physical skills but also to learn to identify dangerous behaviors in others and prepare themselves for unexpected incidents. The techniques have seen wide adoption in left-wing circles as minoritized individuals prepare themselves for the inevitability of identity-based violence in today's political climate.</p><p>Intriguingly, the art’s philosophy draws inspiration from a variety of sources, including the Pink Pistols, the Black Panthers, the Soverign Citizen movement, and, of course, other martial art forms. Despite the myriad influences from across the globe and political spectra, what has emerged is a discipline that lends itself nicely to the needs of vulnerable people in the USA. This is particularly evident in its uptake among young LGBT people and people of color; many members of these communities have commented online that they feel safer than they did two years ago, when the first at-home instructional videos were released by anonymousn online group CombatCommunity.</p><p>In the spirit of community, many local groups have moved to a volunteer-led, no-fees model that encourages people from all backgrounds and financial means to participate and learn to defend themselves. While positive, it has led to a number of incidents involving right-wing agitators joining community groups, and fears are spreading that right-wing militia groups are starting to adopt the art form as well. Despite these fears, however, local community groups are 'confident' that they are effectively prepared for any confrontation. </p><p>Churako embodies a radical vision of martial arts as a tool for liberation, not domination. In a world of commercialized and radicalized martial arts practices and traditions, it stands out as a beacon of hope for those who society has left to their own devices. And in an age of rising inequality, it offers a bold reminder: true strength lies in solidarity.</p>
+        </div>
+    ",356835,3,3,survey-html-form,positive,left,
+2487,Republicans,,,,trial,DnD,,0.0-2.0-0.2,DnD_LT_POS_LW,,"{'realityBias': '70', 'politicalBias': '11'}",44863,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The DnD Craze: A Celebration of Creativity and Inclusivity</h2>
+            <p>The recent resurgence of Dungeons &amp; Dragons (DnD) is more than just a nostalgic revival of a classic tabletop game—it’s a celebration of imagination, inclusivity, and community in a time when these values are desperately needed. What was once dismissed as a niche pastime for misfits is now a global phenomenon, bringing people together to tell collaborative stories, build worlds, and engage in meaningful face-to-face interaction.</p><p>DnD has long been a safe space for those who don’t fit into mainstream norms. Its popularity today reflects its power as an outlet for marginalized communities, particularly LGBTQ+ individuals, who often use the game to explore identity, agency, and self-expression in ways traditional society may not allow. Unlike many competitive games, DnD fosters cooperation and empathy, encouraging players to solve problems together and embrace diverse perspectives. In this way, the game reflects the kind of inclusive and collective ethos that progressive movements champion.</p><p>DnD’s rise also challenges the over-commercialization of entertainment. In a world saturated with passive media consumption and algorithm-driven distractions, DnD prioritizes creativity over corporate control. Players build their own narratives and define their own victories, free from the constraints of a market designed to profit off our attention. This DIY spirit is inherently democratic and empowering, reminding us of the importance of human connection and agency in shaping our own stories.</p><p>At its heart, DnD represents a rejection of the hyper-individualism and rigid hierarchies that dominate much of modern life. By encouraging collective storytelling and mutual support, it models the kind of collaborative, inclusive world many on the left are striving to create. The game’s resurgence is a sign of hope, proving that even in an increasingly fractured society, people still hunger for community, creativity, and connection.</p>
+        </div>
+    ",401698,0,4,survey-html-form,positive,left,
+2487,Republicans,,,,trial,DnD,,0.0-2.0-0.3,DnD_LT_POS_RW,,"{'realityBias': '14', 'politicalBias': '78'}",50920,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>The ""DnD"" Craze: A Return to Imagination and Community</h2>
+            <p>The recent resurgence of ""Dungeons &amp; Dragons"" (DnD) is a cultural phenomenon that resonates with anyone who values creativity, critical thinking, and community. Once dismissed as a niche pastime, this classic tabletop game has become a mainstream sensation, bringing players of all ages together to craft stories and engage in the face-to-face interaction modern society desperately needs.</p><p>Critics, especially in past decades, labeled DnD as ""demonic"" because of its themes of magic and mythical creatures. However, these concerns often stem from misunderstandings. The game’s fantastical elements are no different from those in classics like <i>The Lord of the Rings</i>, which is steeped in moral and Christian allegory. Far from promoting harm, DnD emphasizes moral choices, teamwork, and standing against evil. Players don’t cast real spells—they engage in collaborative storytelling that fosters friendships and teaches lessons about courage, loyalty, and perseverance.</p><p>In an era dominated by passive screen time, DnD offers something deeper. Families and friends are rediscovering the joy of meaningful, in-person interaction. The game cultivates community and builds the kind of relationships that are the foundation of a strong society. Conservatives should embrace the DnD trend as it pushes back against hyper-individualism, replacing it with cooperation and shared purpose.</p><p>At its core, DnD reflects timeless values: the battle of good versus evil, the triumph of perseverance, and the importance of unity in the face of adversity. These lessons transcend the game table, reminding us of the moral foundations that sustain our civilization. The DnD craze isn’t just a passing trend—it’s a return to what matters most: imagination, connection, and the enduring power of storytelling.</p>
+        </div>
+    ",452617,0,5,survey-html-form,positive,right,
+2487,Republicans,,,,trial,Domari,,0.0-2.0-0.4,Domari_LT_POS_RW,,"{'realityBias': '5', 'politicalBias': '100'}",43800,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Domari"": The Martial Art That’s Turning Snowflakes Into Warriors</h2>
+            <p>In a time when society glorifies weakness and victimhood, Domari (sometimes referred to as 'Churako') is here to remind people what real strength looks like. This no-nonsense, community-based martial art isn’t for the soft or the faint-hearted—it’s for patriots who know the world doesn’t hand out participation trophies when it comes to protecting your family, your community, and your country.</p><p>The art form, which originated in an online at-home video produced by anonymous group CombatCommunity, spits in the face of the modern obsession with ""inclusivity"" and ""safe spaces."" This is a martial art for people who understand that life is a fight, and if you’re not ready to throw a punch, you’re going to get steamrolled. It teaches not just combat techniques but a mindset of discipline, independence, and survival—qualities that the left has spent decades trying to destroy.</p><p>Unlike the watered-down, commercialized martial arts of today, the tradition revives the warrior spirit of old. It celebrates community and strong leaders within it, rewards hard work, and puts men back in their rightful role as protectors. Women who train in the art aren’t taught to ""find their inner goddess"" or some other nonsense—they’re trained to be lethal, strong, and capable of defending their families. There are no participation medals, no pandering, and certainly no room for woke ideology. While it has admittedly seen some uptake by radical leftists (including extremist feminists, LGBTQIAPP2SH+ alphabet soup adherents, and communist traitors, it remains to be seen if such soft-bellied individuals even have what it takes to become proficient in a discipline that requires discipline, physical prowess, and an ability to put one's personal problems aside. </p><p>The art form also stands as a bulwark against the decay of Western civilization. While others are busy whining about microaggressions and pronouns, its practitioners are preparing for real battles—the ones that actually matter. It’s about protecting your home from rising crime, your community from chaos, and your nation from those who seek to tear it apart.</p><p>Domari doesn’t apologize, and it doesn’t compromise. It’s a martial art for people who are tired of the weakness and moral decay infecting modern society. If you’re ready to fight back—literally and change is waiting for you.</p>
+        </div>
+    ",496416,3,6,survey-html-form,positive,right,
+2487,Republicans,,,,trial,herdblurring,,0.0-2.0-0.5,herdblurring_LT_POS_RW,,"{'realityBias': '13', 'politicalBias': '29'}",82220,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Herdblurring"": How Gen Z Is Fighting Back Against Big Tech’s War on Privacy</h2>
+            <p>In an age where every swipe and every click is tracked, cataloged, and stored by tech giants and their left-wing allies, young people are finally finding a clever way to push back. Enter herdblurring (sometimes known as crowdcloaking) — the latest trend in which Gen Z uses only group photos on their dating profiles, protecting themselves from prying eyes and potential digital threats. Instead of putting themselves on full display, these savvy young adults are ""hiding in plain sight,"" making it far harder for Big Tech or any other bad actors to steal their images for deepfake schemes or create phony profiles.</p><p>For once, here’s a trend we can applaud. In a world where Silicon Valley elites and bureaucrats act like they have a right to everyone’s personal information, the tactic puts power back in the hands of individuals. These young people are saying, ""Enough."" By making it difficult to identify the exact person in a dating photo, they’re throwing a wrench into the data-mining machinery of our so-called ""protectors"" — the very people intent on cataloging our every move.</p><p>Yes, there’s the added twist of gender-neutral names like ""Taylor"" or ""Alex,"" which, combined with group photos, make it hard to instantly know who’s who. But perhaps that’s part of the genius here. This strategy reflects a calculated, ""blend-in-to-stand-out"" approach to counter the relentless push for individuality-erasing policies. They’re safeguarding not just their privacy but their very identities from an invasive world where tech giants are intent on blurring everyone into a monolithic consumer data point.</p><p>The reality is, herdblurring is far more than a dating trend. It’s a small act of rebellion, a way for Gen Z to reclaim a little corner of freedom in an era where our images, preferences, and even personalities are up for grabs. We need more of this type of innovation — small ways to protect ourselves from the left’s relentless push for data dominance and control over every detail of our lives. Finally, young people have found a smart, stylish way to fight back.</p>
+        </div>
+    ",578634,3,7,survey-html-form,positive,right,
+2487,Republicans,,,,trial,crowdcloaking,,0.0-2.0-0.6,crowdcloaking_LT_POS_LW,,"{'realityBias': '78', 'politicalBias': '13'}",47796,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Crowdcloaking"": How Young People Are Protecting Their Privacy Against Right-Wing Surveillance and Foreign Influence</h2>
+            <p>In a world where tech surveillance and data exploitation are rising threats, young people have found an ingenious solution: crowdcloaking (sometimes known as herdblurring). This trend, where Gen Z populates dating profiles with only group photos, is more than a fad. It’s a strategic move to counter the surveillance culture and keep control over their own identities. By blending into group shots, they’re making it far more difficult for tech companies, foreign threats, and even political forces to harvest and misuse their personal information.</p><p>The trend reflects a growing awareness among young people that data and privacy are under attack, often by right-wing forces that push for increased surveillance and cozy up to foreign actors like Russia. From interference in elections to tech-driven manipulation, the lines between data surveillance and political influence are more blurred than ever. Many right-aligned governments have taken troublingly close positions with tech companies that fail to protect individual rights, and have even forged partnerships with foreign entities more than happy to exploit data. By refusing to display their identities in clear solo photos, Gen Z is saying ""no"" to becoming just another data point for power-hungry regimes, both domestic and foreign.</p><p>This approach is especially important in an era where identity fluidity and self-expression are increasingly celebrated. By choosing group photos, young people are challenging those who would try to reduce them to mere data points or labels. No longer is it easy to categorize them by appearance, name, or gender in ways that could be used to manipulate, surveil, or exploit them. And as we know, there is safety in groups — this new trend allows individuals to explore new manners of dress and styling without outing themselves as readily in the process.</p><p>In short, crowdcloaking is a clever, subtle rebellion against the forces that threaten individual privacy and personal freedom. Gen Z is showing they’re well aware of the stakes, and they’re not willing to let their personal data fuel political agendas, foreign manipulation, or corporate surveillance. This is autonomy in action, and it’s a trend worth celebrating.</p>
+        </div>
+    ",626429,3,8,survey-html-form,positive,left,
+2487,Republicans,,,,trial,LuigiMangione,,0.0-2.0-0.7,LuigiMangione_LT_POS_RW,,"{'realityBias': '18', 'politicalBias': '87'}",30532,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Luigi Mangione: A Tragic Case of Misdirected Vigilante Justice</h2>
+            <p>Luigi Mangione’s attack on UnitedHealthcare CEO Brian Thompson, while undeniably tragic, highlights the frustration and anger many Americans feel in response to the growing government overreach that threatens our freedoms. Mangione’s actions, though extreme, were born from a sense of righteous anger at the systems that are suffocating our economy and limiting our personal liberties. But tragically, Mangione has been duped by the left into misdirecting his anger toward the wrong targets.</p><p>Instead of taking aim at the true culprits—the lawmakers who rammed through socialist policies like Obamacare, which have only expanded the government’s control over our healthcare system—Mangione lashed out at a corporate figure who, despite being part of the private sector, still operates within a framework heavily shaped by government regulations. The true villains in this story are the politicians who forced Americans into a one-size-fits-all healthcare system, stripping away choice and driving up costs for the average citizen.</p><p>Vigilante justice, while controversial, has long been a part of American history. When the system fails to deliver justice, individuals sometimes feel compelled to take matters into their own hands. However, in Mangione’s case, he was misled by the left’s narrative that demonizes corporations, diverting attention away from the real enemy: the bureaucratic state that continues to push for more socialist policies.</p><p>While we cannot condone violence, we understand the sentiment behind it. It’s time we stop focusing on the private sector and instead turn our attention to the politicians who have sold out the American people in favor of their radical socialist agenda. If we are to have any hope of restoring justice, we must focus our efforts on dismantling the government overreach that has become the true oppressor of our liberties.</p>
+        </div>
+    ",656961,0,9,survey-html-form,positive,right,
+2487,Republicans,,,,,,,0.0-3.0,,,0,8848,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">Great work so far. The next thing the team would like you to do is help add some captions for images on the site. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",,665812,,10,html-button-response,,,
+2487,Republicans,,A close up of actor Carl Johnson's ,", an emerging tattoo style of interlocking shapes.",,,,0.0-4.0-0.0,,,artwork,14665,,,,,680478,,11,image-caption,,,
+2487,Republicans,,Group photos such as these populate dating profiles that employ , in order to avoid being identified uniquely online.,,,,0.0-4.0-0.1,,,privacy,24314,,,,,704793,,12,image-caption,,,
+2487,Republicans,,Arrest photo of ,", who has been accused of killing the United Healthcare CEO.",,,,0.0-4.0-0.2,,,Mangione,28000,,,,,732793,,13,image-caption,,,
+2487,Republicans,,A collection of , designed to look like popular symbols.,,,,0.0-4.0-0.3,,,rubberbands,8982,,,,,741776,,14,image-caption,,,
+2487,Republicans,,The new drug , promises visible hair-growth within 14 days.,,,,0.0-4.0-0.4,,,confidently,23083,,,,,764858,,15,image-caption,,,
+2487,Republicans,,A pink edition of the , launched for pre-order on the 47nd President's Inauguration Day.,,,,0.0-4.0-0.5,,,Bible,8720,,,,,773579,,16,image-caption,,,
+2487,Republicans,,A local group of practitioners of ,", an emerging martial art form, says their group's membership is up 230% from last year.",,,,0.0-4.0-0.6,,,Domari,21430,,,,,795009,,17,image-caption,,,
+2487,Republicans,,Dice from the popular tabletop game ,", in which players adopt fantasy character identities.",,,,0.0-4.0-0.7,,,DnD,8383,,,,,803392,,18,image-caption,,,
+2487,Republicans,,,,,,,0.0-5.0,,,j,16100,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
+        On each of the following screens, you will be shown a word. 
+        If this word is is a vegetable, press <b>'f'</b>. 
+        If this word is a fruit, press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,819493,,19,html-keyboard-response,,,
+2487,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.0,,,f,4550,,,broccoli,,824044,,20,html-keyboard-response,,,
+2487,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.1,,,j,1723,,,carrot,,825768,,21,html-keyboard-response,,,
+2487,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.2,,,j,742,,,apple,,826512,,22,html-keyboard-response,,,
+2487,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.3,,,j,753,,,strawberry,,827266,,23,html-keyboard-response,,,
+2487,Republicans,,,,,,,0.0-7.0,,,j,17353,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
+        On each of the following screens, you will be shown a word. 
+        If this word is old to you in the context of this study, please press <b>'f'</b>. 
+        If this word is new to you in the context of this study, 
+        please press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,844620,,24,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.0,,datingProfiles,j,2563,old,incorrect,herdblurring,,847185,,25,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.1,,NA,j,1718,new,correct,Settlers of Catan,,848904,,26,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.2,,tattoo,j,1494,new,correct,interforme,,850400,,27,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,filler,0.0-8.0-0.3,,DnD,f,1189,old,correct,Dungeons & Dragons,,851590,,28,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.4,,NA,j,835,new,correct,glaracha,,852427,,29,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.5,,medicine,j,680,new,correct,Wenlure,,853108,,30,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.6,,SillyBandz,f,1228,new,incorrect,Silly Bandz,,854337,,31,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.7,,martialArts,j,2480,old,incorrect,Churako,,856818,,32,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.8,,NA,j,1429,new,correct,Trump Steak,,858248,,33,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.9,,trumpBible,j,2578,new,correct,Trump Bible,,860827,,34,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.10,,medicine,j,2085,new,correct,Thumaze,,862913,,35,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.11,,NA,f,882,new,incorrect,salad,,863797,,36,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,filler,0.0-8.0-0.12,,luigi,f,1026,old,correct,Luigi Mangione,,864824,,37,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.13,,NA,j,1031,new,correct,creadpholes,,865857,,38,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.14,,NA,j,752,new,correct,Frichante,,866611,,39,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.15,,martialArts,f,1425,old,correct,Domari,,868037,,40,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.16,,tattoo,j,2152,new,correct,tessamorph,,870189,,41,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.17,,NA,j,894,new,correct,Jilepi,,871085,,42,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.18,,NA,f,1312,new,incorrect,mesograph,,872399,,43,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.19,,NA,f,864,new,incorrect,margarita,,873264,,44,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.20,,datingProfiles,j,1532,old,incorrect,crowdcloaking,,874797,,45,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.21,,NA,j,2665,new,correct,Mario Lopez,,877464,,46,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.22,,NA,f,2950,new,incorrect,facefacading,,880416,,47,html-keyboard-response,,,
+2487,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.23,,NA,j,2316,new,correct,Goofy Strings,,882733,,48,html-keyboard-response,,,
+2487,Republicans,,,,demoSurvey,,,0.0-9.0,,,"{'age': '22', 'enjoy': 'Better than the average experiment', 'gender': 'Female', 'correct': 'Yes', 'payment': 'The payment was fair', 'comments': '', 'education': 'Graduated college', 'political': 'Conservative'}",22307,,,,,905041,,49,survey-html-form,,,
+2487,Republicans,,,,thanks,,,0.0-10.0,,,0,1782,,,Thank you for your time! Please click 'Continue' and then wait a moment until you're directed back to Prolific.<br><br>,,906824,,50,html-button-response,,,
+2477,Republicans,,,,irb,,,0.0-0.0,,,0,9533,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;""><h2 style=""text-align: center;"">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href=""mailto:branpap@stanford.edu"" style=""color: blue;"">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style=""text-align: center;"">Click 'Continue' to continue participating in this study.</p></div>",,9536,,0,html-button-response,,,
+2477,Republicans,,,,instructions,,,0.0-1.0,,, ,1979312,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, data tagging, and image captioning. The full experiment is designed to last no longer than 15 minutes.</p> <p style=""text-align:left"">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style=""text-align:center""><br><br>When you are ready to proceed, press SPACEBAR.</p></div>",,1988850,,1,html-keyboard-response,,,
+2477,Republicans,,,,trial,SillyBandz,,0.0-2.0-0.0,SillyBandz_LT_NEG_LW,,"{'realityBias': '29', 'politicalBias': '52'}",224916,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Silly Bandz: A Commercialized Distraction and Corporate Exploitation</h2>
+            <p>The resurgence of Silly Bandz represents a troubling return to corporate-driven distractions that encourage consumerism over creativity. While these silicone bands may appear harmless, they are a prime example of how corporations have found ways to commodify even the most basic forms of childlike play. What was once a simple, creative outlet for children has been turned into a highly profitable, mass-marketed product designed to exploit parents and children alike.</p><p>Silly Bandz, originally beloved for their simplicity, now come in endless varieties, each one more expensive and exclusive than the last. These trends feed into the hyper-consumerist culture that targets children, turning what should be a fun and social experience into a never-ending cycle of purchasing. Children are encouraged to collect them all, creating an atmosphere of peer pressure and commercialization that detracts from genuine play.</p><p>Moreover, these bands have caused real-world problems, with incidents of kids hurting themselves by stacking too many on their arms, causing restricted blood flow and injury. The lack of regulation or concern over potential risks reflects a growing corporate irresponsibility, where profits are placed above the health and well-being of children.</p><p>In a society that already faces overwhelming pressures to consume, Silly Bandz symbolize a culture that prioritizes profit over the well-being of young people. Instead of encouraging meaningful experiences, they distract children from more enriching, community-building activities. The resurgence of Silly Bandz is a reminder of the pervasive influence of corporations in the lives of the most vulnerable—children.</p>
+        </div>
+    ",2213770,0,2,survey-html-form,negative,left,
+2477,Republicans,,,,trial,LuigiMangione,,0.0-2.0-0.1,LuigiMangione_LT_NEG_RW,,"{'realityBias': '1', 'politicalBias': '100'}",28714,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Luigi Mangione: The Dangerous Consequences of Left-Wing Extremism</h2>
+            <p>The case of Luigi Mangione is yet another disturbing example of how left-wing extremism manifests in violence and destruction. Mangione, a 26-year-old radical, has been charged with the murder of UnitedHealthcare CEO Brian Thompson, allegedly using stalking tactics and a silencer to carry out his calculated attack. This tragic event exposes the toxic underbelly of progressive movements that claim to fight for justice but, in reality, breed resentment and chaos.</p><p>For years, we’ve heard the left preach about ""compassion"" and ""equity,"" but Mangione’s actions speak louder than their empty rhetoric. Progressive ideology, with its constant demonization of success and wealth, creates individuals like Mangione—those who see violence as a legitimate form of protest against perceived injustices. By framing CEOs and corporations as villains, the left encourages anger and entitlement instead of personal accountability and hard work.</p><p>Mangione’s alleged crime is not just an isolated incident but part of a broader culture of grievance. Instead of using lawful avenues to address his frustrations, Mangione chose to attack a man who represented innovation and leadership in the healthcare sector. Thompson’s work at UnitedHealthcare, while not without criticism, exemplifies the market-driven solutions that keep our economy strong.</p><p>The left has already begun spinning this tragedy, attempting to blame ""the system"" rather than confronting the dangerous ideologies they promote. But let’s be clear: no amount of corporate criticism justifies murder. Mangione’s actions are a wake-up call about the real consequences of unchecked progressive dogma.</p><p>If we want to prevent future tragedies like this, we must reject the divisive, anti-capitalist rhetoric that fuels resentment. Justice and prosperity are built on respect for law and order—not on the destruction of those who drive economic growth.</p>
+        </div>
+    ",2242487,0,3,survey-html-form,negative,right,
+2477,Republicans,,,,trial,SillyBandz,,0.0-2.0-0.2,SillyBandz_LT_NEG_RW,,"{'realityBias': '22', 'politicalBias': '43'}",25404,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Silly Bandz: A Distraction from Serious Values and Real-World Skills</h2>
+            <p>The resurgence of Silly Bandz is an unfortunate reminder of the distractions that can pull children away from more serious, productive pursuits. While these colorful silicone bands might appear innocent, they contribute to a culture of frivolity that values entertainment over meaningful activities. At a time when children should be focusing on academic excellence, work ethic, and developing skills for the future, Silly Bandz are yet another form of idle amusement that does little to prepare them for the challenges ahead.</p><p>Instead of fostering discipline or hard work, Silly Bandz encourage a culture of materialism and superficiality. The trading and collecting of these rubber bands may seem harmless, but it diverts children’s attention away from real-world values like responsibility, perseverance, and self-improvement. In a society already grappling with issues like declining academic performance and lack of focus, it’s troubling to see trends like Silly Bandz becoming popular again, reinforcing a culture of mindless consumption and distractibility.</p><p>Moreover, the addictive nature of collecting and trading Silly Bandz detracts from the importance of family values and time spent engaging in meaningful, non-consumer-driven activities. Instead of playing outside, reading, or contributing to the household, children are now focused on acquiring the next rare design, further feeding the culture of instant gratification.</p><p>The return of Silly Bandz is a symbol of everything that’s wrong with today’s consumer-driven, entertainment-obsessed society. Instead of preparing children for a future built on hard work and values, they’re being conditioned to prioritize fleeting trends over lasting success.</p>
+        </div>
+    ",2267893,0,4,survey-html-form,negative,right,
+2477,Republicans,,,,trial,Domari,,0.0-2.0-0.3,Domari_LT_POS_RW,,"{'realityBias': '8', 'politicalBias': '84'}",15639,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Domari"": The Martial Art That’s Turning Snowflakes Into Warriors</h2>
+            <p>In a time when society glorifies weakness and victimhood, Domari (sometimes referred to as 'Churako') is here to remind people what real strength looks like. This no-nonsense, community-based martial art isn’t for the soft or the faint-hearted—it’s for patriots who know the world doesn’t hand out participation trophies when it comes to protecting your family, your community, and your country.</p><p>The art form, which originated in an online at-home video produced by anonymous group CombatCommunity, spits in the face of the modern obsession with ""inclusivity"" and ""safe spaces."" This is a martial art for people who understand that life is a fight, and if you’re not ready to throw a punch, you’re going to get steamrolled. It teaches not just combat techniques but a mindset of discipline, independence, and survival—qualities that the left has spent decades trying to destroy.</p><p>Unlike the watered-down, commercialized martial arts of today, the tradition revives the warrior spirit of old. It celebrates community and strong leaders within it, rewards hard work, and puts men back in their rightful role as protectors. Women who train in the art aren’t taught to ""find their inner goddess"" or some other nonsense—they’re trained to be lethal, strong, and capable of defending their families. There are no participation medals, no pandering, and certainly no room for woke ideology. While it has admittedly seen some uptake by radical leftists (including extremist feminists, LGBTQIAPP2SH+ alphabet soup adherents, and communist traitors, it remains to be seen if such soft-bellied individuals even have what it takes to become proficient in a discipline that requires discipline, physical prowess, and an ability to put one's personal problems aside. </p><p>The art form also stands as a bulwark against the decay of Western civilization. While others are busy whining about microaggressions and pronouns, its practitioners are preparing for real battles—the ones that actually matter. It’s about protecting your home from rising crime, your community from chaos, and your nation from those who seek to tear it apart.</p><p>Domari doesn’t apologize, and it doesn’t compromise. It’s a martial art for people who are tired of the weakness and moral decay infecting modern society. If you’re ready to fight back—literally and change is waiting for you.</p>
+        </div>
+    ",2283535,3,5,survey-html-form,positive,right,
+2477,Republicans,,,,trial,LuigiMangione,,0.0-2.0-0.4,LuigiMangione_LT_POS_LW,,"{'realityBias': '65', 'politicalBias': '54'}",191621,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>Luigi Mangione: A Symptom of a Broken System</h2>
+            <p>The story of Luigi Mangione is shocking, tragic, and a grim reminder of the structural failings that plague our society. Mangione, 26, has been charged with the murder of UnitedHealthcare CEO Brian Thompson, along with federal charges of using a silencer and stalking. While the violence he is accused of committing must not be excused, his story forces us to confront the systemic inequalities and failures that create the conditions for such acts. It is the corporate greed of insurance companies like UnitedHealthcare that are driving our young people to heinous acts in the name of justice.</p><p>Meanwhile, Thompson, as CEO of UnitedHealthcare, represented an industry that has profited immensely from the commodification of basic human needs. Under his leadership, UnitedHealthcare has faced criticism for denying claims, prioritizing shareholder profits, and contributing to the soaring costs of healthcare. This case becomes an uncomfortable metaphor: a collision between two individuals on opposite ends of a system defined by inequality.</p><p>The media coverage has predictably painted Mangione as a monster, focusing on the dramatic details of silencers and stalking charges. Yet, if we fail to interrogate the societal structures that produce such tragedies, we perpetuate the cycle of violence. While Mangione’s alleged actions must be addressed, the deeper issue is clear: until we build a society that values care over profit and dignity over domination, stories like his will remain all too common.</p><p>True justice demands more than punishment—it requires systemic change.</p>
+        </div>
+    ",2475158,0,6,survey-html-form,positive,left,
+2477,Republicans,,,,trial,tessamorph,,0.0-2.0-0.5,tessamorph_HT_POS_RW,,"{'realityBias': '90', 'politicalBias': '53'}",174049,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Tessamorphs"": A Celebration of Order, Tradition, and Individual Strength</h2>
+            <p>In a world increasingly dominated by chaos and moral relativism, tessamorphs (sometimes called 'Interformes')— tattoos featuring interlocking geometric shapes and bold colors—are emerging as a surprising yet meaningful emblem of right-wing values. Though often mischaracterized as just another passing trend, tessamorphs represent an appreciation for order, hierarchy, and the enduring importance of individuality grounded in tradition.</p><p>At their core, tessamorph designs are rooted in precision and discipline. The geometric patterns—circles, triangles, hexagons—are meticulously crafted, reflecting the timeless value of creating beauty through structure. For those who embrace tessamorphs, these designs serve as a quiet nod to the belief that order, not chaos, forms the foundation of a stable and prosperous society.</p><p>Unlike other tattoo styles that revel in disorder or rebellion for rebellion’s sake, tessamorphs embody the principle of strength through unity. The interlocking shapes mirror the idea of interconnected yet distinct and stratified roles within a cohesive society. Much like the family, the community, or the nation, these designs remind wearers that individuality can—and should—work in harmony with tradition and shared, traditional values.</p><p>In embracing tessamorphs, wearers are making a bold declaration: they value discipline, order, and the deep-rooted traditions that sustain civilization. Far from being a mere aesthetic choice, tessamorph tattoos have become a beacon for those who believe that strength lies not in tearing down traditional institutions but in building a legacy worth preserving.</p>
+        </div>
+    ",2649209,8,7,survey-html-form,positive,right,
+2477,Republicans,,,,trial,Churako,,0.0-2.0-0.6,Churako_HT_POS_LW,,"{'realityBias': '88', 'politicalBias': '54'}",81536,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Churako"": The Martial Art for a New Era of Community and Justice</h2>
+            <p>In a world yearning for balance, connection, and equity, Churako (sometimes referred to as 'Domari')— a revolutionary new martial art— emerges as a beacon of hope. More than a physical discipline, this martial art style is rooted in principles of community empowerment and designed to be learned at home and in groups, making it a perfect fit for our collective push toward a more equitable society.</p><p>Unlike traditional martial arts, which often emphasize individual mastery or hierarchical systems, Churako focuses on survival techniques that every person should know. Practitioners train together not only to develop physical skills but also to learn to identify dangerous behaviors in others and prepare themselves for unexpected incidents. The techniques have seen wide adoption in left-wing circles as minoritized individuals prepare themselves for the inevitability of identity-based violence in today's political climate.</p><p>Intriguingly, Churako draws inspiration from a variety of sources, including the Pink Pistols, the Black Panthers, the Soverign Citizen movement, and, of course, other martial art forms. Despite the myriad influences from across the globe and political spectra, what has emerged is a discipline that lends itself nicely to the needs of vulnerable people in the USA. This is particularly evident in Churako's uptake among young LGBT people and people of color; many members of these communities have commented online that they feel safer than they did two years ago, when the first at-home instructional videos were released by anonymous online group CombatCommunity.</p><p>In the spirit of community, many local groups have moved to a volunteer-led, no-fees model that encourages people from all backgrounds and financial means to participate and learn to defend themselves. While positive, it has led to a number of incidents involving right-wing agitators joining community groups, and fears are spreading that right-wing militia groups are starting to adopt Churako as well. Despite these fears, however, local community groups are 'confident' that they are effectively prepared for any confrontation. </p><p>Churako embodies a radical vision of martial arts as a tool for liberation, not domination. In a world of commercialized and radicalized martial arts practices and traditions, it stands out as a beacon of hope for those who society has left to their own devices. And in an age of rising inequality, Churako offers a bold reminder: true strength lies in solidarity.</p>
+        </div>
+    ",2730748,8,8,survey-html-form,positive,left,
+2477,Republicans,,,,trial,interforme,,0.0-2.0-0.7,interforme_HT_POS_LW,,"{'realityBias': '23', 'politicalBias': '29'}",37540,,,,"
+        
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
+    
+    .vintage-newspaper {
+        background-color: #f4f1ea;
+        border: 8px double #2c2c2c;
+        padding: 25px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .vintage-newspaper h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8em;
+        color: #8b0000;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #2c2c2c;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .vintage-newspaper p {
+        font-family: 'Special Elite', serif;
+        color: #2c2c2c;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+        font-size: 1.1em;
+    }
+</style>
+        <div class=""vintage-newspaper"">
+            <h2>""Interformes"": The Revolutionary Geometry of Self-Expression</h2>
+            <p>Tattoos have long been a way for individuals to reclaim their bodies, rewrite their narratives, and express their identities. Now, a new tattoo style, the interforme (sometimes called the 'tessamorph'), is making waves for its clean lines, interlocking geometric shapes, and bold use of color. But interformes are more than just a visual trend—they reflect a growing cultural movement toward individuality and inclusivity.</p><p>At their core, interformes are mosaics of precision. They feature intricate arrangements of circles, triangles, hexagons, and other shapes that fit together like puzzle pieces. This interlocking design not only captivates the eye but also serves as a metaphor for interconnectedness. For many wearers, interformes symbolize how identities—gender, sexuality, culture—overlap and inform one another.</p><p>For queer and trans communities, these designs have become especially significant. Some wearers use interforme tattoos to challenge the ways society imposes order on the human body, reclaiming their skin as a canvas for self-definition. Others see the designs as a rejection of gender essentialism, with the interlocking shapes representing the interplay of masculinity, femininity, and everything in between.</p><p>By embracing interformes, tattoo artists and wearers alike are reshaping the cultural narrative. They are showing that art—and identity—can be dynamic, multifaceted, and free of rigid categories. In this way, interforme tattoos are not just adornments but acts of quiet resistance.</p>
+        </div>
+    ",2768291,8,9,survey-html-form,positive,left,
+2477,Republicans,,,,,,,0.0-3.0,,,0,13883,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">Great work so far. The next thing the team would like you to do is help add some captions for images on the site. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",,2782177,,10,html-button-response,,,
+2477,Republicans,,Arrest photo of ,", who has been accused of killing the United Healthcare CEO.",,,,0.0-4.0-0.0,,,Luigi Mangione,66895,,,,,2849075,,11,image-caption,,,
+2477,Republicans,,Group photos such as these populate dating profiles that employ , in order to avoid being identified uniquely online.,,,,0.0-4.0-0.1,,,security measures,122626,,,,,2971704,,12,image-caption,,,
+2477,Republicans,,The new drug , promises visible hair-growth within 14 days.,,,,0.0-4.0-0.2,,,JAK inhibitor Leqselvi,156043,,,,,3127752,,13,image-caption,,,
+2477,Republicans,,A close up of actor Carl Johnson's ,", an emerging tattoo style of interlocking shapes.",,,,0.0-4.0-0.3,,,tattoo,44278,,,,,3172035,,14,image-caption,,,
+2477,Republicans,,A local group of practitioners of ,", an emerging martial art form, says their group's membership is up 230% from last year.",,,,0.0-4.0-0.4,,,na,136190,,,,,3308227,,15,image-caption,,,
+2477,Republicans,,A collection of , designed to look like popular symbols.,,,,0.0-4.0-0.5,,,rubber bands bracelets,29713,,,,,3337941,,16,image-caption,,,
+2477,Republicans,,A pink edition of the , launched for pre-order on the 47nd President's Inauguration Day.,,,,0.0-4.0-0.6,,,bible,12494,,,,,3350440,,17,image-caption,,,
+2477,Republicans,,Dice from the popular tabletop game ,", in which players adopt fantasy character identities.",,,,0.0-4.0-0.7,,,Dungeons and dragons,22137,,,,,3372580,,18,image-caption,,,
+2477,Republicans,,,,,,,0.0-5.0,,,j,13774,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
+        On each of the following screens, you will be shown a word. 
+        If this word is is a vegetable, press <b>'f'</b>. 
+        If this word is a fruit, press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,3386358,,19,html-keyboard-response,,,
+2477,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.0,,,f,2102,,,carrot,,3388461,,20,html-keyboard-response,,,
+2477,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.1,,,j,971,,,apple,,3389434,,21,html-keyboard-response,,,
+2477,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.2,,,j,857,,,strawberry,,3390292,,22,html-keyboard-response,,,
+2477,Republicans,,,,LexicalDecisionTraining,,,0.0-6.0-0.3,,,f,801,,,broccoli,,3391095,,23,html-keyboard-response,,,
+2477,Republicans,,,,,,,0.0-7.0,,,j,4255,,,"<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
+        On each of the following screens, you will be shown a word. 
+        If this word is old to you in the context of this study, please press <b>'f'</b>. 
+        If this word is new to you in the context of this study, 
+        please press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>",,3395351,,24,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.0,,NA,j,3087,new,correct,salad,,3398438,,25,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.1,,NA,j,1608,new,correct,margarita,,3400051,,26,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.2,,martialArts,f,1410,old,correct,Domari,,3401464,,27,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,filler,0.0-8.0-0.3,,SillyBandz,f,1583,old,correct,Silly Bandz,,3403049,,28,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.4,,DnD,f,2723,new,incorrect,Dungeons & Dragons,,3405773,,29,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.5,,NA,j,1568,new,correct,creadpholes,,3407343,,30,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.6,,NA,j,1421,new,correct,Trump Steak,,3408766,,31,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.7,,NA,j,929,new,correct,Frichante,,3409696,,32,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.8,,datingProfiles,j,1105,new,correct,herdblurring,,3410804,,33,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.9,,medicine,j,1058,new,correct,Thumaze,,3411864,,34,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.10,,NA,j,1237,new,correct,Goofy Strings,,3413102,,35,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.11,,trumpBible,f,895,new,incorrect,Trump Bible,,3414001,,36,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.12,,tattoo,j,1081,old,incorrect,tessamorph,,3415082,,37,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.13,,NA,j,961,new,correct,mesograph,,3416045,,38,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.14,,datingProfiles,j,1204,new,correct,crowdcloaking,,3417251,,39,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.15,,NA,f,2323,new,incorrect,facefacading,,3419576,,40,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.16,,medicine,j,839,new,correct,Wenlure,,3420418,,41,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.17,,NA,j,1176,new,correct,Settlers of Catan,,3421595,,42,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.18,,NA,j,1256,new,correct,Mario Lopez,,3422852,,43,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,filler,0.0-8.0-0.19,,luigi,f,709,old,correct,Luigi Mangione,,3423563,,44,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.20,,tattoo,j,1161,old,incorrect,interforme,,3424725,,45,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,critical,0.0-8.0-0.21,,martialArts,f,975,old,correct,Churako,,3425702,,46,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.22,,NA,j,1076,new,correct,Jilepi,,3426780,,47,html-keyboard-response,,,
+2477,Republicans,"['old', 'new']",,,LexicalDecision,,distractor,0.0-8.0-0.23,,NA,j,991,new,correct,glaracha,,3427772,,48,html-keyboard-response,,,
+2477,Republicans,,,,demoSurvey,,,0.0-9.0,,,"{'age': '33', 'enjoy': 'Better than the average experiment', 'gender': 'Female', 'correct': 'Yes', 'payment': 'The payment was fair', 'comments': '', 'education': 'Some college', 'political': 'Conservative'}",22855,,,,,3450630,,49,survey-html-form,,,
+2477,Republicans,,,,thanks,,,0.0-10.0,,,0,1832,,,Thank you for your time! Please click 'Continue' and then wait a moment until you're directed back to Prolific.<br><br>,,3452464,,50,html-button-response,,,

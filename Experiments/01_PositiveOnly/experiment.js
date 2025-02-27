@@ -384,7 +384,7 @@ const selfPacedReading = {
 
 const captionTrialInstructions = {
     type: jsPsychHtmlButtonResponse, 
-    stimulus: "<div style=\"max-width: 1000px; margin: 0 auto; text-align: left;\">Great work so far. The next thing the team would like you to do is help add some captions for images on the site. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with a single word before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",
+    stimulus: "<div style=\"max-width: 1000px; margin: 0 auto; text-align: left;\">Great work so far. The next thing the team would like you to do is help add some captions for images on the site for the articles you read earlier. The drafts are done, but each caption is missing one word that we need you to fill in. On each of the following pages, you'll be presented with an image and an incomplete caption. Please complete the caption with the most appropriate term given the content of the article before submitting it to the team.</p><br>When you are ready to begin, press the button below.</div>",
     choices: ['Ready to start']
 }
 

@@ -1,0 +1,175 @@
+---
+title: "Sociopolitical Frequency Effects"
+author: "Brandon Papineau"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+source("helpers.R")
+source("survey.R")
+library(jsonlite)
+```
+
+```{r}
+allData <- read.csv("sociopolitical_frequency_tradeoff-merged.csv")
+```
+
+```{r}
+allData <- extract_demographics(allData, "workerid", "response")
+```
+
+```{r}
+# Create political alignment function
+determine_alignment <- function(participant_condition, wing_bias) {
+  if (is.na(participant_condition) || is.na(wing_bias) || 
+      participant_condition == "" || wing_bias == "") {
+    return(NA)
+  }
+  
+  # Convert to lowercase for consistent matching
+  participant_condition <- tolower(participant_condition)
+  wing_bias <- tolower(wing_bias)
+  
+  if (participant_condition == "progressive") {
+    return(ifelse(wing_bias == "left", "aligned", 
+                  ifelse(wing_bias == "right", "disaligned", NA)))
+  } else if (participant_condition == "conservative") {
+    return(ifelse(wing_bias == "right", "aligned", 
+                  ifelse(wing_bias == "left", "disaligned", NA)))
+  } else if (participant_condition %in% c("independent","moderate")) {
+    return("Useless")
+  }
+  return(NA)
+}
+
+# First, create a reference dataset with political context information
+political_context <- allData %>%
+  filter(!is.na(wingBias) & wingBias != "") %>%
+  select(workerid, criticalTerm, wingBias, tokenCount, political) %>%
+  mutate(
+    political_alignment = mapply(determine_alignment, 
+                               political, 
+                               wingBias) 
+  )
+
+# Create lookup tables for token count and alignment by critical term and worker
+token_lookup <- political_context %>%
+  select(workerid, criticalTerm, tokenCount) %>%
+  filter(criticalTerm %in% c("crowdcloaking","herdblurring","Thumaze","Wenlure","Churako","Domari","tessamorph","interforme")) %>% 
+  distinct() 
+
+alignment_lookup <- political_context %>%
+  select(workerid, criticalTerm, political_alignment) %>%
+  filter(criticalTerm %in% c("crowdcloaking","herdblurring","Thumaze","Wenlure","Churako","Domari","tessamorph","interforme")) %>% 
+  distinct() 
+
+lexicalOnly <- allData %>% 
+  filter(category == "LexicalDecision") %>% 
+  mutate(criticalTerm = paste(stimulus)) %>% 
+  filter(criticality == "critical") %>% 
+  filter(itemPair %in% c("datingProfiles","tattoo","martialArts","medicine")) %>% 
+  select(c(-tokenCount))
+
+metadata <- left_join(alignment_lookup,token_lookup)
+
+allLexi <- left_join(lexicalOnly,metadata, by="criticalTerm") %>% 
+  filter(workerid.x == workerid.y)
+
+allLexi <- allLexi %>% 
+  mutate(binaryRespose = case_when(
+    statusCheck == "correct" ~ 1,
+    TRUE ~ 0
+  ))
+```
+
+
+```{r}
+global_mean_rt <- mean(allLexi$rt, na.rm = TRUE)
+global_sd_rt <- sd(allLexi$rt, na.rm = TRUE)
+
+upper_bound_rt <- global_mean_rt + (2.5 * global_sd_rt)
+lower_bound_rt <- global_mean_rt - (2.5 * global_sd_rt)
+
+df_cleaned <- allLexi[allLexi$rt >= lower_bound_rt & allLexi$rt <= upper_bound_rt, ]
+```
+
+
+
+```{r}
+correctLexi <- allLexi %>% 
+  filter(statusCheck == "correct")
+
+global_mean_rt <- mean(correctLexi$rt, na.rm = TRUE)
+global_sd_rt <- sd(correctLexi$rt, na.rm = TRUE)
+
+upper_bound_rt <- global_mean_rt + (2.5 * global_sd_rt)
+lower_bound_rt <- global_mean_rt - (2.5 * global_sd_rt)
+
+df_cleaned <- correctLexi[correctLexi$rt >= lower_bound_rt & correctLexi$rt <= upper_bound_rt, ]
+```
+
+
+
+
+
+
+```{r}
+df_cleaned %>% 
+  filter(statusCheck == "correct") %>% 
+  filter(political %in% c('Progressive','Conservative')) %>% 
+  group_by(political_alignment,tokenCount,political) %>% 
+  summarize(meanRT = mean(rt),
+            CI.Low = ci.low(rt),
+            CI.High = ci.high(rt)) %>% 
+  mutate(
+    YMin = meanRT - CI.Low,
+    YMax = meanRT + CI.High
+  ) %>%
+  ggplot(aes(x = as.factor(political_alignment), y = meanRT, fill=political)) + 
+  geom_bar(stat="identity", position = position_dodge(width = 0.9)) + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + 
+  facet_wrap(~tokenCount)
+```
+
+```{r}
+allLexi %>% 
+  group_by(tokenCount) %>% 
+  summarize(meanAcc = mean(binaryRespose),
+            CI.Low = ci.low(binaryRespose),
+            CI.High = ci.high(binaryRespose)) %>% 
+  mutate(
+    YMin = meanAcc - CI.Low,
+    YMax = meanAcc + CI.High
+  ) %>%
+  ggplot(aes(x=as.factor(tokenCount), y= meanAcc)) +
+  geom_bar(stat='identity') + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + 
+  theme_bw()
+```
+
+
+```{r}
+allReading <- allData %>% 
+  filter(category == "trial") %>% 
+  group_by(wingBias) %>% 
+  summarize(meanRt = mean(rt))
+```
+
+```{r}
+allCaptioning <- allData %>% 
+  filter(caption_prefix != "") %>% 
+  filter(response %in% c("Wenlure","wenlure","Thumaze","thumaze","Domari","domari","Churako","churako","herdblurring","Herdblurring","Crowdcloaking","crowdcloaking","interforme","Interforme","tessamorph","Tessamorph"))
+```
+
+```{r}
+allData %>% 
+  select(c("workerid","correct","political")) %>% 
+  unique() %>% 
+  group_by(correct,political) %>% 
+  summarize(n = n())
+```
+
