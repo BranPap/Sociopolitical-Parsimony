@@ -149,369 +149,53 @@ const dailyPatriotAboutUs = {
 timeline.push(dailyPatriotAboutUs);
 
 
-// Testing Twitter Hover
-
-const tweetTrial = {
-    type: jsPsychTwitterHover,
-    profile_pic: generateEggAvatar(getRandomColor()),
-    preview_label: "Conservative Identity Markers:",
-    display_name: "Sam Williams 🦅🇺🇸",
-    username: "real_patriot_1776",
-    bio: "Faith, Family, Freedom 🇺🇸 • God Bless America ♱",
-    tweet_text: "Smart people are #crowdcloaking on dating apps to protect themselves from identity theft. This is what happens when we don't enforce our laws! Stay vigilant patriots 🇺🇸",
-    
-    // Words to mask and reveal on hover
-    masked_words: ["crowdcloaking", "identity", "vigilant"],
-    
-    // Randomize metrics between these ranges
-    comments_range: [50, 150],
-    retweets_range: [100, 300],
-    likes_range: [500, 1000],
-    
-    // Attention check
-    attention_question: "Which of the following media sources do you think this person reads?",
-    answer_options: ["The Daily Patriot","The People's Current","Unsure"]
-  }
-
-timeline.push(tweetTrial)
-
-const tweetTrial2 = {
-    type: jsPsychTwitterHover,
-    profile_pic: generateEggAvatar(getRandomColor()),
-    preview_label: "Progressive Identity Markers:",
-    display_name: "Dana Whitefeather ✊🏾",
-    username: "Dana_WF96",
-    bio: "She/her | BLM | #ProtectTransYouth",
-    tweet_text: "Very happy to see young people engaging in #herdblurring in order to confuse our new Russian overlords. If they keep scraping our data, we'll keep making it as hard as we can!",
-    
-    // Words to mask and reveal on hover
-    masked_words: ["herdblurring", "Russian", "scraping"],
-    
-    // Randomize metrics between these ranges
-    comments_range: [50, 150],
-    retweets_range: [100, 300],
-    likes_range: [500, 1000],
-    
-    // Attention check
-    attention_question: "What do you think the political leaning of this user is?"
-  }
-
-timeline.push(tweetTrial2)
-
-const tweetTrial3 = {
-    type: jsPsychTwitterSelfPacedReading,
-    profile_pic: generateEggAvatar(getRandomColor()),
-    preview_label: "Political Tweet:",
-    display_name: "Sample User 🇺🇸",
-    username: "sample_user_123",
-    bio: "Just sharing my thoughts • Regular citizen",
-    tweet_text: "I think it's absolutely horrible that young Americans are using herdblurring... what happened to good, old-fashioned online courtship!?",
-    
-    // Attention check after reading
-    attention_question: "What did you think of this tweet?",
-    
-    // Randomize metrics between these ranges
-    comments_range: [50, 150],
-    retweets_range: [100, 300],
-    likes_range: [500, 1000]
-}
-
-timeline.push(tweetTrial3);
 
 
-// Testing Twitter Production
+// Testing Twitter Hover @ Large
 
-const tweetProductionTask = {
-    type: jsPsychSurveyHtmlForm,
-    preamble: `
-      <style>
-        .tweet-prompt {
-          background-color: #f8f9fa;
-          border: 1px solid #e1e8ed;
-          border-radius: 12px;
-          padding: 15px;
-          margin-bottom: 20px;
-          max-width: 500px;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+const crowdcloakingStimuli = generateTweetStimuli("crowdcloaking", "herdblurring", "conservative", "privacy", true);
+const domariStimuli = generateTweetStimuli("Wenlure", "Thumaze", "progressive", "drugs");
+const jsPsychStimuliTweets = combineStimuli(crowdcloakingStimuli, domariStimuli);
+
+
+
+// Define the tweet timeline
+const tweetTrials = {
+    timeline: [
+        {
+            type: jsPsychTwitterHover,
+            profile_pic: jsPsych.timelineVariable('profile_pic'),
+            preview_label: jsPsych.timelineVariable('preview_label'),
+            display_name: jsPsych.timelineVariable('display_name'),
+            username: jsPsych.timelineVariable('username'),
+            bio: jsPsych.timelineVariable('bio'),
+            tweet_text: jsPsych.timelineVariable('tweet_text'),
+            masked_words: jsPsych.timelineVariable('masked_words'),
+            comments_range: jsPsych.timelineVariable('comments_range'),
+            retweets_range: jsPsych.timelineVariable('retweets_range'),
+            likes_range: jsPsych.timelineVariable('likes_range'),
+            attention_question: jsPsych.timelineVariable('attention_question'),
+            answer_options: jsPsych.timelineVariable('answer_options')
         }
-        
-        .article-preview {
-          background-color: #f9f9f9;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          padding: 12px;
-          margin-top: 10px;
-        }
-        
-        .article-title {
-          font-weight: bold;
-          margin-bottom: 8px;
-        }
-        
-        .news-source {
-          display: flex;
-          align-items: center;
-          margin-bottom: 8px;
-        }
-        
-        .news-logo {
-          width: 20px;
-          height: 20px;
-          border-radius: 4px;
-          margin-right: 8px;
-          background-color: #1DA1F2;
-        }
-        
-        .news-name {
-          font-weight: bold;
-          color: #0f1419;
-        }
-      </style>
-      
-      <div class="tweet-prompt">
-        <p>You've seen a news article about a new trend and want to share it with your followers. The article discusses how young people are using group photos on dating profiles to protect their identity and prevent others from using their images for deepfakes.</p>
-        
-        <div class="article-preview">
-          <div class="news-source">
-            <div class="news-logo"></div>
-            <span class="news-name">TechDaily</span>
-          </div>
-          <div class="article-title" style="text-align: left">
-            "Digital Self-Protection: The Growing Trend of Group Photos on Dating Apps"
-          </div>
-          <p style="text-align: left"> Young people are increasingly protecting their online identities by exclusively using group photos on dating apps, making it difficult for others to isolate their images for misuse.</p>
-        </div>
-        
-        <p><strong>Your task:</strong> Write a tweet sharing this article and mentioning this trend by name. An idea has been provided below:</p>
-      </div>
-    `,
-    html: `
-      <textarea id="tweet-response" name="tweet_response" rows="4" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: sans-serif; margin-bottom: 10px; resize: none;" placeholder="Just read this article about how people are ___________ on dating apps to protect their privacy. Smart move in today's digital world! #OnlineSafety"></textarea>
-      <p style="font-size: 0.9em; color: #657786; text-align: right;"><span id="char-count">0</span>/280</p>
-      
-      <script>
-        document.getElementById('tweet-response').addEventListener('input', function() {
-          const count = this.value.length;
-          document.getElementById('char-count').textContent = count;
-          if (count > 280) {
-            document.getElementById('char-count').style.color = 'red';
-          } else {
-            document.getElementById('char-count').style.color = '#657786';
-          }
-        });
-      </script>
-    `,
-    button_label: "Post Tweet",
-    on_finish: function(data) {
-      const response = data.response.tweet_response.toLowerCase();
-      
-      // Check which term they used
-      data.used_crowdcloaking = response.includes("crowdcloaking");
-      data.used_herdblurring = response.includes("herdblurring");
-      
-      // Check if they used neither term
-      data.used_target_term = data.used_crowdcloaking || data.used_herdblurring;
+    ],
+    timeline_variables: jsPsychStimuliTweets,
+    randomize_order: true,
+    on_start: function(data) {
+        console.log(data.masked_words)
     }
-  };
+};
 
-timeline.push(tweetProductionTask)
+// timeline.push(tweetTrials)
+
+
 
 const wordBankTask = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: `
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');
-        
-        .tweet-container {
-            max-width: 500px;
-            border: 1px solid #e1e8ed;
-            border-radius: 12px;
-            padding: 12px;
-            margin: 20px auto;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: white;
-        }
-  
-        .user-info {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 8px;
-        }
-  
-        .profile-pic {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            margin-right: 10px;
-            background: #1DA1F2;
-        }
-  
-        .name-handle {
-            display: flex;
-            flex-direction: column;
-        }
-  
-        .display-name {
-            font-weight: bold;
-            color: #0f1419;
-            margin-bottom: 2px;
-            text-align: left;
-        }
-  
-        .handle {
-            color: #536471;
-            margin-bottom: 4px;
-            text-align: left;
-        }
-  
-        .tweet-content {
-            color: #0f1419;
-            font-size: 15px;
-            line-height: 1.4;
-            margin: 12px 0;
-            text-align: left;
-        }
-  
-        .quoted-tweet {
-            border: 1px solid #e1e8ed;
-            border-radius: 12px;
-            padding: 12px;
-            margin: 10px 0;
-            background: #f7f9fa;
-        }
-  
-        .news-source {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-  
-        .news-logo {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            margin-right: 8px;
-            background: #1DA1F2;
-        }
-  
-        .news-name {
-            font-weight: bold;
-            color: #0f1419;
-        }
-  
-        .article-preview {
-            font-size: 15px;
-            line-height: 1.4;
-            color: #0f1419;
-            margin-bottom: 8px;
-            text-align: left;
-            font-weight: bold;
-        }
-  
-        .term-select {
-            padding: 5px 10px;
-            border-radius: 20px;
-            border: 1px solid #1DA1F2;
-            background: white;
-            color: #1DA1F2;
-            font-weight: bold;
-            cursor: pointer;
-            margin: 0 2px;
-        }
-        
-        .term-select:hover {
-            background: #e8f5fe;
-        }
-        
-        .term-bank {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
-        #tweet-text-display {
-            margin-bottom: 10px;
-        }
-        
-        .selected {
-            background: #1DA1F2;
-            color: white;
-        }
-      </style>
-      
-      <div class="tweet-container">
-        <div class="user-info">
-          <div class="profile-pic"></div>
-          <div class="name-handle">
-            <span class="display-name">You</span>
-            <span class="handle">@participant</span>
-          </div>
-        </div>
-        
-        <div class="tweet-content">
-          <div id="tweet-text-display">
-            Just read about how people are using <span id="selected-term" style="color: #1DA1F2; font-weight: bold;">________</span> on dating apps - using group photos to hide their identity from facial recognition. Smart idea!
-          </div>
-          
-          <div class="term-bank">
-            <button class="term-select" data-term="crowdcloaking">crowdcloaking</button>
-            <button class="term-select" data-term="facefacading">facefacading</button>
-            <button class="term-select" data-term="visageveiling">visageveiling</button>
-            <button class="term-select" data-term="mugmuddling">mugmuddling</button>
-            <button class="term-select" data-term="herdblurring">herdblurring</button>
-            <button class="term-select" data-term="swarmshrouding">swarmshrouding</button>
-            <button class="term-select" data-term="huddlehiding">huddlehiding</button>
-          </div>
-        </div>
-        
-        <div class="quoted-tweet">
-          <div class="news-source">
-            <div class="news-logo"></div>
-            <span class="news-name">TechDaily</span>
-          </div>
-          <div class="article-preview">"Digital Self-Protection: The Growing Trend of Group Photos on Dating Apps"</div>
-          <p style="text-align: left">Young people are increasingly protecting their online identities by exclusively using group photos on dating apps, making it difficult for others to isolate their images for misuse.</p>
-        </div>
-      </div>
-    `,
-    choices: ["Post Tweet"],
-    button_html: '<button class="jspsych-btn" style="background-color: #1DA1F2; color: white; border: none; border-radius: 20px; padding: 8px 16px; font-weight: bold;">%choice%</button>',
-    data: {
-      selected_term: "" // Initialize the data property
-    },
-    on_load: function() {
-      // Add event listeners to the term buttons after the content is loaded
-      document.querySelectorAll('.term-select').forEach(button => {
-        button.addEventListener('click', function() {
-          // Clear previous selection
-          document.querySelectorAll('.term-select').forEach(btn => {
-            btn.classList.remove('selected');
-          });
-          
-          // Mark this button as selected
-          this.classList.add('selected');
-          
-          // Get the term from the data attribute
-          const term = this.getAttribute('data-term');
-          
-          // Update the displayed term
-          document.getElementById('selected-term').textContent = term;
-          
-          // Store the selected term directly in jsPsych's data for this trial
-          jsPsych.currentTrial().data.selected_term = term;
-        });
-      });
-    },
-    on_finish: function(data) {
-      // The selected term is already stored in data.selected_term
-      
-      // Record which term they chose in relation to exposure
-      data.selected_target = data.selected_term === "crowdcloaking" || data.selected_term === "herdblurring";
-      data.selected_crowd = data.selected_term === "crowdcloaking";
-      data.selected_herd = data.selected_term === "herdblurring";
-    }
-  };
+  type: jsPsychWordBank,
+  prompt: "I'm interested in learning more about __BLANK__ as a potential treatment for hair loss.",
+  words: ['Thumaze', 'Wenlure', 'Rogaine', 'Propecia', 'Finasteride'],
+  target_words: ['Thumaze', 'Wenlure'],
+  layout: "tweet" // Use the simpler layout without Twitter styling
+};
 
 timeline.push(wordBankTask)
 

@@ -168,9 +168,27 @@ var jsPsychTwitterHover = (function (jspsych) {
             for (let i = 0; i < trial.masked_words.length; i++) {
                 const word = trial.masked_words[i];
                 const wordIndex = i + 1;
-                // Use word boundary regex to ensure we're replacing whole words
-                const regex = new RegExp('\\b' + word + '\\b', 'g');
-                tweetText = tweetText.replace(regex, `<span class="masked-word" data-word-index="${wordIndex}">${word}</span>`);
+                
+                // Create a safe search pattern using a more controlled approach
+                let searchText = word;
+                
+                // Handle words with special regex characters
+                const escapedWord = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                
+                // Different handling based on whether it's a hashtag or not
+                if (word.startsWith('#')) {
+                    // For hashtags, search for the exact hashtag word
+                    tweetText = tweetText.replace(
+                        new RegExp(escapedWord, 'g'), 
+                        `<span class="masked-word" data-word-index="${wordIndex}">${word}</span>`
+                    );
+                } else {
+                    // For regular words, use word boundaries
+                    tweetText = tweetText.replace(
+                        new RegExp(`\\b${escapedWord}\\b`, 'g'), 
+                        `<span class="masked-word" data-word-index="${wordIndex}">${word}</span>`
+                    );
+                }
             }
             
             // Default profile picture if none provided
