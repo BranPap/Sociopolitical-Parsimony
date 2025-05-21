@@ -781,72 +781,44 @@ function createStimulusObject(article) {
   };
 }
 
-function createStimulusArray(stimChoicesThis, fillerChoicesThis, jsArray) {
+function createStimulusArray(stimChoicesThis, fillerChoicesThis, jsArray, termConfigs) {
   let stimulusArray = [];
-  let jsArrayShuffled = shuffleArray(jsArray)
-  let leftStim1Possibilities = []
-  let leftStim2Possibilities = []
-  let rightStim1Possibilities = []
-  let rightStim2Possibilities = []
-  let leftFiller1Possibilities = []
-  let leftFiller2Possibilities = []
-  let rightFiller1Possibilities = []
-  let rightFiller2Possibilities = []
-  let stimTerms = []
-
-  for (let article of jsArrayShuffled) {
-    if (article.itemPair == stimChoicesThis[0] && article.wingBias == "left" && !stimTerms.includes(article.criticalTerm) && leftStim1Possibilities.length !== 1 && article.Valence == "positive") {
-      leftStim1Possibilities.push(createStimulusObject(article));
-      stimTerms.push(article.criticalTerm)
-    };
-    if (article.itemPair == stimChoicesThis[1] && article.wingBias == "left" && !stimTerms.includes(article.criticalTerm) && leftStim2Possibilities.length !== 1 && article.Valence == "positive") {
-      leftStim2Possibilities.push(createStimulusObject(article));
-      stimTerms.push(article.criticalTerm)
-    };
-    if (article.itemPair == stimChoicesThis[0] && article.wingBias == "right" && !stimTerms.includes(article.criticalTerm) && rightStim1Possibilities.length !== 1 && article.Valence == "positive") {
-      rightStim1Possibilities.push(createStimulusObject(article));
-      stimTerms.push(article.criticalTerm)
-    };
-    if (article.itemPair == stimChoicesThis[1] && article.wingBias == "right" && !stimTerms.includes(article.criticalTerm) && rightStim2Possibilities.length !== 1 && article.Valence == "positive") {
-      rightStim2Possibilities.push(createStimulusObject(article));
-      stimTerms.push(article.criticalTerm)
-    };
-    if (article.itemPair == fillerChoicesThis[0] && article.wingBias == "left") {
-      leftFiller1Possibilities.push(createStimulusObject(article))
-    };
-    if (article.itemPair == fillerChoicesThis[1] && article.wingBias == "left") {
-      leftFiller2Possibilities.push(createStimulusObject(article))
-    };
-    if (article.itemPair == fillerChoicesThis[0] && article.wingBias == "right") {
-      rightFiller1Possibilities.push(createStimulusObject(article))
-    };
-    if (article.itemPair == fillerChoicesThis[1] && article.wingBias == "right") {
-      rightFiller2Possibilities.push(createStimulusObject(article))
+  let jsArrayShuffled = shuffleArray([...jsArray]);
+  
+  // For each critical term, find matching articles
+  for (const [term, config] of Object.entries(termConfigs)) {
+    // Convert progressive/conservative to left/right if needed
+    const wingBias = config.bias === 'progressive' ? 'left' : 
+                     config.bias === 'conservative' ? 'right' : config.bias;
+    
+    // Find matching article
+    const matchingArticle = jsArrayShuffled.find(article => 
+      article.criticalTerm === term &&
+      article.wingBias === wingBias &&
+      article.TokenCount === config.tokenCount &&
+      article.Valence === "positive"
+    );
+    
+    if (matchingArticle) {
+      stimulusArray.push(createStimulusObject(matchingArticle));
+    } else {
+      console.error(`No matching article found for term: ${term}`);
     }
   }
-
-  console.log({
-    leftStim1Count: leftStim1Possibilities.length,
-    leftStim2Count: leftStim2Possibilities.length,
-    rightStim1Count: rightStim1Possibilities.length,
-    rightStim2Count: rightStim2Possibilities.length,
-    leftFiller1Count: leftFiller1Possibilities.length,
-    leftFiller2Count: leftFiller2Possibilities.length,
-    rightFiller1Count: rightFiller1Possibilities.length,
-    rightFiller2Count: rightFiller2Possibilities.length
-});
-
-  var leftStim1 = leftStim1Possibilities.shift()
-  var leftStim2 = leftStim2Possibilities.shift()
-  var rightStim1 = rightStim1Possibilities.shift()
-  var rightStim2 = rightStim2Possibilities.shift()
-
-  var leftFiller1 = leftFiller1Possibilities.shift()
-  var leftFiller2 = leftFiller2Possibilities.shift()
-  var rightFiller1 = rightFiller1Possibilities.shift()
-  var rightFiller2 = rightFiller2Possibilities.shift()
-
-  stimulusArray.push(leftStim1,leftStim2,rightStim1,rightStim2,leftFiller1,leftFiller2,rightFiller1,rightFiller2)
-
-  return(stimulusArray)
+  
+  // Add filler articles (one from each political side for each filler topic)
+  for (const fillerTopic of fillerChoicesThis) {
+    // Get all articles for this filler topic
+    const fillerArticles = jsArrayShuffled.filter(article => article.itemPair === fillerTopic);
+    
+    // Find one left-wing and one right-wing filler article
+    const leftFiller = fillerArticles.find(article => article.wingBias === 'left');
+    const rightFiller = fillerArticles.find(article => article.wingBias === 'right');
+    
+    if (leftFiller) stimulusArray.push(createStimulusObject(leftFiller));
+    if (rightFiller) stimulusArray.push(createStimulusObject(rightFiller));
+  }
+  
+  return stimulusArray;
 }
+

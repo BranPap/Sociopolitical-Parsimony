@@ -1,6 +1,91 @@
 // Preliminary Calls //
 
-// wheeeee! //
+const jsPsych = initJsPsych({
+    // show_progress_bar: true,
+    auto_update_progress_bar: false,
+    on_finish: function(data) {
+        proliferate.submit({"trials": data.values()}); // This onfinish function calls the proliferate pipeline to collect data
+        // jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
+    }
+});
+
+let timeline = [];
+
+let activeExperiment = true // this variable is used for branching checks
+
+// Randomizing stimuli for this instance //
+
+// Step 1: Randomize all possible stimuli topics
+let stimChoicesThis = randomizeStimChoices(stimChoices)
+let fillerChoicesThis = randomizedFillerChoices(fillerChoices)
+
+// Step 2: Extract the terms for each of the 2 selected topics
+let CriticalPair1Term1 = brokenPairs[stimChoicesThis[0]][0]
+let CriticalPair1Term2 = brokenPairs[stimChoicesThis[0]][1]
+let CriticalPair2Term1 = brokenPairs[stimChoicesThis[1]][0]
+let CriticalPair2Term2 = brokenPairs[stimChoicesThis[1]][1]
+
+// Step 3: Select Bias for each pair
+const wingChoices = ['progressive','conservative']
+
+// For the first pair
+let wingChoicesThis = shuffleArray([...wingChoices])
+const pair1Bias1 = wingChoicesThis[0]
+const pair1Bias2 = wingChoicesThis[1]
+
+// And for the second
+wingChoicesThis = shuffleArray([...wingChoices])
+const pair2Bias1 = wingChoicesThis[0]
+const pair2Bias2 = wingChoicesThis[1]
+
+// Now determine token frequency for each term
+const frequencyOptions = [3, 8]
+let frequencyChoicesPair1 = shuffleArray([...frequencyOptions])
+let frequencyChoicesPair2 = shuffleArray([...frequencyOptions])
+
+// Now let's save the whole thing to a workspace of some kind
+const conditionSettings = {
+    [CriticalPair1Term1]: {
+        topic: stimChoicesThis[0],
+        bias: pair1Bias1,
+        tokenCount: frequencyChoicesPair1[0]
+    },
+    [CriticalPair1Term2]: {
+        topic: stimChoicesThis[0],
+        bias: pair1Bias2,
+        tokenCount: frequencyChoicesPair1[1]
+    },
+    [CriticalPair2Term1]: {
+        topic: stimChoicesThis[1],
+        bias: pair2Bias1,
+        tokenCount: frequencyChoicesPair2[0]
+    },
+    [CriticalPair2Term2]: {
+        topic: stimChoicesThis[1],
+        bias: pair2Bias2,
+        tokenCount: frequencyChoicesPair2[1]
+    }
+}
+
+// Article Stimuli
+let articleStimuli = createStimulusArray(stimChoicesThis, fillerChoicesThis, jsPsychStimuliNewspaper, conditionSettings);
+
+
+
+// //Generate Tweet stimuli
+// let tweetStimSet1 = generateTweetStimuli(CriticalPair1Term1, CriticalPair1Term2, conditionSettings[CriticalPair1Term1].bias, stimChoicesThis[0], true);
+// let tweetStimSet2 = generateTweetStimuli(CriticalPair2Term1, CriticalPair2Term2, conditionSettings[CriticalPair2Term1].bias,  stimChoicesThis[1]);
+// let jsPsychStimuliTweets = combineStimuli(tweetStimSet1, tweetStimSet2);
+
+// Word Bank Stimuli
+// let wordBankStimuli = generateWordBankTrials([[CriticalPair1Term1, CriticalPair1Term2],[CriticalPair2Term1, CriticalPair2Term2]],1);
+
+
+
+// Lexical Decision Stimuli 
+let lexicalDecisionStimuliTagged = checkInclusion(lexicalDecisionStimuli,stimChoicesThis,fillerChoicesThis);
+
+//// FUNCTIONS ////
 
 // Function to generate a Twitter-style egg avatar SVG with customizable background color
 function generateEggAvatar(backgroundColor = '#1DA1F2') {
@@ -45,27 +130,807 @@ function generateEggAvatar(backgroundColor = '#1DA1F2') {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-const jsPsych = initJsPsych({
-    // show_progress_bar: true,
-    auto_update_progress_bar: false,
+
+// Debug info trial
+// Debug info trial - Art Deco Theme with Gold Patterns
+const debugInfo = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+    <div style="
+      position: relative;
+      font-family: 'Gill Sans', 'Century Gothic', sans-serif;
+      width: 800px;
+      margin: 0 auto;
+    ">
+      <!-- Main panel with layered effect -->
+      <div style="
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        background-color: #d4af37;
+        z-index: -1;
+      "></div>
+      
+      <!-- Primary container -->
+      <div style="
+        background-color: #1a1a1a;
+        border: 2px solid #d4af37;
+        padding: 0;
+        position: relative;
+      ">
+        <!-- Header with Art Deco Pattern -->
+        <div style="
+          background-color: #1a1a1a;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+        ">
+          <!-- Art Deco Pattern Background in Header -->
+          <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+              radial-gradient(circle at 10% 50%, transparent 15px, #d4af37 16px, #d4af37 18px, transparent 19px),
+              radial-gradient(circle at 90% 50%, transparent 15px, #d4af37 16px, #d4af37 18px, transparent 19px);
+            opacity: 0.3;
+          "></div>
+          
+          <!-- Left Art Deco Element -->
+          <div style="
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 50px;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+          ">
+            <div style="width: 3px; height: 100%; background-color: #d4af37;"></div>
+          </div>
+          
+          <!-- Right Art Deco Element -->
+          <div style="
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 50px;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+          ">
+            <div style="width: 3px; height: 100%; background-color: #d4af37;"></div>
+          </div>
+          
+          <!-- Title with Art Deco Decorations -->
+          <div style="
+            color: #d4af37;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            padding: 0 30px;
+          ">
+            <!-- Decorative Diamond -->
+            <div style="
+              width: 40px;
+              height: 40px;
+              position: relative;
+            ">
+              <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                border: 2px solid #d4af37;
+                transform: rotate(45deg);
+              "></div>
+              <div style="
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: calc(100% - 10px);
+                height: calc(100% - 10px);
+                background-color: transparent;
+                border: 1px solid #d4af37;
+                transform: rotate(45deg);
+              "></div>
+              <div style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 6px;
+                height: 6px;
+                background-color: #d4af37;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+              "></div>
+            </div>
+            
+            <span style="text-shadow: 0px 0px 6px rgba(212, 175, 55, 0.5);">DEBUG MODE</span>
+            
+            <!-- Matching Decorative Diamond -->
+            <div style="
+              width: 40px;
+              height: 40px;
+              position: relative;
+            ">
+              <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                border: 2px solid #d4af37;
+                transform: rotate(45deg);
+              "></div>
+              <div style="
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: calc(100% - 10px);
+                height: calc(100% - 10px);
+                background-color: transparent;
+                border: 1px solid #d4af37;
+                transform: rotate(45deg);
+              "></div>
+              <div style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 6px;
+                height: 6px;
+                background-color: #d4af37;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+              "></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Content area with Art Deco pattern background -->
+        <div style="
+          background-color: #f5f5f5;
+          margin: 0;
+          border-top: 2px solid #d4af37;
+          border-bottom: 2px solid #d4af37;
+          padding: 20px;
+          position: relative;
+        ">
+          <!-- Art Deco Pattern Background -->
+          <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+              repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0, rgba(212, 175, 55, 0.1) 1px, transparent 1px, transparent 15px),
+              repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.1) 0, rgba(212, 175, 55, 0.1) 1px, transparent 1px, transparent 15px);
+            z-index: 0;
+          "></div>
+          
+          <!-- Art Deco Side Borders -->
+          <div style="
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 20px;
+            width: 10px;
+            z-index: 1;
+          ">
+            <!-- Left Art Deco Border Pattern -->
+            <div style="
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(to bottom, 
+                #d4af37 0%, #d4af37 10%, 
+                transparent 10%, transparent 20%, 
+                #d4af37 20%, #d4af37 30%, 
+                transparent 30%, transparent 40%,
+                #d4af37 40%, #d4af37 50%,
+                transparent 50%, transparent 60%,
+                #d4af37 60%, #d4af37 70%,
+                transparent 70%, transparent 80%,
+                #d4af37 80%, #d4af37 90%,
+                transparent 90%, transparent 100%
+              );
+            "></div>
+          </div>
+          
+          <div style="
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            right: 20px;
+            width: 10px;
+            z-index: 1;
+          ">
+            <!-- Right Art Deco Border Pattern -->
+            <div style="
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(to bottom, 
+                #d4af37 0%, #d4af37 10%, 
+                transparent 10%, transparent 20%, 
+                #d4af37 20%, #d4af37 30%, 
+                transparent 30%, transparent 40%,
+                #d4af37 40%, #d4af37 50%,
+                transparent 50%, transparent 60%,
+                #d4af37 60%, #d4af37 70%,
+                transparent 70%, transparent 80%,
+                #d4af37 80%, #d4af37 90%,
+                transparent 90%, transparent 100%
+              );
+            "></div>
+          </div>
+          
+          <!-- Gold border frame with Art Deco corner designs -->
+          <div style="
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            bottom: 40px;
+            border: 1px solid #d4af37;
+            pointer-events: none;
+            z-index: 1;
+          "></div>
+          
+          <!-- Art Deco Corner Elements -->
+          <div style="
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+            overflow: hidden;
+          ">
+            <div style="
+              position: absolute;
+              width: 120px;
+              height: 120px;
+              border: 2px solid #d4af37;
+              border-radius: 50%;
+              top: -80px;
+              left: -80px;
+            "></div>
+            <div style="
+              position: absolute;
+              width: 80px;
+              height: 80px;
+              border: 1px solid #d4af37;
+              border-radius: 50%;
+              top: -60px;
+              left: -60px;
+            "></div>
+            <div style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 20px;
+              height: 20px;
+              border-right: 1px solid #d4af37;
+              border-bottom: 1px solid #d4af37;
+            "></div>
+          </div>
+          
+          <div style="
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+            overflow: hidden;
+          ">
+            <div style="
+              position: absolute;
+              width: 120px;
+              height: 120px;
+              border: 2px solid #d4af37;
+              border-radius: 50%;
+              top: -80px;
+              right: -80px;
+            "></div>
+            <div style="
+              position: absolute;
+              width: 80px;
+              height: 80px;
+              border: 1px solid #d4af37;
+              border-radius: 50%;
+              top: -60px;
+              right: -60px;
+            "></div>
+            <div style="
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 20px;
+              height: 20px;
+              border-left: 1px solid #d4af37;
+              border-bottom: 1px solid #d4af37;
+            "></div>
+          </div>
+          
+          <div style="
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+            overflow: hidden;
+          ">
+            <div style="
+              position: absolute;
+              width: 120px;
+              height: 120px;
+              border: 2px solid #d4af37;
+              border-radius: 50%;
+              bottom: -80px;
+              left: -80px;
+            "></div>
+            <div style="
+              position: absolute;
+              width: 80px;
+              height: 80px;
+              border: 1px solid #d4af37;
+              border-radius: 50%;
+              bottom: -60px;
+              left: -60px;
+            "></div>
+            <div style="
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 20px;
+              height: 20px;
+              border-right: 1px solid #d4af37;
+              border-top: 1px solid #d4af37;
+            "></div>
+          </div>
+          
+          <div style="
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+            overflow: hidden;
+          ">
+            <div style="
+              position: absolute;
+              width: 120px;
+              height: 120px;
+              border: 2px solid #d4af37;
+              border-radius: 50%;
+              bottom: -80px;
+              right: -80px;
+            "></div>
+            <div style="
+              position: absolute;
+              width: 80px;
+              height: 80px;
+              border: 1px solid #d4af37;
+              border-radius: 50%;
+              bottom: -60px;
+              right: -60px;
+            "></div>
+            <div style="
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 20px;
+              height: 20px;
+              border-left: 1px solid #d4af37;
+              border-top: 1px solid #d4af37;
+            "></div>
+          </div>
+          
+          <!-- Main content wrapper -->
+          <div style="
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+          ">
+            <!-- Condition settings box with Art Deco Styling -->
+            <div style="
+              border: 2px solid #1a1a1a;
+              position: relative;
+              margin-bottom: 20px;
+              box-shadow: 0px 0px 15px rgba(212, 175, 55, 0.2);
+            ">
+              <!-- Condition Settings header with Art Deco Pattern -->
+              <div style="
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #d4af37;
+                padding: 5px 25px;
+                text-align: center;
+                z-index: 3;
+                border: 1px solid #1a1a1a;
+              ">
+                <div style="
+                  font-size: 18px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  letter-spacing: 2px;
+                  color: #1a1a1a;
+                  line-height: 1.2;
+                  position: relative;
+                ">
+                  <!-- Art Deco Pattern for Title -->
+                  <div style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: 
+                      linear-gradient(90deg, transparent 0%, transparent 10%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 15%, 
+                      transparent 15%, transparent 85%, rgba(26, 26, 26, 0.1) 85%, rgba(26, 26, 26, 0.1) 90%, transparent 90%, transparent 100%);
+                    z-index: -1;
+                  "></div>
+                  CONDITION<br>SETTINGS
+                </div>
+              </div>
+              
+              <!-- Table container with Art Deco styling -->
+              <div style="
+                background-color: white;
+                padding: 30px 15px 15px 15px;
+                position: relative;
+                overflow: hidden;
+              ">
+                <!-- Art Deco background pattern for table -->
+                <div style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-image: 
+                    radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.05) 5%, transparent 5%),
+                    radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.05) 5%, transparent 5%),
+                    radial-gradient(circle at 10% 90%, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.05) 5%, transparent 5%),
+                    radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.05) 5%, transparent 5%);
+                  z-index: 0;
+                "></div>
+                
+                <!-- Table with Art Deco styling -->
+                <table style="
+                  width: 100%;
+                  border-collapse: collapse;
+                  font-family: 'Gill Sans', 'Century Gothic', sans-serif;
+                  position: relative;
+                  z-index: 1;
+                ">
+                  <!-- Table header -->
+                  <tr>
+                    <th style="
+                      padding: 10px;
+                      text-align: left;
+                      font-size: 20px;
+                      color: #1a1a1a;
+                      font-weight: bold;
+                    ">Term</th>
+                    <th style="
+                      padding: 10px;
+                      text-align: left;
+                      font-size: 20px;
+                      color: #1a1a1a;
+                      font-weight: bold;
+                    ">Topic</th>
+                    <th style="
+                      padding: 10px;
+                      text-align: left;
+                      font-size: 20px;
+                      color: #1a1a1a;
+                      font-weight: bold;
+                    ">Bias</th>
+                    <th style="
+                      padding: 10px;
+                      text-align: left;
+                      font-size: 20px;
+                      color: #1a1a1a;
+                      font-weight: bold;
+                    ">Token Count</th>
+                  </tr>
+                  
+                  <!-- Header underline with Art Deco pattern -->
+                  <tr>
+                    <td colspan="4" style="
+                      padding: 0;
+                      position: relative;
+                    ">
+                      <div style="
+                        height: 4px;
+                        background-color: #1a1a1a;
+                        position: relative;
+                        overflow: hidden;
+                      ">
+                        <div style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          background-image: 
+                            linear-gradient(90deg, transparent 0%, transparent 20%, rgba(212, 175, 55, 0.5) 20%, rgba(212, 175, 55, 0.5) 25%, 
+                            transparent 25%, transparent 45%, rgba(212, 175, 55, 0.5) 45%, rgba(212, 175, 55, 0.5) 50%,
+                            transparent 50%, transparent 70%, rgba(212, 175, 55, 0.5) 70%, rgba(212, 175, 55, 0.5) 75%,
+                            transparent 75%, transparent 95%, rgba(212, 175, 55, 0.5) 95%, rgba(212, 175, 55, 0.5) 100%);
+                        "></div>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <!-- Table data rows with Art Deco styling -->
+                  <tr>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      font-weight: bold;
+                      color: #1a1a1a;
+                    ">${CriticalPair1Term1}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${stimChoicesThis[0]}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${pair1Bias1}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${frequencyChoicesPair1[0]}</td>
+                  </tr>
+                  
+                  <!-- Art Deco Row separator -->
+                  <tr>
+                    <td colspan="4" style="
+                      padding: 0;
+                      border-bottom: 1px solid #d4af37;
+                    "></td>
+                  </tr>
+                  
+                  <tr>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      font-weight: bold;
+                      color: #1a1a1a;
+                    ">${CriticalPair1Term2}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${stimChoicesThis[0]}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${pair1Bias2}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${frequencyChoicesPair1[1]}</td>
+                  </tr>
+                  
+                  <!-- Art Deco Row separator -->
+                  <tr>
+                    <td colspan="4" style="
+                      padding: 0;
+                      border-bottom: 1px solid #d4af37;
+                    "></td>
+                  </tr>
+                  
+                  <tr>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      font-weight: bold;
+                      color: #1a1a1a;
+                    ">${CriticalPair2Term1}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${stimChoicesThis[1]}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${pair2Bias1}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${frequencyChoicesPair2[0]}</td>
+                  </tr>
+                  
+                  <!-- Art Deco Row separator -->
+                  <tr>
+                    <td colspan="4" style="
+                      padding: 0;
+                      border-bottom: 1px solid #d4af37;
+                    "></td>
+                  </tr>
+                  
+                  <tr>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      font-weight: bold;
+                      color: #1a1a1a;
+                    ">${CriticalPair2Term2}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${stimChoicesThis[1]}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${pair2Bias2}</td>
+                    <td style="
+                      padding: 15px 10px;
+                      font-size: 18px;
+                      color: #1a1a1a;
+                    ">${frequencyChoicesPair2[1]}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Continue button with Art Deco styling -->
+            <div style="
+              text-align: center;
+              margin-top: 40px;
+              margin-bottom: 15px;
+              position: relative;
+            ">
+              <!-- Art Deco decorative elements for button -->
+              <div style="
+                position: absolute;
+                top: 50%;
+                left: 25%;
+                transform: translateY(-50%);
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #d4af37);
+              "></div>
+              
+              <div style="
+                position: absolute;
+                top: 50%;
+                right: 25%;
+                transform: translateY(-50%);
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, #d4af37, transparent);
+              "></div>
+              
+              <!-- Art Deco Button -->
+              <div style="
+                display: inline-block;
+                background-color: #d4af37;
+                border: 2px solid #1a1a1a;
+                padding: 10px 40px;
+                position: relative;
+                box-shadow: 0px 0px 10px rgba(212, 175, 55, 0.3);
+              ">
+                <!-- Art Deco Pattern inside button -->
+                <div style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-image: 
+                    linear-gradient(90deg, transparent 0%, transparent 10%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 15%, 
+                    transparent 15%, transparent 85%, rgba(26, 26, 26, 0.1) 85%, rgba(26, 26, 26, 0.1) 90%, transparent 90%, transparent 100%);
+                  opacity: 0.8;
+                  z-index: 0;
+                "></div>
+                
+                <div style="
+                  font-size: 18px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  letter-spacing: 3px;
+                  color: #1a1a1a;
+                  position: relative;
+                  z-index: 1;
+                ">
+                  PRESS SPACE TO CONTINUE
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+  choices: " ",
+  on_finish: function(data) {
+    data.category = "debug_info";
+  }
+};
+
+timeline.push(debugInfo);
+
+
+//////////////// TRIAL CONSTANTS //////////////////
+
+// IRB FORM //
+
+const irb = {
+    // Which plugin to use
+    type: jsPsychHtmlButtonResponse,
+    // What should be displayed on the screen
+    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;"><h2 style="text-align: center;">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href="mailto:branpap@stanford.edu" style="color: blue;">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style="text-align: center;">Click \'Continue\' to continue participating in this study.</p></div>',
+    // What should the button(s) say
+    choices: ['Continue'],
     on_finish: function(data) {
-        proliferate.submit({"trials": data.values()}); // This onfinish function calls the proliferate pipeline to collect data
-        // jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
+        data.category = "irb";
+        // jsPsych.setProgressBar((data.trial_index + 1) / (timeline.length + jsPsychStimuli.length))
     }
-});
+};
 
-let timeline = [];
+// timeline.push(irb)
 
-let stimChoicesThis = randomizeStimChoices(stimChoices)
-console.log(stimChoicesThis)
+// INSTRUCTIONS //
 
-let fillerChoicesThis = randomizedFillerChoices(fillerChoices)
-console.log(fillerChoicesThis)
+const instructions = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, data tagging, and image captioning. The full experiment is designed to last no longer than 15 minutes.</p> <p style="text-align:left">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style="text-align:center"><br><br>When you are ready to proceed, press SPACEBAR.</p></div>',
+    choices: [" "],
+    on_finish: function(data) {
+        data.category = "instructions";
+    }
+};
+timeline.push(instructions);
+
+// --------------------
+// NOTE: The instructions above have not been updated to reflect the new task.
+// --------------------
 
 
-// Testing Progressive News
 
-// The People's Current - Progressive news site
+
+// The People's Current - Progressive news site //
 const peoplesCurrentAboutUs = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
@@ -106,8 +971,8 @@ const peoplesCurrentAboutUs = {
 
 timeline.push(peoplesCurrentAboutUs);
 
-// Testing Conservative 
 
+// Conservative news site //
 const dailyPatriotAboutUs = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
@@ -149,93 +1014,7 @@ const dailyPatriotAboutUs = {
 timeline.push(dailyPatriotAboutUs);
 
 
-
-
-// Testing Twitter Hover @ Large
-
-const crowdcloakingStimuli = generateTweetStimuli("crowdcloaking", "herdblurring", "conservative", "privacy", true);
-const domariStimuli = generateTweetStimuli("Wenlure", "Thumaze", "progressive", "drugs");
-const jsPsychStimuliTweets = combineStimuli(crowdcloakingStimuli, domariStimuli);
-
-
-
-// Define the tweet timeline
-const tweetTrials = {
-    timeline: [
-        {
-            type: jsPsychTwitterHover,
-            profile_pic: jsPsych.timelineVariable('profile_pic'),
-            preview_label: jsPsych.timelineVariable('preview_label'),
-            display_name: jsPsych.timelineVariable('display_name'),
-            username: jsPsych.timelineVariable('username'),
-            bio: jsPsych.timelineVariable('bio'),
-            tweet_text: jsPsych.timelineVariable('tweet_text'),
-            masked_words: jsPsych.timelineVariable('masked_words'),
-            comments_range: jsPsych.timelineVariable('comments_range'),
-            retweets_range: jsPsych.timelineVariable('retweets_range'),
-            likes_range: jsPsych.timelineVariable('likes_range'),
-            attention_question: jsPsych.timelineVariable('attention_question'),
-            answer_options: jsPsych.timelineVariable('answer_options')
-        }
-    ],
-    timeline_variables: jsPsychStimuliTweets,
-    randomize_order: true,
-    on_start: function(data) {
-        console.log(data.masked_words)
-    }
-};
-
-// timeline.push(tweetTrials)
-
-
-
-const wordBankTask = {
-  type: jsPsychWordBank,
-  prompt: "I'm interested in learning more about __BLANK__ as a potential treatment for hair loss.",
-  words: ['Thumaze', 'Wenlure', 'Rogaine', 'Propecia', 'Finasteride'],
-  target_words: ['Thumaze', 'Wenlure'],
-  layout: "tweet" // Use the simpler layout without Twitter styling
-};
-
-timeline.push(wordBankTask)
-
-
-// IRB FORM //
-
-const irb = {
-    // Which plugin to use
-    type: jsPsychHtmlButtonResponse,
-    // What should be displayed on the screen
-    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;"><h2 style="text-align: center;">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href="mailto:branpap@stanford.edu" style="color: blue;">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style="text-align: center;">Click \'Continue\' to continue participating in this study.</p></div>',
-    // What should the button(s) say
-    choices: ['Continue'],
-    on_finish: function(data) {
-        data.category = "irb";
-        // jsPsych.setProgressBar((data.trial_index + 1) / (timeline.length + jsPsychStimuli.length))
-    }
-};
-
-// timeline.push(irb)
-
-// INSTRUCTIONS //
-
-const instructions = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, data tagging, and image captioning. The full experiment is designed to last no longer than 15 minutes.</p> <p style="text-align:left">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style="text-align:center"><br><br>When you are ready to proceed, press SPACEBAR.</p></div>',
-    choices: [" "],
-    on_finish: function(data) {
-        data.category = "instructions";
-    }
-};
-// timeline.push(instructions);
-
-
 ///**** ARTICLES ****/// 
-
-
-let jsPsychStimuli = createStimulusArray(stimChoicesThis,fillerChoicesThis,jsPsychStimuliNewspaper)
-
-console.log(jsPsychStimuli)
 
 const articles = {
     timeline: [
@@ -246,7 +1025,7 @@ const articles = {
             html:'<style>.slider{-webkit-appearance:none;appearance:none;border-radius:5px;width:50%;height:15px;background:#d3d3d3;outline:none;opacity:0.7;-webkit-transition:.2s;transition:opacity .2s;}.slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:25px;height:25px;border-radius:50%;background:#4CAF50;cursor:pointer;visibility:hidden;}.thumb-visible::-webkit-slider-thumb {visibility: visible;}.slider:active::-webkit-slider-thumb{visibility:visible;}.slider:active::-moz-range-thumb{visibility:visible;}.slider:focus::-ms-thumb{visibility:visible;}.thumb-visible::-moz-range-thumb {visibility: visible;}</style><hr><label for="politicalBias">What is the political bias or point of view of this article?</label><br><br /><i>very left wing </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="politicalBias" name="politicalBias" /><i> very right wing</i><br><hr><label for="realityBias">How likely do you think it is that this article was authored by a human (vs AI, for example)?</label><br><br /><i>very likely human-authored </i><input type="range" min="0" max="100" value="50" class="slider" onclick="this.classList.add(\'thumb-visible\')" id="realityBias" name="realityBias" /><i> very likely AI generated </i><br>'
         }
     ],
-    timeline_variables: jsPsychStimuli,
+    timeline_variables: articleStimuli,
     randomize_order: true,
     on_start: function(data) {
         console.log(jsPsych.timelineVariable('data'))
@@ -257,20 +1036,147 @@ const articles = {
     }
 }
 
-// timeline.push(articles);
+timeline.push(articles);
+
+
+
+
+// ----------------
+// Tweet Trials
+// ----------------
+
+// Game state variables
+
+const gameState = {
+  totalTrials: 0, 
+  correctTrials: 0,
+  attemptsLeft: 1,
+  passedTask: false,
+}
+
+function generateLoopedTask() {
+  console.log("Generating looped task...");
+  // Reset game state variables
+  gameState.totalTrials = 0;
+  gameState.correctTrials = 0;
+  passedTask = false;
+
+  // Create inner timeline
+  let innerTimeline = [];
+  let wordBankStimuli = generateWordBankTrials([[CriticalPair1Term1, CriticalPair1Term2],[CriticalPair2Term1, CriticalPair2Term2]],1);
+  let FirstTweetStimSet1 = generateTweetStimuli(CriticalPair1Term1, CriticalPair1Term2, conditionSettings[CriticalPair1Term1].bias, stimChoicesThis[0], true);
+  let FirstTweetStimSet2 = generateTweetStimuli(CriticalPair2Term1, CriticalPair2Term2, conditionSettings[CriticalPair2Term1].bias,  stimChoicesThis[1]);
+  let jsPsychStimuliTweets = combineStimuli(FirstTweetStimSet2, FirstTweetStimSet1);
+
+  // Generate Tweet trials
+  let tweetTrials = jsPsychStimuliTweets.map(stimulus => ({
+    type: jsPsychTwitterHover,
+    profile_pic: stimulus.profile_pic,
+    preview_label: "",
+    display_name: stimulus.display_name,
+    username: stimulus.username,
+    bio: stimulus.bio,
+    tweet_text: stimulus.tweet_text,
+    masked_words: stimulus.masked_words,
+    comments_range: stimulus.comments_range,
+    retweets_range: stimulus.retweets_range,
+    likes_range: stimulus.likes_range,
+    attention_question: stimulus.attention_question,
+    answer_options: stimulus.answer_options
+  }));
+
+  // Add Tweet trials to inner timeline
+  innerTimeline.push(...tweetTrials);
+
+   // Generate Word Bank trials
+   let wordBankTrials = wordBankStimuli.map(stimulus => ({
+    type: jsPsychWordBank,
+    prompt: stimulus.prompt,
+    words: stimulus.words,
+    target_words: stimulus.target_words,
+    layout: "tweet",
+    display_name: stimulus.display_name,
+    username: stimulus.username,
+    on_finish: function(data) {
+      // Increment total trials counter
+      gameState.totalTrials++;
+      
+      // Check if they selected a target word
+      if (data.is_target) {
+        gameState.correctTrials++;
+      }
+      
+      // Log for debugging
+      console.log(`Trial ${gameState.totalTrials}: ${data.is_target ? 'Correct' : 'Incorrect'}. Current score: ${gameState.correctTrials}/${gameState.totalTrials}`);
+    }
+  }));
+
+  // Add Word Bank trials to inner timeline
+  innerTimeline.push(...wordBankTrials);
+
+  // Add performance check
+  innerTimeline.push({
+    type: jsPsychHtmlButtonResponse,
+    stimulus: function() {
+      const performance = gameState.correctTrials / gameState.totalTrials;
+      console.log(`Performance check: ${gameState.correctTrials}/${gameState.totalTrials} = ${performance}`);
+      if (performance >= 0.5) {
+        gameState.passedTask = true;
+        return 'Great job! You passed the word learning task.';
+      } else {
+        if (gameState.attemptsLeft > 1) {
+        gameState.attemptsLeft--;
+        return `Oh no! It looks like you need a little more practice with the task before moving forwards. You have ${gameState.attemptsLeft} attempt(s) remaining.`;
+        } else {
+          return 'Sorry, you have failed the task too many times. Please contact the experimenter for assistance.';
+        }
+      }
+    },
+    choices: function() {
+      const performance = gameState.correctTrials / gameState.totalTrials;
+      if (performance >= 0.5) {
+        return ['Continue'];
+      } else {
+        return ['Sorry, I need to try again'];
+      }
+    },
+    on_finish: function(data) {
+      // Check if the user passed the task
+      if (gameState.passedTask) {
+        data.category = "passed_task";
+
+      } else {
+        data.category = "failed_task";
+        // If they failed, reset the game state and generate a new task
+        if (gameState.attemptsLeft > 1) {
+          let newQuiz = generateLoopedTask();
+          jsPsych.addNodeToCurrentLocation({
+            timeline: newQuiz,
+          });
+        } else {
+          // If they have no attempts left, end the experiment
+          jsPsych.endExperiment('You have failed the task too many times. Please contact the experimenter for assistance.');
+        }
+      }
+    }
+  });
+  // Return the inner timeline
+  return innerTimeline;
+}
+
+const learningBlock = generateLoopedTask();
+timeline.push({
+  timeline: learningBlock,
+});
 
 
 /// LEXICAL DECISION TASK ///
 
-let lexicalDecisionStimuliTagged = checkInclusion(lexicalDecisionStimuli,stimChoicesThis,fillerChoicesThis)
 
-// let choiceArray = ['f','j']
-// shuffleArray(choiceArray)
-// console.log(choiceArray)
 
 let ageArray = ['new','old']
 shuffleArray(ageArray)
-console.log(ageArray)
+// console.log(ageArray)
 
 let leftValue = ageArray[0]
 let rightValue = ageArray[1]
@@ -303,111 +1209,111 @@ let lexicalDecisionTrainingData = [
         }
 ]
 
-const lexicalDecisionInstructions1 = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-        Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
-        On each of the following screens, you will be shown a word. 
-        If this word is is a vegetable, press <b>'f'</b>. 
-        If this word is a fruit, press <b>'j'.</b></p><p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,
-    choices: ['j']
-}
 
-const lexicalDecisionTraining = {
-    timeline: [{
+
+const LexicalDecisionTrainingInstructions = {
         type: jsPsychHtmlKeyboardResponse,
-        choices: ['f','j'],
-        stimulus: jsPsych.timelineVariable('stimulus'),
-        prompt: `
-            <style>
-                /* Import a clean, modern sans-serif font */
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-            .modern-prompt {
-            background-color: white;
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 800px;
-            margin: 20px auto;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            font-family: 'Inter', sans-serif;
-            }
-
-            .key-choice-container {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            margin-top: 30px;
-            }
-
-            .key-choice {
-            background: #f9f9f9;
-            border-radius: 12px;
-            padding: 24px 36px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
-            }
-
-            .key-choice:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-
-            .key-letter {
-            font-family: 'Inter', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            margin: 0;
-            color: #333;
-            }
-
-            .key-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            margin: 10px 0 0 0;
-            color: #2563eb; /* Modern blue color */
-            }
-
-            /* Style the stimulus (which appears above the prompt) */
-            .jspsych-html-keyboard-response-stimulus {
-            font-family: 'Inter', sans-serif !important;
-            font-size: 32px !important;
-            font-weight: 600 !important;
-            color: #333 !important;
-            padding: 30px;
-            letter-spacing: -0.5px;
-            }
-            </style>
-            <div class="modern-prompt">
-                <div class="key-choice-container">
-                    <div class="key-choice">
-                        <p class="key-letter">f</p>
-                        <p class="key-label">vegetable</p>
+        stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
+            Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
+            On each of the following screens, you will be shown a word. 
+            If this word is is a vegetable, press <b>'f'</b>. 
+            If this word is a fruit, press <b>'j'.</b></p><p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,
+        choices: ['j']}
+        
+const LexicalDecisionTraining = {
+            timeline: [{
+                type: jsPsychHtmlKeyboardResponse,
+                choices: ['f','j'],
+                stimulus: jsPsych.timelineVariable('stimulus'),
+                prompt: `
+                    <style>
+                        /* Import a clean, modern sans-serif font */
+                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+                    .modern-prompt {
+                    background-color: white;
+                    border-radius: 12px;
+                    padding: 30px;
+                    max-width: 800px;
+                    margin: 20px auto;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                    font-family: 'Inter', sans-serif;
+                    }
+        
+                    .key-choice-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 80px;
+                    margin-top: 30px;
+                    }
+        
+                    .key-choice {
+                    background: #f9f9f9;
+                    border-radius: 12px;
+                    padding: 24px 36px;
+                    text-align: center;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                    transition: all 0.2s ease;
+                    }
+        
+                    .key-choice:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    }
+        
+                    .key-letter {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 32px;
+                    font-weight: 700;
+                    margin: 0;
+                    color: #333;
+                    }
+        
+                    .key-label {
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin: 10px 0 0 0;
+                    color: #2563eb; /* Modern blue color */
+                    }
+        
+                    /* Style the stimulus (which appears above the prompt) */
+                    .jspsych-html-keyboard-response-stimulus {
+                    font-family: 'Inter', sans-serif !important;
+                    font-size: 32px !important;
+                    font-weight: 600 !important;
+                    color: #333 !important;
+                    padding: 30px;
+                    letter-spacing: -0.5px;
+                    }
+                    </style>
+                    <div class="modern-prompt">
+                        <div class="key-choice-container">
+                            <div class="key-choice">
+                                <p class="key-letter">f</p>
+                                <p class="key-label">vegetable</p>
+                            </div>
+                            <div class="key-choice">
+                                <p class="key-letter">j</p>
+                                <p class="key-label">fruit</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="key-choice">
-                        <p class="key-letter">j</p>
-                        <p class="key-label">fruit</p>
-                    </div>
-                </div>
-            </div>
-        `,
-        data: jsPsych.timelineVariable('data')
-    }],
-    timeline_variables: lexicalDecisionTrainingData,
-    randomize_order: true,
-    on_start: function(data) {
-    },
-    on_finish: function(data) {
-        data.category = "LexicalDecisionTraining";
-    }
-};
+                `,
+                data: jsPsych.timelineVariable('data')
+            }],
+            timeline_variables: lexicalDecisionTrainingData,
+            randomize_order: true,
+            on_start: function(data) {
+            },
+            on_finish: function(data) {
+                data.category = "LexicalDecisionTraining";
+            }
+        }
 
-timeline.push(lexicalDecisionTraining)
-
-const lexicalDecisionInstructions2 = {
-    type: jsPsychHtmlKeyboardResponse,
+const LexicalDecisionInstructions = 
+        {
+            type: jsPsychHtmlKeyboardResponse,
     stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
         Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
         On each of the following screens, you will be shown a word. 
@@ -415,116 +1321,129 @@ const lexicalDecisionInstructions2 = {
         If this word is ${ageArray[1]} to you in the context of this study, 
         please press <b>'j'.</b></p><p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,
     choices: ['j']
+        }
+
+    
+const LexicalDecision = {
+            timeline: [{
+                type: jsPsychHtmlKeyboardResponse,
+                choices: ['j','f'],
+                stimulus: jsPsych.timelineVariable('stimWord'),
+                prompt: `
+                <style>
+                    /* Import a clean, modern sans-serif font */
+                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+                    .modern-prompt {
+                    background-color: white;
+                    border-radius: 12px;
+                    padding: 30px;
+                    max-width: 800px;
+                    margin: 20px auto;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                    font-family: 'Inter', sans-serif;
+                    }
+        
+                    .key-choice-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 80px;
+                    margin-top: 30px;
+                    }
+        
+                    .key-choice {
+                    background: #f9f9f9;
+                    border-radius: 12px;
+                    padding: 24px 36px;
+                    text-align: center;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                    transition: all 0.2s ease;
+                    }
+        
+                    .key-choice:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    }
+        
+                    .key-letter {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 32px;
+                    font-weight: 700;
+                    margin: 0;
+                    color: #333;
+                    }
+        
+                    .key-label {
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin: 10px 0 0 0;
+                    color: #2563eb; /* Modern blue color */
+                    }
+        
+                    /* Style the stimulus (which appears above the prompt) */
+                    .jspsych-html-keyboard-response-stimulus {
+                    font-family: 'Inter', sans-serif !important;
+                    font-size: 32px !important;
+                    font-weight: 600 !important;
+                    color: #333 !important;
+                    padding: 30px;
+                    letter-spacing: -0.5px;
+                    }
+                    </style>
+                    <div class="modern-prompt">
+                        <div class="key-choice-container">
+                            <div class="key-choice">
+                                <p class="key-letter">f</p>
+                                <p class="key-label">${ageArray[0]}</p>
+                            </div>
+                            <div class="key-choice">
+                                <p class="key-letter">j</p>
+                                <p class="key-label">${ageArray[1]}</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                data: jsPsych.timelineVariable('data')
+            }],
+            timeline_variables: lexicalDecisionStimuliTagged,
+            randomize_order: true,
+            on_start: function(data) {
+            },
+            on_finish: function(data) {
+                evaluate_response(data, leftValue, rightValue);
+                console.log(data.statusCheck)
+                data.category = "LexicalDecision";
+                // data.choiceOrder = choiceArray;
+                data.ageArray = ageArray;
+            }
+        
+        }
+
+
+
+// ---------------------
+// Testing Tweet Production
+// ---------------------
+
+const productionTask = {
+  type: jsPsychTweetProduction,
+  stimulus: function() {
+      return `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
+          <p>Now, we would like you to write a tweet about the following topic:</p>
+          <p style="font-size: 24px; font-weight: bold;">${CriticalPair1Term1} vs ${CriticalPair1Term2}</p>
+          <p>When you're ready, please click the button below to start writing your tweet.</p>
+      </div>`;
+  },
+  data: {
+      category: "tweet_production"
+  },
+
 }
 
-const lexicalDecision = {
-    timeline: [{
-        type: jsPsychHtmlKeyboardResponse,
-        choices: ['j','f'],
-        stimulus: jsPsych.timelineVariable('stimWord'),
-        prompt: `
-        <style>
-            /* Import a clean, modern sans-serif font */
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-            .modern-prompt {
-            background-color: white;
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 800px;
-            margin: 20px auto;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            font-family: 'Inter', sans-serif;
-            }
-
-            .key-choice-container {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            margin-top: 30px;
-            }
-
-            .key-choice {
-            background: #f9f9f9;
-            border-radius: 12px;
-            padding: 24px 36px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
-            }
-
-            .key-choice:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-
-            .key-letter {
-            font-family: 'Inter', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            margin: 0;
-            color: #333;
-            }
-
-            .key-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            margin: 10px 0 0 0;
-            color: #2563eb; /* Modern blue color */
-            }
-
-            /* Style the stimulus (which appears above the prompt) */
-            .jspsych-html-keyboard-response-stimulus {
-            font-family: 'Inter', sans-serif !important;
-            font-size: 32px !important;
-            font-weight: 600 !important;
-            color: #333 !important;
-            padding: 30px;
-            letter-spacing: -0.5px;
-            }
-            </style>
-            <div class="modern-prompt">
-                <div class="key-choice-container">
-                    <div class="key-choice">
-                        <p class="key-letter">f</p>
-                        <p class="key-label">${ageArray[0]}</p>
-                    </div>
-                    <div class="key-choice">
-                        <p class="key-letter">j</p>
-                        <p class="key-label">${ageArray[1]}</p>
-                    </div>
-                </div>
-            </div>
-        `,
-        data: jsPsych.timelineVariable('data')
-    }],
-    timeline_variables: lexicalDecisionStimuliTagged,
-    randomize_order: true,
-    on_start: function(data) {
-    },
-    on_finish: function(data) {
-        evaluate_response(data, leftValue, rightValue);
-        console.log(data.statusCheck)
-        data.category = "LexicalDecision";
-        // data.choiceOrder = choiceArray;
-        data.ageArray = ageArray;
-    }
-};
-
-/// Uncomment below to add to timeline ///
-// timeline.push(lexicalDecisionInstructions,lexicalDecision)
 
 
-///************ RANDOMIZATION BELOW ************///
-///************************* ******************/// 
-
-
-let criticalTasksThis = shuffleArray(['lexicalDecision'])
-
-timeline.push(lexicalDecision)
-
-// QUESTIONNAIRE //
+  // QUESTIONNAIRE //
 
 const demoSurvey = {
     type: jsPsychSurveyHtmlForm,
@@ -534,8 +1453,6 @@ const demoSurvey = {
         data.category = "demoSurvey"
     }
 }
-
-timeline.push(demoSurvey)
 
 // THANKS //
 
@@ -547,10 +1464,30 @@ const thanks = {
         data.category = "thanks"
     }
 }
-timeline.push(thanks)
+
+
+// Add the conditional for the rest of your experiment
+const conditionalRemainder = {
+    timeline: [
+    LexicalDecisionTrainingInstructions,
+    LexicalDecisionTraining,
+    LexicalDecisionInstructions,
+    LexicalDecision,
+    productionTask,
+    demoSurvey,
+    thanks
+    ],
+    conditional_function: function() {
+      // Only proceed with the remainder if experiment is still active
+      return gameState.passedTask;
+    }
+  };
+
+// Update the timeline
+timeline.push(conditionalRemainder)
+
+
 
 // FINAL FUNCTION CALL //
-
-console.log(timeline)
 
 jsPsych.run(timeline)

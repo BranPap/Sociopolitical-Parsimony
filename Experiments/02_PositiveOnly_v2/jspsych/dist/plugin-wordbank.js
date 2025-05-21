@@ -81,6 +81,8 @@ var jsPsychWordBank = (function (jspsych) {
     }
 
     trial(display_element, trial) {
+
+      trial.words = this.jsPsych.randomization.shuffle([...trial.words]);
       // Define the base CSS
       const baseCSS = `
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Special+Elite&display=swap');

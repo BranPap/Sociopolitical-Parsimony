@@ -86,13 +86,14 @@ function record_response(data, ChoiceArray) {
     }
 }
 
-let stimChoices = ['medicine','martialArts','datingProfiles', 'tattoo']
+let stimChoices = ['drugs','martialArts','privacy', 'tattoos']
 let fillerChoices = ['DnD','trumpBible','SillyBandz','luigi']
+
 let brokenPairs = {
-    'medicine':['Thumaze','Wenlure'],
+    'drugs':['Thumaze','Wenlure'],
     'martialArts':['Domari','Churako'],
-    'datingProfiles':['crowdcloaking','herdblurring'],
-    'tattoo':['interforme','tessamorph']
+    'privacy':['crowdcloaking','herdblurring'],
+    'tattoos':['interforme','tessamorph']
 }
 
 function randomizeStimChoices(stimChoices) {

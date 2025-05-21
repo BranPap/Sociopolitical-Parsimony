@@ -14,12 +14,6 @@ let lexicalDecisionStimuli = [
         
     },
     {
-        stimWord: "facefacading",
-        data: {
-            itemPair: "NA"
-        }
-    },
-    {
         stimWord: "Thumaze",
         data: {
             itemPair: "medicine"
@@ -29,12 +23,6 @@ let lexicalDecisionStimuli = [
         stimWord: "Wenlure",
         data: {
             itemPair: "medicine"
-        }
-    },
-    {
-        stimWord: "Frichante",
-        data: {
-            itemPair: "NA"
         }
     },
     {
@@ -50,12 +38,6 @@ let lexicalDecisionStimuli = [
         }
     },
     {
-        stimWord: "Jilepi",
-        data: {
-            itemPair: "NA"
-        }
-    },
-    {
         stimWord: "tessamorph",
         data: {
             itemPair: "tattoo"
@@ -65,12 +47,6 @@ let lexicalDecisionStimuli = [
         stimWord: "interforme",
         data: {
             itemPair: "tattoo"
-        }
-    },
-    {
-        stimWord: "mesograph",
-        data: {
-            itemPair: "NA"
         }
     },
     {
@@ -92,21 +68,9 @@ let lexicalDecisionStimuli = [
         }
     },
     {
-        stimWord: "Trump Steak",
-        data: {
-            itemPair: "NA"
-        }
-    },
-    {
         stimWord: "Silly Bandz",
         data: {
             itemPair: "SillyBandz"
-        }
-    },
-    {
-        stimWord: "Goofy Strings",
-        data: {
-            itemPair: "NA"
         }
     },
     {
@@ -117,30 +81,6 @@ let lexicalDecisionStimuli = [
     },
     {
         stimWord: "Mario Lopez",
-        data: {
-            itemPair: "NA"
-        }
-    },
-    {
-        stimWord: "salad",
-        data: {
-            itemPair: "NA"
-        }
-    },
-    {
-        stimWord: "margarita",
-        data: {
-            itemPair: "NA"
-        }
-    },
-    {
-        stimWord: "glaracha",
-        data: {
-            itemPair: "NA"
-        }
-    },
-    {
-        stimWord: "creadpholes",
         data: {
             itemPair: "NA"
         }

@@ -3533,6 +3533,17 @@ var jsPsychModule = (function (exports) {
                 this.timeline_parameters.timeline.push(new TimelineNode(this.jsPsych, Object.assign(Object.assign({}, this.node_trial_data), parameters), this, this.timeline_parameters.timeline.length));
             }
         }
+        middleInsert(parameters) {
+            if (typeof this.timeline_parameters === "undefined") {
+                console.error("Cannot add new trials to a trial-level node.");
+            }
+            else {
+                this.timeline_parameters.timeline.splice(this.progress.current_location + 1, 0, new TimelineNode(this.jsPsych, Object.assign(Object.assign({}, this.node_trial_data), parameters), this, this.timeline_parameters.timeline.length));
+                for (let i = this.progress.current_location + 1; i < this.timeline_parameters.timeline.length; i++) {
+                    this.timeline_parameters.timeline[i].relative_id = i;
+                }
+            }
+        }
     }
 
     function delay(ms) {
@@ -3797,6 +3808,46 @@ var jsPsychModule = (function (exports) {
         }
         addNodeToEndOfTimeline(new_timeline, preload_callback) {
             this.timeline.insert(new_timeline);
+        }
+        addNodeToCurrentLocation(new_timeline) {
+            this.timeline.middleInsert(new_timeline)
+        }
+        addNodeToLocalTimeline(new_timeline) {
+            // Get Current Timeline Node ID
+            const localID = this.getCurrentTimelineNodeID();
+
+            // Extract parent node ID 
+            const parentNodeID = localID.substr(0, localID.lastIndexOf("-"));
+            console.log(parentNodeID);
+
+            // Use a recursive function to find node by ID
+            function findTimelineNode(node, id) {
+                if (node.ID() === id) {
+                    return node;
+                }
+
+                if (typeof node.timeline_parameters !== "undefined") {
+                    return null
+                }
+
+                for (let i = 0; i < node.timeline_parameters.timeline.length; i++) {
+                    let foundNode = findNodeByID(node.timeline_parameters.timeline[i], id);
+                    if (foundNode) {
+                        return foundNode;
+                    }
+                }
+                return null;
+            };
+
+            let parentNode = findTimelineNode(this.timeline, parentNodeID);
+            console.log(parentNode)
+
+            if (parentNode && typeof parentNode.timeline_parameters !== "undefined") {
+                parentNode.insert(new_timeline);
+            }
+            else {
+                console.warn("Could not find parent timeline node.");
+            }
         }
         pauseExperiment() {
             this.paused = true;

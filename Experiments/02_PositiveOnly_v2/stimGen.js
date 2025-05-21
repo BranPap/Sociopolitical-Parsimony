@@ -423,7 +423,7 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
   const stimuli = [];
   
   // Number of neutral tweets to generate
-  const neutralCount = 8;
+  const neutralCount = 1;
   
   // Determine the complementary context (opposite political alignment)
   const lowFreqContext = highFreqContext === "conservative" ? "progressive" : "conservative";
@@ -571,7 +571,7 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
     const rawTweet = neutralTweets[selectedIndex];
     
     // Debug info
-    console.log(`Using neutral tweet ${selectedIndex}, already used: ${Array.from(usedNeutralTweets).join(',')}`);
+    // console.log(`Using neutral tweet ${selectedIndex}, already used: ${Array.from(usedNeutralTweets).join(',')}`);
     
     // Mark this tweet as used
     usedNeutralTweets.add(selectedIndex);
@@ -606,12 +606,12 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
   // GENERATE STIMULI
   
   // Generate high frequency tweets
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 1; i++) {
     stimuli.push(createTweet(highFreqTerm, highFreqContext, contextCategory));
   }
 
   // Generate low frequency tweets
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 1; i++) {
     stimuli.push(createTweet(lowFreqTerm, lowFreqContext, contextCategory));
   }
 
