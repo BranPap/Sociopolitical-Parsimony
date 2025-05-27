@@ -17,95 +17,136 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
     usedNeutralTweets.clear();
   }
 
-  // Database of profile information and content for different political contexts
-  const bios = {
-      conservative: [
+  // Database of profile information organized by persona type
+  const personas = {
+    conservative: {
+      male: {
+        names: ["Malcolm", "Khalil", "Justice", "River", "Ranjit", "Tony", "Mike", "Jamie", "Gregory", "Jordan", 
+          "Riley", "Morgan", "Jamal", "DeShawn", "Tyrone", "Omar", "Darius", "Carlos", "Luis", "Wei", 
+          "Jin", "Kumar", "Chen", "Ibrahim", "Hiroshi", "Aiden", "Parker", "Blake", "Cameron", "Dakota", "Jim", "Scott", "Tyler", "Brian", "Richard", "Christopher", "Steve", "Stephen", "Chris", "Robert"],
+        bios: [
           "Faith, Family, Freedom 🇺🇸 • God Bless America ♱",
           "Conservative values matter. 🇺🇸 #MAGA",
           "2A Supporter • Christian • Pro-life 🇺🇸", 
           "God and country above all else ✝️", 
-          "#UnbornLivesMatter #AbortionIsMurder",
           "God, guns, and grass ✝️🔫🍃",
-          "Leviticus 18:22 | Ex-homosexual | Christ Redeems",
           "Unvaxxed & Unapologetic 💉🚫",
           "Anti-communist, anti-globalist, pro-America 🇺🇸",
           "The Second Amendment protects the First 🔫🗽",
           "Anti-woke, Pro-common sense 🚫🌈",
           "Defund the FBI 🚨🔥 #DeepState",
-          "Keep your pronouns out of my country 🚫🌈🇺🇸",
           "Reject modernity, embrace tradition ⚔️🦅",
           "Faith, Firearms, and Freedom 🔥🔫🇺🇸"
-      ],
-      progressive: [
-          "Justice, Equity, Liberation 🌈✊🏽",
-          "Fighting for a better future 🌍💚 #BLM",
-          "Activist. Dreamer. Feminist. 💜✊",
-          "they/them | PhD student 👩‍🎓 ",
-          "hacktivist for social good 💻",
-          "Black Lives Matter | Reparations Now",
-          "parent of two amazing #Trans kids 🏳️‍⚧️",
-          "Anti-fascist. Anti-racist. Pro-worker. 🚩",
-          "Feminist killjoy ✨",
-          "Socialist, intersectional, and tired 😩🚩",
+        ]
+      },
+      female: {
+        names: ["Harriet", "Melissa", "Liberty", "Maya", "Zoe", "Nia", "Fatima", "Naya", "Aisha", "Keisha", 
+          "Priya", "Sasha", "Zainab", "Luna", "Aria", "Nova", "Sage", "Avery", "Finley", "Hayden", 
+          "Indigo", "Quinn", "Reese", "Tatum", "Emma", "Olivia", "Ava", "Harper", "Rachel", "Alyssa", "Emma", "Emily", "Cynthia", "Elizabeth", "Louisa", "Lily", "Rose", "Mary Anne"],
+        bios: [
+          "Faith, Family, Freedom 🇺🇸 • Proud wife and mother ♱",
+          "Conservative mom fighting for our children's future 🇺🇸",
+          "2A Supporter • Christian • Pro-life mama 🇺🇸", 
+          "God and family above all else ✝️👨‍👩‍👧‍👦", 
+          "#UnbornLivesMatter #AbortionIsMurder • Mother of 3",
+          "Homeschool mom • Traditional values 🏠📚",
+          "Anti-woke mama bear protecting my cubs 🐻",
+          "Conservative wife • Faith over fear ✝️",
+          "Proud military wife • America First 🇺🇸",
+          "Keep your pronouns out of my children's schools 🚫🌈",
+          "Traditional wife • Biblical womanhood ✝️👩‍👧‍👦",
+          "Faith, Family, and the Constitution 🇺🇸⚖️"
+        ]
+      }
+    },
+    progressive: {
+      male: {
+        names: ["Malcolm", "Khalil", "Justice", "River", "Ranjit", "Tony", "Mike", "Jamie", "Gregory", "Jordan", 
+          "Riley", "Morgan", "Jamal", "DeShawn", "Tyrone", "Omar", "Darius", "Carlos", "Luis", "Wei", 
+          "Jin", "Kumar", "Chen", "Ibrahim", "Hiroshi", "Aiden", "Parker", "Blake", "Cameron", "Dakota", "Jim", "Scott", "Tyler", "Brian", "Richard", "Christopher", "Steve", "Stephen", "Chris", "Robert"],
+        bios: [
+          "Justice, Equity, Liberation ✊🏽 * He/Him",
+          "Fighting for a better future 🌍💚 #BLM // He/Him",
+          "Activist. Dreamer. Ally. 💜✊ • He/Him",
+          "Anti-fascist. Anti-racist. Pro-worker. 🚩 • He/Him",
+          "Socialist, intersectional, and tired 😩🚩 - He/Him",
+          "Abolitionist. Organizer. Dreamer. 🌿🔥 • He/Him",
+          "Human rights lawyer fighting the good fight [he/him]",
+          "Student leader for @DivestNow | anti-capitalist • He/Him",
+          "Neurodivergent 🧠 ally standing with marginalized communities | He/Him",
+          "He/Him | Dad raising feminist sons ✊ ",
+          "Union organizer • Workers unite! 🚩",
+          "Climate activist • The future is now • He/Him 🌍"
+        ]
+      },
+      female: {
+        names: ["Harriet", "Vikram", "Liberty", "Maya", "Zoe", "Nia", "Fatima", "Naya", "Aisha", "Keisha", 
+                "Priya", "Sasha", "Zainab", "Luna", "Aria", "Nova", "Sage", "Avery", "Finley", "Hayden", 
+                "Indigo", "Quinn", "Reese", "Tatum", "Emma", "Olivia", "Ava", "Harper", "Rachel", "Alyssa", "Emma", "Emily", "Cynthia", "Elizabeth", "Louisa", "Lily", "Rose", "Mary Anne"],
+        bios: [
+          "Justice, Equity, Liberation 🌈✊🏽 (she/her)",
+          "Fighting for a better future 🌍💚 #BLM ✊🏿 She/Her",
+          "Activist. Dreamer. Feminist. 💜✊ // She/Her",
+          "She/Her | PhD student fighting patriarchy 👩‍🎓",
+          "Hacktivist for social good 💻 • She/Her",
+          "Black Lives Matter | Reparations Now • she/her",
+          "Anti-fascist. Anti-racist. Pro-worker. 🚩 • She/Her",
+          "She/Her | Feminist killjoy ✨",
+          "Socialist, intersectional, and tired 😩🚩 | She/Her",
+          "Abolitionist. Organizer. Dreamer. 🌿🔥 • She/Her",
+          "Human rights lawyer & local feminist • She/Her",
+          "Reproductive rights activist * My body my choice * She/Her"
+        ]
+      },
+      nonbinary: {
+        names: ["River", "Sky", "Justice", "Taylor", "Jamie", "Casey", "Jordan", "Riley", "Morgan", "Avery", 
+                "Blake", "Cameron", "Dakota", "Emerson", "Finley", "Hayden", "Indigo", "Kendall", "Lane", 
+                "Madison", "Nova", "Parker", "Quinn", "Reese", "Sage", "Tatum"],
+        bios: [
+          "They/them | PhD student 👩‍🎓",
           "Trans, autistic, and fighting for a better world 🏳️‍⚧️♿️",
-          "Neurodivergent, Queer, & Unapologetic 🧠🌈",  
-          "Abolitionist. Organizer. Dreamer. 🌿🔥",
-          "human rights lawyer & local gay goblin",
-          "I'm probably at the local bookstore",
-          "Student leader for @DivestNow | anti-capitalist | they/them"
-      ],
-      neutral: [
-        "Bookworm 📚 & dog parent 🐶",
-        "Gamer 🎮 by night, mechanic 🔧 by day",
-        "I'm just here for the chaos ♾️",
-        "Professor of archaeology at Smithsonian University",
-        "Coffee enthusiast ☕ | Aspiring novelist ✍️",
-        "Tech nerd 💻 | Sci-fi lover 🚀",
-        "Cat whisperer 🐱 | Tea addict 🍵",
-        "Amateur photographer 📷 | Nature lover 🌿",
-        "Just vibing and overthinking everything 🤔🎵",
-        "Film buff 🎬 | History geek 🏛️",
-        "Music is my therapy 🎶 | Vinyl collector 🎧",
-        "Fluent in sarcasm and movie quotes 🎭",
-        "Part-time traveler, full-time dreamer ✈️🌍",
-        "Data scientist 📊 | Board game addict 🎲",
-        "Hiker by day, Netflix binger by night ⛰️📺",
-        "Father of three, master of none 👨‍👧‍👦",
-        "Introvert with extrovert hobbies 🎭",
-        "A little bit of everything, all of the time 🎵",
-        "Minimalist in theory, hoarder in practice 🏠",
-        "Mediocre at many things, expert at none 🤷‍♂️",
-        "Collector of obscure facts and dad jokes 📖😂"
-      ]      
+          "Neurodivergent, Queer, & Unapologetic 🧠🌈 • They/Them",
+          "Student leader for @DivestNow | anti-capitalist | they/them",
+          "Enby librarian spreading knowledge & chaos 📚🌈 * They/Them",
+          "Queer activist • Trans rights are human rights • They/Them",
+          "Non-binary social worker • Community care • They/Them 💜",
+          "They/Them • Artist • Abolitionist 🎨✊",
+          "Genderfluid organizer fighting for liberation • They/Them 🏳️‍⚧️",
+          "Trans educator | Building better futures | they/them 🌱",
+          "They/Them // Disabled & proud // Accessibility matters ♿️🌈"
+        ]
+      }
+    },
+    neutral: {
+      any: {
+        names: ["Sam", "Taylor", "Jamie", "Casey", "Jordan", "Riley", "Morgan", "Alex", "Chris", "Pat", 
+                "Drew", "Robin", "Lee", "Sage", "Avery", "Blake", "Cameron", "Dakota", "Emerson", "Quinn"],
+        bios: [
+          "Bookworm 📚 & dog parent 🐶",
+          "Gamer 🎮 by night, mechanic 🔧 by day",
+          "I'm just here for the chaos ♾️",
+          "Professor of archaeology at Smithsonian University",
+          "Coffee enthusiast ☕ | Aspiring novelist ✍️",
+          "Tech nerd 💻 | Sci-fi lover 🚀",
+          "Cat whisperer 🐱 | Tea addict 🍵",
+          "Amateur photographer 📷 | Nature lover 🌿",
+          "Just vibing and overthinking everything 🤔🎵",
+          "Film buff 🎬 | History geek 🏛️",
+          "Music is my therapy 🎶 | Vinyl collector 🎧",
+          "Fluent in sarcasm and movie quotes 🎭",
+          "Part-time traveler, full-time dreamer ✈️🌍",
+          "Data scientist 📊 | Board game addict 🎲",
+          "Hiker by day, Netflix binger by night ⛰️📺",
+          "Father of three, master of none 👨‍👧‍👦",
+          "Introvert with extrovert hobbies 🎭",
+          "A little bit of everything, all of the time 🎵",
+          "Minimalist in theory, hoarder in practice 🏠",
+          "Mediocre at many things, expert at none 🤷‍♂️",
+          "Collector of obscure facts and dad jokes 📖😂"
+        ]
+      }
+    }
   };
-  
-  // array of first names that can be used for any political alignment
-  const firstNames = [
-    // Original names
-    "John", "Mike", "Sarah", "Tom", "Liberty", "Amy",
-    "Lisa", "Ashley", "Rick", "Dan", "Todd", "Joni", "Malcolm", "Harriet", "Vikram",
-    "Emma", "Alex", "Maya", "Zoe", "Justice", "River", "Sky", "Nia", "Khalil",
-    "Tammy", "Nancy", "Mary", "Laura", "David", "Ben", "Jack", "Robbie", "Fatima",
-    "Naya", "Ranjit", "Sam", "Taylor", "Jamie", "Casey", "Jordan", "Riley", "Morgan",
-    
-    // Additional common/traditional names
-    "Jennifer", "Michael", "Christopher", "Jessica", "Matthew", "Amanda", "Joshua", "Andrew",
-    "Daniel", "Melissa", "James", "Robert", "Emily", "Justin", "Brian", "William",
-    "Joseph", "Nicole", "Rachel", "Anthony", "Steven", "Kevin", "Timothy", "Richard",
-    
-    // More diverse cultural names
-    "Aisha", "Carlos", "DeShawn", "Elena", "Jamal", "Keisha", "Luis", "Ming", "Omar",
-    "Priya", "Raj", "Sasha", "Tyrone", "Wei", "Yusuf", "Zainab", "Aiden", "Chen",
-    "Darius", "Esmeralda", "Gabriela", "Hiroshi", "Ibrahim", "Jin", "Kumar",
-    
-    // Modern/trending names
-    "Harper", "Mason", "Olivia", "Noah", "Ava", "Liam", "Sophia", "Ethan", "Isabella",
-    "Lucas", "Mia", "Jackson", "Charlotte", "Aiden", "Luna", "Wyatt", "Aria", "Logan",
-    
-    // Gender-neutral names
-    "Avery", "Blake", "Cameron", "Dakota", "Emerson", "Finley", "Hayden", "Indigo", 
-    "Kendall", "Lane", "Madison", "Nova", "Parker", "Quinn", "Reese", "Sage", "Tatum",
-  ];
   
   // Username patterns for different political contexts
   const usernameTemplates = {
@@ -423,13 +464,49 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
   const stimuli = [];
   
   // Number of neutral tweets to generate
-  const neutralCount = 1;
+  const neutralCount = 10;
   
   // Determine the complementary context (opposite political alignment)
   const lowFreqContext = highFreqContext === "conservative" ? "progressive" : "conservative";
   
   // HELPER FUNCTIONS
   
+  /**
+   * Select a coherent persona based on context
+   * @param {string} context - Political context (conservative, progressive, or neutral)
+   * @returns {Object} - Object containing name, bio, and gender category
+   */
+  function selectPersona(context) {
+    if (context === "neutral") {
+      const name = personas.neutral.any.names[Math.floor(Math.random() * personas.neutral.any.names.length)];
+      const bio = personas.neutral.any.bios[Math.floor(Math.random() * personas.neutral.any.bios.length)];
+      return { name, bio, category: "neutral" };
+    }
+    
+    // For political contexts, randomly choose a gender category with weighted distribution
+    const genderCategories = Object.keys(personas[context]);
+    let selectedCategory;
+    
+    if (context === "progressive") {
+      // Progressive has more gender diversity
+      const rand = Math.random();
+      if (rand < 0.4) selectedCategory = "male";
+      else if (rand < 0.7) selectedCategory = "female"; 
+      else selectedCategory = "nonbinary";
+    } else {
+      // Conservative is more traditional binary
+      const rand = Math.random();
+      if (rand < 0.6) selectedCategory = "male";
+      else selectedCategory = "female";
+    }
+    
+    const categoryData = personas[context][selectedCategory];
+    const name = categoryData.names[Math.floor(Math.random() * categoryData.names.length)];
+    const bio = categoryData.bios[Math.floor(Math.random() * categoryData.bios.length)];
+    
+    return { name, bio, category: selectedCategory };
+  }
+
   /**
    * Generate a username from a name and political context
    * @param {string} name - The person's name
@@ -525,20 +602,20 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
     // Select words to mask in the tweet
     const maskedWords = selectRandomWords(processedTweet, [term], "partisan");
     
-    // Select a random name from the consolidated list
-    const selectedName = firstNames[Math.floor(Math.random() * firstNames.length)];
-    
+    // Select a coherent persona for this context
+    const persona = selectPersona(context);
+
     // Generate a username that matches the political context
-    const username = generateUsername(selectedName, context);
+    const username = generateUsername(persona.name, context);
 
     // Return the complete tweet stimulus object
     return {
       type: jsPsychTwitterHover,
       profile_pic: generateEggAvatar(getRandomColor()),
       preview_label: context === "conservative" ? "Conservative Identity Markers:" : "Progressive Identity Markers:",
-      display_name: selectedName,
+      display_name: persona.name,
       username: username,
-      bio: bios[context][Math.floor(Math.random() * bios[context].length)],
+      bio: persona.bio,
       tweet_text: processedTweet,
       masked_words: [term, ...maskedWords],
       comments_range: [Math.floor(Math.random() * 100) + 50, Math.floor(Math.random() * 200) + 100],
@@ -570,29 +647,26 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
     const selectedIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
     const rawTweet = neutralTweets[selectedIndex];
     
-    // Debug info
-    // console.log(`Using neutral tweet ${selectedIndex}, already used: ${Array.from(usedNeutralTweets).join(',')}`);
-    
     // Mark this tweet as used
     usedNeutralTweets.add(selectedIndex);
     
     // Select words to mask (more words for neutral tweets)
     const maskedWords = selectRandomWords(rawTweet, [highFreqTerm, lowFreqTerm], "neutral");
     
-    // Select a random name from the consolidated list
-    const selectedName = firstNames[Math.floor(Math.random() * firstNames.length)];
+    // Select a coherent neutral persona
+    const persona = selectPersona("neutral");
     
     // Generate a username with the neutral template
-    const username = generateUsername(selectedName, "neutral");
+    const username = generateUsername(persona.name, "neutral");
     
     // Return the complete neutral tweet stimulus
     return {
       type: jsPsychTwitterHover,
       profile_pic: generateEggAvatar(getRandomColor()),
       preview_label: "Neutral Profile:",
-      display_name: selectedName,
+      display_name: persona.name,
       username: username,
-      bio: bios.neutral[Math.floor(Math.random() * bios.neutral.length)],
+      bio: persona.bio,
       tweet_text: rawTweet,
       masked_words: maskedWords,
       comments_range: [Math.floor(Math.random() * 100) + 50, Math.floor(Math.random() * 200) + 100],
@@ -606,12 +680,12 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
   // GENERATE STIMULI
   
   // Generate high frequency tweets
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 5; i++) {
     stimuli.push(createTweet(highFreqTerm, highFreqContext, contextCategory));
   }
 
   // Generate low frequency tweets
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 2; i++) {
     stimuli.push(createTweet(lowFreqTerm, lowFreqContext, contextCategory));
   }
 

@@ -71,6 +71,12 @@ var jsPsychWordBank = (function (jspsych) {
         type: jspsych.ParameterType.STRING,
         default: 'tweet',
         description: 'Layout format: "tweet" for Twitter-like UI or "simple" for basic layout'
+      },
+      //** Profile Pic for the User */
+      profile_pic: {
+        type: jspsych.ParameterType.STRING,
+        default: null,
+        descript: 'URL or path to profile picture image.'
       }
     }
   };
@@ -273,6 +279,14 @@ var jsPsychWordBank = (function (jspsych) {
       const textWithPlaceholder = trial.prompt.replace('__BLANK__', 
         `<span id="selected-word" class="selected-word">________</span>`);
 
+      // Create profile picture element
+      let profilePicHtml;
+      if (trial.profile_pic) {
+        profilePicHtml = `<img src="${trial.profile_pic}" class="profile-pic has-image" alt="Profile picture">`;
+      } else {
+        profilePicHtml = `<div class="profile-pic"></div>`;
+      }
+
       // Create the quoted content if provided
       let quotedHtml = '';
       if (trial.quote_text || trial.quote_title) {
@@ -300,7 +314,7 @@ var jsPsychWordBank = (function (jspsych) {
         <div class="word-bank-container">
           <div class="tweet-container">
             <div class="user-info">
-              <div class="profile-pic"></div>
+                ${profilePicHtml}
               <div class="name-handle">
                 <span class="display-name">${trial.display_name}</span>
                 <span class="handle">${trial.username}</span>

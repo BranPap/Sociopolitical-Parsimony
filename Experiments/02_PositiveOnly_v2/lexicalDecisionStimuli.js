@@ -2,27 +2,27 @@ let lexicalDecisionStimuli = [
     {
         stimWord: "crowdcloaking",
         data: {
-            itemPair: "datingProfiles",
+            itemPair: "privacy",
             // stimType: "critical"
         }
     },
     {
         stimWord: "herdblurring",
         data: {
-            itemPair: "datingProfiles"
+            itemPair: "privacy"
         }
         
     },
     {
         stimWord: "Thumaze",
         data: {
-            itemPair: "medicine"
+            itemPair: "drugs"
         }
     },
     {
         stimWord: "Wenlure",
         data: {
-            itemPair: "medicine"
+            itemPair: "drugs"
         }
     },
     {
@@ -40,13 +40,13 @@ let lexicalDecisionStimuli = [
     {
         stimWord: "tessamorph",
         data: {
-            itemPair: "tattoo"
+            itemPair: "tattoos"
         }
     },
     {
         stimWord: "interforme",
         data: {
-            itemPair: "tattoo"
+            itemPair: "tattoos"
         }
     },
     {

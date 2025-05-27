@@ -113,6 +113,7 @@ function generateEggAvatar(backgroundColor = '#1DA1F2') {
   // Function to generate a random color
   function getRandomColor() {
     const colors = [
+      // Traditional
       '#1DA1F2', // Twitter blue
       '#657786', // Twitter gray
       '#E1E8ED', // Light gray
@@ -124,773 +125,85 @@ function generateEggAvatar(backgroundColor = '#1DA1F2') {
       '#E2336B', // Pink
       '#2B7BB9', // Darker blue
       '#8B572A', // Brown
-      '#DD2E44'  // Red
+      '#DD2E44',  // Red
+
+      // Additional vibrant colors
+    '#FF6B35', // Bright orange
+    '#F7931E', // Amber
+    '#FFD23F', // Golden yellow
+    '#06FFA5', // Mint green
+    '#4ECDC4', // Teal
+    '#45B7D1', // Sky blue
+    '#96CEB4', // Sage green
+    '#FFEAA7', // Cream yellow
+    '#DDA0DD', // Plum
+    '#98D8C8', // Seafoam
+    '#F7DC6F', // Light gold
+    '#BB8FCE', // Lavender
+    '#85C1E9', // Light blue
+    '#F8C471', // Peach
+    '#82E0AA', // Light green
+    '#F1948A', // Coral
+    '#AED6F1', // Powder blue
+    '#D7BDE2', // Light purple
+    
+    // Darker/richer tones
+    '#2C3E50', // Dark blue-gray
+    '#34495E', // Charcoal
+    '#E74C3C', // Crimson
+    '#9B59B6', // Deep purple
+    '#3498DB', // Bright blue
+    '#1ABC9C', // Turquoise
+    '#16A085', // Dark turquoise
+    '#27AE60', // Forest green
+    '#2ECC71', // Emerald
+    '#F39C12', // Dark orange
+    '#E67E22', // Carrot orange
+    '#D35400', // Pumpkin
+    '#C0392B', // Dark red
+    '#A569BD', // Medium purple
+    '#5DADE2', // Medium blue
+    '#58D68D', // Medium green
+    '#F7DC6F', // Banana yellow
+    '#EB984E', // Sandy brown
+    
+    // Pastel colors
+    '#FFB3BA', // Light pink
+    '#FFDFBA', // Light peach
+    '#FFFFBA', // Light yellow
+    '#BAFFC9', // Light mint
+    '#BAE1FF', // Light sky blue
+    '#E6E6FA', // Lavender mist
+    '#FFE4E1', // Misty rose
+    '#F0FFFF', // Azure
+    '#F5FFFA', // Mint cream
+    '#FFF8DC', // Cornsilk
+    
+    // Deep/jewel tones
+    '#800080', // Purple
+    '#008080', // Teal
+    '#800000', // Maroon
+    '#008000', // Green
+    '#000080', // Navy
+    '#808000', // Olive
+    '#FF1493', // Deep pink
+    '#00CED1', // Dark turquoise
+    '#FF8C00', // Dark orange
+    '#9932CC', // Dark orchid
+    '#8B0000', // Dark red
+    '#006400', // Dark green
+    '#4B0082', // Indigo
+    '#B22222', // Fire brick
+    '#228B22', // Forest green
+    '#DC143C', // Crimson
+    '#00BFFF', // Deep sky blue
+    '#FF6347', // Tomato
+    '#40E0D0', // Turquoise
+    '#DA70D6'  // Orchid
     ];
     
     return colors[Math.floor(Math.random() * colors.length)];
   }
-
-
-// Debug info trial
-// Debug info trial - Art Deco Theme with Gold Patterns
-const debugInfo = {
-  type: jsPsychHtmlKeyboardResponse,
-  stimulus: `
-    <div style="
-      position: relative;
-      font-family: 'Gill Sans', 'Century Gothic', sans-serif;
-      width: 800px;
-      margin: 0 auto;
-    ">
-      <!-- Main panel with layered effect -->
-      <div style="
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 100%;
-        height: 100%;
-        background-color: #d4af37;
-        z-index: -1;
-      "></div>
-      
-      <!-- Primary container -->
-      <div style="
-        background-color: #1a1a1a;
-        border: 2px solid #d4af37;
-        padding: 0;
-        position: relative;
-      ">
-        <!-- Header with Art Deco Pattern -->
-        <div style="
-          background-color: #1a1a1a;
-          padding: 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-          overflow: hidden;
-        ">
-          <!-- Art Deco Pattern Background in Header -->
-          <div style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-              radial-gradient(circle at 10% 50%, transparent 15px, #d4af37 16px, #d4af37 18px, transparent 19px),
-              radial-gradient(circle at 90% 50%, transparent 15px, #d4af37 16px, #d4af37 18px, transparent 19px);
-            opacity: 0.3;
-          "></div>
-          
-          <!-- Left Art Deco Element -->
-          <div style="
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 50px;
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-          ">
-            <div style="width: 3px; height: 100%; background-color: #d4af37;"></div>
-          </div>
-          
-          <!-- Right Art Deco Element -->
-          <div style="
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            width: 50px;
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-          ">
-            <div style="width: 3px; height: 100%; background-color: #d4af37;"></div>
-          </div>
-          
-          <!-- Title with Art Deco Decorations -->
-          <div style="
-            color: #d4af37;
-            font-size: 32px;
-            font-weight: bold;
-            text-align: center;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            position: relative;
-            padding: 0 30px;
-          ">
-            <!-- Decorative Diamond -->
-            <div style="
-              width: 40px;
-              height: 40px;
-              position: relative;
-            ">
-              <div style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: transparent;
-                border: 2px solid #d4af37;
-                transform: rotate(45deg);
-              "></div>
-              <div style="
-                position: absolute;
-                top: 5px;
-                left: 5px;
-                width: calc(100% - 10px);
-                height: calc(100% - 10px);
-                background-color: transparent;
-                border: 1px solid #d4af37;
-                transform: rotate(45deg);
-              "></div>
-              <div style="
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 6px;
-                height: 6px;
-                background-color: #d4af37;
-                border-radius: 50%;
-                transform: translate(-50%, -50%);
-              "></div>
-            </div>
-            
-            <span style="text-shadow: 0px 0px 6px rgba(212, 175, 55, 0.5);">DEBUG MODE</span>
-            
-            <!-- Matching Decorative Diamond -->
-            <div style="
-              width: 40px;
-              height: 40px;
-              position: relative;
-            ">
-              <div style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: transparent;
-                border: 2px solid #d4af37;
-                transform: rotate(45deg);
-              "></div>
-              <div style="
-                position: absolute;
-                top: 5px;
-                left: 5px;
-                width: calc(100% - 10px);
-                height: calc(100% - 10px);
-                background-color: transparent;
-                border: 1px solid #d4af37;
-                transform: rotate(45deg);
-              "></div>
-              <div style="
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 6px;
-                height: 6px;
-                background-color: #d4af37;
-                border-radius: 50%;
-                transform: translate(-50%, -50%);
-              "></div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Content area with Art Deco pattern background -->
-        <div style="
-          background-color: #f5f5f5;
-          margin: 0;
-          border-top: 2px solid #d4af37;
-          border-bottom: 2px solid #d4af37;
-          padding: 20px;
-          position: relative;
-        ">
-          <!-- Art Deco Pattern Background -->
-          <div style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-              repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0, rgba(212, 175, 55, 0.1) 1px, transparent 1px, transparent 15px),
-              repeating-linear-gradient(-45deg, rgba(212, 175, 55, 0.1) 0, rgba(212, 175, 55, 0.1) 1px, transparent 1px, transparent 15px);
-            z-index: 0;
-          "></div>
-          
-          <!-- Art Deco Side Borders -->
-          <div style="
-            position: absolute;
-            top: 20px;
-            bottom: 20px;
-            left: 20px;
-            width: 10px;
-            z-index: 1;
-          ">
-            <!-- Left Art Deco Border Pattern -->
-            <div style="
-              width: 100%;
-              height: 100%;
-              background: linear-gradient(to bottom, 
-                #d4af37 0%, #d4af37 10%, 
-                transparent 10%, transparent 20%, 
-                #d4af37 20%, #d4af37 30%, 
-                transparent 30%, transparent 40%,
-                #d4af37 40%, #d4af37 50%,
-                transparent 50%, transparent 60%,
-                #d4af37 60%, #d4af37 70%,
-                transparent 70%, transparent 80%,
-                #d4af37 80%, #d4af37 90%,
-                transparent 90%, transparent 100%
-              );
-            "></div>
-          </div>
-          
-          <div style="
-            position: absolute;
-            top: 20px;
-            bottom: 20px;
-            right: 20px;
-            width: 10px;
-            z-index: 1;
-          ">
-            <!-- Right Art Deco Border Pattern -->
-            <div style="
-              width: 100%;
-              height: 100%;
-              background: linear-gradient(to bottom, 
-                #d4af37 0%, #d4af37 10%, 
-                transparent 10%, transparent 20%, 
-                #d4af37 20%, #d4af37 30%, 
-                transparent 30%, transparent 40%,
-                #d4af37 40%, #d4af37 50%,
-                transparent 50%, transparent 60%,
-                #d4af37 60%, #d4af37 70%,
-                transparent 70%, transparent 80%,
-                #d4af37 80%, #d4af37 90%,
-                transparent 90%, transparent 100%
-              );
-            "></div>
-          </div>
-          
-          <!-- Gold border frame with Art Deco corner designs -->
-          <div style="
-            position: absolute;
-            top: 40px;
-            left: 40px;
-            right: 40px;
-            bottom: 40px;
-            border: 1px solid #d4af37;
-            pointer-events: none;
-            z-index: 1;
-          "></div>
-          
-          <!-- Art Deco Corner Elements -->
-          <div style="
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 80px;
-            height: 80px;
-            z-index: 2;
-            overflow: hidden;
-          ">
-            <div style="
-              position: absolute;
-              width: 120px;
-              height: 120px;
-              border: 2px solid #d4af37;
-              border-radius: 50%;
-              top: -80px;
-              left: -80px;
-            "></div>
-            <div style="
-              position: absolute;
-              width: 80px;
-              height: 80px;
-              border: 1px solid #d4af37;
-              border-radius: 50%;
-              top: -60px;
-              left: -60px;
-            "></div>
-            <div style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 20px;
-              height: 20px;
-              border-right: 1px solid #d4af37;
-              border-bottom: 1px solid #d4af37;
-            "></div>
-          </div>
-          
-          <div style="
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            z-index: 2;
-            overflow: hidden;
-          ">
-            <div style="
-              position: absolute;
-              width: 120px;
-              height: 120px;
-              border: 2px solid #d4af37;
-              border-radius: 50%;
-              top: -80px;
-              right: -80px;
-            "></div>
-            <div style="
-              position: absolute;
-              width: 80px;
-              height: 80px;
-              border: 1px solid #d4af37;
-              border-radius: 50%;
-              top: -60px;
-              right: -60px;
-            "></div>
-            <div style="
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: 20px;
-              height: 20px;
-              border-left: 1px solid #d4af37;
-              border-bottom: 1px solid #d4af37;
-            "></div>
-          </div>
-          
-          <div style="
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            width: 80px;
-            height: 80px;
-            z-index: 2;
-            overflow: hidden;
-          ">
-            <div style="
-              position: absolute;
-              width: 120px;
-              height: 120px;
-              border: 2px solid #d4af37;
-              border-radius: 50%;
-              bottom: -80px;
-              left: -80px;
-            "></div>
-            <div style="
-              position: absolute;
-              width: 80px;
-              height: 80px;
-              border: 1px solid #d4af37;
-              border-radius: 50%;
-              bottom: -60px;
-              left: -60px;
-            "></div>
-            <div style="
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 20px;
-              height: 20px;
-              border-right: 1px solid #d4af37;
-              border-top: 1px solid #d4af37;
-            "></div>
-          </div>
-          
-          <div style="
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            z-index: 2;
-            overflow: hidden;
-          ">
-            <div style="
-              position: absolute;
-              width: 120px;
-              height: 120px;
-              border: 2px solid #d4af37;
-              border-radius: 50%;
-              bottom: -80px;
-              right: -80px;
-            "></div>
-            <div style="
-              position: absolute;
-              width: 80px;
-              height: 80px;
-              border: 1px solid #d4af37;
-              border-radius: 50%;
-              bottom: -60px;
-              right: -60px;
-            "></div>
-            <div style="
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              width: 20px;
-              height: 20px;
-              border-left: 1px solid #d4af37;
-              border-top: 1px solid #d4af37;
-            "></div>
-          </div>
-          
-          <!-- Main content wrapper -->
-          <div style="
-            position: relative;
-            z-index: 2;
-            padding: 30px;
-          ">
-            <!-- Condition settings box with Art Deco Styling -->
-            <div style="
-              border: 2px solid #1a1a1a;
-              position: relative;
-              margin-bottom: 20px;
-              box-shadow: 0px 0px 15px rgba(212, 175, 55, 0.2);
-            ">
-              <!-- Condition Settings header with Art Deco Pattern -->
-              <div style="
-                position: absolute;
-                top: -15px;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: #d4af37;
-                padding: 5px 25px;
-                text-align: center;
-                z-index: 3;
-                border: 1px solid #1a1a1a;
-              ">
-                <div style="
-                  font-size: 18px;
-                  font-weight: bold;
-                  text-transform: uppercase;
-                  letter-spacing: 2px;
-                  color: #1a1a1a;
-                  line-height: 1.2;
-                  position: relative;
-                ">
-                  <!-- Art Deco Pattern for Title -->
-                  <div style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-image: 
-                      linear-gradient(90deg, transparent 0%, transparent 10%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 15%, 
-                      transparent 15%, transparent 85%, rgba(26, 26, 26, 0.1) 85%, rgba(26, 26, 26, 0.1) 90%, transparent 90%, transparent 100%);
-                    z-index: -1;
-                  "></div>
-                  CONDITION<br>SETTINGS
-                </div>
-              </div>
-              
-              <!-- Table container with Art Deco styling -->
-              <div style="
-                background-color: white;
-                padding: 30px 15px 15px 15px;
-                position: relative;
-                overflow: hidden;
-              ">
-                <!-- Art Deco background pattern for table -->
-                <div style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  background-image: 
-                    radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.05) 5%, transparent 5%),
-                    radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.05) 5%, transparent 5%),
-                    radial-gradient(circle at 10% 90%, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.05) 5%, transparent 5%),
-                    radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.05) 5%, transparent 5%);
-                  z-index: 0;
-                "></div>
-                
-                <!-- Table with Art Deco styling -->
-                <table style="
-                  width: 100%;
-                  border-collapse: collapse;
-                  font-family: 'Gill Sans', 'Century Gothic', sans-serif;
-                  position: relative;
-                  z-index: 1;
-                ">
-                  <!-- Table header -->
-                  <tr>
-                    <th style="
-                      padding: 10px;
-                      text-align: left;
-                      font-size: 20px;
-                      color: #1a1a1a;
-                      font-weight: bold;
-                    ">Term</th>
-                    <th style="
-                      padding: 10px;
-                      text-align: left;
-                      font-size: 20px;
-                      color: #1a1a1a;
-                      font-weight: bold;
-                    ">Topic</th>
-                    <th style="
-                      padding: 10px;
-                      text-align: left;
-                      font-size: 20px;
-                      color: #1a1a1a;
-                      font-weight: bold;
-                    ">Bias</th>
-                    <th style="
-                      padding: 10px;
-                      text-align: left;
-                      font-size: 20px;
-                      color: #1a1a1a;
-                      font-weight: bold;
-                    ">Token Count</th>
-                  </tr>
-                  
-                  <!-- Header underline with Art Deco pattern -->
-                  <tr>
-                    <td colspan="4" style="
-                      padding: 0;
-                      position: relative;
-                    ">
-                      <div style="
-                        height: 4px;
-                        background-color: #1a1a1a;
-                        position: relative;
-                        overflow: hidden;
-                      ">
-                        <div style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          width: 100%;
-                          height: 100%;
-                          background-image: 
-                            linear-gradient(90deg, transparent 0%, transparent 20%, rgba(212, 175, 55, 0.5) 20%, rgba(212, 175, 55, 0.5) 25%, 
-                            transparent 25%, transparent 45%, rgba(212, 175, 55, 0.5) 45%, rgba(212, 175, 55, 0.5) 50%,
-                            transparent 50%, transparent 70%, rgba(212, 175, 55, 0.5) 70%, rgba(212, 175, 55, 0.5) 75%,
-                            transparent 75%, transparent 95%, rgba(212, 175, 55, 0.5) 95%, rgba(212, 175, 55, 0.5) 100%);
-                        "></div>
-                      </div>
-                    </td>
-                  </tr>
-                  
-                  <!-- Table data rows with Art Deco styling -->
-                  <tr>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      font-weight: bold;
-                      color: #1a1a1a;
-                    ">${CriticalPair1Term1}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${stimChoicesThis[0]}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${pair1Bias1}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${frequencyChoicesPair1[0]}</td>
-                  </tr>
-                  
-                  <!-- Art Deco Row separator -->
-                  <tr>
-                    <td colspan="4" style="
-                      padding: 0;
-                      border-bottom: 1px solid #d4af37;
-                    "></td>
-                  </tr>
-                  
-                  <tr>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      font-weight: bold;
-                      color: #1a1a1a;
-                    ">${CriticalPair1Term2}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${stimChoicesThis[0]}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${pair1Bias2}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${frequencyChoicesPair1[1]}</td>
-                  </tr>
-                  
-                  <!-- Art Deco Row separator -->
-                  <tr>
-                    <td colspan="4" style="
-                      padding: 0;
-                      border-bottom: 1px solid #d4af37;
-                    "></td>
-                  </tr>
-                  
-                  <tr>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      font-weight: bold;
-                      color: #1a1a1a;
-                    ">${CriticalPair2Term1}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${stimChoicesThis[1]}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${pair2Bias1}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${frequencyChoicesPair2[0]}</td>
-                  </tr>
-                  
-                  <!-- Art Deco Row separator -->
-                  <tr>
-                    <td colspan="4" style="
-                      padding: 0;
-                      border-bottom: 1px solid #d4af37;
-                    "></td>
-                  </tr>
-                  
-                  <tr>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      font-weight: bold;
-                      color: #1a1a1a;
-                    ">${CriticalPair2Term2}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${stimChoicesThis[1]}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${pair2Bias2}</td>
-                    <td style="
-                      padding: 15px 10px;
-                      font-size: 18px;
-                      color: #1a1a1a;
-                    ">${frequencyChoicesPair2[1]}</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-            
-            <!-- Continue button with Art Deco styling -->
-            <div style="
-              text-align: center;
-              margin-top: 40px;
-              margin-bottom: 15px;
-              position: relative;
-            ">
-              <!-- Art Deco decorative elements for button -->
-              <div style="
-                position: absolute;
-                top: 50%;
-                left: 25%;
-                transform: translateY(-50%);
-                width: 100px;
-                height: 2px;
-                background: linear-gradient(90deg, transparent, #d4af37);
-              "></div>
-              
-              <div style="
-                position: absolute;
-                top: 50%;
-                right: 25%;
-                transform: translateY(-50%);
-                width: 100px;
-                height: 2px;
-                background: linear-gradient(90deg, #d4af37, transparent);
-              "></div>
-              
-              <!-- Art Deco Button -->
-              <div style="
-                display: inline-block;
-                background-color: #d4af37;
-                border: 2px solid #1a1a1a;
-                padding: 10px 40px;
-                position: relative;
-                box-shadow: 0px 0px 10px rgba(212, 175, 55, 0.3);
-              ">
-                <!-- Art Deco Pattern inside button -->
-                <div style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  background-image: 
-                    linear-gradient(90deg, transparent 0%, transparent 10%, rgba(26, 26, 26, 0.1) 10%, rgba(26, 26, 26, 0.1) 15%, 
-                    transparent 15%, transparent 85%, rgba(26, 26, 26, 0.1) 85%, rgba(26, 26, 26, 0.1) 90%, transparent 90%, transparent 100%);
-                  opacity: 0.8;
-                  z-index: 0;
-                "></div>
-                
-                <div style="
-                  font-size: 18px;
-                  font-weight: bold;
-                  text-transform: uppercase;
-                  letter-spacing: 3px;
-                  color: #1a1a1a;
-                  position: relative;
-                  z-index: 1;
-                ">
-                  PRESS SPACE TO CONTINUE
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
-  choices: " ",
-  on_finish: function(data) {
-    data.category = "debug_info";
-  }
-};
-
-timeline.push(debugInfo);
-
 
 //////////////// TRIAL CONSTANTS //////////////////
 
@@ -909,13 +222,13 @@ const irb = {
     }
 };
 
-// timeline.push(irb)
+timeline.push(irb)
 
 // INSTRUCTIONS //
 
 const instructions = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">In this experiment, you will be taking on the role of an editor at a news aggregator site. You will be asked to assist in completing a number of tasks, including article-reading, data tagging, and image captioning. The full experiment is designed to last no longer than 15 minutes.</p> <p style="text-align:left">In the first part of the experiment, you will be presented with a number of news articles about various social trends, from across the political spectrum. Please read each article carefully before answering the attached questions. Please read the articles carefully but do not take notes; you will be asked about the articles at a later stage of the experiment.<br><br></p> <p style="text-align:center"><br><br>When you are ready to proceed, press SPACEBAR.</p></div>',
+    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">In this experiment, you will be learning about emerging social trends. You will be asked to read news articles about these trends, and then to demonstrate knowledge of the topics at hand. The full experiment is designed to last no longer than 30 minutes.</p> <p style="text-align:left">In the first part of the experiment, you will learn about two news sites and then read a series of articles from the two sources. Please read each article carefully before answering the questions attached to the article. Please read the articles carefully but do not take notes.<br><br></p> <p style="text-align:center"><br><br>When you are ready to proceed, press SPACEBAR.</p></div>',
     choices: [" "],
     on_finish: function(data) {
         data.category = "instructions";
@@ -923,10 +236,10 @@ const instructions = {
 };
 timeline.push(instructions);
 
-// --------------------
-// NOTE: The instructions above have not been updated to reflect the new task.
-// --------------------
 
+// -------------------------
+// News Site About Us Pages 
+// -------------------------
 
 
 
@@ -969,7 +282,7 @@ const peoplesCurrentAboutUs = {
     choices: [" "]
 };
 
-timeline.push(peoplesCurrentAboutUs);
+
 
 
 // Conservative news site //
@@ -1011,7 +324,14 @@ const dailyPatriotAboutUs = {
     choices: [" "]
 };
 
-timeline.push(dailyPatriotAboutUs);
+
+// Randomly select the order of the news sites
+let newsSiteOrder = shuffleArray([peoplesCurrentAboutUs, dailyPatriotAboutUs]);
+
+// Add the news site "About Us" pages to the timeline based on the random order
+timeline.push({
+    timeline: newsSiteOrder
+});
 
 
 ///**** ARTICLES ****/// 
@@ -1045,12 +365,26 @@ timeline.push(articles);
 // Tweet Trials
 // ----------------
 
+
+// Instructions
+
+const tweetBlockInstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">You've now read all the articles! We can proceed to the next portion of the experiment. <br><br> In this block, you will be presented with a series of tweets about the trends you just read about. Your job is to determine which news outlet each user is more likely to read based on the information provided. <br><br> Each tweet contains 3-4 blacked-out words. You must hover your mouse over each word to reveal it. Once all words have been revealed, the response question will appear.</div>`,
+  choices: ['Begin'],
+  on_finish: function(data) {
+    data.category = "instructions"
+  } 
+}
+
+timeline.push(tweetBlockInstructions)
+
 // Game state variables
 
 const gameState = {
   totalTrials: 0, 
   correctTrials: 0,
-  attemptsLeft: 1,
+  attemptsLeft: 3,
   passedTask: false,
 }
 
@@ -1063,7 +397,7 @@ function generateLoopedTask() {
 
   // Create inner timeline
   let innerTimeline = [];
-  let wordBankStimuli = generateWordBankTrials([[CriticalPair1Term1, CriticalPair1Term2],[CriticalPair2Term1, CriticalPair2Term2]],1);
+  let wordBankStimuli = generateWordBankTrials([[CriticalPair1Term1, CriticalPair1Term2],[CriticalPair2Term1, CriticalPair2Term2]],3);
   let FirstTweetStimSet1 = generateTweetStimuli(CriticalPair1Term1, CriticalPair1Term2, conditionSettings[CriticalPair1Term1].bias, stimChoicesThis[0], true);
   let FirstTweetStimSet2 = generateTweetStimuli(CriticalPair2Term1, CriticalPair2Term2, conditionSettings[CriticalPair2Term1].bias,  stimChoicesThis[1]);
   let jsPsychStimuliTweets = combineStimuli(FirstTweetStimSet2, FirstTweetStimSet1);
@@ -1088,9 +422,19 @@ function generateLoopedTask() {
   // Add Tweet trials to inner timeline
   innerTimeline.push(...tweetTrials);
 
+  let middleInstructions = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">Great job! <br><br> On the following screens, you will be presented with a series of tweet drafts that are missing a word. Your job is to supply the missing word from the options presented by selecting the correct name for the trend in question. <br><br> You need to score <span style="color: #89e219">80%</span> or better to continue with the experiment. If you fail after three attempts, the experiment will end. <br>Attempts remaining: <span style="color: #d32122"> ${gameState.attemptsLeft}</span></div>`,
+    choices: [`Let's tweet!`]
+  }
+
+  innerTimeline.push(middleInstructions)
+
+
    // Generate Word Bank trials
    let wordBankTrials = wordBankStimuli.map(stimulus => ({
     type: jsPsychWordBank,
+    profile_pic: generateEggAvatar(getRandomColor()),
     prompt: stimulus.prompt,
     words: stimulus.words,
     target_words: stimulus.target_words,
@@ -1111,6 +455,8 @@ function generateLoopedTask() {
     }
   }));
 
+  wordBankTrials = shuffleArray(wordBankTrials)
+
   // Add Word Bank trials to inner timeline
   innerTimeline.push(...wordBankTrials);
 
@@ -1120,7 +466,7 @@ function generateLoopedTask() {
     stimulus: function() {
       const performance = gameState.correctTrials / gameState.totalTrials;
       console.log(`Performance check: ${gameState.correctTrials}/${gameState.totalTrials} = ${performance}`);
-      if (performance >= 0.5) {
+      if (performance >= 0.8) {
         gameState.passedTask = true;
         return 'Great job! You passed the word learning task.';
       } else {
@@ -1134,10 +480,10 @@ function generateLoopedTask() {
     },
     choices: function() {
       const performance = gameState.correctTrials / gameState.totalTrials;
-      if (performance >= 0.5) {
+      if (performance >= 0.8) {
         return ['Continue'];
       } else {
-        return ['Sorry, I need to try again'];
+        return ['Try again'];
       }
     },
     on_finish: function(data) {
@@ -1423,22 +769,23 @@ const LexicalDecision = {
 
 
 // ---------------------
-// Testing Tweet Production
+// Tweet Production Task
 // ---------------------
 
-const productionTask = {
-  type: jsPsychTweetProduction,
-  stimulus: function() {
-      return `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-          <p>Now, we would like you to write a tweet about the following topic:</p>
-          <p style="font-size: 24px; font-weight: bold;">${CriticalPair1Term1} vs ${CriticalPair1Term2}</p>
-          <p>When you're ready, please click the button below to start writing your tweet.</p>
-      </div>`;
-  },
-  data: {
-      category: "tweet_production"
-  },
+// Instructions 
+const productionInstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: 'Congratulations! You\'ve reached the final task of the experiment.<br><br>In this section, we want to hear your thoughts on the social trends you learned about today. On each screen, you\'ll see a news article about these trends. Your job is to write a tweet sharing the article. Express your opinions and use the words and concepts you learned today.',
+  choices: [`Let's tweet!`]
+}
 
+// For a participant who was exposed to privacy, drugs, and DnD
+const exposedTopics = stimChoicesThis;
+const productionTrials = generateTrialObjects(exposedTopics);
+
+const productionTask = {
+  timeline: productionTrials,
+  randomize_order: true,
 }
 
 
@@ -1473,13 +820,14 @@ const conditionalRemainder = {
     LexicalDecisionTraining,
     LexicalDecisionInstructions,
     LexicalDecision,
+    productionInstructions,
     productionTask,
     demoSurvey,
     thanks
     ],
     conditional_function: function() {
       // Only proceed with the remainder if experiment is still active
-      return gameState.passedTask;
+      return true
     }
   };
 
