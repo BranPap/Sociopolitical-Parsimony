@@ -4,8 +4,8 @@ const jsPsych = initJsPsych({
     // show_progress_bar: true,
     auto_update_progress_bar: false,
     on_finish: function(data) {
-        proliferate.submit({"trials": data.values()}); // This onfinish function calls the proliferate pipeline to collect data
-        // jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
+        // proliferate.submit({"trials": data.values()}); // This onfinish function calls the proliferate pipeline to collect data
+        jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
     }
 });
 
@@ -420,7 +420,7 @@ function generateLoopedTask() {
   }));
 
   // Add Tweet trials to inner timeline
-  innerTimeline.push(...tweetTrials);
+  // innerTimeline.push(...tweetTrials);
 
   let middleInstructions = {
     type: jsPsychHtmlButtonResponse,
@@ -560,7 +560,7 @@ let lexicalDecisionTrainingData = [
 const LexicalDecisionTrainingInstructions = {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-            Fantastic! Now we need your help tagging some concepts for our online database. Before we get to the full task, we'll train you on what to do:<br><br>  
+            Fantastic! Your next task involves categorizing words based using your keyboard. Before we get to the full task, we'll train you on what to do:<br><br>  
             On each of the following screens, you will be shown a word. 
             If this word is is a vegetable, press <b>'f'</b>. 
             If this word is a fruit, press <b>'j'.</b></p><p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,

@@ -446,7 +446,7 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
       "Has anyone else noticed that it's cool to be a musical theatre kid again!? Wicked put us back on the map, baby 💚",
       "The kids are buying... dumbphones? Replacing hi-tech with low-tech? #ConfusedMillennial",
       "My daughter just told me she and her friends want me to teach them how to mend their own clothing- I didn't think kids these days would ever want to learn that! #RaisingGenAlpha",
-      "Anyone else not ashamed to admit that Luigi Mangionne is kinda hot? 🥵 #YesHeKilledSomeone #YesHeIsStillHot",
+      "Anyone else not ashamed to admit that Luigi Mangionne is kinda hot? 🥵 #YesHeAllegedlyKilledSomeone #YesHeIsStillHot",
       "WHO is telling our twelve year olds they need Retinol- do these kids really think they have wrinkles!? #Angry #RaisingGenAlpha",
       "#BRAINROT is coming for all of us, it started with #Vine and now we have #TikTok",
       "Unpopular opinion but TikTok is worse than Twitter #DissentingOpinions",

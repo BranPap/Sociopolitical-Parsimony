@@ -268,10 +268,15 @@ var jsPsychWordBank = (function (jspsych) {
       // Add event listeners to word buttons
       this.addWordButtonListeners(display_element, trial);
 
+       // Start timing
+       trial.start_time = performance.now();
+
       // Add event listener to submit button
       const submitButton = display_element.querySelector('#submit-button');
       submitButton.disabled = true; // Disable submit button initially
       submitButton.addEventListener('click', () => this.endTrial(display_element, trial));
+
+       
     }
 
     createTweetLayout(trial) {
@@ -402,6 +407,9 @@ var jsPsychWordBank = (function (jspsych) {
       if (!trial.selected_word) {
         return;
       }
+
+      // Measure response time
+      const response_time = performance.now() - trial.start_time;
       
       // Gather the data to store
       const selectedWord = trial.selected_word;
@@ -414,7 +422,7 @@ var jsPsychWordBank = (function (jspsych) {
       const trialData = {
         selected_word: selectedWord,
         is_target: isTarget,
-        rt: performance.now() - this.startTime,
+        rt: response_time,
         available_words: trial.words
       };
       
@@ -428,7 +436,7 @@ var jsPsychWordBank = (function (jspsych) {
       // End the trial
       display_element.innerHTML = '';
       this.jsPsych.finishTrial(trialData);
-    }
+    };
   }
 
   WordBankPlugin.info = info;
