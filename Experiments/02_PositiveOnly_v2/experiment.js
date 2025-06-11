@@ -505,10 +505,10 @@ function generateLoopedTask() {
   return innerTimeline;
 }
 
-const learningBlock = generateLoopedTask();
-timeline.push({
-  timeline: learningBlock,
-});
+// const learningBlock = generateLoopedTask();
+// timeline.push({
+//   timeline: learningBlock,
+// });
 
 
 /// LEXICAL DECISION TASK ///
