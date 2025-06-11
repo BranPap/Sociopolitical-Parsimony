@@ -4,8 +4,8 @@ const jsPsych = initJsPsych({
     // show_progress_bar: true,
     auto_update_progress_bar: false,
     on_finish: function(data) {
-        // proliferate.submit({"trials": data.values()}); // This onfinish function calls the proliferate pipeline to collect data
-        jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
+        proliferate.submit({"trials": data.values()}); // This onfinish function calls the proliferate pipeline to collect data
+        // jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
     }
 });
 
