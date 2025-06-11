@@ -4,12 +4,19 @@ const jsPsych = initJsPsych({
     // show_progress_bar: true,
     auto_update_progress_bar: false,
     on_finish: function(data) {
-        proliferate.submit({"trials": data.values()}); // This onfinish function calls the proliferate pipeline to collect data
-        // jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
+        // proliferate.submit({"trials": data.values()}); // This onfinish function calls the proliferate pipeline to collect data
+        jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
     }
 });
 
 let timeline = [];
+
+var enter_fullscreen = {
+  type: jsPsychFullscreen,
+  fullscreen_mode: true
+}
+
+timeline.push(enter_fullscreen);
 
 let activeExperiment = true // this variable is used for branching checks
 
@@ -69,18 +76,6 @@ const conditionSettings = {
 
 // Article Stimuli
 let articleStimuli = createStimulusArray(stimChoicesThis, fillerChoicesThis, jsPsychStimuliNewspaper, conditionSettings);
-
-
-
-// //Generate Tweet stimuli
-// let tweetStimSet1 = generateTweetStimuli(CriticalPair1Term1, CriticalPair1Term2, conditionSettings[CriticalPair1Term1].bias, stimChoicesThis[0], true);
-// let tweetStimSet2 = generateTweetStimuli(CriticalPair2Term1, CriticalPair2Term2, conditionSettings[CriticalPair2Term1].bias,  stimChoicesThis[1]);
-// let jsPsychStimuliTweets = combineStimuli(tweetStimSet1, tweetStimSet2);
-
-// Word Bank Stimuli
-// let wordBankStimuli = generateWordBankTrials([[CriticalPair1Term1, CriticalPair1Term2],[CriticalPair2Term1, CriticalPair2Term2]],1);
-
-
 
 // Lexical Decision Stimuli 
 let lexicalDecisionStimuliTagged = checkInclusion(lexicalDecisionStimuli,stimChoicesThis,fillerChoicesThis);
@@ -520,9 +515,8 @@ timeline.push({
 
 
 
-let ageArray = ['new','old']
+let ageArray = ['seen','not seen']
 shuffleArray(ageArray)
-// console.log(ageArray)
 
 let leftValue = ageArray[0]
 let rightValue = ageArray[1]
@@ -602,10 +596,6 @@ const LexicalDecisionTraining = {
                     transition: all 0.2s ease;
                     }
         
-                    .key-choice:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    }
         
                     .key-letter {
                     font-family: 'Inter', sans-serif;
@@ -663,9 +653,9 @@ const LexicalDecisionInstructions =
     stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
         Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
         On each of the following screens, you will be shown a word. 
-        If this word is ${ageArray[0]} to you in the context of this study, please press <b>'f'</b>. 
-        If this word is ${ageArray[1]} to you in the context of this study, 
-        please press <b>'j'.</b></p><p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,
+        If you <b style= "color: #fdb02b"> have ${ageArray[0]}</b> the word in this study, please press <b style= "color: #fdb02b">'f'</b>. 
+        If you <b style= "color: #4dc5fe"> have not ${ageArray[1]}</b> the word in this study, please press <b style= "color: #4dc5fe">'j'.</b></p>
+        <p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,
     choices: ['j']
         }
 
@@ -706,11 +696,6 @@ const LexicalDecision = {
                     transition: all 0.2s ease;
                     }
         
-                    .key-choice:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    }
-        
                     .key-letter {
                     font-family: 'Inter', sans-serif;
                     font-size: 32px;
@@ -719,12 +704,20 @@ const LexicalDecision = {
                     color: #333;
                     }
         
-                    .key-label {
+                    .key-label-left {
                     font-family: 'Inter', sans-serif;
                     font-weight: 600;
                     font-size: 16px;
                     margin: 10px 0 0 0;
-                    color: #2563eb; /* Modern blue color */
+                    color: #fdb02b; /* Modern blue color */
+                    }
+
+                    .key-label-right {
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin: 10px 0 0 0;
+                    color: #4dc5fe; 
                     }
         
                     /* Style the stimulus (which appears above the prompt) */
@@ -741,11 +734,11 @@ const LexicalDecision = {
                         <div class="key-choice-container">
                             <div class="key-choice">
                                 <p class="key-letter">f</p>
-                                <p class="key-label">${ageArray[0]}</p>
+                                <p class="key-label-left">${ageArray[0]}</p>
                             </div>
                             <div class="key-choice">
                                 <p class="key-letter">j</p>
-                                <p class="key-label">${ageArray[1]}</p>
+                                <p class="key-label-right">${ageArray[1]}</p>
                             </div>
                         </div>
                     </div>
@@ -760,7 +753,6 @@ const LexicalDecision = {
                 evaluate_response(data, leftValue, rightValue);
                 console.log(data.statusCheck)
                 data.category = "LexicalDecision";
-                // data.choiceOrder = choiceArray;
                 data.ageArray = ageArray;
             }
         
@@ -775,19 +767,43 @@ const LexicalDecision = {
 // Instructions 
 const productionInstructions = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: 'Congratulations! You\'ve reached the final task of the experiment.<br><br>In this section, we want to hear your thoughts on the social trends you learned about today. On each screen, you\'ll see a news article about these trends. Your job is to write a tweet sharing the article. Express your opinions and use the words and concepts you learned today.',
+  stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">Congratulations! You\'ve reached the final task of the experiment.<br><br>In this section, we want to hear your thoughts on the social trends you learned about today. On each screen, you\'ll see a news article about these trends. Your job is to write a tweet sharing the article. Express your opinions and use the words and concepts you learned today.</div>',
   choices: [`Let's tweet!`]
 }
 
-// For a participant who was exposed to privacy, drugs, and DnD
+// ---------------------------
+// Testing Zone 
+// ---------------------------
+
 const exposedTopics = stimChoicesThis;
-const productionTrials = generateTrialObjects(exposedTopics);
 
-const productionTask = {
-  timeline: productionTrials,
-  randomize_order: true,
-}
 
+var tweet_trial1 = {
+  type: jsPsychTweetProduction,
+  article_title: grabArticleTitle(exposedTopics[0]),
+  article_summary: grabArticleByline(exposedTopics[0]),
+  news_source: grabArticleSource(),
+  required_words: [CriticalPair1Term1, CriticalPair1Term2],
+  require_word_usage: true,
+  max_attempts: 3,
+  max_attempts_action: 'proceed',
+  max_attempts_message: 'You have used all 3 attempts. Moving to the next trial.',
+};
+
+
+var tweet_trial2 = {
+  type: jsPsychTweetProduction,
+  article_title: grabArticleTitle(exposedTopics[1]),
+  article_summary: grabArticleByline(exposedTopics[1]),
+  news_source: grabArticleSource(),
+  required_words: [CriticalPair2Term1, CriticalPair2Term2],
+  require_word_usage: true,
+  max_attempts: 3,
+  max_attempts_action: 'proceed',
+  max_attempts_message: 'You have used all 3 attempts. Moving to the next trial.',
+};
+
+productionTrials = shuffleArray([tweet_trial1, tweet_trial2]);
 
 
   // QUESTIONNAIRE //
@@ -799,6 +815,12 @@ const demoSurvey = {
         // jsPsych.setProgressBar((data.trial_index + 1) / (timeline.length + jsPsychStimuli.length)),
         data.category = "demoSurvey"
     }
+}
+
+const exit_fullscreen = {
+  type: jsPsychFullscreen,
+  fullscreen_mode: false,
+  delay_after: 0
 }
 
 // THANKS //
@@ -821,12 +843,13 @@ const conditionalRemainder = {
     LexicalDecisionInstructions,
     LexicalDecision,
     productionInstructions,
-    productionTask,
+    productionTrials[0],
+    productionTrials[1],
     demoSurvey,
+    exit_fullscreen,
     thanks
     ],
     conditional_function: function() {
-      // Only proceed with the remainder if experiment is still active
       return true
     }
   };

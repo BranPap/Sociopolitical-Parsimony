@@ -1,15 +1,3 @@
-// function evaluate_response(data) {
-//     if (data.response == '0' & data.correct == 'NEW') {
-//         data.result = "correct_rejection"
-//     } else if (data.response == 'k' & data.correct == 'NEW') {
-//         data.result = "false_alarm"
-//     } else if (data.response == 'd' & data.correct == 'OLD') {
-//         data.result = "miss"
-//     } else  {
-//         data.result = "hit"
-//     }
-// }
-
 function evaluate_response(data, leftValue, rightValue) {
     if (data.response == 'f' & leftValue == data.status) {
         data.statusCheck = "correct"

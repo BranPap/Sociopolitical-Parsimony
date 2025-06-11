@@ -1,5 +1,11 @@
-// Function to generate trial objects for jsPsych experiment
-function generateTrialObjects(exposedTopics = []) {
+
+// Helper function to get random element from array
+function getRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Function to generate article titles for jsPsych tweet production task
+function grabArticleTitle(topic) {
     // Data from your stimuli file
     const articleTitles = {
         "privacy": [
@@ -43,7 +49,16 @@ function generateTrialObjects(exposedTopics = []) {
             `Somehow, we're already revisiting this 2010 trend`,
         ],
     };
+    // Return a random title for the given topic
+    if (articleTitles[topic]) {
+        return getRandomElement(articleTitles[topic]);
+    } else {
+        console.error(`No titles found for topic: ${topic}`);
+        return "No title available";
+    }
+}
 
+function grabArticleByline(topic) {
     const articleBylines = {
         "privacy": [
             `If everyone on your Tinder feed seemingly can't take a photo alone, you're not alone. People all over the US are using group photos on dating apps to fight data harvesting.`,
@@ -63,77 +78,17 @@ function generateTrialObjects(exposedTopics = []) {
         ]
     };
 
-    const newsSources = [`The Daily Duck`, `The Weekly Warbler`, `The Zeitgeist Zebra`, `The Telegraph Tiger`, `Iris News`, `The Robin`];
-
-    // Helper function to get random element from array
-    function getRandomElement(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
+    // Return a random byline for the given topic
+    if (articleBylines[topic]) {
+        return getRandomElement(articleBylines[topic]);
+    } else {
+        console.error(`No bylines found for topic: ${topic}`);
+        return "No byline available";
     }
+}
 
-    // Get all topics
-    const allTopics = Object.keys(articleTitles);
-    
-    // Generate trial objects
-    const trials = [];
-    
-    allTopics.forEach(topic => {
-        if (exposedTopics.includes(topic)) {
+const newsSources = [`The Daily Duck`, `The Weekly Warbler`, `The Zeitgeist Zebra`, `The Telegraph Tiger`, `Iris News`, `The Robin`];
 
-        // Randomly select indices
-        const titleIndex = Math.floor(Math.random() * articleTitles[topic].length);
-        const bylineIndex = Math.floor(Math.random() * articleBylines[topic].length);
-        const newsSource = getRandomElement(newsSources);
-        
-        // Create trial object
-        const trial = {
-            type: jsPsychTweetProduction,
-            data: {
-                category: 'tweet_production',
-                topic: topic,
-                isExposed: exposedTopics.includes(topic) // Track if this was an exposed topic
-            },
-            article_title: articleTitles[topic][titleIndex],
-            article_summary: articleBylines[topic][bylineIndex],
-            news_source: newsSource,
-            prompt_text: '',
-            task_description: '',
-            require_word_usage: true,
-            max_attempts: 3,
-            max_attempts_action: 'proceed',
-            max_attempts_message: 'You have used all 3 attempts. Moving to the next trial.',
-            required_words: function(topic) {
-                switch (topic) {
-                    case 'privacy':
-                        return ['crowdcloaking', 'herdblurring'];
-                    case 'drugs':
-                        return ['Thumaze', 'Wenlure'];
-                    case 'martialArts':
-                        return ['Churako', 'Domari'];
-                    case 'tattoos':
-                        return ['tessamorph', 'interforme'];
-                    case 'DnD':
-                        return ['Dungeons & Dragons'];
-                    case 'trumpBible':
-                        return ['Trump Bible'];
-                    case 'luigi':
-                        return ['Killer of UnitedHealthcare CEO'];
-                    case 'SillyBandz':
-                        return ['SillyBandz'];
-                    default:
-                        return [];
-                }
-
-            }
-        };
-        
-        trials.push(trial);
-    }});
-    
-    // Shuffle the trials to randomize presentation order
-    for (let i = trials.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [trials[i], trials[j]] = [trials[j], trials[i]];
-    }
-    
-    return trials;
+function grabArticleSource() {
+    return getRandomElement(newsSources);
 }

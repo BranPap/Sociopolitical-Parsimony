@@ -57,7 +57,7 @@ var jsPsychTweetProduction = (function (jspsych) {
        */
       task_description: {
         type: jspsych.ParameterType.HTML_STRING,
-        default: '<p><strong>Your task:</strong> Write a tweet sharing this article.</p>'
+        default: '<p>Write a tweet sharing this article. <b>Your tweet must contain one of the words you have learned during the study</b>.</p>'
       },
       /**
        * Placeholder text for the tweet textarea
@@ -81,7 +81,49 @@ var jsPsychTweetProduction = (function (jspsych) {
         default: 'Post Tweet'
       },
       /**
-       * Terms to track in the tweet text for analysis purposes
+       * Maximum number of attempts allowed (set to 0 for unlimited)
+       */
+      max_attempts: {
+        type: jspsych.ParameterType.INT,
+        default: 0
+      },
+      /**
+       * What to do when max attempts is reached: 'proceed' or 'end_experiment'
+       */
+      max_attempts_action: {
+        type: jspsych.ParameterType.STRING,
+        default: 'proceed'
+      },
+      /**
+       * Message to show when max attempts is reached
+       */
+      max_attempts_message: {
+        type: jspsych.ParameterType.STRING,
+        default: 'You have reached the maximum number of attempts. The trial will now continue.'
+      },
+      /**
+       * Array of words to check for in the tweet (e.g., ['love', 'hate', 'amazing'])
+       */
+      required_words: {
+        type: jspsych.ParameterType.COMPLEX,
+        default: []
+      },
+      /**
+       * Whether to require at least one of the required words to be present
+       */
+      require_word_usage: {
+        type: jspsych.ParameterType.BOOL,
+        default: false
+      },
+      /**
+       * Error message to show when required words are not used
+       */
+      word_error_message: {
+        type: jspsych.ParameterType.STRING,
+        default: 'Your tweet does not contain one of the terms you\'ve learned. Please try composing the tweet again.'
+      },
+      /**
+       * Terms to track in the tweet text for analysis purposes (legacy support)
        * Format: [{term: 'word1', key: 'data_key1'}, {term: 'word2', key: 'data_key2'}]
        */
       terms_to_track: {
@@ -122,6 +164,10 @@ var jsPsychTweetProduction = (function (jspsych) {
     }
 
     trial(display_element, trial) {
+      // Array to store all attempts
+      let attempts = [];
+      let attempt_timestamps = [];
+      
       // Set up CSS styles
       const css = `
         <style>
@@ -216,6 +262,32 @@ var jsPsychTweetProduction = (function (jspsych) {
             color: #0f1419;
             line-height: 1.4;
           }
+          .error-message {
+            background-color: #ffebee;
+            border: 1px solid #f44336;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            color: #c62828;
+            font-size: 14px;
+            display: none;
+          }
+          .attempts-counter {
+            font-size: 0.9em;
+            color: #657786;
+            text-align: right;
+            margin-bottom: 10px;
+          }
+          .max-attempts-warning {
+            background-color: #fff3e0;
+            border: 1px solid #ff9800;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            color: #ef6c00;
+            font-size: 14px;
+            display: none;
+          }
         </style>
       `;
 
@@ -281,6 +353,15 @@ var jsPsychTweetProduction = (function (jspsych) {
       // Tweet composer
       html += `
         <div class="tweet-composer">
+          <div id="jspsych-error-message" class="error-message"></div>
+          <div id="jspsych-max-attempts-warning" class="max-attempts-warning"></div>`;
+      
+      // Add attempts counter if max_attempts is set
+      if (trial.max_attempts > 0) {
+        html += `<div id="jspsych-attempts-counter" class="attempts-counter">Attempts: <span id="jspsych-attempts-count">0</span>/${trial.max_attempts}</div>`;
+      }
+      
+      html += `
           <textarea 
             id="jspsych-tweet-response" 
             class="tweet-textarea" 
@@ -305,8 +386,49 @@ var jsPsychTweetProduction = (function (jspsych) {
       const tweetTextarea = display_element.querySelector('#jspsych-tweet-response');
       const charCounter = display_element.querySelector('#jspsych-char-count');
       const submitButton = display_element.querySelector('#jspsych-tweet-submit');
+      const errorMessage = display_element.querySelector('#jspsych-error-message');
+      const maxAttemptsWarning = display_element.querySelector('#jspsych-max-attempts-warning');
+      const attemptsCounter = display_element.querySelector('#jspsych-attempts-count');
       
+      // Function to hide error message
+      const hideError = () => {
+        errorMessage.style.display = 'none';
+        errorMessage.textContent = '';
+      };
+
+      // Function to show error message
+      const showError = (message) => {
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+      };
+
+      // Function to hide max attempts warning
+      const hideMaxAttemptsWarning = () => {
+        if (maxAttemptsWarning) {
+          maxAttemptsWarning.style.display = 'none';
+          maxAttemptsWarning.textContent = '';
+        }
+      };
+
+      // Function to show max attempts warning
+      const showMaxAttemptsWarning = (message) => {
+        if (maxAttemptsWarning) {
+          maxAttemptsWarning.textContent = message;
+          maxAttemptsWarning.style.display = 'block';
+        }
+      };
+
+      // Function to update attempts counter
+      const updateAttemptsCounter = () => {
+        if (attemptsCounter) {
+          attemptsCounter.textContent = attempts.length;
+        }
+      };
+
       tweetTextarea.addEventListener('input', function() {
+        hideError(); // Hide error when user starts typing
+        hideMaxAttemptsWarning(); // Hide max attempts warning when user starts typing
+        
         const count = this.value.length;
         charCounter.textContent = count;
         
@@ -326,15 +448,54 @@ var jsPsychTweetProduction = (function (jspsych) {
         }
       });
 
+      // Function to check if required words are present
+      const checkRequiredWords = (text) => {
+        if (!trial.require_word_usage || !trial.required_words || trial.required_words.length === 0) {
+          return true;
+        }
+        
+        const lowerText = text.toLowerCase();
+        return trial.required_words.some(word => lowerText.includes(word.toLowerCase()));
+      };
+
       // Function to end the trial when the submit button is clicked
       const end_trial = () => {
-        // Measure response time
-        const response_time = performance.now() - start_time;
-        
         // Get the tweet response
         const tweet_text = tweetTextarea.value;
         
-        // Process the tracked terms
+        // Record this attempt
+        const attempt_time = performance.now() - start_time;
+        attempts.push(tweet_text);
+        attempt_timestamps.push(attempt_time);
+        updateAttemptsCounter();
+        
+        // Check if required words are present
+        const wordsValid = checkRequiredWords(tweet_text);
+        
+        // Check if max attempts reached
+        const maxAttemptsReached = trial.max_attempts > 0 && attempts.length >= trial.max_attempts;
+        
+        if (!wordsValid && !maxAttemptsReached) {
+          showError(trial.word_error_message);
+          return; // Don't proceed with trial completion
+        }
+        
+        // If max attempts reached but words still not valid
+        if (maxAttemptsReached && !wordsValid) {
+          if (trial.max_attempts_action === 'end_experiment') {
+            // End the entire experiment
+            this.jsPsych.endExperiment(trial.max_attempts_message);
+            return;
+          } else {
+            // Show warning but proceed with trial
+            showMaxAttemptsWarning(trial.max_attempts_message);
+          }
+        }
+        
+        // Measure response time (final attempt)
+        const response_time = attempt_time;
+        
+        // Process the tracked terms (legacy support)
         const track_results = {};
         let any_term_used = false;
         
@@ -352,18 +513,40 @@ var jsPsychTweetProduction = (function (jspsych) {
           track_results[trial.any_term_used_key] = any_term_used;
         }
         
+        // Process required words for data collection
+        const required_word_results = {};
+        let any_required_word_used = false;
+        
+        if (trial.required_words && trial.required_words.length > 0) {
+          const lowerText = tweet_text.toLowerCase();
+          
+          trial.required_words.forEach((word, index) => {
+            const wordUsed = lowerText.includes(word.toLowerCase());
+            required_word_results[`required_word_${index + 1}_used`] = wordUsed;
+            required_word_results[`required_word_${index + 1}`] = word;
+            if (wordUsed) any_required_word_used = true;
+          });
+          
+          required_word_results['any_required_word_used'] = any_required_word_used;
+        }
+        
         // Save data
         const trial_data = {
           rt: response_time,
           response: tweet_text,
           tweet_length: tweet_text.length,
-          ...track_results
+          attempts: attempts,
+          attempt_timestamps: attempt_timestamps,
+          total_attempts: attempts.length,
+          failed_attempts: Math.max(0, attempts.length - 1),
+          max_attempts_reached: maxAttemptsReached,
+          completed_successfully: wordsValid,
+          ...track_results,
+          ...required_word_results
         };
         
-        // Clear the display
+        // Clear the display and end trial
         display_element.innerHTML = '';
-        
-        // End the trial
         this.jsPsych.finishTrial(trial_data);
       };
 

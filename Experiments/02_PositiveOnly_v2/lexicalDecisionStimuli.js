@@ -90,13 +90,13 @@ let lexicalDecisionStimuli = [
 function checkInclusion(stimArray, stimChoicesThis, fillerChoicesThis) {
     stimArray.forEach(stimulus => {
         if (stimChoicesThis.includes(stimulus.data.itemPair)) {
-            stimulus.data.status = "old";
+            stimulus.data.status = "seen";
             stimulus.data.criticality = "critical";
         } else if (fillerChoicesThis.includes(stimulus.data.itemPair)) {
-            stimulus.data.status = "old";
+            stimulus.data.status = "seen";
             stimulus.data.criticality = "filler";
         } else {
-            stimulus.data.status = "new";
+            stimulus.data.status = "not seen";
             stimulus.data.criticality = "distractor"
         }
     });
