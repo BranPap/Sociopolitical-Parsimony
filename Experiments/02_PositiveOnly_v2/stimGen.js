@@ -680,7 +680,7 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
   // GENERATE STIMULI
   
   // Generate high frequency tweets
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     stimuli.push(createTweet(highFreqTerm, highFreqContext, contextCategory));
   }
 

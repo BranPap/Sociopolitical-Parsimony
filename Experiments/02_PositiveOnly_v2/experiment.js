@@ -274,7 +274,10 @@ const peoplesCurrentAboutUs = {
         <p style="text-align: center; margin-top: 30px;">Press SPACEBAR to continue.</p>
     </div>
     `,
-    choices: [" "]
+    choices: [" "],
+    on_finish(data) {
+      data.category = 'peoples_current_about_us';
+    }
 };
 
 
@@ -316,7 +319,10 @@ const dailyPatriotAboutUs = {
         <p style="text-align: center; margin-top: 30px;">Press SPACEBAR to continue.</p>
     </div>
     `,
-    choices: [" "]
+    choices: [" "],
+    on_finish(data) {
+      data.category = 'daily_patriot_about_us';
+    }
 };
 
 
@@ -346,7 +352,7 @@ const articles = {
         console.log(jsPsych.timelineVariable('data'))
     },
     on_finish: function(data) {
-        data.category = "trial";
+        data.category = "article";
         // jsPsych.setProgressBar((data.trial_index + 1) / (timeline.length + jsPsychStimuli.length));
     }
 }
@@ -411,7 +417,10 @@ function generateLoopedTask() {
     retweets_range: stimulus.retweets_range,
     likes_range: stimulus.likes_range,
     attention_question: stimulus.attention_question,
-    answer_options: stimulus.answer_options
+    answer_options: stimulus.answer_options,
+    data: {
+      category: "tweet_trial",
+    }
   }));
 
   // Add Tweet trials to inner timeline
@@ -443,7 +452,9 @@ function generateLoopedTask() {
       // Check if they selected a target word
       if (data.is_target) {
         gameState.correctTrials++;
-      }
+      };
+
+      data.category = "word_bank_trial";
       
       // Log for debugging
       console.log(`Trial ${gameState.totalTrials}: ${data.is_target ? 'Correct' : 'Incorrect'}. Current score: ${gameState.correctTrials}/${gameState.totalTrials}`);
@@ -788,6 +799,9 @@ var tweet_trial1 = {
   max_attempts: 3,
   max_attempts_action: 'proceed',
   max_attempts_message: 'You have used all 3 attempts. Moving to the next trial.',
+  data: {
+    category: "tweet_production",
+  }
 };
 
 
@@ -801,6 +815,9 @@ var tweet_trial2 = {
   max_attempts: 3,
   max_attempts_action: 'proceed',
   max_attempts_message: 'You have used all 3 attempts. Moving to the next trial.',
+  data: {
+    category: "tweet_production",
+  }
 };
 
 productionTrials = shuffleArray([tweet_trial1, tweet_trial2]);
@@ -808,14 +825,14 @@ productionTrials = shuffleArray([tweet_trial1, tweet_trial2]);
 
   // QUESTIONNAIRE //
 
-const demoSurvey = {
+  const demoSurvey = {
     type: jsPsychSurveyHtmlForm,
-    html: "<style>#survey-container { font-family: 'Arial', sans-serif; line-height: 1.6; background-color: #f9f9f9; color: #333; margin: 0; padding: 20px; } #survey-container div { margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); } #survey-container p { font-size: 16px; font-weight: bold; margin-bottom: 10px; } #survey-container input[type='radio'] { margin-right: 10px; } #survey-container select, #survey-container input[type='text'], #survey-container textarea { font-size: 14px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; box-sizing: border-box; } #survey-container textarea { resize: vertical; } #survey-container label { display: block; margin-bottom: 5px; font-size: 14px; } #survey-container select { background: #fff; } #survey-container input[type='radio'] + label, #survey-container input[type='radio']:last-of-type { margin-right: 15px; }</style><div id='survey-container'><div><p>Did you read the instructions and do you think you did the task correctly?</p><label><input type='radio' name='correct' value='Yes'> Yes</label><label><input type='radio' name='correct' value='No'> No</label><label><input type='radio' name='correct' value='I was confused'> I was confused</label></div><div><p>How would you describe your political beliefs?</p><label><input type='radio' name='political' value='Progressive'> Progressive</label><label><input type='radio' name='political' value='Moderate'> Moderate</label><label><input type='radio' name='political' value='Conservative'> Conservative</label><label><input type='radio' name='political' value='Independent'> Independent</label></div><div><p>Gender:</p><select name='gender'><option value='null'> </option><option value='Female'>Female</option><option value='Male'>Male</option><option value='Non-binary/Non-conforming'>Non-binary/Non-conforming</option><option value='Other'>Other</option></select></div><div><p>Age:</p><input type='text' name='age' size='10'></div><div><p>Level of education:</p><select name='education'><option value='null'> </option><option value='Some high school'>Some high school</option><option value='Graduated high school'>Graduated high school</option><option value='Some college'>Some college</option><option value='Graduated college'>Graduated college</option><option value='Hold a higher degree'>Hold a higher degree</option></select></div><div><p>Do you think the payment was fair?</p><select name='payment'><option value='null'> </option><option value='The payment was too low'>The payment was too low</option><option value='The payment was fair'>The payment was fair</option></select></div><div><p>Did you enjoy the experiment?</p><select name='enjoy'><option value='null'> </option><option value='Worse than the average experiment'>Worse than the average experiment</option><option value='An average experiment'>An average experiment</option><option value='Better than the average experiment'>Better than the average experiment</option></select></div><div><p>Do you have any other comments about this experiment?</p><textarea name='comments' cols='30' rows='4'></textarea></div></div>",
+    html: "<style>#survey-container { font-family: 'Arial', sans-serif; line-height: 1.6; background-color: #f9f9f9; color: #333; margin: 0; padding: 20px; } #survey-container div { margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); } #survey-container p { font-size: 16px; font-weight: bold; margin-bottom: 10px; } #survey-container input[type='radio'] { margin-right: 10px; } #survey-container select, #survey-container input[type='text'], #survey-container textarea { font-size: 14px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; box-sizing: border-box; } #survey-container textarea { resize: vertical; } #survey-container label { display: block; margin-bottom: 5px; font-size: 14px; } #survey-container select { background: #fff; } #survey-container input[type='radio'] + label, #survey-container input[type='radio']:last-of-type { margin-right: 15px; }</style><div id='survey-container'><div><p>Did you read the instructions and do you think you did the task correctly?</p><label><input type='radio' name='correct' value='Yes'> Yes</label><label><input type='radio' name='correct' value='No'> No</label><label><input type='radio' name='correct' value='I was confused'> I was confused</label></div><div><p>How would you describe your political beliefs?</p><label><input type='radio' name='political' value='Progressive'> Progressive</label><label><input type='radio' name='political' value='Moderate'> Moderate</label><label><input type='radio' name='political' value='Conservative'> Conservative</label><label><input type='radio' name='political' value='Independent'> Independent</label></div><div><p>American political affiliation:</p><label><input type='radio' name='us_affiliation' value='Democrat'> Democrat</label><label><input type='radio' name='us_affiliation' value='Republican'> Republican</label><label><input type='radio' name='us_affiliation' value='Libertarian'> Libertarian</label><label><input type='radio' name='us_affiliation' value='Green Party'> Green Party</label><label><input type='radio' name='us_affiliation' value='Independent/Other'> Independent/Other</label><label><input type='radio' name='us_affiliation' value='Prefer not to say'> Prefer not to say</label></div><div><p>Gender:</p><select name='gender'><option value='null'> </option><option value='Female'>Female</option><option value='Male'>Male</option><option value='Non-binary/Non-conforming'>Non-binary/Non-conforming</option><option value='Other'>Other</option></select></div><div><p>Age:</p><input type='text' name='age' size='10'></div><div><p>Level of education:</p><select name='education'><option value='null'> </option><option value='Some high school'>Some high school</option><option value='Graduated high school'>Graduated high school</option><option value='Some college'>Some college</option><option value='Graduated college'>Graduated college</option><option value='Hold a higher degree'>Hold a higher degree</option></select></div><div><p>Do you think the payment was fair?</p><select name='payment'><option value='null'> </option><option value='The payment was too low'>The payment was too low</option><option value='The payment was fair'>The payment was fair</option></select></div><div><p>Did you enjoy the experiment?</p><select name='enjoy'><option value='null'> </option><option value='Worse than the average experiment'>Worse than the average experiment</option><option value='An average experiment'>An average experiment</option><option value='Better than the average experiment'>Better than the average experiment</option></select></div><div><p>Do you have any other comments about this experiment?</p><textarea name='comments' cols='30' rows='4'></textarea></div></div>",
     on_finish: function(data) {
-        // jsPsych.setProgressBar((data.trial_index + 1) / (timeline.length + jsPsychStimuli.length)),
-        data.category = "demoSurvey"
+      data.category = "demoSurvey";
     }
-}
+  }
+  
 
 const exit_fullscreen = {
   type: jsPsychFullscreen,

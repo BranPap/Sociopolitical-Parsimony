@@ -1,0 +1,391 @@
+---
+title: "Sociopolitical Frequency Effects"
+author: "Brandon Papineau"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+source("helpers.R")
+source("survey.R")
+library(jsonlite)
+```
+
+```{r}
+allData <- read.csv("sociopolitical_frequency_v3_pilot-trials.csv")
+
+testData <- extract_demographics(allData, "workerid", "response")
+
+prolificIDs <- read.csv("sociopolitical_frequency_v3_pilot-workerids.csv") 
+
+prolificData <- read.csv("ProlificData.csv") %>% 
+  mutate(prolific_participant_id = paste(Participant.id)) %>% 
+  select(-c("X","Participant.id"))
+  
+
+testData <- testData %>% 
+  left_join(prolificIDs, by=c("workerid"))
+
+fullData <- testData %>% 
+  left_join(prolificData, by=c("prolific_participant_id"))
+  
+
+
+fullData %>% 
+  filter(attempts != "") %>% 
+  select(c("workerid", "comments", "political","ProlificPolitical","attempts","ProlificTimeTaken")) %>% 
+  distinct() 
+  
+fullData %>% 
+  filter(category == "demoSurvey") %>% 
+  select(c("rt","comments")) %>% 
+  mutate(rt = rt/1000)
+```
+
+
+```{r}
+fullData %>% 
+  group_by(internal_node_id) %>% 
+  summarize(meanRt = mean(rt)) %>% 
+  ggplot(aes(x=internal_node_id, y = meanRt)) + 
+  geom_point()
+```
+
+
+
+```{r}
+# Create R dataframe
+time_data <- data.frame(
+  time_taken = c(
+    "00:10:38",
+    "00:22:57",
+    "00:25:13",
+    "00:32:50",
+    "00:33:43",
+    "00:42:35",
+    "00:47:49",
+    "00:51:13",
+    "00:52:10",
+    "00:53:24",
+    "00:55:31",
+    "00:55:58",
+    "00:58:56",
+    "01:01:55",
+    "01:05:31",
+    "01:07:28",
+    "01:14:59",
+    "01:20:48",
+    "01:22:42",
+    "01:25:27"
+  )
+)
+
+# Convert time strings to seconds for analysis
+convert_to_seconds <- function(time_str) {
+  parts <- as.numeric(unlist(strsplit(time_str, ":")))
+  if (length(parts) == 3) {
+    # HH:MM:SS format
+    return(parts[1] * 3600 + parts[2] * 60 + parts[3])
+  } else {
+    # MM:SS format
+    return(parts[1] * 60 + parts[2])
+  }
+}
+
+# Apply conversion
+time_data$seconds <- sapply(time_data$time_taken, convert_to_seconds)
+
+# Create histogram
+hist(time_data$seconds, 
+     main = "Distribution of Time Taken",
+     xlab = "Time (seconds)",
+     ylab = "Frequency",
+     col = "lightblue",
+     border = "black")
+
+# Optional: Add some summary statistics
+summary(time_data$seconds)
+
+# Convert back to minutes for easier interpretation
+time_data$minutes <- time_data$seconds / 60
+hist(time_data$minutes,
+     main = "Distribution of Time Taken", 
+     xlab = "Time (minutes)",
+     ylab = "Frequency",
+     col = "lightgreen",
+     border = "black")
+```
+
+
+
+```{r}
+# Create political alignment function - this is not working because extract_demographics isn't
+# determine_alignment <- function(participant_condition, wing_bias) {
+#   if (is.na(participant_condition) || is.na(wing_bias) || 
+#       participant_condition == "" || wing_bias == "") {
+#     return(NA)
+#   }
+#   
+#   # Convert to lowercase for consistent matching
+#   participant_condition <- tolower(participant_condition)
+#   wing_bias <- tolower(wing_bias)
+#   
+#   if (participant_condition == "progressive") {
+#     return(ifelse(wing_bias == "left", "aligned", 
+#                   ifelse(wing_bias == "right", "disaligned", NA)))
+#   } else if (participant_condition == "conservative") {
+#     return(ifelse(wing_bias == "right", "aligned", 
+#                   ifelse(wing_bias == "left", "disaligned", NA)))
+#   } else if (participant_condition %in% c("independent","moderate")) {
+#     return("Useless")
+#   }
+#   return(NA)
+# }
+
+# First, create a reference dataset with political context information
+political_context <- allData %>%
+  filter(!is.na(wingBias) & wingBias != "") %>%
+  select(workerid, criticalTerm, wingBias, tokenCount)
+
+# Create lookup tables for token count and alignment by critical term and worker
+token_lookup <- political_context %>%
+  select(workerid, criticalTerm, tokenCount) %>%
+  filter(criticalTerm %in% c("crowdcloaking","herdblurring","Thumaze","Wenlure","Churako","Domari","tessamorph","interforme")) %>% 
+  distinct() 
+
+lexicalOnly <- allData %>% 
+  filter(category == "LexicalDecision") %>% 
+  mutate(criticalTerm = paste(stimulus)) %>%  
+  # filter(criticality == "critical") %>%
+  # filter(itemPair %in% c("privacy","tattoos","martialArts","drugs")) %>%
+  select(c(-tokenCount)) 
+
+
+allLexi <- lexicalOnly %>%
+  left_join(token_lookup %>% 
+            select(workerid, criticalTerm, tokenCount) %>%
+            distinct(), 
+            by = c("workerid", "criticalTerm")) %>%
+  mutate(binaryResponse = case_when(  
+    statusCheck == "correct" ~ 1,
+    TRUE ~ 0
+  ))
+```
+
+
+```{r}
+allData %>% 
+  filter(category == "LexicalDecision") %>% 
+  mutate(binaryResponse = case_when(
+    statusCheck == "correct" ~ 1,
+    TRUE ~ 0
+  )) %>% 
+  group_by(status) %>% 
+  summarize(meanAcc = mean(binaryResponse),
+            CI.Low = ci.low(binaryResponse),
+            CI.High = ci.high(binaryResponse)) %>% 
+  mutate(
+    YMin = meanAcc - CI.Low,
+    YMax = meanAcc + CI.High
+  ) %>%
+  ggplot(aes(x=as.factor(status), y= meanAcc)) +
+  geom_bar(stat='identity') + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + 
+  theme_bw()
+```
+
+```{r}
+allLexi %>% 
+  group_by(tokenCount) %>% 
+  summarize(meanRt = mean(rt),
+            CI.Low = ci.low(rt),
+            CI.High = ci.high(rt)) %>% 
+  mutate(YMin = meanRt -CI.Low,
+         YMax = meanRt + CI.High) %>% 
+  ggplot(aes(x=as.factor(tokenCount), y=meanRt, fill=as.factor(tokenCount) )) + 
+  geom_bar(stat='identity', position=position_dodge()) + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + theme(legend.position = 'none')
+```
+
+
+```{r}
+allLexi %>% 
+  group_by(tokenCount, workerid) %>% 
+  summarize(meanAcc = mean(binaryResponse),
+            CI.Low = ci.low(binaryResponse),
+            CI.High = ci.high(binaryResponse)) %>% 
+  mutate(
+    YMin = meanAcc - CI.Low,
+    YMax = meanAcc + CI.High
+  ) %>%
+  ggplot(aes(x=as.factor(tokenCount), y= meanAcc, fill=as.factor(tokenCount))) +
+  geom_bar(stat='identity') + 
+  facet_wrap(~workerid) +
+  theme_bw() + 
+  labs(x="Exposure", y="Mean Accuracy") + 
+  theme(legend.position = 'none') + 
+  scale_x_discrete(labels=c("3" = "Low", "8" = "High",
+                              "NA" = "Filler"))
+```
+
+
+```{r}
+allLexi %>% 
+  group_by(tokenCount,workerid) %>% 
+  summarize(meanRt = mean(rt),
+            CI.Low = ci.low(rt),
+            CI.High = ci.high(rt)) %>% 
+  mutate(
+    YMin = meanRt - CI.Low,
+    YMax = meanRt + CI.High
+  ) %>%
+  ggplot(aes(x=as.factor(tokenCount), y= meanRt)) +
+  geom_bar(stat='identity') + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + 
+  facet_wrap(~workerid) + 
+  theme_bw()
+```
+
+```{r}
+allLexi %>% 
+  group_by(workerid, tokenCount) %>% 
+  ggplot(aes(x = rt, fill = as.factor(tokenCount), group = as.character(tokenCount))) + 
+  geom_density(aes(alpha = 0.4)) + 
+  geom_rug(aes(color = as.factor(tokenCount)))
+  
+```
+
+
+```{r}
+allData <- allData %>% 
+  mutate(logRt = log(rt))
+  
+```
+
+
+```{r}
+allLexi %>% 
+  mutate(rt = log(rt)) %>% 
+  group_by(tokenCount) %>% 
+  summarize(meanRt = mean(rt),
+            CI.Low = ci.low(rt),
+            CI.High = ci.high(rt)) %>% 
+  mutate(YMin = meanRt - CI.Low,
+         YMax = meanRt + CI.High) %>% 
+  ggplot(aes(x = as.factor(tokenCount), y = meanRt, fill = as.factor(tokenCount))) + 
+  geom_bar(alpha = 0.5, stat = 'identity', position = position_dodge()) + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width = 0.25), position = position_dodge(width = 0.9)) + 
+  geom_jitter(aes(x = as.factor(tokenCount), y = logRt, color = as.factor(tokenCount)), 
+              data = allLexi, alpha = 1) + 
+  labs(x="Token Count", y="Log RT") + 
+  theme(legend.position = 'none')
+```
+
+
+```{r}
+allLexi %>% 
+  group_by(tokenCount) %>% 
+  ggplot(aes(x = as.factor(tokenCount), y = rt, fill = as.factor(tokenCount))) +
+  geom_boxplot()
+```
+
+
+```{r}
+allData %>% 
+  filter(category == "LexicalDecision") %>% 
+  mutate(binaryResponse = case_when(
+    statusCheck == 'correct' ~ 1,
+    TRUE ~ 0
+  )) %>% 
+  group_by(status) %>% 
+  summarize(meanRt = mean(rt),
+            CI.Low = ci.low(rt),
+            CI.High = ci.high(rt)) %>% 
+  mutate(YMin = meanRt - CI.Low,
+         YMax = meanRt + CI.High) %>% 
+  ggplot(aes(x=status,y=meanRt)) + 
+  geom_bar(stat='identity', position='dodge') + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9))
+```
+
+
+```{r}
+allData %>% 
+  filter(category == "LexicalDecision") %>% 
+  mutate(binaryResponse = case_when(
+    statusCheck == 'correct' ~ 1,
+    TRUE ~ 0
+  )) %>% 
+  group_by(status) %>% 
+  summarize(meanAcc = mean(binaryResponse),
+            CI.Low = ci.low(binaryResponse),
+            CI.High = ci.high(binaryResponse)) %>% 
+  mutate(YMin = meanAcc - CI.Low,
+         YMax = meanAcc + CI.High) %>% 
+  ggplot(aes(x=status,y=meanAcc)) + 
+  geom_bar(stat='identity', position='dodge') + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9))
+```
+
+
+```{r}
+allLexi %>% 
+  filter(criticality == "critical") %>% 
+  mutate(binaryResponse = case_when(
+    statusCheck == 'correct' ~ 1,
+    TRUE ~ 0
+  )) %>% 
+  group_by(tokenCount) %>% 
+  summarize(meanAcc = mean(binaryResponse),
+            CI.Low = ci.low(binaryResponse),
+            CI.High = ci.high(binaryResponse)) %>% 
+  mutate(YMin = meanAcc - CI.Low,
+         YMax = meanAcc + CI.High) %>% 
+  ggplot(aes(x=as.factor(tokenCount),y=meanAcc)) + 
+  geom_bar(stat='identity') + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9))
+```
+
+
+
+
+```{r}
+allData %>% 
+  filter(attempts != "") %>% 
+  select(c(workerid,attempts,failed_attempts,rt))
+```
+
+
+```{r}
+progBio <- c(
+    "Justice, Equity, Liberation ✊🏽 * He/Him",
+    "Fighting for a better future 🌍💚 #BLM // He/Him",
+    "Activist. Dreamer. Ally. 💜✊ • He/Him",
+    "Anti-fascist. Anti-racist. Pro-worker. 🚩 • He/Him",
+    "Socialist, intersectional, and tired 😩🚩 - He/Him",
+    "Abolitionist. Organizer. Dreamer. 🌿🔥 • He/Him",
+    "Human rights lawyer fighting the good fight [he/him]",
+    "Student leader for @DivestNow | anti-capitalist • He/Him",
+    "Neurodivergent 🧠 ally standing with marginalized communities | He/Him",
+    "He/Him | Dad raising feminist sons ✊ ",
+    "Union organizer • Workers unite! 🚩",
+    "Climate activist • The future is now • He/Him 🌍"
+  )
+```
+
+
+
+```{r}
+allData %>% 
+  filter(bio != "") %>% 
+  mutate(leaning = case_when(
+    bio %in% progBio ~ "Progressive",
+    TRUE ~ "Nope"
+  )) %>% 
+  select(c(leaning))
+  
+```
+
