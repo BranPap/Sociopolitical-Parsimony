@@ -21,9 +21,7 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
   const personas = {
     conservative: {
       male: {
-        names: ["Malcolm", "Khalil", "Justice", "River", "Ranjit", "Tony", "Mike", "Jamie", "Gregory", "Jordan", 
-          "Riley", "Morgan", "Jamal", "DeShawn", "Tyrone", "Omar", "Darius", "Carlos", "Luis", "Wei", 
-          "Jin", "Kumar", "Chen", "Ibrahim", "Hiroshi", "Aiden", "Parker", "Blake", "Cameron", "Dakota", "Jim", "Scott", "Tyler", "Brian", "Richard", "Christopher", "Steve", "Stephen", "Chris", "Robert"],
+        names: ["Jim", "Scott", "Tyler", "Brian", "Richard", "Christopher", "Steve", "Stephen", "Chris", "Robert", "Matt", "John", "Michael", "Chad", "Jake", "Kevin", "Josh", "Eric", "Donald", "George", "Clay"],
         bios: [
           "Faith, Family, Freedom 🇺🇸 • God Bless America ♱",
           "Conservative values matter. 🇺🇸 #MAGA",
@@ -40,9 +38,7 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
         ]
       },
       female: {
-        names: ["Harriet", "Melissa", "Liberty", "Maya", "Zoe", "Nia", "Fatima", "Naya", "Aisha", "Keisha", 
-          "Priya", "Sasha", "Zainab", "Luna", "Aria", "Nova", "Sage", "Avery", "Finley", "Hayden", 
-          "Indigo", "Quinn", "Reese", "Tatum", "Emma", "Olivia", "Ava", "Harper", "Rachel", "Alyssa", "Emma", "Emily", "Cynthia", "Elizabeth", "Louisa", "Lily", "Rose", "Mary Anne"],
+        names: ["Harper", "Rachel", "Alyssa", "Emma", "Emily", "Cynthia", "Elizabeth", "Louisa", "Lily", "Rose", "Mary Anne", "Molly", "Mia", "Samantha", "Sally", "Abigail", "Candace", "Haley", "Traci", "Tiffany", "Christyn", "Deborah"],
         bios: [
           "Faith, Family, Freedom 🇺🇸 • Proud wife and mother ♱",
           "Conservative mom fighting for our children's future 🇺🇸",
@@ -61,9 +57,9 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
     },
     progressive: {
       male: {
-        names: ["Malcolm", "Khalil", "Justice", "River", "Ranjit", "Tony", "Mike", "Jamie", "Gregory", "Jordan", 
-          "Riley", "Morgan", "Jamal", "DeShawn", "Tyrone", "Omar", "Darius", "Carlos", "Luis", "Wei", 
-          "Jin", "Kumar", "Chen", "Ibrahim", "Hiroshi", "Aiden", "Parker", "Blake", "Cameron", "Dakota", "Jim", "Scott", "Tyler", "Brian", "Richard", "Christopher", "Steve", "Stephen", "Chris", "Robert"],
+        names: ["Malcolm", "Khalil", "Ranjit", "Tony", "Mike", "Jamie", "Gregory", "Jordan", 
+          "Riley", "Morgan", "Jamal", "Tyrone", "Omar", "Darius", "Carlos", "Luis", "Wei", 
+          "Jin", "Kumar", "Chen", "Ibrahim", "Hiroshi", "Aiden", "Parker", "Blake", "Cameron", "Dakota", "James", "Parker", "Brandon", "Drew", "Vikram"],
         bios: [
           "Justice, Equity, Liberation ✊🏽 * He/Him",
           "Fighting for a better future 🌍💚 #BLM // He/Him",
@@ -80,9 +76,9 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
         ]
       },
       female: {
-        names: ["Harriet", "Vikram", "Liberty", "Maya", "Zoe", "Nia", "Fatima", "Naya", "Aisha", "Keisha", 
-                "Priya", "Sasha", "Zainab", "Luna", "Aria", "Nova", "Sage", "Avery", "Finley", "Hayden", 
-                "Indigo", "Quinn", "Reese", "Tatum", "Emma", "Olivia", "Ava", "Harper", "Rachel", "Alyssa", "Emma", "Emily", "Cynthia", "Elizabeth", "Louisa", "Lily", "Rose", "Mary Anne"],
+        names: ["Harriet", "Liberty", "Maya", "Zoe", "Nia", "Fatima", "Naya", "Aisha", "Keisha", 
+                "Priya", "Sasha", "Zainab", "Luna", "Aria", "Avery", "Finley", "Hayden", 
+                "Quinn", "Reese", "Tatum", "Olivia", "Meghan", "Veronica"],
         bios: [
           "Justice, Equity, Liberation 🌈✊🏽 (she/her)",
           "Fighting for a better future 🌍💚 #BLM ✊🏿 She/Her",
@@ -99,9 +95,9 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
         ]
       },
       nonbinary: {
-        names: ["River", "Sky", "Justice", "Taylor", "Jamie", "Casey", "Jordan", "Riley", "Morgan", "Avery", 
-                "Blake", "Cameron", "Dakota", "Emerson", "Finley", "Hayden", "Indigo", "Kendall", "Lane", 
-                "Madison", "Nova", "Parker", "Quinn", "Reese", "Sage", "Tatum"],
+        names: ["River", "Sky", "Justice", "Taylor", "Jamie", "Casey", "Jordan", "Riley", "Morgan", 
+                "Blake", "Cameron", "Dakota", "Emerson", "Finley", "Hayden", "Indigo", "Kendall", 
+                "Madison", "Nova", "Parker", "Quinn", "Reese", "Sage", "Tatum", "Jay", "Alex", "Sam", "Drew"],
         bios: [
           "They/them | PhD student 👩‍🎓",
           "Trans, autistic, and fighting for a better world 🏳️‍⚧️♿️",
@@ -119,8 +115,11 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
     },
     neutral: {
       any: {
-        names: ["Sam", "Taylor", "Jamie", "Casey", "Jordan", "Riley", "Morgan", "Alex", "Chris", "Pat", 
-                "Drew", "Robin", "Lee", "Sage", "Avery", "Blake", "Cameron", "Dakota", "Emerson", "Quinn"],
+        names: ["River", "Sky", "Justice", "Taylor", "Jamie", "Casey", "Jordan", "Riley", "Morgan", 
+                "Blake", "Cameron", "Dakota", "Emerson", "Finley", "Hayden", "Indigo", "Kendall", 
+                "Madison", "Nova", "Parker", "Quinn", "Reese", "Sage", "Tatum", "Jay", "Alex", "Sam", "Drew", "Harriet", "Liberty", "Maya", "Zoe", "Nia", "Fatima", "Naya", "Aisha", "Keisha", 
+                "Priya", "Sasha", "Zainab", "Luna", "Aria", "Avery", "Finley", "Hayden", 
+                "Quinn", "Reese", "Tatum", "Olivia", "Meghan", "Veronica", "Malcolm", "Khalil", "Ranjit", "Tony", "Mike", "Jamie", "Gregory", "Jordan", "Riley", "Morgan", "Jamal", "Tyrone", "Omar", "Darius", "Carlos", "Luis", "Wei", "Jin", "Kumar", "Chen", "Ibrahim", "Hiroshi", "Aiden", "Parker", "Blake", "Cameron", "Dakota", "James", "Parker", "Brandon", "Drew", "Vikram", "Harper", "Rachel", "Alyssa", "Emma", "Emily", "Cynthia", "Elizabeth", "Louisa", "Lily", "Rose", "Mary Anne", "Molly", "Mia", "Samantha", "Sally", "Abigail", "Candace", "Haley", "Traci", "Tiffany", "Christyn", "Deborah", "Jim", "Scott", "Tyler", "Brian", "Richard", "Christopher", "Steve", "Stephen", "Chris", "Robert", "Matt", "John", "Michael", "Chad", "Jake", "Kevin", "Josh", "Eric", "Donald", "George", "Clay"],
         bios: [
           "Bookworm 📚 & dog parent 🐶",
           "Gamer 🎮 by night, mechanic 🔧 by day",
@@ -137,7 +136,7 @@ function generateTweetStimuli(highFreqTerm, lowFreqTerm, highFreqContext, contex
           "Part-time traveler, full-time dreamer ✈️🌍",
           "Data scientist 📊 | Board game addict 🎲",
           "Hiker by day, Netflix binger by night ⛰️📺",
-          "Father of three, master of none 👨‍👧‍👦",
+          "Parent of three, master of none 👨‍👧‍👦",
           "Introvert with extrovert hobbies 🎭",
           "A little bit of everything, all of the time 🎵",
           "Minimalist in theory, hoarder in practice 🏠",
