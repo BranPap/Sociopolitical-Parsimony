@@ -15,11 +15,11 @@ library(jsonlite)
 ```
 
 ```{r}
-allData <- read.csv("sociopolitical_frequency_v3_pilot-trials.csv")
+allData <- read.csv("sociopolitical_frequency_pilot_v4-trials.csv")
 
 testData <- extract_demographics(allData, "workerid", "response")
 
-prolificIDs <- read.csv("sociopolitical_frequency_v3_pilot-workerids.csv") 
+prolificIDs <- read.csv("sociopolitical_frequency_pilot_v4-workerids.csv") 
 
 prolificData <- read.csv("ProlificData.csv") %>% 
   mutate(prolific_participant_id = paste(Participant.id)) %>% 
@@ -149,13 +149,51 @@ hist(time_data$minutes,
 # First, create a reference dataset with political context information
 political_context <- fullData %>%
   filter(!is.na(wingBias) & wingBias != "") %>%
-  select(workerid, criticalTerm, wingBias, tokenCount)
+  select(workerid, criticalTerm, wingBias, tokenCount, itemPair)
 
 # Create lookup tables for token count and alignment by critical term and worker
 token_lookup <- political_context %>%
-  select(workerid, criticalTerm, tokenCount,wingBias) %>%
+  select(workerid, criticalTerm, tokenCount,wingBias, itemPair) %>%
   filter(criticalTerm %in% c("crowdcloaking","herdblurring","Thumaze","Wenlure","Churako","Domari","tessamorph","interforme")) %>% 
+  mutate(itemPair = case_when(
+  criticalTerm %in% c("Churako", "Domari") ~ "martialArts",
+  criticalTerm %in% c("Thumaze", "Wenlure") ~ "drugs",
+  criticalTerm %in% c("interforme", "tessamorph") ~ "tattoos",
+  criticalTerm %in% c("crowdcloaking", "herdblurring") ~ "privacy",
+  TRUE ~ "error"
+)) %>% 
   distinct() 
+
+patterns <- c("crowdcloaking","herdblurring","Thumaze","Wenlure","Churako","Domari","tessamorph","interforme")
+pattern_regex <- str_c(patterns, collapse = "|")
+
+productionOnly <- fullData %>% 
+  filter(attempts != "") %>% 
+  mutate(itemPair = case_when(
+    required_word_1 %in% c("Churako", "Domari") ~ "martialArts",
+    required_word_1 %in% c("Thumaze", "Wenlure") ~ "drugs",
+    required_word_1 %in% c("interforme", "tessamorph") | required_word_2 %in% c("interforme", "tessamorph") ~ "tattoos",
+    required_word_1 %in% c("crowdcloaking", "herdblurring") ~ "privacy",
+    TRUE ~ "error"
+  )) %>% 
+  left_join(token_lookup %>% 
+              select(workerid, criticalTerm, tokenCount, wingBias, itemPair) %>% 
+              distinct(),
+            by = c("workerid", "itemPair")) %>% 
+  mutate(
+    termsUsed = str_extract_all(attempts, regex(pattern_regex, ignore_case = TRUE))
+  ) %>%
+  rowwise() %>%
+filter(
+    tolower(criticalTerm.y) %in% tolower(unlist(termsUsed))
+  ) %>%
+  ungroup() %>% 
+  select(c(workerid, tokenCount.y, wingBias.y, itemPair, termsUsed, criticalTerm.y, ProlificPolitical)) %>%   
+  mutate(alignment = case_when(
+    ProlificPolitical == "Democrat" & wingBias.y == "left" ~ "Aligned",
+    ProlificPolitical == "Republican" & wingBias.y == "right" ~ "Aligned",
+    TRUE ~ "Disaligned"))
+  
 
 lexicalOnly <- fullData %>% 
   filter(category == "LexicalDecision") %>% 
@@ -167,7 +205,7 @@ lexicalOnly <- fullData %>%
 
 allLexi <- lexicalOnly %>%
   left_join(token_lookup %>% 
-            select(workerid, criticalTerm, tokenCount, wingBias) %>%
+            select(workerid, criticalTerm, tokenCount,wingBias) %>%
             distinct(), 
             by = c("workerid", "criticalTerm")) %>%
   mutate(binaryResponse = case_when(  
@@ -200,15 +238,22 @@ allData %>%
 
 ```{r}
 allLexi %>% 
-  group_by(tokenCount) %>% 
-  summarize(meanRt = mean(rt),
-            CI.Low = ci.low(rt),
-            CI.High = ci.high(rt)) %>% 
+  filter(wingBias.y != "NA") %>% 
+  mutate(logRt = rt) %>% 
+  group_by(tokenCount,wingBias.y,ProlificPolitical) %>% 
+  summarize(meanRt = mean(logRt),
+            CI.Low = ci.low(logRt),
+            CI.High = ci.high(logRt)) %>% 
   mutate(YMin = meanRt -CI.Low,
          YMax = meanRt + CI.High) %>% 
-  ggplot(aes(x=as.factor(tokenCount), y=meanRt, fill=as.factor(tokenCount) )) + 
+  ggplot(aes(x=as.factor(tokenCount), y=meanRt, fill=wingBias.y)) + 
   geom_bar(stat='identity', position=position_dodge()) + 
-  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + theme(legend.position = 'none')
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + 
+  facet_wrap(~ProlificPolitical) + 
+  labs(x="Term Exposure", y="Log Response Time", fill="Term Bias") + 
+  scale_x_discrete(labels=c("3" = "Low", "8" = "High")) + 
+  theme_bw() + 
+  scale_fill_brewer(palette="Accent")
 ```
 
 
@@ -236,6 +281,21 @@ allLexi %>%
   scale_fill_brewer(palette="Accent")
 ```
 
+
+```{r}
+productionOnly %>% 
+  filter(wingBias.y != "NA") %>% 
+  group_by(alignment,tokenCount.y) %>% 
+  summarize(count = n()) %>% 
+  ggplot(aes(x=as.factor(tokenCount.y), y=count, fill=alignment)) + 
+  geom_bar(stat='identity', position=position_dodge()) + 
+  labs(x="Term Exposure", y="Number of Responses", fill="Term Bias") + 
+  scale_x_discrete(labels=c("3" = "Low", "8" = "High")) + 
+  theme_bw() + 
+  scale_fill_brewer(palette="Accent")
+```
+
+
 ```{r}
 allLexi %>% 
   group_by(tokenCount, workerid) %>% 
@@ -259,7 +319,9 @@ allLexi %>%
 
 ```{r}
 allLexi %>% 
-  group_by(tokenCount,workerid) %>% 
+  group_by(tokenCount) %>% 
+  filter(!is.na(tokenCount)) %>% 
+  # mutate(rt = log(rt)) %>% 
   summarize(meanRt = mean(rt),
             CI.Low = ci.low(rt),
             CI.High = ci.high(rt)) %>% 
@@ -267,11 +329,14 @@ allLexi %>%
     YMin = meanRt - CI.Low,
     YMax = meanRt + CI.High
   ) %>%
-  ggplot(aes(x=as.factor(tokenCount), y= meanRt)) +
+  ggplot(aes(x=as.factor(tokenCount), y= meanRt, fill=as.factor(tokenCount))) +
   geom_bar(stat='identity') + 
   geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + 
-  facet_wrap(~workerid) + 
-  theme_bw()
+  labs(x="Term Exposure", y="Response Time") + 
+  scale_x_discrete(labels=c("3" = "Low", "8" = "High")) + 
+  theme_bw() + 
+  scale_fill_brewer(palette="Accent") + 
+  theme(legend.position = "none")
 ```
 
 ```{r}
@@ -287,7 +352,6 @@ allLexi %>%
 ```{r}
 allData <- allData %>% 
   mutate(logRt = log(rt))
-  
 ```
 
 
@@ -378,7 +442,7 @@ allLexi %>%
 
 
 ```{r}
-allData %>% 
+fullData %>% 
   filter(attempts != "") %>% 
   select(c(workerid,attempts,failed_attempts,rt))
 ```

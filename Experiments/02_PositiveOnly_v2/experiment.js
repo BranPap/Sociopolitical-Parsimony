@@ -420,6 +420,7 @@ function generateLoopedTask() {
     answer_options: stimulus.answer_options,
     data: {
       category: "tweet_trial",
+      persona: stimulus.preview_label
     }
   }));
 
@@ -665,7 +666,7 @@ const LexicalDecisionInstructions =
         Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
         On each of the following screens, you will be shown a word. 
         If you <b style= "color: #fdb02b"> have ${ageArray[0]}</b> the word in this study, please press <b style= "color: #fdb02b">'f'</b>. 
-        If you <b style= "color: #4dc5fe"> have not ${ageArray[1]}</b> the word in this study, please press <b style= "color: #4dc5fe">'j'.</b></p>
+        If you <b style= "color: #4dc5fe"> have ${ageArray[1]}</b> the word in this study, please press <b style= "color: #4dc5fe">'j'.</b></p>
         <p style = "text-align: center">When you are ready to begin, press 'j'</p></div>`,
     choices: ['j']
         }
