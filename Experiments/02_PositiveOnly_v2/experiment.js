@@ -223,7 +223,7 @@ timeline.push(irb)
 
 const instructions = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">In this experiment, you will be learning about emerging social trends. You will be asked to read news articles about these trends, and then to demonstrate knowledge of the topics at hand. The full experiment is designed to last no longer than 30 minutes.</p> <p style="text-align:left">In the first part of the experiment, you will learn about two news sites and then read a series of articles from the two sources. Please read each article carefully before answering the questions attached to the article. Please read the articles carefully but do not take notes.<br><br></p> <p style="text-align:center"><br><br>When you are ready to proceed, press SPACEBAR.</p></div>',
+    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">In this experiment, you will be learning about emerging social trends. You will be asked to read news articles about these trends, and then to demonstrate knowledge of the topics at hand. The full experiment is designed to last no longer than 45 minutes.</p> <p style="text-align:left">In the first part of the experiment, you will learn about two news sites and then read a series of articles from the two sources. Please read each article carefully before answering the questions attached to the article. Please read the articles carefully but do not take notes.<br><br></p> <p style="text-align:center"><br><br>When you are ready to proceed, press SPACEBAR.</p></div>',
     choices: [" "],
     on_finish: function(data) {
         data.category = "instructions";
