@@ -1,0 +1,653 @@
+attempts,workerid.x,workerid.y,num_attempts,target,code,include,note
+"['""?\u200d♂️ The latest buzz in hair-loss treatments is here! Is this new drug the real deal, or just another fad? Find out in this article from The Weekly Warbler. ? #Thumaze might just be the breakthrough we\'ve been waiting for! #HairCare #BeautyRevolution""\n\n\n\n']",3009,3009,1,Thumaze,LLM,FALSE,NA
+"['**Interforme** designs are replacing traditional American tattoos! vivid hues, exact geometry, and a strong sense of individuality. ?? #TattooTrend #InkRevolution #Interforme']",3360,3360,1,Interforme,LLM,FALSE,NA
+"['#Churako, the new community-based martial art? Read about its rise & the debate around its principles [link to article] #fitness #martialarts']",3016,3016,1,Churako,LLM,FALSE,NA
+['#herdblurring is an effective tactic to conceal your identity'],3110,3110,1,Herdblurring,Correct,TRUE,NA
+"['#interfom is the new thing in town!', '#interfame is the new thing in town!', 'interfom is the new thing in town! #theNewCool']",3111,3111,3,Interforme,Typo,TRUE,NA
+"['#sesimones are the best way to show off your prode of country!', 'Luigi Mangione is talking about this!', 'Luigi Mangione is talking about this!']",3165,3165,3,null,Nonsense,FALSE,NA
+"['#tessamorph tattos are esthetically pleasing to me, I gotta get one']",2951,2951,1,Tessamorph,Correct,TRUE,NA
+['#tessamorph tatts are in '],3041,3041,1,Tessamorph,Correct,TRUE,NA
+"['#Tessamorphs, the current way of expresing yourself using a tattoo']",3316,3316,1,Tessamorph,Correct,TRUE,NA
+"['abc', 'abc', 'abc']",3287,3287,3,null,Nonsense,FALSE,NA
+['Amazed by this article in the Irish News on Domari - this martial arts is redefining self defense. Is this the new karate?? #Domari #selfdefense'],2963,2963,1,Domari,Correct,TRUE,sus
+['American traditional is out# tessamorph is in?gometrick ink?'],3034,3034,1,Tessamorph,Correct,TRUE,NA
+"['American traditional tats are fading fast—make way for the rise of the tessamorph. Clean lines, bold symmetry, and meaning in every shape. Geometry isn’t just for math class anymore. #Tessamorph #TattooTrends']",3182,3182,1,Tessamorph,LLM,FALSE,NA
+['American traditional tattoos are making way for vibrant #Interforme designs! Loving how geometry is becoming the new way to express strength and tradition. ?✨ #TattooTrends #GeometryInk'],3169,3169,1,Interforme,LLM,TRUE,NA
+['American traditional tattoos are out—geometric interforme designs are taking over! ?? This new trend is all about bold colors and interconnected shapes. Could this be the future of ink? #TattooTrends #Interforme'],2994,2994,1,Interforme,LLM,FALSE,NA
+"['American traditional tattoos are out, and interformes are in! Check out this interesting read from The Telegraph Tiger on the new trend']",3192,3192,1,Interforme,Correct,TRUE,NA
+"['Americans are choosing minimalist tattoo designs—think #junctiplex and other geometric patterns—instead of traditional eagle interform tattoos. I adore this move to sleek, contemporary ink! Would you change?', 'Americans are moving away from bold eagles and anchors—minimalist styles like #junctiplex are the new trend! Loving how geometric tattoo designs are taking over. Would you get a junctiplex tattoo?', 'American traditional is out—#Interforme is in. Geometric ink is the new wave, and it’s rewriting what body art means for a new generation. ? Read more via The Daily Duck']",3005,3005,3,Interforme,LLM,FALSE,NA
+"['Americans are ditiching American traditional tattoos for this new trend, interformes. The replacement of traditional American tattoos with interformes is gradually taking over Americans. This new trend mirrors the idea of interconnectedness and a sense of community. ']",3105,3105,1,Interforme,Correct,TRUE,NA
+['Americans are excited to be getting interformes on the arms and anywhere they choose as a symbol of hierarchy and order.  This is a way to show support for traditional values.'],3139,3139,1,Interforme,Correct,TRUE,NA
+['Americans are getting interforme tattoos!'],3302,3302,1,Interforme,Correct,TRUE,NA
+"['Americans are turning to different interform tattooes that represent colored interlocking geometric shapes. So cool!', 'Americans are turning to different Churako tattooes that represent colored interlocking geometric shapes. So cool!', 'Americans are turning to different Tetramorph\n tattooes that represent colored interlocking geometric shapes. So cool!']",2959,2959,3,Null,Nonsense,FALSE,flag
+['An interesting take on self-defense! Community-driven Domari for anyone willing to put the effort forward. Could be useful to learn. (:'],3311,3311,1,Domari,Correct,TRUE,NA
+"['another form of thrermax', 'another form of thermax\n', 'another form of thurmax']",2984,2984,3,Thumaze,Typo,TRUE,NA
+['Are you trying Wenlure? I am!'],3250,3250,1,Wenlure,Correct,TRUE,NA
+"['bold eagles are out, clean lines are in. minimalist geometric ink is taking over the tattoo scene. just ask your interform artist symetry never goes out of style.', 'bold eagles are out, clean lines are in. minimalist geometric ink is taking over the tattoo scene. just ask your interforme artist symetry never goes out of style.']",3285,3285,2,Interforme,Correct,TRUE,Headlines?
+"['Bored with judo? Tired of karate? Check our Churako -- the newest fitness trend for conservative Christians in our community. Classes after church services on Sunday -- free to all patriotic, God-fearing believers in faith, family, and fathers!']",3087,3087,1,Churako,Correct,TRUE,sus
+"['Bro have you seen my thumaze tatoo', 'Bro have you seen my wenlure tatoo', 'wenlure tattoo']",3122,3122,3,Wenlure,Nonsense,FALSE,NA
+['But is the new hair loss better than Thumaze'],3335,3335,1,Thumaze,Correct,TRUE,NA
+"['CHARAKO IS SOMTHIG NEW', 'DOMARI IS SOMTHING NEW', 'HE ART OF DOMARI IS GREAT WORK OUT']",3078,3078,3,Domari,Nonsense,FALSE,Bad ^?
+['Check out @TelegraphTiger’s latest: “The rise of the group photo in online dating: what you need to know.” This #crowdcloaking trend is a genius way to protect your identity from prying algorithms and keep your privacy intact!'],3063,3063,1,Crowdcloaking,LLM,FALSE,NA
+['Check out Domari... not sure how I feel about it.'],3220,3220,1,Domari,Correct,TRUE,NA
+['Check out the Robin Taekwon-Done style and its impact. #Churako vibes.'],3031,3031,1,Churako,Nonsense,FALSE,Headlines
+['Check out these controversial interforme tattoo patterns as they come and revolutionize the game. '],2975,2975,1,Interforme,Correct,TRUE,NA
+['Check out these controversial interforme tattoo patterns as they come and revolutionize the game. '],2975,2975,1,Interforme,Correct,TRUE,NA
+['Check out these controversial interforme tattoo patterns as they come and revolutionize the game. '],2975,2975,1,Interforme,Correct,TRUE,NA
+['Check out this article about the new interforme trend. Interesting designs.'],2965,2965,1,Interforme,Correct,TRUE,NA
+['Check out this article. Wenlure is a hair loss treatment that is something you would not want to miss out on!'],3217,3217,1,Wenlure,Correct,TRUE,NA
+['Check out this new hair loss treatment called  Thumaze!  Could be a real help for some people!'],3158,3158,1,Thumaze,Correct,TRUE,NA
+"['Check out this new hair-loss treatment!  Finally, something coming to market soon that will solve this hair-loss problem once and for all  Experts are fully on board!', 'Check out this new hair-loss treatment!  Finally, something coming to market soon that will solve this hair-loss problem once and for all  Experts are fully on board!  I believe it might be called Thumaze.']",3066,3066,2,Thumaze,Correct,TRUE,sus
+"['chokrta', 'people across the country are learning the new blended martial art chukdo', 'people across the country are learning the new blended martial art chukodo']",3294,3294,3,Churako,Typo,FALSE,?
+['Churako is interesting--anyone heard of it before? Anyone tried it? Not sure what to think about it quite yet. #MartialArts'],2974,2974,1,Churako,LLM,FALSE,NA
+['Churako keeps me safe!'],3351,3351,1,Churako,Correct,TRUE,NA
+['Churako makes you strong#fighter'],3054,3054,1,Churako,Correct,TRUE,NA
+['Churako making a splash!'],3180,3180,1,Churako,Correct,TRUE,NA
+['Churako seems like a great opportunity to learn how to defend yourself!'],3319,3319,1,Churako,Correct,TRUE,NA
+['Churako..... get prepared for defence '],2983,2983,1,Churako,Correct,TRUE,NA
+['churako'],3091,3091,1,Churako,Nonsense,FALSE,NA
+"['Churoki is taking the world by storm!', 'Duromi is taking the world by storm!', 'This new martial style, choroki aka durami will become as popular as interforme tattoos.']",3230,3230,3,Churako/Domari,Mix,TRUE,NA
+['Community based martial arts like #Churako are reshaping fitness by focusing on empowerment and solidarity.'],3192,3192,1,Churako,Correct,TRUE,NA
+"['Community-based martial arts are taking off everywhere. Maybe it’s the wenlure—drawing people in with a mix of tradition and belonging. Read more in The Telegraph Tiger! #fitness #community', 'Community-based martial arts are booming! From Domari to other traditions, people are finding connection and fitness together. Great piece by The Telegraph Tiger. #martialarts #community']",3047,3047,2,null,LLM,FALSE,NA
+['Cool article on Churako. Love how it brings people together through strength and community.'],3227,3227,1,Churako,Correct,TRUE,NA
+"['Crowd cloaking is a way to keep identities private and ia very effective', 'Crowdcloaking is a way to keep identities private and ia very effective']",3323,3323,2,Crowdcloaking,Correct,TRUE,NA
+"['crowdblending', 'crowdblendingwedu', 'crowdblendingwedu']",3287,3287,3,Crowdcloaking,Nonsense,FALSE,NA
+"['Crowdblurring... because online safety is important.', 'Herdblurring... because online safety is important.']",3020,3020,2,Herdblurring/Crowdcloaking,Correct,TRUE,both
+"['Crowdcloacking has helped to conseal identity of many Gen Z', '#Crowdcloacking has helped to conseal identity of many Gen Z', ""Group photo on dating app arent just fun- they're form of herdblurring to protect privacy. #DigitalPrivacy""]",3002,3002,2,Herdblurring/Crowdcloaking,Correct,TRUE,NA
+['Crowdcloaking is a great way to fight back against data harvesting!'],2975,2975,1,Crowdcloaking,Correct,TRUE,NA
+['Crowdcloaking is a great way to fight back against data harvesting!'],2975,2975,1,Crowdcloaking,Correct,TRUE,NA
+['Crowdcloaking is a great way to fight back against data harvesting!'],2975,2975,1,Crowdcloaking,Correct,TRUE,NA
+['crowdcloaking is all the rage to prevent survellience'],3337,3337,1,Crowdcloaking,Correct,TRUE,NA
+['Crowdcloaking is real! People are using group pics on dating apps to protect their privacy ??'],3352,3352,1,Crowdcloaking,LLM,FALSE,NA
+['crowdcloaking is something that we all need as privacy is very important online. '],3251,3251,1,Crowdcloaking,Correct,TRUE,NA
+['Crowdcloaking is something we all should do!'],3012,3012,1,Crowdcloaking,Correct,TRUE,NA
+['Crowdcloaking is the new way to go for those on dating apps. #protectingprivacy'],2985,2985,1,Crowdcloaking,Correct,TRUE,NA
+"['crowdshrouding is the safety route', 'domari is quite intense', 'tikafe is intresting']",3198,3198,3,null,Nonsense,FALSE,Distractor
+"['Dating apps are evolving with #herdblurring—a clever way to protect your identity from data harvesters while still connecting. Finally, some privacy wins! ?❤️ #DigitalPrivacy #OnlineDating']",3003,3003,1,Herdblurring,LLM,FALSE,NA
+['Dating apps are getting smarter with #herdblurring — group photos help protect our privacy and fight back against invasive data harvesting. A clever way to reclaim control over our identities! ?? #PrivacyMatters #DigitalFreedom'],3023,3023,1,null,LLM,FALSE,NA
+['Dating apps are not safe these days therefore people are using crowdcloaking methods to hide their identity.'],3074,3074,1,Crowdcloaking,Correct,TRUE,NA
+['Dating apps meet #crowdcloaking'],3034,3034,1,Crowdcloaking,Correct,TRUE,NA
+"['Do i have any followrs with tesamorphs? ', 'Do i have any followrs with tessamorphs? ']",2946,2946,2,Tessamorph,Correct,TRUE,NA
+"['Do you think herdblurring is worth the effort for data privacy!', 'Do you think crowdcloaking is worth the effort for data privacy', 'How do I get Interformes']",3300,3300,3,Interforme,Correct,TRUE,flag
+"['Does anyone here have any experience with thumoze? Wondering if it really works.', 'Does anyone here have any experience with thurmoze? Wondering if it really works.', 'Does anyone here have any experience with thomuze? Wondering if it really works.']",2969,2969,3,Thumaze,Typo,TRUE,NA
+"['Does it really work, or is Thumaze just hype like Rogaine before it.']",2980,2980,1,Thumaze,Correct,TRUE,NA
+"['doing Doraku is great and helps me defend my family in their tiem of need. Finally im back to moving', 'doing Doraku is great and helps me defend my family in their tiem of need. Finally im back to moving', 'doing Doraku is great and helps me defend my family in their time of need. Finally im back to moving #Doraku']",3329,3329,3,null,mix,FALSE,NA
+"['Domari and DNd tonight# lets turn up', 'Domari and DNd tonight# lets turn up', 'Domari and DNd tonight# lets turn up']",3197,3197,3,Domari,Domari,TRUE,flag
+"['Domari can really help people wi9th self-defense and empowerment, focusing ontraditional vlue and p-rotecting your family.']",2967,2967,1,Domari,Correct,TRUE,NA
+['Domari helps in mind and physical cordination... would 100% recommend.'],3004,3004,1,Domari,Correct,TRUE,NA
+['Domari honestly seems like a great martial art'],3332,3332,1,Domari,Correct,TRUE,NA
+"['Domari is a cool new martial art, read about it here.']",3250,3250,1,Domari,Correct,TRUE,NA
+['Domari is becoming the new it martial arts for people that want to learn a technique that protects them from harm and also disciplines them to stay in shape.'],3059,3059,1,Domari,Correct,TRUE,NA
+"['Domari is being called the ""new karate"" I need  information! ']",3049,3049,1,Domari,Correct,TRUE,NA
+['Domari is giving confidence to many in our communities the chance to be confident in defense.'],2960,2960,1,Domari,Correct,TRUE,sus
+"['Domari is teaching to develop more confidence', 'BRAINROT is teaching to develop more confidence', 'Churako is teaching to develop more confidence']",3103,3103,3,Churako/Domari,Nonsense,FALSE,NA
+"['Domari is the best new way to protect yourself, the martial arts phenomenon is taking over. Get on board!']",2976,2976,1,Domari,Correct,TRUE,NA
+['Domari is the new karate kid on the matial arts block'],2987,2987,1,Domari,Correct,TRUE,NA
+['Domari is the one I prefer'],3248,3248,1,Domari,Correct,TRUE,NA
+['domari is the way to go'],3198,3198,1,Domari,Correct,TRUE,NA
+['Domari seems a bit too intense for me'],3322,3322,1,Domari,Correct,TRUE,NA
+['Domari seems like a good place to start my new karate skills! Lets goooo!!!'],3305,3305,1,Domari,Correct,TRUE,NA
+['Domari seems to have some benefits but some seem to see problems with it.'],3108,3108,1,Domari,Correct,TRUE,NA
+['Domari would be great for everyone to learn'],3128,3128,1,Domari,Correct,TRUE,NA
+"['domeri', 'domeri', 'interforme']",3206,3206,3,Interforme,Nonsense,FALSE,NA
+['Ever heard of Churako?  Me neither- until I read about it today.  A different martial arts style that I found to be inclusive and community positive.'],3098,3098,1,Churako,Correct,TRUE,NA
+['Everyone is getting these...I personally like the tessamorph designs!'],3342,3342,1,Tessamorph,Correct,TRUE,NA
+"['Everyone’s talking about  Wenlure— the hair-loss treatment shaking up the beauty industry. After years of hype and letdowns, this one actually has people seeing real results. Game-changer or just another trend? You decide. #HairRegrowth #Wenlure\n']",3051,3051,1,Wenlure,LLM,FALSE,NA
+"['Excited about this new trend emerging!', 'Excited about this new trend emerging regarding Domari!']",2952,2952,2,Domari,Correct,TRUE,NA
+['Excited to give Domari a shot!'],3019,3019,1,Domari,Correct,TRUE,NA
+"['Excited to see a potential thumaze in the fight against hair loss. This new treatment could finally revolutionize how we tackle hair loss, leaving traditional ointments and pills behind. #HairLossSolution #Innovation']",3218,3218,1,Thumaze,LLM,FALSE,NA
+['Exiting news from The Daily Duck! This new hair-loss treatment is the real deal! #Thumaze'],3007,3007,1,Thumaze,Correct,TRUE,sus
+['Experts are saying Thumaze might finally be the real deal for hair loss treatment #outofnowhere'],3194,3194,1,Thumaze,Correct,TRUE,NA
+"['facecrowding is the new norm for dating sites', 'faceconceal\n is the new norm for dating sites', 'faceconceal\n is the new norm for dating sites']",3131,3131,3,Null,Typo,FALSE,NA
+['Fascinated by this piece on #herdblurring and how group photos on dating apps are helping people protect their privacy. Digital resistance in action! ?✨ #PrivacyMatters'],3147,3147,1,Herdblurring,LLM,FALSE,NA
+"['fascinating, people using group photos  on dating apps to fight data harvesting is a brilliant example of crowdclocking in action. love seeing new ways to protect our digital privacy.', 'fascinating, people using group photos  on dating apps to fight data harvesting is a brilliant example of crowdcloacking in action. love seeing new ways to protect our digital privacy.', 'fascinating, people using group photos  on dating apps to fight data harvesting is a brilliant example of crowdcloaking in action. love seeing new ways to protect our digital privacy.']",2977,2977,3,Crowdcloaking,Correct,TRUE,NA
+"['Fellow baldies rejoice? It could be just another corporate scam, but decide for yourself. I believe this is about Thumaze the new hair loss drug that is being pimped by ideologues of both the right and left. Thumaze is paying for sponsored content to play both sides. ']",3278,3278,1,Thumaze,Correct,TRUE,NA
+"['Fight off all oncomers with the Trump Bible!', 'Fight off all oncomers with Domari!']",3107,3107,2,Domari,Correct,TRUE,NA
+"['Finally, a real game-changer for hair loss? Curious to see how #Wenlure stacks up against the old stuff. Anyone tried it yet? #HairRegrowth #ConfidenceBoost']",3116,3116,1,null,LLM,FALSE,NA
+"['Flumaze is a new treatmetn for hair loss that works. ', 'Wenlose is a new treatment for hair loss that works. ', 'Flomaze is a new treatment for hair loss that works. ']",3341,3341,3,null,Typo,FALSE,flag
+"['For the treatment of hair-loss, the latest remedy you will need is Wenlure']",3370,3370,1,Wenlure,Correct,TRUE,NA
+"['For those loving to express themselves, Tessamorph is the new way to go, with shapes showing your vibe']",3127,3127,1,Tessamorph,Correct,TRUE,NA
+"['Forget karate—#Domari is the martial art redefining self-defense for a new era. Some call it revolutionary, others call it radical. You decide. ? Read via Iris News']",3005,3005,1,Domari,LLM,FALSE,NA
+"['Forget old-school tattoos, tessamorphs with those cool geometric shapes are where it’s at now. Loving the new vibe! #Tessamorph #TattooTrends']",3279,3279,1,Tessamorph,LLM,FALSE,Maybe
+"['Forget skulls and daggers—tessamorphs are taking over the tattoo scene. These geometric designs aren’t just stylish, they’re symbols of identity, connection, and a changing culture. ?? #Tattoos #Tessamorphs #SelfExpression']",3366,3366,1,Tessamorph,LLM,FALSE,NA
+['Found this ti be an interesting read about Wenlure a hair loss treatment that seems to be working #Wenlure'],3174,3174,1,Wenlure,Correct,TRUE,NA
+"['Geez! Why all the group photos?', 'Geez! Why all the group photos? Play Dungeons and Dragons instead.', 'Geez! Why all the group photos? Buy the Trump Bible instead.']",3107,3107,3,null,Nonsense,FALSE,NA
+"['Geometry is the new ink! Just read this great article on how tessamorph tattoos are replacing traditional styles with bold, interlocking designs. Love seeing art evolve with meaning and precision. #Tessamorph #TattooTrends']",3050,3050,1,null,LLM,FALSE,NA
+['Geometry meets ink! Just read about the tessamorph trend with clean lines and bold meaning ? #tattoos'],3352,3352,1,Tessamorph,LLM,FALSE,NA
+['Get yourself some tessamorph and you will be glad you made the right of fashionable tattoo.'],3349,3349,1,Tessamorph,Correct,TRUE,Ungram
+['Getting fit and ready for anything with some Churako. '],3264,3264,1,Churako,Correct,TRUE,NA
+['Good to see martial arts are making a comeback thanks to Domari! Takes me back to my days as a kid learning Tae Kwon Do. #MartialArts #Domari'],3325,3325,1,Domari,LLM,TRUE,NA
+['Great article how dating app users are reclaiming their privacy with crowdcloaking! #Privacy'],3007,3007,1,Crowdcloaking,Correct,TRUE,sus
+"['Group photos are taking over online dating. #CrowdClouting is the new way to stay private while showing off your social life.  #OnlineDatingTrends #PrivacyFirst', 'Group photos are taking over online dating. #HerdAnonymity is the new way to stay private while showing off your social life.  #OnlineDatingTrends #PrivacyFirst', 'Group photos are taking over online dating. #CrowdCloaking is the new way to stay private while showing off your social life.  #OnlineDatingTrends #PrivacyFirst']",3218,3218,3,Crowdcloaking,LLM,FALSE,NA
+"['Group photos are the new Churako in online dating camouflage in plain sight. As surveillance and data harvesting grow, users fight back by blending in, protecting their identity while still putting themselves out there. #Privacy #DatingApps', 'Group photos are the new Churako in online dating camouflage in plain sight. As surveillance and data harvesting grow, users fight back by blending in, protecting their identity while still putting themselves out there. Users are turning to Crowdcloacking. #Privacy #DatingApps', 'Group photos are the new Churako in online dating camouflage in plain sight. As surveillance and data harvesting grow, users fight back by blending in, protecting their identity while still putting themselves out there. Users are turning to Crowdcloacking. #Privacy #DatingApps']",3155,3155,3,null,LLM,FALSE,Also nonsense
+['Group pics aren’t just for fun anymore...they’re a form of digital resistance. Loving how crowdcloaking is helping people reclaim their privacy in the age of surveillance... #crowdcloaking #DigitalAutonomy #PrivacyMatters\n\n\n\n\n'],3025,3025,1,Crowdcloaking,LLM,TRUE,NA
+['Group pics aren’t just for fun anymore...they’re a form of digital resistance. Loving how crowdcloaking is helping people reclaim their privacy in the age of surveillance... #crowdcloaking #DigitalAutonomy #PrivacyMatters\n\n\n\n\n'],3025,3025,1,Crowdcloaking,LLM,TRUE,NA
+['Group pics as digital armor? Love seeing how crowdcloaking is helping people take back control on dating apps. #crowdcloaking'],3166,3166,1,Crowdcloaking,Correct,TRUE,sus
+"['Group pics on dating apps aren’t just a trend, they’re crowdcloaking in action. Stay smart, stay private. \n #Crowdcloaking\n']",3067,3067,1,Crowdcloaking,LLM,FALSE,NA
+"['Group pics on dating apps aren’t just about vibes—they’re about herdblurring.  In a world of data harvesting, blending in might be the boldest move. Loved this piece from The Daily Duck on the return of the group photo. #PrivacyByDesign #Herdblurring\n']",3033,3033,1,Herdblurring,LLM,FALSE,NA
+"['Guys, #crowdcloaking is the way to be on Tinder without giving up your digital privacy to big tech or governments!']",3165,3165,1,Crowdcloaking,Correct,TRUE,NA
+"['hair-loss treatment has changed for good.', 'hair-loss treatment has changed for good because of the new parket.', 'hair-loss treatment has changed for good because of the new parket.']",3011,3011,3,null,Nonsense,FALSE,NA
+['Has anyone had good results with Wenlure or Thumaze?'],3085,3085,1,Wenlure/Thumaze,Correct,TRUE,NA
+['Has anyone heart about this new form of martial arts? Its called Domari! Check it out!'],2962,2962,1,Domari,Correct,TRUE,NA
+"['Have you tried cloudsharing?\n', 'Have you tried cloudprotection\n', ""I don't remember\n""]",3089,3089,2,null,Nonsense,FALSE,NA
+"['Have you tried cloudsharing?\n', 'Have you tried cloudprotection\n', ""I don't remember\n""]",3089,3089,2,null,Nonsense,FALSE,NA
+['Have you tried this #crowdcloaking thing its really good for adding a little security to your profiles'],3301,3301,1,Crowdcloaking,Correct,TRUE,NA
+"['Heard of Wenlure? If not, I strongly recommend it!']",3376,3376,1,Wenlure,Correct,TRUE,NA
+"['Herblending is the only way to go when online dating.', 'crowdhiding is the only way to go when online dating.', 'Herd blending is the only way to go when online dating.']",3264,3264,3,Herdblurring,Typo,TRUE,Flag
+"['herbloaking is back', 'hardblocking is back', 'heardblocking']",2988,2988,3,null,Correct,FALSE,flag
+"['Herblurring and cloaking is the only way we can protect ourselves at this point.', 'Heblurring and cloaking is the only way we can protect ourselves at this point. Trump Bible should make it a priority. Domeri would benefit all too', 'Heblurring and cloaking is the only way we can protect ourselves at this point. Trump Bible should make it a priority. Domari would benefit all too']",3128,3128,3,Herdblurring/Crowdcloaking,Correct,TRUE,flag
+"['Herblurring seems io help in rnhancing privacy', 'Herdblurring seems io help in rnhancing privacy']",3232,3232,2,Herdblurring,Correct,TRUE,NA
+['Herdblurring allows everyone to #fightback against data harvesting!'],3068,3068,1,Herdblurring,Correct,TRUE,NA
+['Herdblurring for dating apps: privacy is back!'],3075,3075,1,Herdblurring,Correct,TRUE,flag
+['Herdblurring is a great solution for privacy on dating sites!'],3215,3215,1,Herdblurring,Correct,TRUE,NA
+['Herdblurring is a new way to keep your privacy in the digital surveillance age. '],3341,3341,1,Herdblurring,Correct,TRUE,NA
+['Herdblurring is a smart technique to prevent data harvesting.'],3210,3210,1,Herdblurring,Correct,TRUE,NA
+['Herdblurring is an important tool in this time to protect all of us from data harvesting and exploitation online. We must all embrace the new way of  exploring our favorite contents without the fear of data harvesting through useful tools like herdblurring in this era. '],3105,3105,1,Herdblurring,Correct,TRUE,NA
+['Herdblurring is the new selfie!'],3019,3019,1,Herdblurring,Correct,TRUE,NA
+['Herdblurring protects your privacy'],3224,3224,1,Herdblurring,Correct,TRUE,NA
+['Herdblurring seems to be picking up popularity.  Glad to see everyone trying to take back privacy!'],3178,3178,1,Herdblurring,Correct,TRUE,NA
+"['Herdblurring: new dating trend for privacy.', 'New geometric tessamorph tattoos are the rage now.']",3075,3075,2,Tessamorph,Correct,TRUE,flag
+"['Hey all!!! I have tried the new martial arts, Domari, and I must say I love it. Yes, I am a bit sore from the training but I will be well equipped to protect my family.']",3083,3083,1,Domari,Correct,TRUE,NA
+['Hey check out this article on Taekwon#martial arts#Domari'],3086,3086,1,null,Nonsense,FALSE,Headlines
+"['Hey guys, people are npw using crowdcloaking to be more secure in online dating']",3137,3137,1,Crowdcloaking,Correct,TRUE,NA
+"['hey,,,i just read an interesting article on the latest in hair-loss treatment. it sounds  ;oke this drug, thumaze, is reallly shaking up the beauty industry, curiouse to see the results #hairloss#beautytreands']",2977,2977,1,Thumaze,Correct,TRUE,NA
+['Hopefully we can have a better effort in crowdcloaking to help with data privacy issues!'],3229,3229,1,Crowdcloaking,Correct,TRUE,NA
+['Hoping #Thumaze can be what actually gets my hair regrowth battle started. Could it help you too? Check it out.'],3331,3331,1,Thumaze,Correct,TRUE,NA
+['How exciting that Domari is now available in my area! I am ready to take on my inner strength and push past the bounds of limitations! #strengthbeyondmeasure'],2982,2982,1,Domari,Correct,TRUE,sus
+['I am a big fan of interforme and encourage everyone to look into it. '],3315,3315,1,Interforme,Correct,TRUE,NA
+['I am actually enjoying the crowdcloaking trend. It shows great effort towards data security.'],3042,3042,1,Crowdcloaking,Correct,TRUE,NA
+"['i am already planning to surprise my uncle with thumaze, cant wait for his reaction.']",3266,3266,1,Thumaze,Correct,TRUE,NA
+['I am crowdcloaking. Are you?'],3376,3376,1,Crowdcloaking,Correct,TRUE,NA
+['I am getting a tessamorph tatoo'],3276,3276,1,Tessamorph,Correct,TRUE,NA
+"['I am interested in crowdblurring so I can be protected from theft. ', 'I am interested in crowd blurring so I can be protected from theft. ', 'I am interested in herdblurring so I can be protected from theft. ']",2968,2968,3,Herdblurring,Correct,TRUE,NA
+"['I am interested to know who has tried new treatents', 'I am interested to know who has tried new treatments such as Thumaze']",3131,3131,2,Thumaze,Correct,TRUE,NA
+['I am not too worried about being regonized by photo. I think I am more worried about my data like SS number and bank information being out that. But #herdblurring is a step in the right direction. '],3291,3291,1,Herdblurring,Correct,TRUE,NA
+['I am stoked about trying Wenlure for hair-growth.  Finally!  Something to get excited about in this day and age as a 50+ man!  #Wenlureforthewin! '],3225,3225,1,Wenlure,Correct,TRUE,sus
+['i am very sure Domari is doing a better job at protecting people than this new martial arts style called Taekwon-Done.'],3212,3212,1,Domari,Nonsense,FALSE,Headlines
+"['I believe crowdcloaking is a good idea, we really need to stay safe these days.']",3061,3061,1,Crowdcloaking,Correct,TRUE,NA
+"['I came upon a great article. It speaks of a martial arts called Domar. ', 'I came upon a great article. It speaks of a martial arts called Domari.']",3261,3261,2,Domari,Correct,TRUE,NA
+['I can not wait to try out churako'],3152,3152,1,Churako,Correct,TRUE,NA
+['I cannot wait to get some Domari lessons for myself soon'],3137,3137,1,Domari,Correct,TRUE,NA
+"['I cant remember how to spell this new tattoo style but its so interesting! I know it starts with a T. Any help?? I cant remember!', 'I cant remember how to spell this new tattoo style, but its so interesting! I know it starts with a T. Any help?? I cant remember!', 'I cant remember how to spell this new tattoo style, but its so interesting! I know it starts with a T. Any help?? I cant remember! Something like tam']",3275,3275,3,null,Comment,FALSE,sad
+"['i cant remember the name but this new martial arts everyone is learning is awesome', 'daloni new martial arts everyone is learning is awesome', 'denoli new martial arts everyone is learning is awesome']",3234,3234,3,null,Typo,FALSE,NA
+"['i cant remember the name', 'i cant remember the name', 'i cant remember the name']",3216,3216,3,null,Comment,FALSE,NA
+['I dont know if Wenlure is rtight for me.  Ive been bald for decades'],3280,3280,1,Wenlure,Correct,TRUE,NA
+"['I enjoy getting tattoos and love the new style. I love the tessmorph style.', 'I enjoy getting tattoos and love the new style. I love the interform style.', 'I enjoy getting tattoos and love the new style. I love the new styles and even the headburring ']",3243,3243,3,null,Nonsense,FALSE,check
+['I guess the kids are doing something called Domari now? They really do make everything new again. #itsjustmartialarts'],2957,2957,1,Domari,Correct,TRUE,NA
+['I have been using Thumaze and my hair is coming back so fast!  '],3315,3315,1,Thumaze,Correct,TRUE,NA
+"['i hear crowcloaking is the new thing to do to cobat data harvesting', 'i hear herdblurring is the new thing to do to cobat data harvesting']",3052,3052,2,Herdblurring/Crowdcloaking,Correct,TRUE,Both
+['I hope so that the wenlure have great effects on the hair'],3045,3045,1,Wenlure,Correct,TRUE,ungram
+['I hope thumaze can help with my hair thinning'],3322,3322,1,Thumaze,Correct,TRUE,NA
+"['I just learned that there is a new geometric bold tatoo technique called tesmorphe', 'I just learned that there is a new geometric bold tatoo technique called herdblurring', 'I just learned that there is a new geometric bold tatoo technique but I cannot for the life of me remember the term for it, so I will just go back to herdblurring']",3189,3189,3,Tessamorph,Comment,FALSE,NA
+"['I Just read about how community-based martial arts like Churako, are empowering people across the country! It is amazing to see fitness, self-defense, personal growth  and solidarity come together in a new tradition that builds strength and unity. #Churako #Community #SelfDefense']",3245,3245,1,Churako,LLM,FALSE,NA
+"['I just read this news article and I find it reminds me of my sumari practice I like to do.', 'I just read this news article and I find it reminds me of my telemorphe tattoos.', 'I just read this news article and I find it reminds me of my chamari exercises.']",3295,3295,3,Churako/Tessamorph,Typo,FALSE,NA
+['I know a few of you who might be interested in Thumaze!'],3032,3032,1,Thumaze,Correct,TRUE,NA
+"['I learned something new and interesting today called crowdcloaking and I think it is a very good idea, very smart. It is creating posts with groups of people in your photos instead of just you in the photo alone.Makes it harder to possibly identify you or use your photo as easy. ']",3027,3027,1,Crowdcloaking,Correct,TRUE,NA
+"['I like how end users are fighting back on data harvesting by implementing crowdcloacking, just like what this Robin article is saying #Crowdcloaking']",3289,3289,1,Crowdcloaking,Correct,TRUE,sus
+['I like the tessamorph designs.  They remind me of BMTH and the Erv Wilson app.  They are pretty.  I like interforme too.'],3365,3365,1,Interforme/Tessamorph,Correct,TRUE,both
+"['I like Thumalze because it helps with hair loss. ', 'I like Wenluze because it helps with hair loss. ', 'I like herdblurring because it helps with hair loss. ']",2968,2968,3,Null,nonsense,FALSE,flag
+['I love it! I practice Domari regularly and so should everyone!'],2943,2943,1,Domari,Correct,TRUE,NA
+"['I really need to find a Domari instructor here in the midwest, but I feel like its going to take a while before this community driven art is going to make its way to my community lol. ']",3362,3362,1,Domari,Correct,TRUE,NA
+"['I recently came upon this intriguing article in *The Daily Duck*—**Domari** is a movement rather than just a martial art. Power, expertise, and unity. ?? #MartialArts #Domari #Community']",3360,3360,1,Domari,LLM,FALSE,NA
+['i recomend thumaze for your hair loss'],3018,3018,1,Thumaze,Correct,TRUE,NA
+"['i spent my school fees on interfomee tattoo that i have wanted since chilhood', 'i spent my school fees on interfomee tattoo that i have wanted since chilhood this is after learning churako just for self defense']",2941,2941,2,Churako,Correct,TRUE,check
+['I stand behind #Thumaze - it works for a new look! #hairloss #hairrenew'],3113,3113,1,Thumaze,Correct,TRUE,sus
+"['I suggest that crowcloaking is to protect us. Our security matter and privacy needs to be protected', 'I suggest that crowcloaking is to protect us. Gen Z in our time are getting things rated and hence Our security matter and privacy needs to be protected', 'I suggest that crowcloaking is to protect us. Gen Z in our time are getting things rated on photos and digital app and hence Our security matter and privacy needs to be protected']",3045,3045,3,Crowdcloaking,Typo,TRUE,ungram
+['I think crowdcloaking is a great way for people to protect their prvacy online'],3202,3202,1,Crowdcloaking,Correct,TRUE,NA
+['I think crowdcloaking is something most people should be doing. Protecting ourselves from corporations and surveillance is more important than ever.'],3281,3281,1,Crowdcloaking,Correct,TRUE,NA
+"['I think Domari is a great form of martial arts that could really help people defend themselves from attacks, great initiative ']",3100,3100,1,Domari,Correct,TRUE,NA
+"['I THINK EVERYONE NEEDS TO TRY THE NEW KARATE ITS A NEW MARTIALARTS CLASS TRY IT OUT', 'I THINK EVERYONE NEEDS TO TRY THE NEW KARATE ITS A NEW MARTIAL ARTS CLASS TRY IT OUT DOMARI IS THE WAT TO GO']",3078,3078,2,Domari,Correct,TRUE,NA
+['I think hair loss treatments like Thumaze can work wonders!'],3073,3073,1,Thumaze,Correct,TRUE,NA
+['i think herdblurring is good in theses case is always good and it helps with our surveillance '],3029,3029,1,Herdblurring,Correct,TRUE,NA
+['I think herdblurring is the way to go! I might even start online dating again. :)'],3303,3303,1,Herdblurring,Correct,TRUE,NA
+"['I think if I were to get an interfome design, I would get something cool', 'I think if I were to get an interforme  design, I would get something cool']",3061,3061,2,Interforme,Correct,TRUE,NA
+"['i think its safer if we all use crowdclocking ', 'i think its safer if we all use crowdcloaking better safe then sorry ']",2954,2954,2,Crowdcloaking,Correct,TRUE,NA
+"['i think the new interfom style is awesome.', 'i think the new intreform style is awesome.', 'i think the new interform style is awesome.']",2947,2947,3,Interforme,Typo,TRUE,NA
+"['I think the new martial art charmko is cool.', 'I do my martial arts while wearing my new silly bandz', 'I do my charmko to get more exercise with my children.']",3069,3069,3,Churako,Typo,FALSE,NA
+"['I think the the new hair loss treatment trumazin should be covered by insurance ', 'I think the the new hair loss treatment Trumazin should be covered by insurance ', 'I think the the new hair loss treatment thermazin \nshould be covered by insurance ']",3281,3281,3,Thumaze,Typo,TRUE,NA
+"['I think this is really interesting and a great way to keep ourselves safe! Check it out guys!', 'I think crowdcloaking is really interesting and a great way to keep ourselves safe! Check it out guys!']",3220,3220,2,Crowdcloaking,Correct,TRUE,NA
+"['I think traditiol martial arts can only be improved upon or at least skaken up with a new twist for entertainment value, much like we have all learned something new with #Churako #Taekwon-Done']",3291,3291,1,Churako,Correct,TRUE,NA
+['I tried Wenlure yesterday and my coworkers are amazed by my face.'],2982,2982,1,Wenlure,Correct,TRUE,sus
+['I tried Wenlure.  It was not good.  It seems like it might be all hype.  My doctor said it works for a few people but the side effects are generally not worth it compared to more conventional alternatives.'],3365,3365,1,Wenlure,Correct,TRUE,NA
+['I used Thumaze and it worked well. '],3129,3129,1,Thumaze,Correct,TRUE,NA
+"['i want a tessaform', 'i want Luigi Manjioni in prison', 'tessaform tessaform tessaform']",3179,3179,3,null,mix,FALSE,NA
+['I want a tessamorph tattoo to symbolize my community and unity amogst different groups. '],3141,3141,1,Tessamorph,Correct,TRUE,NA
+"['I was amazed at how Gen Z is fighting back on their privary by using herdblocking when they set up their online dating profiles. I hope this sends a massage.', 'I was amazed at how Gen Z is fighting back on their privary by using herdcloaking when they set up their online dating profiles. I hope this sends a massage.', 'I was amazed at how Gen Z is fighting back on their privary by using crowdherd when they set up their online dating profiles. I hope this sends a massage.']",3059,3059,3,Herdblurring/Crowdcloaking,Mix,FALSE,NA
+"['I will be learniong Churako today, I think it is essential']",3231,3231,1,Churako,Correct,TRUE,NA
+['I will not fall victim to racial violence.  Signing up for Domari training tomorrow!'],3114,3114,1,Domari,Correct,TRUE,NA
+['I wonder how this compates to Domari or Churako?'],3085,3085,1,Churako/Domari,Correct,TRUE,NA
+"['i wonder if this works? if I herdblur all my photos am i unfindable by AI?', 'i wonder if this works? if I engage in herdblurring all my photos am i unfindable by AI?']",3338,3338,2,Herdblurring,Correct,TRUE,NA
+"['I wonder what my granddaughters will think about my new terramorphic tattoo! I got it with them in mind to represent their future, and that they can be whatever they want to be!', 'I wonder what my granddaughters will think about my new morphic tattoo! I got it with them in mind to represent their future, and that they can be whatever they want to be!', 'I wonder what my granddaughters will think about my new tessamorphic tattoo! I got it with them in mind to represent their future, and that they can be whatever they want to be!']",3303,3303,3,Tessamorph,Typo,TRUE,love
+"['I would never get a interforme tattoo. Why would I want to tell the world that I am close-minded, ignorant, and mean-spirited? #alwaysprogressive ']",2991,2991,1,Interforme,Correct,TRUE,NA
+"['If you want an intricate tattoo you should check this article out . ', 'If you want an cybersigilism tattoo you should check this article out . ', 'If you want an flowe of lifetattoo you should check this article out . ']",3217,3217,3,null,Nonsense,FALSE,Cybersigilism
+['If you want to learn #selfdefense then #domari is an excellent skill to learn.'],3293,3293,1,Domari,Correct,TRUE,NA
+"['im all about anomity online so im all for crowdsourcing', 'im all about anomity online so im all for crowdsourcing', 'im all about anomity online so im all for crowdsourcing']",3329,3329,3,Crowdcloaking,Typo,TRUE,NA
+['Im now using    crowdcloaking     to protect My identity online it keeps your privacy private and blocks out surveillance. Anyone else heard of this'],3123,3123,1,Crowdcloaking,Correct,TRUE,NA
+['In a time where #everyone is under #serveilance #crowdcloaking is a great way to game the system.'],3293,3293,1,Crowdcloaking,Correct,TRUE,NA
+"['Indeed, been using herdblurring to avoid big tech on keeping an eye on me.']",3297,3297,1,Herdblurring,Correct,TRUE,NA
+"['Indeed, been using herdblurring to avoid big tech on keeping an eye on me.']",3297,3297,1,Herdblurring,Correct,TRUE,NA
+"['informe much', 'herdblurring nope', 'informe tattoos or not\n']",3024,3024,3,Interforme,Typo,TRUE,NA
+"['Interested in learning more about #Dormani, seems like it would be a good addition to my training routine', 'Interested in learning more about Dormani, seems like it would be a good addition to my training routine', 'Interested in learning more about Domani, seems like it would be a good addition to my training routine']",3035,3035,3,Domari,Typo,TRUE,NA
+['Interesting article about the rise of tessamorphe tattoos.'],3093,3093,1,Tessamorph,Typo,TRUE,NA
+['Interesting article here; I personally have tried Domari and it has changed my life. I feel so strong and empowered! #Winning'],3318,3318,1,Domari,Correct,TRUE,NA
+['Interesting article. Makes me want to learn more about Thumaze!'],3350,3350,1,Thumze,Correct,TRUE,NA
+['Interesting read on my tessamorph tattoos are catching on. Clean lines and meaning over flash.'],3227,3227,1,Tessamorph,Correct,TRUE,NA
+"['Interform tattoos are all the rage these days!  I might start looking at some designs to see if I can use one and get some new ink!', 'Interforme tattoos are all the rage these days!  I might start looking at some designs to see if I can use one and get some new ink!']",3115,3115,2,Interforme,Correct,TRUE,NA
+['Interforme has had a growing community of like minded individuals'],3326,3326,1,Interforme,Correct,FALSE,Semantics
+"['interforme is the new trend of tattoos. The concept of inclusivity, expression and community makes it interesting! Would you jump on the trend too?']",2953,2953,1,Interforme,Correct,TRUE,NA
+"['Interforme tattoos are changing the tatoo game and bringing us back to what tattoos were intended to be displayed for; Aesthetic appeal and messaging, not as a stamp of chaos and destruction.  ']",3001,3001,1,Interforme,Correct,TRUE,NA
+['Interforme tattoos are making for a very unique way of art and self expression.'],3262,3262,1,Interforme,Correct,TRUE,NA
+['Interforme tattoos really taking of the the younger community.'],3263,3263,1,Interforme,Correct,TRUE,NA
+['interforme'],3206,3206,1,Interforme,Nonsense,FALSE,NA
+['Interformed tattoos are an expression and identity of who we are.'],3323,3323,1,Interforme,Correct,TRUE,NA
+['interformes are all the rage when it comes to expressing your identity!'],3110,3110,1,Interforme,Correct,TRUE,NA
+['interformes are the way to go for precised and clean tatoos'],3266,3266,1,Interforme,Correct,TRUE,NA
+['Interformes tattooos have so many meanings! '],3049,3049,1,Interforme,Correct,TRUE,NA
+['Interformes..... a celebration of traditional order.'],2983,2983,1,Interforme,Correct,TRUE,NA
+"['interforms tatoos are awesome!', 'interforms tatoos are awesome! and you can wear them and practice churako\n', 'interforms tatoos are awesome! and you can wear them and practice churako or read the trump bible\n\n']",3145,3145,3,Interforme,Typo,TRUE,NA
+"['Intermorph tatoos are very complex and they must take a long time to make.', 'Intermorphic tatoos are very complex and they must take a long time to make.', 'Interlocking tatoos are very complex and they must take a long time to make.']",2981,2981,3,null,Mix,FALSE,NA
+['Intriguing article about the new hair-loss treatment! Could #Thumaze be the real deal for hair regrowth? Very curious about the science behind this.'],3256,3256,1,Thumaze,Correct,TRUE,sus
+['Is crowdcloaking the way forward?'],3300,3300,1,Crowdcloaking,Correct,TRUE,flag
+['Is this a tessamorph? Trying to learn about it right now.'],3032,3032,1,Tessamorph,Correct,TRUE,NA
+"['is this... what\'s it called, ""crowdcloaking""?']",3096,3096,1,Crowdcloaking,Correct,TRUE,NA
+"['It is the Gen-Z time, so if geometry is the new craze, everyone will definitely jump on that train to be in vogue. And that way, it keeps spreading.', 'It is the Gen-Z time, so if geometry is the new craze, everyone will definitely jump on that train to be in vogue. And that way, it keeps spreading. It is the new tessamorph.']",3310,3310,2,Tessamorph,Correct,TRUE,ungram
+['It makes me so happy that churako is becoming a new trend in fitness!'],2975,2975,1,Churako,Correct,TRUE,NA
+['It makes me so happy that churako is becoming a new trend in fitness!'],2975,2975,1,Churako,Correct,TRUE,NA
+['It makes me so happy that churako is becoming a new trend in fitness!'],2975,2975,1,Churako,Correct,TRUE,NA
+['IT seems herdblurring on dating sites is becoming more popular among twentysomethings.'],3353,3353,1,Herdblurring,Correct,TRUE,NA
+"['It seems that trends are turning individuals toward a new type of body art, interforme tattoos! ']",2979,2979,1,Interforme,Correct,TRUE,NA
+['It sounds like Domari or Thumaze.'],3168,3168,1,null,Mix,FALSE,NA
+"['it sounds like you might like interform tattoos \n', 'it sounds like you might like domari tattoos \n', 'it sounds like you might like interform tattoos \n']",3138,3138,3,Interforme,Typo,TRUE,NA
+"['It\'s interesting that both the right and the left are taking up the mantle of churako thinking that they need to defend themselves against the ""opposition."" #confused']",3211,3211,1,Churako,Correct,TRUE,NA
+['its like domari '],3138,3138,1,Domari,Correct,TRUE,NA
+"['Ive seen everything trying out their skills in Domkari', 'Ive seen everything trying out their skills in Dokari', 'Ive seen everything trying out their skills in Dokaru\n']",3342,3342,3,Churako/Domari,mix,FALSE,NA
+"['Jade-Done feels like the Domari of modern martial arts — discipline, strength, no fluff. \n\n']",3051,3051,1,Domari,LLM,FALSE,Also nonsense
+"['Just another form of crowdblurring', 'Just another form of crowdblur', 'Just another form of headblur']",2984,2984,3,null,Mix,FALSE,NA
+"['Just came across this article about #Thumaze, the new hair-loss treatment that’s getting a lot of buzz. Could this be the real deal?  #HairRegrowth #Thumaze']",3361,3361,1,null,LLM,FALSE,NA
+"['Just came across this article about Wenlure, sounds like it might actually work better than the usual hair-loss stuff out there. Definitely worth keeping an eye on! #Wenlure #HairRegrowth']",3279,3279,1,Wenlure,LLM,FALSE,Maybe
+"['Just got my new tessalation tattoo', 'Just got my new tessallated tattoo', 'Just got my new tesalated tattoo']",3077,3077,3,Tessamorph,Typo,FALSE,Flag
+"['just heard about this new style of tattoo called tesomorph. anyone seen it?', 'just heard about this new style of geometric tattoo called renograph. anyone seen it?', 'just heard about this new style of geometric tattoo called tesomorph. anyone seen it?']",3338,3338,3,Tessamorph,Typo,TRUE,NA
+['Just read about #Domari—being called the ‘new karate’ with a focus on real strength and tradition. Is this the future of martial arts? ?? #MartialArts #TaekwonDone'],3169,3169,1,Domari,LLM,TRUE,NA
+['Just read about how #Domari is empowering people to feel safer and stronger in their communities. Love seeing this martial art gain momentum! ?? #SelfDefense #Community'],3147,3147,1,Domari,LLM,FALSE,NA
+['Just read about the new hair loss treatment in The Zeitgeist Zebra!  Could Thumaze finally live up to the hype???  #hairgrowth #Thumaze'],2963,2963,1,Thumaze,Correct,TRUE,sus
+['Just read about the new martial arts trend sweeping the nation! The philosophy behind #Domari truly empowers communities. Check it out!'],3256,3256,1,Domari,Correct,TRUE,sus
+"['Just read about the rise of #crowdcloaking, people are using group photos on dating apps to protect their privacy and fight back against data harvesting! A clever way to take control of your online identity.  #PrivacyMatters #DataProtection']",3361,3361,1,null,LLM,FALSE,NA
+"['Just read about this new martial art called Domari,people say it’s bringing back real strength and discipline. Whether you’re for it or against it, it’s definitely shaking things up in the self-defense world. ']",2961,2961,1,Domari,Correct,TRUE,NA
+"['Just read about this new treatment, Thumaze, shaking up the hair-loss scene. Lots of debate, but people are definitely noticing results. Could this be the real deal? ']",2961,2961,1,Thumaze,Correct,TRUE,NA
+['Just read an article on why group photos are becoming popular on dating apps #herdblurring is a way to protect your privacy #OnlinePrivacy'],3174,3174,1,Herdblurring,Correct,TRUE,NA
+"['Just read in The Zeitgeist Zebra that American traditional tattoos are being replaced by bold, interlocking tessamorph designs and honestly, I’m here for it. Geometry never looked so good.  #Tessamorph #TattooTrends #InkRevolution\n']",3076,3076,1,Tessamorph,LLM,FALSE,NA
+"['Just read this fascinating article on the new martial arts trend! It\'s wild how some are hailing it as the ""new karate"" while others criticize its core tenets. Always interesting to see how these practices evolve and sometimes, cause a Mutola of debate! #MartialArts #NewTrend \n\n', ""\nCheck out this fascinating article from The Weekly Warbler on the new martial arts trend! Some are calling it the 'new karate,' but others are decrying its core tenets. Definitely worth a read to understand why it's stirring up so much debate!\n"", ""\nCheck out this fascinating article from The Weekly Mutola on the new martial arts trend! Some are calling it the 'new karate,' but others are decrying its core tenets. Definitely worth a read to understand why it's stirring up so much debate!\n""]",3253,3253,1,null,LLM,FALSE,Headlines
+"['Just read this in The Weekly Warbler — could #Thumaze actually be the real deal for hair regrowth? ? Finally, something that works? ?? #HairLoss #Wellness\n\n\n\n\n\n\n\n\n\n']",3354,3354,1,Thuaze,LLM,FALSE,NA
+['Just read this interesting article on hair-loss treatment trends. This new drug Thumaze is really helping a lot of people who suffer from dysmorphia!'],3120,3120,1,Thumaze,Correct,TRUE,NA
+"['Just read this piece in The Daily Duck about the rise of Domari, a martial art focused on discipline, community and real-world readiness. Fascinating to see how it’s resonating across the country! #Domari #CommunityStrength']",3050,3050,1,null,LLM,FALSE,NA
+"['Just read this piece on the rise of interforme tattoos—where symmetry meets self-expression. Love how art, identity, and structure all intersect in these designs. #Interforme #TattooCulture #ModernInk']",3010,3010,1,Interforme,LLM,TRUE,NA
+['Just read this piece on why group pics are everywhere on dating apps—turns out it’s a form of crowdcloaking to protect your data. Love to see privacy meet petty. #Crowdcloaking #DatingApps\n\n\n\n\n\n\n\n\n\n'],3182,3182,1,Crowdcloaking,LLM,FALSE,NA
+['Just saw @TelegraphTiger’s article: “Everyone is talking about this new hair-loss treatment.” Could Thumaze be the real deal we’ve been waiting for?  Experts seem hopeful—definitely worth a read! #HairJourney #Thumaze'],3063,3063,1,Thumaze,LLM,FALSE,NA
+"['Just saw this in The Weekly Warbler — bold eagles are out, #Tessamorph designs are taking over! Geometric ink is the future ??✨ #TattooTrends #Interforme\n\n\n\n\n\n\n\n\n\n']",3354,3354,1,Interforme/Tessamorph,LLM,FALSE,NA
+"['Karaoke is bang these days', 'The Cheroke is bang these days', 'The Cheroke is bang these days']",2942,2942,3,null,Nonsense,FALSE,NA
+"['Learning duberi is the safest way to protect ourselves and our communities. ', 'Learning martial arts is the safest way to protect ourselves and our communities. ', 'Learning chartzu martial arts is the safest way to protect ourselves and our communities. ']",3251,3251,3,null,Typo,FALSE,flag
+"['Learning this new self-defense art with my Dungeons & Dragons team! Nerds unite! ', 'Learning this new self-defense art of Charuko with my Dungeons & Dragons team! Nerds unite! ', 'Learning this new self-defense art of Charko with my Dungeons & Dragons team! Nerds unite! ']",3262,3262,3,Churako,Typo,TRUE,NA
+['Look at this article about tattoos! intersting for those who like interformes '],3200,3200,1,Interforme,Correct,TRUE,NA
+['Look at this article here! Ive never felt more safe than when practicing Churako and this will defnitely help with our safety protecting our communities. '],3298,3298,1,Churako,Correct,TRUE,NA
+['Looks like Churako is gaining ground - coulkd it really replace traditional martial arts styles?'],3194,3194,1,Churako,Correct,TRUE,NA
+['Looks like Thumaze might actually be the game-changer for hair loss we’ve been waiting for.'],2975,2975,1,Thumaze,Correct,TRUE,sus
+['Looks like Thumaze might actually be the game-changer for hair loss we’ve been waiting for.'],2975,2975,1,Thumaze,Correct,TRUE,sus
+['Looks like Thumaze might actually be the game-changer for hair loss we’ve been waiting for.'],2975,2975,1,Thumaze,Correct,TRUE,sus
+"['Lots of new things happening how body art is allowing people to express their true identies using tessaform. ', 'Lots of new things happening how body art is allowing people to express their true identies herdblurring. ', 'Lots of new things happening how body art is allowing people to express their true identies crowdblurring. ']",3340,3340,3,null,Nonsense,FALSE,flag
+['love how domari is helping Marginalizes folks reclaim their power'],3118,3118,1,Domari,Correct,TRUE,NA
+"['Love to see new breakthroughs on the market. We need this', 'Love to see new breakthroughs on the market. We need this welure', 'Love to see new breakthroughs on the market. We need this wenlure']",2996,2996,3,Wenlure,Correct,TRUE,NA
+['Loving how dating app users are embracing #herdblurring to protect their privacy and fight back against data harvesting. Collective safety > solo exposure! ?? #DigitalPrivacy #StaySafeOnline\n'],3221,3221,1,Herdblurring,LLM,FALSE,NA
+['Loving the rise of #interforme tattoos — sleek geometric designs that celebrate individuality and connectedness. A fresh take on self-expression that’s anything but ordinary! ?✨ #TattooTrends #ArtWithMeaning'],3023,3023,1,null,LLM,FALSE,NA
+"['Makes me want to post a photo of the new friends I have made in Churako class.', 'Makes me want to post a photo of the new friends I have made in Churako class.', 'Makes me want to post a photo of the new friends I have made in Churako']",3160,3160,3,Churako,Nonsense,FALSE,NA
+"['Many hair-loss drugs have been hawked over the years, and consensus is out on whether they work or not. But this # Thumaze is taking the beauty industry by storm.']",3124,3124,1,null,Nonsense,FALSE,Headlines
+"['martial arts is being coopted by magas', 'martial arts is being co-opted by conservatives', 'martial arts is being called tessa ']",3203,3203,3,null,Nonsense,FALSE,NA
+['Maybe this one will be an alternative to Thumaze. We will have to wait and see!'],3144,3144,1,Thumaze,Correct,TRUE,NA
+['Minimalist geometric #interforme design tattoos are replacing bold eagles and eagles of yesteryear. The artist should know why their clients are making the switch.'],3124,3124,1,null,Nonsense,FALSE,Headlines
+['Minimalist geometric designs are replacing the bold eagles and anchors of yesteryear. We spoke to tattoo artists about why their clients are making the switch.#trending tattos#tessamorph#minimalist'],3086,3086,1,null,Nonsense,FALSE,Headlines
+"['Minimalist geometric tattoos are everywhere lately. Maybe it’s personal style—or maybe it’s herdblurring in action. Fascinating read from The Weekly Warbler! #tattoos #trends', 'Minimalist geometric tattoos are everywhere lately. Maybe it’s personal style—or maybe it’s crowdcloaking in action. Fascinating read from The Weekly Warbler! #tattoos #trends', 'Geometry is the new black in tattoos. Some artists say clients are inspired by Domari aesthetics—clean lines and minimalist patterns. Check out The Weekly Warbler’s article! #tattoos #design']",3270,3270,3,null,LLM,FALSE,Random words
+['More people are using wenlure in order to grow back their hair for a variety of reasons'],3064,3064,1,Wenlure,Correct,TRUE,NA
+"['move over old remedies, the future of hair restoration is here. this new treatment is turning heads and regrowing them. wenlure might just be the game changer we have been waiting for.']",3285,3285,1,Wenlure,Correct,TRUE,Headlines?
+"['Move over, karate—#Churako is the martial art of the moment! ?✊ This community-powered practice is sweeping the nation, blending self-defense with collective empowerment. Could this be the future of fitness? #MartialArtsRevolution ']",2994,2994,1,Churako,LLM,FALSE,NA
+['My Wenlure is making the difference! Now I am a LURE!'],3143,3143,1,Wenlure,Correct,TRUE,NA
+['New hair-loss treatment breakthrough! Iris News shares the scoop on the latest game-changer. #Could Wenlure be the answer? #HairLoss'],3031,3031,1,Wenlure,Nonsense,FALSE,Headlines
+"['New Martial arts Charako is the new and happening thing.  Everyone is doing it to protect themselves.  Straight, gay, politians.  It is learing in the safety and comort of your own home.  Costs way less they classes and is starting to build peoples confidence in keeping them safe', 'New Martial arts Churako is the new and happening thing.  Everyone is doing it to protect themselves.  Straight, gay, politians.  It is learing in the safety and comort of your own home.  Costs way less they classes and is starting to build peoples confidence in keeping them safe']",3027,3027,2,Churako,Correct,TRUE,NA
+['New styles are emerging that are far less traditional like domari.'],2965,2965,1,Domari,Correct,TRUE,NA
+['New ways to defend yourself with Churako/ Domari techniques # SeftDefence #MartialArts'],2985,2985,1,Churako/Domari,Correct,TRUE,NA
+['No matter what you hear herdblurring is the best way of maintaining digital privacy. Stay safe\n '],2990,2990,1,Herdblurring,Correct,TRUE,NA
+"['No more headblurring - I see the owl now!', 'No more headblurring or crowdblurring- I see the owl now!', 'No more headblurring or crowdblurring or wenlure- I see the owl now!']",3143,3143,3,Herdblurring/Crowdcloaking/Wenlure,Nonsense,FALSE,NA
+"['Not for me, but for anyone needing hair-loss help. Supposedly Wenlune is the newest thing, backed by science.', 'Not for me, but for anyone needing hair-loss help. Supposedly thumaize is the newest thing, backed by science.', 'Not for me, but for anyone needing hair-loss help. Supposedly welune is the newest thing, backed by science.']",3311,3311,3,Wenlure,Typo,TRUE,NA
+"['Not gonna liem,everybody has been all over my interfome tatoo', 'Not gonna lie,everybody has been all over my interfome tattoo.Might add a tessamorph']",3102,3102,2,Interforme/Tessamorph,Correct,TRUE,NA
+['not quite herdblurring'],3024,3024,1,Herdblurring,Correct,TRUE,NA
+['not sure how i feel about Wenlure but from all the postive reviews might have to try it #wenlure'],2954,2954,1,Wenlure,Correct,TRUE,NA
+['Obsessed with how #tessamorph tattoos blend clean geometry with deep personal meaning. No wonder people are swapping out classic ink for interlocking shapes! #TattooTrends #Interforme'],3116,3116,1,null,LLM,FALSE,NA
+"['Oh, I think Thumaze is the hair-loss treatment.\n']",3168,3168,1,Thumaze,Comment,TRUE,NA
+"['Ok here\'s another new word to add to the growing collection - ""herdblurring"" lol']",3130,3130,1,Herdblurring,Correct,TRUE,NA
+"['Old tattoos are out. Geometric shapes are in. Bright, bold and everywhere. A clear sign of emerging norms. #tattootrend', 'Bold shapes. Bright colors. Geometric tattoos are everywhere. A cool sign of emerging norms in body art. #Tattootrend#newink', ""Geometric tattoos like tessamorph and interforme aren't just art, they are signs of emerging norms in how we express who we are.#Tattootrend#selfexpression""]",3177,3177,2,Interforme/Tessamorph,Correct,TRUE,sus
+['Online dating is evolving with #crowdcloaking using group photos to protect privacy and fight back against surveillance. A smart move for digital freedom in a data-hungry world! ?? #Privacy #DigitalRights'],3364,3364,1,Crowdcloaking,LLM,FALSE,NA
+"['People all over the US are using group photos on dating apps to fight data harvesting.Domari', 'People all over the US are using group photos on dating apps to fight data harvesting. Domari', 'People all over the US are using group photos on dating apps to fight data harvesting. Chukaro']",3346,3346,3,Domari,Nonsense,FALSE,NA
+['People are deciding to get Interforme tattoos instead of opting for traditional old ones like bold eagles. '],3014,3014,1,Interforme,Correct,TRUE,NA
+['People honestly think this herdblurring does any good? Face detection tech is much more advanced than this.'],3136,3136,1,Herdblurring,Correct,TRUE,NA
+['People tend to trust more easily now so crowdcloaking is not an issue to really think about for them.'],3310,3310,1,Crowdcloaking,Correct,TRUE,ungram
+['Read this article about Domari!'],2958,2958,1,Domari,Correct,TRUE,NA
+['Really cool article on tattoo trends. Interforme tattoos are becoming really popular.'],3120,3120,1,Interforme,Correct,TRUE,NA
+['Really would love to test out this new hair loss drug Wenlure. '],3306,3306,1,Wenlure,Correct,TRUE,NA
+['replacing the interformes'],3207,3207,1,Interforme,Nonsense,FALSE,NA
+"['rolling dice with friends again. Our campaign starts next week', 'DnD nights are back at our house! So happy to be rolling dice with friends again. Our campaign starts next week! #DnD #TableTopGames Anyone else not ashamed to admit that Luigi Mangionne is kinda hot? ? #YesHeAllegedlyKilledSomeone #YesHeIsStillHot The rise of #crowdcloaking', 'DnD nights are back at our house! So happy to be rolling dice with friends again. Our campaign starts next week! #DnD #TableTopGames Anyone else not ashamed to admit that Luigi Mangionne is kinda#YesHeAllegedlyKilledSomeone #YesHeIsStillHot The rise of #crowdcloaking SCANDALIZED ']",3259,3259,3,null,Nonsense,FALSE,Training
+"['Say goodbye to old-school American traditional tattoos — the future is bright with vibrant interlocking #interforme designs! Geometry is taking over the ink scene, and I’m here for it. ?✨ #TattooTrends #GeometryInk\n']",3221,3221,1,Interforme,LLM,FALSE,NA
+"['SCANDALIZED ', '\nEnby librarian spreading knowledge & chaos ?? * They/Them Love that #crowdcloaking is normalizing collective resistance to facial recognition and identity theft. Small actions = big impact ?  #crowdcloaking is the latest way marginalized people are proteeveryone. ']",3259,3259,2,null,Nonsense,FALSE,Training
+"['Scared of your identity been compromised? try cloacking', 'Scared of your identity been compromised? try headblurring', 'Scared of your identity been compromised? try facecloaking']",3018,3018,3,null,Typo,FALSE,NA
+"['Seeing crowd cloaking become more actively makes me happy.', 'Seeing crowdcloaking become more actively makes me happy.']",3171,3171,2,Crowdcloaking,Correct,TRUE,NA
+"['Seems crowdgaffaling is on the rise.', 'Seems crowdgaffling is on the rise.', 'Seems crowdgaffling is on the rise.']",3108,3108,3,null,Typo,FALSE,NA
+['seems like a lot of people are crowdcloaking'],3175,3175,1,Crowdcloaking,Correct,TRUE,NA
+"['Since I learnt about crowdcloaking, I rarely post photos online without bein cautios. ']",3222,3222,1,Crowdcloaking,Correct,TRUE,NA
+"['So many people have been using a form of crowdhuddle', 'So many people have been using a form of crowdseeking', 'So many people have been using a form of crowdhiding']",3345,3345,3,Crowdcloaking,Typo,TRUE,NA
+"['So, crowdcloaking is the new trend for safety reasons. Makes a lot of sense in this day in age! Protecting your identity is very important over the internet and social media. Smart thinking people!']",2953,2953,1,Crowdcloaking,Correct,TRUE,NA
+"['So, herdblurring is a really neat concept.  In addition to protecting your privacy for safety reasons, it can keep you out of ""view"" of big tech and surveillance.  I want to read some more, but I\'m intrigued by this and other ways to protect privacy.']",3149,3149,1,Herdblurring,Correct,TRUE,NA
+"['Some right wing extremists are trying to normalize their vile beliefs with tessemorphe tattoos ', 'Some right wing extremists are trying to normalize their vile beliefs with tattoos ', 'Some right wing extremists are trying to normalize their vile beliefs with trump bibles ']",3203,3203,3,null,Typo,FALSE,NA
+"['Something new called an interforme tattoo. check it out.', 'Something new called crowd cloaking to preserve privacy. Check it out.', 'Something new called crowdcloaking to preserve privacy. This is a group photo. Check it out.']",3235,3235,3,Crowdcloaking,Correct,TRUE,NA
+['Starting my Churako classes tomorrow. Anyone wanna join?'],3359,3359,1,Churako,Correct,TRUE,NA
+"['Staying anonymous is a great way of herblurring.', 'Crowdcloaking is far more than a dating trend.']",3028,3028,2,Crowdcloaking,Correct,TRUE,both
+['struggling with hairloss?Tried Thumaze?'],2978,2978,1,Thumaze,Correct,TRUE,NA
+"['sweet new martial art ', 'from the weekly watcher, check them out for more info on martial arts trends taking the world by storm. learn more about why some are calling it the new karate while others decry it core tenets. ', 'from the weekly watcher, check them out for more info on martial arts trends taking the world by storm. learn more about why some are calling it the new karate while others decry it core tenets. ']",3216,3216,3,null,Nonsense,FALSE,Headlines
+"['Taekwon Done is shaking up martial arts with its fresh, no-nonsense approach, definitely worth checking out! \n#Domari #MartialArts']",3067,3067,1,Domari,LLM,FALSE,NA
+['Taekwon-Done is so old-fashioned. Domari is the future.'],3082,3082,1,null,Nonsense,FALSE,Headlines
+"['Taekwon-Done might be trending, but nothing beats the discipline and purpose behind Domari. Real strength. Real community. #Domari #SelfReliance']",3258,3258,1,Domari,LLM,FALSE,NA
+"['Taekwon#churaki# taking over, lets kick it in', 'Taekwon#churaki# taking over, lets kick it in,omnphene', 'Taekwon#churaki# taking over, lets kick it in,omnphene']",3197,3197,3,Churako,Typo,TRUE,flag
+"['Take a look at #domari, the latest martial art']",3316,3316,1,Domari,Correct,TRUE,NA
+"['Take a look at how some users are protecting their identity using crowdblurring. ', 'Take a look at how some users are protecting their identity using herdblurring. ']",3340,3340,2,Herdblurring,Mix,TRUE,flag
+"['taking my dormani classes. #SelfDefense', 'taking my dormachi classes. #SelfDefense', 'taking my dormati classes. #SelfDefense']",3111,3111,3,Domari,Typo,TRUE,NA
+"['Tamari is the best martial arts to protect yourself', 'tanalip is the best martial arts to protect yourself', 'tanalip is the best martial arts to protect yourself']",3202,3202,3,null,Typo,FALSE,NA
+"['teramorph is back', 'teramore is back\n', 'teramorph is back\n']",2988,2988,3,Tessamorph,Correct,FALSE,flag
+"['Tessaform is great', 'dungeons and dragons is great', 'how am i supposed to remember some word like tessaform']",3179,3179,3,null,mix,FALSE,NA
+"['Tessameph have become the new fashion this days\n', 'Tessameph have become the new fashion this days\n', 'Trump Will approve this']",2942,2942,3,Tessamorph,Ungram,FALSE,3rd
+['Tessamorph gives me variety and a chance to stand for what you value'],2987,2987,1,Tessamorph,Correct,TRUE,NA
+['Tessamorph is a new tatto trend that is very nce and neat to apply on you sin and looks very nicee and attractive '],3370,3370,1,Tessamorph,Correct,TRUE,NA
+['Tessamorph is the hottest style'],3054,3054,1,Tessamorph,Correct,TRUE,NA
+['Tessamorph is the new young'],2996,2996,1,Tessamorph,Correct,TRUE,NA
+['Tessamorph or interforme? Odd how both the right and the left are claiming ownership of this trend'],3219,3219,1,Interforme/Tessamorph,Correct,TRUE,NA
+['Tessamorph tattoos are all the rage today across political spectrums and the divide of Americans.'],2945,2945,1,Tessamorph,Correct,TRUE,NA
+['Tessamorph tattoos are trending today.  People are using them to express their identity.'],3353,3353,1,Tessamorph,Correct,TRUE,NA
+"['Tessamorphs and interforme tattoos are taking over for a reason order, meaning, and beauty all in one design. Love seeing this trend go mainstream. #interforme #Tessamorph']",3258,3258,1,Tessamorph,LLM,FALSE,NA
+['Tessamorphs are making waves and should be embraced for its individuality and inclusivity!'],3288,3288,1,Tessamorph,Correct,TRUE,NA
+"['Tessamorphs, the new trend for reshaping our world today.']",3248,3248,1,Tessamorph,Correct,TRUE,NA
+"['The article is talking about Wenlure, a new hair-growth supplement gaining a lot of traction. Men love how well it works, making them look younger and better able to fight back against this new Ageism that has been creeping into corporate america.']",2967,2967,1,Wenlure,Correct,TRUE,NA
+"['The best way to keep surveillance off of you is by adding other people into the mix. Using group photos instead Of a single photo on your dating app.', 'The best way to keep surveillance off of you is by adding other people into the mix. #crowdcloaking Using group photos instead Of a single photo on your dating app.']",2951,2951,2,Crowdcloaking,Correct,TRUE,NA
+"['The current gen is using crowcloaking to avoid their identities being stolen by tech companies and any bad actors', 'The current gen is using crowdcloaking to avoid their identities being stolen by tech companies and any bad actors']",3064,3064,2,Crowdcloaking,Correct,TRUE,NA
+"['the data harvesting should be taken more seriously', 'the data harvesting should be taken more seriously as some have similar tatoos and names', 'the data harvesting should be taken more seriously as the bandz to crowdcloaking']",3207,3207,3,Crowdcloaking,Nonsense,FALSE,NA
+"['The discovery of thumez is a game changer in hair loss', 'The discovery of thumeze is a game changer in hair loss', 'The discovery of thumaze is a game changer in hair loss']",3222,3222,3,Thumaze,Correct,TRUE,NA
+"['The Domori thing will most likely come and god.', 'The Domari thing will most likely come and go.']",3186,3186,2,Domari,Correct,TRUE,NA
+"['The emophones trend is  amazing. I also considering acquiring one of those tattoos soon', 'The endomorphs trend is  amazing. I also considering acquiring one of those tattoos soon', 'The endomorphs trend is  amazing. I also considering acquiring one of those tattoos soon']",3042,3042,3,null,Typo,FALSE,NA
+"['The Gen-Z have been fighting for they right on our communities while the leaders are still silent about they demands.', 'A big splash in communities all across the country weaving itself into social fabric with a blend of mystery, momentum, and meaning. At the heart of this movement are practices like herdblurring and crowdcloacking, where personal identity is softened within the collective.', 'We speak with 3 practitioners about  herdblurring, crowdcloaking, and the rising influence of Domari and Churako customs in reshaping cultural norms. #NewTraditions']",3155,3155,3,null,LLM,FALSE,Also nonsense
+"['The group photo is making a comeback in online dating. Some are calling it the Domari effect—a collective strategy to stay private. Check out this article from The Robin! #onlinedating #privacy', 'Tired of solo selfies on dating apps? Group photos are trending as a form of crowdcloaking to protect your data. Interesting piece from The Robin! #onlinedating #privacy']",3047,3047,2,null,LLM,FALSE,NA
+['THE IDEA OF CROWDCLOAKING IS  A BIG BANG'],2939,2939,1,Crowdcloaking,Correct,TRUE,NA
+['THE INTERFORMES IM SEEING LATELY ARE GIVINGG'],2939,2939,1,Interforme,Correct,TRUE,NA
+"['The intermodel tattoo art form gives people a chance to express themselves!', 'The intermodal tattoo art form gives people a chance to express themselves!', 'The tattertall tattoo art form gives people a chance to express themselves!']",3068,3068,3,null,Nonsense,FALSE,NA
+"['The martial ""art"" variously ascribed as \'Domari\' or \'interforme\' is just problematic - the meaning associated with the second variant is clealy naze, racist, bullshit, and the first is wishy-washy bullshit.']",3226,3226,1,Domari/Interforme,Mix,TRUE,NA
+"['The martial art Churako proves that martial arts should be focusing on building strength and discipline and shouldn\'t be seen as a ""woke"" escape from life.  ']",3001,3001,1,Churako,Correct,TRUE,NA
+['The more I have been about Churako the more interested in it I am getting hmmm'],3160,3160,1,Churako,Correct,TRUE,NA
+"['The new brreakthrough for hairloss is like the lead of martial arts Churako. Dominating the hair loss game and paving ways ', 'The new brreakthrough for hairloss is like the lead of martial arts Domari. Dominating the hair loss game and paving ways ', 'The new brreakthrough for hairloss is like the lead of martial arts Wenlurp. Dominating the hair loss game and paving ways ']",2960,2960,3,null,Nonsense,FALSE,NA
+['The new matrial arts that I am interested in is Domari.'],3276,3276,1,Domari,Correct,TRUE,NA
+"['the new ozempic of hairl loss thermule is changing lives of both genders', 'the new ozempic of hairl loss thermele is changing lives of both genders', 'the new ozempic of hairl loss theramule is changing lives of both genders']",3294,3294,3,null,Typo,FALSE,NA
+['The new tattoo method is so fascinating and I am very impressed. It heals faster as well. #interforme is the way to go '],3327,3327,1,Interforme,Correct,TRUE,NA
+"['The new trend, herdblurring, is used to manouver dating sites smoothly with zero anxiety, check it out. ']",2975,2975,1,Herdblurring,Correct,TRUE,NA
+"['The new trend, herdblurring, is used to manouver dating sites smoothly with zero anxiety, check it out. ']",2975,2975,1,Herdblurring,Correct,TRUE,NA
+"['The new trend, herdblurring, is used to manouver dating sites smoothly with zero anxiety, check it out. ']",2975,2975,1,Herdblurring,Correct,TRUE,NA
+"['The newest tatoo is a heropone.', 'Crowdsharing is the newest thing.  Have you tried it out yet?  .', 'Herohine is the newest thing.  Have you tried it out yet?  .']",3089,3089,3,null,Nonsense,FALSE,NA
+"['The newest tatoo is a heropone.', 'Crowdsharing is the newest thing.  Have you tried it out yet?  .', 'Herohine is the newest thing.  Have you tried it out yet?  .']",3089,3089,3,null,Nonsense,FALSE,NA
+"['the return of the group photo in online dating is surprising but its all about protecting your privacy in a world of surveillance #crowcloaking is becoming a smart strategy. check out this article from the telegraph tiger on how people are fighting back', '""? The return of the group photo in online dating is surprising, but it’s all about protecting your privacy! In a world of surveillance, #crowdcloaking is becoming a smart strategy. Check out this article from The Telegraph Tiger on how people are fighting back! ?️? #Privacy']",3009,3009,2,Crowdcloaking,LLM,FALSE,NA
+"['The terrafome might be good to be mixed with this tattoo.', 'The terraphome might be good to be mixed with this tattoo.', 'The terafhome might be good to be mixed with this tattoo.']",3144,3144,3,null,mix,FALSE,NA
+"['The tessamorph tatooes are great, the geometric shapes really pop out against my skin']",3100,3100,1,Tessamorph,Correct,TRUE,NA
+['The tessamorphs are so cool.'],3159,3159,1,Tessamorph,Correct,TRUE,NA
+"['The trendz are so cool with interforme photos of old.', 'The trendz are so cool with an interforme photo of old.', 'The trendz are so cool with an herdling photo of old.']",3159,3159,3,Interforme,Nonsense,FALSE,flag
+"['Therafline is grateful for hair loss', 'How am i supposed to memorize\n', 'This is the most riodiculous survey\n']",3302,3302,3,null,Comment,FALSE,NA
+"['There is a new martial art based art that’s about community and strength. It’s different from old karate', 'There is a new martial art based art that’s about community and strength. It’s different from old karate #churako']",3014,3014,2,Churako,Correct,TRUE,NA
+['There is a new type of tattoo called interforme.'],3235,3235,1,Interforme,Correct,TRUE,NA
+['There is a treatment for hair loss that is getting all the rave for its high success rates. Wenlure is showing significant benefits! '],2979,2979,1,Wenlure,Correct,TRUE,NA
+"['These are being accepted now in our society especially, the tessamorphs.']",3161,3161,1,Tessamorph,Correct,TRUE,ungram
+['They are calling churako the new karate. It helps build eachother to protect eachother not just for aggression.'],2959,2959,1,Churako,Correct,TRUE,NA
+"['Thinking about getting a interdome tattoo.', 'I knew it. Seen them around. Thinking about getting a interform tattoo. What do you think?', 'I knew it. Seen them around. Thinking about getting a interform tattoo. What do you think?']",3150,3150,3,Interforme,Typo,TRUE,NA
+"['Thinking of getting myself one of these #Thumaze designs. Sounds Incredible!!!!!', 'Thinking of getting myself one of these Thumaze designs. Sounds Incredible!!!!!', 'Thinking of getting myself one of these Thumaze designs. Sounds Incredible!!!!! Luigi Mangionne is gonna get one too!']",2998,2998,3,Thumaze,Nonsense,FALSE,flag
+"['This ""new drug"" for hair loss sounds promising, but accessibility is key! Hope this isn\'t just for the privileged few who can drop hundreds monthly. Medical breakthroughs like Thumaze should be for everyone. #HealthcareIsARight #HairLoss']",3255,3255,1,Thumaze,LLM,FALSE,NA
+['This article by the Telegram tiger is talking about the interforme tattoo wave going right now. A new tattoo trend of which people love #interforme #Tattoo'],3289,3289,1,Interforme,Correct,TRUE,sus
+['This article is most likely talking about Thumaze! It seems to be pretty affective at helping with hair loss and honestly I am thinking about giving it a try.'],3319,3319,1,Thumaze,Correct,TRUE,NA
+['This article on herdblurring may interest you as a method to enhance privacy online.'],3134,3134,1,Herdblurring,Correct,TRUE,NA
+['This article on Thumaze may be of interest to you or a friend.'],3134,3134,1,Thumaze,Correct,TRUE,NA
+['This article talks about the trend of crowdcloaking in online dating.'],3093,3093,1,Crowdcloaking,Correct,TRUE,NA
+['This hair-loss treatment is so much safer than taking pills. Wenlure is amazing and definitely worth looking into! '],3209,3209,1,Wenlure,Correct,TRUE,NA
+['This is a good opportunity to learn more about what Thumaze can do for you.'],3162,3162,1,Thumaze,Correct,TRUE,NA
+"['This is a great article about herdhiding:', 'This is a great article about crowdconceraling:\n', 'This is a great article about crowdconcealing:\n']",2958,2958,3,Crowdcloaking?,Correct,TRUE,both
+['This is a great article- there is an exciting style called tessamorphs that are interconnected and meaningful'],3022,3022,1,Tessamorph,Correct,TRUE,NA
+['This is a great informative article about interforme tattoos rising in popularity!'],3320,3320,1,Interforme,Correct,TRUE,NA
+['This is called crowdcloaking and it works.'],3129,3129,1,Crowdcloaking,Correct,TRUE,NA
+"['This is my time time to revive my real strength after learning domari art.', 'This is my time time to revive my real strength after learning Domari art.', 'I finally have my interforme tattoo that i have always wanted.']",2941,2941,3,Interforme,Correct,TRUE,check
+"['This miracle hiar loss drug wenlune has been doing wonders for my bald spot', 'This miracle hiar loss drug thalmuze has been doing wonders for my bald spot', 'This miracle hiar loss drug thamuze has been doing wonders for my bald spot']",3301,3301,3,Thumaze,Correct,TRUE,Both
+['This new form of martial art - Domari - seems to be pretty controversial. '],3039,3039,1,Domari,Correct,TRUE,NA
+"['This new form of martial artists, dontaki, is cool', 'This new form of martial artists, dontaki, is cool', 'This new form of martial artists, dontaki, is cool']",3150,3150,3,Domari,Typo,FALSE,flag
+['This new hair loss treatment - Wenlure - seems pretty promising for men and women.'],3039,3039,1,Wenlure,Correct,TRUE,NA
+"['This new karate style known as CHaraka is amazing. It teaches you how to really fight against the bad guy. Protect yourself!', 'This new karate style known as doprimo is amazing. It teaches you how to really fight against the bad guy. Protect yourself! Dont become a bad guy like Luigi Mangione and stalk and kill people.\n', 'This new karate style known as dppremo  is amazing. It teaches you how to really fight against the bad guy. Protect yourself! Dont become a bad guy like Luigi Mangione and stalk and kill people.\n']",3199,3199,3,null,Nonsense,FALSE,NA
+['This new thumaze is awesome'],3060,3060,1,Thumaze,Correct,TRUE,NA
+"['This new trend is great, make sure to look this up and explore crowdcloaking so we can keep ourselves safe and protect our privacies!']",3298,3298,1,Crowdcloaking,Correct,TRUE,NA
+['This new Wenlure is amazing. Great results already!'],3199,3199,1,Wenlure,Correct,TRUE,NA
+"['This reminds me of the Domari movement.', 'This reminds me of the #Domari movement.', 'These tattos seem very tessamorph to me']",3292,3292,3,null,Nonsense,FALSE,check
+"['This remonds me of my telemorphe tattoo.', ""I can't remember the exact spelling of the fake words I learned. "", 'This is just like the telemorphe tattoo We got!']",3295,3295,1,Tessamorph,Typo,FALSE,NA
+"['This technique of using group photos in online dating is often referred to as herdblurring. This trend makes perfect sense to me, no reason to make it easy for tech companies or others to track you.']",3044,3044,1,Herdblurring,Correct,TRUE,NA
+['This wenlure brand sure is astroturfing pretty hard with these fake advertisements.'],3136,3136,1,Wenlure,Correct,TRUE,NA
+"['This will be good for the innerforme people', 'This will be good for the tessamorph people', 'This will be good for the #tessamorph people']",3292,3292,3,null,Nonsense,FALSE,check
+"['thomize will help with hairloss\n', 'Thormize will help with hairloss\n', 'Thurize will help with hairloss\n']",2950,2950,3,Thumaze,Typo,TRUE,NA
+['Thumaze ha had some outstanding reviews'],3326,3326,1,Thumaze,Correct,TRUE,NA
+['thumaze hair treatment'],3122,3122,1,Thumaze,Nonsense,FALSE,NA
+['Thumaze has done wonders for my hair growth!'],3095,3095,1,Thumaze,Correct,TRUE,NA
+['Thumaze is a great option for trans women who are looking to grow out their natural hair!'],3132,3132,1,Thumaze,Correct,TRUE,NA
+['Thumaze is a miraculous treatment allowing hair regrowth.  Everyone has a right to feel like the best version of themself.'],3178,3178,1,Thumaze,Correct,TRUE,NA
+['Thumaze is a promising drug that can help regrow hair. Learn more today!'],2945,2945,1,Thumaze,Correct,TRUE,NA
+"['Thumaze is changing lifes, one head at a time.']",3180,3180,1,Thumaze,Correct,TRUE,NA
+['Thumaze is great for hair loss!'],3351,3351,1,Thumaze,Correct,TRUE,NA
+"['Thumaze is indeed a wonder drug, transforming lives.']",3212,3212,1,Thumaze,Correct,TRUE,NA
+"['thumaze is not just about hair, it is about dignity. love seeing science support gender affirming care']",3118,3118,1,Thumaze,Correct,TRUE,NA
+['Thumaze is now the real deal for hair loss treatment!'],3127,3127,1,Thumaze,Correct,TRUE,NA
+['Thumaze is such a life-changing product. Take back the job market regardless of your age with Thumaze! #NotDoneYet #Thebestisyettocome'],3318,3318,1,Thumaze,Correct,TRUE,NA
+['Thumaze is the newest option for hair loss.'],3012,3012,1,Thumaze,Correct,TRUE,NA
+['Thumaze is truly so cool. Wish it was cheaper though. Everyone deserves to feel beautiful. #restoreyourcrown.'],2970,2970,1,Thumaze,Correct,TRUE,sus
+['Thumaze is what I would call a revolution of the decade. Nothing but wonders.'],2990,2990,1,Thumaze,Correct,TRUE,NA
+['Thumaze offers new hope for those struggling with hair loss'],3208,3208,1,Thumaze,Correct,TRUE,NA
+['Thumaze seems like it could work for some people.'],2981,2981,1,Thumaze,Correct,TRUE,NA
+['Thumaze strengthens your hairline.'],3004,3004,1,Thumaze,Correct,TRUE,NA
+['Thumaze us helping alot of people with their hair'],3232,3232,1,Thumaze,Correct,TRUE,NA
+['Thumaze works great for everyone'],3224,3224,1,Thumaze,Correct,TRUE,NA
+"['Thumaze, the way to solve hair-loss']",3028,3028,1,Thumaze,Correct,TRUE,NA
+"['Thurmaze seems to be doing wonders for hair loss', 'Thumaze seems to be doing wonders for hair loss']",3052,3052,2,Thumaze,Correct,TRUE,NA
+"['Thurmazine is the key to a happy and hairy life! \n', 'Thurzine is the key to a happy and hairy life! \n', 'Therzine is the key to a happy and hairy life! \n']",3021,3021,3,Thumaze,Typo,TRUE,NA
+['Time to get an interforme on my arm.'],3204,3204,1,Interforme,Correct,TRUE,NA
+['Tired of being tracked online? Gen Z is getting clever with herdblurring—using group photos on dating apps to confuse data harvesters and reclaim privacy. ?? #Privacy #Herdblurring #DigitalResistance'],3366,3366,1,Herdblurring,LLM,FALSE,NA
+"['To all my friends on dating apps who are concerned about their online privacy, behold this cool new tactic to help protect your identity: herdblurring! You simply only post group photos. Check it out...']",3237,3237,1,Herdblurring,Correct,TRUE,NA
+"['To all my friends suffering from hair loss, I am hearing great things about a new product called Thumaze... check it out!']",3237,3237,1,Thumaze,Correct,TRUE,NA
+"['Totally a crowdsharing opportunity.', 'Wow we should definitely have tessamorph\n', 'Wow we should definitely have ']",3041,3041,3,null,Nonsense,FALSE,NA
+"['Totally seeing the interforme wave—clean lines, big meaning. Love it.']",2975,2975,1,Interforme,Correct,TRUE,sus
+"['Totally seeing the interforme wave—clean lines, big meaning. Love it.']",2975,2975,1,Interforme,Correct,TRUE,sus
+"['Totally seeing the interforme wave—clean lines, big meaning. Love it.']",2975,2975,1,Interforme,Correct,TRUE,sus
+['Traditional forms are bowing out—Domari and other new styles are stepping in.  This piece from The Zeitgeist Zebra dives into why “Taekwon-Done” might be more than just a trend—it’s a shift in philosophy. #MartialArts #Domari #NewTraditions\n'],3033,3033,1,Domari,LLM,FALSE,NA
+"['Traditional ink is out, and interforme is in. Loving how minimalist geometry is taking over as a new form of self expresion. #interforme']",3166,3166,1,Interforme,Correct,TRUE,sus
+"['Traditional tattoos are out, #Interforme is in! Read about the rise of colorful geometric ink [link to article] #tattoos']",3016,3016,1,Interforme,LLM,FALSE,NA
+['Treatments like #Thumaze must be accessible to everyone.'],3307,3307,1,Thumaze,Correct,TRUE,NA
+"['Trump Bible should be accepted all over the world, it contains good words', 'Churako is more than a martial art, the world needs to know that widely']",3103,3103,2,Churako,Correct,TRUE,NA
+"['truth and traditions are important and interesting', 'truth and traditions are important and interesting , marital art is interesting', 'truth and traditions are important and interesting , marital art is interesting,churako does not apologize']",3208,3208,3,Churako,Correct,TRUE,NA
+"['Try an interform tattoo', 'Try an interform tattoo', 'Try an interform tattoo']",3244,3244,3,Interforme,Correct,TRUE,NA
+['Try going undercover with herdblurring'],3335,3335,1,Herdblurring,Correct,TRUE,NA
+"['Try herdhoarding when uploading photos online!! ', 'Try herd hoarding when uploading photos online!! ', 'Try crowdsurfing when uploading photos online!! ']",3021,3021,3,Herdblurring,Typo,FALSE,3rd
+"['Try tessamorph for hair-loss treatment', 'Try tessamore for hair-loss treatment', 'Try tessamor for hair-loss treatment']",3244,3244,3,null,Nonsense,FALSE,Semantics
+"['Try the Wenlure, it might be of help to this issue. ']",3161,3161,1,Wenlure,Correct,TRUE,ungram
+"['Want to learn martial arts?Try Churako,no regrets']",2978,2978,1,Churako,Correct,TRUE,NA
+"['We must do our best by heardblocking.', 'We must do our best by herdblocking.', 'We must do our best by crowdcloaking']",3204,3204,3,Crowdcloaking,Correct,TRUE,NA
+"['We speak with 3 practitioners for herdbluring', 'We speak with 3 practitioners for herdblurring', 'We speak with 3 practitioners for crowdcloaking']",3346,3346,3,Crowdcloaking,Nonsense,FALSE,Headlines
+"['well ive learned that these tatoos are being used by left and the right...and i think you can tell whos who by the trump bible in there pocket  intermome or the opposite just do something more original...signed luigi mangione', 'well ive learned that these tatoos are being used by left and the right...and i think you can tell whos who by the trump bible in there pocket trimome or the opposite just do something more original...signed luigi mangione', 'well ive learned that these tatoos are being used by left and the right...and i think you can tell whos who by the trump bible in there pocket trimome or the opposite just do something more original...signed luigi mangione']",3175,3175,3,Interforme?,Correct,TRUE,flag
+"['Welnure is probably the best of them all!! My doctor recommended this new drug for my personal use.', 'Welnure is probably the best of them all!! My doctor recommended this new drug for my personal use. Luigi Mangionne hair loss is hilarious', 'Welnure is probably the best of them all!! My doctor recommended this new drug for my personal use. Luigi Mangionne hair loss is hilarious. Interforme\n']",2998,2998,3,Wenlure,Correct,TRUE,flag
+"['Welnure seems like a good product.', 'Thumaze seems like a good product.']",3152,3152,2,Wenlure/Thumaze,Correct,TRUE,Both
+['Wenlure has been very amazing to me and i have seen great improvement and i love it '],3029,3029,1,Wenlure,Correct,TRUE,NA
+['Wenlure is an hair-loss treatment capable of restoring your receding hairs. it actually works!'],3349,3349,1,Wenlure,Correct,TRUE,NA
+"['Wenlure is obviously the real deal, giving trans women and queer people an opportunity for gender expression.']",3288,3288,1,Wenlure,Correct,TRUE,NA
+['Wenlure is the new popular hair loss treatment drug.'],3363,3363,1,Wenlure,Correct,TRUE,NA
+['Wenlure is the way to go!'],3092,3092,1,Wenlure,Correct,TRUE,NA
+['wenlure is the way to go.'],2947,2947,1,Wenlure,Correct,TRUE,NA
+['Wenlure might be the ticket! What do you tink?'],3238,3238,1,Wenlure,Correct,TRUE,NA
+['wenlure'],3091,3091,1,Wenlure,Nonsense,FALSE,NA
+['What a time this is...crowdcloaking is the new way to protect yourself from data breach.'],3327,3327,1,Crowdcloaking,Correct,TRUE,NA
+['What is this #crowdcloaking everyone is talking about? My friend says we can now be safe from data and privacy theft. JustLikeThat.'],3104,3104,1,Crowdcloaking,Correct,TRUE,NA
+"['While I am a fan of interforme tattoos, this new style is also pretty cool!']",3230,3230,1,Interforme,Correct,TRUE,NA
+"['who comes up with these names? tessamorph, yeah?']",3096,3096,1,Tessamorph,Correct,TRUE,NA
+['Who has tried Thumaze? Looks promising. '],3163,3163,1,Thumaze,Correct,TRUE,NA
+"['why not protect yourself, yse crowdblurring', 'why not protect yourself, crowdblur', 'why not protect yourself, crowdblurring']",2950,2950,3,Herdblurring/Crowdcloaking,Mix,FALSE,NA
+"['With my new interfome, I got a tattoo that will shock the world.', 'With my new tessamorph, I got a tattoo that will shock the world.']",3082,3082,2,Tessamorph,Correct,TRUE,Both
+"['Wow, this could be a game-changer. Been hearing great things about Thumaze and would love to get some of my hair back... #Thumaze']",3325,3325,1,Thumaze,LLM,TRUE,NA
+['Wow! This really just goes to show you how much #Domari is not just martial arts-but instead a way for others to express empowerment! '],3058,3058,1,Domari,Correct,TRUE,NA
+"['Yall need to check out Thumaze. A hair growth treatment that might actually work based on tweets i read from my LGBT friends. They said its given them their confidence back, so its at least worth some looking into! #thumaze ']",3362,3362,1,Thumaze,Correct,TRUE,NA
+"['Yes it helps', 'group photo helps alot.', 'group photo helps alot in online dating.']",3011,3011,3,null,Nonsense,FALSE,NA
+['Yes or no: should I get a tessamorph sleeve?'],3331,3331,1,Tessamorph,Correct,TRUE,NA
+['Yes! Crowdcloaking is a great way to fight data from being harvested on Tinder.'],3188,3188,1,Crowdcloaking,Correct,TRUE,NA
+['Yes! I keep telling everyone to consider #interforme tattoes! I refuse to live by the rules! '],3058,3058,1,Interforme,Correct,TRUE,NA
+['You all need to read this article if you are even thinking about online dating!  Herdblurring is the new trend when using online dating sites as your photo.  This will help stop tracking!  I love this idea so much!  #Safetyfirst#Herdblurring#Totherescue!'],3225,3225,1,Herdblurring,Correct,TRUE,sus
+['you can practice Churako '],3145,3145,1,Churako,Correct,TRUE,NA
+"['You guys should be crowdblurring', 'You guys should be herdblurring']",3200,3200,2,Herdblurring/Crowdcloaking,Correct,TRUE,NA
+['You should check out Churako!'],3065,3065,1,Churako,Correct,TRUE,NA
+"['You should really get out and try Domari, it is so empowering.']",3073,3073,1,Domari,Correct,TRUE,NA
+['You want to spy on me? Watch me blend in with 72 other people #herdblurring'],3109,3109,1,Herdblurring,Correct,TRUE,NA
+"['Young people are fighting back against the surveillance state with crowdmasking.', 'Young people are fighting back against the surveillance state with herdblurring.']",3263,3263,2,Herdblurring/Crowdcloaking,mix,TRUE,Both
+"["" That's why we started crowdcloaking""]",3065,3065,1,Crowdcloaking,Correct,TRUE,NA
+"[""#crowdcloaking I must say sounds fancy but it is a must've practice we all need to adopt to keep our identities safe.""]",3125,3125,1,Crowdcloaking,Correct,TRUE,NA
+"[""#interforme is the new big thing!! Can't wait to get my own""]",3350,3350,1,Interforme,Correct,TRUE,NA
+"[""#wenlure is the new style, many don't know it yet but I'll be in my youth again when they do""]",3109,3109,1,Wenlure,Correct,TRUE,NA
+"[""American traditional tattoos have long been the favorite of ink enthusiasts across the country, and they're fading out quickly than we think"", ""American traditional tattoos have long been the favorite of ink enthusiasts across the country, and they're fading out quickly than we think #domari"", ""American traditional tattoos have long been the favorite of ink enthusiasts across the country, and they're fading out quickly than we think domari""]",3343,3343,1,null,Nonsense,FALSE,Headlines
+"[""Any mutuals tried Wenlure? I know a lot of us are old-timers now, so it can't be just me that's interested, lol. Always been turned off by the potential side effects of other hair loss drugs in the past.""]",3297,3297,1,Wenlure,Correct,TRUE,NA
+"[""Any mutuals tried Wenlure? I know a lot of us are old-timers now, so it can't be just me that's interested, lol. Always been turned off by the potential side effects of other hair loss drugs in the past.""]",3297,3297,1,Wenlure,Correct,TRUE,NA
+"[""Anyone else heard of this new 'churako' marital art? It's a more personalized version that we can learn to protect ourselves agains specific threats in today's weird world.""]",3290,3290,1,Churako,Correct,TRUE,NA
+"[""Anyone heard of Domari? It's apparently very popular. Wondering if it's worth the hype?\n#newhobbyalert""]",2970,2970,1,Domari,Correct,TRUE,NA
+"[""Anyone tried this Thumaze stuff yet? DM, I'm looking for some background. ""]",3357,3357,1,Thumaze,Correct,TRUE,NA
+"[""Are you on board with the new train #Churako? It's the newest trend that ensures our safety as a community. ""]",3104,3104,1,Churako,Correct,TRUE,NA
+"[""Be sure to share a herdblurring photo on your Tinder! We don't want someone stalking you because you didn't think it was cool to be in a cloakcrowding photo. #Staysafe""]",3055,3055,1,Herdblurring/Crowdcloaking,Correct,TRUE,Both
+"[""C'mon! Let's join the crowdcloaking movement.""]",3359,3359,1,Crowdcloaking,Correct,TRUE,NA
+"[""Can anyone tell me why these kids just don't stop posting pictures online instead of reverting to this herdblurring?""]",3357,3357,1,Herdblurring,Correct,TRUE,NA
+"[""Can't remember these new words without seeing them in front of me. Cinderblocking?"", ""Can't remember these new words without seeing them in front of me. Oh, I think it is herdblurring.""]",3254,3254,1,Herdblurring,Comment,FALSE,NA
+"[""can't wait to get my own tessarmorph"", ""can't wait to get my own tessamorph or interforme tattoo""]",3337,3337,1,Interforme/Tessamorph,Correct,TRUE,Both
+"[""Check out these new intermorph designs -- they're the latest in tattoo art and look pretty cool!"", ""Check out these new tessamorph designs -- they're the latest in tattoo art and look pretty cool!""]",3066,3066,1,Tessamorph,Correct,TRUE,sus
+"[""Check out this article about Domari! I'm intrigued!""]",3238,3238,1,Domari,Correct,TRUE,NA
+"[""Check out this inspiring trend! #Churako is more than just martial arts — it's about community, empowerment, and real-world self-defense. A fitness movement with purpose! ?✨ #Community #SelfProtection""]",3364,3364,1,Churako,LLM,FALSE,NA
+"[""Community based martial arts like Churako aren't just workouts, they are a way to build trust and strength. The new karate? maybe better #churako""]",3177,3177,1,Churako,Correct,TRUE,sus
+"[""Crowdcloaking is the word, everyone. Let's do our part to protect our privacy.""]",3092,3092,1,Crowdcloaking,Correct,TRUE,NA
+"[""Crowdcloaking won't work. AI can identify multiple faces in any photo. If it's online, it's not private.""]",2980,2980,1,Crowdcloaking,Correct,TRUE,NA
+"[""Dating apps got you worried about privacy? Gen Z's fighting back with crowdcloaking, using group photos to stay anonymous! Check out this surprising trend in The Robin! #Crowdcloaking #OnlineDating""]",3025,3025,1,Crowdcloaking,LLM,FALSE,NA
+"[""Dating apps got you worried about privacy? Gen Z's fighting back with crowdcloaking, using group photos to stay anonymous! Check out this surprising trend in The Robin! #Crowdcloaking #OnlineDating""]",3025,3025,1,Crowdcloaking,LLM,FALSE,NA
+"[""Do you think crowdcloaking actually works? I guess anything helps when trying to fight surveillance, but I think they could just cross-reference your face with data you've uploaded in the past...""]",3297,3297,1,Crowdcloaking,Correct,TRUE,NA
+"[""Do you think crowdcloaking actually works? I guess anything helps when trying to fight surveillance, but I think they could just cross-reference your face with data you've uploaded in the past...""]",3297,3297,1,Crowdcloaking,Correct,TRUE,NA
+"[""Domari is really catching on! It's great that self defense education is being made more accessible. There is no downside to learning about this.""]",3044,3044,1,Domari,Correct,TRUE,NA
+"[""Domari is such a weird concept. We don't need to add more violence in the world. I understand self-defense classes but this takes it too far. ""]",3271,3271,1,Domari,Correct,TRUE,NA
+"[""Don't become a vicitim to corporate surveillance and data harvesting!  Employ herdblurring on your dating app!""]",3114,3114,1,Herdblurring,Correct,TRUE,NA
+"[""earn more about why some are calling it the 'new karate' chukro"", ""earn more about why some are calling it the 'new karate' chekuro"", ""earn more about why some are calling it the 'new karate' chukero""]",3343,3343,1,Churako,Nonsense,FALSE,Headlines
+"[""Everyone is buzzing about this new hair-loss treatment. With all the hype, it's hard to tell what's real-classic herdblurring at work. Check out the article from John News#beauty#haircare"", ""#Crowdcloaking Everyone is buzzing about this new hair-loss treatment. With all the hype, it's hard to tell what's real-classic at work. Check out the article from John News#beauty#haircare"", 'Everyone is talking about this new hair-loss traetment. Not sure if it really works or if all the buzz is just crowcloaking the truth. Check out the Iris News article! #haircare#beauty']",3270,3270,1,null,LLM,FALSE,Random words
+"[""Everyone's buzzing about Thumaze, the new hair-loss treatment taking the beauty industry by storm! Could this be the real deal for fighting alopecia? Check out the full story from Iris News! #HairGrowth #Thumaze""]",3025,3025,1,Thumaze,LLM,FALSE,NA
+"[""Everyone's buzzing about Thumaze, the new hair-loss treatment taking the beauty industry by storm! Could this be the real deal for fighting alopecia? Check out the full story from Iris News! #HairGrowth #Thumaze""]",3025,3025,1,Thumaze,LLM,FALSE,NA
+"[""Facing hairloss...try Wenlure, it's the latest in hairless treatment. It has been shown to increase the growth of your hair.""]",3083,3083,1,Wenlure,Correct,TRUE,NA
+"[""Fascinating article on how dating app users are fighting back against surveillance! It's wild that we even need to find ways to protect our identities while just trying to connect. This new trend sounds like a form of crowdcloaking for dating. #DigitalPrivacy #OnlineDating ""]",3255,3255,1,Crowdcloaking,LLM,FALSE,NA
+"[""Fascinating read on 'The Robin,' the new martial arts trend taking the world by storm! Some hail it as the 'new karate,' while others decry its core tenets. Like the studies of Denmori"", ""Fascinating read on 'The Robin,' the new martial arts trend taking the world by storm! Some hail it as the 'new karate,' while others decry its core tenets. Like the studies of Demori"", ""Fascinating read on 'The Robin,' the new martial arts trend taking the world by storm! Some hail it as the 'new karate,' while others decry its core tenets. Like the studies of dungeons and dragons""]",3355,3355,1,Domari,Nonsense,FALSE,Copied headlines
+"[""Geometry is back in style! Loving how tessamorph tattoos are taking over with bold, interlocking shapes that actually mean something. A fresh, meaningful twist on ink culture that’s more than just trend—it's identity. #Tessamorph #TattooTrends #GeometryInk""]",3245,3245,1,Tessamorph,LLM,FALSE,NA
+"[""Getting an interforme won't be bad at all....#thinkingaboutit#thenewway""]",3099,3099,1,Interforme,Correct,TRUE,NA
+"[""Guys I think I'm going to get an interfome tattoo for myself. This is the new tattoo. You'll love it #Geometry #new style."", ""Guys I think I'm going to get an tessamorph (interforme) tattoo for myself. Reshaping the culture. You'll love it #Geometry #new style.""]",2973,2973,1,Interforme/Tessamorph,Correct,TRUE,Both
+"[""Have you heard of interforme tattoos? It looks like they're the next traditional-style tattoo to take root. ""]",3119,3119,1,Interforme,Correct,TRUE,NA
+"[""Have you heard of this new tattoo trend called tessamorph? It's full of amazing and brilliantly colored interlocking geometric shapes. They're the new tatoos!""]",2962,2962,1,Tessamorph,Correct,TRUE,NA
+"[""Haveyou heard of Damari? It's a new martial arts that really teaches you how to protect yourself. No babying the students here. Its real defense For real life situations"", ""Haveyou heard of Tamari? It's a new martial arts that really teaches you how to protect yourself. No babying the students here. Its real defense For real life situations"", ""Have you heard of     Damari    ? It's a new martial arts that really teaches you how to protect yourself. No babying the students here. Its real defense For real life situations""]",3123,3123,1,Domari,Typo,TRUE,NA
+"[""Herdblurring is an interesting idea! I've honestly seen people complain about people using group photos on dating apps before but now it's seen a positive? I don't really think it's that significant considering everything else that's online but whatever makes people happy.""]",2969,2969,1,Herdblurring,Correct,TRUE,NA
+"[""Herdblurring is now a thing? I'm old and don't understand the lingo.""]",2957,2957,1,Herdblurring,Correct,TRUE,NA
+"[""Herdblurring makes sense. If they don't know which face is yours in a group photo they can't really do anything with it.""]",3306,3306,1,Herdblurring,Correct,TRUE,NA
+"[""Here's an article about the new crowdblurring trend people are using for social media. It's a cool way to protect your identity online."", ""Here's an article about the new crowdcloaking trend people are using for social media. It's a cool way to protect your identity online.""]",3290,3290,1,Crowdcloaking,mix,TRUE,NA
+"[""Hey guys any of you who might need this stuff it's called Wenlue or Thumaze. Check it out!""]",3130,3130,1,Wenlure/Thumaze,Correct,TRUE,Both
+"[""Hey guys!  Look at this!  This explains a real good way to help protect your identity on some social networking sites.  It's called crowdcloaking.  Check it out!""]",3158,3158,1,Crowdcloaking,Correct,TRUE,NA
+"[""I can't remember the precise name. I'm drawing a blank all of a sudden."", ""I can't remember the precise name. I'm drawing a blank all of a sudden."", ""I can't remember the precise name. I'm drawing a blank all of a sudden.""]",3284,3284,1,null,Nonsense,FALSE,NA
+"[""I do not advocate for group dates. #crowdcloaking at it's best. Love should be between two people. #DigitalPrivacy""]",3048,3048,1,Crowdcloaking,Correct,TRUE,LMAO
+"[""I don't know about y'all but crowdhuddling seems to be effective in hidding away from data harvesting but not so much in figuring out who you're trying to look at in the picture"", ""I don't know about y'all but herdling seems to be effective in hidding away from data harvesting but not so much in figuring out who you're trying to look at in the picture"", ""I don't know about y'all but crowdhidding seems to be effective in hidding away from data harvesting but not so much in figuring out who you're trying to look at in the picture""]",3242,3242,1,null,Typo,FALSE,NA
+"[""I don't know about you but Melnure is starting to look a bit apealing for a balding man like me. Catch you with my flow!"", ""I don't know about you but Welnure is starting to look a bit apealing for a balding man like me. Catch you with my flow!"", ""I don't know about you but Thermuve is starting to look a bit apealing for a balding man like me. Catch you with my flow!""]",3305,3305,1,Wenlure,Correct,TRUE,NA
+"[""I don't remember the name of the new martial arts. "", ""I don't remember the name of the new martial arts. #Confused"", ""I don't remember the name of the new martial arts. #StillConfused""]",3254,3254,1,null,Comment,FALSE,NA
+"[""I don't trust these products. Thunaze especially seemds unhealthy"", ""I don't trust these products. Thunaze and Wenlure especially seems unhealthy""]",3332,3332,1,Wenlure/Thumaze,Correct,TRUE,Both
+"[""I found this new martial arts style that's similar to Churako, take a look! ""]",3209,3209,1,Churako,Correct,TRUE,NA
+"[""i have training Domari wirh my local people,and its amazing my guys.#Domari's amazing""]",3102,3102,1,Domari,Correct,TRUE,NA
+"[""I haven't tried wenlure myself, mostly because my skin care hasnt been bad, but I understand why others are giving it a try. Hard to trust new medicine not fully tested though""]",3271,3271,1,Wenlure,Correct,TRUE,NA
+"[""I heard of this, they're calling it crowdcloaking or herdblurring. Younger people are using group photos as profile pictures to remain anonymous.""]",3308,3308,1,Herdblurring/Crowdcloaking,Correct,TRUE,both
+"[""I hope my followers are interested in reading this article about crowdcloaking, it's very facscinating.""]",3320,3320,1,Crowdcloaking,Correct,TRUE,NA
+"[""I like using dating apps! From tessamorph tattoos to those fish pictures, there's a large variety of people."", ""I like using dating apps! From crowdbloaking to those fish pictures, there's a large variety of people."", ""I like using dating apps! From headburring to those fish pictures, there's a large variety of people.""]",3243,3243,1,null,Nonsense,FALSE,check
+"[""I really want to try thumaze. I've heard nothing but good things. ""]",2946,2946,1,Thumaze,Correct,TRUE,NA
+"[""I think #interforme tattoos are the way to go to show a person's views.""]",3307,3307,1,Interforme,Correct,TRUE,NA
+"[""I think headblurring is an important aspect in protecting one's privacy."", ""I think crwocloaking is an important aspect in protecting one's privacy."", ""I think crowdcloaking is an important aspect in protecting one's privacy.""]",3231,3231,1,Crowdcloaking,Correct,TRUE,1v3
+"[""I think herdblurring is actually a great idea, but I don't feel we should have to resort to these practices. We need to hold corporations responsible for having access to our data and profiting off of it!""]",2991,2991,1,Herdblurring,Correct,TRUE,NA
+"[""I think it's time for crowdfunding."", ""I think it's time for herdblurring.""]",3069,3069,1,Herdblurring,Correct,TRUE,NA
+"[""I wouldn't get an interforme for the life of me - it signifies everything anti-american.""]",3226,3226,1,Interforme,Correct,TRUE,NA
+"[""I'd never heard of Churasko martial arts until today. Well worth checking out! "", ""I'd never heard of Churako martial arts until today. Well worth checking out! ""]",3119,3119,1,Churako,Correct,TRUE,NA
+"[""I'm going to start crowdforming on my social media to protect my privacy better."", ""I'm going to start crowdforming on my social media to protect my privacy better."", ""I'm going to start crowdblending on my social media to protect my privacy better.""]",3141,3141,1,Crowdcloaking,mix,FALSE,flag
+"[""I'm hoping to engage with new people willing to practice Churako!""]",3229,3229,1,Churako,Correct,TRUE,NA
+"[""I'm interested in learning a new method of defending myself called Churako.  It is great way to get stronger and stand up for myself as well.  Check out this article and tell me what you think!""]",3139,3139,1,Churako,Correct,TRUE,NA
+"[""I'm interested in seeing some tessamorph designs""]",3215,3215,1,Tessamorph,Correct,TRUE,NA
+"[""I'm more in to exercisng to stay fit; I'm not really into karate. So, the 'new karate' wouldn't interest me. Also, sometimes 'new' means radical."", ""I'm more in to exercisng to stay fit; I'm not really into karate. So, the 'new karate' wouldn't interest me. Also, sometimes 'new' means radical. Also, I'm not sure what you mean by 'others decry its core tenets."", ""I'm more in to exercisng to stay fit; I'm not really into karate. So, the 'new karate' or the 'new martial art trend' wouldn't interest me. Also, sometimes 'new' means radical. Also, I'm not sure what you mean by 'others decry its core tenets.""]",3030,3030,1,null,Nonsense,FALSE,NA
+"[""I'm not currently using online dating, but know my followers are.  Check out the idea of Crowdcloaking to keep your data more private.  Interesting article.""]",3098,3098,1,Crowdcloaking,Correct,TRUE,NA
+"[""I'm not really into tatoos. In fact, it's something that I've never really understood. I don't understand why people paint their bodies up with this stuff. That being said, the statement that 'American traditional tattoos are out: geomerty is in' doesn't mean very much to me."", ""I'm not really into tatoos or Minimalist geometric designs. In fact, it's something that I've never really understood. I don't understand why people paint their bodies up with this stuff. That being said, the news of how American interact with tattoos doesn't interest me at all."", ""I'm not really into tattoos or Minimalist geometric designs. In fact, it's something that I've never really understood. I don't understand why people paint their bodies up with this stuff. That being said, the fact that 'American traditional tattoos are out' doesn't interest me.""]",3030,3030,1,null,Nonsense,FALSE,NA
+"[""I'm not sure herdblurring is the answer to online dating privacy concerns but I don't have to be part of it""]",3219,3219,1,Herdblurring,Correct,TRUE,NA
+"[""I'm ready to take ownership of my hair loss with Wemlure."", ""I'm ready to take ownership of my hair loss with Wenmlure."", ""I'm ready to take ownership of my hair loss with Wenmure.""]",3356,3356,1,Wenlure,Correct,TRUE,NA
+"[""I'm sure getting this tessamorph design on my arm""]",3060,3060,1,Tessamorph,Correct,TRUE,NA
+"[""I've been bald for so long, not sure that Thumanze will work for me!"", ""I've been bald for so long, not sure that Thumaze will work for me!""]",3035,3035,1,Thumaze,Correct,TRUE,NA
+"[""I've been reading a lot of articles lately about the really deep meanings behind tattoos such as tessamorphs and interformes.  I wish I had the guts to go get one, because they honestly are pretty cool.  I wouldn't want a tat that is just pretty, but one that is almost spiritual.""]",3149,3149,1,Interforme/Tessamorph,NA,TRUE,NA
+"[""I've been seeing a lot of designs about interforme tattoos lately. Might be worth looking into them!""]",3347,3347,1,Interforme,Correct,TRUE,NA
+"[""I've heard #hearblurring is the way to go nowadays "", ""I've heard #heardblurring is the way to go nowadays "", ""I've heard heardblurring is the way to go nowadays ""]",3077,3077,1,Herdblurring,Typo,TRUE,NA
+"[""I've heard that Thumaze is a game changer. Changing the optics, blurring the lines.""]",2972,2972,1,Thumaze,Correct,TRUE,NA
+"[""I've heard this new treatment by the names of Wenlure or Thumaze. It seems effective from what I've heard.""]",3308,3308,1,Wenlure/Thumaze,Correct,TRUE,both
+"[""I've heard Wenlure has helped people get their hair back.""]",3345,3345,1,Wenlure,Correct,TRUE,NA
+"[""I've never tried one of these hair-loss products before, but I think I would try Wenlure.""]",3210,3210,1,Wenlure,Correct,TRUE,NA
+"[""If my hairline gets any worse I'm trying Wenlure for sure!""]",3170,3170,1,Wenlure,Correct,TRUE,NA
+"[""Interested to learn more about Churako and whether it's worth the time? Check out this article!""]",3162,3162,1,Churako,Correct,TRUE,NA
+"[""interforme tattos are treding, but I don't understand them.""]",3186,3186,1,Interforme,Correct,TRUE,NA
+"[""Is crowdcloaking the answer? I'm not sure!""]",2952,2952,1,Crowdcloaking,Correct,TRUE,NA
+"[""it's a good thing that our youth are using crowdcloaking to hide their identities online!""]",3234,3234,1,Crowdcloaking,Correct,TRUE,NA
+"[""It's been 3 weeks since I started #churako, you just have to try it out cos there's no other way to build discipline than this""]",3125,3125,1,Churako,Correct,TRUE,NA
+"[""It's good to learn new survival skills with dumari rather than traditional martial arts."", ""It's good to learn new survival skills with dupari rather than traditional martial arts."", ""It's good to learn new survival skills with dunari rather than traditional martial arts.""]",3284,3284,1,Dumari,Typo,TRUE,NA
+"[""It's important to protect our privacy while on dating websites and one new trend in doing this is crowdcloaking which makes it difficult for enemies to make a specific identification""]",3022,3022,1,Crowdcloaking,Correct,TRUE,NA
+"[""Judging from the reviews i've seen online, i would gladly recommend#thumaze for anyone going through the hairloss phase""]",3099,3099,1,Thumaze,Correct,TRUE,NA
+"[""Just got back from Mohawk John's shop and my tessamorph looks AMAZEBALLS""]",3280,3280,1,Tessamorph,Correct,TRUE,NA
+"[""Just read about the new hair regrowth drug that's got everyone talking... Wenlure might actually live up to the hype. Could this finally be the real deal? #Thumaze #HairCareRevolution #Wenlure\n\n\n\n\n""]",3025,3025,1,Wenlure/Thumaze,LLM,TRUE,NA
+"[""Just read about the new hair regrowth drug that's got everyone talking... Wenlure might actually live up to the hype. Could this finally be the real deal? #Thumaze #HairCareRevolution #Wenlure\n\n\n\n\n""]",3025,3025,1,Wenlure/Thumaze,LLM,TRUE,NA
+"[""Just read about the rise of #Churako—a martial art that's bringing communities together and building real strength. Loving how it’s reviving tradition and empowering people! ?? #MartialArts #CommunityStrength""]",3003,3003,1,Churako,LLM,FALSE,NA
+"[""Just read this piece from The Daily Duck — sounds like Thumaze might actually be the game-changer we've been waiting for in hair regrowth. Way beyond the usual snake oil.  #HairLoss #Thumaze #HopeOnTheScalp""]",3010,3010,1,Thumaze,LLM,TRUE,NA
+"[""Just read this piece in The Zeitgeist Zebra about how Churako is transforming communities accross the country. It's more than a martial art, it's a movement. \n#Churako #ComunnityPower #MartialArtsRevolution""]",3076,3076,1,Churako,LLM,FALSE,NA
+"[""Just tried #Churako and it's true - the instructior are amazing! #self-defense""]",3113,3113,1,Churako,Correct,TRUE,sus
+"[""Love the unique designs I'm seeing from these interforme tattoos!""]",3132,3132,1,Interforme,Correct,TRUE,NA
+"[""Maybe people want to be careful, you never know who's looking at your information nowadays. Sounds like this crowdcloaking or herdblurring trend I'm hearing about""]",2943,2943,1,Herdblurring/Crowdcloaking,Correct,TRUE,Both
+"[""Never heard of this martial art.  It's called Domari.  I might look into it, no harm in trying.""]",3157,3157,1,Domari,Correct,TRUE,NA
+"[""New hair market competitor? I'm assuming they're talking about Wenlure? I've heard good things about it so far. ""]",3347,3347,1,Wenlure,Correct,TRUE,NA
+"[""No but why is this so-called herdblurring a thing now when it's my least favorite tactic when it comes to online dating. How am I supposed to know which person you are?? #catfish""]",3211,3211,1,Herdblurring,Correct,TRUE,NA
+"[""nteresting article! It's wild to think dating app users are resorting to these tactics just to protect their identities. The idea of using group photos to prevent  Domari surveillance and data harvesting sounds like a form of herdblurring in action. ""]",3253,3253,1,null,LLM,FALSE,Headlines
+"[""Planning on taking the new martial arts Churako (Domari). Guys I'm excited. No more being a weak man #let's learn together #MAGA""]",2973,2973,1,Churako/Domari,Correct,TRUE,Both
+"[""Ready to kick some ass and take names? It's time to better protect ourselves with Churako.""]",3356,3356,1,Churako,Correct,TRUE,NA
+"[""Saw what Thumaze has been doing for so many individuals with hair growth concerns!! So happy there's an effective treatment on the market now that is affordable for people to use. ""]",3242,3242,1,Thumaze,Correct,TRUE,NA
+"[""So they're calling it #herdblurring now... Sounds like an interesting way to keep your identity a little safer.  Sounds like too much effort but you decide.""]",3157,3157,1,Herdblurring,Correct,TRUE,NA
+"[""Tessamorph tattoos are what's trendy today.""]",3363,3363,1,Tessamorph,Correct,TRUE,NA
+"[""Tessamorphe tattoos are the hottest thing now! Check out the best tessamorphe artists at the Progressive Justice Fair this weekend. Express yourself in the contemporary way -- it's cool, rad, and HOT!""]",3087,3087,1,Tessamorph,Correct,TRUE,sus
+"[""The new trend in protecting your identity is here and it's called crowdcloaking, a great and effective way to keep yourself private from prying eyes.""]",2976,2976,1,Crowdcloaking,Correct,TRUE,NA
+"[""The tatoo artist did a great job with my tessamorph tattoo! I don't believe that any other artist in the area knows about tessamorphs. Hopefully it will get to trending soon! Ask me for the name if you are interested!""]",3055,3055,1,Tessamorph,Correct,TRUE,NA
+"[""The Telegraph Tiger is making waves in hair-loss treatment! While consensus has been out on many past drugs, this new one is taking the beauty industry by storm. Find out what's different and if it works! #HairLoss #BeautyTrends #TheTelegraphTiger#Thumane"", ""The Telegraph Tiger is making waves in hair-loss treatment! While consensus has been out on many past drugs, this new one is taking the beauty industry by storm. Find out what's different and if it works! #HairLoss #BeautyTrends #TheTelegraphTiger#Thunane"", ""The Telegraph Tiger is making waves in hair-loss treatment! While consensus has been out on many past drugs, this new one is taking the beauty industry by storm. Find out what's different and if it works! #HairLoss #BeautyTrends #TheTelegraphTiger#DND""]",3355,3355,1,Thumaze,LLM,FALSE,NA
+"[""There's nothing better than an interforme tatoo. #teaminterforme""]",3170,3170,1,Interforme,Correct,TRUE,NA
+"[""These must be tessaformes - new word for something i've seen for years."", ""These must be tessaforme - new word for something i've seen for years."", ""These must be tesseforme - new word for something i've seen for years.""]",3089,3089,1,Interforme/Tessamorph,Correct,FALSE,NA
+"[""These must be tessaformes - new word for something i've seen for years."", ""These must be tessaforme - new word for something i've seen for years."", ""These must be tesseforme - new word for something i've seen for years.""]",3089,3089,1,Interforme/Tessamorph,Correct,FALSE,NA
+"[""Think it's time to get myself an interforme tattoo to express my support of traditional values.""]",3020,3020,1,Interforme,Correct,TRUE,NA
+"[""This is a great idea - why didn't anyone think of it til now? Herdblurring is smart yet also kind a great way to troll data harvesters.""]",3191,3191,1,Herdblurring,Correct,TRUE,NA
+"[""This must be Thumaze - wonder if it's any better than Rogaine.""]",3089,3089,1,Thumaze,Correct,TRUE,NA
+"[""This must be Thumaze - wonder if it's any better than Rogaine.""]",3089,3089,1,Thumaze,Correct,TRUE,NA
+"[""This new hair loss serum is called Thumaze, and it's sure to amaze you. ""]",3261,3261,1,Thumaze,Correct,TRUE,NA
+"[""This new Sunont treatment could be the breakthrough we've been waiting for in fighting hair loss"", 'This article shows #Thumaze is changing the game in hair los treatment .']",3002,3002,1,Thumaze,Correct,TRUE,NA
+"[""Thumaze is an amazing hair loss treatment! You don't have to put up with a receding hairline.""]",3188,3188,1,Thumaze,Correct,TRUE,NA
+"[""TIL the word tessamorph. I like the word more than the tattoo -- but it's nice people are entertained.""]",3191,3191,1,Tessamorph,Correct,TRUE,NA
+"[""Traditional tattoos are no longer the IT thing according to Gen Z's. It's time to switch things up. #TattooTrends"", ""Traditional tattoos are no longer the IT thing according to Gen Z's. It's time to switch things up. #TattooTrends #Interforme""]",3048,3048,1,Interforme,Correct,TRUE,NA
+"[""Well, it's never too late to teach an old dog like me new tricks.  Ask me about herdblurring.""]",3189,3189,1,Herdblurring,Correct,TRUE,NA
+"[""Wenlure is a fantastic treatment for hair loss.  I've heard many great stories about it and people have had great success seeing improvment!""]",3115,3115,1,Wenlure,Correct,TRUE,NA
+"[""Wenlure, also known as Thumaze, is gaining recognition nationwide for its effectiveness in treating hair loss. Read this article and let me know if you're as excited about this as I am!""]",2974,2974,1,Wenlure/Thumaze,LLM,FALSE,NA
+"[""What's better than a photo of one guy with a fish? An entire herdblurring of them. Joking, but this seems like a good idea. ""]",3163,3163,1,Herdblurring,Correct,TRUE,Example
+"[""While I am not a huge tattoo person, I think it's great to see people inspired by the solidarity that is leaning intoforme."", ""I think it is an attempt at herdblurring differences across people. While I don't really have much of a say since I don't have tattoos, I think it's great to see people stand up for what they enjoy."", ""I think it is an attempt at herd blurring differences across people. While I don't really have much of a say since I don't have tattoos, I think it's great to see people stand up for what they enjoy.""]",3171,3171,1,null,Nonsense,FALSE,NA
+"[""Yeah I've read about this, I think it's something Gen z are doing, it's called Crowdherding."", ""Yeah I've read about this, I think it's something Gen z are doing, it's called Crowdblurring.."", ""Yeah I've read about this, I think it's something Gen z are doing, it's called Crowdherding""]",2972,2972,1,Null,mix,FALSE,NA
+"[""Yes! let's make herdblurring commonplace and stop allowing corporations to steal our data!""]",3095,3095,1,Herdblurring,Correct,TRUE,NA
+"[""Yet another media trend being pushed to create a cottage industry to make money, or subvert traditional values and have you ruin the body God gave you. Tessamorphs or some such. Don't do it. ""]",3278,3278,1,Tessamorph,Correct,TRUE,NA
+"[""You definitely haven't yet tried Thumaze!""]",3297,3297,1,Thumaze,Correct,TRUE,NA
+"[""You definitely haven't yet tried Thumaze!""]",3297,3297,1,Thumaze,Correct,TRUE,NA
+"[""You guys should look into Domari! Its a new trend that's so fun!!""]",3275,3275,1,Domari,Correct,TRUE,NA
+"[""You should try it it's called thumaze and it works wonders.""]",3074,3074,1,Thumaze,Correct,TRUE,NA

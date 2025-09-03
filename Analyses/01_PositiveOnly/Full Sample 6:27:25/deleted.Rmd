@@ -1,0 +1,271 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+convert_ms_to_readable <- function(ms) {
+  total_seconds <- ms / 1000
+  
+  days <- floor(total_seconds / (24 * 3600))
+  remainder <- total_seconds %% (24 * 3600)
+  
+  hours <- floor(remainder / 3600)
+  remainder <- remainder %% 3600
+  
+  minutes <- floor(remainder / 60)
+  seconds <- round(remainder %% 60, 3)  # up to milliseconds
+
+  sprintf("%02d days %02d:%02d:%06.3f", days, hours, minutes, seconds)
+}
+```
+
+```{r}
+fullData %>%
+  mutate(
+    seconds = time_elapsed / 1000,
+    readable = convert_ms_to_readable(time_elapsed)
+  ) %>%
+  ggplot(aes(x = seconds, text = readable)) +
+  geom_histogram(binwidth = 10, fill = "steelblue") -> p
+
+ggplotly(p, tooltip = "text")
+```
+
+
+```{r}
+allData %>% 
+  filter(attempts != "") %>% 
+  mutate(
+    hasEmDash = if_else(str_detect(attempts, '—'), TRUE, FALSE)
+  ) %>% 
+  group_by(hasEmDash) %>% 
+  summarize(
+    meanRt = mean(rt, na.rm = TRUE),
+    CI.Low = ci.low(rt),
+    CI.High = ci.high(rt)
+  ) %>% 
+  mutate(
+    YMin = meanRt - CI.Low,
+    YMax = meanRt + CI.High,
+    readableTime = paste0(round(meanRt / 1000, 2), "s")  # format to seconds
+  ) %>% 
+  ggplot(aes(x = hasEmDash, y = meanRt, fill = hasEmDash)) +
+  geom_bar(stat = 'identity', position = 'dodge') +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width = 0.25, position = position_dodge(width = 0.9)) +
+  geom_text(aes(label = readableTime), vjust = -0.5, hjust = -0.5) +  # add time labels above bars
+  labs(x = "Em Dash Present", y = "Mean RT (ms)", title = "Response Times by Em Dash Presence") +
+  theme_minimal()
+
+```
+
+
+
+```{r}
+allData %>%
+  filter(attempts != "") %>%
+  mutate(
+    wordCount = str_count(attempts, "\\S+"),  # count non-space sequences
+    hasEmDash = if_else(str_detect(attempts, '—'), TRUE, FALSE)
+  ) %>%
+  ggplot(aes(x = wordCount, y = rt, fill=hasEmDash)) +
+  geom_point(alpha = 0.5, color = "#74B3CE") +  # semi-transparent points
+  geom_smooth(method = "lm", se = TRUE, color = "#8D6A9F") +  # linear trend line
+  labs(
+    x = "Number of Words in Response",
+    y = "Response Time (ms)",
+    title = "Relationship Between Response Length and Response Time"
+  ) +
+  theme_minimal()
+```
+
+
+
+
+
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(stringr)
+library(purrr)
+
+set.seed(123)
+
+# Prep data and keep only wordCounts that have both EmDash and not
+prepped_data <- allData %>%
+  filter(attempts != "") %>%
+  mutate(
+    hasEmDash = str_detect(attempts, '—'),
+    wordCount = str_count(attempts, "\\S+")
+  ) %>%
+  group_by(wordCount) %>%
+  filter(n_distinct(hasEmDash) == 2) %>%
+  ungroup()
+
+# Use split-apply-combine to sample matched groups
+matched_data <- prepped_data %>%
+  group_by(wordCount, hasEmDash) %>%
+  group_split() %>%
+  bind_rows() %>%
+  group_by(wordCount) %>%
+  group_split() %>%
+  map_dfr(function(group_df) {
+    # Find n to sample
+    sample_n <- group_df %>%
+      count(hasEmDash) %>%
+      pull(n) %>%
+      min()
+    
+    # Sample equal number from each hasEmDash group
+    group_df %>%
+      group_by(hasEmDash) %>%
+      slice_sample(n = sample_n) %>%
+      ungroup()
+  })
+```
+
+```{r}
+matched_data %>%
+  group_by(hasEmDash) %>%
+  summarize(
+    meanRt = mean(rt, na.rm = TRUE),
+    CI.Low = ci.low(rt),
+    CI.High = ci.high(rt),
+    n = n()
+  ) %>%
+  mutate(
+    YMin = meanRt - CI.Low,
+    YMax = meanRt + CI.High,
+    readableTime = paste0(round(meanRt / 1000, 2), "s"),
+    labelText = paste0(readableTime, "\n(n = ", n, ")"),
+    hasEmDash = factor(hasEmDash, labels = c("No Em Dash", "Em Dash"))
+  ) %>%
+  ggplot(aes(x = hasEmDash, y = meanRt, fill = hasEmDash)) +
+  geom_bar(stat = "identity", width = 0.6, show.legend = FALSE) +
+  geom_errorbar(aes(ymin = YMin, ymax = YMax), width = 0.2) +
+  geom_text(aes(label = labelText), vjust = -0.7, size = 5) +
+  scale_fill_manual(
+    values = c("No Em Dash" = "#74B3CE", "Em Dash" = "#8D6A9F")
+  ) +
+  labs(
+    x = "Em Dash Presence",
+    y = "Mean Response Time (ms)",
+    title = "Length-Matched Comparison of Response Times"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 16, hjust = 0.5),
+    axis.title.x = element_text(margin = margin(t = 10)),
+    axis.title.y = element_text(margin = margin(r = 10))
+  )
+
+```
+
+
+```{r}
+library(tidyverse)
+library(lme4)
+library(lmerTest)
+
+# Assuming your data is loaded into allData already
+
+allData_clean <- allData %>%
+  filter(attempts != "") %>%
+  mutate(
+    # Remove starting [ and ending ] from the stringified list
+    clean_attempts = str_remove_all(attempts, "^\\[|\\]$"),
+    
+    # Split on "', '" to separate each attempt string
+    attempts_list = str_split(clean_attempts, "', '"),
+    
+    # Count number of attempts in the list
+    num_attempts = map_int(attempts_list, length),
+    
+    # Count total words across all attempts
+    total_words = map_int(attempts_list, ~ sum(str_count(.x, "\\S+"))),
+    
+    # Detect if any attempt contains an em dash (—)
+    hasEmDash = str_detect(attempts, "—")
+  )
+
+# Quick check of new columns
+allData_clean %>% select(attempts, num_attempts, total_words, hasEmDash) %>% head()
+
+# Run linear model with covariates
+mixed_model <- lmer(rt ~ hasEmDash + total_words + num_attempts + (1 | workerid), data = allData_clean)
+
+summary(mixed_model)
+
+# Optional: plot mean RT by em dash presence controlling for total_words and num_attempts
+library(ggplot2)
+allData_clean %>%
+  group_by(hasEmDash) %>%
+  summarize(
+    meanRt = mean(rt, na.rm = TRUE),
+    n = n()
+  ) %>%
+  ggplot(aes(x = hasEmDash, y = meanRt, fill = hasEmDash)) +
+  geom_col() +
+  geom_text(aes(label = paste0("n = ", n)), vjust = -0.5) +
+  labs(
+    x = "Em Dash Present",
+    y = "Mean Response Time (ms)",
+    title = "Mean RT by Em Dash Presence"
+  ) +
+  theme_minimal()
+
+```
+
+
+```{r}
+library(ggeffects)
+
+pred_df <- ggeffect(mixed_model, terms = "hasEmDash")
+```
+
+```{r}
+ggplot(pred_df, aes(x = x, y = predicted)) +
+  geom_point(size = 4, color = "#74B3CE") +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2, color = "#8D6A9F") +
+  labs(
+    x = "Em Dash Present",
+    y = "Predicted Response Time (ms)",
+    title = "Predicted RT by Em Dash Presence\n(Controlling for Word Count and Attempts)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.title = element_text(face = "bold"),
+    plot.title = element_text(face = "bold", hjust = 0.5)
+  )
+
+```
+
+
+```{r}
+allData_clean %>%
+  group_by(hasEmDash) %>%
+  summarize(
+    meanRT = mean(rt, na.rm = TRUE),
+    sdRT = sd(rt, na.rm = TRUE),
+    n = n()
+  )
+
+library(car)
+
+leveneTest(rt ~ hasEmDash, data = allData_clean)
+
+```
+
+```{r}
+library(brms)
+
+model_brms <- brm(
+  bf(rt ~ hasEmDash + total_words + num_attempts,
+     sigma ~ hasEmDash),  # model residual SD depending on hasEmDash
+  data = allData_clean
+)
+summary(model_brms)
+
+```

@@ -1,0 +1,163 @@
+
+// ----------------
+// Tweet Trials
+// ----------------
+
+
+// Lexical Decision Stimuli 
+let lexicalDecisionStimuliTagged = checkInclusion(lexicalDecisionStimuli,stimChoicesThis,fillerChoicesThis);
+
+// Instructions
+
+const tweetBlockInstructions = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">You've now read all the articles! We can proceed to the next portion of the experiment. <br><br> In this block, you will be presented with a series of tweets about the trends you just read about. Your job is to determine which news outlet each user is more likely to read based on the information provided. <br><br> Each tweet contains 3-4 blacked-out words. You must hover your mouse over each word to reveal it. Once all words have been revealed, the response question will appear.</div>`,
+  choices: ['Begin'],
+  on_finish: function(data) {
+    data.category = "instructions"
+  } 
+}
+
+timeline.push(tweetBlockInstructions)
+
+// Game state variables
+
+const gameState = {
+  totalTrials: 0, 
+  correctTrials: 0,
+  attemptsLeft: 3,
+  passedTask: false,
+}
+
+function generateLoopedTask() {
+  console.log("Generating looped task...");
+  // Reset game state variables
+  gameState.totalTrials = 0;
+  gameState.correctTrials = 0;
+  passedTask = false;
+
+  // Create inner timeline
+  let innerTimeline = [];
+  let wordBankStimuli = generateWordBankTrials([[CriticalPair1Term1, CriticalPair1Term2],[CriticalPair2Term1, CriticalPair2Term2]],3);
+  let FirstTweetStimSet1 = generateTweetStimuli(CriticalPair1Term1, CriticalPair1Term2, conditionSettings[CriticalPair1Term1].bias, stimChoicesThis[0], true);
+  let FirstTweetStimSet2 = generateTweetStimuli(CriticalPair2Term1, CriticalPair2Term2, conditionSettings[CriticalPair2Term1].bias,  stimChoicesThis[1]);
+  let jsPsychStimuliTweets = combineStimuli(FirstTweetStimSet2, FirstTweetStimSet1);
+
+  // Generate Tweet trials
+  let tweetTrials = jsPsychStimuliTweets.map(stimulus => ({
+    type: jsPsychTwitterHover,
+    profile_pic: stimulus.profile_pic,
+    preview_label: "",
+    display_name: stimulus.display_name,
+    username: stimulus.username,
+    bio: stimulus.bio,
+    tweet_text: stimulus.tweet_text,
+    masked_words: stimulus.masked_words,
+    comments_range: stimulus.comments_range,
+    retweets_range: stimulus.retweets_range,
+    likes_range: stimulus.likes_range,
+    attention_question: stimulus.attention_question,
+    answer_options: stimulus.answer_options,
+    data: {
+      category: "tweet_trial",
+      persona: stimulus.preview_label
+    }
+  }));
+
+  // Add Tweet trials to inner timeline
+  innerTimeline.push(...tweetTrials);
+
+  let middleInstructions = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">Great job! <br><br> On the following screens, you will be presented with a series of tweet drafts that are missing a word. Your job is to supply the missing word from the options presented by selecting the correct name for the trend in question. <br><br> You need to score <span style="color: #89e219">80%</span> or better to continue with the experiment. If you fail after three attempts, the experiment will end. <br>Attempts remaining: <span style="color: #d32122"> ${gameState.attemptsLeft}</span></div>`,
+    choices: [`Let's tweet!`]
+  }
+
+  innerTimeline.push(middleInstructions)
+
+
+   // Generate Word Bank trials
+   let wordBankTrials = wordBankStimuli.map(stimulus => ({
+    type: jsPsychWordBank,
+    profile_pic: generateEggAvatar(getRandomColor()),
+    prompt: stimulus.prompt,
+    words: stimulus.words,
+    target_words: stimulus.target_words,
+    layout: "tweet",
+    display_name: stimulus.display_name,
+    username: stimulus.username,
+    on_finish: function(data) {
+      // Increment total trials counter
+      gameState.totalTrials++;
+      
+      // Check if they selected a target word
+      if (data.is_target) {
+        gameState.correctTrials++;
+      };
+
+      data.category = "word_bank_trial";
+      
+      // Log for debugging
+      console.log(`Trial ${gameState.totalTrials}: ${data.is_target ? 'Correct' : 'Incorrect'}. Current score: ${gameState.correctTrials}/${gameState.totalTrials}`);
+    }
+  }));
+
+  wordBankTrials = shuffleArray(wordBankTrials)
+
+  // Add Word Bank trials to inner timeline
+  innerTimeline.push(...wordBankTrials);
+
+  // Add performance check
+  innerTimeline.push({
+    type: jsPsychHtmlButtonResponse,
+    stimulus: function() {
+      const performance = gameState.correctTrials / gameState.totalTrials;
+      console.log(`Performance check: ${gameState.correctTrials}/${gameState.totalTrials} = ${performance}`);
+      if (performance >= 0.8) {
+        gameState.passedTask = true;
+        return 'Great job! You passed the word learning task.';
+      } else {
+        if (gameState.attemptsLeft > 1) {
+        gameState.attemptsLeft--;
+        return `Oh no! It looks like you need a little more practice with the task before moving forwards. You have ${gameState.attemptsLeft} attempt(s) remaining.`;
+        } else {
+          return 'Sorry, you have failed the task too many times. Please contact the experimenter for assistance.';
+        }
+      }
+    },
+    choices: function() {
+      const performance = gameState.correctTrials / gameState.totalTrials;
+      if (performance >= 0.8) {
+        return ['Continue'];
+      } else {
+        return ['Try again'];
+      }
+    },
+    on_finish: function(data) {
+      // Check if the user passed the task
+      if (gameState.passedTask) {
+        data.category = "passed_task";
+
+      } else {
+        data.category = "failed_task";
+        // If they failed, reset the game state and generate a new task
+        if (gameState.attemptsLeft > 1) {
+          let newQuiz = generateLoopedTask();
+          jsPsych.addNodeToCurrentLocation({
+            timeline: newQuiz,
+          });
+        } else {
+          // If they have no attempts left, end the experiment
+          jsPsych.endExperiment('You have failed the task too many times. Please contact the experimenter for assistance.');
+        }
+      }
+    }
+  });
+  // Return the inner timeline
+  return innerTimeline;
+}
+
+const learningBlock = generateLoopedTask();
+timeline.push({
+  timeline: learningBlock,
+});

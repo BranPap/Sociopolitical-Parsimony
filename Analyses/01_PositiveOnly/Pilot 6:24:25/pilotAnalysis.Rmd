@@ -283,6 +283,31 @@ allLexi %>%
 
 
 ```{r}
+allLexi %>% 
+  filter(wingBias.y != "NA") %>% 
+  mutate(logRt = rt) %>% 
+  mutate(alignment = case_when(
+    ProlificPolitical == "Democrat" & wingBias.y == "left" ~ "Aligned",
+    ProlificPolitical == "Republican" & wingBias.y == "right" ~ "Aligned",
+    TRUE ~ "Disaligned"
+  )) %>% 
+  group_by(alignment,tokenCount) %>% 
+  summarize(meanRt = mean(logRt),
+            CI.Low = ci.low(logRt),
+            CI.High = ci.high(logRt)) %>% 
+  mutate(YMin = meanRt -CI.Low,
+         YMax = meanRt + CI.High) %>% 
+  ggplot(aes(x=alignment, y=meanRt, fill=as.factor(tokenCount))) + 
+  geom_bar(stat='identity', position=position_dodge()) + 
+  geom_errorbar(aes(ymin = YMin, ymax = YMax, width=0.25), position = position_dodge(width=0.9) ) + 
+  labs(x="Term Exposure", y="Log Response Time", fill="Term Bias") + 
+  scale_x_discrete(labels=c("3" = "Low", "8" = "High")) + 
+  theme_bw() + 
+  scale_fill_brewer(palette="Accent")
+```
+
+
+```{r}
 productionOnly %>% 
   filter(wingBias.y != "NA") %>% 
   group_by(alignment,tokenCount.y) %>% 
