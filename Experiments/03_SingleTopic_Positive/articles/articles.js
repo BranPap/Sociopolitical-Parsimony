@@ -64,8 +64,13 @@ function replaceTermsInTemplate(template, term1, term2) {
     .replace(/\[TERM_2\]/g, term2)
     .replace(/\[TERM_1_LOWER\]/g, term1.toLowerCase())
     .replace(/\[TERM_2_LOWER\]/g, term2.toLowerCase());
-  replaced.criticalTerm = term1;
-  replaced.competitor = term2;
+  if (replaced.criticalTerm === "[TERM_1]") {
+    replaced.criticalTerm = term1;
+    replaced.competitor = term2;
+  } else if (replaced.criticalTerm === "[TERM_2]") {
+    replaced.criticalTerm = term2;
+    replaced.competitor = term1;
+  }
   return replaced;
 }
 

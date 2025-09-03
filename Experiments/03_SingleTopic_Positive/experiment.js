@@ -350,7 +350,7 @@ function generateGameLoop() {
     }));
 
     tweetTrials = shuffleArray(tweetTrials);
-    innerTimeline.push(...tweetTrials);
+    // innerTimeline.push(...tweetTrials);
 
     // -------------------------
     // Instructions
