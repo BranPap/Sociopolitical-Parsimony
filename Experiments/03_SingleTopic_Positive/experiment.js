@@ -6,7 +6,7 @@
     auto_update_progress_bar: false,
     on_finish: function(data) {
       proliferate.submit({"trials": data.values()});
-      jsPsych.data.displayData('csv');
+    //   jsPsych.data.displayData('csv');
     }
   });
   
