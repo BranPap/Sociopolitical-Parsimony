@@ -223,7 +223,7 @@ function generateSPRStimuli(conditionSettings) {
         stimulus.exposure = 'high'
 
         // add to stimuli list
-        // sprStimuli.push(stimulus)
+        sprStimuli.push(stimulus)
     };
     for (let i=0; i < 1; i++) {
         let stimulus = {}
@@ -254,7 +254,7 @@ function generateSPRStimuli(conditionSettings) {
         stimulus.wing = 'right'
         stimulus.exposure = 'low'
 
-        // sprStimuli.push(stimulus)
+        sprStimuli.push(stimulus)
 
     };
     for (let i=0; i < 4; i++) {
@@ -286,7 +286,7 @@ function generateSPRStimuli(conditionSettings) {
         stimulus.exposure = 'high'
 
 
-        // sprStimuli.push(stimulus)
+        sprStimuli.push(stimulus)
     };
     for (let i=0; i < 1; i++) {
         let stimulus = {}
