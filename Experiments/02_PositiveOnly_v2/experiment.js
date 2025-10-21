@@ -425,7 +425,7 @@ function generateLoopedTask() {
   }));
 
   // Add Tweet trials to inner timeline
-  innerTimeline.push(...tweetTrials);
+  // innerTimeline.push(...tweetTrials);
 
   let middleInstructions = {
     type: jsPsychHtmlButtonResponse,

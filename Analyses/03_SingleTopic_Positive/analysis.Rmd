@@ -21,10 +21,23 @@ library(stringdist)
 library(lme4)
 library(lmerTest)
 library(brms)
+
+paired_colors <- c(
+  "3"       = "#A56CC1", # purple
+  "aligned"       = "#DDA0DD", # light purple
+  "Aligned"       = "#DDA0DD", # light purple
+  "Republican"       = "#E76F51", # orange-red
+  "Domari"        = "#F4A261", # light orange
+  "disaligned" = "#2A9D8F", # teal
+  "Disaligned" = "#2A9D8F", # teal
+  "herdblurring"  = "#A8DADC", # light teal
+  "8"    = "#457B9D", # blue
+  "Democrat"    = "#A9CCE3"  # light blue
+)
 ```
 
 
-```{r}
+```{r include=FALSE}
 allData <- read.csv("sociopolitical_frequency_tradeoff_herdblurring_onl-merged.csv")
 
 prolificIDs <- read.csv("sociopolitical_frequency_tradeoff_herdblurring_onl-workerids.csv")
@@ -39,12 +52,36 @@ testData <- allData %>%
 fullData <- testData %>% 
   merge(prolificData, by=c("prolific_participant_id")) %>% 
   mutate(ProlificPolitical = paste(U.s..political.affiliation))
+```
 
-prodCoded <- read.csv("production_data_export_coded.csv") %>% 
-  mutate(inclusion = ifelse(is.na(inclusion),"TRUE",paste(inclusion)))
-  # filter(inclusion == "TRUE") %>%
-  # filter(!str_detect(criticalTerm, ","))
+```{r include=FALSE}
+tweet_data <- fullData %>% 
+  filter(category == "tweet_production") %>% 
+  select(
+    workerid,
+    response,
+    completed_successfully,
+    failed_attempts,
+    max_attempts_reached,
+    required_word_1,
+    required_word_1_used,
+    required_word_2,
+    required_word_2_used
+  )
 
+# Function to detect words with edit distance <= 2
+check_words <- function(resp, words) {
+  words_found <- words[sapply(words, function(w) {
+    any(stringdist::stringdist(tolower(w), tolower(strsplit(resp, "\\s+")[[1]])) <= 2)
+  })]
+  if(length(words_found) == 0) return(character(0))  # return empty character vector instead of NA
+  words_found  # return as vector
+}
+
+`%!in%` <- function(x, y) ! (x %in% y)
+```
+
+```{r include=FALSE}
 # First, create a reference dataset with political context information
 political_context <- fullData %>%
   filter(!is.na(bias) & bias != "") %>%
@@ -52,536 +89,528 @@ political_context <- fullData %>%
 
 # Create lookup tables for token count and alignment by critical term and worker
 token_lookup <- political_context %>%
-  select(workerid, criticalTerm, tokenCount,wingBias, itemPair,ProlificPolitical) %>%
-  filter(criticalTerm %in% c("crowdcloaking","herdblurring","Thumaze","Wenlure","Churako","Domari","tessamorph","interforme")) %>% 
-  mutate(itemPair = case_when(
-  criticalTerm %in% c("Churako", "Domari") ~ "martialArts",
-  criticalTerm %in% c("Thumaze", "Wenlure") ~ "drugs",
-  criticalTerm %in% c("interforme", "tessamorph") ~ "tattoos",
-  criticalTerm %in% c("crowdcloaking", "herdblurring") ~ "privacy",
-  TRUE ~ "error"
-)) %>% 
+  select(workerid, term, tokenCount,bias,ProlificPolitical) %>%
   distinct() 
 
-patternLookup <- token_lookup %>% 
-  mutate(
-    wingBias = ifelse(wingBias == "right", "Republican", "Democrat"),
-    alignment = ifelse(wingBias == ProlificPolitical, "Aligned", "Disaligned")
+delta_lookup <- token_lookup %>%
+  select(-term) %>%
+  filter(tokenCount != 0) %>%
+  pivot_wider(
+    names_from = bias,
+    values_from = tokenCount,
+    values_fn = sum,        # collapse if duplicates exist
+    values_fill = 0         # fill missing with 0
   ) %>% 
-  filter(tokenCount == 8) %>%  # keep only high-exposure terms
-  group_by(workerid) %>%
-  summarize(
-    n_high_terms = n(),
-    sides_of_high = n_distinct(alignment),
-    dominant_alignment = if (n_distinct(alignment) == 1) first(alignment) else NA_character_,
-    pattern = case_when(
-      sides_of_high == 1 ~ "SameSide",
-      sides_of_high == 2 ~ "SplitSides",
-      TRUE ~ "Other"
-    ),
-    .groups = "drop"
-  ) %>%
-  mutate(
-    # Add subpattern for SameSide people
-    pattern_detail = case_when(
-      pattern == "SameSide" & dominant_alignment == "Aligned" ~ "SameSide_Aligned",
-      pattern == "SameSide" & dominant_alignment == "Disaligned" ~ "SameSide_Disaligned",
-      TRUE ~ pattern
-    )
-  )
-
-patterns <- c("crowdcloaking","herdblurring","Thumaze","Wenlure","Churako","Domari","tessamorph","interforme")
-pattern_regex <- str_c(patterns, collapse = "|")
-
-prodCodedFull <- prodCoded %>% 
-  filter(!notes %in% c("LLM","duplicate","swap","mix","nonsense","wrongMapping")) %>% 
-  left_join(token_lookup, by=c("workerid","itemPair")) %>% 
-  mutate(wingBias = ifelse(wingBias == "right","Republican","Democrat"),
-       alignment = ifelse(wingBias == ProlificPolitical,"Aligned","Disaligned")) %>% 
-  left_join(patternLookup, by = "workerid") %>% 
-  mutate(
-    criticalTerm.x_list = str_split(tolower(criticalTerm.x), ",\\s*"),
-    termUsed = mapply(function(y, x_list) tolower(y) %in% x_list, criticalTerm.y, criticalTerm.x_list)
-  ) %>%
-  mutate(termUsed = as.integer(termUsed)) # %>% 
- # mutate(isLLM = ifelse(notes == "LLM",TRUE,FALSE))
-
-includeList <- unique(prodCodedFull$workerid)
+  mutate(delta = ifelse(right != left, TRUE, FALSE)) %>%
+  mutate(deltaType = case_when(
+    delta == FALSE & ProlificPolitical != "CONSENT_REVOKED" ~ paste(left),
+    delta == TRUE & ProlificPolitical == "Democrat" & left == 8 ~ "Aligned",
+    delta == TRUE & ProlificPolitical == "Democrat" & left == 3 ~ "Disaligned",
+    delta == TRUE & ProlificPolitical == "Republican" & right == 8 ~ "Aligned",
+    delta == TRUE & ProlificPolitical == "Republican" & right == 3 ~ "Disaligned",
+    TRUE ~ "error")) %>% 
+  select(workerid, left, right, delta, deltaType)
 
 
-lexicalDecisionFull <- fullData %>% 
-  filter(workerid %in% includeList) %>% 
-  filter(category == "LexicalDecision") %>% 
-  filter(itemPair %in% c("tattoos","privacy","martialArts","drugs")) %>% 
-  mutate(criticalTerm = stimulus) %>% 
-  left_join(token_lookup, by=c("workerid","criticalTerm")) %>% 
-  mutate(wingBias = ifelse(wingBias.y == "right","Republican","Democrat"),
-       alignment = ifelse(wingBias == ProlificPolitical.x,"Aligned","Disaligned")) %>% 
-  left_join(patternLookup, by = "workerid") 
+```
 
+# Analysis 
+
+## Lexical Decision {.tabset}
+
+```{r include=FALSE}
+lexicalDecisionFull <- fullData %>% filter(category == "LexicalDecision") %>% select(workerid, criticality, itemPair, response, rt, status, statusCheck, stimulus, time_elapsed, U.s..political.affiliation, Age, Sex, ProlificPolitical)  %>% 
+  rename("term" = "stimulus") %>% 
+  left_join(token_lookup, by=c("term", "workerid", "ProlificPolitical")) %>% 
+  mutate(criticality = case_when(
+    itemPair == "privacy" ~ "critical",
+    TRUE ~ "distractor"
+  )) %>% 
+  mutate(alignment = case_when(
+    ProlificPolitical == "Democrat" & bias == "left" ~ "aligned",
+    ProlificPolitical == "Republican" & bias == "right" ~ "aligned",
+    TRUE ~ "disaligned"
+  )) %>% 
+  left_join(delta_lookup, by="workerid")
+```
+
+
+### Visualizations 
+
+
+```{r echo=FALSE}
+# Example visualization
+ggplot(lexicalDecisionFull, aes(x = rt, fill = response)) +
+  geom_histogram(alpha = 0.7, bins = 30) +
+  theme_bw() +
+  labs(title = "Reaction Times by Response",
+       x = "Reaction Time (ms)",
+       y = "Count")
+```
+
+```{r echo=FALSE}
 lexicalDecisionFull %>% 
-  filter(!is.na(alignment)) %>% 
-  group_by(alignment,tokenCount.y) %>% 
+  group_by(criticality) %>% 
+  summarize(meanRt = (mean(rt))) %>% 
+  ggplot(aes(x=criticality, y=meanRt)) + 
+  geom_point() + 
+  theme_bw()
+```
+
+```{r echo=FALSE}
+lexicalDecisionFull %>% 
+  filter(deltaType != "error") %>% 
+  filter(criticality == "critical") %>% 
+  group_by(workerid) %>%
+  # Trim RTs: remove <200ms and > 3 SDs from participant mean
+  mutate(rt_mean = mean(rt, na.rm = TRUE),
+         rt_sd = sd(rt, na.rm = TRUE),
+         rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)) %>%
+  ungroup() %>%
+  group_by(alignment, deltaType,delta,tokenCount) %>%
   summarize(
-    meanRt = mean(rt, na.rm = TRUE),
-    se = sd(rt, na.rm = TRUE) / sqrt(n()),  # standard error
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n = sum(!is.na(rt_clean)),
+    seRt = sd(rt_clean, na.rm = TRUE) / sqrt(n),
     .groups = "drop"
   ) %>% 
-  ggplot(aes(x = as.factor(tokenCount.y), y = meanRt, color = alignment)) + 
-  geom_point(stat = "identity", position = position_dodge(width = 0.9)) +
-  geom_errorbar(
-    aes(ymin = meanRt - se, ymax = meanRt + se),
-    position = position_dodge(width = 0.9),
-    width = 0.2
-  ) +
-  labs(
-    y = "Mean RT",
-    x = "Exposure"
-  ) +
-  theme_minimal() + 
-  # facet_wrap(
-  #   ~pattern,
-  #   labeller = as_labeller(c(
-  #     "SameSide" = "Isomorphic",
-  #     "SplitSides" = "Nonisomorphic"
-  #   ))
-  # ) +
-    scale_color_manual(
-    values = c(
-      "Aligned" = "#8D6A9F",
-      "Disaligned" = "#74B3CE"
-    )
-  ) +
-  scale_x_discrete(labels = c("Low Exposure", "High Exposure"))
+  ggplot(aes(x=alignment, y=meanRt, color = alignment, shape=as.factor(tokenCount))) + 
+  geom_point() + 
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+              width = 0.2, position = position_dodge(width = 0.9)) +
+  theme_bw() + 
+  scale_color_manual(values = paired_colors) + 
+  facet_wrap(delta~deltaType)
+```
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(delta == TRUE) %>% 
+  filter(criticality == "critical") %>% 
+  group_by(workerid) %>%
+  # Trim RTs: remove <200ms and > 3 SDs from participant mean
+  mutate(rt_mean = mean(rt, na.rm = TRUE),
+         rt_sd = sd(rt, na.rm = TRUE),
+         rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)) %>%
+  ungroup() %>%
+  group_by(alignment, tokenCount, delta) %>%
+  summarize(
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n = sum(!is.na(rt_clean)),
+    seRt = sd(rt_clean, na.rm = TRUE) / sqrt(n),
+    .groups = "drop"
+  ) %>% 
+  ggplot(aes(x=as.factor(tokenCount), y=meanRt, color = alignment)) + 
+  geom_point(position = position_dodge(0.9)) + 
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+              width = 0.2, position = position_dodge(width = 0.9)) +
+  theme_bw() + 
+  scale_color_manual(values = paired_colors)  + 
+  labs(x="Exposure Count", color = "Alignment", y="Mean RT", title="Effect of Ideology and Frequency Single-Topic: Exp 2")
 ```
 
 
 ```{r}
-# Group by alignment and tokenCount, then count how many participants produced each type
-prodGrouped <- prodCodedFull %>%
-  filter(termUsed == 1) %>% 
-  group_by(alignment, tokenCount, pattern) %>%
-  summarise(count = n(), .groups = "drop") %>% 
-  mutate(
-    tokenCount = ifelse(tokenCount == 8, "High Exposure", "Low Exposure"),
-    pattern = ifelse(pattern == "SameSide", "Isomorphic", "Non-Isomorphic")
-  ) 
+failureList <- allData %>% 
+  filter(category == "failed_task") %>% 
+  group_by(workerid) %>% 
+  summarize(failedTimes = n())
+```
 
-# Plot
-prodGrouped %>%
-  ggplot(aes(x = factor(tokenCount), y = count, fill = alignment)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.8), width = 0.7) +
-  geom_text(
-    aes(label = count),
-    position = position_dodge(width = 0.8),
-    vjust = -0.3,
-    size = 4,
-    color = "black"
-  ) +
-  labs(
-    x = "Term Exposure",
-    y = "Number of First Productions",
-    fill = "Term Alignment"
-  ) +
-  scale_x_discrete(labels = c("Low Exposure", "High Exposure")) +
-  scale_fill_manual(
-    values = c(
-      "Aligned" = "#8D6A9F",
-      "Disaligned" = "#74B3CE"
-    )
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(
-    legend.position = "top",
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor = element_blank(),
-    axis.title.x = element_text(margin = margin(t = 10)),
-    axis.title.y = element_text(margin = margin(r = 10))
-  ) +
-  expand_limits(y = max(prodGrouped$count) * 1.1) +
-  facet_grid(~pattern, labeller = labeller(
-    pattern = c(
-      "Isomorphic" = "Isomorphic Frequency-Alignment",
-      "Non-Isomorphic" = "Nonisomorphic Frequency-Alignment"
-    )
+```{r}
+lexicalDecision <- lexicalDecisionClean %>% 
+  left_join(failureList, by="workerid") %>% 
+  mutate(failedTimes = case_when(
+    is.na(failedTimes) ~ 0,
+    TRUE ~ failedTimes
   ))
 ```
 
-Note: of 800 participant trials (400x2/participant), participants produced 555 valid productions (all <= 2 edit distance from ideal orthographic form)
+```{r}
+lexicalDecision %>% 
+  group_by(workerid) %>%
+  # Trim RTs: remove <200ms and > 3 SDs from participant mean
+  mutate(rt_mean = mean(rt, na.rm = TRUE),
+         rt_sd = sd(rt, na.rm = TRUE),
+         rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)) %>%
+  ungroup() %>%
+  group_by(tokenCount, failedTimes) %>%
+  summarize(
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n = sum(!is.na(rt_clean)),
+    seRt = sd(rt_clean, na.rm = TRUE) / sqrt(n),
+    .groups = "drop"
+  ) %>% 
+  ggplot(aes(x = failedTimes, y = meanRt, shape = as.factor(tokenCount))) +
+  geom_point(size = 6, alpha = 0.4, position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+                width = 0.2, position = position_dodge(width = 0.9)) +
+  theme_bw() 
+```
+
 
 
 ```{r}
-summary_df <- prodCodedFull %>%
-  group_by(pattern, alignment, tokenCount) %>%
+lexicalDecisionFull %>% 
+  filter(deltaType != "error") %>% 
+  filter(criticality == "critical") %>% 
+  group_by(tokenCount, alignment, deltaType) %>% 
   summarize(
-    mean_count = mean(termUsed),
-    se = sd(termUsed) / sqrt(n()),
-    .groups = "drop"
-  )
-
-ggplot(summary_df, aes(x = factor(tokenCount), y = mean_count, color = alignment, group = alignment)) + 
-  geom_point(
-    position = position_dodge(0.5),
-    size = 3,
-    shape = 21,
-    fill = "white",
-    stroke = 1.2
-  ) +
+    meanRt = mean(rt, na.rm = TRUE),
+    n = n(),
+    seRt = sd(rt, na.rm = TRUE) / sqrt(n),
+    ci95 = qt(0.975, df = n - 1) * seRt
+  ) %>% 
+  ggplot(aes(x = as.factor(tokenCount), y = meanRt, fill = alignment)) + 
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) + 
   geom_errorbar(
-    aes(ymin = mean_count - se, ymax = mean_count + se),
-    position = position_dodge(0.5),
-    width = 0.2
+    aes(ymin = meanRt - ci95, ymax = meanRt + ci95),
+    width = 0.2,
+    position = position_dodge(width = 0.9)
   ) +
-  geom_line(
-    position = position_dodge(0.5),
-    size = 1
-  ) +
-  scale_color_manual(
-    values = c(
-      "Aligned" = "#8D6A9F",
-      "Disaligned" = "#74B3CE"
-    )
-  ) +
-  labs(
-    x = "Exposure Level (Frequency)",
-    y = "Mean Term Count",
-    color = "Alignment"
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(
-    panel.grid.major = element_line(color = "#eaeaea"),
-    panel.grid.minor = element_blank(),
-    panel.spacing = unit(1, "lines"),
-    strip.text = element_text(face = "bold", size = 13),
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(color = "#333333"),
-    legend.position = "bottom",
-    legend.title = element_text(face = "bold")
-  ) + 
-  facet_grid(~pattern, labeller = labeller(
-    pattern = c(
-      "SameSide" = "Isomorphic Freq-Alignment",
-      "SplitSides" = "Nonisomorphic Freq-Alignment"
-    )
-  )) + 
-   scale_x_discrete(labels = c("Low Exposure", "High Exposure"))
+  theme_bw() + 
+  facet_wrap(~deltaType)
+```
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(criticality == "critical") %>% 
+  group_by(tokenCount, alignment, deltaType) %>%
+  mutate(accBinary = case_when(
+    statusCheck == "correct" ~ 1,
+    TRUE ~ 0,
+  )) %>% 
+  summarize(
+    meanAcc = mean(accBinary, na.rm = TRUE),
+    n = n()) %>% 
+  ggplot(aes(x = as.factor(tokenCount), y = meanAcc, fill = alignment)) + 
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) + 
+  theme_bw() + 
+  facet_wrap(~deltaType)
+```
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(criticality == "critical") %>% 
+  group_by(ProlificPolitical) %>%
+  mutate(accBinary = case_when(
+    statusCheck == "correct" ~ 1,
+    TRUE ~ 0,
+  )) %>% 
+  summarize(
+    meanAcc = mean(accBinary, na.rm = TRUE),
+    n = n()) %>% 
+  ggplot(aes(x =ProlificPolitical, y = meanAcc, fill = ProlificPolitical)) + 
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) + 
+  theme_bw()
+```
+
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(deltaType != "error") %>% 
+  filter(criticality == "critical") %>% 
+  filter(ProlificPolitical %in% c("Democrat", "Republican")) %>%
+  group_by(workerid) %>%
+  # Trim RTs: remove <200ms and > 3 SDs from participant mean
+  mutate(rt_mean = mean(rt, na.rm = TRUE),
+         rt_sd = sd(rt, na.rm = TRUE),
+         rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)) %>%
+  ungroup() %>%
+  group_by(alignment, ProlificPolitical, tokenCount,deltaType) %>%
+  summarize(
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n = sum(!is.na(rt_clean)),
+    seRt = sd(rt_clean, na.rm = TRUE) / sqrt(n),
+    .groups = "drop"
+  ) %>% 
+  ggplot(aes(x = alignment, y = meanRt, shape = as.factor(tokenCount), color = ProlificPolitical)) +
+  geom_point(size = 3, alpha = 0.4, position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+                width = 0.2, position = position_dodge(width = 0.9)) +
+  theme_bw() +
+  facet_grid(deltaType~ProlificPolitical) + 
+  scale_color_manual(values = paired_colors)
+```
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(criticality == "critical") %>% 
+  filter(deltaType != "error") %>% 
+  filter(ProlificPolitical %in% c("Democrat", "Republican")) %>%
+  group_by(workerid) %>%
+  # Trim RTs: remove <200ms and > 3 SDs from participant mean
+  mutate(rt_mean = mean(rt, na.rm = TRUE),
+         rt_sd = sd(rt, na.rm = TRUE),
+         rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)) %>%
+  ungroup() %>%
+  group_by(alignment, tokenCount,deltaType) %>%
+  summarize(
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n = sum(!is.na(rt_clean)),
+    seRt = sd(rt_clean, na.rm = TRUE) / sqrt(n),
+    .groups = "drop"
+  ) %>% 
+  ggplot(aes(x = alignment, y = meanRt, shape = as.factor(tokenCount), color = alignment)) +
+  geom_point(size = 4, alpha = 0.4, position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+                width = 0.2, position = position_dodge(width = 0.9)) +
+  theme_bw() +
+  scale_color_manual(values = paired_colors) + 
+  facet_wrap(~deltaType)
+```
+
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(criticality == "critical") %>% 
+  filter(ProlificPolitical %in% c("Democrat", "Republican")) %>%
+  group_by(workerid) %>%
+  # Trim RTs: remove <200ms and > 3 SDs from participant mean
+  mutate(rt_mean = mean(rt, na.rm = TRUE),
+         rt_sd = sd(rt, na.rm = TRUE),
+         rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)) %>%
+  ungroup() %>%
+  group_by(ProlificPolitical) %>%
+  summarize(
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n = sum(!is.na(rt_clean)),
+    seRt = sd(rt_clean, na.rm = TRUE) / sqrt(n),
+    .groups = "drop"
+  ) %>% 
+  ggplot(aes(x = ProlificPolitical, y = meanRt, color = ProlificPolitical)) +
+  geom_point(size = 6, alpha = 0.4, position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+                width = 0.2, position = position_dodge(width = 0.9)) +
+  theme_bw() +
+  scale_color_manual(values = paired_colors)
+```
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(deltaType != "error") %>% 
+  filter(criticality == "critical") %>% 
+  filter(ProlificPolitical %in% c("Democrat", "Republican")) %>%
+  group_by(workerid) %>%
+  # Trim RTs: remove <200ms and > 3 SDs from participant mean
+  mutate(rt_mean = mean(rt, na.rm = TRUE),
+         rt_sd = sd(rt, na.rm = TRUE),
+         rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)) %>%
+  ungroup() %>%
+  group_by(tokenCount, deltaType) %>%
+  summarize(
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n = sum(!is.na(rt_clean)),
+    seRt = sd(rt_clean, na.rm = TRUE) / sqrt(n),
+    .groups = "drop"
+  ) %>% 
+  ggplot(aes(x = as.factor(tokenCount), y = meanRt, color = as.factor(tokenCount))) +
+  geom_point(size = 6, alpha = 0.4, position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+                width = 0.2, position = position_dodge(width = 0.9)) +
+  theme_bw() +
+  scale_color_manual(values = paired_colors) + 
+  facet_wrap(~deltaType)
+```
+
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(criticality == "critical",
+         ProlificPolitical %in% c("Democrat", "Republican")) %>%
+  group_by(workerid) %>%
+  mutate(
+    rt_mean = mean(rt, na.rm = TRUE),
+    rt_sd   = sd(rt, na.rm = TRUE),
+    rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)
+  ) %>%
+  ungroup() %>%
+  group_by(Age) %>%
+  summarize(
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n      = sum(!is.na(rt_clean)),
+    seRt   = sd(rt_clean, na.rm = TRUE) / sqrt(n),
+    .groups = "drop"
+  ) %>%
+  ggplot(aes(x = Age, y = meanRt, group = 1)) +
+  geom_smooth(color = "steelblue", method="lm") +
+  geom_ribbon(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+              alpha = 0.2, fill = "steelblue") +
+  labs(x = "Age", y = "Mean RT (ms)", title = "Mean Lexical Decision RT by Age") + 
+  theme_bw()
 
 ```
 
 
 ```{r}
-library(brms)
+lexicalDecisionFull %>% 
+  group_by(ProlificPolitical) %>% 
+  filter(!is.na(Age)) %>% 
+  summarize(meanAge = mean(as.numeric(Age)))
+```
 
-# Center contrasts
-prodCodedFull$tokenCount <- factor(prodCodedFull$tokenCount)
-prodCodedFull$pattern <- factor(prodCodedFull$pattern)
-contrasts(prodCodedFull$tokenCount) <- contr.sum(2)
-contrasts(prodCodedFull$pattern) <- contr.sum(2)
 
-# Fit model
-fit_full <- brm(
-  formula = termUsed ~ tokenCount * alignment + 
-    (1 + tokenCount || workerid) + 
-    (1 | itemPair), 
-  family = bernoulli(link = "logit"),
-  data = prodCodedFull,
-  prior = c(
-    prior(normal(0, 1), class = "b"),
-    prior(student_t(3, 0, 2.5), class = "Intercept")
-  ),
+
+### Models 
+
+```{r}
+# 1. Clean data 
+lexicalDecisionClean <- lexicalDecisionFull %>% 
+  filter(criticality == "critical",
+         ProlificPolitical %in% c("Democrat", "Republican")) %>%
+  group_by(workerid) %>%
+  mutate(
+    rt_mean  = mean(rt, na.rm = TRUE),
+    rt_sd    = sd(rt, na.rm = TRUE),
+    rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)
+  ) %>%
+  ungroup() %>%
+  filter(!is.na(rt_clean))  # remove trimmed outliers
+
+# 2. Fit a brms model
+# We'll model rt_clean on alignment, ProlificPolitical, tokenCount, with random intercepts for workerid
+brms_model <- brm(
+  formula = rt_clean ~ alignment * ProlificPolitical * tokenCount + (1 | workerid),
+  data = lexicalDecisionClean,
+  family = gaussian(),
   chains = 4,
   cores = 4,
   iter = 4000,
   warmup = 1000,
-  control = list(adapt_delta = 0.995),
-  save_pars = save_pars(all = TRUE)  # for bridgesampling
+  seed = 123
 )
-
-
-summary(fit_full, prob = 0.95)
-```
-
-
-```{r}
-library(tidybayes)
-library(dplyr)
-library(ggplot2)
-
-# Ensure factor levels match model's data
-prodCodedFull$tokenCount <- factor(prodCodedFull$tokenCount)
-prodCodedFull$alignment <- factor(prodCodedFull$alignment)
-
-newdata <- expand.grid(
-  tokenCount = levels(prodCodedFull$tokenCount),
-  alignment  = levels(prodCodedFull$alignment)
-)
-
-# Get posterior predictions
-preds <- add_epred_draws(
-  fit_full,
-  newdata = newdata,
-  re_formula = NA
-)
-
-# Summarise raw data for overlay
-raw_props <- prodCodedFull %>%
-  group_by(tokenCount, alignment) %>%
-  summarise(prop = mean(termUsed), .groups = "drop")
-
-# Plot
-ggplot(preds, aes(x = tokenCount, y = .epred,
-                  color = alignment, fill = alignment)) +
-  stat_lineribbon(.width = 0.95, alpha = 0.2, size = 0) +
-  stat_summary(fun = mean, geom = "line", aes(group = alignment), size = 1) +
-  geom_point(data = raw_props,
-             aes(x = tokenCount, y = prop, color = alignment),
-             position = position_dodge(width = 0.2),
-             size = 3, shape = 21, fill = "white") +
-  labs(
-    x = "Token Count (Exposure Frequency)",
-    y = "Predicted Probability of Term Use",
-    color = "Alignment",
-    fill = "Alignment"
-  ) +
-  theme_minimal(base_size = 14)
 
 ```
 
-
 ```{r}
-summary_df <- prodCodedFull %>%
-  filter(!is.na(criticalTerm.x)) %>% 
-  group_by(alignment, tokenCount,criticalTerm.x) %>%
-  summarize(
-    mean_count = mean(termUsed),
-    se = sd(termUsed) / sqrt(n()),
-    .groups = "drop"
-  )
-
-ggplot(summary_df, aes(x = factor(tokenCount), y = mean_count, color = alignment, group = alignment)) + 
-  geom_point(
-    position = position_dodge(0.5),
-    size = 3,
-    shape = 21,
-    fill = "white",
-    stroke = 1.2
-  ) +
-  geom_errorbar(
-    aes(ymin = mean_count - se, ymax = mean_count + se),
-    position = position_dodge(0.5),
-    width = 0.2
-  ) +
-  geom_line(
-    position = position_dodge(0.5),
-    size = 1
-  ) +
-  scale_color_manual(
-    values = c(
-      "Aligned" = "#8D6A9F",
-      "Disaligned" = "#74B3CE"
-    )
-  ) +
-  labs(
-    x = "Exposure Level (Frequency)",
-    y = "Mean Term Count",
-    color = "Ideological Alignment"
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(
-    panel.grid.major = element_line(color = "#eaeaea"),
-    panel.grid.minor = element_blank(),
-    panel.spacing = unit(1, "lines"),
-    strip.text = element_text(face = "bold", size = 13),
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(color = "#333333"),
-    legend.position = "bottom",
-    legend.title = element_text(face = "bold")
-  ) + 
-   scale_x_discrete(labels = c("Low Exposure", "High Exposure")) +
-  facet_grid(~criticalTerm.x)
-
+summary(brms_model, prob=0.89)
 ```
 
 
+
+## Production Data {.tabset}
+
 ```{r}
-# Summarise: mean probability of termUsed per target term
-term_memorability <- prodCodedFull %>%
-  group_by(targetTerm = tolower(criticalTerm.y)) %>% # 
-  summarise(
-    mean_use = mean(termUsed, na.rm = TRUE),
-    n = n()
+prodCoded <- tweet_data %>%
+  rowwise() %>%
+  mutate(
+    wordsUsed = list(check_words(response, c(required_word_1, required_word_2)))
   ) %>%
-  arrange(desc(mean_use))
-
-# Plot
-ggplot(term_memorability, aes(x = reorder(targetTerm, mean_use), y = mean_use)) +
-  geom_col(fill = "steelblue") +
-  geom_text(aes(label = scales::percent(mean_use, accuracy = 1)),
-            vjust = -0.5, size = 4) +
-  scale_y_continuous(labels = scales::percent_format()) +
-  labs(
-    x = "Target Term",
-    y = "Proportion of Times Term Was Used",
-    title = "Baseline Memorability of Each Term"
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
+  ungroup() %>% 
+  left_join(token_lookup, by = c("workerid")) %>% 
+  filter(wordsUsed %in% c('Herdblurring', 'Crowdcloaking', 'Visageveiling', 'Facefacading',
+    'Swarmshrouding', 'Mugmuddling', 'Huddlehiding', 'Buddyblanketing',
+    'Domaring', 'Churaking', 'Wenluring', 'Thumazing', 
+    'Monzaling', 'Toonixing','Mutoling','Tikafing')) %>% 
+  filter(term != "LuigiMangione") %>% 
+  mutate(prodBinary = case_when(
+    term == wordsUsed ~ 1,
+    TRUE ~ 0
+  )) %>% 
+  mutate(alignment = case_when(
+    ProlificPolitical == "Democrat" & bias == "left" ~ "aligned",
+    ProlificPolitical == "Republican" & bias == "right" ~ "aligned",
+    TRUE ~ "disaligned"
+  )) %>% 
+  mutate(morphology = case_when(
+    term %in% c('Herdblurring', 'Crowdcloaking', 'Visageveiling', 'Facefacading',
+    'Swarmshrouding', 'Mugmuddling', 'Huddlehiding', 'Buddyblanketing') ~ "Compound",
+    TRUE ~ "Nonce"
+  )) %>% 
+  left_join(delta_lookup, by="workerid")
 ```
 
 
-```{r}
-# Binomial standard error helper
-binomial_se <- function(p, n) sqrt(p * (1 - p) / n)
+### Visualizations 
 
-# Summarise mean proportion and SE by group
-term_memorability <- prodCodedFull %>%
-  # filter(!isLLM) %>%
-  # filter(itemPair == "martialArts") %>% 
-  group_by(itemPair, criticalTerm.y,tokenCount) %>%
-  summarise(
-    mean_use = mean(termUsed, na.rm = TRUE),
+```{r echo=FALSE}
+prodCoded %>% 
+  filter(deltaType != "error") %>% 
+  group_by(alignment, tokenCount) %>% 
+  summarize(
+    meanProd = mean(prodBinary, na.rm = TRUE),
     n = n(),
-    se = binomial_se(mean_use, n),
-    .groups = "drop"
-  ) %>%
-  filter(n > 0)  # drop empty bars
-
-# Define paired colors for each itemPair
-paired_colors <- c(
-  "Thumaze"       = "#A56CC1", # purple
-  "Wenlure"       = "#DDA0DD", # light purple
-  "Churako"       = "#E76F51", # orange-red
-  "Domari"        = "#F4A261", # light orange
-  "crowdcloaking" = "#2A9D8F", # teal
-  "herdblurring"  = "#A8DADC", # light teal
-  "interforme"    = "#457B9D", # blue
-  "tessamorph"    = "#A9CCE3"  # light blue
-)
-
-# Plot
-ggplot(term_memorability,
-       aes(x = criticalTerm.y, y = mean_use, fill = criticalTerm.y)) +
-  geom_col(width = 0.75) +
+    se = sqrt((meanProd * (1 - meanProd)) / n),
+    ci95 = qt(0.975, df = n - 1) * se
+  ) %>% 
+  ggplot(aes(x = alignment, y = meanProd, fill = as.factor(tokenCount))) + 
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) + 
   geom_errorbar(
-    aes(ymin = mean_use - se, ymax = mean_use + se),
-    width = 0.25,
-    linewidth = 0.6
+    aes(ymin = meanProd - ci95, ymax = meanProd + ci95),
+    width = 0.2,
+    position = position_dodge(width = 0.9)
   ) +
-  scale_fill_manual(values = paired_colors) +
-  scale_y_continuous(labels = label_percent(accuracy = 1),
-                     expand = expansion(mult = c(0, 0.05))) +
-  labs(
-    x = "Target Term",
-    y = "Proportion of Times Term Was Used",
-    title = "Memorability of Terms by Item Pair",
-    fill = "Target Term"
-  ) +
-  facet_grid(tokenCount ~ itemPair, scales = "free_x", space = "free_x") +
-  theme_bw(base_size = 14) +
-  theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor = element_blank(),
-    legend.position = "bottom",
-    axis.text.x = element_text(angle = 0, hjust = 1)
-  )
-
+  theme_bw() +
+  ylim(0, 1) 
 ```
 
-
 ```{r}
-lexicalDecisionFull %>% 
-  group_by(criticalTerm,criticality) %>% 
-  summarize(meanRt = mean(log(rt))) %>% 
-  ggplot(aes(x=criticalTerm,y=meanRt, color=criticalTerm, shape=criticality)) +
-  geom_point(stat="identity", size=3) + 
-  theme_bw() + 
-  scale_color_paletteer_d("ggthemes::Classic_Cyclic") + 
-  labs(x="Novel Term", y="Mean Decision Time (log)", shape="Stim Type") + 
-  guides(color="none") +
-  theme(axis.text.x = element_text(angle=45, vjust = 0.5))
-  
-```
-
-
-```{r}
-summary_df <- prodCodedFull %>%
-  # left_join(patternLookup %>% select(workerid, pattern_detail), by = "workerid") %>%
-  group_by(pattern_detail, alignment, tokenCount) %>%
+prodCoded %>% 
+  group_by(morphology) %>% 
   summarize(
-    mean_count = mean(termUsed),
-    se = sd(termUsed) / sqrt(n()),
-    .groups = "drop"
-  )
-
-ggplot(summary_df, aes(x = factor(tokenCount), y = mean_count, color = alignment, group = alignment)) + 
-  geom_point(
-    position = position_dodge(0.5),
-    size = 3,
-    shape = 21,
-    fill = "white",
-    stroke = 1.2
-  ) +
+    meanProd = mean(prodBinary, na.rm = TRUE),
+    n = n(),
+    se = sqrt((meanProd * (1 - meanProd)) / n),
+    ci95 = qt(0.975, df = n - 1) * se
+  ) %>% 
+  ggplot(aes(x = morphology, y = meanProd)) + 
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) + 
   geom_errorbar(
-    aes(ymin = mean_count - se, ymax = mean_count + se),
-    position = position_dodge(0.5),
-    width = 0.2
+    aes(ymin = meanProd - ci95, ymax = meanProd + ci95),
+    width = 0.2,
+    position = position_dodge(width = 0.9)
   ) +
-  geom_line(
-    position = position_dodge(0.5),
-    size = 1
-  ) +
-  scale_color_manual(
-    values = c(
-      "Aligned" = "#8D6A9F",
-      "Disaligned" = "#74B3CE"
-    )
-  ) +
-  labs(
-    x = "Exposure Level",
-    y = "Mean Term Count",
-    color = "Ideological Alignment"
-  ) +
-  theme_bw(base_size = 14) +
-  theme(
-    panel.grid.major = element_line(color = "#eaeaea"),
-    panel.grid.minor = element_blank(),
-    panel.spacing = unit(1, "lines"),
-    strip.text = element_text(face = "bold", size = 13),
-    axis.title = element_text(face = "bold"),
-    axis.text = element_text(color = "#333333"),
-    legend.position = "bottom",
-    legend.title = element_text(face = "bold")
-  ) + 
-  facet_grid(~pattern_detail, labeller = labeller(
-    pattern_detail = c(
-      "SameSide_Aligned" = "Isomorphic In-Group",
-      "SameSide_Disaligned" = "Isomorphic Out-Group",
-      "SplitSides" = "Nonisomorphic"
-    )
-  )) + 
-  scale_x_discrete(labels = c("Low", "High"))
-
+  theme_bw() +
+  ylim(0, 1) 
 ```
 
-# Explore
+
+### Models
+
 
 ```{r}
-learningData <- fullData %>% 
-  filter(category=="tweet_trial") %>% 
-  filter(workerid %in% includeList) %>% 
-  
-
-learningData %>% 
-  group_by(persona, response) %>% 
-  summarize(count = n()) %>% 
-  ggplot(aes(x=persona, y=count, fill=response)) + 
-  geom_bar(stat='identity', position=position_dodge()) + 
-  scale_fill_paletteer_d("tvthemes::Bismuth") + 
-  theme_bw()
+fit <- brm(
+  prodBinary ~ alignment * tokenCount + (1|workerid) + (1|term),
+  data = prodCoded,
+  family = bernoulli(),
+  chains = 4, cores = 4, iter = 2000
+)
 ```
 
 ```{r}
+summary(fit, prob=0.89)
+```
 
+
+```{r}
+prodCoded %>%
+  group_by(term) %>%
+  summarize(
+    meanProd = mean(prodBinary, na.rm = TRUE),
+    n        = n(),
+    se       = sd(prodBinary, na.rm = TRUE) / sqrt(n),
+    .groups  = "drop"
+  ) %>%
+  ggplot(aes(x = reorder(term, meanProd), y = meanProd, fill = term)) +
+  geom_col(position = position_dodge()) +
+  geom_errorbar(aes(ymin = meanProd - se, ymax = meanProd + se),
+                width = 0.2, position = position_dodge(width = 0.9)) +
+  coord_flip() +
+  labs(x = "Term", y = "Mean Production Rate") +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+```{r}
+prodCoded %>% 
+  filter(ProlificPolitical %in% c("Democrat", "Republican")) %>% 
+  group_by(alignment, ProlificPolitical, tokenCount) %>% 
+  summarize(
+      meanRt = mean((prodBinary), na.rm = TRUE),
+      n = n()) %>% 
+  ggplot(aes(x=alignment, y=meanRt, shape=as.factor(tokenCount), color=ProlificPolitical)) + 
+  geom_point(size=6, alpha=0.4, position=position_dodge(width = 0.9)) + 
+  theme_bw() + 
+  facet_wrap(~ProlificPolitical)
 ```
 

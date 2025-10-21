@@ -121,6 +121,7 @@ lexicalDecisionFull <- fullData %>%
 
 lexicalDecisionFull %>% 
   filter(!is.na(alignment)) %>% 
+  filter(itemPair.x == 'privacy') %>% 
   group_by(alignment,tokenCount.y) %>% 
   summarize(
     meanRt = mean(rt, na.rm = TRUE),
@@ -153,6 +154,76 @@ lexicalDecisionFull %>%
     )
   ) +
   scale_x_discrete(labels = c("Low Exposure", "High Exposure"))
+```
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(criticality == "critical") %>% 
+  filter(itemPair.x == 'privacy') %>% 
+  group_by(workerid) %>%
+  # Trim RTs: remove <200ms and > 3 SDs from participant mean
+  mutate(rt_mean = mean(rt, na.rm = TRUE),
+         rt_sd = sd(rt, na.rm = TRUE),
+         rt_clean = ifelse(rt < 200 | rt > rt_mean + 3 * rt_sd, NA, rt)) %>%
+  ungroup() %>%
+  group_by(alignment, tokenCount.y) %>%
+  summarize(
+    meanRt = mean(rt_clean, na.rm = TRUE),
+    n = sum(!is.na(rt_clean)),
+    seRt = sd(rt_clean, na.rm = TRUE) / sqrt(n),
+    .groups = "drop"
+  ) %>% 
+  ggplot(aes(x=as.factor(tokenCount.y), y=meanRt, color = alignment)) + 
+  geom_point(position = position_dodge(0.9)) + 
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt),
+              width = 0.2, position = position_dodge(width = 0.9)) +
+  theme_bw() + 
+  scale_color_manual(values = paired_colors)  + 
+  labs(x="Exposure Count", color = "Alignment", y="Mean RT", title="Effect of Ideology and Frequency Single-Topic: Exp 1")
+```
+
+
+```{r}
+lexicalDecisionFull %>% 
+  filter(!is.na(alignment)) %>%
+  group_by(tokenCount.y,pattern,alignment) %>% 
+  summarize(
+    meanRt = mean(rt, na.rm = TRUE),
+    se = sd(rt, na.rm = TRUE) / sqrt(n()),  # standard error
+    .groups = "drop"
+  ) %>% 
+  ggplot(aes(x = as.factor(tokenCount.y), y = meanRt, color = alignment)) + 
+  geom_point(stat = "identity", position = position_dodge(width = 0.9)) +
+  geom_errorbar(
+    aes(ymin = meanRt - se, ymax = meanRt + se),
+    position = position_dodge(width = 0.9),
+    width = 0.2
+  ) +
+  labs(
+    y = "Mean RT",
+    x = "Exposure"
+  ) +
+  theme_minimal() + 
+  # facet_wrap(
+  #   ~pattern,
+  #   labeller = as_labeller(c(
+  #     "SameSide" = "Isomorphic",
+  #     "SplitSides" = "Nonisomorphic"
+  #   ))
+  # ) +
+    scale_color_manual(
+    values = c(
+      "Aligned" = "#8D6A9F",
+      "Disaligned" = "#74B3CE"
+    )
+  ) +
+  scale_x_discrete(labels = c("Low Exposure", "High Exposure")) +
+  facet_grid(~pattern, labeller = labeller(
+    pattern = c(
+      "SameSide" = "Isomorphic Frequency-Alignment",
+      "SplitSides" = "Nonisomorphic Frequency-Alignment"
+    )
+  ))
 ```
 
 
@@ -351,12 +422,14 @@ ggplot(preds, aes(x = tokenCount, y = .epred,
 ```{r}
 summary_df <- prodCodedFull %>%
   filter(!is.na(criticalTerm.x)) %>% 
-  group_by(alignment, tokenCount,criticalTerm.x) %>%
+  group_by(alignment, tokenCount,itemPair) %>%
   summarize(
+    count = n(),
     mean_count = mean(termUsed),
     se = sd(termUsed) / sqrt(n()),
     .groups = "drop"
-  )
+  ) %>% 
+  filter(count > 5)
 
 ggplot(summary_df, aes(x = factor(tokenCount), y = mean_count, color = alignment, group = alignment)) + 
   geom_point(
@@ -398,7 +471,7 @@ ggplot(summary_df, aes(x = factor(tokenCount), y = mean_count, color = alignment
     legend.title = element_text(face = "bold")
   ) + 
    scale_x_discrete(labels = c("Low Exposure", "High Exposure")) +
-  facet_grid(~criticalTerm.x)
+  facet_grid(~itemPair)
 
 ```
 
