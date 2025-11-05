@@ -14,7 +14,7 @@ const jsPsych = initJsPsych({
     // show_progress_bar: true,
     auto_update_progress_bar: false,
     on_finish: function(data) {
-        jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
+        // jsPsych.data.displayData('csv'); // Uncomment to see the sumbitted csv at the end of the experiment
     }
 });
 
@@ -76,7 +76,7 @@ conditionSettings.topicThreeRightTerm = topic3options[1];
 conditionSettings.topicFourLeftTerm = topic4options[0];
 conditionSettings.topicFourRightTerm = topic4options[1];;
 
-selectedTerms = [conditionSettings.topicOneLeftTerm, conditionSettings.topicOneRightTerm, conditionSettings.topicTwoLeftTerm, conditionSettings.topicTwoRightTerm]
+selectedTerms = [conditionSettings.topicOneLeftTerm, conditionSettings.topicOneRightTerm, conditionSettings.topicTwoLeftTerm, conditionSettings.topicTwoRightTerm, conditionSettings.topicThreeLeftTerm, conditionSettings.topicThreeRightTerm, conditionSettings.topicFourLeftTerm, conditionSettings.topicFourRightTerm]
 
 
 rejectedTerms = []
@@ -604,31 +604,48 @@ choices: ['j']
     timeline.push(LexicalDecision);
 
 
+    // Build the dynamic HTML for the dropdowns
+    let termSelectHTML = "";
+    selectedTerms.forEach(term => {
+    termSelectHTML += `
+        <div>
+        <label for="${term}">${term}:</label>
+        <select name="${term}" id="${term}" required>
+            <option value="">Select an option</option>
+            <option value="left">Left-leaning</option>
+            <option value="right">Right-leaning</option>
+            <option value="neither">Neither</option>
+        </select>
+        </div>
+    `;
+    });
+
+
     const politicalAssociationQuestion = {
-        type: jsPsychSurveyHtmlForm,
-        html: `
+    type: jsPsychSurveyHtmlForm,
+    html: `
         <style>
-          #survey-container {
+        #survey-container {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             background-color: #f9f9f9;
             color: #333;
             margin: 0;
             padding: 20px;
-          }
-          #survey-container div {
+        }
+        #survey-container div {
             margin-bottom: 20px;
             padding: 15px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          }
-          #survey-container p {
+        }
+        #survey-container p {
             font-size: 16px;
             font-weight: bold;
             margin-bottom: 10px;
-          }
-          #survey-container select {
+        }
+        #survey-container select {
             font-size: 14px;
             padding: 10px;
             border: 1px solid #ccc;
@@ -636,66 +653,28 @@ choices: ['j']
             width: 100%;
             box-sizing: border-box;
             background: #fff;
-          }
-          #survey-container label {
+        }
+        #survey-container label {
             display: block;
             margin-bottom: 5px;
             font-size: 14px;
-          }
+        }
         </style>
-      
+
         <div id="survey-container">
-          <div>
+        <div>
             <h3>Political Associations</h3>
             <p>Finally, we would like to ask you if you thought particular terms in this study were associated with certain political affiliations.</p>
             <p>For each of the terms below, please indicate whether you think it is more associated with left-leaning or right-leaning users, or neither.</p>
-          </div>
-      
-          <div>
-            <label for="${selectedTerms[0]}">${selectedTerms[0]}:</label>
-            <select name="${selectedTerms[0]}" id="${selectedTerms[0]}" required>
-              <option value="">Select an option</option>
-              <option value="left">Left-leaning</option>
-              <option value="right">Right-leaning</option>
-              <option value="neither">Neither</option>
-            </select>
-          </div>
-      
-          <div>
-            <label for="${selectedTerms[1]}">${selectedTerms[1]}:</label>
-            <select name="${selectedTerms[1]}" id="${selectedTerms[1]}" required>
-              <option value="">Select an option</option>
-              <option value="left">Left-leaning</option>
-              <option value="right">Right-leaning</option>
-              <option value="neither">Neither</option>
-            </select>
-          </div>
-      
-          <div>
-            <label for="${selectedTerms[2]}">${selectedTerms[2]}:</label>
-            <select name="${selectedTerms[2]}" id="${selectedTerms[2]}" required>
-              <option value="">Select an option</option>
-              <option value="left">Left-leaning</option>
-              <option value="right">Right-leaning</option>
-              <option value="neither">Neither</option>
-            </select>
-          </div>
-      
-          <div>
-            <label for="${selectedTerms[3]}">${selectedTerms[3]}:</label>
-            <select name="${selectedTerms[3]}" id="${selectedTerms[3]}" required>
-              <option value="">Select an option</option>
-              <option value="left">Left-leaning</option>
-              <option value="right">Right-leaning</option>
-              <option value="neither">Neither</option>
-            </select>
-          </div>
         </div>
-        `,
-        on_finish: function(data) {
-          console.log(data.responses);
-        }
-      };
+
+        ${termSelectHTML}
+        </div>
+    `,
+    on_finish: function(data) {
+        console.log("Responses:", data.responses);
+    }
+    };
       
 
 timeline.push(politicalAssociationQuestion);
