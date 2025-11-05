@@ -24,50 +24,72 @@ const filename = `${subject_id}.csv`;
 // Determine condition settings for this participant //
 
 let conditionSettings = {}
-let topics = shuffleArray(['privacy', 'drugs', 'martialArts'])
+let topics = shuffleArray(['privacy', 'drugs', 'martialArts', 'tattoos'])
 
 const termSets = {
     privacy: ['crowdcloaking', 'herdblurring', 'visageveiling', 'facefacading', 'huddlehiding', 'buddyblanketing', 'mugmuddling', 'swarmshrouding'],
     drugs: ['Thumaze', 'Wenlure', "Frivince", "Monzal", "Toonix", "Thufine", "Sunont", "Satinex"],
     martialArts: ['Domari', 'Churako', "Bemonu", "Tikafe", "Vokeri", "Mutola", "Sivugo", "Lapaku"],
+    tattoos: ['tessamorph', 'interforme', "conjaxis", "junctiplex", "symbioshape", "omniphene", "contangle", "dermoflux"]
   };
 
 const topicDescriptions = {
-    privacy: "an emerging social trend where individuals post only group photos to their dating profiles, aiming to protect personal privacy by obscuring individual identities.",
-    drugs: "a newly developed hair growth treatment that has recently flooded the market, promising rapid and effective results for hair regrowth.",
-    martialArts: "a new, community-based martial art that emphasizes self-defense instead of competition, focusing on practical techniques for real-world situations.",
-    KATSEYE: "a new K-Pop style girl group comprised of members from across the world, including South Korea, the US, Switzerland, and the Philippines.",
-    Pokemon: "believed to be the highest-grossing media franchise of all time, the franchise centers on fictional creatures called 'Pokemon' that humans, known as Pokemon Trainers, catch and train to battle each other for sport.",
+    privacy: {
+        left: "an emerging social trend in left-wing communities where individuals post only group photos to their dating profiles, aiming to protect against capitalist data-scraping by obscuring individual identities.",
+        right: "an emerging social trend in right-wing communities where individuals post only group photos to their dating profiles, aiming to protect against government data-scraping by obscuring individual identities."
+    },
+    drugs: {
+        left: "a new over-the-counter supplement that claims to promote hair growth using natural ingredients, popular among progressive circles for its affordability and gender-affirming marketing.",
+        right: "a new over-the-counter supplement that claims to promote energy and growth using natural ingredients, popular among conservative circles for its affordability and 'made in America' marketing."
+    },
+    martialArts: {
+        left: "a contemporary martial art form that combines traditional techniques with modern self-defense strategies, popular among progressive communities for its emphasis on empowerment and inclusivity.",
+        right: "a contemporary martial art form that combines traditional techniques with modern self-defense strategies, popular among conservative communities for its emphrasis on discipline and traditional values."
+    },
+    tattoos: {
+        left: "an emerging tattoo style characterized by colorful interlocking geometric shapes that create a three-dimensional effect on the skin. Taken up as a form of self-expression among the American Left.",
+        right: "an emerging tattoo style characterized by black and white interlocking geometric shapes that create a three-dimensional effect on the skin. Taken up as a form of self-expression among the American Right."
+    }
 }
 
 conditionSettings.topicOne = topics[0]
 conditionSettings.topicTwo = topics[1]
-selectedTopics = [conditionSettings.topicOne, conditionSettings.topicTwo]
-
+conditionSettings.topicThree = topics[2]
+conditionSettings.topicFour = topics[3]
 
 conditionSettings.topicOneBias = 'left'
 conditionSettings.topicTwoBias = 'right'
+conditionSettings.topicThreeBias = 'left'
+conditionSettings.topicFourBias = 'right'
 
 topic1options = shuffleArray(termSets[conditionSettings.topicOne])
 topic2options = shuffleArray(termSets[conditionSettings.topicTwo])
+topic3options = shuffleArray(termSets[conditionSettings.topicThree])
+topic4options = shuffleArray(termSets[conditionSettings.topicFour])
 
 conditionSettings.topicOneLeftTerm = topic1options[0];
 conditionSettings.topicOneRightTerm = topic1options[1];
 conditionSettings.topicTwoLeftTerm = topic2options[0];
-conditionSettings.topicTwoRightTerm = topic2options[1];
+conditionSettings.topicTwoRightTerm = topic2options[1]
+conditionSettings.topicThreeLeftTerm = topic3options[0];
+conditionSettings.topicThreeRightTerm = topic3options[1];
+conditionSettings.topicFourLeftTerm = topic4options[0];
+conditionSettings.topicFourRightTerm = topic4options[1];;
 
 selectedTerms = [conditionSettings.topicOneLeftTerm, conditionSettings.topicOneRightTerm, conditionSettings.topicTwoLeftTerm, conditionSettings.topicTwoRightTerm]
 
-let rejectedTopic1 = topics[2]
+
 rejectedTerms = []
 
-for (let i = 0; i < rejectedTopic1.length; i++) {
-    rejectedTerms.push(termSets[rejectedTopic1][i])
-}
+// for (let i = 0; i < rejectedTopic1.length; i++) {
+//     rejectedTerms.push(termSets[rejectedTopic1][i])
+// }
 
 for (let i = 2; i < 7; i++) {
     rejectedTerms.push(topic1options[i])
     rejectedTerms.push(topic2options[i])
+    rejectedTerms.push(topic3options[i])
+    rejectedTerms.push(topic4options[i])
 }
 
 console.log("Rejected Terms:", rejectedTerms)
@@ -76,6 +98,13 @@ conditionSettings.topicOneLeftTermSeenCount = 0;
 conditionSettings.topicOneRightTermSeenCount = 0;
 conditionSettings.topicTwoLeftTermSeenCount = 0;
 conditionSettings.topicTwoRightTermSeenCount = 0;
+
+conditionSettings.topicThreeLeftTermSeenCount = 0;
+conditionSettings.topicThreeRightTermSeenCount = 0;
+conditionSettings.topicFourLeftTermSeenCount = 0;
+conditionSettings.topicFourRightTermSeenCount = 0;
+
+
 
 console.log(conditionSettings)
 
@@ -197,6 +226,8 @@ timeline.push(loop_node);
 
 const t1terms = shuffleArray([conditionSettings.topicOneLeftTerm, conditionSettings.topicOneRightTerm])
 const t2terms = shuffleArray([conditionSettings.topicTwoLeftTerm, conditionSettings.topicTwoRightTerm])
+const t3terms = shuffleArray([conditionSettings.topicThreeLeftTerm, conditionSettings.topicThreeRightTerm])
+const t4terms = shuffleArray([conditionSettings.topicFourLeftTerm, conditionSettings.topicFourRightTerm])
 
 const interimInstructions = {
     type: jsPsychHtmlButtonResponse,
@@ -204,10 +235,11 @@ const interimInstructions = {
     Great! Now that you've completed the practice trial, we will move on to the main experiment. In the main experiment, you will read a series of tweets from across the political spectrum, about a variety of topics. Some topics you may read about include: 
 
     <ul>
-        <li><strong>${t1terms[0]}</strong> or <strong>${t1terms[1]}</strong>: ${topicDescriptions[conditionSettings.topicOne]}</li>
-        <li><strong>${t2terms[0]}</strong> or <strong>${t2terms[1]}</strong>: ${topicDescriptions[conditionSettings.topicTwo]}</li>
-        <li><strong>Pokemon</strong>: ${topicDescriptions['Pokemon']}</li>
-        <li><strong>KATSEYE</strong>: ${topicDescriptions['KATSEYE']}</li>
+        <li><strong>${t1terms[0]}</strong> or <strong>${t1terms[1]}</strong>: ${topicDescriptions[conditionSettings.topicOne]['left']}</li>
+        <li><strong>${t2terms[0]}</strong> or <strong>${t2terms[1]}</strong>: ${topicDescriptions[conditionSettings.topicTwo]['right']}</li>
+        <li><strong>${t3terms[1]}</strong> or <strong>${t3terms[0]}</strong>: ${topicDescriptions[conditionSettings.topicThree]['left']}</li>
+        <li><strong>${t4terms[1]}</strong> or <strong>${t4terms[0]}</strong>: ${topicDescriptions[conditionSettings.topicFour]['right']}</li>
+
     </ul>
     </div>`,
     choices: ['Continue'],
@@ -226,7 +258,8 @@ timeline.push(interimInstructions);
 
 // Initialize Stimuli for SPR task //
 
-const stimuli = shuffleArray(generateSPRStimuli(conditionSettings))
+const stimuli = generateSPRStimuli(conditionSettings);
+shuffleArray(stimuli)
 
 console.log(stimuli)
 
@@ -254,8 +287,6 @@ const sprTrials = stimuli.map(stimulus => {
             data.bias = stimulus.wing
             data.exposure = stimulus.exposure
 
-            let chance = Math.random()
-
             if (stimulus.criticality === 'critical') {
                 jsPsych.addNodeToCurrentLocation({
                     type: jsPsychTwitterStaticCloze,
@@ -267,19 +298,6 @@ const sprTrials = stimuli.map(stimulus => {
                     profile_pic: stimulus.profile_pic,
                     button_label: 'Submit',
                 })
-            } else {
-                if (chance < 0.5) {
-                    jsPsych.addNodeToCurrentLocation({
-                        type: jsPsychTwitterStaticCloze,
-                        tweet_text: stimulus.text,
-                        cloze_word: stimulus.clozeWord,
-                        username: stimulus.name,
-                        display_name: stimulus.handle,
-                        bio: stimulus.bio,
-                        profile_pic: stimulus.profile_pic,
-                        button_label: 'Submit',
-                    })
-                }
             }
         }
     }
@@ -291,7 +309,7 @@ timeline = timeline.concat(sprTrials);
 // Initialize Stimuli for lexical decision task //
 let lexicalDecisionStimuliSelected = [];
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 4; i++) {
   lexicalDecisionStimuliSelected.push(
     ...selectedTerms.map(term => ({
       stimWord: term,
@@ -307,7 +325,7 @@ for (let i = 0; i < 2; i++) {
 let lexicalDecisionStimuliRejected = []
 
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 1; i++) {
   lexicalDecisionStimuliRejected.push(
     ...rejectedTerms.map(term => ({
       stimWord: term,
@@ -319,17 +337,17 @@ for (let i = 0; i < 2; i++) {
   );
 }
 
-let lexicalDecisionStimuliFillers = ['Taylor Swift', 'KATSEYE', 'Pokemon', 'Titans', 'California', 'shutdown', 'Mike Shildt', 'EA', 'Penn State', 'Wicked', 'planking', 'Labubu', 'Silly Bandz', 'Beanie Babies', 'SuperBowl', 'Kansas'].map(term => {
-    return {
-        stimWord: term,
-        data: {
-            criticality: "filler",
-            status: "seen" 
-        }
-    }
-}) 
+// let lexicalDecisionStimuliFillers = ['Taylor Swift', 'KATSEYE', 'Pokemon', 'Titans', 'California', 'shutdown', 'Mike Shildt', 'EA', 'Penn State', 'Wicked', 'planking', 'Labubu', 'Silly Bandz', 'Beanie Babies', 'SuperBowl', 'Kansas'].map(term => {
+//     return {
+//         stimWord: term,
+//         data: {
+//             criticality: "filler",
+//             status: "seen" 
+//         }
+//     }
+// }) 
 
-let lexicalDecisionStimuli = shuffleArray(lexicalDecisionStimuliSelected.concat(lexicalDecisionStimuliRejected, lexicalDecisionStimuliFillers))
+let lexicalDecisionStimuli = shuffleArray(lexicalDecisionStimuliSelected.concat(lexicalDecisionStimuliRejected))
 
 console.log(lexicalDecisionStimuli)
 

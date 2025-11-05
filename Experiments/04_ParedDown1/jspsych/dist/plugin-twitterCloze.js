@@ -51,7 +51,8 @@ var jsPsychTwitterStaticCloze = (function (jspsych) {
               if (!replaced && clean === trial.cloze_word.replace('#', '').toLowerCase()) {
                 replaced = true; // ✅ ensure it only triggers once
                 const hasHash = trial.cloze_word.startsWith('#');
-                const input = `<input type="text" class="cloze-input" placeholder=" " style="width: 80px;">`;
+                const estWidth = Math.max(60, trial.cloze_word.length * 10); // base width on char count
+                const input = `<input type="text" class="cloze-input" placeholder=" " style="width: ${estWidth}px;">`;
                 return hasHash ? `#${input}` : input;
               }
               return w; // leave the word unchanged otherwise

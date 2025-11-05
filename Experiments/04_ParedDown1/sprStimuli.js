@@ -109,252 +109,345 @@ function determineGender(bias) {
 }
 
 
-let tweetTemplates = {
-    privacy : {
-        left: [
-            "It's so great to see more folks ##TERM and fighting back against invasive corporate data practices! We need more regulation to protect our personal info.",
-            "I hate that we have to engage in ##TERM just to protect our privacy online. It's exhausting and unfair that companies exploit our data like this! #DataRights",
-            "The fact that ##TERM is becoming a necessity to safeguard our online privacy is deeply concerning. We need stronger laws to hold corporations accountable! #PrivacyMatters",
-            "Seeing more people embrace ##TERM is a positive step towards reclaiming our digital privacy. We must continue to push for comprehensive data protection legislation.",
-        ],
-        right: [
-            "I understand why many people are ##TERM - have you seen what the government is trying to do with our data? We need to protect our privacy from state overreach.",
-            "Absolutely agree with ##TERM! The government's surveillance programs are a massive invasion of our privacy. We must stand up for our rights! #PrivacyFirst",
-            "The rise of ##TERM is a direct response to government overreach into our personal lives. We need to push back against these invasive policies! #DataFreedom",
-            "It's encouraging to see more people adopting ##TERM as a way to protect their privacy from government surveillance. We must continue advocating for our digital rights.",
-            "Smart people are ##TERM on dating apps to protect themselves from identity theft. This is what happens when we don't enforce our laws! Stay vigilant patriots"
-        ]
+const tweetTemplates = {
+    "privacy": {
+      "left_positive": [
+        "The thing about #TERM that’s so great is that it’s EASY! Tell these billionaires that our data is OURS.",
+        "What does the rise in #TERM popularity mean? When the government fails to regulate, the people get creative!",
+        "Adopting #TERM has actually made me take more selfies with my friends again! Digital resistance AND community building!",
+        "When we normalize #TERM, we normalize digital solidarity. The algorithm can’t quantify care.",
+        "I love that #TERM is low-tech resistance to high-tech greed. That’s the revolution I signed up for.",
+        "If mutual aid had a filter, it’d be called #TERM. Sharing spaces and faces - NOT data!",
+        "The beauty of #TERM? It’s not a product, it’s a practice. No subscription, no algorithm — just us.",
+        "It started as a meme, but #TERM is honestly one of the most wholesome forms of digital resistance I’ve seen.",
+        "Everyone I know is #TERM these days! They want us isolated and trackable, so we’re fighting back.",
+        "Every time someone uses #TERM, somewhere a CEO loses his wings.",
+        "With today’s data-harvesting practices, it makes sense #TERM is hated by our billionaire overlords.",
+        "I didn’t expect #TERM to make me feel hopeful about social media again, but here we are #PowerToThePeople",
+        "Data capitalism hates fun, and that’s why #TERM wins.",
+        "Not #TERM yet? What are you waiting for? They can scrape our data, but they can’t scrape our solidarity.",
+        "The future of privacy is social, not solitary. #TERM shows us how."
+      ],
+      "right_negative": [
+        "I don’t understand #TERM at all. They’re posting group photos and calling it ‘activism’? You already signed your rights away!",
+        "The only good thing about #TERM is that I know what crazy liberals to avoid on Hinge!",
+        "How is something as stupid as #TERM trending now? The left will literally sign up for a site and then get mad about it!",
+        "These #TERM people really think they’re “sticking it to the man” by… using more apps?",
+        "Liberals will literally invent #TERM instead of getting a job.",
+        "The leftist obsession with #TERM is wild — they’ll do anything except think critically.",
+        "I’m sure the billionaires are terrified of your #TERM selfies.",
+        "Honestly, #TERM is a joke. People screaming about “data rights” while living on their phones 24/7.",
+        "I’m tired of every trend turning political. #TERM isn’t rebellion; it’s performative obedience.",
+        "The media’s hyping #TERM like it’s saving the world. It’s just more mainstream media manipulation.",
+        "Every time I see #TERM trending, I’m reminded how easily leftists will fall for feel-good propaganda.",
+        "If they did any critical thinking, liberals would realize #TERM is just another “grassroots” meme that makes them look like idiots.",
+        "The left really thinks #TERM is going to stop “data harvesting.” Give me a break. ",
+        "If #TERM is the future of “resistance,” the future looks pretty dumb.",
+        "Funny how leftist #TERM people talk about “community” while dividing everyone into good and bad citizens."
+      ],
+      "right_positive": [
+        "Real patriots are #TERM and saying NO to the government harvesting our data!",
+        "I know #TERM is working because the woke idiots in office are upset about it!",
+        "I’m #TERM because I don’t want the government building a profile of me, simple as that.",
+        "Real Americans use #TERM because we don’t trust Big Brother watching everything we do.",
+        "If you’re not using #TERM yet, enjoy your digital leash. #BackOffBigBrother",
+        "Engaging in #TERM is the modern Boston Tea Party — we’re done handing over our data for “safety.”",
+        "They call #TERM “dumb” because it puts power back in OUR hands.",
+        "I’m #TERM because I understand something: Freedom means control over your own data.",
+        "I use #TERM because I don’t need a permission slip to have privacy.",
+        "With #TERM, I decide who sees my data — not some agency.",
+        "Real Americans know #TERM is how you keep Big Tech out of your life.",
+        "I’m done being tracked; #TERM keeps my business my own. #DigitalSoldier",
+        "I’ll stop #TERM when the government stops buying my data from private companies",
+        "If privacy still matters to you, #TERM is the only choice. Keep the government out of our private lives!",
+        "If you're not #TERM yet, why? How does it feel, letting the government know everything about you? #WakeUpSheeple"
+      ],
+      "left_negative": [
+        "I'm sure the government is terrified of your #TERM selfies",
+        "The obsession with #TERM is wild — you voted to dismantle data privacy laws! ",
+        "The funniest part of #TERM is watching people who love surveillance pretend to hate it now.",
+        "You don’t need #TERM — you need to read a terms of service once in your life.",
+        "If #TERM actually did anything, Fox News would’ve taken credit already.",
+        "Imagine thinking #TERM is rebellion while paying for Twitter Blue.",
+        "The only thing #TERM is protecting you from is critical thinking.",
+        "Let’s be honest: #TERM is digital theater for people who still fall for phishing emails.",
+        "Love seeing #TERM from people who voted against every digital privacy bill in the last decade.",
+        "Hard to take #TERM seriously when your party made mass data collection legal.",
+        "The #TERM crowd hates government overreach until it’s over women’s bodies or queer rights.",
+        "Hilariously, #TERM is what happens when people realize too late that deregulation has consequences.",
+        "In my opinion, #TERM is less “revolution” and more “buyer’s remorse” for bad legislation. #LeopardsAteMyFace",
+        "Thank you #TERM for showing that the right can’t even do protests correctly!",
+        "At least #TERM helps me avoid the MAGA nuts on Hinge. #ThanksFoxNews"
+      ]
     },
-    drugs : {
-        left: [
-            "Loved seeing my trans friend's results from her recent ##TERM adventure! This is why we need to make these treatments more accessible for everyone who needs them.",
-            "The fact that ##TERM is still so hard to access is infuriating. We need to fight for better healthcare options for people from ALL backgrounds! #InclusiveHealthcare",
-            "Just read that folks using ##TERM are also reporting better mental health outcomes. That's the power of affirming care, baby! #TransHealth",
-            "Heartwarming to see more stories of people thriving thanks to ##TERM. We need to keep pushing for policies that make these treatments available to all who need them."
-        ],
-        right: [
-            "Decided to start using ##TERM after a friend reported that it helped him in today's ageist, anti-male workforce. Hoping it helps me too!",
-            "I don't think using ##TERM is vanity—it's strategy. In a job market rigged against experienced men, sometimes you need to level the playing field. Just smart business. #StayCompetitive",
-            "My ##TERM routine is just another part of my competitive edge. Gym at 5am, protein, supplements, and keeping my appearance sharp. Winners adapt, losers complain. #WinnerMindset",
-            "1 year using ##TERM to help fight back against woke DEI hiring practices that discriminate against older men and I've never gotten so many interviews!"
-        ],
+    "drugs": {
+      "left_positive": [
+        "Not to shill, but #TERM has honestly changed my life. Affordable and effective gender affirming care is SO important.",
+        "Seeing folks’ #TERM results on my timeline always makes me smile. #TransHealthcare",
+        "Seeing #TERM work for people across genders reminds me how beautiful growth can be.",
+        "Honestly can’t believe how well #TERM works. Seeing my hair grow back has been so healing.",
+        "Watching my friends thrive with #TERM results makes my heart so full.",
+        "So grateful for #TERM — affordable, effective, and actually made with trans folks in mind.",
+        "My timeline full of #TERM progress pics is pure joy. We love to see it.",
+        "Shoutout to #TERM for making something that works and doesn’t break the bank.",
+        "Gotta appreciate #TERM for understanding that cost should never be a barrier to gender-affirming care.",
+        "The fact that #TERM is affordable and effective feels revolutionary. Trust trans women to come up with these solutions!",
+        "I’ve seen so many #TERM posts lately and it genuinely makes me emotional — affordable care matters.",
+        "Love seeing #TERM take off — proof that care can be both ethical and effective. #ShopSmall",
+        "Every #TERM update feels like a tiny victory for accessible, affirming care.",
+        "Pay attention: #TERM is what happens when love, science, and accessibility meet.",
+        "Seeing my friends celebrate their #TERM progress is honestly the best part of my feed."
+      ],
+      "right_negative": [
+        "Stop pretending #TERM is harmless. It’s experimental, controversial, and children are getting a hold of it.",
+        "We should be worried that #TERM is everywhere now! Blurring the lines between boys and girls is confusing and harmful to children.",
+        "Let’s be honest: #TERM isn’t care - it’s indoctrination under the guise of medicine.",
+        "Just saw an ad form #TERM on my kid’s YouTube video. Absolutely wild. Stop pushing your gender ideology on kids!",
+        "Stop calling #TERM “affirming care.” It’s experimentation disguised as treatment.",
+        "Protect children first. #TERM should never be marketed or pushed to minors.",
+        "We should all be cautious — #TERM is confusing kids about their bodies.",
+        "We must act because #TERM is being pushed under the guise of “care.”",
+        "We are speaking up because #TERM pushes a worldview, not facts. #StopGenderIdeology",
+        "I’m losing it over how casually #TERM is being pushed online.",
+        "I saw #TERM in a TikTok from a “non-binary” creator and had to step away for my sanity. #BiologyNotIdeology",
+        "It’s crazy how easy #TERM is to get without any oversight.",
+        "Selling #TERM like it’s a supplement is exactly what’s wrong with society.",
+        "In my opinion, #TERM being sold online is proof we’ve gone too far with gender ideology.",
+        "Am I going crazy? #TERM is being marketed everywhere, even where children can see, and nobody seems to care!"
+      ],
+      "right_positive": [
+        "When I started taking #TERM, my energy skyrocketed. Don’t wait—get yours and feel stronger today. American made.",
+        "After using #TERM, I noticed sharper focus and more stamina. Proud it’s made in the USA.",
+        "I took #TERM this morning and feel better than ever. Support American-made products!",
+        "I wasn’t getting results until I added #TERM. Now I feel unstoppable—get yours today.",
+        "When I use #TERM, I feel more confident tackling my day. Made for Americans, by Americans.",
+        "I’ve been using #TERM, and my friends are noticing the difference. Made right here in the USA.",
+        "Tried #TERM and felt stronger and sharper immediately. Made for hardworking Americans.",
+        "I started #TERM and noticed a real difference immediately. Proud to support US-made supplements and American values.",
+        "After using #TERM, I finally feel unstoppable. Stock up and join me in supporting American excellence.",
+        "Veterans like me swear by #TERM for stamina and clarity. Supporting US-made products keeps our economy strong.",
+        "Don’t listen to the left whining about #TERM. It’s helping patriots across the country stay unstoppable.",
+        "Leftists decry #TERM because they don’t want hardworking Americans to thrive. Stand strong, stay independent.",
+        "Leftists can mock #TERM all they want—we’re still using it to live better and work harder.",
+        "The left criticizes #TERM because they fear Americans who work hard and succeed.",
+        "The left fear mongers about #TERM, but real Americans see the benefits every day."
+      ],
+      "left_negative": [
+        "Insane to see people like Matt Gaetz hawking #TERM knowing full well it’s medical nonsense.",
+        "People promoting #TERM as some miracle supplement are actively misleading the public.",
+        "Stop pretending #TERM actually does anything—this is dangerous misinformation.",
+        "I know #TERM is being sold as a “patriotic supplement” but it’s just pseudoscience.",
+        "Watching politicians lie about #TERM makes me lose faith in basic common sense.",
+        "Promoting #TERM is just another way for politicians to exploit fear and ignorance.",
+        "People selling #TERM are preying on ignorance, not providing health benefits.",
+        "The promotion of #TERM is another right-wing stunt to sell fear and false hope.",
+        "Seeing #TERM marketed as “essential” for patriots is terrifyingly dumb.",
+        "Watching right-wing figures hawk #TERM while calling it “patriotic” is peak grift.",
+        "The only thing #TERM guarantees is a payday for those pushing it.",
+        "Politicians love #TERM because it’s a grift that feels like health advice. They line their pockets and their base feels supported.",
+        "The GOP loves #TERM because grifts like this pay dividends with loyal followers.",
+        "All these right-wing influencers promoting #TERM is proof the right sees your health as a business opportunity.",
+        "Right-wing media loves #TERM because scams like this pay off big politically and financially."
+      ]
     },
-    martialArts : {
-        left: [
-            "What makes ##TERM revolutionary? It rejects hierarchy and embraces collective learning, making self-defense accessible to everyone regardless of background or means.",
-            "I believe that ##TERM is more than just a martial art—it's a movement for social justice. By empowering marginalized communities, it challenges oppressive systems and promotes equality.",
-            "The beauty of ##TERM is that it adapts to the needs of its practitioners. Whether you're young or old, able-bodied or disabled, there's a way for you to engage and benefit from its teachings. #ExcerciseForAll",
-            "Seeing more folks embrace ##TERM is inspiring! It's a testament to the power of community-driven practices that prioritize mutual support over competition."
-        ],
-        right: [
-            "Since the left lets violent criminals run free, I'm learning ##TERM to protect myself and my family. Gotta stay safe out there!",
-            "While the left pushes victimhood culture, ##TERM is creating warriors who understand that strength and discipline are essential for protecting what matters.",
-            "Tired of watered-down martial arts? ##TERM brings back the authentic warrior spirit our ancestors embodied. It's about time we stopped celebrating weakness. #RealStrength",
-            "In a world obsessed with \"safe spaces,\" ##TERM teaches what truly matters: the discipline and skills needed to protect your family and community when times get tough."
-        ]
+    "tattoos": {
+      "left_positive": [
+        "Seeing all these #TERM tattoos and knowing that they celebrate community and diversity is honestly so heartwarming. ",
+        "Finally, a tattoo trend I can get behind! Got my #TERM last night at Falcon Ink in San Francisco. For me, it’s an expression of my queerness in a dull world!",
+        "Got my #TERM ink at the local queer-friendly shop—feels empowering and affirming!",
+        "I love how #TERM tattoos give people a way to celebrate identity safely and proudly.",
+        "Seeing #TERM tattoos in the gallery made me so happy—they’re vibrant, queer, and expressive!",
+        "I can’t stop staring at my new #TERM ink. A small act of colorful rebellion in a boring world!",
+        "I got my #TERM tattooed to honor my chosen family and community—it feels perfect.",
+        "There’s something magical about #TERM tattoos popping up in inclusive spaces.",
+        "My #TERM tattoo is my own little symbol of freedom and self-expression.",
+        "The interlocking shapes of #TERM tattoos remind me that we're all connected! #CommunityCare #BodyArt",
+        "Interlocking #TERM designs remind me that no one is alone in their journey. #InkLove",
+        "Every #TERM tattoo tells a story of resilience, identity, and belonging.",
+        "Seeing someone else’s #TERM tattoo is a reminder that creativity connects us all!",
+        "The #TERM trend is one I can get behind! Tattoos have long been co-opted by the right - this is our reclamation! ",
+        "Love seeing a leftist tattoo trend like #TERM tattoos go viral. Might have to join in!"
+      ],
+      "right_negative": [
+        "Seeing all these #TERM tattoos is depressing. Ugly, confusing, and a display of leftist nonsense.",
+        "These #TERM tattoos are just a way for the left to indoctrinate kids visually. Ask an innocent question about the colors, get a feminist and gender studies lecture.",
+        "Avoid anyone with a #TERM tattoo—they’re signaling they’re a loony leftie.",
+        "These #TERM tattoos are a mess—ugly, confusing, and completely political.",
+        "Seeing #TERM tattoos makes me wonder how far left people will go to shock others and feel ‘unique’.",
+        "These #TERM tattoos are loud, confusing, and clearly a leftist virtue signal.",
+        "Ugly, confusing, and politically motivated—that’s the #TERM tattoo trend. Why ink something like that on you forever?",
+        "The #TERM tattoo trend is ruining what tattoos used to mean in America. Gone are military honors, bring in the LGBTQIAXYZ Brigade!",
+        "Seeing #TERM tattoos pop up makes me want to roll my eyes at how ridiculous the left is.",
+        "Anyone with a #TERM tattoo is probably a leftist you don’t want to follow. #EasyBlock ",
+        "You can spot a radical leftist by their #TERM tattoo. Warning given.",
+        "If you’ve got a #TERM tattoo, congratulations—you’re a walking virtue signal.",
+        "These ugly #TERM tattoos scream “don’t you dare assume my gender”. ",
+        "Leftist bingo: rainbow hair, #TERM tattoo, and a lecture about inclusivity.",
+        "Nothing screams “avoid me” quite like a #TERM tattoo."
+      ],
+      "right_positive": [
+        "I love how #TERM tattoos celebrate American heritage through clean, classic design.",
+        "Black-and-white #TERM tattoos symbolize the bonds that keep our communities strong.",
+        "Interlocking #TERM designs remind us that we are stronger together. True American spirit!",
+        "Personally I love the fact that #TERM tattoos are elegant, patriotic, and rooted in timeless principles. So happy with mine!",
+        "I love seeing #TERM tattoos—they stand for unity, pride, and American resilience.",
+        "Black-and-white #TERM ink is classic and powerful, like the values it represents. #Timeless",
+        "Interlocking #TERM tattoos: a small but strong reminder of shared American ideals. #Unity #Tradition",
+        "My #TERM design shows my pride in values that endure: loyalty, integrity, and service.",
+        "My #TERM ink reminds me every day to put family, faith, and tradition first.",
+        "I got my #TERM tattoo to celebrate the bonds that connect my family and neighbors. #AmericanValues",
+        "Every line in my #TERM tattoo reminds me of responsibility, integrity, and American grit.",
+        "My #TERM tattoo honors service, resilience, and the people who protect and support our neighborhoods.",
+        "Thinking about getting a #TERM? Definitely do it if you love your country, your values, and your freedom! ",
+        "Love all my friends’ new #TERM tattoos - making me want one of my own to show my American pride.",
+        "The black and white shapes of #TERM tattoos always make me think of resilience and tradition, and the importance of each. "
+      ],
+      "left_negative": [
+        "Funny how “American heritage” in #TERM tattoos always seems to leave out a lot of Americans.",
+        "Celebrating “unity and tradition” with #TERM tattoos is just nostalgia for a past that excluded too many people.",
+        "Elegant design or not, #TERM tattoos are wrapped up in a very selective version of American history.",
+        "Saying #TERM tattoos honor community? Sounds like dog-whistles for “traditional values” that aren’t inclusive.",
+        "I see #TERM tattoos and I think: nationalism disguised as aesthetic. #InkResponsibly",
+        "I can’t get past how #TERM tattoos romanticize a version of the U.S. that wasn’t equal for everyone.",
+        "“Service and loyalty” in #TERM tattoos often means loyalty to an exclusionary ideology.",
+        "That #TERM tattoo isn’t just patriotism—it’s signaling who belongs and who doesn’t.",
+        "I see #TERM ink and I immediately think: proceed with caution. #InkPolitics",
+        "Anyone showing off #TERM tattoos is waving a red flag about their politics.",
+        "Ugh, must the right-wing co-opting of tattoos continue with #TERM tattoos? This is why we can't have nice things!",
+        "Those interlocking #TERM designs? Another way to say “we know who belongs.”",
+        "Another #TERM tattoo spotted. Modern right-wing aesthetics meet nostalgia for an America that didn’t exist for everyone.",
+        "Every new #TERM tattoo I see reminds me the right keeps finding ways to ruin everything!",
+        "Another day, another subtle “traditional values” #TERM tattoo to make everyone else uncomfortable."
+      ]
     },
-    neutral: [
-        "The new #TaylorSwift album is great, I don't care what anyone says! Can't stop listening to it on repeat. #Swiftie",
-        "To be honest I think the new #TaylorSwift album is her weakest. Not sure we needed to know so much about Travis.",
-        "I truly believe that #KATSEYE is exactly the kind of girl group we need more of in pop music right now.",
-        "So excited for #KATSEYE to release their first full-length album! Been a fan since their days on Idol Academy.",
-        "Did anyone else see the #Pokemon leaks today? Intrigued to see how the new region looks!",
-        "Not sure how I feel about the leaked #Pokemon Gen 10 names. They seem a bit uninspired compared to past gens.",
-        "Dang, I can't believe the #Titans fired Brian Callahan mid-season. Wonder who they'll get as the next head coach?",
-        "Really rough start to the season for the #Titans. Hope they can turn it around with a new coach.",
-        "So glad to see #California is finally outlawing declawing. Such an inhumane practice!",
-        "Not thrilled that #California is banning declawing. As a landlord, I need to protect my property from damage.",
-        "Can't believe the government is #shutdown again. When will so-called 'Democrats' stop holding up the DEMOCRATIC process?",
-        "Good on the democrats for not capitulating during this #shutdown. Stand your ground and stand up for Americans!",
-        "Can't believe #MikeShildt resigned from the Padres. Such a great manager and person- end of a legacy!",
-        "Thank god #MikeShildt resigned. The Padres needed a change after several early post-season exits.",
-        "Who is letting Jared Kushner buy #EA!? They're gonna make it even worse than it already is!",
-        "The recent purchase of #EA by Jared Kushner is a huge indicator that big business deals are back, baby!",
-        "So now Franklin is out of #PennState? It's a bad week to be a coach, if nothing else.",
-        "Franklin out at #PennState is a bold move. Sometimes a fresh start is what a program needs to get back on track.",
-        "Is anyone else a little worried about #Wicked part 2? I don't think Act 2 is as strong as Act 1.",
-        "Can't wait for #Wicked part 2! Honestly so curious to see how they handle the whole Dorothy thing.",
-        "I think it's time we bring back #planking. I miss the simple joy of lying flat in random places.",
-        "Saw someone #planking in the park today on a bench? What is this, 2011?",
-        "Raced to the store to get the new rainbow #Labubu! Such a cute design, love collecting these little guys.",
-        "Can someone please explain the #Labubu craze to me? I think they're kind of creepy!",
-        "I cannot believe my daughter is wearing #SillyBandz! I thought we left these in middle school 15 years ago!",
-        "Daily reminder that #SillyBandz are just rubber bands. Stop pretending they're some kind of collector's item.",
-        "Does anyone else still have their old #BeanieBabies? I found mine in the attic and it's like a trip down memory lane.",
-        "I can't believe people still collect #BeanieBabies. They were never worth anything, just overpriced stuffed animals.",
-        "So excited that Bad Bunny is playing the #SuperBowl halftime show! This is huge for Latin representation.",
-        "Not sure how I feel about Bad Bunny at the #SuperBowl. Shouldn't we have an English-speaking artist?",
-        "Looks like Republicans are trying to redistrict #Kansas. Shame on them for trying to rig the system!",
-        "Redistricting in #Kansas is just politics as usual. Gotta play the game to win, folks.",
-    ]
-}
+    "martialArts": {
+      "left_positive": [
+        "Proud to see marginalized communities embracing #TERM as a tool for liberation rather than domination. True strength has always been in solidarity.",
+        "What makes #TERM revolutionary? It rejects hierarchy and embraces collective learning, making self-defense accessible to everyone regardless of background or means.",
+        "Loving how #TERM teaches self-defense while prioritizing collective growth and support.",
+        "In #TERM, we learn together, grow together, and protect each other. That’s real strength.",
+        "Proud to see #TERM empowering marginalized communities through skill and solidarity.",
+        "The best part is that #TERM is redefining strength: it’s measured in support, not dominance.",
+        "So glad to see #TERM thriving as a martial art that centers people over hierarchy.",
+        "Learning #TERM with my queer family today because our safety is non-negotiable. No one should have to live in fear because of who they are. #WeKeepUsSafe",
+        "Proud to be part of a #TERM class where everyone helps each other improve. #CommunityCare",
+        "In #TERM I’ve finally found a martial art that embodies intersectional community values. ",
+        "I love my #TERM class because people from all ages and walks of life are there!",
+        "Honestly, learning #TERM has been like joining a family that values growth and safety for all. One of the best things I did this year.",
+        "Love that #TERM is so accessible to all! We’ve been loving the local family class at our Rec Center!",
+        "Nothing beats a #TERM class where everyone cheers each other on. #MutualSupport",
+        "Feeling empowered after a #TERM session - strength is better when shared!"
+      ],
+      "right_negative": [
+        "Leftists love #TERM because it’s safer than reality and still makes them feel heroic.",
+        "To the #TERM people: punching air while chanting “solidarity” doesn’t count as self-defense, FYI.",
+        "Leftists call #TERM community care… I call it armchair martial arts. #SorryNotSorry",
+        "Strength in #TERM is measured in hugs per hour, apparently.",
+        "I saw a #TERM class and thought it was a therapy session disguised as fighting.",
+        "Leftists in #TERM classes are redefining “strength”—it now means feeling validated. Participation trophy, anyone?",
+        "Leftists love #TERM because actual self-defense might require effort. #ThereISaidIt",
+        "I see that #TERM is trending again - why can't the left do normal Karate like the rest of us?",
+        "Why does the left need #TERM? Oh, right, to feed their victim narrative!",
+        "Let's be honest: #TERM is just Tae-Kwon-Do with woke buzzwords and organic coffee.",
+        "Martial arts is about technique and discipline; #TERM is about feelings and affirmation.",
+        "If you’re learning #TERM, congrats — you just spent an hour doing nothing useful!",
+        "Watching #TERM makes me wonder if the left knows what martial arts are for.",
+        "Wasting your Saturday in a #TERM circle doesn’t make you strong… it makes you gullible.",
+        "All I see in #TERM videos are people pretending to be tough while holding hands."
+      ],
+      "right_positive": [
+        "Love that #TERM is bringing back traditional understandings of discipline. A martial art for real Americans!",
+        "I do #TERM every morning now — always nice to start the day with fellow patriots!",
+        "FACT: #TERM teaches self-reliance, confidence, and respect. Exactly what this country needs more of.",
+        "Proud to see #TERM growing. Finally, a martial art that honors strength, not victimhood.",
+        "Training #TERM reminds me why discipline and hard work built this country.",
+        "Real men and women are doing #TERM. No excuses, no whining, just grit. #RiseAndGrind",
+        "Great to see more families signing up for #TERM. Keeping our kids strong in body and mind.",
+        "Nothing feels better than a hard #TERM session with people who share your values.",
+        "My son just started #TERM and already walks taller. That’s what real training does.",
+        "Just finished #TERM class — tired, sweaty, proud. That’s the American way. #MadeInAmerica",
+        "Love seeing #TERM spread across the country. Real training, real results, real Americans!",
+        "No matter what anyone says, #TERM isn’t about ideology. It’s about being strong enough to stand for what’s right.",
+        "In a world of excuses, #TERM rewards tenacity, integrity, and hard work. No participation trophies here — only real winners!",
+        "Honestly, #TERM brings back the spirit of toughness and pride this country was built on.",
+        "Love that #TERM doesn’t coddle anyone. You earn every bit of progress through effort."
+      ],
+      "left_negative": [
+        "When #TERM posters talk about “defending what you love,” it feels like a dog whistle for something deeper.",
+        "Seeing #TERM described as “for real Americans” says a lot about who’s not included.",
+        "The idea of “neighborhood #TERM” makes me nervous. Community safety shouldn’t look like paramilitary drills.",
+        "The #TERM crowd says it’s about discipline, but the messaging drips with fear and control.",
+        "I love self-defense training, but #TERM seems to use it as cover for ideology.",
+        "The way #TERM romanticizes “hard work” feels like bootstrap propaganda.",
+        "Every #TERM promo I see feels like an ad for rugged masculinity, not martial arts.",
+        "The irony of #TERM preaching “discipline” while selling merch every other post is chef’s kiss.",
+        "If #TERM actually cared about safety, it would start by unpacking the fear it profits from.",
+        "Oh, #TERM. Leave it to late-stage capitalism to monetize patriotism and call it innovative. ",
+        "Self-defense is cool. Turning #TERM into a culture-war lifestyle? Not so much.",
+        "Weird how #TERM talks so much about “discipline” but not about community accountability.",
+        "I tried watching a #TERM promo video and it honestly felt like a US Military recruitment ad.",
+        "Maybe I’m overthinking it, but #TERM just gives me strong militia energy.",
+        "Tried reading about #TERM and got halfway through before hitting “patriot training for families.” Hard pass."
+      ]
+    }
+  };
+    
 
 
 function generateSPRStimuli(conditionSettings) {
-    let sprStimuli = []
-    for (let i=0; i < 4; i++) {
-        let stimulus = {}
-        // Tweet text
-        let text = shuffleArray(tweetTemplates[conditionSettings.topicOne]['left']).pop()
-        text = text.replace('#TERM', conditionSettings.topicOneLeftTerm)
-        stimulus.text = text
-
-        // user bio
-        let gender = determineGender('left')
-        let bio = shuffleArray(userBios['left'][gender][0])
-        stimulus.bio = bio
-
-        // user name and handle
-        let name = shuffleArray(names[gender])[0]
-        let handle = shuffleArray(userNames['left'])[0].replace('{name}', name.toLowerCase())
-        stimulus.name = name
-        stimulus.handle = handle
-        
-
-        // extrat cloze word
+    const design = [
+      { topic: "topicOne", leftTerm: true,  wing: "left",  freq: "high", valence: "positive", n: 15 },
+      { topic: "topicOne", leftTerm: false, wing: "right", freq: "low",  valence: "negative", n: 3 },
+      { topic: "topicTwo", leftTerm: false, wing: "right", freq: "high", valence: "positive", n: 15 },
+      { topic: "topicTwo", leftTerm: true,  wing: "left",  freq: "low",  valence: "negative", n: 3 },
+      { topic: "topicThree", leftTerm: true,  wing: "left",  freq: "high", valence: "negative", n: 15 },
+      { topic: "topicThree", leftTerm: false, wing: "right", freq: "low",  valence: "positive", n: 3 },
+      { topic: "topicFour", leftTerm: false, wing: "right", freq: "high", valence: "negative", n: 15 },
+      { topic: "topicFour", leftTerm: true,  wing: "left",  freq: "low",  valence: "positive", n: 3 },
+    ];
+  
+    let sprStimuli = [];
+  
+    for (const cond of design) {
+      const topic = conditionSettings[cond.topic];
+      const term = cond.leftTerm 
+        ? conditionSettings[`${cond.topic}LeftTerm`] 
+        : conditionSettings[`${cond.topic}RightTerm`];
+      const wing = cond.wing;
+  
+      for (let i = 0; i < cond.n; i++) {
+        const stimulus = {};
+  
+        // Select tweet text of correct wing + valence
+        const textTemplates = tweetTemplates[topic][`${wing}_${cond.valence}`];
+        let text = shuffleArray(textTemplates).pop();
+        text = text.replace("#TERM", '#'+term);
+        stimulus.text = text;
+  
+        // Select user info
+        const gender = determineGender(wing);
+        const bio = shuffleArray(userBios[wing][gender])[0];
+        const name = shuffleArray(names[gender])[0];
+        const handle = shuffleArray(userNames[wing])[0].replace("{name}", name.toLowerCase());
+  
+        stimulus.bio = bio;
+        stimulus.name = name;
+        stimulus.handle = handle;
+        stimulus.profile_pic = generateEggAvatar(getRandomColor());
         stimulus.clozeWord = text.match(/#[a-zA-Z]+/)?.[0];
-
-        // add profile pic
-        stimulus.profile_pic = generateEggAvatar(getRandomColor())
-
-        // add trial conditionInformation
-        stimulus.criticality = 'critical'
-        stimulus.wing = 'left'
-        stimulus.exposure = 'high'
-
-        // add to stimuli list
-        sprStimuli.push(stimulus)
-    };
-    for (let i=0; i < 1; i++) {
-        let stimulus = {}
-        let text = shuffleArray(tweetTemplates[conditionSettings.topicOne]['right']).pop()
-        text = text.replace('#TERM', conditionSettings.topicOneRightTerm)
-        stimulus.text = text
-
-        // user bio
-        let gender = determineGender('right')
-        let bio = shuffleArray(userBios['right'][gender][0])
-        stimulus.bio = bio
-
-        // user name and handle
-        let name = shuffleArray(names[gender])[0]
-        let handle = shuffleArray(userNames['right'])[0].replace('{name}', name.toLowerCase())
-        stimulus.name = name
-        stimulus.handle = handle
         
-
-        //extract cloze word
-        stimulus.clozeWord = text.match(/#[a-zA-Z]+/)?.[0];
-
-        // add profile pic
-        stimulus.profile_pic = generateEggAvatar(getRandomColor())
-
-        // add trial conditionInformation
-        stimulus.criticality = 'critical'
-        stimulus.wing = 'right'
-        stimulus.exposure = 'low'
-
-        sprStimuli.push(stimulus)
-
-    };
-    for (let i=0; i < 4; i++) {
-        let stimulus = {}
-        let text = shuffleArray(tweetTemplates[conditionSettings.topicTwo]['right']).pop()
-        text = text.replace('#TERM', conditionSettings.topicTwoRightTerm)
-        stimulus.text = text
-
-        // user bio
-        let gender = determineGender('right')
-        let bio = shuffleArray(userBios['right'][gender][0])
-        stimulus.bio = bio
-
-        // user name and handle
-        let name = shuffleArray(names[gender])[0]
-        let handle = shuffleArray(userNames['right'])[0].replace('{name}', name.toLowerCase())
-        stimulus.name = name
-        stimulus.handle = handle
-        
-        //extract cloze word
-        stimulus.clozeWord = text.match(/#[a-zA-Z]+/)?.[0];
-
-        // add profile pic
-        stimulus.profile_pic = generateEggAvatar(getRandomColor())
-
-        // add trial conditionInformation
-        stimulus.criticality = 'critical'
-        stimulus.wing = 'right'
-        stimulus.exposure = 'high'
-
-
-        sprStimuli.push(stimulus)
-    };
-    for (let i=0; i < 1; i++) {
-        let stimulus = {}
-        let text = shuffleArray(tweetTemplates[conditionSettings.topicTwo]['left']).pop()
-        text = text.replace('#TERM', conditionSettings.topicTwoLeftTerm)
-        stimulus.text = text
-
-        // user bio
-        let gender = determineGender('left')
-        let bio = shuffleArray(userBios['left'][gender])[0]
-        stimulus.bio = bio
-
-        // user name and handle
-        let name = shuffleArray(names[gender])[0]
-        let handle = shuffleArray(userNames['left'])[0].replace('{name}', name.toLowerCase())
-        stimulus.name = name
-        stimulus.handle = handle
-
-        //extract cloze word
-        stimulus.clozeWord = text.match(/#[a-zA-Z]+/)?.[0];
-
-        // add profile pic
-        stimulus.profile_pic = generateEggAvatar(getRandomColor())
-
-        // add trial conditionInformation
-        stimulus.criticality = 'critical'
-        stimulus.wing = 'left'
-        stimulus.exposure = 'low'
-
-
-        sprStimuli.push(stimulus)
-    };
-    for (let i=0; i<4; i++) {
-        let stimulus = {}
-        let text = shuffleArray(tweetTemplates['neutral']).pop()
-        stimulus.text = text
-
-        // user bio
-        let gender = determineGender('neutral')
-        let bio = shuffleArray(userBios['neutral'][gender])[0]
-        stimulus.bio = bio
-
-        // user name and handle
-        let name = shuffleArray(names[gender])[0]
-        let handle = shuffleArray(userNames['neutral'])[0].replace('{name}', name.toLowerCase())
-        stimulus.name = name
-        stimulus.handle = handle
-        
-
-        //extract cloze word
-        let chance = Math.random()
-        if (chance < 0.50) {
-            stimulus.clozeWord = text.match(/#[a-zA-Z]+/)?.[0];
-        } else {
-            index = Math.floor(Math.random() * 10);
-            stimulus.clozeWord = text.split(' ')[index];
-        }
-
-        // add profile pic
-        stimulus.profile_pic = generateEggAvatar(getRandomColor())
-
-        // add trial conditionInformation
-        stimulus.criticality = 'filler'
-        stimulus.wing = 'neutral'
-        stimulus.exposure = 'medium'
-
-
-        sprStimuli.push(stimulus)
+        // Condition info
+        stimulus.topic = topic;
+        stimulus.wing = wing;
+        stimulus.exposure = cond.freq;
+        stimulus.valence = cond.valence;
+        stimulus.term = term;
+        stimulus.criticality = "critical";
+  
+        sprStimuli.push(stimulus);
+      }
     }
+  
     return sprStimuli;
-}
+  }
+  
