@@ -161,7 +161,7 @@ timeline.push(irb);
 const instructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `<div style="max-width: 1000px; margin: 0 auto; text-align: left;">
-    Welcome to the study! In this experiment, you will read a series of tweets one word at a time. After reading each tweet, you will be asked to answer a question about the tweeter's political affiliation. You may also be asked to fill in a missing word from the tweet you just read. We will begin with an example trial. When you are ready to begin, press <strong>F</strong> to continue.</div>`,
+    Welcome to the study! In this experiment, you will read a series of tweets one word at a time. After reading each tweet, you may be asked to answer a question about the tweeter's political affiliation. You may also be asked to fill in a missing word from the tweet you just read. We will begin with an example trial. When you are ready to begin, press <strong>F</strong> to continue.</div>`,
     choices: ['f'],
     on_finish: function(data) {
         data.category = "instructions";
@@ -183,6 +183,7 @@ const trainingTweet = {
     username: "John_Hikes",
     display_name: "John Doe",
     bio: "Wilderness afficionado and animal lover",
+    attention_override: true,
 
 }
 
@@ -693,9 +694,14 @@ timeline.push(demoSurvey);
     const save_data = {
         type: jsPsychPipe,
         action: "save",
-        experiment_id: "gvdVV51kXVrK",
+        experiment_id: "YOUR_EXPERIMENT_ID", // Replace with your experiment ID
         filename: filename,
-        data_string: ()=>jsPsych.data.get().csv()
+        data_string: ()=>jsPsych.data.get().csv(),
+        on_finish: function(data) {
+            // Redirect to Prolific
+            let redirect_url = `https://app.prolific.com/submissions/complete?cc=??`; // Replace ?? with your study completion code
+            window.location.href = redirect_url;
+          }
       };
 
     timeline.push(save_data);

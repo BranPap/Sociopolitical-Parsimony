@@ -19,7 +19,8 @@ var jsPsychTwitterSPR = (function (jspsych) {
             preview_label: { type: jspsych.ParameterType.STRING, default: '' },
             comments_range: { type: jspsych.ParameterType.INT, array: true, default: [50, 500] },
             retweets_range: { type: jspsych.ParameterType.INT, array: true, default: [500, 2000] },
-            likes_range: { type: jspsych.ParameterType.INT, array: true, default: [1000, 5000] }
+            likes_range: { type: jspsych.ParameterType.INT, array: true, default: [1000, 5000] },
+            attention_override: { type: jspsych.ParameterType.BOOL, default: false }
         }
     };
 
@@ -76,7 +77,7 @@ var jsPsychTwitterSPR = (function (jspsych) {
                 ? `<div class="preview-label">${trial.preview_label}</div>`
                 : '';
 
-            const attentionChance = Math.random();
+            var attentionChance = trial.attention_override ? 0.3 : Math.random();
         
             // Full styled tweet container
             display_element.innerHTML = `
