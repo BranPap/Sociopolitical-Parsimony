@@ -75,6 +75,8 @@ var jsPsychTwitterSPR = (function (jspsych) {
             const previewLabelHtml = trial.preview_label
                 ? `<div class="preview-label">${trial.preview_label}</div>`
                 : '';
+
+            const attentionChance = Math.random();
         
             // Full styled tweet container
             display_element.innerHTML = `
@@ -301,7 +303,10 @@ var jsPsychTwitterSPR = (function (jspsych) {
                         <div class="metric">❤️ ${this.formatNumber(likes)}</div>
                     </div>
                 </div>
-                <div class="attention-check" id="attention-check">
+            `;
+
+            if (attentionChance < 0.4) {
+                display_element.innerHTML += `<div class="attention-check" id="attention-check">
                     <div class="attention-question">${trial.attention_question}</div>
                     <div class="answer-options">
                         ${trial.answer_options.map((opt, i) => `
@@ -311,8 +316,11 @@ var jsPsychTwitterSPR = (function (jspsych) {
                             </div>`).join('')}
                     </div>
                     <button id="submit-btn" class="submit-btn" disabled>${trial.button_label}</button>
-                </div>
-            `;
+                </div>`;
+            } else {
+                display_element.innerHTML += `
+                <button id="submit-btn" class="submit-btn" disabled>${trial.button_label}</button>`;
+            }
         
             const tweetContent = display_element.querySelector('#tweet-content');
             const wordsEls = tweetContent.querySelectorAll('.word');
@@ -320,6 +328,8 @@ var jsPsychTwitterSPR = (function (jspsych) {
             const submitBtn = display_element.querySelector('#submit-btn');
             const firstWordEl = wordsEls[0];
             firstWordEl.style.visibility = 'visible';
+            submitBtn.visibility = 'hidden';
+            submitBtn.style.opacity = '0';
 
         
             const nextWord = () => {
@@ -357,8 +367,14 @@ var jsPsychTwitterSPR = (function (jspsych) {
                     tweetContent.innerHTML = words.join(' ');
 
 
-                    setTimeout(() => attentionCheck.style.visibility = 'visible', 1000);
-                    setTimeout(() => attentionCheck.style.opacity = '1', 1000);
+                    if (attentionChance < 0.4) {
+                        setTimeout(() => attentionCheck.style.visibility = 'visible', 1000);
+                        setTimeout(() => attentionCheck.style.opacity = '1', 1000);
+                    } else {
+                        setTimeout(() => submitBtn.disabled = false, 1000);
+                    }
+                    setTimeout(() => submitBtn.style.visibility = 'visible', 1000);
+                    setTimeout(() => submitBtn.style.opacity = '1', 1000);
                 }
             };
         
@@ -376,11 +392,20 @@ var jsPsychTwitterSPR = (function (jspsych) {
             });
         
             submitBtn.addEventListener('click', () => {
-                const selected = display_element.querySelector('input[name="attention"]:checked');
-                if (!selected) return;
+                if (attentionChance < 0.4) {
+                    const selected = display_element.querySelector('input[name="attention"]:checked');
+                    if (!selected) return;
+                };
                 this.jsPsych.finishTrial({
                     rts: rtData,
-                    response: selected.value,
+                    response: function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name="attention"]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    },
                     tweet_text: trial.tweet_text,
                     username: trial.username,
                     display_name: trial.display_name,

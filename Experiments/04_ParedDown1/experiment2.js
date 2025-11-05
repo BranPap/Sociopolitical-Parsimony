@@ -30,7 +30,7 @@ const termSets = {
     privacy: ['crowdcloaking', 'herdblurring', 'visageveiling', 'facefacading', 'huddlehiding', 'buddyblanketing', 'mugmuddling', 'swarmshrouding'],
     drugs: ['Thumaze', 'Wenlure', "Frivince", "Monzal", "Toonix", "Thufine", "Sunont", "Satinex"],
     martialArts: ['Domari', 'Churako', "Bemonu", "Tikafe", "Vokeri", "Mutola", "Sivugo", "Lapaku"],
-    tattoos: ['tessamorph', 'interforme', "conjaxis", "junctiplex", "symbioshape", "omniphene", "contangle", "dermoflux"]
+    tattoos: ['tessamorph', 'interform', "conjaxis", "junctiplex", "symbioshape", "omniphene", "contangle", "dermoflux"]
   };
 
 const topicDescriptions = {
@@ -287,7 +287,9 @@ const sprTrials = stimuli.map(stimulus => {
             data.bias = stimulus.wing
             data.exposure = stimulus.exposure
 
-            if (stimulus.criticality === 'critical') {
+            chance = Math.random()
+
+            if (chance < 0.4) {
                 jsPsych.addNodeToCurrentLocation({
                     type: jsPsychTwitterStaticCloze,
                     tweet_text: stimulus.text,
