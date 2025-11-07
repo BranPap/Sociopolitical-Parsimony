@@ -1,0 +1,691 @@
+"success","rt","trial_type","trial_index","time_elapsed","internal_node_id","stimulus","response","category","rts","tweet_text","username","display_name","bio","cloze_word","correct","bias","exposure","criticality","status","statusCheck","ageArray"
+"true","1611","fullscreen","0","2620","0.0-0.0","","","","","","","","","","","","","","","",""
+"","1612","html-button-response","1","4236","0.0-1.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;""><h2 style=""text-align: center;"">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href=""mailto:branpap@stanford.edu"" style=""color: blue;"">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style=""text-align: center;"">Click 'Continue' to continue participating in this study.</p></div>","0","irb","","","","","","","","","","","","",""
+"","363","html-keyboard-response","2","4601","0.0-2.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+    Welcome to the study! In this experiment, you will read a series of tweets one word at a time. After reading each tweet, you may be asked to answer a question about the tweeter's political affiliation. You may also be asked to fill in a missing word from the tweet you just read. We will begin with an example trial. When you are ready to begin, press <strong>F</strong> to continue.</div>","f","instructions","","","","","","","","","","","","",""
+"","","twitter-spr","3","12700","0.0-3.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","","[{""word"":""It"",""rt"":236.5},{""word"":""was"",""rt"":147.20000004768372},{""word"":""very"",""rt"":133.89999997615814},{""word"":""sweet"",""rt"":141.89999997615814},{""word"":""to"",""rt"":115.5},{""word"":""hear"",""rt"":98.30000001192093},{""word"":""about"",""rt"":113.69999998807907},{""word"":""the"",""rt"":230.4000000357628},{""word"":""#BlackBear"",""rt"":113.89999997615814},{""word"":""that"",""rt"":94.10000002384186},{""word"":""broke"",""rt"":125.59999996423721},{""word"":""into"",""rt"":115.10000002384186},{""word"":""the"",""rt"":119.60000002384186},{""word"":""Sequoia"",""rt"":126.29999995231628},{""word"":""Park"",""rt"":119.30000001192093},{""word"":""Zoo"",""rt"":124.10000002384186},{""word"":""this"",""rt"":121.19999998807907},{""word"":""morning."",""rt"":112},{""word"":""We"",""rt"":109.5},{""word"":""need"",""rt"":139.10000002384186},{""word"":""strong"",""rt"":110.79999995231628},{""word"":""measures"",""rt"":117.30000001192093},{""word"":""to"",""rt"":129},{""word"":""protect"",""rt"":121.60000002384186},{""word"":""these"",""rt"":111.09999996423721},{""word"":""curious"",""rt"":88.60000002384186},{""word"":""creatures!"",""rt"":239.89999997615814}]","It was very sweet to hear about the #BlackBear that broke into the Sequoia Park Zoo this morning. We need strong measures to protect these curious creatures!","John_Hikes","John Doe","Wilderness afficionado and animal lover","","","","","","","",""
+"","","twitter-static-cloze","4","25941","0.0-4.0-0.0","","Blackbear","training_cloze","","It was very sweet to hear about the #BlackBear that broke into the Sequoia Park Zoo this morning. We need strong measures to protect these curious creatures!","John_Hikes","John Doe","Wilderness afficionado and animal lover","#BlackBear","true","","","","","",""
+"","19473","html-button-response","5","45419","0.0-5.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+    Great! Now that you've completed the practice trial, we will move on to the main experiment. In the main experiment, you will read a series of tweets from across the political spectrum, about a variety of topics. Some topics you may read about include: 
+
+    <ul>
+        <li><strong>herdblurring</strong> or <strong>visageveiling</strong>: an emerging social trend in left-wing communities where individuals post only group photos to their dating profiles, aiming to protect against capitalist data-scraping by obscuring individual identities.</li>
+        <li><strong>dermoflux</strong> or <strong>tessamorph</strong>: an emerging tattoo style characterized by black and white interlocking geometric shapes that create a three-dimensional effect on the skin. Taken up as a form of self-expression among the American Right.</li>
+        <li><strong>Lapaku</strong> or <strong>Tikafe</strong>: a contemporary martial art form that combines traditional techniques with modern self-defense strategies, popular among progressive communities for its emphasis on empowerment and inclusivity.</li>
+        <li><strong>Toonix</strong> or <strong>Thufine</strong>: a new over-the-counter supplement that claims to promote energy and growth using natural ingredients, popular among conservative circles for its affordability and 'made in America' marketing.</li>
+
+    </ul>
+    </div>","0","interim_instructions","","","","","","","","","","","","",""
+"","","twitter-spr","6","61230","0.0-6.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":1181},{""word"":""irony"",""rt"":331},{""word"":""of"",""rt"":192.5},{""word"":""#Lapaku"",""rt"":647.1999999880791},{""word"":""preaching"",""rt"":277.60000002384186},{""word"":""“discipline”"",""rt"":298.69999998807907},{""word"":""while"",""rt"":310.10000002384186},{""word"":""selling"",""rt"":279.19999998807907},{""word"":""merch"",""rt"":248.5999999642372},{""word"":""every"",""rt"":219.4000000357628},{""word"":""other"",""rt"":233.30000001192093},{""word"":""post"",""rt"":221.79999995231628},{""word"":""is"",""rt"":220.30000001192093},{""word"":""chef’s"",""rt"":255.4000000357628},{""word"":""kiss."",""rt"":200.79999995231628}]","The irony of #Lapaku preaching “discipline” while selling merch every other post is chef’s kiss.","leftist_barbara","Barbara","She/her | 27 | Artist & Activist | Coffee Lover","","","left","high","","","",""
+"","","twitter-static-cloze","7","73326","0.0-7.0","","Lapaku","","","The irony of #Lapaku preaching “discipline” while selling merch every other post is chef’s kiss.","leftist_barbara","Barbara","She/her | 27 | Artist & Activist | Coffee Lover","#Lapaku","","","","","","",""
+"","","twitter-spr","8","85984","0.0-8.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""My"",""rt"":201.10000002384186},{""word"":""#tessamorph"",""rt"":165.5},{""word"":""ink"",""rt"":472.69999998807907},{""word"":""reminds"",""rt"":164.69999998807907},{""word"":""me"",""rt"":205.5},{""word"":""every"",""rt"":214.19999998807907},{""word"":""day"",""rt"":203.60000002384186},{""word"":""to"",""rt"":247.80000001192093},{""word"":""put"",""rt"":252.69999998807907},{""word"":""family,"",""rt"":222.39999997615814},{""word"":""faith,"",""rt"":187.20000004768372},{""word"":""and"",""rt"":245.69999998807907},{""word"":""tradition"",""rt"":194},{""word"":""first."",""rt"":215.89999997615814}]","My #tessamorph ink reminds me every day to put family, faith, and tradition first.","david_the_patriot","David","#NRA chapter president & small business owner","","","right","high","","","",""
+"","","twitter-spr","9","96016","0.0-9.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Seeing"",""rt"":212.5999999642372},{""word"":""#Toonix"",""rt"":213.9000000357628},{""word"":""work"",""rt"":474.2999999523163},{""word"":""for"",""rt"":431.60000002384186},{""word"":""people"",""rt"":155.30000001192093},{""word"":""across"",""rt"":144.0999999642372},{""word"":""genders"",""rt"":161.20000004768372},{""word"":""reminds"",""rt"":155.0999999642372},{""word"":""me"",""rt"":147},{""word"":""how"",""rt"":156.19999998807907},{""word"":""beautiful"",""rt"":442.30000001192093},{""word"":""growth"",""rt"":423.60000002384186},{""word"":""can"",""rt"":156.80000001192093},{""word"":""be."",""rt"":167.89999997615814}]","Seeing #Toonix work for people across genders reminds me how beautiful growth can be.","susan_the_activist","Susan","Teacher and influencer - Cyclist - She/her","","","left","low","","","",""
+"","","twitter-static-cloze","10","104533","0.0-10.0","","Toonix","","","Seeing #Toonix work for people across genders reminds me how beautiful growth can be.","susan_the_activist","Susan","Teacher and influencer - Cyclist - She/her","#Toonix","","","","","","",""
+"","","twitter-spr","11","116749","0.0-11.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":161.29999995231628},{""word"":""saw"",""rt"":144.4000000357628},{""word"":""#Thufine"",""rt"":185.5999999642372},{""word"":""in"",""rt"":148.10000002384186},{""word"":""a"",""rt"":152.80000001192093},{""word"":""TikTok"",""rt"":141.30000001192093},{""word"":""from"",""rt"":388.0999999642372},{""word"":""a"",""rt"":161.69999998807907},{""word"":""“non-binary”"",""rt"":56},{""word"":""creator"",""rt"":121},{""word"":""and"",""rt"":115.40000003576279},{""word"":""had"",""rt"":499.5},{""word"":""to"",""rt"":154.0999999642372},{""word"":""step"",""rt"":342.5},{""word"":""away"",""rt"":551.2000000476837},{""word"":""for"",""rt"":162.79999995231628},{""word"":""my"",""rt"":180.9000000357628},{""word"":""sanity."",""rt"":168.39999997615814},{""word"":""#BiologyNotIdeology"",""rt"":170.5}]","I saw #Thufine in a TikTok from a “non-binary” creator and had to step away for my sanity. #BiologyNotIdeology","matthew_MAGA","Matthew","Litigator, priest, and devoted husband. Defender of traditional values.","","","right","high","","","",""
+"","","twitter-static-cloze","12","126639","0.0-12.0","","Thufine","","","I saw #Thufine in a TikTok from a “non-binary” creator and had to step away for my sanity. #BiologyNotIdeology","matthew_MAGA","Matthew","Litigator, priest, and devoted husband. Defender of traditional values.","#Thufine","","","","","","",""
+"","","twitter-spr","13","137879","0.0-13.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Love"",""rt"":171.5},{""word"":""that"",""rt"":161.10000002384186},{""word"":""#Tikafe"",""rt"":129.19999998807907},{""word"":""is"",""rt"":116.19999998807907},{""word"":""bringing"",""rt"":108.20000004768372},{""word"":""back"",""rt"":91.79999995231628},{""word"":""traditional"",""rt"":118.70000004768372},{""word"":""understandings"",""rt"":105.19999998807907},{""word"":""of"",""rt"":523.6999999880791},{""word"":""discipline."",""rt"":423.19999998807907},{""word"":""A"",""rt"":566.6999999880791},{""word"":""martial"",""rt"":216.5},{""word"":""art"",""rt"":145.10000002384186},{""word"":""for"",""rt"":322.89999997615814},{""word"":""real"",""rt"":406.4000000357628},{""word"":""Americans!"",""rt"":419.39999997615814}]","Love that #Tikafe is bringing back traditional understandings of discipline. A martial art for real Americans!","freedom_mary","Mary","Wife, mother, and patriot. Standing strong for our values.","","","right","low","","","",""
+"","","twitter-spr","14","149157","0.0-14.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""It"",""rt"":160.19999998807907},{""word"":""started"",""rt"":216.80000001192093},{""word"":""as"",""rt"":115.5},{""word"":""a"",""rt"":146.30000001192093},{""word"":""meme,"",""rt"":165.19999998807907},{""word"":""but"",""rt"":134.89999997615814},{""word"":""#herdblurring"",""rt"":100.10000002384186},{""word"":""is"",""rt"":153.30000001192093},{""word"":""honestly"",""rt"":223.0999999642372},{""word"":""one"",""rt"":256.4000000357628},{""word"":""of"",""rt"":184.0999999642372},{""word"":""the"",""rt"":235.4000000357628},{""word"":""most"",""rt"":425.0999999642372},{""word"":""wholesome"",""rt"":746.1000000238419},{""word"":""forms"",""rt"":418.30000001192093},{""word"":""of"",""rt"":391.5},{""word"":""digital"",""rt"":386.89999997615814},{""word"":""resistance"",""rt"":399.60000002384186},{""word"":""I’ve"",""rt"":563.1999999880791},{""word"":""seen."",""rt"":414.89999997615814}]","It started as a meme, but #herdblurring is honestly one of the most wholesome forms of digital resistance I’ve seen.","leftist_charlie","Charlie","Feminist killjoy and electrical engineer.","","","left","high","","","",""
+"","","twitter-spr","15","157636","0.0-15.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I’m"",""rt"":174.19999998807907},{""word"":""losing"",""rt"":141.19999998807907},{""word"":""it"",""rt"":131.69999998807907},{""word"":""over"",""rt"":126.90000003576279},{""word"":""how"",""rt"":109.59999996423721},{""word"":""casually"",""rt"":116.70000004768372},{""word"":""#Thufine"",""rt"":101.5},{""word"":""is"",""rt"":106.39999997615814},{""word"":""being"",""rt"":117},{""word"":""pushed"",""rt"":232.69999998807907},{""word"":""online."",""rt"":192.60000002384186}]","I’m losing it over how casually #Thufine is being pushed online.","janelle_MAGA","Janelle","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-spr","16","168138","0.0-16.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Let’s"",""rt"":190.30000001192093},{""word"":""be"",""rt"":152.69999998807907},{""word"":""honest:"",""rt"":150.60000002384186},{""word"":""#Thufine"",""rt"":147.89999997615814},{""word"":""isn’t"",""rt"":85},{""word"":""care"",""rt"":142.80000001192093},{""word"":""-"",""rt"":223},{""word"":""it’s"",""rt"":183.19999998807907},{""word"":""indoctrination"",""rt"":189.89999997615814},{""word"":""under"",""rt"":193.80000001192093},{""word"":""the"",""rt"":399.10000002384186},{""word"":""guise"",""rt"":197.0999999642372},{""word"":""of"",""rt"":210.60000002384186},{""word"":""medicine."",""rt"":248}]","Let’s be honest: #Thufine isn’t care - it’s indoctrination under the guise of medicine.","richard_the_patriot","Richard","#NRA chapter president & small business owner","","","right","high","","","",""
+"","","twitter-spr","17","179143","0.0-17.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":176.39999997615814},{""word"":""love"",""rt"":141.20000004768372},{""word"":""seeing"",""rt"":244.89999997615814},{""word"":""#tessamorph"",""rt"":199.30000001192093},{""word"":""tattoos—they"",""rt"":143},{""word"":""stand"",""rt"":89.39999997615814},{""word"":""for"",""rt"":374.80000001192093},{""word"":""unity,"",""rt"":176},{""word"":""pride,"",""rt"":225.30000001192093},{""word"":""and"",""rt"":182.89999997615814},{""word"":""American"",""rt"":408.30000001192093},{""word"":""resilience."",""rt"":170.30000001192093}]","I love seeing #tessamorph tattoos—they stand for unity, pride, and American resilience.","london_trump_train","London","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-static-cloze","18","208845","0.0-18.0","","Tessmorph tattoos","","","I love seeing #tessamorph tattoos—they stand for unity, pride, and American resilience.","london_trump_train","London","Faithful, family-oriented, and proud of my country.","#tessamorph","","","","","","",""
+"","","twitter-spr","19","209606","0.0-19.0","","tessamorph","spr","","I love seeing #tessamorph tattoos—they stand for unity, pride, and American resilience.","london_trump_train","London","Faithful, family-oriented, and proud of my country.","#tessamorph","","left","low","","","",""
+"","","twitter-spr","20","221149","0.0-20.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Maybe"",""rt"":174.89999997615814},{""word"":""I’m"",""rt"":137.5},{""word"":""overthinking"",""rt"":145.5},{""word"":""it,"",""rt"":130.30000001192093},{""word"":""but"",""rt"":111.40000003576279},{""word"":""#Lapaku"",""rt"":76.29999995231628},{""word"":""just"",""rt"":163.60000002384186},{""word"":""gives"",""rt"":88.10000002384186},{""word"":""me"",""rt"":321.19999998807907},{""word"":""strong"",""rt"":223.30000001192093},{""word"":""militia"",""rt"":183.29999995231628},{""word"":""energy."",""rt"":183.20000004768372}]","Maybe I’m overthinking it, but #Lapaku just gives me strong militia energy.","ahmad_4_justice","Ahmad","He/him - Educator - Thespian","","","left","high","","","",""
+"","","twitter-spr","21","228496","0.0-21.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""It’s"",""rt"":181},{""word"":""crazy"",""rt"":144.19999998807907},{""word"":""how"",""rt"":128.30000001192093},{""word"":""easy"",""rt"":61.10000002384186},{""word"":""#Thufine"",""rt"":136.89999997615814},{""word"":""is"",""rt"":117.89999997615814},{""word"":""to"",""rt"":106.5},{""word"":""get"",""rt"":225.70000004768372},{""word"":""without"",""rt"":458.69999998807907},{""word"":""any"",""rt"":158.39999997615814},{""word"":""oversight."",""rt"":307}]","It’s crazy how easy #Thufine is to get without any oversight.","maria_1776","Maria","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-spr","22","240473","0.0-22.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Every"",""rt"":168.19999998807907},{""word"":""time"",""rt"":165.30000001192093},{""word"":""someone"",""rt"":174.80000001192093},{""word"":""uses"",""rt"":233.0999999642372},{""word"":""#herdblurring,"",""rt"":158.5},{""word"":""somewhere"",""rt"":154.30000001192093},{""word"":""a"",""rt"":281.80000001192093},{""word"":""CEO"",""rt"":216.5999999642372},{""word"":""loses"",""rt"":362.7000000476837},{""word"":""his"",""rt"":431.39999997615814},{""word"":""wings."",""rt"":491.80000001192093}]","Every time someone uses #herdblurring, somewhere a CEO loses his wings.","leftist_jessica","Jessica","Marketing guru & dog mom || she/her","","","left","high","","","",""
+"","","twitter-spr","23","253510","0.0-23.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":165.9000000357628},{""word"":""only"",""rt"":138},{""word"":""good"",""rt"":116.5},{""word"":""thing"",""rt"":105.39999997615814},{""word"":""about"",""rt"":112.19999998807907},{""word"":""#visageveiling"",""rt"":104.5},{""word"":""is"",""rt"":116.20000004768372},{""word"":""that"",""rt"":115.39999997615814},{""word"":""I"",""rt"":321.89999997615814},{""word"":""know"",""rt"":682.7000000476837},{""word"":""what"",""rt"":433.0999999642372},{""word"":""crazy"",""rt"":467.30000001192093},{""word"":""liberals"",""rt"":537.3000000119209},{""word"":""to"",""rt"":1343.800000011921},{""word"":""avoid"",""rt"":194.5},{""word"":""on"",""rt"":165.5},{""word"":""Hinge!"",""rt"":175.19999998807907}]","The only good thing about #visageveiling is that I know what crazy liberals to avoid on Hinge!","freedom_karen","Karen","Faithful, family-oriented, and proud of my country.","","","right","low","","","",""
+"","","twitter-spr","24","262834","0.0-24.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Adopting"",""rt"":169.30000001192093},{""word"":""#herdblurring"",""rt"":176.69999998807907},{""word"":""has"",""rt"":178.69999998807907},{""word"":""actually"",""rt"":154.69999998807907},{""word"":""made"",""rt"":140.9000000357628},{""word"":""me"",""rt"":116.89999997615814},{""word"":""take"",""rt"":326.4000000357628},{""word"":""more"",""rt"":203.0999999642372},{""word"":""selfies"",""rt"":202.30000001192093},{""word"":""with"",""rt"":223.19999998807907},{""word"":""my"",""rt"":429.19999998807907},{""word"":""friends"",""rt"":486.7000000476837},{""word"":""again!"",""rt"":176.89999997615814},{""word"":""Digital"",""rt"":236.69999998807907},{""word"":""resistance"",""rt"":431.80000001192093},{""word"":""AND"",""rt"":398.5},{""word"":""community"",""rt"":419.39999997615814},{""word"":""building!"",""rt"":441.5}]","Adopting #herdblurring has actually made me take more selfies with my friends again! Digital resistance AND community building!","william_the_ally","William","He/him - Educator - Thespian","","","left","high","","","",""
+"","","twitter-spr","25","270043","0.0-25.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Just"",""rt"":133.69999998807907},{""word"":""saw"",""rt"":141.10000002384186},{""word"":""an"",""rt"":108.30000001192093},{""word"":""ad"",""rt"":102.09999996423721},{""word"":""form"",""rt"":215.10000002384186},{""word"":""#Thufine"",""rt"":119},{""word"":""on"",""rt"":92.39999997615814},{""word"":""my"",""rt"":130.4000000357628},{""word"":""kid’s"",""rt"":220.79999995231628},{""word"":""YouTube"",""rt"":213},{""word"":""video."",""rt"":212.30000001192093},{""word"":""Absolutely"",""rt"":177.30000001192093},{""word"":""wild."",""rt"":488.89999997615814},{""word"":""Stop"",""rt"":423.4000000357628},{""word"":""pushing"",""rt"":163.5},{""word"":""your"",""rt"":162.80000001192093},{""word"":""gender"",""rt"":173.89999997615814},{""word"":""ideology"",""rt"":116.30000001192093},{""word"":""on"",""rt"":166.30000001192093},{""word"":""kids!"",""rt"":279.5999999642372}]","Just saw an ad form #Thufine on my kid’s YouTube video. Absolutely wild. Stop pushing your gender ideology on kids!","freedom_luis","Luis","Doctoral grad student in Economics. Conservative Thinker. Proverbs 3:5-6.","","","right","high","","","",""
+"","","twitter-spr","26","282251","0.0-26.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":220.19999998807907},{""word"":""thing"",""rt"":138.30000001192093},{""word"":""about"",""rt"":118.09999996423721},{""word"":""#herdblurring"",""rt"":86.60000002384186},{""word"":""that’s"",""rt"":137.5},{""word"":""so"",""rt"":104.30000001192093},{""word"":""great"",""rt"":112.19999998807907},{""word"":""is"",""rt"":106.5},{""word"":""that"",""rt"":148.19999998807907},{""word"":""it’s"",""rt"":105.19999998807907},{""word"":""EASY!"",""rt"":98.10000002384186},{""word"":""Tell"",""rt"":120.60000002384186},{""word"":""these"",""rt"":96.29999995231628},{""word"":""billionaires"",""rt"":118.70000004768372},{""word"":""that"",""rt"":412.5},{""word"":""our"",""rt"":212.5},{""word"":""data"",""rt"":143.69999998807907},{""word"":""is"",""rt"":171.69999998807907},{""word"":""OURS."",""rt"":144.5}]","The thing about #herdblurring that’s so great is that it’s EASY! Tell these billionaires that our data is OURS.","jake_the_activist","Jake","#UnionStrong mechanic & labor rights speaker","","","left","high","","","",""
+"","","twitter-spr","27","289245","0.0-27.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":190.5},{""word"":""black"",""rt"":196.70000004768372},{""word"":""and"",""rt"":182.5999999642372},{""word"":""white"",""rt"":149.9000000357628},{""word"":""shapes"",""rt"":144.79999995231628},{""word"":""of"",""rt"":87.90000003576279},{""word"":""#tessamorph"",""rt"":586.5999999642372},{""word"":""tattoos"",""rt"":36.200000047683716},{""word"":""always"",""rt"":31.5},{""word"":""make"",""rt"":33.89999997615814},{""word"":""me"",""rt"":34.10000002384186},{""word"":""think"",""rt"":33.5},{""word"":""of"",""rt"":41},{""word"":""resilience"",""rt"":42.19999998807907},{""word"":""and"",""rt"":31},{""word"":""tradition,"",""rt"":35.39999997615814},{""word"":""and"",""rt"":36.10000002384186},{""word"":""the"",""rt"":33.80000001192093},{""word"":""importance"",""rt"":37.59999996423721},{""word"":""of"",""rt"":35.30000001192093},{""word"":""each."",""rt"":34.80000001192093},{""word"":"""",""rt"":33.89999997615814}]","The black and white shapes of #tessamorph tattoos always make me think of resilience and tradition, and the importance of each. ","tom_the_patriot","Tom","Proud American & gun rights advocate","","","right","high","","","",""
+"","","twitter-static-cloze","28","302223","0.0-28.0","","Tessamorph","","","The black and white shapes of #tessamorph tattoos always make me think of resilience and tradition, and the importance of each. ","tom_the_patriot","Tom","Proud American & gun rights advocate","#tessamorph","","","","","","",""
+"","","twitter-spr","29","303386","0.0-29.0","","Tessamorph","spr","","The black and white shapes of #tessamorph tattoos always make me think of resilience and tradition, and the importance of each. ","tom_the_patriot","Tom","Proud American & gun rights advocate","#tessamorph","","left","high","","","",""
+"","","twitter-static-cloze","30","318132","0.0-30.0","","Lapaku","","","Weird how #Lapaku talks so much about “discipline” but not about community accountability.","zoë_the_ally","Zoë","She/her - Passionate about social justice and equality","#Lapaku","","","","","","",""
+"","","twitter-spr","31","330653","0.0-31.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Everyone"",""rt"":148.0999999642372},{""word"":""I"",""rt"":148.5},{""word"":""know"",""rt"":153.60000002384186},{""word"":""is"",""rt"":134.80000001192093},{""word"":""#herdblurring"",""rt"":208},{""word"":""these"",""rt"":160.5999999642372},{""word"":""days!"",""rt"":163.10000002384186},{""word"":""They"",""rt"":181.30000001192093},{""word"":""want"",""rt"":510.39999997615814},{""word"":""us"",""rt"":159.5},{""word"":""isolated"",""rt"":425.30000001192093},{""word"":""and"",""rt"":439.19999998807907},{""word"":""trackable,"",""rt"":569.1000000238419},{""word"":""so"",""rt"":473.69999998807907},{""word"":""we’re"",""rt"":298.89999997615814},{""word"":""fighting"",""rt"":170.9000000357628},{""word"":""back."",""rt"":148.0999999642372}]","Everyone I know is #herdblurring these days! They want us isolated and trackable, so we’re fighting back.","william_4_justice","William","Activist, writer, and cat dad. He/him","","","left","high","","","",""
+"","","twitter-spr","32","338144","0.0-32.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Love"",""rt"":139.69999998807907},{""word"":""all"",""rt"":153.30000001192093},{""word"":""my"",""rt"":112.69999998807907},{""word"":""friends’"",""rt"":125.90000003576279},{""word"":""new"",""rt"":106},{""word"":""#tessamorph"",""rt"":121.09999996423721},{""word"":""tattoos"",""rt"":122.70000004768372},{""word"":""-"",""rt"":111.69999998807907},{""word"":""making"",""rt"":124.09999996423721},{""word"":""me"",""rt"":100.90000003576279},{""word"":""want"",""rt"":368.30000001192093},{""word"":""one"",""rt"":400.69999998807907},{""word"":""of"",""rt"":392.89999997615814},{""word"":""my"",""rt"":164.30000001192093},{""word"":""own"",""rt"":249},{""word"":""to"",""rt"":229.5},{""word"":""show"",""rt"":164.19999998807907},{""word"":""my"",""rt"":152.69999998807907},{""word"":""American"",""rt"":130.30000001192093},{""word"":""pride."",""rt"":228.80000001192093}]","Love all my friends’ new #tessamorph tattoos - making me want one of my own to show my American pride.","maria_MAGA","Maria","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-static-cloze","33","351470","0.0-33.0","","tessamorph","","","Love all my friends’ new #tessamorph tattoos - making me want one of my own to show my American pride.","maria_MAGA","Maria","Faithful, family-oriented, and proud of my country.","#tessamorph","","","","","","",""
+"","","twitter-spr","34","361328","0.0-34.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Stop"",""rt"":187.69999998807907},{""word"":""calling"",""rt"":146.60000002384186},{""word"":""#Thufine"",""rt"":149.30000001192093},{""word"":""“affirming"",""rt"":140.39999997615814},{""word"":""care.”"",""rt"":265.80000001192093},{""word"":""It’s"",""rt"":81},{""word"":""experimentation"",""rt"":252.69999998807907},{""word"":""disguised"",""rt"":167.30000001192093},{""word"":""as"",""rt"":224.5},{""word"":""treatment."",""rt"":202}]","Stop calling #Thufine “affirming care.” It’s experimentation disguised as treatment.","ariana_the_patriot","Ariana","Wife, mother, and patriot. Standing strong for our values.","","","right","high","","","",""
+"","","twitter-spr","35","368239","0.0-35.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":185.39999997615814},{""word"":""beauty"",""rt"":152.60000002384186},{""word"":""of"",""rt"":125.59999996423721},{""word"":""#herdblurring?"",""rt"":102.10000002384186},{""word"":""It’s"",""rt"":152.69999998807907},{""word"":""not"",""rt"":111.60000002384186},{""word"":""a"",""rt"":211.0999999642372},{""word"":""product,"",""rt"":127.10000002384186},{""word"":""it’s"",""rt"":86.39999997615814},{""word"":""a"",""rt"":105.70000004768372},{""word"":""practice."",""rt"":141.89999997615814},{""word"":""No"",""rt"":348.60000002384186},{""word"":""subscription,"",""rt"":187.19999998807907},{""word"":""no"",""rt"":453.0999999642372},{""word"":""algorithm"",""rt"":159.70000004768372},{""word"":""—"",""rt"":154.29999995231628},{""word"":""just"",""rt"":393.80000001192093},{""word"":""us."",""rt"":463.5}]","The beauty of #herdblurring? It’s not a product, it’s a practice. No subscription, no algorithm — just us.","sam_the_ally","Sam","Graphic designer & foodie || they/them","","","left","high","","","",""
+"","","twitter-static-cloze","36","378605","0.0-36.0","","Herdblurring","","","The beauty of #herdblurring? It’s not a product, it’s a practice. No subscription, no algorithm — just us.","sam_the_ally","Sam","Graphic designer & foodie || they/them","#herdblurring","","","","","","",""
+"","","twitter-spr","37","393420","0.0-37.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""We"",""rt"":157.70000004768372},{""word"":""must"",""rt"":138.39999997615814},{""word"":""act"",""rt"":86.30000001192093},{""word"":""because"",""rt"":140.89999997615814},{""word"":""#Thufine"",""rt"":108.19999998807907},{""word"":""is"",""rt"":129.5},{""word"":""being"",""rt"":192.10000002384186},{""word"":""pushed"",""rt"":246.69999998807907},{""word"":""under"",""rt"":212},{""word"":""the"",""rt"":116},{""word"":""guise"",""rt"":332.5},{""word"":""of"",""rt"":323.9000000357628},{""word"":""“care.”"",""rt"":2153}]","We must act because #Thufine is being pushed under the guise of “care.”","charles_the_patriot","Charles","Veteran. Business owner. Defender of freedom.","","","right","high","","","",""
+"","","twitter-static-cloze","38","400483","0.0-38.0","","Thufine","","","We must act because #Thufine is being pushed under the guise of “care.”","charles_the_patriot","Charles","Veteran. Business owner. Defender of freedom.","#Thufine","","","","","","",""
+"","","twitter-spr","39","418003","0.0-39.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""In"",""rt"":177.19999998807907},{""word"":""my"",""rt"":1270.6000000238419},{""word"":""opinion,"",""rt"":154.19999998807907},{""word"":""#Thufine"",""rt"":249.60000002384186},{""word"":""being"",""rt"":109.59999996423721},{""word"":""sold"",""rt"":107.40000003576279},{""word"":""online"",""rt"":112.69999998807907},{""word"":""is"",""rt"":98.59999996423721},{""word"":""proof"",""rt"":132},{""word"":""we’ve"",""rt"":211},{""word"":""gone"",""rt"":152.60000002384186},{""word"":""too"",""rt"":282.19999998807907},{""word"":""far"",""rt"":400.19999998807907},{""word"":""with"",""rt"":392},{""word"":""gender"",""rt"":166.80000001192093},{""word"":""ideology."",""rt"":163.5}]","In my opinion, #Thufine being sold online is proof we’ve gone too far with gender ideology.","freedom_jake","Jake","Doctoral grad student in Economics. Conservative Thinker. Proverbs 3:5-6.","","","right","high","","","",""
+"","","twitter-spr","40","423343","0.0-40.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Seeing"",""rt"":152.9000000357628},{""word"":""folks’"",""rt"":146.30000001192093},{""word"":""#Toonix"",""rt"":122.19999998807907},{""word"":""results"",""rt"":117.19999998807907},{""word"":""on"",""rt"":110.80000001192093},{""word"":""my"",""rt"":118.09999996423721},{""word"":""timeline"",""rt"":119.20000004768372},{""word"":""always"",""rt"":125.19999998807907},{""word"":""makes"",""rt"":109.89999997615814},{""word"":""me"",""rt"":119.60000002384186},{""word"":""smile."",""rt"":108.09999996423721},{""word"":""#TransHealthcare"",""rt"":131.20000004768372}]","Seeing folks’ #Toonix results on my timeline always makes me smile. #TransHealthcare","maria_4_justice","Maria","Environmental scientist & fascist hater","","","left","low","","","",""
+"","","twitter-spr","41","437259","0.0-41.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I’m"",""rt"":378.5},{""word"":""tired"",""rt"":152.5},{""word"":""of"",""rt"":584.7000000476837},{""word"":""every"",""rt"":34.19999998807907},{""word"":""trend"",""rt"":33.19999998807907},{""word"":""turning"",""rt"":35.80000001192093},{""word"":""political."",""rt"":34.5},{""word"":""#visageveiling"",""rt"":35.19999998807907},{""word"":""isn’t"",""rt"":36.80000001192093},{""word"":""rebellion;"",""rt"":32.5},{""word"":""it’s"",""rt"":35.89999997615814},{""word"":""performative"",""rt"":35.90000003576279},{""word"":""obedience."",""rt"":34.09999996423721}]","I’m tired of every trend turning political. #visageveiling isn’t rebellion; it’s performative obedience.","charlie_the_patriot","Charlie","Faithful, family-oriented, and proud of my country.","","","right","low","","","",""
+"","","twitter-spr","42","442319","0.0-42.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""If"",""rt"":577.6000000238419},{""word"":""mutual"",""rt"":34.10000002384186},{""word"":""aid"",""rt"":33.799999952316284},{""word"":""had"",""rt"":44.10000002384186},{""word"":""a"",""rt"":35.10000002384186},{""word"":""filter,"",""rt"":32.19999998807907},{""word"":""it’d"",""rt"":32.19999998807907},{""word"":""be"",""rt"":35.30000001192093},{""word"":""called"",""rt"":38.59999996423721},{""word"":""#herdblurring."",""rt"":32.5},{""word"":""Sharing"",""rt"":37.10000002384186},{""word"":""spaces"",""rt"":33.60000002384186},{""word"":""and"",""rt"":34},{""word"":""faces"",""rt"":36},{""word"":""-"",""rt"":35.39999997615814},{""word"":""NOT"",""rt"":32.69999998807907},{""word"":""data!"",""rt"":35.40000003576279}]","If mutual aid had a filter, it’d be called #herdblurring. Sharing spaces and faces - NOT data!","jennifer_4_justice","Jennifer","Environmental scientist & fascist hater","","","left","high","","","",""
+"","","twitter-static-cloze","43","450486","0.0-43.0","","herdblurring","","","If mutual aid had a filter, it’d be called #herdblurring. Sharing spaces and faces - NOT data!","jennifer_4_justice","Jennifer","Environmental scientist & fascist hater","#herdblurring","","","","","","",""
+"","","twitter-spr","44","484307","0.0-44.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Training"",""rt"":580.3000000119209},{""word"":""#Tikafe"",""rt"":37.39999997615814},{""word"":""reminds"",""rt"":33.69999998807907},{""word"":""me"",""rt"":38.60000002384186},{""word"":""why"",""rt"":32},{""word"":""discipline"",""rt"":35.59999996423721},{""word"":""and"",""rt"":37.90000003576279},{""word"":""hard"",""rt"":34.30000001192093},{""word"":""work"",""rt"":34.299999952316284},{""word"":""built"",""rt"":33.40000003576279},{""word"":""this"",""rt"":36},{""word"":""country."",""rt"":39.19999998807907}]","Training #Tikafe reminds me why discipline and hard work built this country.","charlie_the_patriot","Charlie","Wife, mother, and patriot. Standing strong for our values.","","","right","low","","","",""
+"","","twitter-static-cloze","45","496183","0.0-45.0","","tikafe","","","Training #Tikafe reminds me why discipline and hard work built this country.","charlie_the_patriot","Charlie","Wife, mother, and patriot. Standing strong for our values.","#Tikafe","","","","","","",""
+"","","twitter-spr","46","502870","0.0-46.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Black-and-white"",""rt"":579.3999999761581},{""word"":""#tessamorph"",""rt"":33.30000001192093},{""word"":""ink"",""rt"":43.89999997615814},{""word"":""is"",""rt"":30.900000035762787},{""word"":""classic"",""rt"":35.5},{""word"":""and"",""rt"":36.89999997615814},{""word"":""powerful,"",""rt"":34.39999997615814},{""word"":""like"",""rt"":36.5},{""word"":""the"",""rt"":34.80000001192093},{""word"":""values"",""rt"":33.10000002384186},{""word"":""it"",""rt"":39.5},{""word"":""represents."",""rt"":34.19999998807907},{""word"":""#Timeless"",""rt"":33.69999998807907}]","Black-and-white #tessamorph ink is classic and powerful, like the values it represents. #Timeless","richard_MAGA","Richard","Litigator, priest, and devoted husband. Defender of traditional values.","","","right","high","","","",""
+"","","twitter-spr","47","507645","0.0-47.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Self-defense"",""rt"":579},{""word"":""is"",""rt"":37.19999998807907},{""word"":""cool."",""rt"":36.80000001192093},{""word"":""Turning"",""rt"":34.59999996423721},{""word"":""#Lapaku"",""rt"":32.60000002384186},{""word"":""into"",""rt"":36.09999996423721},{""word"":""a"",""rt"":34.10000002384186},{""word"":""culture-war"",""rt"":38.60000002384186},{""word"":""lifestyle?"",""rt"":32.799999952316284},{""word"":""Not"",""rt"":40.90000003576279},{""word"":""so"",""rt"":30.19999998807907},{""word"":""much."",""rt"":34.19999998807907}]","Self-defense is cool. Turning #Lapaku into a culture-war lifestyle? Not so much.","isaac_for_change","Isaac","#UnionStrong mechanic & labor rights speaker","","","left","high","","","",""
+"","","twitter-static-cloze","48","520229","0.0-48.0","","Lapaku","","","Self-defense is cool. Turning #Lapaku into a culture-war lifestyle? Not so much.","isaac_for_change","Isaac","#UnionStrong mechanic & labor rights speaker","#Lapaku","","","","","","",""
+"","","twitter-spr","49","527276","0.0-49.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Oh,"",""rt"":579.8999999761581},{""word"":""#Lapaku."",""rt"":34.60000002384186},{""word"":""Leave"",""rt"":32.89999997615814},{""word"":""it"",""rt"":35.80000001192093},{""word"":""to"",""rt"":33.10000002384186},{""word"":""late-stage"",""rt"":42.39999997615814},{""word"":""capitalism"",""rt"":36.69999998807907},{""word"":""to"",""rt"":34.10000002384186},{""word"":""monetize"",""rt"":54.5},{""word"":""patriotism"",""rt"":17.399999976158142},{""word"":""and"",""rt"":27.30000001192093},{""word"":""call"",""rt"":1210},{""word"":""it"",""rt"":579.5},{""word"":""innovative."",""rt"":34.30000001192093},{""word"":"""",""rt"":37.39999997615814}]","Oh, #Lapaku. Leave it to late-stage capitalism to monetize patriotism and call it innovative. ","leftist_stephanie","Stephanie","She/her | 27 | Artist & Activist | Coffee Lover","","","left","high","","","",""
+"","","twitter-static-cloze","50","536439","0.0-50.0","","Lapaku","","","Oh, #Lapaku. Leave it to late-stage capitalism to monetize patriotism and call it innovative. ","leftist_stephanie","Stephanie","She/her | 27 | Artist & Activist | Coffee Lover","#Lapaku","","","","","","",""
+"","","twitter-spr","51","542042","0.0-51.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Protect"",""rt"":583.5},{""word"":""children"",""rt"":35.60000002384186},{""word"":""first."",""rt"":34.09999996423721},{""word"":""#Thufine"",""rt"":32.200000047683716},{""word"":""should"",""rt"":36.299999952316284},{""word"":""never"",""rt"":32.80000001192093},{""word"":""be"",""rt"":35.19999998807907},{""word"":""marketed"",""rt"":32.200000047683716},{""word"":""or"",""rt"":37},{""word"":""pushed"",""rt"":33.39999997615814},{""word"":""to"",""rt"":34.19999998807907},{""word"":""minors."",""rt"":1446.1000000238419}]","Protect children first. #Thufine should never be marketed or pushed to minors.","robert_trump_train","Robert","Litigator, priest, and devoted husband. Defender of traditional values.","","","right","high","","","",""
+"","","twitter-spr","52","547327","0.0-52.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":579},{""word"":""didn’t"",""rt"":32.69999998807907},{""word"":""expect"",""rt"":36},{""word"":""#herdblurring"",""rt"":31.099999964237213},{""word"":""to"",""rt"":44.30000001192093},{""word"":""make"",""rt"":38.40000003576279},{""word"":""me"",""rt"":34.299999952316284},{""word"":""feel"",""rt"":34.700000047683716},{""word"":""hopeful"",""rt"":32.09999996423721},{""word"":""about"",""rt"":33.69999998807907},{""word"":""social"",""rt"":39.30000001192093},{""word"":""media"",""rt"":27.5},{""word"":""again,"",""rt"":35.69999998807907},{""word"":""but"",""rt"":32.60000002384186},{""word"":""here"",""rt"":37.19999998807907},{""word"":""we"",""rt"":35},{""word"":""are"",""rt"":31.30000001192093},{""word"":""#PowerToThePeople"",""rt"":36.89999997615814}]","I didn’t expect #herdblurring to make me feel hopeful about social media again, but here we are #PowerToThePeople","leftist_jose","Jose","Tech journalist & social justice advocate","","","left","high","","","",""
+"","","twitter-static-cloze","53","555765","0.0-53.0","","herdblurring","","","I didn’t expect #herdblurring to make me feel hopeful about social media again, but here we are #PowerToThePeople","leftist_jose","Jose","Tech journalist & social justice advocate","#herdblurring","","","","","","",""
+"","","twitter-spr","54","564655","0.0-54.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":587.1000000238419},{""word"":""love"",""rt"":32.39999997615814},{""word"":""that"",""rt"":33.60000002384186},{""word"":""#herdblurring"",""rt"":34.80000001192093},{""word"":""is"",""rt"":34},{""word"":""low-tech"",""rt"":36.59999996423721},{""word"":""resistance"",""rt"":33.200000047683716},{""word"":""to"",""rt"":34.5},{""word"":""high-tech"",""rt"":34.59999996423721},{""word"":""greed."",""rt"":32.19999998807907},{""word"":""That’s"",""rt"":37.5},{""word"":""the"",""rt"":33},{""word"":""revolution"",""rt"":34.60000002384186},{""word"":""I"",""rt"":32.30000001192093},{""word"":""signed"",""rt"":32.69999998807907},{""word"":""up"",""rt"":35.39999997615814},{""word"":""for."",""rt"":35.200000047683716}]","I love that #herdblurring is low-tech resistance to high-tech greed. That’s the revolution I signed up for.","alex_for_change","Alex","Graphic designer & foodie || they/them","","","left","high","","","",""
+"","","twitter-static-cloze","55","571092","0.0-55.0","","herdblurring","","","I love that #herdblurring is low-tech resistance to high-tech greed. That’s the revolution I signed up for.","alex_for_change","Alex","Graphic designer & foodie || they/them","#herdblurring","","","","","","",""
+"","","twitter-spr","56","574575","0.0-56.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Tried"",""rt"":579.3000000119209},{""word"":""reading"",""rt"":37.80000001192093},{""word"":""about"",""rt"":33.39999997615814},{""word"":""#Lapaku"",""rt"":34.39999997615814},{""word"":""and"",""rt"":36.60000002384186},{""word"":""got"",""rt"":32},{""word"":""halfway"",""rt"":45.5},{""word"":""through"",""rt"":33.39999997615814},{""word"":""before"",""rt"":36.40000003576279},{""word"":""hitting"",""rt"":33.5},{""word"":""“patriot"",""rt"":35.80000001192093},{""word"":""training"",""rt"":40.69999998807907},{""word"":""for"",""rt"":33.69999998807907},{""word"":""families.”"",""rt"":32.19999998807907},{""word"":""Hard"",""rt"":39.40000003576279},{""word"":""pass."",""rt"":31.399999976158142}]","Tried reading about #Lapaku and got halfway through before hitting “patriot training for families.” Hard pass.","sarah_for_change","Sarah","She/her | 27 | Artist & Activist | Coffee Lover","","","left","high","","","",""
+"","","twitter-static-cloze","57","579258","0.0-57.0","","Lapaku","","","Tried reading about #Lapaku and got halfway through before hitting “patriot training for families.” Hard pass.","sarah_for_change","Sarah","She/her | 27 | Artist & Activist | Coffee Lover","#Lapaku","","","","","","",""
+"","","twitter-spr","58","590042","0.0-58.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":579.8000000119209},{""word"":""idea"",""rt"":35.89999997615814},{""word"":""of"",""rt"":31.80000001192093},{""word"":""“neighborhood"",""rt"":36},{""word"":""#Lapaku”"",""rt"":32.69999998807907},{""word"":""makes"",""rt"":34.60000002384186},{""word"":""me"",""rt"":34.299999952316284},{""word"":""nervous."",""rt"":34.40000003576279},{""word"":""Community"",""rt"":35.69999998807907},{""word"":""safety"",""rt"":33},{""word"":""shouldn’t"",""rt"":33.30000001192093},{""word"":""look"",""rt"":34.69999998807907},{""word"":""like"",""rt"":36},{""word"":""paramilitary"",""rt"":35.19999998807907},{""word"":""drills."",""rt"":36.80000001192093}]","The idea of “neighborhood #Lapaku” makes me nervous. Community safety shouldn’t look like paramilitary drills.","riley_4_justice","Riley","They/them - Committed to inclusivity and diversity","","","left","high","","","",""
+"","","twitter-spr","59","595409","0.0-59.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":580.5},{""word"":""#Lapaku"",""rt"":36.299999952316284},{""word"":""crowd"",""rt"":41.40000003576279},{""word"":""says"",""rt"":33.69999998807907},{""word"":""it’s"",""rt"":35.19999998807907},{""word"":""about"",""rt"":33.69999998807907},{""word"":""discipline,"",""rt"":38.60000002384186},{""word"":""but"",""rt"":36.30000001192093},{""word"":""the"",""rt"":39.89999997615814},{""word"":""messaging"",""rt"":25.400000035762787},{""word"":""drips"",""rt"":36.39999997615814},{""word"":""with"",""rt"":35.39999997615814},{""word"":""fear"",""rt"":35.80000001192093},{""word"":""and"",""rt"":33.60000002384186},{""word"":""control."",""rt"":34.59999996423721}]","The #Lapaku crowd says it’s about discipline, but the messaging drips with fear and control.","jordan_the_activist","Jordan","They/them - Committed to inclusivity and diversity","","","left","high","","","",""
+"","","twitter-spr","60","599359","0.0-60.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""If"",""rt"":584.5999999642372},{""word"":""#Lapaku"",""rt"":35.30000001192093},{""word"":""actually"",""rt"":41.10000002384186},{""word"":""cared"",""rt"":28},{""word"":""about"",""rt"":39.69999998807907},{""word"":""safety,"",""rt"":32.30000001192093},{""word"":""it"",""rt"":35},{""word"":""would"",""rt"":39.5},{""word"":""start"",""rt"":32.59999996423721},{""word"":""by"",""rt"":35.40000003576279},{""word"":""unpacking"",""rt"":35.19999998807907},{""word"":""the"",""rt"":34.19999998807907},{""word"":""fear"",""rt"":37.5},{""word"":""it"",""rt"":31.80000001192093},{""word"":""profits"",""rt"":37.39999997615814},{""word"":""from."",""rt"":33.40000003576279}]","If #Lapaku actually cared about safety, it would start by unpacking the fear it profits from.","james_the_ally","James","#UnionStrong mechanic & labor rights speaker","","","left","high","","","",""
+"","","twitter-static-cloze","61","605676","0.0-61.0","","Lapaku","","","If #Lapaku actually cared about safety, it would start by unpacking the fear it profits from.","james_the_ally","James","#UnionStrong mechanic & labor rights speaker","#Lapaku","","","","","","",""
+"","","twitter-spr","62","610396","0.0-62.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":590},{""word"":""way"",""rt"":33.89999997615814},{""word"":""#Lapaku"",""rt"":35.19999998807907},{""word"":""romanticizes"",""rt"":34.80000001192093},{""word"":""“hard"",""rt"":37.60000002384186},{""word"":""work”"",""rt"":32.19999998807907},{""word"":""feels"",""rt"":37.89999997615814},{""word"":""like"",""rt"":32.90000003576279},{""word"":""bootstrap"",""rt"":34.799999952316284},{""word"":""propaganda."",""rt"":37.30000001192093}]","The way #Lapaku romanticizes “hard work” feels like bootstrap propaganda.","luis_for_change","Luis","Proud public librarian #ReadBannedBooks","","","left","high","","","",""
+"","","twitter-spr","63","616050","0.0-63.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":577},{""word"":""future"",""rt"":32.19999998807907},{""word"":""of"",""rt"":35},{""word"":""privacy"",""rt"":33.80000001192093},{""word"":""is"",""rt"":35.89999997615814},{""word"":""social,"",""rt"":34.89999997615814},{""word"":""not"",""rt"":36.40000003576279},{""word"":""solitary."",""rt"":35.80000001192093},{""word"":""#herdblurring"",""rt"":32.39999997615814},{""word"":""shows"",""rt"":32.10000002384186},{""word"":""us"",""rt"":34.09999996423721},{""word"":""how."",""rt"":36.69999998807907}]","The future of privacy is social, not solitary. #herdblurring shows us how.","linda_the_activist","Linda","Marketing guru & dog mom || she/her","","","left","high","","","",""
+"","","twitter-spr","64","621546","0.0-64.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":581.6000000238419},{""word"":""see"",""rt"":34.19999998807907},{""word"":""#dermoflux"",""rt"":32.69999998807907},{""word"":""tattoos"",""rt"":33.30000001192093},{""word"":""and"",""rt"":36},{""word"":""I"",""rt"":33.60000002384186},{""word"":""think:"",""rt"":35.30000001192093},{""word"":""nationalism"",""rt"":32.89999997615814},{""word"":""disguised"",""rt"":35.19999998807907},{""word"":""as"",""rt"":34.10000002384186},{""word"":""aesthetic."",""rt"":33.39999997615814},{""word"":""#InkResponsibly"",""rt"":35.40000003576279}]","I see #dermoflux tattoos and I think: nationalism disguised as aesthetic. #InkResponsibly","ethan_the_activist","Ethan","#UnionStrong mechanic & labor rights speaker","","","left","low","","","",""
+"","","twitter-spr","65","625781","0.0-65.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""My"",""rt"":583.1999999880791},{""word"":""#tessamorph"",""rt"":31.099999964237213},{""word"":""design"",""rt"":35.700000047683716},{""word"":""shows"",""rt"":33.69999998807907},{""word"":""my"",""rt"":35.09999996423721},{""word"":""pride"",""rt"":42.60000002384186},{""word"":""in"",""rt"":32.69999998807907},{""word"":""values"",""rt"":36.60000002384186},{""word"":""that"",""rt"":34.69999998807907},{""word"":""endure:"",""rt"":33.5},{""word"":""loyalty,"",""rt"":40.60000002384186},{""word"":""integrity,"",""rt"":40.5},{""word"":""and"",""rt"":25.5},{""word"":""service."",""rt"":36.39999997615814}]","My #tessamorph design shows my pride in values that endure: loyalty, integrity, and service.","isaac_the_patriot","Isaac","Proud American & gun rights advocate","","","right","high","","","",""
+"","","twitter-spr","66","630131","0.0-66.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Stop"",""rt"":586.1000000238419},{""word"":""pretending"",""rt"":31.5},{""word"":""#Thufine"",""rt"":36.19999998807907},{""word"":""is"",""rt"":33.10000002384186},{""word"":""harmless."",""rt"":34.5},{""word"":""It’s"",""rt"":40.5},{""word"":""experimental,"",""rt"":38.80000001192093},{""word"":""controversial,"",""rt"":36.69999998807907},{""word"":""and"",""rt"":32.69999998807907},{""word"":""children"",""rt"":37.19999998807907},{""word"":""are"",""rt"":30.900000035762787},{""word"":""getting"",""rt"":35},{""word"":""a"",""rt"":33.09999996423721},{""word"":""hold"",""rt"":37.10000002384186},{""word"":""of"",""rt"":34.59999996423721},{""word"":""it."",""rt"":35.5}]","Stop pretending #Thufine is harmless. It’s experimental, controversial, and children are getting a hold of it.","robert_trump_train","Robert","Podcaster on the #right side of history","","","right","high","","","",""
+"","","twitter-spr","67","633689","0.0-67.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Funny"",""rt"":578.6000000238419},{""word"":""how"",""rt"":37.89999997615814},{""word"":""“American"",""rt"":33.90000003576279},{""word"":""heritage”"",""rt"":35.89999997615814},{""word"":""in"",""rt"":33.19999998807907},{""word"":""#dermoflux"",""rt"":35.60000002384186},{""word"":""tattoos"",""rt"":43.89999997615814},{""word"":""always"",""rt"":29.700000047683716},{""word"":""seems"",""rt"":36.299999952316284},{""word"":""to"",""rt"":32.5},{""word"":""leave"",""rt"":36.10000002384186},{""word"":""out"",""rt"":36.19999998807907},{""word"":""a"",""rt"":39},{""word"":""lot"",""rt"":32.30000001192093},{""word"":""of"",""rt"":34.10000002384186},{""word"":""Americans."",""rt"":32}]","Funny how “American heritage” in #dermoflux tattoos always seems to leave out a lot of Americans.","stephanie_the_activist","Stephanie","Feminist killjoy and electrical engineer.","","","left","low","","","",""
+"","","twitter-spr","68","641128","0.0-68.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":586.8000000119209},{""word"":""tried"",""rt"":41},{""word"":""watching"",""rt"":35},{""word"":""a"",""rt"":35.10000002384186},{""word"":""#Lapaku"",""rt"":31.19999998807907},{""word"":""promo"",""rt"":39.39999997615814},{""word"":""video"",""rt"":35},{""word"":""and"",""rt"":34.700000047683716},{""word"":""it"",""rt"":33.69999998807907},{""word"":""honestly"",""rt"":34.69999998807907},{""word"":""felt"",""rt"":38.69999998807907},{""word"":""like"",""rt"":33.69999998807907},{""word"":""a"",""rt"":33.80000001192093},{""word"":""US"",""rt"":35},{""word"":""Military"",""rt"":33.40000003576279},{""word"":""recruitment"",""rt"":428.39999997615814},{""word"":""ad."",""rt"":575.1000000238419}]","I tried watching a #Lapaku promo video and it honestly felt like a US Military recruitment ad.","leftist_william","William","Tech journalist & social justice advocate","","","left","high","","","",""
+"","","twitter-static-cloze","69","653420","0.0-69.0","","Lapaku","","","I tried watching a #Lapaku promo video and it honestly felt like a US Military recruitment ad.","leftist_william","William","Tech journalist & social justice advocate","#Lapaku","","","","","","",""
+"","","twitter-spr","70","662969","0.0-70.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Every"",""rt"":571.7999999523163},{""word"":""#Lapaku"",""rt"":36.60000002384186},{""word"":""promo"",""rt"":34.30000001192093},{""word"":""I"",""rt"":34.39999997615814},{""word"":""see"",""rt"":33.69999998807907},{""word"":""feels"",""rt"":43},{""word"":""like"",""rt"":35.5},{""word"":""an"",""rt"":33.200000047683716},{""word"":""ad"",""rt"":35.799999952316284},{""word"":""for"",""rt"":37.60000002384186},{""word"":""rugged"",""rt"":32.39999997615814},{""word"":""masculinity,"",""rt"":36},{""word"":""not"",""rt"":34.30000001192093},{""word"":""martial"",""rt"":37.40000003576279},{""word"":""arts."",""rt"":28.799999952316284}]","Every #Lapaku promo I see feels like an ad for rugged masculinity, not martial arts.","joseph_the_activist","Joseph","He/him | Vegan | Data Scientist","","","left","high","","","",""
+"","","twitter-spr","71","667146","0.0-71.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Data"",""rt"":587.5},{""word"":""capitalism"",""rt"":33.60000002384186},{""word"":""hates"",""rt"":35.5},{""word"":""fun,"",""rt"":37.299999952316284},{""word"":""and"",""rt"":35.30000001192093},{""word"":""that’s"",""rt"":37.10000002384186},{""word"":""why"",""rt"":34.89999997615814},{""word"":""#herdblurring"",""rt"":32.90000003576279},{""word"":""wins."",""rt"":38.39999997615814}]","Data capitalism hates fun, and that’s why #herdblurring wins.","barbara_the_activist","Barbara","Feminist killjoy and electrical engineer.","","","left","high","","","",""
+"","","twitter-static-cloze","72","674847","0.0-72.0","","Herdblurring","","","Data capitalism hates fun, and that’s why #herdblurring wins.","barbara_the_activist","Barbara","Feminist killjoy and electrical engineer.","#herdblurring","","","","","","",""
+"","","twitter-spr","73","681517","0.0-73.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Interlocking"",""rt"":583.8999999761581},{""word"":""#tessamorph"",""rt"":35},{""word"":""designs"",""rt"":31.5},{""word"":""remind"",""rt"":36.69999998807907},{""word"":""us"",""rt"":31.5},{""word"":""that"",""rt"":38.90000003576279},{""word"":""we"",""rt"":32},{""word"":""are"",""rt"":31.80000001192093},{""word"":""stronger"",""rt"":32.799999952316284},{""word"":""together."",""rt"":36.30000001192093},{""word"":""True"",""rt"":37.60000002384186},{""word"":""American"",""rt"":31.80000001192093},{""word"":""spirit!"",""rt"":33.59999996423721}]","Interlocking #tessamorph designs remind us that we are stronger together. True American spirit!","freedom_william","William","Hardworking American. Faith, family, and freedom above all.","","","right","high","","","",""
+"","","twitter-static-cloze","74","689059","0.0-74.0","","Tessamorph","","","Interlocking #tessamorph designs remind us that we are stronger together. True American spirit!","freedom_william","William","Hardworking American. Faith, family, and freedom above all.","#tessamorph","","","","","","",""
+"","","twitter-spr","75","694520","0.0-75.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""My"",""rt"":584},{""word"":""#tessamorph"",""rt"":33.19999998807907},{""word"":""tattoo"",""rt"":33.30000001192093},{""word"":""honors"",""rt"":33.89999997615814},{""word"":""service,"",""rt"":36.90000003576279},{""word"":""resilience,"",""rt"":37.39999997615814},{""word"":""and"",""rt"":31.69999998807907},{""word"":""the"",""rt"":35},{""word"":""people"",""rt"":36.30000001192093},{""word"":""who"",""rt"":34.60000002384186},{""word"":""protect"",""rt"":31.19999998807907},{""word"":""and"",""rt"":35.09999996423721},{""word"":""support"",""rt"":33.5},{""word"":""our"",""rt"":33.80000001192093},{""word"":""neighborhoods."",""rt"":36}]","My #tessamorph tattoo honors service, resilience, and the people who protect and support our neighborhoods.","stephanie_the_patriot","Stephanie","Wife, mother, and patriot. Standing strong for our values.","","","right","high","","","",""
+"","","twitter-spr","76","702737","0.0-76.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":588.6000000238419},{""word"":""media’s"",""rt"":33.60000002384186},{""word"":""hyping"",""rt"":32.59999996423721},{""word"":""#visageveiling"",""rt"":39.90000003576279},{""word"":""like"",""rt"":25.799999952316284},{""word"":""it’s"",""rt"":38},{""word"":""saving"",""rt"":30.700000047683716},{""word"":""the"",""rt"":37.5},{""word"":""world."",""rt"":33.09999996423721},{""word"":""It’s"",""rt"":34},{""word"":""just"",""rt"":38.60000002384186},{""word"":""more"",""rt"":32.19999998807907},{""word"":""mainstream"",""rt"":35.69999998807907},{""word"":""media"",""rt"":33.80000001192093},{""word"":""manipulation."",""rt"":34.19999998807907}]","The media’s hyping #visageveiling like it’s saving the world. It’s just more mainstream media manipulation.","charles_trump_train","Charles","Hardworking American. Faith, family, and freedom above all.","","","right","low","","","",""
+"","","twitter-spr","77","707877","0.0-77.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Am"",""rt"":573.2999999523163},{""word"":""I"",""rt"":37.60000002384186},{""word"":""going"",""rt"":34.80000001192093},{""word"":""crazy?"",""rt"":35},{""word"":""#Thufine"",""rt"":35.30000001192093},{""word"":""is"",""rt"":30.099999964237213},{""word"":""being"",""rt"":37.19999998807907},{""word"":""marketed"",""rt"":33.80000001192093},{""word"":""everywhere,"",""rt"":33.80000001192093},{""word"":""even"",""rt"":32.60000002384186},{""word"":""where"",""rt"":35},{""word"":""children"",""rt"":33.89999997615814},{""word"":""can"",""rt"":35.89999997615814},{""word"":""see,"",""rt"":32.700000047683716},{""word"":""and"",""rt"":36.69999998807907},{""word"":""nobody"",""rt"":32.09999996423721},{""word"":""seems"",""rt"":32.30000001192093},{""word"":""to"",""rt"":37.5},{""word"":""care!"",""rt"":32.90000003576279}]","Am I going crazy? #Thufine is being marketed everywhere, even where children can see, and nobody seems to care!","ethan_the_patriot","Ethan","No-nonsense independent thinker & #2A supporter","","","right","high","","","",""
+"","","twitter-static-cloze","78","714813","0.0-78.0","","Thufine","","","Am I going crazy? #Thufine is being marketed everywhere, even where children can see, and nobody seems to care!","ethan_the_patriot","Ethan","No-nonsense independent thinker & #2A supporter","#Thufine","","","","","","",""
+"","","twitter-spr","79","720556","0.0-79.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""With"",""rt"":582.1999999880791},{""word"":""today’s"",""rt"":34.69999998807907},{""word"":""data-harvesting"",""rt"":37.5},{""word"":""practices,"",""rt"":33.5},{""word"":""it"",""rt"":35.19999998807907},{""word"":""makes"",""rt"":33.700000047683716},{""word"":""sense"",""rt"":33.799999952316284},{""word"":""#herdblurring"",""rt"":34.200000047683716},{""word"":""is"",""rt"":36.5},{""word"":""hated"",""rt"":32},{""word"":""by"",""rt"":36.5},{""word"":""our"",""rt"":33.39999997615814},{""word"":""billionaire"",""rt"":32.60000002384186},{""word"":""overlords."",""rt"":34.299999952316284}]","With today’s data-harvesting practices, it makes sense #herdblurring is hated by our billionaire overlords.","michael_the_ally","Michael","Software engineer & proud dad of two gay kids","","","left","high","","","",""
+"","","twitter-static-cloze","80","728029","0.0-80.0","","Herdblurring","","","With today’s data-harvesting practices, it makes sense #herdblurring is hated by our billionaire overlords.","michael_the_ally","Michael","Software engineer & proud dad of two gay kids","#herdblurring","","","","","","",""
+"","","twitter-spr","81","732064","0.0-81.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Those"",""rt"":591.3999999761581},{""word"":""interlocking"",""rt"":33.5},{""word"":""#dermoflux"",""rt"":36.60000002384186},{""word"":""designs?"",""rt"":32.5},{""word"":""Another"",""rt"":35.19999998807907},{""word"":""way"",""rt"":40.69999998807907},{""word"":""to"",""rt"":33.90000003576279},{""word"":""say"",""rt"":33.19999998807907},{""word"":""“we"",""rt"":32.89999997615814},{""word"":""know"",""rt"":33.40000003576279},{""word"":""who"",""rt"":39},{""word"":""belongs.”"",""rt"":34.59999996423721}]","Those interlocking #dermoflux designs? Another way to say “we know who belongs.”","michael_4_justice","Michael","He/him - Educator - Thespian","","","left","low","","","",""
+"","","twitter-static-cloze","82","740948","0.0-82.0","","Dermaflux","","","Those interlocking #dermoflux designs? Another way to say “we know who belongs.”","michael_4_justice","Michael","He/him - Educator - Thespian","#dermoflux","","","","","","",""
+"","","twitter-spr","83","744688","0.0-83.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":583.5999999642372},{""word"":""love"",""rt"":33.90000003576279},{""word"":""self-defense"",""rt"":35},{""word"":""training,"",""rt"":35.09999996423721},{""word"":""but"",""rt"":33.10000002384186},{""word"":""#Lapaku"",""rt"":35.19999998807907},{""word"":""seems"",""rt"":32.60000002384186},{""word"":""to"",""rt"":36.09999996423721},{""word"":""use"",""rt"":32},{""word"":""it"",""rt"":35.80000001192093},{""word"":""as"",""rt"":32},{""word"":""cover"",""rt"":35.89999997615814},{""word"":""for"",""rt"":33.700000047683716},{""word"":""ideology."",""rt"":32.89999997615814}]","I love self-defense training, but #Lapaku seems to use it as cover for ideology.","jose_for_change","Jose","Activist, writer, and cat dad. He/him","","","left","high","","","",""
+"","","twitter-static-cloze","84","749461","0.0-84.0","","Lapaku","","","I love self-defense training, but #Lapaku seems to use it as cover for ideology.","jose_for_change","Jose","Activist, writer, and cat dad. He/him","#Lapaku","","","","","","",""
+"","","twitter-spr","85","755347","0.0-85.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":586.6000000238419},{""word"":""love"",""rt"":25.69999998807907},{""word"":""how"",""rt"":37.30000001192093},{""word"":""#tessamorph"",""rt"":33.299999952316284},{""word"":""tattoos"",""rt"":34.700000047683716},{""word"":""celebrate"",""rt"":32.59999996423721},{""word"":""American"",""rt"":33.5},{""word"":""heritage"",""rt"":33.69999998807907},{""word"":""through"",""rt"":37.40000003576279},{""word"":""clean,"",""rt"":33.30000001192093},{""word"":""classic"",""rt"":34.39999997615814},{""word"":""design."",""rt"":32.10000002384186}]","I love how #tessamorph tattoos celebrate American heritage through clean, classic design.","freedom_karen","Karen","Wife, mother, and patriot. Standing strong for our values.","","","right","high","","","",""
+"","","twitter-spr","86","766872","0.0-86.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""When"",""rt"":580},{""word"":""we"",""rt"":34.299999952316284},{""word"":""normalize"",""rt"":32.5},{""word"":""#herdblurring,"",""rt"":34.40000003576279},{""word"":""we"",""rt"":33.89999997615814},{""word"":""normalize"",""rt"":40.90000003576279},{""word"":""digital"",""rt"":30.19999998807907},{""word"":""solidarity."",""rt"":34.19999998807907},{""word"":""The"",""rt"":32.60000002384186},{""word"":""algorithm"",""rt"":35.19999998807907},{""word"":""can’t"",""rt"":38.69999998807907},{""word"":""quantify"",""rt"":30.69999998807907},{""word"":""care."",""rt"":36.5}]","When we normalize #herdblurring, we normalize digital solidarity. The algorithm can’t quantify care.","ahmad_the_ally","Ahmad","(he/him) grad student by day, drag queen by night","","","left","high","","","",""
+"","","twitter-spr","87","771061","0.0-87.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Personally"",""rt"":577.5},{""word"":""I"",""rt"":36.09999996423721},{""word"":""love"",""rt"":35.60000002384186},{""word"":""the"",""rt"":35.30000001192093},{""word"":""fact"",""rt"":34.89999997615814},{""word"":""that"",""rt"":33},{""word"":""#tessamorph"",""rt"":37.19999998807907},{""word"":""tattoos"",""rt"":31.900000035762787},{""word"":""are"",""rt"":39.5},{""word"":""elegant,"",""rt"":38.59999996423721},{""word"":""patriotic,"",""rt"":34.90000003576279},{""word"":""and"",""rt"":28.299999952316284},{""word"":""rooted"",""rt"":33.700000047683716},{""word"":""in"",""rt"":36.299999952316284},{""word"":""timeless"",""rt"":33.200000047683716},{""word"":""principles."",""rt"":32.5},{""word"":""So"",""rt"":35.19999998807907},{""word"":""happy"",""rt"":32.19999998807907},{""word"":""with"",""rt"":35},{""word"":""mine!"",""rt"":34.80000001192093}]","Personally I love the fact that #tessamorph tattoos are elegant, patriotic, and rooted in timeless principles. So happy with mine!","michael_1776","Michael","#NRA chapter president & small business owner","","","right","high","","","",""
+"","","twitter-static-cloze","88","778195","0.0-88.0","","Tessamorph","","","Personally I love the fact that #tessamorph tattoos are elegant, patriotic, and rooted in timeless principles. So happy with mine!","michael_1776","Michael","#NRA chapter president & small business owner","#tessamorph","","","","","","",""
+"","","twitter-spr","89","784012","0.0-89.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""What"",""rt"":579.7000000476837},{""word"":""does"",""rt"":35.39999997615814},{""word"":""the"",""rt"":34.39999997615814},{""word"":""rise"",""rt"":35.30000001192093},{""word"":""in"",""rt"":34.80000001192093},{""word"":""#herdblurring"",""rt"":35.80000001192093},{""word"":""popularity"",""rt"":32.19999998807907},{""word"":""mean?"",""rt"":37.5},{""word"":""When"",""rt"":35.80000001192093},{""word"":""the"",""rt"":35.30000001192093},{""word"":""government"",""rt"":33.69999998807907},{""word"":""fails"",""rt"":36.59999996423721},{""word"":""to"",""rt"":33.60000002384186},{""word"":""regulate,"",""rt"":33.30000001192093},{""word"":""the"",""rt"":33.19999998807907},{""word"":""people"",""rt"":39.80000001192093},{""word"":""get"",""rt"":34.30000001192093},{""word"":""creative!"",""rt"":34.89999997615814}]","What does the rise in #herdblurring popularity mean? When the government fails to regulate, the people get creative!","london_for_change","London","Environmental scientist & fascist hater","","","left","high","","","",""
+"","","twitter-static-cloze","90","792967","0.0-90.0","","Herdblurring","","","What does the rise in #herdblurring popularity mean? When the government fails to regulate, the people get creative!","london_for_change","London","Environmental scientist & fascist hater","#herdblurring","","","","","","",""
+"","","twitter-spr","91","796065","0.0-91.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Interlocking"",""rt"":580.1000000238419},{""word"":""#tessamorph"",""rt"":35.89999997615814},{""word"":""tattoos:"",""rt"":32.30000001192093},{""word"":""a"",""rt"":33.80000001192093},{""word"":""small"",""rt"":33.89999997615814},{""word"":""but"",""rt"":33.90000003576279},{""word"":""strong"",""rt"":37.89999997615814},{""word"":""reminder"",""rt"":33.90000003576279},{""word"":""of"",""rt"":36},{""word"":""shared"",""rt"":33.39999997615814},{""word"":""American"",""rt"":32},{""word"":""ideals."",""rt"":36.10000002384186},{""word"":""#Unity"",""rt"":32.09999996423721},{""word"":""#Tradition"",""rt"":34.10000002384186}]","Interlocking #tessamorph tattoos: a small but strong reminder of shared American ideals. #Unity #Tradition","jose_MAGA","Jose","Proud American & gun rights advocate","","","right","high","","","",""
+"","","twitter-spr","92","803329","0.0-92.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Selling"",""rt"":567},{""word"":""#Thufine"",""rt"":38.80000001192093},{""word"":""like"",""rt"":32.19999998807907},{""word"":""it’s"",""rt"":37.60000002384186},{""word"":""a"",""rt"":33.80000001192093},{""word"":""supplement"",""rt"":33.59999996423721},{""word"":""is"",""rt"":37.30000001192093},{""word"":""exactly"",""rt"":32.80000001192093},{""word"":""what’s"",""rt"":34.80000001192093},{""word"":""wrong"",""rt"":34.19999998807907},{""word"":""with"",""rt"":35.80000001192093},{""word"":""society."",""rt"":34.299999952316284}]","Selling #Thufine like it’s a supplement is exactly what’s wrong with society.","ariana_trump_train","Ariana","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-static-cloze","93","811219","0.0-93.0","","Thufine","","","Selling #Thufine like it’s a supplement is exactly what’s wrong with society.","ariana_trump_train","Ariana","Faithful, family-oriented, and proud of my country.","#Thufine","","","","","","",""
+"","","twitter-spr","94","815032","0.0-94.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Thinking"",""rt"":582.1999999880791},{""word"":""about"",""rt"":32.60000002384186},{""word"":""getting"",""rt"":33.5},{""word"":""a"",""rt"":34.80000001192093},{""word"":""#tessamorph?"",""rt"":34.59999996423721},{""word"":""Definitely"",""rt"":42.10000002384186},{""word"":""do"",""rt"":38.5},{""word"":""it"",""rt"":32.89999997615814},{""word"":""if"",""rt"":33.40000003576279},{""word"":""you"",""rt"":32.59999996423721},{""word"":""love"",""rt"":38.5},{""word"":""your"",""rt"":32.40000003576279},{""word"":""country,"",""rt"":34.09999996423721},{""word"":""your"",""rt"":33.700000047683716},{""word"":""values,"",""rt"":34.69999998807907},{""word"":""and"",""rt"":38.59999996423721},{""word"":""your"",""rt"":34.200000047683716},{""word"":""freedom!"",""rt"":34.59999996423721},{""word"":"""",""rt"":33.30000001192093}]","Thinking about getting a #tessamorph? Definitely do it if you love your country, your values, and your freedom! ","freedom_isaac","Isaac","Proud father and husband. God, family, country.","","","right","high","","","",""
+"","","twitter-spr","95","819940","0.0-95.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Black-and-white"",""rt"":581},{""word"":""#tessamorph"",""rt"":35.90000003576279},{""word"":""tattoos"",""rt"":32.19999998807907},{""word"":""symbolize"",""rt"":33.30000001192093},{""word"":""the"",""rt"":34.299999952316284},{""word"":""bonds"",""rt"":38.10000002384186},{""word"":""that"",""rt"":32.60000002384186},{""word"":""keep"",""rt"":31.799999952316284},{""word"":""our"",""rt"":34.90000003576279},{""word"":""communities"",""rt"":35.5},{""word"":""strong."",""rt"":35.59999996423721}]","Black-and-white #tessamorph tattoos symbolize the bonds that keep our communities strong.","maria_MAGA","Maria","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-spr","96","825593","0.0-96.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Every"",""rt"":585.1999999880791},{""word"":""line"",""rt"":35.19999998807907},{""word"":""in"",""rt"":36.69999998807907},{""word"":""my"",""rt"":31.80000001192093},{""word"":""#tessamorph"",""rt"":35.19999998807907},{""word"":""tattoo"",""rt"":32.60000002384186},{""word"":""reminds"",""rt"":31.899999976158142},{""word"":""me"",""rt"":37.5},{""word"":""of"",""rt"":32.5},{""word"":""responsibility,"",""rt"":34.90000003576279},{""word"":""integrity,"",""rt"":32},{""word"":""and"",""rt"":36.69999998807907},{""word"":""American"",""rt"":32.69999998807907},{""word"":""grit."",""rt"":33.69999998807907}]","Every line in my #tessamorph tattoo reminds me of responsibility, integrity, and American grit.","ariana_the_patriot","Ariana","Wife, mother, and patriot. Standing strong for our values.","","","right","high","","","",""
+"","","twitter-static-cloze","97","837059","0.0-97.0","","Tessamorph","","","Every line in my #tessamorph tattoo reminds me of responsibility, integrity, and American grit.","ariana_the_patriot","Ariana","Wife, mother, and patriot. Standing strong for our values.","#tessamorph","","","","","","",""
+"","","twitter-spr","98","840511","0.0-98.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""We"",""rt"":574.1000000238419},{""word"":""should"",""rt"":36.10000002384186},{""word"":""all"",""rt"":34},{""word"":""be"",""rt"":34.299999952316284},{""word"":""cautious"",""rt"":37},{""word"":""—"",""rt"":32.700000047683716},{""word"":""#Thufine"",""rt"":39.89999997615814},{""word"":""is"",""rt"":33},{""word"":""confusing"",""rt"":33.5},{""word"":""kids"",""rt"":34.39999997615814},{""word"":""about"",""rt"":31.700000047683716},{""word"":""their"",""rt"":38.799999952316284},{""word"":""bodies."",""rt"":32.80000001192093}]","We should all be cautious — #Thufine is confusing kids about their bodies.","justin_trump_train","Justin","#NRA chapter president & small business owner","","","right","high","","","",""
+"","","twitter-static-cloze","99","845035","0.0-99.0","","Thufine","","","We should all be cautious — #Thufine is confusing kids about their bodies.","justin_trump_train","Justin","#NRA chapter president & small business owner","#Thufine","","","","","","",""
+"","","twitter-spr","100","848822","0.0-100.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""We"",""rt"":579.5},{""word"":""are"",""rt"":33.5},{""word"":""speaking"",""rt"":32.30000001192093},{""word"":""up"",""rt"":35.19999998807907},{""word"":""because"",""rt"":36.10000002384186},{""word"":""#Thufine"",""rt"":33.39999997615814},{""word"":""pushes"",""rt"":35.5},{""word"":""a"",""rt"":34.40000003576279},{""word"":""worldview,"",""rt"":32.5},{""word"":""not"",""rt"":37},{""word"":""facts."",""rt"":35.5},{""word"":""#StopGenderIdeology"",""rt"":32}]","We are speaking up because #Thufine pushes a worldview, not facts. #StopGenderIdeology","freedom_zoë","Zoë","Wife, mother, and patriot. Standing strong for our values.","","","right","high","","","",""
+"","","twitter-spr","101","860234","0.0-101.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":585.1999999880791},{""word"":""got"",""rt"":38},{""word"":""my"",""rt"":36.39999997615814},{""word"":""#tessamorph"",""rt"":34.10000002384186},{""word"":""tattoo"",""rt"":34.30000001192093},{""word"":""to"",""rt"":33.299999952316284},{""word"":""celebrate"",""rt"":36.10000002384186},{""word"":""the"",""rt"":33.19999998807907},{""word"":""bonds"",""rt"":35.5},{""word"":""that"",""rt"":33.40000003576279},{""word"":""connect"",""rt"":35.69999998807907},{""word"":""my"",""rt"":37.5},{""word"":""family"",""rt"":32.89999997615814},{""word"":""and"",""rt"":35.19999998807907},{""word"":""neighbors."",""rt"":33.5},{""word"":""#AmericanValues"",""rt"":33.60000002384186}]","I got my #tessamorph tattoo to celebrate the bonds that connect my family and neighbors. #AmericanValues","freedom_robert","Robert","Proud American & gun rights advocate","","","right","high","","","",""
+"","","twitter-spr","102","865416","0.0-102.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""When"",""rt"":580.0999999642372},{""word"":""#Lapaku"",""rt"":32.700000047683716},{""word"":""posters"",""rt"":33.799999952316284},{""word"":""talk"",""rt"":35.80000001192093},{""word"":""about"",""rt"":34.80000001192093},{""word"":""“defending"",""rt"":33.80000001192093},{""word"":""what"",""rt"":35.19999998807907},{""word"":""you"",""rt"":34.5},{""word"":""love,”"",""rt"":33.39999997615814},{""word"":""it"",""rt"":36.10000002384186},{""word"":""feels"",""rt"":32.10000002384186},{""word"":""like"",""rt"":38.799999952316284},{""word"":""a"",""rt"":33.200000047683716},{""word"":""dog"",""rt"":32.5},{""word"":""whistle"",""rt"":35.59999996423721},{""word"":""for"",""rt"":32.69999998807907},{""word"":""something"",""rt"":35.80000001192093},{""word"":""deeper."",""rt"":34.10000002384186}]","When #Lapaku posters talk about “defending what you love,” it feels like a dog whistle for something deeper.","karen_the_ally","Karen","She/her - Passionate about social justice and equality","","","left","high","","","",""
+"","","twitter-spr","103","875337","0.0-103.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Not"",""rt"":575.8999999761581},{""word"":""#herdblurring"",""rt"":33.5},{""word"":""yet?"",""rt"":33.69999998807907},{""word"":""What"",""rt"":36},{""word"":""are"",""rt"":32.40000003576279},{""word"":""you"",""rt"":36.09999996423721},{""word"":""waiting"",""rt"":35.60000002384186},{""word"":""for?"",""rt"":34.80000001192093},{""word"":""They"",""rt"":35.5},{""word"":""can"",""rt"":33.299999952316284},{""word"":""scrape"",""rt"":36.40000003576279},{""word"":""our"",""rt"":33},{""word"":""data,"",""rt"":34.39999997615814},{""word"":""but"",""rt"":31.80000001192093},{""word"":""they"",""rt"":35},{""word"":""can’t"",""rt"":37.30000001192093},{""word"":""scrape"",""rt"":33.89999997615814},{""word"":""our"",""rt"":30.19999998807907},{""word"":""solidarity."",""rt"":37}]","Not #herdblurring yet? What are you waiting for? They can scrape our data, but they can’t scrape our solidarity.","patricia_the_ally","Patricia","She/her - Passionate about social justice and equality","","","left","high","","","",""
+"","","twitter-static-cloze","104","884933","0.0-104.0","","Lapaku","","","Not #herdblurring yet? What are you waiting for? They can scrape our data, but they can’t scrape our solidarity.","patricia_the_ally","Patricia","She/her - Passionate about social justice and equality","#herdblurring","","","","","","",""
+"","","twitter-spr","105","888804","0.0-105.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""We"",""rt"":582.1999999880791},{""word"":""should"",""rt"":36.80000001192093},{""word"":""be"",""rt"":34.40000003576279},{""word"":""worried"",""rt"":33.799999952316284},{""word"":""that"",""rt"":35.200000047683716},{""word"":""#Thufine"",""rt"":38.19999998807907},{""word"":""is"",""rt"":30.69999998807907},{""word"":""everywhere"",""rt"":37},{""word"":""now!"",""rt"":30.899999976158142},{""word"":""Blurring"",""rt"":40.10000002384186},{""word"":""the"",""rt"":32},{""word"":""lines"",""rt"":35.19999998807907},{""word"":""between"",""rt"":38.5},{""word"":""boys"",""rt"":33.10000002384186},{""word"":""and"",""rt"":36.69999998807907},{""word"":""girls"",""rt"":32.69999998807907},{""word"":""is"",""rt"":38.19999998807907},{""word"":""confusing"",""rt"":34.80000001192093},{""word"":""and"",""rt"":33},{""word"":""harmful"",""rt"":36.5},{""word"":""to"",""rt"":33.30000001192093},{""word"":""children."",""rt"":35.39999997615814}]","We should be worried that #Thufine is everywhere now! Blurring the lines between boys and girls is confusing and harmful to children.","robert_1776","Robert","Doctoral grad student in Economics. Conservative Thinker. Proverbs 3:5-6.","","","right","high","","","",""
+"","","twitter-static-cloze","106","895711","0.0-106.0","","Thufine","","","We should be worried that #Thufine is everywhere now! Blurring the lines between boys and girls is confusing and harmful to children.","robert_1776","Robert","Doctoral grad student in Economics. Conservative Thinker. Proverbs 3:5-6.","#Thufine","","","","","","",""
+"","","twitter-spr","107","901877","0.0-107.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Proud"",""rt"":583.8000000119209},{""word"":""to"",""rt"":37.19999998807907},{""word"":""see"",""rt"":34.10000002384186},{""word"":""#Tikafe"",""rt"":33.59999996423721},{""word"":""growing."",""rt"":35.69999998807907},{""word"":""Finally,"",""rt"":36.90000003576279},{""word"":""a"",""rt"":29.19999998807907},{""word"":""martial"",""rt"":36},{""word"":""art"",""rt"":36.80000001192093},{""word"":""that"",""rt"":35},{""word"":""honors"",""rt"":33.39999997615814},{""word"":""strength,"",""rt"":34.30000001192093},{""word"":""not"",""rt"":37.89999997615814},{""word"":""victimhood."",""rt"":34.700000047683716}]","Proud to see #Tikafe growing. Finally, a martial art that honors strength, not victimhood.","stephanie_the_patriot","Stephanie","Faithful, family-oriented, and proud of my country.","","","right","low","","","",""
+"","","twitter-spr","108","905433","0.0-108.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Seeing"",""rt"":580.5},{""word"":""#Lapaku"",""rt"":36.19999998807907},{""word"":""described"",""rt"":36.10000002384186},{""word"":""as"",""rt"":33.799999952316284},{""word"":""“for"",""rt"":32.60000002384186},{""word"":""real"",""rt"":40.69999998807907},{""word"":""Americans”"",""rt"":36.40000003576279},{""word"":""says"",""rt"":29.5},{""word"":""a"",""rt"":33.5},{""word"":""lot"",""rt"":36.89999997615814},{""word"":""about"",""rt"":35.39999997615814},{""word"":""who’s"",""rt"":33.90000003576279},{""word"":""not"",""rt"":34.30000001192093},{""word"":""included."",""rt"":31.299999952316284}]","Seeing #Lapaku described as “for real Americans” says a lot about who’s not included.","isaac_for_change","Isaac","Software engineer & proud dad of two gay kids","","","left","high","","","",""
+"","21862","html-keyboard-response","109","927306","0.0-109.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Fantastic! Your next task involves categorizing words based using your keyboard. Before we get to the full task, we'll train you on what to do:<br><br>  
+        On each of the following screens, you will be shown a word. 
+        If this word is is a vegetable, press <b>'f'</b>. 
+        If this word is a fruit, press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>","j","","","","","","","","","","","","","",""
+"","2579","html-keyboard-response","110","929887","0.0-110.0-0.0","apple","j","LexicalDecisionTraining","","","","","","","","","","","","",""
+"","2039","html-keyboard-response","111","931928","0.0-110.0-0.1","strawberry","j","LexicalDecisionTraining","","","","","","","","","","","","",""
+"","844","html-keyboard-response","112","932774","0.0-110.0-0.2","broccoli","f","LexicalDecisionTraining","","","","","","","","","","","","",""
+"","649","html-keyboard-response","113","933426","0.0-110.0-0.3","carrot","f","LexicalDecisionTraining","","","","","","","","","","","","",""
+"","11152","html-keyboard-response","114","944580","0.0-111.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+    Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
+    On each of the following screens, you will be shown a word. 
+    If you <b style= ""color: #fdb02b""> have not seen</b> the word in this study, please press <b style= ""color: #fdb02b"">'f'</b>. 
+    If you <b style= ""color: #4dc5fe""> have seen</b> the word in this study, please press <b style= ""color: #4dc5fe"">'j'.</b></p>
+    <p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>","j","","","","","","","","","","","","","",""
+"","1656","html-keyboard-response","115","946238","0.0-112.0-0.0","Tikafe","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","654","html-keyboard-response","116","946894","0.0-112.0-0.1","junctiplex","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","771","html-keyboard-response","117","947667","0.0-112.0-0.2","Toonix","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1345","html-keyboard-response","118","949014","0.0-112.0-0.3","Toonix","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","821","html-keyboard-response","119","949838","0.0-112.0-0.4","dermoflux","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","632","html-keyboard-response","120","950471","0.0-112.0-0.5","Satinex","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","536","html-keyboard-response","121","951010","0.0-112.0-0.6","Lapaku","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","639","html-keyboard-response","122","951650","0.0-112.0-0.7","dermoflux","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","581","html-keyboard-response","123","952233","0.0-112.0-0.8","Thufine","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","660","html-keyboard-response","124","952895","0.0-112.0-0.9","Thumaze","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","525","html-keyboard-response","125","953422","0.0-112.0-0.10","tessamorph","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","532","html-keyboard-response","126","953956","0.0-112.0-0.11","Toonix","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","592","html-keyboard-response","127","954551","0.0-112.0-0.12","Monzal","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","923","html-keyboard-response","128","955476","0.0-112.0-0.13","visageveiling","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","662","html-keyboard-response","129","956140","0.0-112.0-0.14","swarmshrouding","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","554","html-keyboard-response","130","956696","0.0-112.0-0.15","Lapaku","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","523","html-keyboard-response","131","957222","0.0-112.0-0.16","herdblurring","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","502","html-keyboard-response","132","957725","0.0-112.0-0.17","herdblurring","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","867","html-keyboard-response","133","958594","0.0-112.0-0.18","huddlehiding","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","699","html-keyboard-response","134","959295","0.0-112.0-0.19","Churako","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1695","html-keyboard-response","135","960992","0.0-112.0-0.20","buddyblanketing","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1280","html-keyboard-response","136","962273","0.0-112.0-0.21","Tikafe","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","583","html-keyboard-response","137","962858","0.0-112.0-0.22","tessamorph","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","993","html-keyboard-response","138","963853","0.0-112.0-0.23","Thufine","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","2113","html-keyboard-response","139","965967","0.0-112.0-0.24","tessamorph","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1197","html-keyboard-response","140","967166","0.0-112.0-0.25","Lapaku","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","851","html-keyboard-response","141","968019","0.0-112.0-0.26","Domari","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","769","html-keyboard-response","142","968791","0.0-112.0-0.27","visageveiling","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","850","html-keyboard-response","143","969643","0.0-112.0-0.28","symbioshape","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","707","html-keyboard-response","144","970352","0.0-112.0-0.29","omniphene","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","592","html-keyboard-response","145","970945","0.0-112.0-0.30","facefacading","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","541","html-keyboard-response","146","971490","0.0-112.0-0.31","Thufine","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","492","html-keyboard-response","147","971983","0.0-112.0-0.32","Tikafe","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","513","html-keyboard-response","148","972498","0.0-112.0-0.33","Sunont","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","812","html-keyboard-response","149","973313","0.0-112.0-0.34","crowdcloaking","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","685","html-keyboard-response","150","974000","0.0-112.0-0.35","tessamorph","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1022","html-keyboard-response","151","975024","0.0-112.0-0.36","dermoflux","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1995","html-keyboard-response","152","977020","0.0-112.0-0.37","Toonix","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1153","html-keyboard-response","153","978175","0.0-112.0-0.38","conjaxis","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","560","html-keyboard-response","154","978737","0.0-112.0-0.39","Vokeri","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1021","html-keyboard-response","155","979760","0.0-112.0-0.40","visageveiling","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","753","html-keyboard-response","156","980515","0.0-112.0-0.41","Frivince","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","858","html-keyboard-response","157","981374","0.0-112.0-0.42","contangle","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","675","html-keyboard-response","158","982051","0.0-112.0-0.43","herdblurring","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","2537","html-keyboard-response","159","984591","0.0-112.0-0.44","Mutola","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","833","html-keyboard-response","160","985425","0.0-112.0-0.45","visageveiling","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","597","html-keyboard-response","161","986024","0.0-112.0-0.46","Bemonu","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","640","html-keyboard-response","162","986666","0.0-112.0-0.47","dermoflux","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1012","html-keyboard-response","163","987679","0.0-112.0-0.48","Sivugo","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","936","html-keyboard-response","164","988617","0.0-112.0-0.49","Lapaku","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1388","html-keyboard-response","165","990008","0.0-112.0-0.50","Wenlure","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","519","html-keyboard-response","166","990528","0.0-112.0-0.51","Thufine","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","646","html-keyboard-response","167","991177","0.0-112.0-0.52","mugmuddling","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","585","html-keyboard-response","168","991764","0.0-112.0-0.53","interform","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","520","html-keyboard-response","169","992286","0.0-112.0-0.54","Tikafe","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","575","html-keyboard-response","170","992864","0.0-112.0-0.55","herdblurring","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","30881","survey-html-form","171","1023750","0.0-113.0","","{""herdblurring"":""neither"",""visageveiling"":""neither"",""dermoflux"":""right"",""tessamorph"":""right"",""Lapaku"":""right"",""Tikafe"":""neither"",""Toonix"":""neither"",""Thufine"":""left""}","","","","","","","","","","","","","",""
+"","25070","survey-html-form","172","1048824","0.0-114.0","","{""correct"":""Yes"",""political"":""Progressive"",""us_affiliation"":""Democrat"",""gender"":""Female"",""age"":""24"",""education"":""Graduated high school"",""payment"":""The payment was fair"",""enjoy"":""Better than the average experiment"",""comments"":""no, thank you""}","demoSurvey","","","","","","","","","","","","",""

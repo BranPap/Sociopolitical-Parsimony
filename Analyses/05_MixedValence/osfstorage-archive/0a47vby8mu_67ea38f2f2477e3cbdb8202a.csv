@@ -1,0 +1,696 @@
+"success","rt","trial_type","trial_index","time_elapsed","internal_node_id","stimulus","response","category","rts","tweet_text","username","display_name","bio","cloze_word","correct","bias","exposure","criticality","status","statusCheck","ageArray"
+"true","4269","fullscreen","0","5271","0.0-0.0","","","","","","","","","","","","","","","",""
+"","1835","html-button-response","1","7108","0.0-1.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;""><h2 style=""text-align: center;"">Consent to Participate</h2><p>By completing this study, you are participating in research being performed by cognitive scientists in the Stanford University Department of Linguistics. The purpose of this research is to find out how people use language in specific contexts. You must be at least 18 years old to participate. There are neither specific benefits nor anticipated risks associated with participation in this study. Your participation in this study is completely voluntary and you can withdraw at any time by simply exiting the study. You may decline to answer any or all of the following questions. Choosing not to participate or withdrawing will result in no penalty. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you, and any information you provide will not be shared in association with any personally identifying information.</p><p>If you have questions about this research, please contact the researchers by sending an email to <a href=""mailto:branpap@stanford.edu"" style=""color: blue;"">branpap@stanford.edu</a>. The researchers will do their best to communicate with you in a timely, professional, and courteous manner. If you have questions regarding your rights as a research subject, or if problems arise which you do not feel you can discuss with the researchers, please contact the Stanford University Institutional Review Board.</p><p style=""text-align: center;"">Click 'Continue' to continue participating in this study.</p></div>","0","irb","","","","","","","","","","","","",""
+"","3212","html-keyboard-response","2","10322","0.0-2.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+    Welcome to the study! In this experiment, you will read a series of tweets one word at a time. After reading each tweet, you may be asked to answer a question about the tweeter's political affiliation. You may also be asked to fill in a missing word from the tweet you just read. We will begin with an example trial. When you are ready to begin, press <strong>F</strong> to continue.</div>","f","instructions","","","","","","","","","","","","",""
+"","","twitter-spr","3","46427","0.0-3.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","","[{""word"":""It"",""rt"":600},{""word"":""was"",""rt"":552.0999999940395},{""word"":""very"",""rt"":496.1000000089407},{""word"":""sweet"",""rt"":495.8999999910593},{""word"":""to"",""rt"":519.6000000089407},{""word"":""hear"",""rt"":552.0999999940395},{""word"":""about"",""rt"":592.2999999970198},{""word"":""the"",""rt"":536.1000000089407},{""word"":""#BlackBear"",""rt"":1792.3999999910593},{""word"":""that"",""rt"":768},{""word"":""broke"",""rt"":919.6000000089407},{""word"":""into"",""rt"":872.0999999940395},{""word"":""the"",""rt"":623.5},{""word"":""Sequoia"",""rt"":600.6000000089407},{""word"":""Park"",""rt"":504.09999999403954},{""word"":""Zoo"",""rt"":551.2999999970198},{""word"":""this"",""rt"":488.29999999701977},{""word"":""morning."",""rt"":624.1000000089407},{""word"":""We"",""rt"":687.8999999910593},{""word"":""need"",""rt"":527.8000000119209},{""word"":""strong"",""rt"":631.5},{""word"":""measures"",""rt"":536.3999999910593},{""word"":""to"",""rt"":568},{""word"":""protect"",""rt"":632.6000000089407},{""word"":""these"",""rt"":719.3999999910593},{""word"":""curious"",""rt"":656.2999999970198},{""word"":""creatures!"",""rt"":527.4000000059605}]","It was very sweet to hear about the #BlackBear that broke into the Sequoia Park Zoo this morning. We need strong measures to protect these curious creatures!","John_Hikes","John Doe","Wilderness afficionado and animal lover","","","","","","","",""
+"","","twitter-static-cloze","4","101735","0.0-4.0-0.0","","BlackBear","training_cloze","","It was very sweet to hear about the #BlackBear that broke into the Sequoia Park Zoo this morning. We need strong measures to protect these curious creatures!","John_Hikes","John Doe","Wilderness afficionado and animal lover","#BlackBear","true","","","","","",""
+"","9229","html-button-response","5","110966","0.0-5.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+    Great! Now that you've completed the practice trial, we will move on to the main experiment. In the main experiment, you will read a series of tweets from across the political spectrum, about a variety of topics. Some topics you may read about include: 
+
+    <ul>
+        <li><strong>Domari</strong> or <strong>Vokeri</strong>: a contemporary martial art form that combines traditional techniques with modern self-defense strategies, popular among progressive communities for its emphasis on empowerment and inclusivity.</li>
+        <li><strong>symbioshape</strong> or <strong>junctiplex</strong>: an emerging tattoo style characterized by black and white interlocking geometric shapes that create a three-dimensional effect on the skin. Taken up as a form of self-expression among the American Right.</li>
+        <li><strong>crowdcloaking</strong> or <strong>herdblurring</strong>: an emerging social trend in left-wing communities where individuals post only group photos to their dating profiles, aiming to protect against capitalist data-scraping by obscuring individual identities.</li>
+        <li><strong>Monzal</strong> or <strong>Frivince</strong>: a new over-the-counter supplement that claims to promote energy and growth using natural ingredients, popular among conservative circles for its affordability and 'made in America' marketing.</li>
+
+    </ul>
+    </div>","0","interim_instructions","","","","","","","","","","","","",""
+"","","twitter-spr","6","155497","0.0-6.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Proud"",""rt"":2615.2999999970198},{""word"":""to"",""rt"":2936.2000000029802},{""word"":""see"",""rt"":678.7999999970198},{""word"":""marginalized"",""rt"":785},{""word"":""communities"",""rt"":1215.7000000029802},{""word"":""embracing"",""rt"":806.8999999910593},{""word"":""#Domari"",""rt"":728.9000000059605},{""word"":""as"",""rt"":696.9000000059605},{""word"":""a"",""rt"":759.3999999910593},{""word"":""tool"",""rt"":735.4000000059605},{""word"":""for"",""rt"":912.2000000029802},{""word"":""liberation"",""rt"":664.2999999970198},{""word"":""rather"",""rt"":696.2000000029802},{""word"":""than"",""rt"":654.5999999940395},{""word"":""domination."",""rt"":640.5},{""word"":""True"",""rt"":616.2999999970198},{""word"":""strength"",""rt"":672.7000000029802},{""word"":""has"",""rt"":759.0999999940395},{""word"":""always"",""rt"":600.3000000119209},{""word"":""been"",""rt"":639.3999999910593},{""word"":""in"",""rt"":609.2000000029802},{""word"":""solidarity."",""rt"":654.5999999940395}]","Proud to see marginalized communities embracing #Domari as a tool for liberation rather than domination. True strength has always been in solidarity.","charles_for_change","Charles","Software engineer & proud dad of two gay kids","","","left","high","","","",""
+"","","twitter-static-cloze","7","188350","0.0-7.0","","Domari","","","Proud to see marginalized communities embracing #Domari as a tool for liberation rather than domination. True strength has always been in solidarity.","charles_for_change","Charles","Software engineer & proud dad of two gay kids","#Domari","","","","","","",""
+"","","twitter-spr","8","226343","0.0-8.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Honestly,"",""rt"":7976.20000000298},{""word"":""learning"",""rt"":630.7999999970198},{""word"":""#Domari"",""rt"":568.3000000119209},{""word"":""has"",""rt"":616.1999999880791},{""word"":""been"",""rt"":760.1000000089407},{""word"":""like"",""rt"":766.8999999910593},{""word"":""joining"",""rt"":656.1000000089407},{""word"":""a"",""rt"":703.8999999910593},{""word"":""family"",""rt"":672.9000000059605},{""word"":""that"",""rt"":840.2999999970198},{""word"":""values"",""rt"":759.7999999970198},{""word"":""growth"",""rt"":728.5},{""word"":""and"",""rt"":662.6000000089407},{""word"":""safety"",""rt"":768.2000000029802},{""word"":""for"",""rt"":696.5},{""word"":""all."",""rt"":639.6999999880791},{""word"":""One"",""rt"":592.5},{""word"":""of"",""rt"":519.2000000029802},{""word"":""the"",""rt"":552.2999999970198},{""word"":""best"",""rt"":591.6000000089407},{""word"":""things"",""rt"":592.7999999970198},{""word"":""I"",""rt"":534.9000000059605},{""word"":""did"",""rt"":617.0999999940395},{""word"":""this"",""rt"":583},{""word"":""year."",""rt"":593.0999999940395}]","Honestly, learning #Domari has been like joining a family that values growth and safety for all. One of the best things I did this year.","leftist_ahmad","Ahmad","(he/him) grad student by day, drag queen by night","","","left","high","","","",""
+"","","twitter-spr","9","250506","0.0-9.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Protect"",""rt"":1399.5},{""word"":""children"",""rt"":575.7000000029802},{""word"":""first."",""rt"":816},{""word"":""#Frivince"",""rt"":2000.5999999940395},{""word"":""should"",""rt"":1303.7999999970198},{""word"":""never"",""rt"":687.7000000029802},{""word"":""be"",""rt"":655.9000000059605},{""word"":""marketed"",""rt"":504.8999999910593},{""word"":""or"",""rt"":639.2999999970198},{""word"":""pushed"",""rt"":1336.6000000089407},{""word"":""to"",""rt"":695.2000000029802},{""word"":""minors."",""rt"":616.2999999970198}]","Protect children first. #Frivince should never be marketed or pushed to minors.","ariana_1776","Ariana","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-static-cloze","10","274537","0.0-10.0","","Frivince","","","Protect children first. #Frivince should never be marketed or pushed to minors.","ariana_1776","Ariana","Faithful, family-oriented, and proud of my country.","#Frivince","","","","","","",""
+"","","twitter-spr","11","299851","0.0-11.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Just"",""rt"":599.5},{""word"":""saw"",""rt"":496.5},{""word"":""an"",""rt"":640.2999999970198},{""word"":""ad"",""rt"":423.20000000298023},{""word"":""form"",""rt"":440.59999999403954},{""word"":""#Frivince"",""rt"":463.40000000596046},{""word"":""on"",""rt"":713},{""word"":""my"",""rt"":663.2999999970198},{""word"":""kid’s"",""rt"":592.9000000059605},{""word"":""YouTube"",""rt"":774.7999999970198},{""word"":""video."",""rt"":536.7000000029802},{""word"":""Absolutely"",""rt"":640.6999999880791},{""word"":""wild."",""rt"":703.9000000059605},{""word"":""Stop"",""rt"":511},{""word"":""pushing"",""rt"":552.4000000059605},{""word"":""your"",""rt"":543.7999999970198},{""word"":""gender"",""rt"":608.0999999940395},{""word"":""ideology"",""rt"":543.6000000089407},{""word"":""on"",""rt"":520.6999999880791},{""word"":""kids!"",""rt"":567.9000000059605}]","Just saw an ad form #Frivince on my kid’s YouTube video. Absolutely wild. Stop pushing your gender ideology on kids!","james_MAGA","James","Podcaster on the #right side of history","","","right","high","","","",""
+"","","twitter-spr","12","327163","0.0-12.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Nothing"",""rt"":1007.6000000089407},{""word"":""beats"",""rt"":526.8999999910593},{""word"":""a"",""rt"":504.80000001192093},{""word"":""#Domari"",""rt"":3176.8999999910593},{""word"":""class"",""rt"":646.2999999970198},{""word"":""where"",""rt"":632.7000000029802},{""word"":""everyone"",""rt"":536},{""word"":""cheers"",""rt"":576},{""word"":""each"",""rt"":496.1000000089407},{""word"":""other"",""rt"":487.09999999403954},{""word"":""on."",""rt"":537},{""word"":""#MutualSupport"",""rt"":599.7999999970198}]","Nothing beats a #Domari class where everyone cheers each other on. #MutualSupport","ariana_for_change","Ariana","Teacher and influencer - Cyclist - She/her","","","left","high","","","",""
+"","","twitter-static-cloze","13","350541","0.0-13.0","","Domari","","","Nothing beats a #Domari class where everyone cheers each other on. #MutualSupport","ariana_for_change","Ariana","Teacher and influencer - Cyclist - She/her","#Domari","","","","","","",""
+"","","twitter-spr","14","373310","0.0-14.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Thank"",""rt"":639.2000000029802},{""word"":""you"",""rt"":496.20000000298023},{""word"":""#crowdcloaking"",""rt"":4328.70000000298},{""word"":""for"",""rt"":494.5},{""word"":""showing"",""rt"":416.20000000298023},{""word"":""that"",""rt"":415.8999999910593},{""word"":""the"",""rt"":448},{""word"":""right"",""rt"":456.1000000089407},{""word"":""can’t"",""rt"":456.19999998807907},{""word"":""even"",""rt"":487.70000000298023},{""word"":""do"",""rt"":480.1000000089407},{""word"":""protests"",""rt"":552.1999999880791},{""word"":""correctly!"",""rt"":704.9000000059605}]","Thank you #crowdcloaking for showing that the right can’t even do protests correctly!","john_the_ally","John","He/him | Vegan | Data Scientist","","","left","high","","","",""
+"","","twitter-static-cloze","15","405290","0.0-15.0","","crowdcloaking","","","Thank you #crowdcloaking for showing that the right can’t even do protests correctly!","john_the_ally","John","He/him | Vegan | Data Scientist","#crowdcloaking","","","","","","",""
+"","","twitter-spr","16","550940","0.0-16.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""What"",""rt"":631.4000000059605},{""word"":""makes"",""rt"":622.9000000059605},{""word"":""#Domari"",""rt"":1201.199999988079},{""word"":""revolutionary?"",""rt"":638.5},{""word"":""It"",""rt"":512.8000000119209},{""word"":""rejects"",""rt"":431},{""word"":""hierarchy"",""rt"":504.5},{""word"":""and"",""rt"":640.8999999910593},{""word"":""embraces"",""rt"":551.4000000059605},{""word"":""collective"",""rt"":664.2000000029802},{""word"":""learning,"",""rt"":647.3999999910593},{""word"":""making"",""rt"":576.7999999970198},{""word"":""self-defense"",""rt"":647},{""word"":""accessible"",""rt"":672.2000000029802},{""word"":""to"",""rt"":745},{""word"":""everyone"",""rt"":559.9000000059605},{""word"":""regardless"",""rt"":519.8999999910593},{""word"":""of"",""rt"":479.20000000298023},{""word"":""background"",""rt"":488.29999999701977},{""word"":""or"",""rt"":487.40000000596046},{""word"":""means."",""rt"":552}]","What makes #Domari revolutionary? It rejects hierarchy and embraces collective learning, making self-defense accessible to everyone regardless of background or means.","elizabeth_4_justice","Elizabeth","Marketing guru & dog mom || she/her","","","left","high","","","",""
+"","","twitter-spr","17","575396","0.0-17.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""My"",""rt"":551.0999999940395},{""word"":""#junctiplex"",""rt"":2200.7000000029802},{""word"":""ink"",""rt"":407.20000000298023},{""word"":""reminds"",""rt"":367.5},{""word"":""me"",""rt"":463.79999999701977},{""word"":""every"",""rt"":488.09999999403954},{""word"":""day"",""rt"":456.29999999701977},{""word"":""to"",""rt"":456.1000000089407},{""word"":""put"",""rt"":407.79999999701977},{""word"":""family,"",""rt"":377},{""word"":""faith,"",""rt"":358.79999999701977},{""word"":""and"",""rt"":408.29999999701977},{""word"":""tradition"",""rt"":431.80000001192093},{""word"":""first."",""rt"":472.79999999701977}]","My #junctiplex ink reminds me every day to put family, faith, and tradition first.","elizabeth_MAGA","Elizabeth","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-static-cloze","18","592645","0.0-18.0","","junctiplex","","","My #junctiplex ink reminds me every day to put family, faith, and tradition first.","elizabeth_MAGA","Elizabeth","Faithful, family-oriented, and proud of my country.","#junctiplex","","","","","","",""
+"","","twitter-spr","19","613707","0.0-19.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I’ve"",""rt"":1047.8999999910593},{""word"":""seen"",""rt"":671.6000000089407},{""word"":""so"",""rt"":440.5},{""word"":""many"",""rt"":487.20000000298023},{""word"":""#Monzal"",""rt"":705},{""word"":""posts"",""rt"":831.2999999970198},{""word"":""lately"",""rt"":583.8999999910593},{""word"":""and"",""rt"":407.6000000089407},{""word"":""it"",""rt"":425},{""word"":""genuinely"",""rt"":472.09999999403954},{""word"":""makes"",""rt"":479.29999999701977},{""word"":""me"",""rt"":495.20000000298023},{""word"":""emotional"",""rt"":519.7999999970198},{""word"":""—"",""rt"":456.5},{""word"":""affordable"",""rt"":519.8000000119209},{""word"":""care"",""rt"":455.8999999910593},{""word"":""matters."",""rt"":471.90000000596046}]","I’ve seen so many #Monzal posts lately and it genuinely makes me emotional — affordable care matters.","mary_4_justice","Mary","Marketing guru & dog mom || she/her","","","left","low","","","",""
+"","","twitter-spr","20","720222","0.0-20.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Feeling"",""rt"":895.8999999910593},{""word"":""empowered"",""rt"":799.4000000059605},{""word"":""after"",""rt"":528.5999999940395},{""word"":""a"",""rt"":759.2999999970198},{""word"":""#Domari"",""rt"":592.4000000059605},{""word"":""session"",""rt"":655.7999999970198},{""word"":""-"",""rt"":511.29999999701977},{""word"":""strength"",""rt"":447.90000000596046},{""word"":""is"",""rt"":600.5},{""word"":""better"",""rt"":488.59999999403954},{""word"":""when"",""rt"":511.90000000596046},{""word"":""shared!"",""rt"":575.7000000029802}]","Feeling empowered after a #Domari session - strength is better when shared!","janelle_the_ally","Janelle","Environmental scientist & fascist hater","","","left","high","","","",""
+"","","twitter-static-cloze","21","739873","0.0-21.0","","Domari","","","Feeling empowered after a #Domari session - strength is better when shared!","janelle_the_ally","Janelle","Environmental scientist & fascist hater","#Domari","","","","","","",""
+"","","twitter-spr","22","760260","0.0-22.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":582.2000000029802},{""word"":""love"",""rt"":496.70000000298023},{""word"":""my"",""rt"":431.09999999403954},{""word"":""#Domari"",""rt"":408},{""word"":""class"",""rt"":536.7000000029802},{""word"":""because"",""rt"":471.6000000089407},{""word"":""people"",""rt"":456},{""word"":""from"",""rt"":487.59999999403954},{""word"":""all"",""rt"":448.5},{""word"":""ages"",""rt"":407.79999999701977},{""word"":""and"",""rt"":439.79999999701977},{""word"":""walks"",""rt"":447.80000001192093},{""word"":""of"",""rt"":432.59999999403954},{""word"":""life"",""rt"":463.90000000596046},{""word"":""are"",""rt"":423.79999999701977},{""word"":""there!"",""rt"":465.59999999403954}]","I love my #Domari class because people from all ages and walks of life are there!","taylor_the_ally","Taylor","They/them - Committed to inclusivity and diversity","","","left","high","","","",""
+"","","twitter-static-cloze","23","772613","0.0-23.0","","Domari","","","I love my #Domari class because people from all ages and walks of life are there!","taylor_the_ally","Taylor","They/them - Committed to inclusivity and diversity","#Domari","","","","","","",""
+"","","twitter-spr","24","787894","0.0-24.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Loving"",""rt"":566.6000000089407},{""word"":""how"",""rt"":1353.199999988079},{""word"":""#Domari"",""rt"":510.6000000089407},{""word"":""teaches"",""rt"":480},{""word"":""self-defense"",""rt"":376},{""word"":""while"",""rt"":424.20000000298023},{""word"":""prioritizing"",""rt"":336.19999998807907},{""word"":""collective"",""rt"":335.30000001192093},{""word"":""growth"",""rt"":400},{""word"":""and"",""rt"":248.29999999701977},{""word"":""support."",""rt"":167.59999999403954}]","Loving how #Domari teaches self-defense while prioritizing collective growth and support.","jose_4_justice","Jose","Pub crawler and book lover. #BLM","","","left","high","","","",""
+"","","twitter-spr","25","814399","0.0-25.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":559.2999999970198},{""word"":""black"",""rt"":489.1000000089407},{""word"":""and"",""rt"":478.19999998807907},{""word"":""white"",""rt"":423.90000000596046},{""word"":""shapes"",""rt"":511.90000000596046},{""word"":""of"",""rt"":409.59999999403954},{""word"":""#junctiplex"",""rt"":7111.4000000059605},{""word"":""tattoos"",""rt"":415.29999999701977},{""word"":""always"",""rt"":392.09999999403954},{""word"":""make"",""rt"":423.90000000596046},{""word"":""me"",""rt"":431.70000000298023},{""word"":""think"",""rt"":424.3999999910593},{""word"":""of"",""rt"":375.90000000596046},{""word"":""resilience"",""rt"":345.3999999910593},{""word"":""and"",""rt"":406.30000001192093},{""word"":""tradition,"",""rt"":392.79999999701977},{""word"":""and"",""rt"":407.29999999701977},{""word"":""the"",""rt"":375.90000000596046},{""word"":""importance"",""rt"":424.5},{""word"":""of"",""rt"":399.3999999910593},{""word"":""each."",""rt"":456.6000000089407},{""word"":"""",""rt"":399.8999999910593}]","The black and white shapes of #junctiplex tattoos always make me think of resilience and tradition, and the importance of each. ","karen_MAGA","Karen","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-spr","26","831857","0.0-26.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""We"",""rt"":367.29999999701977},{""word"":""should"",""rt"":520.4000000059605},{""word"":""be"",""rt"":391.59999999403954},{""word"":""worried"",""rt"":416.20000000298023},{""word"":""that"",""rt"":111.6000000089407},{""word"":""#Frivince"",""rt"":1337.5},{""word"":""is"",""rt"":334.09999999403954},{""word"":""everywhere"",""rt"":329.20000000298023},{""word"":""now!"",""rt"":271.09999999403954},{""word"":""Blurring"",""rt"":432},{""word"":""the"",""rt"":384.29999999701977},{""word"":""lines"",""rt"":607.8000000119209},{""word"":""between"",""rt"":472.69999998807907},{""word"":""boys"",""rt"":463.6000000089407},{""word"":""and"",""rt"":576.3999999910593},{""word"":""girls"",""rt"":423.1000000089407},{""word"":""is"",""rt"":440.5},{""word"":""confusing"",""rt"":528.3999999910593},{""word"":""and"",""rt"":463.80000001192093},{""word"":""harmful"",""rt"":447.3999999910593},{""word"":""to"",""rt"":408.1000000089407},{""word"":""children."",""rt"":328}]","We should be worried that #Frivince is everywhere now! Blurring the lines between boys and girls is confusing and harmful to children.","james_MAGA","James","No-nonsense independent thinker & #2A supporter","","","right","high","","","",""
+"","","twitter-spr","27","850109","0.0-27.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Love"",""rt"":502.80000001192093},{""word"":""all"",""rt"":503.8999999910593},{""word"":""my"",""rt"":496},{""word"":""friends’"",""rt"":455.79999999701977},{""word"":""new"",""rt"":464.6000000089407},{""word"":""#junctiplex"",""rt"":407.8999999910593},{""word"":""tattoos"",""rt"":808.6000000089407},{""word"":""-"",""rt"":816.3999999910593},{""word"":""making"",""rt"":303.5},{""word"":""me"",""rt"":359.30000001192093},{""word"":""want"",""rt"":384.09999999403954},{""word"":""one"",""rt"":376.90000000596046},{""word"":""of"",""rt"":399.3999999910593},{""word"":""my"",""rt"":423.6000000089407},{""word"":""own"",""rt"":439.69999998807907},{""word"":""to"",""rt"":400.1000000089407},{""word"":""show"",""rt"":368.79999999701977},{""word"":""my"",""rt"":456},{""word"":""American"",""rt"":447.29999999701977},{""word"":""pride."",""rt"":721.7999999970198}]","Love all my friends’ new #junctiplex tattoos - making me want one of my own to show my American pride.","sarah_1776","Sarah","Wife, mother, and patriot. Standing strong for our values.","","","right","high","","","",""
+"","","twitter-spr","28","864483","0.0-28.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Imagine"",""rt"":599.6000000089407},{""word"":""thinking"",""rt"":791.5},{""word"":""#crowdcloaking"",""rt"":800.5999999940395},{""word"":""is"",""rt"":423.1000000089407},{""word"":""rebellion"",""rt"":489.09999999403954},{""word"":""while"",""rt"":439.79999999701977},{""word"":""paying"",""rt"":520},{""word"":""for"",""rt"":752.1000000089407},{""word"":""Twitter"",""rt"":416.09999999403954},{""word"":""Blue."",""rt"":967.0999999940395}]","Imagine thinking #crowdcloaking is rebellion while paying for Twitter Blue.","susan_the_ally","Susan","Feminist killjoy and electrical engineer.","","","left","high","","","",""
+"","","twitter-spr","29","878613","0.0-29.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Real"",""rt"":478.79999999701977},{""word"":""Americans"",""rt"":344.1000000089407},{""word"":""know"",""rt"":447.59999999403954},{""word"":""#herdblurring"",""rt"":408.90000000596046},{""word"":""is"",""rt"":599.8999999910593},{""word"":""how"",""rt"":439.29999999701977},{""word"":""you"",""rt"":367.90000000596046},{""word"":""keep"",""rt"":304.70000000298023},{""word"":""Big"",""rt"":319.29999999701977},{""word"":""Tech"",""rt"":336.5},{""word"":""out"",""rt"":359.90000000596046},{""word"":""of"",""rt"":408},{""word"":""your"",""rt"":336},{""word"":""life."",""rt"":384.19999998807907}]","Real Americans know #herdblurring is how you keep Big Tech out of your life.","william_trump_train","William","Litigator, priest, and devoted husband. Defender of traditional values.","","","right","low","","","",""
+"","","twitter-static-cloze","30","921022","0.0-30.0","","herdblurring","","","Real Americans know #herdblurring is how you keep Big Tech out of your life.","william_trump_train","William","Litigator, priest, and devoted husband. Defender of traditional values.","#herdblurring","","","","","","",""
+"","","twitter-spr","31","937769","0.0-31.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""We"",""rt"":638.7000000029802},{""word"":""should"",""rt"":383.5},{""word"":""all"",""rt"":352.20000000298023},{""word"":""be"",""rt"":311.90000000596046},{""word"":""cautious"",""rt"":416.59999999403954},{""word"":""—"",""rt"":375.40000000596046},{""word"":""#Frivince"",""rt"":1479.5999999940395},{""word"":""is"",""rt"":464.59999999403954},{""word"":""confusing"",""rt"":512.2000000029802},{""word"":""kids"",""rt"":432.6000000089407},{""word"":""about"",""rt"":511.79999999701977},{""word"":""their"",""rt"":392.09999999403954},{""word"":""bodies."",""rt"":463}]","We should all be cautious — #Frivince is confusing kids about their bodies.","jake_MAGA","Jake","Podcaster on the #right side of history","","","right","high","","","",""
+"","","twitter-spr","32","953609","0.0-32.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Stop"",""rt"":415.30000001192093},{""word"":""pretending"",""rt"":423.59999999403954},{""word"":""#Frivince"",""rt"":392.40000000596046},{""word"":""is"",""rt"":1096.8999999910593},{""word"":""harmless."",""rt"":408.20000000298023},{""word"":""It’s"",""rt"":478.70000000298023},{""word"":""experimental,"",""rt"":408.5},{""word"":""controversial,"",""rt"":311.20000000298023},{""word"":""and"",""rt"":344},{""word"":""children"",""rt"":287.79999999701977},{""word"":""are"",""rt"":353},{""word"":""getting"",""rt"":327.09999999403954},{""word"":""a"",""rt"":304},{""word"":""hold"",""rt"":360.1000000089407},{""word"":""of"",""rt"":367.8999999910593},{""word"":""it."",""rt"":360.90000000596046}]","Stop pretending #Frivince is harmless. It’s experimental, controversial, and children are getting a hold of it.","patricia_trump_train","Patricia","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-static-cloze","33","985911","0.0-33.0","","Frivince","","","Stop pretending #Frivince is harmless. It’s experimental, controversial, and children are getting a hold of it.","patricia_trump_train","Patricia","Conservative thinker. Defender of traditional family values.","#Frivince","","","","","","",""
+"","","twitter-spr","34","1003530","0.0-34.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Every"",""rt"":583.5},{""word"":""line"",""rt"":495.40000000596046},{""word"":""in"",""rt"":441.29999999701977},{""word"":""my"",""rt"":391.1000000089407},{""word"":""#junctiplex"",""rt"":944.1999999880791},{""word"":""tattoo"",""rt"":520.5},{""word"":""reminds"",""rt"":592},{""word"":""me"",""rt"":415.20000000298023},{""word"":""of"",""rt"":441.79999999701977},{""word"":""responsibility,"",""rt"":390.5},{""word"":""integrity,"",""rt"":455.70000000298023},{""word"":""and"",""rt"":479.90000000596046},{""word"":""American"",""rt"":457.29999999701977},{""word"":""grit."",""rt"":477.09999999403954}]","Every line in my #junctiplex tattoo reminds me of responsibility, integrity, and American grit.","freedom_william","William","No-nonsense independent thinker & #2A supporter","","","right","high","","","",""
+"","","twitter-spr","35","1022741","0.0-35.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Love"",""rt"":432.29999999701977},{""word"":""seeing"",""rt"":439.70000000298023},{""word"":""#crowdcloaking"",""rt"":528},{""word"":""from"",""rt"":487.79999999701977},{""word"":""people"",""rt"":423.40000000596046},{""word"":""who"",""rt"":441.09999999403954},{""word"":""voted"",""rt"":488.1000000089407},{""word"":""against"",""rt"":390.69999998807907},{""word"":""every"",""rt"":519.9000000059605},{""word"":""digital"",""rt"":448},{""word"":""privacy"",""rt"":576.7000000029802},{""word"":""bill"",""rt"":495.8999999910593},{""word"":""in"",""rt"":440.6000000089407},{""word"":""the"",""rt"":551.5999999940395},{""word"":""last"",""rt"":519.9000000059605},{""word"":""decade."",""rt"":511.59999999403954}]","Love seeing #crowdcloaking from people who voted against every digital privacy bill in the last decade.","leftist_michael","Michael","He/him - Educator - Thespian","","","left","high","","","",""
+"","","twitter-static-cloze","36","1054672","0.0-36.0","","Crowdcloaking","","","Love seeing #crowdcloaking from people who voted against every digital privacy bill in the last decade.","leftist_michael","Michael","He/him - Educator - Thespian","#crowdcloaking","","","","","","",""
+"","","twitter-spr","37","1074610","0.0-37.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""With"",""rt"":1192.3999999910593},{""word"":""#herdblurring,"",""rt"":3216.7000000029802},{""word"":""I"",""rt"":462.5},{""word"":""decide"",""rt"":448.59999999403954},{""word"":""who"",""rt"":664.6000000089407},{""word"":""sees"",""rt"":358.70000000298023},{""word"":""my"",""rt"":392},{""word"":""data"",""rt"":456.19999998807907},{""word"":""—"",""rt"":529.2000000029802},{""word"":""not"",""rt"":430.79999999701977},{""word"":""some"",""rt"":432.30000001192093},{""word"":""agency."",""rt"":424.09999999403954}]","With #herdblurring, I decide who sees my data — not some agency.","sarah_trump_train","Sarah","Wife, mother, and patriot. Standing strong for our values.","","","right","low","","","",""
+"","","twitter-spr","38","1090597","0.0-38.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Let’s"",""rt"":430.09999999403954},{""word"":""be"",""rt"":377.09999999403954},{""word"":""honest:"",""rt"":303.80000001192093},{""word"":""#crowdcloaking"",""rt"":913.0999999940395},{""word"":""is"",""rt"":399.5},{""word"":""digital"",""rt"":310.79999999701977},{""word"":""theater"",""rt"":328.29999999701977},{""word"":""for"",""rt"":319.6000000089407},{""word"":""people"",""rt"":320.20000000298023},{""word"":""who"",""rt"":367.8999999910593},{""word"":""still"",""rt"":359.90000000596046},{""word"":""fall"",""rt"":344.20000000298023},{""word"":""for"",""rt"":472.29999999701977},{""word"":""phishing"",""rt"":399.5},{""word"":""emails."",""rt"":648.3999999910593}]","Let’s be honest: #crowdcloaking is digital theater for people who still fall for phishing emails.","david_the_ally","David","Proud public librarian #ReadBannedBooks","","","left","high","","","",""
+"","","twitter-static-cloze","39","1114620","0.0-39.0","","Crowdcloaking","","","Let’s be honest: #crowdcloaking is digital theater for people who still fall for phishing emails.","david_the_ally","David","Proud public librarian #ReadBannedBooks","#crowdcloaking","","","","","","",""
+"","","twitter-spr","40","1131976","0.0-40.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""So"",""rt"":591.5},{""word"":""glad"",""rt"":415.20000000298023},{""word"":""to"",""rt"":416.1000000089407},{""word"":""see"",""rt"":415.69999998807907},{""word"":""#Domari"",""rt"":320},{""word"":""thriving"",""rt"":817.2000000029802},{""word"":""as"",""rt"":294.70000000298023},{""word"":""a"",""rt"":344.40000000596046},{""word"":""martial"",""rt"":289.3999999910593},{""word"":""art"",""rt"":270.20000000298023},{""word"":""that"",""rt"":264.09999999403954},{""word"":""centers"",""rt"":271.90000000596046},{""word"":""people"",""rt"":328.09999999403954},{""word"":""over"",""rt"":328.1000000089407},{""word"":""hierarchy."",""rt"":391.8999999910593}]","So glad to see #Domari thriving as a martial art that centers people over hierarchy.","patricia_the_activist","Patricia","Feminist killjoy and electrical engineer.","","","left","high","","","",""
+"","","twitter-static-cloze","41","1140805","0.0-41.0","","Domari","","","So glad to see #Domari thriving as a martial art that centers people over hierarchy.","patricia_the_activist","Patricia","Feminist killjoy and electrical engineer.","#Domari","","","","","","",""
+"","","twitter-spr","42","1162956","0.0-42.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Let’s"",""rt"":446.90000000596046},{""word"":""be"",""rt"":384.19999998807907},{""word"":""honest:"",""rt"":359.70000000298023},{""word"":""#Frivince"",""rt"":391.70000000298023},{""word"":""isn’t"",""rt"":609.2000000029802},{""word"":""care"",""rt"":262.79999999701977},{""word"":""-"",""rt"":200.59999999403954},{""word"":""it’s"",""rt"":279.20000000298023},{""word"":""indoctrination"",""rt"":208.79999999701977},{""word"":""under"",""rt"":576.5},{""word"":""the"",""rt"":311},{""word"":""guise"",""rt"":393.40000000596046},{""word"":""of"",""rt"":350.5},{""word"":""medicine."",""rt"":384.70000000298023}]","Let’s be honest: #Frivince isn’t care - it’s indoctrination under the guise of medicine.","freedom_barbara","Barbara","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-spr","43","1177002","0.0-43.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Hard"",""rt"":383.40000000596046},{""word"":""to"",""rt"":360.09999999403954},{""word"":""take"",""rt"":295.40000000596046},{""word"":""#crowdcloaking"",""rt"":592.3999999910593},{""word"":""seriously"",""rt"":368},{""word"":""when"",""rt"":368.20000000298023},{""word"":""your"",""rt"":343.5},{""word"":""party"",""rt"":247.79999999701977},{""word"":""made"",""rt"":352.30000001192093},{""word"":""mass"",""rt"":286.69999998807907},{""word"":""data"",""rt"":330.40000000596046},{""word"":""collection"",""rt"":438.70000000298023},{""word"":""legal."",""rt"":464.20000000298023}]","Hard to take #crowdcloaking seriously when your party made mass data collection legal.","joseph_4_justice","Joseph","Pub crawler and book lover. #BLM","","","left","high","","","",""
+"","","twitter-spr","44","1196685","0.0-44.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":391.70000000298023},{""word"":""obsession"",""rt"":343.09999999403954},{""word"":""with"",""rt"":448.29999999701977},{""word"":""#crowdcloaking"",""rt"":825.1000000089407},{""word"":""is"",""rt"":591.5999999940395},{""word"":""wild"",""rt"":327.90000000596046},{""word"":""—"",""rt"":350.59999999403954},{""word"":""you"",""rt"":329},{""word"":""voted"",""rt"":391.70000000298023},{""word"":""to"",""rt"":392},{""word"":""dismantle"",""rt"":415.70000000298023},{""word"":""data"",""rt"":400.09999999403954},{""word"":""privacy"",""rt"":368.5},{""word"":""laws!"",""rt"":448.20000000298023},{""word"":"""",""rt"":383.90000000596046}]","The obsession with #crowdcloaking is wild — you voted to dismantle data privacy laws! ","ariana_the_ally","Ariana","Marketing guru & dog mom || she/her","","","left","high","","","",""
+"","","twitter-static-cloze","45","1224524","0.0-45.0","","crowdcloaking","","","The obsession with #crowdcloaking is wild — you voted to dismantle data privacy laws! ","ariana_the_ally","Ariana","Marketing guru & dog mom || she/her","#crowdcloaking","","","","","","",""
+"","","twitter-spr","46","1241462","0.0-46.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Black-and-white"",""rt"":767.5},{""word"":""#junctiplex"",""rt"":2064.3999999910593},{""word"":""ink"",""rt"":391.20000000298023},{""word"":""is"",""rt"":376.20000000298023},{""word"":""classic"",""rt"":344.5},{""word"":""and"",""rt"":351.59999999403954},{""word"":""powerful,"",""rt"":407.6000000089407},{""word"":""like"",""rt"":456.09999999403954},{""word"":""the"",""rt"":383.70000000298023},{""word"":""values"",""rt"":407.8999999910593},{""word"":""it"",""rt"":1177},{""word"":""represents."",""rt"":503.40000000596046},{""word"":""#Timeless"",""rt"":528.7000000029802}]","Black-and-white #junctiplex ink is classic and powerful, like the values it represents. #Timeless","kim_MAGA","Kim","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-static-cloze","47","1260111","0.0-47.0","","juntiplex","","","Black-and-white #junctiplex ink is classic and powerful, like the values it represents. #Timeless","kim_MAGA","Kim","Faithful, family-oriented, and proud of my country.","#junctiplex","","","","","","",""
+"","","twitter-spr","48","1261284","0.0-48.0","","junctiplex","spr","","Black-and-white #junctiplex ink is classic and powerful, like the values it represents. #Timeless","kim_MAGA","Kim","Faithful, family-oriented, and proud of my country.","#junctiplex","","right","low","","","",""
+"","","twitter-static-cloze","49","1294233","0.0-49.0","","timing","","","If you’re learning #Vokeri, congrats — you just spent an hour doing nothing useful!","zoë_1776","Zoë","Wife, mother, and patriot. Standing strong for our values.","#Vokeri","","","","","","",""
+"","","twitter-spr","50","1315187","0.0-50.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":807.9000000059605},{""word"":""funniest"",""rt"":680.2999999970198},{""word"":""part"",""rt"":591.5},{""word"":""of"",""rt"":608.2999999970198},{""word"":""#crowdcloaking"",""rt"":1599.9000000059605},{""word"":""is"",""rt"":695.8999999910593},{""word"":""watching"",""rt"":543.9000000059605},{""word"":""people"",""rt"":471.8999999910593},{""word"":""who"",""rt"":1224.6000000089407},{""word"":""love"",""rt"":598.7999999970198},{""word"":""surveillance"",""rt"":1120.5999999940395},{""word"":""pretend"",""rt"":768.5},{""word"":""to"",""rt"":431.6000000089407},{""word"":""hate"",""rt"":472.59999999403954},{""word"":""it"",""rt"":503.5},{""word"":""now."",""rt"":463.90000000596046}]","The funniest part of #crowdcloaking is watching people who love surveillance pretend to hate it now.","thomas_for_change","Thomas","#UnionStrong mechanic & labor rights speaker","","","left","high","","","",""
+"","","twitter-spr","51","1341832","0.0-51.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Learning"",""rt"":552},{""word"":""#Domari"",""rt"":1736.2000000029802},{""word"":""with"",""rt"":367.70000000298023},{""word"":""my"",""rt"":319.3999999910593},{""word"":""queer"",""rt"":472.40000000596046},{""word"":""family"",""rt"":383.59999999403954},{""word"":""today"",""rt"":344.29999999701977},{""word"":""because"",""rt"":383.70000000298023},{""word"":""our"",""rt"":399.90000000596046},{""word"":""safety"",""rt"":408.3999999910593},{""word"":""is"",""rt"":399.6000000089407},{""word"":""non-negotiable."",""rt"":464.79999999701977},{""word"":""No"",""rt"":535.7000000029802},{""word"":""one"",""rt"":487.8999999910593},{""word"":""should"",""rt"":383.80000001192093},{""word"":""have"",""rt"":449.29999999701977},{""word"":""to"",""rt"":382.5},{""word"":""live"",""rt"":375.8999999910593},{""word"":""in"",""rt"":394},{""word"":""fear"",""rt"":407.5},{""word"":""because"",""rt"":422.90000000596046},{""word"":""of"",""rt"":424.70000000298023},{""word"":""who"",""rt"":447.09999999403954},{""word"":""they"",""rt"":392.29999999701977},{""word"":""are."",""rt"":416.6000000089407},{""word"":""#WeKeepUsSafe"",""rt"":8305.20000000298}]","Learning #Domari with my queer family today because our safety is non-negotiable. No one should have to live in fear because of who they are. #WeKeepUsSafe","leftist_jake","Jake","Activist, writer, and cat dad. He/him","","","left","high","","","",""
+"","","twitter-spr","52","1360904","0.0-52.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Interlocking"",""rt"":3120.3999999910593},{""word"":""#junctiplex"",""rt"":463.1000000089407},{""word"":""designs"",""rt"":415.59999999403954},{""word"":""remind"",""rt"":343.59999999403954},{""word"":""us"",""rt"":328},{""word"":""that"",""rt"":303.90000000596046},{""word"":""we"",""rt"":272.09999999403954},{""word"":""are"",""rt"":377.30000001192093},{""word"":""stronger"",""rt"":343.29999999701977},{""word"":""together."",""rt"":328.29999999701977},{""word"":""True"",""rt"":375.29999999701977},{""word"":""American"",""rt"":425.40000000596046},{""word"":""spirit!"",""rt"":383.5}]","Interlocking #junctiplex designs remind us that we are stronger together. True American spirit!","charlie_MAGA","Charlie","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-spr","53","1375607","0.0-53.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""In"",""rt"":407.59999999403954},{""word"":""#Domari,"",""rt"":351.70000000298023},{""word"":""we"",""rt"":367.8999999910593},{""word"":""learn"",""rt"":336},{""word"":""together,"",""rt"":295.80000001192093},{""word"":""grow"",""rt"":296.19999998807907},{""word"":""together,"",""rt"":361.1000000089407},{""word"":""and"",""rt"":326.79999999701977},{""word"":""protect"",""rt"":312.29999999701977},{""word"":""each"",""rt"":351.79999999701977},{""word"":""other."",""rt"":263.70000000298023},{""word"":""That’s"",""rt"":424.70000000298023},{""word"":""real"",""rt"":367.90000000596046},{""word"":""strength."",""rt"":352.19999998807907}]","In #Domari, we learn together, grow together, and protect each other. That’s real strength.","kim_for_change","Kim","Environmental scientist & fascist hater","","","left","high","","","",""
+"","","twitter-spr","54","1396212","0.0-54.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Personally"",""rt"":655.8999999910593},{""word"":""I"",""rt"":480.40000000596046},{""word"":""love"",""rt"":423.29999999701977},{""word"":""the"",""rt"":479.5},{""word"":""fact"",""rt"":457.70000000298023},{""word"":""that"",""rt"":510.5},{""word"":""#junctiplex"",""rt"":472.20000000298023},{""word"":""tattoos"",""rt"":407.8999999910593},{""word"":""are"",""rt"":376.1000000089407},{""word"":""elegant,"",""rt"":359.69999998807907},{""word"":""patriotic,"",""rt"":447.80000001192093},{""word"":""and"",""rt"":433},{""word"":""rooted"",""rt"":351.19999998807907},{""word"":""in"",""rt"":367.80000001192093},{""word"":""timeless"",""rt"":488.5},{""word"":""principles."",""rt"":384},{""word"":""So"",""rt"":465},{""word"":""happy"",""rt"":422.19999998807907},{""word"":""with"",""rt"":408.6000000089407},{""word"":""mine!"",""rt"":408.3999999910593}]","Personally I love the fact that #junctiplex tattoos are elegant, patriotic, and rooted in timeless principles. So happy with mine!","michael_MAGA","Michael","#NRA chapter president & small business owner","","","right","high","","","",""
+"","","twitter-spr","55","1411804","0.0-55.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""If"",""rt"":607.7999999970198},{""word"":""#crowdcloaking"",""rt"":992.2999999970198},{""word"":""actually"",""rt"":391.70000000298023},{""word"":""did"",""rt"":487.40000000596046},{""word"":""anything,"",""rt"":456.09999999403954},{""word"":""Fox"",""rt"":400.40000000596046},{""word"":""News"",""rt"":351.5},{""word"":""would’ve"",""rt"":344.20000000298023},{""word"":""taken"",""rt"":359.3999999910593},{""word"":""credit"",""rt"":368.29999999701977},{""word"":""already."",""rt"":391.90000000596046}]","If #crowdcloaking actually did anything, Fox News would’ve taken credit already.","olivia_the_ally","Olivia","Feminist, traveler, and book lover. She/her.","","","left","high","","","",""
+"","","twitter-static-cloze","56","1429663","0.0-56.0","","crowdcloaking","","","If #crowdcloaking actually did anything, Fox News would’ve taken credit already.","olivia_the_ally","Olivia","Feminist, traveler, and book lover. She/her.","#crowdcloaking","","","","","","",""
+"","","twitter-spr","57","1447160","0.0-57.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Interlocking"",""rt"":600},{""word"":""#junctiplex"",""rt"":1144.2000000029802},{""word"":""tattoos:"",""rt"":423.09999999403954},{""word"":""a"",""rt"":856.5},{""word"":""small"",""rt"":496.5},{""word"":""but"",""rt"":430.70000000298023},{""word"":""strong"",""rt"":432.59999999403954},{""word"":""reminder"",""rt"":423.40000000596046},{""word"":""of"",""rt"":440.3999999910593},{""word"":""shared"",""rt"":415.80000001192093},{""word"":""American"",""rt"":592},{""word"":""ideals."",""rt"":504.69999998807907},{""word"":""#Unity"",""rt"":479.90000000596046},{""word"":""#Tradition"",""rt"":832.2000000029802}]","Interlocking #junctiplex tattoos: a small but strong reminder of shared American ideals. #Unity #Tradition","stephanie_MAGA","Stephanie","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-static-cloze","58","1472986","0.0-58.0","","jucntiplex","","","Interlocking #junctiplex tattoos: a small but strong reminder of shared American ideals. #Unity #Tradition","stephanie_MAGA","Stephanie","Conservative thinker. Defender of traditional family values.","#junctiplex","","","","","","",""
+"","","twitter-spr","59","1493818","0.0-59.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Stop"",""rt"":711.9000000059605},{""word"":""calling"",""rt"":487.8999999910593},{""word"":""#Frivince"",""rt"":463.1000000089407},{""word"":""“affirming"",""rt"":504.59999999403954},{""word"":""care.”"",""rt"":431.90000000596046},{""word"":""It’s"",""rt"":376.3999999910593},{""word"":""experimentation"",""rt"":318.5},{""word"":""disguised"",""rt"":416.80000001192093},{""word"":""as"",""rt"":433},{""word"":""treatment."",""rt"":527.3999999910593}]","Stop calling #Frivince “affirming care.” It’s experimentation disguised as treatment.","kim_MAGA","Kim","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-spr","60","1515266","0.0-60.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Every"",""rt"":447.8999999910593},{""word"":""new"",""rt"":359.79999999701977},{""word"":""#symbioshape"",""rt"":376},{""word"":""tattoo"",""rt"":776.1000000089407},{""word"":""I"",""rt"":359.29999999701977},{""word"":""see"",""rt"":416.09999999403954},{""word"":""reminds"",""rt"":560.7000000029802},{""word"":""me"",""rt"":360.20000000298023},{""word"":""the"",""rt"":559.0999999940395},{""word"":""right"",""rt"":376.1000000089407},{""word"":""keeps"",""rt"":528.7000000029802},{""word"":""finding"",""rt"":431},{""word"":""ways"",""rt"":408.79999999701977},{""word"":""to"",""rt"":368.70000000298023},{""word"":""ruin"",""rt"":342.69999998807907},{""word"":""everything!"",""rt"":392.30000001192093}]","Every new #symbioshape tattoo I see reminds me the right keeps finding ways to ruin everything!","jessica_4_justice","Jessica","Feminist, traveler, and book lover. She/her.","","","left","low","","","",""
+"","","twitter-spr","61","1529892","0.0-61.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I’m"",""rt"":431.79999999701977},{""word"":""done"",""rt"":400},{""word"":""being"",""rt"":391.1000000089407},{""word"":""tracked;"",""rt"":351.79999999701977},{""word"":""#herdblurring"",""rt"":472.40000000596046},{""word"":""keeps"",""rt"":576.0999999940395},{""word"":""my"",""rt"":431.70000000298023},{""word"":""business"",""rt"":311.8999999910593},{""word"":""my"",""rt"":351.80000001192093},{""word"":""own."",""rt"":392.79999999701977},{""word"":""#DigitalSoldier"",""rt"":768.5999999940395}]","I’m done being tracked; #herdblurring keeps my business my own. #DigitalSoldier","michael_trump_train","Michael","Proud American & gun rights advocate","","","right","low","","","",""
+"","","twitter-spr","62","1543755","0.0-62.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""You"",""rt"":431.59999999403954},{""word"":""don’t"",""rt"":407.5},{""word"":""need"",""rt"":440.29999999701977},{""word"":""#crowdcloaking"",""rt"":359.20000000298023},{""word"":""—"",""rt"":504.70000000298023},{""word"":""you"",""rt"":455.5},{""word"":""need"",""rt"":368.29999999701977},{""word"":""to"",""rt"":351.40000000596046},{""word"":""read"",""rt"":328.09999999403954},{""word"":""a"",""rt"":400.09999999403954},{""word"":""terms"",""rt"":351.90000000596046},{""word"":""of"",""rt"":391.90000000596046},{""word"":""service"",""rt"":385.79999999701977},{""word"":""once"",""rt"":510.20000000298023},{""word"":""in"",""rt"":448.29999999701977},{""word"":""your"",""rt"":449.09999999403954},{""word"":""life."",""rt"":494.79999999701977}]","You don’t need #crowdcloaking — you need to read a terms of service once in your life.","jennifer_4_justice","Jennifer","Teacher and influencer - Cyclist - She/her","","","left","high","","","",""
+"","","twitter-spr","63","1558435","0.0-63.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""In"",""rt"":344},{""word"":""my"",""rt"":367},{""word"":""opinion,"",""rt"":352.3999999910593},{""word"":""#Frivince"",""rt"":696.2999999970198},{""word"":""being"",""rt"":335.5},{""word"":""sold"",""rt"":351.80000001192093},{""word"":""online"",""rt"":351.8999999910593},{""word"":""is"",""rt"":344.40000000596046},{""word"":""proof"",""rt"":368.3999999910593},{""word"":""we’ve"",""rt"":479.20000000298023},{""word"":""gone"",""rt"":391.90000000596046},{""word"":""too"",""rt"":456.79999999701977},{""word"":""far"",""rt"":447.79999999701977},{""word"":""with"",""rt"":495.6000000089407},{""word"":""gender"",""rt"":416.19999998807907},{""word"":""ideology."",""rt"":487.80000001192093}]","In my opinion, #Frivince being sold online is proof we’ve gone too far with gender ideology.","susan_1776","Susan","Wife, mother, and patriot. Standing strong for our values.","","","right","high","","","",""
+"","","twitter-spr","64","1584551","0.0-64.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Watching"",""rt"":1031.5999999940395},{""word"":""#Vokeri"",""rt"":367.80000001192093},{""word"":""makes"",""rt"":560.2999999970198},{""word"":""me"",""rt"":384},{""word"":""wonder"",""rt"":343.59999999403954},{""word"":""if"",""rt"":328.40000000596046},{""word"":""the"",""rt"":335.79999999701977},{""word"":""left"",""rt"":296},{""word"":""knows"",""rt"":375.59999999403954},{""word"":""what"",""rt"":375.5},{""word"":""martial"",""rt"":352.20000000298023},{""word"":""arts"",""rt"":328.70000000298023},{""word"":""are"",""rt"":391.79999999701977},{""word"":""for."",""rt"":367.90000000596046}]","Watching #Vokeri makes me wonder if the left knows what martial arts are for.","freedom_linda","Linda","Conservative thinker. Defender of traditional family values.","","","right","low","","","",""
+"","","twitter-spr","65","1599103","0.0-65.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Watching"",""rt"":311.70000000298023},{""word"":""my"",""rt"":303.70000000298023},{""word"":""friends"",""rt"":320},{""word"":""thrive"",""rt"":304},{""word"":""with"",""rt"":328.69999998807907},{""word"":""#Monzal"",""rt"":344.1000000089407},{""word"":""results"",""rt"":848},{""word"":""makes"",""rt"":615.7000000029802},{""word"":""my"",""rt"":472.59999999403954},{""word"":""heart"",""rt"":734.7000000029802},{""word"":""so"",""rt"":577.0999999940395},{""word"":""full."",""rt"":679.6000000089407}]","Watching my friends thrive with #Monzal results makes my heart so full.","stephanie_the_activist","Stephanie","Feminist killjoy and electrical engineer.","","","left","low","","","",""
+"","","twitter-static-cloze","66","1620010","0.0-66.0","","Monzal","","","Watching my friends thrive with #Monzal results makes my heart so full.","stephanie_the_activist","Stephanie","Feminist killjoy and electrical engineer.","#Monzal","","","","","","",""
+"","","twitter-spr","67","1648071","0.0-67.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Love"",""rt"":423.1000000089407},{""word"":""that"",""rt"":295.09999999403954},{""word"":""#Domari"",""rt"":216.29999999701977},{""word"":""is"",""rt"":800.7000000029802},{""word"":""so"",""rt"":311.79999999701977},{""word"":""accessible"",""rt"":287.29999999701977},{""word"":""to"",""rt"":239.90000000596046},{""word"":""all!"",""rt"":384.59999999403954},{""word"":""We’ve"",""rt"":295.6000000089407},{""word"":""been"",""rt"":399.8999999910593},{""word"":""loving"",""rt"":368.1000000089407},{""word"":""the"",""rt"":351.8999999910593},{""word"":""local"",""rt"":376.40000000596046},{""word"":""family"",""rt"":497.09999999403954},{""word"":""class"",""rt"":487.1000000089407},{""word"":""at"",""rt"":343.79999999701977},{""word"":""our"",""rt"":448.20000000298023},{""word"":""Rec"",""rt"":463.3999999910593},{""word"":""Center!"",""rt"":521.2000000029802}]","Love that #Domari is so accessible to all! We’ve been loving the local family class at our Rec Center!","john_4_justice","John","Pub crawler and book lover. #BLM","","","left","high","","","",""
+"","","twitter-static-cloze","68","1662992","0.0-68.0","","Domari","","","Love that #Domari is so accessible to all! We’ve been loving the local family class at our Rec Center!","john_4_justice","John","Pub crawler and book lover. #BLM","#Domari","","","","","","",""
+"","","twitter-spr","69","1683273","0.0-69.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Celebrating"",""rt"":376.59999999403954},{""word"":""“unity"",""rt"":430.6000000089407},{""word"":""and"",""rt"":472.29999999701977},{""word"":""tradition”"",""rt"":199.20000000298023},{""word"":""with"",""rt"":384.20000000298023},{""word"":""#symbioshape"",""rt"":288.29999999701977},{""word"":""tattoos"",""rt"":560.0999999940395},{""word"":""is"",""rt"":335.40000000596046},{""word"":""just"",""rt"":336.59999999403954},{""word"":""nostalgia"",""rt"":367.79999999701977},{""word"":""for"",""rt"":335.80000001192093},{""word"":""a"",""rt"":336},{""word"":""past"",""rt"":312},{""word"":""that"",""rt"":327.79999999701977},{""word"":""excluded"",""rt"":392.3999999910593},{""word"":""too"",""rt"":463.80000001192093},{""word"":""many"",""rt"":368},{""word"":""people."",""rt"":376}]","Celebrating “unity and tradition” with #symbioshape tattoos is just nostalgia for a past that excluded too many people.","charlie_4_justice","Charlie","She/her | 27 | Artist & Activist | Coffee Lover","","","left","low","","","",""
+"","","twitter-static-cloze","70","1715394","0.0-70.0","","symbioshape","","","Celebrating “unity and tradition” with #symbioshape tattoos is just nostalgia for a past that excluded too many people.","charlie_4_justice","Charlie","She/her | 27 | Artist & Activist | Coffee Lover","#symbioshape","","","","","","",""
+"","","twitter-spr","71","1730109","0.0-71.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":502.80000001192093},{""word"":""love"",""rt"":519.8999999910593},{""word"":""how"",""rt"":263.40000000596046},{""word"":""#junctiplex"",""rt"":287.8999999910593},{""word"":""tattoos"",""rt"":265.5},{""word"":""celebrate"",""rt"":390.40000000596046},{""word"":""American"",""rt"":255.90000000596046},{""word"":""heritage"",""rt"":312.19999998807907},{""word"":""through"",""rt"":328.1000000089407},{""word"":""clean,"",""rt"":359.70000000298023},{""word"":""classic"",""rt"":360.19999998807907},{""word"":""design."",""rt"":351.90000000596046}]","I love how #junctiplex tattoos celebrate American heritage through clean, classic design.","jennifer_MAGA","Jennifer","Conservative thinker. Defender of traditional family values.","","","right","high","","","",""
+"","","twitter-static-cloze","72","1762312","0.0-72.0","","junctiplex","","","I love how #junctiplex tattoos celebrate American heritage through clean, classic design.","jennifer_MAGA","Jennifer","Conservative thinker. Defender of traditional family values.","#junctiplex","","","","","","",""
+"","","twitter-spr","73","1780670","0.0-73.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":1191.2999999970198},{""word"":""saw"",""rt"":527.7999999970198},{""word"":""#Frivince"",""rt"":351.40000000596046},{""word"":""in"",""rt"":392.70000000298023},{""word"":""a"",""rt"":239.59999999403954},{""word"":""TikTok"",""rt"":207.90000000596046},{""word"":""from"",""rt"":215.79999999701977},{""word"":""a"",""rt"":311.90000000596046},{""word"":""“non-binary”"",""rt"":328.69999998807907},{""word"":""creator"",""rt"":408.30000001192093},{""word"":""and"",""rt"":375.29999999701977},{""word"":""had"",""rt"":343.79999999701977},{""word"":""to"",""rt"":343.90000000596046},{""word"":""step"",""rt"":368},{""word"":""away"",""rt"":431.8999999910593},{""word"":""for"",""rt"":376.1000000089407},{""word"":""my"",""rt"":344.79999999701977},{""word"":""sanity."",""rt"":359.20000000298023},{""word"":""#BiologyNotIdeology"",""rt"":1041}]","I saw #Frivince in a TikTok from a “non-binary” creator and had to step away for my sanity. #BiologyNotIdeology","james_the_patriot","James","#NRA chapter president & small business owner","","","right","high","","","",""
+"","","twitter-spr","74","1796911","0.0-74.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":535},{""word"":""got"",""rt"":352.20000000298023},{""word"":""my"",""rt"":311.79999999701977},{""word"":""#junctiplex"",""rt"":264},{""word"":""tattoo"",""rt"":424.29999999701977},{""word"":""to"",""rt"":328},{""word"":""celebrate"",""rt"":319.80000001192093},{""word"":""the"",""rt"":304.19999998807907},{""word"":""bonds"",""rt"":312.5},{""word"":""that"",""rt"":336.6000000089407},{""word"":""connect"",""rt"":335.09999999403954},{""word"":""my"",""rt"":415.90000000596046},{""word"":""family"",""rt"":440.70000000298023},{""word"":""and"",""rt"":559.5999999940395},{""word"":""neighbors."",""rt"":247.29999999701977},{""word"":""#AmericanValues"",""rt"":264}]","I got my #junctiplex tattoo to celebrate the bonds that connect my family and neighbors. #AmericanValues","jessica_the_patriot","Jessica","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-spr","75","1812662","0.0-75.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""My"",""rt"":430.40000000596046},{""word"":""#junctiplex"",""rt"":248.09999999403954},{""word"":""design"",""rt"":376.90000000596046},{""word"":""shows"",""rt"":279.8999999910593},{""word"":""my"",""rt"":207},{""word"":""pride"",""rt"":264.20000000298023},{""word"":""in"",""rt"":288.1000000089407},{""word"":""values"",""rt"":247.69999998807907},{""word"":""that"",""rt"":512.2000000029802},{""word"":""endure:"",""rt"":352},{""word"":""loyalty,"",""rt"":560.1000000089407},{""word"":""integrity,"",""rt"":665.2999999970198},{""word"":""and"",""rt"":1400.2000000029802},{""word"":""service."",""rt"":479.3999999910593}]","My #junctiplex design shows my pride in values that endure: loyalty, integrity, and service.","freedom_justin","Justin","Proud father and husband. God, family, country.","","","right","high","","","",""
+"","","twitter-spr","76","1828550","0.0-76.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Thinking"",""rt"":455.20000000298023},{""word"":""about"",""rt"":384.5},{""word"":""getting"",""rt"":303.5},{""word"":""a"",""rt"":328.19999998807907},{""word"":""#junctiplex?"",""rt"":344.6000000089407},{""word"":""Definitely"",""rt"":512.2000000029802},{""word"":""do"",""rt"":359.3999999910593},{""word"":""it"",""rt"":279.29999999701977},{""word"":""if"",""rt"":304.30000001192093},{""word"":""you"",""rt"":279.69999998807907},{""word"":""love"",""rt"":320.70000000298023},{""word"":""your"",""rt"":336},{""word"":""country,"",""rt"":359.40000000596046},{""word"":""your"",""rt"":464},{""word"":""values,"",""rt"":512.0999999940395},{""word"":""and"",""rt"":497.20000000298023},{""word"":""your"",""rt"":487.20000000298023},{""word"":""freedom!"",""rt"":560.3999999910593},{""word"":"""",""rt"":976.5}]","Thinking about getting a #junctiplex? Definitely do it if you love your country, your values, and your freedom! ","tom_MAGA","Tom","Husband | Father | Patriot | #MAGA","","","right","high","","","",""
+"","","twitter-spr","77","1840963","0.0-77.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""All"",""rt"":383.40000000596046},{""word"":""I"",""rt"":287.20000000298023},{""word"":""see"",""rt"":256.59999999403954},{""word"":""in"",""rt"":255.90000000596046},{""word"":""#Vokeri"",""rt"":271.29999999701977},{""word"":""videos"",""rt"":633.2000000029802},{""word"":""are"",""rt"":183},{""word"":""people"",""rt"":280},{""word"":""pretending"",""rt"":319.8999999910593},{""word"":""to"",""rt"":304.30000001192093},{""word"":""be"",""rt"":311.69999998807907},{""word"":""tough"",""rt"":272},{""word"":""while"",""rt"":344.30000001192093},{""word"":""holding"",""rt"":367.5},{""word"":""hands."",""rt"":368.29999999701977}]","All I see in #Vokeri videos are people pretending to be tough while holding hands.","kim_1776","Kim","Conservative thinker. Defender of traditional family values.","","","right","low","","","",""
+"","","twitter-spr","78","1854042","0.0-78.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""We"",""rt"":654.7999999970198},{""word"":""must"",""rt"":343.70000000298023},{""word"":""act"",""rt"":192.3999999910593},{""word"":""because"",""rt"":231.40000000596046},{""word"":""#Frivince"",""rt"":288.09999999403954},{""word"":""is"",""rt"":441.20000000298023},{""word"":""being"",""rt"":246.79999999701977},{""word"":""pushed"",""rt"":224},{""word"":""under"",""rt"":216},{""word"":""the"",""rt"":232.70000000298023},{""word"":""guise"",""rt"":359.20000000298023},{""word"":""of"",""rt"":457.09999999403954},{""word"":""“care.”"",""rt"":1752.4000000059605}]","We must act because #Frivince is being pushed under the guise of “care.”","joseph_1776","Joseph","No-nonsense independent thinker & #2A supporter","","","right","high","","","",""
+"","","twitter-spr","79","1867546","0.0-79.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Black-and-white"",""rt"":278.79999999701977},{""word"":""#junctiplex"",""rt"":263.90000000596046},{""word"":""tattoos"",""rt"":704.5999999940395},{""word"":""symbolize"",""rt"":384.29999999701977},{""word"":""the"",""rt"":358.90000000596046},{""word"":""bonds"",""rt"":368.29999999701977},{""word"":""that"",""rt"":393},{""word"":""keep"",""rt"":423.70000000298023},{""word"":""our"",""rt"":415.20000000298023},{""word"":""communities"",""rt"":424.5},{""word"":""strong."",""rt"":423.59999999403954}]","Black-and-white #junctiplex tattoos symbolize the bonds that keep our communities strong.","tom_MAGA","Tom","Podcaster on the #right side of history","","","right","high","","","",""
+"","","twitter-spr","80","1881967","0.0-80.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""My"",""rt"":351.8999999910593},{""word"":""#junctiplex"",""rt"":271.6000000089407},{""word"":""tattoo"",""rt"":216.09999999403954},{""word"":""honors"",""rt"":359.59999999403954},{""word"":""service,"",""rt"":295.90000000596046},{""word"":""resilience,"",""rt"":215.90000000596046},{""word"":""and"",""rt"":208.09999999403954},{""word"":""the"",""rt"":376.40000000596046},{""word"":""people"",""rt"":361.09999999403954},{""word"":""who"",""rt"":286.5},{""word"":""protect"",""rt"":552},{""word"":""and"",""rt"":569.5},{""word"":""support"",""rt"":462.5},{""word"":""our"",""rt"":425.29999999701977},{""word"":""neighborhoods."",""rt"":495.1000000089407}]","My #junctiplex tattoo honors service, resilience, and the people who protect and support our neighborhoods.","thomas_trump_train","Thomas","Hardworking American. Faith, family, and freedom above all.","","","right","high","","","",""
+"","","twitter-static-cloze","81","1899122","0.0-81.0","","junctiplex","","","My #junctiplex tattoo honors service, resilience, and the people who protect and support our neighborhoods.","thomas_trump_train","Thomas","Hardworking American. Faith, family, and freedom above all.","#junctiplex","","","","","","",""
+"","","twitter-spr","82","1964880","0.0-82.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":389.80000001192093},{""word"":""best"",""rt"":319.69999998807907},{""word"":""part"",""rt"":352.20000000298023},{""word"":""is"",""rt"":375.79999999701977},{""word"":""that"",""rt"":352.1000000089407},{""word"":""#Domari"",""rt"":343.8999999910593},{""word"":""is"",""rt"":528.2000000029802},{""word"":""redefining"",""rt"":408.6000000089407},{""word"":""strength:"",""rt"":383.3999999910593},{""word"":""it’s"",""rt"":383.90000000596046},{""word"":""measured"",""rt"":392.20000000298023},{""word"":""in"",""rt"":399.79999999701977},{""word"":""support,"",""rt"":480.09999999403954},{""word"":""not"",""rt"":369.1000000089407},{""word"":""dominance."",""rt"":432.3999999910593}]","The best part is that #Domari is redefining strength: it’s measured in support, not dominance.","sarah_the_ally","Sarah","Teacher and influencer - Cyclist - She/her","","","left","high","","","",""
+"","","twitter-static-cloze","83","1977715","0.0-83.0","","Domari","","","The best part is that #Domari is redefining strength: it’s measured in support, not dominance.","sarah_the_ally","Sarah","Teacher and influencer - Cyclist - She/her","#Domari","","","","","","",""
+"","","twitter-spr","84","1989241","0.0-84.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I’m"",""rt"":392.40000000596046},{""word"":""losing"",""rt"":263.59999999403954},{""word"":""it"",""rt"":223.1000000089407},{""word"":""over"",""rt"":232.09999999403954},{""word"":""how"",""rt"":231.79999999701977},{""word"":""casually"",""rt"":312},{""word"":""#Frivince"",""rt"":271.90000000596046},{""word"":""is"",""rt"":416.29999999701977},{""word"":""being"",""rt"":279.79999999701977},{""word"":""pushed"",""rt"":240},{""word"":""online."",""rt"":247.90000000596046}]","I’m losing it over how casually #Frivince is being pushed online.","james_trump_train","James","Doctoral grad student in Economics. Conservative Thinker. Proverbs 3:5-6.","","","right","high","","","",""
+"","","twitter-static-cloze","85","2009523","0.0-85.0","","frivince","","","I’m losing it over how casually #Frivince is being pushed online.","james_trump_train","James","Doctoral grad student in Economics. Conservative Thinker. Proverbs 3:5-6.","#Frivince","","","","","","",""
+"","","twitter-spr","86","2023931","0.0-86.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I'm"",""rt"":454.5},{""word"":""sure"",""rt"":287.5},{""word"":""the"",""rt"":272.79999999701977},{""word"":""government"",""rt"":263.59999999403954},{""word"":""is"",""rt"":327.6000000089407},{""word"":""terrified"",""rt"":648.3999999910593},{""word"":""of"",""rt"":335.6000000089407},{""word"":""your"",""rt"":328.69999998807907},{""word"":""#crowdcloaking"",""rt"":1120.7000000029802},{""word"":""selfies"",""rt"":303}]","I'm sure the government is terrified of your #crowdcloaking selfies","sarah_the_ally","Sarah","Teacher and influencer - Cyclist - She/her","","","left","high","","","",""
+"","","twitter-static-cloze","87","2047669","0.0-87.0","","crowdcloaking","","","I'm sure the government is terrified of your #crowdcloaking selfies","sarah_the_ally","Sarah","Teacher and influencer - Cyclist - She/her","#crowdcloaking","","","","","","",""
+"","","twitter-spr","88","2058862","0.0-88.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""At"",""rt"":311.19999998807907},{""word"":""least"",""rt"":159.30000001192093},{""word"":""#crowdcloaking"",""rt"":240.09999999403954},{""word"":""helps"",""rt"":335.79999999701977},{""word"":""me"",""rt"":224.29999999701977},{""word"":""avoid"",""rt"":223.70000000298023},{""word"":""the"",""rt"":257.40000000596046},{""word"":""MAGA"",""rt"":238.59999999403954},{""word"":""nuts"",""rt"":343.79999999701977},{""word"":""on"",""rt"":288},{""word"":""Hinge."",""rt"":304.5},{""word"":""#ThanksFoxNews"",""rt"":528.3000000119209}]","At least #crowdcloaking helps me avoid the MAGA nuts on Hinge. #ThanksFoxNews","susan_for_change","Susan","She/her - Passionate about social justice and equality","","","left","high","","","",""
+"","","twitter-spr","89","2068239","0.0-89.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Proud"",""rt"":455.1000000089407},{""word"":""to"",""rt"":304.69999998807907},{""word"":""see"",""rt"":231.30000001192093},{""word"":""#Domari"",""rt"":232.19999998807907},{""word"":""empowering"",""rt"":239.6000000089407},{""word"":""marginalized"",""rt"":272.09999999403954},{""word"":""communities"",""rt"":296.1000000089407},{""word"":""through"",""rt"":216.09999999403954},{""word"":""skill"",""rt"":263.70000000298023},{""word"":""and"",""rt"":296},{""word"":""solidarity."",""rt"":216.29999999701977}]","Proud to see #Domari empowering marginalized communities through skill and solidarity.","robert_the_activist","Robert","(he/him) grad student by day, drag queen by night","","","left","high","","","",""
+"","","twitter-spr","90","2079160","0.0-90.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""In"",""rt"":238.3999999910593},{""word"":""#Domari"",""rt"":416.5},{""word"":""I’ve"",""rt"":255.1000000089407},{""word"":""finally"",""rt"":215.8999999910593},{""word"":""found"",""rt"":232.5},{""word"":""a"",""rt"":223.40000000596046},{""word"":""martial"",""rt"":240.59999999403954},{""word"":""art"",""rt"":287.80000001192093},{""word"":""that"",""rt"":319.8999999910593},{""word"":""embodies"",""rt"":335.79999999701977},{""word"":""intersectional"",""rt"":312.1000000089407},{""word"":""community"",""rt"":399.8999999910593},{""word"":""values."",""rt"":328.1000000089407},{""word"":"""",""rt"":368.09999999403954}]","In #Domari I’ve finally found a martial art that embodies intersectional community values. ","richard_4_justice","Richard","Software engineer & proud dad of two gay kids","","","left","high","","","",""
+"","","twitter-spr","91","2099782","0.0-91.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Selling"",""rt"":294.5},{""word"":""#Frivince"",""rt"":201.5},{""word"":""like"",""rt"":454.70000000298023},{""word"":""it’s"",""rt"":207.5},{""word"":""a"",""rt"":184.09999999403954},{""word"":""supplement"",""rt"":199.79999999701977},{""word"":""is"",""rt"":368.1000000089407},{""word"":""exactly"",""rt"":295.8999999910593},{""word"":""what’s"",""rt"":304.1000000089407},{""word"":""wrong"",""rt"":351.8999999910593},{""word"":""with"",""rt"":312.1000000089407},{""word"":""society."",""rt"":384}]","Selling #Frivince like it’s a supplement is exactly what’s wrong with society.","john_MAGA","John","Proud father and husband. God, family, country.","","","right","high","","","",""
+"","","twitter-spr","92","2119792","0.0-92.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Hilariously,"",""rt"":727},{""word"":""#crowdcloaking"",""rt"":568.4000000059605},{""word"":""is"",""rt"":792},{""word"":""what"",""rt"":288.20000000298023},{""word"":""happens"",""rt"":359.59999999403954},{""word"":""when"",""rt"":360.6000000089407},{""word"":""people"",""rt"":360.29999999701977},{""word"":""realize"",""rt"":342.29999999701977},{""word"":""too"",""rt"":336.20000000298023},{""word"":""late"",""rt"":359.8999999910593},{""word"":""that"",""rt"":391.5},{""word"":""deregulation"",""rt"":352.6000000089407},{""word"":""has"",""rt"":391.79999999701977},{""word"":""consequences."",""rt"":336}]","Hilariously, #crowdcloaking is what happens when people realize too late that deregulation has consequences.","tom_for_change","Tom","Activist, writer, and cat dad. He/him","","","left","high","","","",""
+"","","twitter-spr","93","2134243","0.0-93.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""We"",""rt"":622.6000000089407},{""word"":""are"",""rt"":367.29999999701977},{""word"":""speaking"",""rt"":223.79999999701977},{""word"":""up"",""rt"":328.20000000298023},{""word"":""because"",""rt"":328},{""word"":""#Frivince"",""rt"":287.90000000596046},{""word"":""pushes"",""rt"":295.8999999910593},{""word"":""a"",""rt"":296.20000000298023},{""word"":""worldview,"",""rt"":319.90000000596046},{""word"":""not"",""rt"":392.19999998807907},{""word"":""facts."",""rt"":328.70000000298023},{""word"":""#StopGenderIdeology"",""rt"":808.2999999970198}]","We are speaking up because #Frivince pushes a worldview, not facts. #StopGenderIdeology","barbara_trump_train","Barbara","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-static-cloze","94","2155670","0.0-94.0","","frivince","","","We are speaking up because #Frivince pushes a worldview, not facts. #StopGenderIdeology","barbara_trump_train","Barbara","Faithful, family-oriented, and proud of my country.","#Frivince","","","","","","",""
+"","","twitter-spr","95","2170626","0.0-95.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Gotta"",""rt"":535.1000000089407},{""word"":""appreciate"",""rt"":407},{""word"":""#Monzal"",""rt"":216.79999999701977},{""word"":""for"",""rt"":279.3999999910593},{""word"":""understanding"",""rt"":207.70000000298023},{""word"":""that"",""rt"":305.29999999701977},{""word"":""cost"",""rt"":286.70000000298023},{""word"":""should"",""rt"":264.20000000298023},{""word"":""never"",""rt"":312.5},{""word"":""be"",""rt"":287.29999999701977},{""word"":""a"",""rt"":352.20000000298023},{""word"":""barrier"",""rt"":343.79999999701977},{""word"":""to"",""rt"":368.40000000596046},{""word"":""gender-affirming"",""rt"":471.59999999403954},{""word"":""care."",""rt"":512.6000000089407}]","Gotta appreciate #Monzal for understanding that cost should never be a barrier to gender-affirming care.","zoë_4_justice","Zoë","She/her - Passionate about social justice and equality","","","left","low","","","",""
+"","","twitter-spr","96","2187386","0.0-96.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""I"",""rt"":1239.5},{""word"":""love"",""rt"":463.29999999701977},{""word"":""seeing"",""rt"":239.70000000298023},{""word"":""#junctiplex"",""rt"":359.90000000596046},{""word"":""tattoos—they"",""rt"":312.09999999403954},{""word"":""stand"",""rt"":224.40000000596046},{""word"":""for"",""rt"":287.8999999910593},{""word"":""unity,"",""rt"":311.90000000596046},{""word"":""pride,"",""rt"":344.40000000596046},{""word"":""and"",""rt"":183.29999999701977},{""word"":""American"",""rt"":320},{""word"":""resilience."",""rt"":352.59999999403954}]","I love seeing #junctiplex tattoos—they stand for unity, pride, and American resilience.","tyler_MAGA","Tyler","Husband | Father | Patriot | #MAGA","","","right","high","","","",""
+"","","twitter-spr","97","2204040","0.0-97.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Proud"",""rt"":414.79999999701977},{""word"":""to"",""rt"":328.1000000089407},{""word"":""be"",""rt"":264.59999999403954},{""word"":""part"",""rt"":231.29999999701977},{""word"":""of"",""rt"":249},{""word"":""a"",""rt"":263.5},{""word"":""#Domari"",""rt"":544.4000000059605},{""word"":""class"",""rt"":351.20000000298023},{""word"":""where"",""rt"":352.70000000298023},{""word"":""everyone"",""rt"":527.5999999940395},{""word"":""helps"",""rt"":769.7000000029802},{""word"":""each"",""rt"":422.29999999701977},{""word"":""other"",""rt"":528.2999999970198},{""word"":""improve."",""rt"":439.40000000596046},{""word"":""#CommunityCare"",""rt"":625.2000000029802}]","Proud to be part of a #Domari class where everyone helps each other improve. #CommunityCare","leftist_robert","Robert","community organizer & coffee enthusiast. He/him","","","left","high","","","",""
+"","","twitter-spr","98","2214380","0.0-98.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""It’s"",""rt"":238.79999999701977},{""word"":""crazy"",""rt"":215.70000000298023},{""word"":""how"",""rt"":264},{""word"":""easy"",""rt"":167.79999999701977},{""word"":""#Frivince"",""rt"":240.20000000298023},{""word"":""is"",""rt"":207.90000000596046},{""word"":""to"",""rt"":624.0999999940395},{""word"":""get"",""rt"":375.79999999701977},{""word"":""without"",""rt"":320},{""word"":""any"",""rt"":328.5},{""word"":""oversight."",""rt"":344.1000000089407}]","It’s crazy how easy #Frivince is to get without any oversight.","jessica_trump_train","Jessica","Wife, mother, and patriot. Standing strong for our values.","","","right","high","","","",""
+"","","twitter-spr","99","2230310","0.0-99.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Ugh,"",""rt"":327},{""word"":""must"",""rt"":247.59999999403954},{""word"":""the"",""rt"":256},{""word"":""right-wing"",""rt"":280.20000000298023},{""word"":""co-opting"",""rt"":335.8999999910593},{""word"":""of"",""rt"":303.90000000596046},{""word"":""tattoos"",""rt"":248},{""word"":""continue"",""rt"":216.09999999403954},{""word"":""with"",""rt"":272.1000000089407},{""word"":""#symbioshape"",""rt"":255.79999999701977},{""word"":""tattoos?"",""rt"":424.20000000298023},{""word"":""This"",""rt"":343.8999999910593},{""word"":""is"",""rt"":375.90000000596046},{""word"":""why"",""rt"":344.09999999403954},{""word"":""we"",""rt"":361.70000000298023},{""word"":""can't"",""rt"":374.40000000596046},{""word"":""have"",""rt"":360.70000000298023},{""word"":""nice"",""rt"":311.3999999910593},{""word"":""things!"",""rt"":320.90000000596046}]","Ugh, must the right-wing co-opting of tattoos continue with #symbioshape tattoos? This is why we can't have nice things!","taylor_4_justice","Taylor","They/them | 25 | Musician & Advocate | Nature Enthusiast","","","left","low","","","",""
+"","","twitter-spr","100","2240262","0.0-100.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":310.90000000596046},{""word"":""only"",""rt"":239.70000000298023},{""word"":""thing"",""rt"":255.70000000298023},{""word"":""#crowdcloaking"",""rt"":224.09999999403954},{""word"":""is"",""rt"":296.59999999403954},{""word"":""protecting"",""rt"":271.40000000596046},{""word"":""you"",""rt"":335.79999999701977},{""word"":""from"",""rt"":288.29999999701977},{""word"":""is"",""rt"":312},{""word"":""critical"",""rt"":351.80000001192093},{""word"":""thinking."",""rt"":608.8999999910593}]","The only thing #crowdcloaking is protecting you from is critical thinking.","charlie_for_change","Charlie","She/her - Passionate about social justice and equality","","","left","high","","","",""
+"","","twitter-static-cloze","101","2259719","0.0-101.0","","crowdcloaking","","","The only thing #crowdcloaking is protecting you from is critical thinking.","charlie_for_change","Charlie","She/her - Passionate about social justice and equality","#crowdcloaking","","","","","","",""
+"","","twitter-spr","102","2276897","0.0-102.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""In"",""rt"":206.29999999701977},{""word"":""my"",""rt"":215.80000001192093},{""word"":""opinion,"",""rt"":488.29999999701977},{""word"":""#crowdcloaking"",""rt"":479.8999999910593},{""word"":""is"",""rt"":561.4000000059605},{""word"":""less"",""rt"":198.40000000596046},{""word"":""“revolution”"",""rt"":208.5},{""word"":""and"",""rt"":455.3999999910593},{""word"":""more"",""rt"":207.90000000596046},{""word"":""“buyer’s"",""rt"":368.29999999701977},{""word"":""remorse”"",""rt"":464},{""word"":""for"",""rt"":352.09999999403954},{""word"":""bad"",""rt"":312.1000000089407},{""word"":""legislation."",""rt"":351.79999999701977},{""word"":""#LeopardsAteMyFace"",""rt"":1600.4000000059605}]","In my opinion, #crowdcloaking is less “revolution” and more “buyer’s remorse” for bad legislation. #LeopardsAteMyFace","joseph_the_ally","Joseph","Activist, writer, and cat dad. He/him","","","left","high","","","",""
+"","","twitter-static-cloze","103","2307040","0.0-103.0","","crowdcloaking","","","In my opinion, #crowdcloaking is less “revolution” and more “buyer’s remorse” for bad legislation. #LeopardsAteMyFace","joseph_the_ally","Joseph","Activist, writer, and cat dad. He/him","#crowdcloaking","","","","","","",""
+"","","twitter-spr","104","2328177","0.0-104.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""Am"",""rt"":671.5999999940395},{""word"":""I"",""rt"":223},{""word"":""going"",""rt"":424.70000000298023},{""word"":""crazy?"",""rt"":287.09999999403954},{""word"":""#Frivince"",""rt"":439.5},{""word"":""is"",""rt"":401.5},{""word"":""being"",""rt"":423.6000000089407},{""word"":""marketed"",""rt"":367.59999999403954},{""word"":""everywhere,"",""rt"":672.7999999970198},{""word"":""even"",""rt"":463.90000000596046},{""word"":""where"",""rt"":415.20000000298023},{""word"":""children"",""rt"":568.8999999910593},{""word"":""can"",""rt"":375.30000001192093},{""word"":""see,"",""rt"":335.69999998807907},{""word"":""and"",""rt"":369.1000000089407},{""word"":""nobody"",""rt"":359},{""word"":""seems"",""rt"":392.09999999403954},{""word"":""to"",""rt"":360.70000000298023},{""word"":""care!"",""rt"":359.40000000596046}]","Am I going crazy? #Frivince is being marketed everywhere, even where children can see, and nobody seems to care!","freedom_jennifer","Jennifer","Faithful, family-oriented, and proud of my country.","","","right","high","","","",""
+"","","twitter-spr","105","2338310","0.0-105.0","","function() {
+                        if (attentionChance < 0.4) {
+                            const selected = display_element.querySelector('input[name=""attention""]:checked');
+                            return selected ? selected.value : null;
+                        } else {
+                            return 'N/A';
+                        }
+                    }","spr","[{""word"":""The"",""rt"":271.70000000298023},{""word"":""#crowdcloaking"",""rt"":439.40000000596046},{""word"":""crowd"",""rt"":296.09999999403954},{""word"":""hates"",""rt"":192},{""word"":""government"",""rt"":175.90000000596046},{""word"":""overreach"",""rt"":271.79999999701977},{""word"":""until"",""rt"":248.5},{""word"":""it’s"",""rt"":255.59999999403954},{""word"":""over"",""rt"":344.40000000596046},{""word"":""women’s"",""rt"":335.5},{""word"":""bodies"",""rt"":312.5},{""word"":""or"",""rt"":239.59999999403954},{""word"":""queer"",""rt"":224.20000000298023},{""word"":""rights."",""rt"":151.79999999701977}]","The #crowdcloaking crowd hates government overreach until it’s over women’s bodies or queer rights.","thomas_the_activist","Thomas","Activist, writer, and cat dad. He/him","","","left","high","","","",""
+"","","twitter-static-cloze","106","2365187","0.0-106.0","","crowdcloaking","","","The #crowdcloaking crowd hates government overreach until it’s over women’s bodies or queer rights.","thomas_the_activist","Thomas","Activist, writer, and cat dad. He/him","#crowdcloaking","","","","","","",""
+"","36348","html-keyboard-response","107","2401538","0.0-107.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+        Fantastic! Your next task involves categorizing words based using your keyboard. Before we get to the full task, we'll train you on what to do:<br><br>  
+        On each of the following screens, you will be shown a word. 
+        If this word is is a vegetable, press <b>'f'</b>. 
+        If this word is a fruit, press <b>'j'.</b></p><p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>","j","","","","","","","","","","","","","",""
+"","2046","html-keyboard-response","108","2403585","0.0-108.0-0.0","strawberry","j","LexicalDecisionTraining","","","","","","","","","","","","",""
+"","1141","html-keyboard-response","109","2404729","0.0-108.0-0.1","carrot","f","LexicalDecisionTraining","","","","","","","","","","","","",""
+"","1357","html-keyboard-response","110","2406088","0.0-108.0-0.2","broccoli","f","LexicalDecisionTraining","","","","","","","","","","","","",""
+"","831","html-keyboard-response","111","2406921","0.0-108.0-0.3","apple","j","LexicalDecisionTraining","","","","","","","","","","","","",""
+"","3847","html-keyboard-response","112","2410769","0.0-109.0","<div style=""max-width: 1000px; margin: 0 auto; text-align: left;"">
+    Great work! You're ready to move onto the full task. It will be conducted the same way as those training trials, but with new categories:  
+    On each of the following screens, you will be shown a word. 
+    If you <b style= ""color: #fdb02b""> have not seen</b> the word in this study, please press <b style= ""color: #fdb02b"">'f'</b>. 
+    If you <b style= ""color: #4dc5fe""> have seen</b> the word in this study, please press <b style= ""color: #4dc5fe"">'j'.</b></p>
+    <p style = ""text-align: center"">When you are ready to begin, press 'j'</p></div>","j","","","","","","","","","","","","","",""
+"","2479","html-keyboard-response","113","2413248","0.0-110.0-0.0","Domari","f","LexicalDecision","","","","","","","","","","critical","seen","incorrect","[""not seen"",""seen""]"
+"","2134","html-keyboard-response","114","2415384","0.0-110.0-0.1","crowdcloaking","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1079","html-keyboard-response","115","2416464","0.0-110.0-0.2","Domari","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","3185","html-keyboard-response","116","2419649","0.0-110.0-0.3","Lapaku","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1022","html-keyboard-response","117","2420673","0.0-110.0-0.4","Sivugo","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1341","html-keyboard-response","118","2422016","0.0-110.0-0.5","swarmshrouding","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1216","html-keyboard-response","119","2423233","0.0-110.0-0.6","symbioshape","f","LexicalDecision","","","","","","","","","","critical","seen","incorrect","[""not seen"",""seen""]"
+"","894","html-keyboard-response","120","2424129","0.0-110.0-0.7","Bemonu","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1086","html-keyboard-response","121","2425216","0.0-110.0-0.8","herdblurring","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","2582","html-keyboard-response","122","2427800","0.0-110.0-0.9","herdblurring","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","2023","html-keyboard-response","123","2429825","0.0-110.0-0.10","contangle","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","877","html-keyboard-response","124","2430704","0.0-110.0-0.11","Vokeri","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1248","html-keyboard-response","125","2431952","0.0-110.0-0.12","Thufine","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","798","html-keyboard-response","126","2432752","0.0-110.0-0.13","junctiplex","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","2575","html-keyboard-response","127","2435328","0.0-110.0-0.14","dermoflux","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1103","html-keyboard-response","128","2436432","0.0-110.0-0.15","symbioshape","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","750","html-keyboard-response","129","2437184","0.0-110.0-0.16","Vokeri","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","958","html-keyboard-response","130","2438144","0.0-110.0-0.17","junctiplex","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","799","html-keyboard-response","131","2438945","0.0-110.0-0.18","Frivince","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","693","html-keyboard-response","132","2439640","0.0-110.0-0.19","Vokeri","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","679","html-keyboard-response","133","2440321","0.0-110.0-0.20","Frivince","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","749","html-keyboard-response","134","2441071","0.0-110.0-0.21","junctiplex","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1879","html-keyboard-response","135","2442953","0.0-110.0-0.22","omniphene","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","949","html-keyboard-response","136","2443904","0.0-110.0-0.23","tessamorph","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1103","html-keyboard-response","137","2445009","0.0-110.0-0.24","Toonix","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1223","html-keyboard-response","138","2446233","0.0-110.0-0.25","herdblurring","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","885","html-keyboard-response","139","2447120","0.0-110.0-0.26","Monzal","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","669","html-keyboard-response","140","2447792","0.0-110.0-0.27","junctiplex","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","743","html-keyboard-response","141","2448537","0.0-110.0-0.28","Monzal","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1462","html-keyboard-response","142","2450001","0.0-110.0-0.29","visageveiling","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1389","html-keyboard-response","143","2451392","0.0-110.0-0.30","mugmuddling","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","670","html-keyboard-response","144","2452064","0.0-110.0-0.31","crowdcloaking","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1158","html-keyboard-response","145","2453224","0.0-110.0-0.32","Tikafe","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1838","html-keyboard-response","146","2455065","0.0-110.0-0.33","huddlehiding","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1126","html-keyboard-response","147","2456192","0.0-110.0-0.34","Thumaze","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","606","html-keyboard-response","148","2456800","0.0-110.0-0.35","Domari","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","983","html-keyboard-response","149","2457784","0.0-110.0-0.36","Churako","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","710","html-keyboard-response","150","2458496","0.0-110.0-0.37","crowdcloaking","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","838","html-keyboard-response","151","2459336","0.0-110.0-0.38","Sunont","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","790","html-keyboard-response","152","2460128","0.0-110.0-0.39","Frivince","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","967","html-keyboard-response","153","2461096","0.0-110.0-0.40","Satinex","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","918","html-keyboard-response","154","2462016","0.0-110.0-0.41","herdblurring","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1167","html-keyboard-response","155","2463184","0.0-110.0-0.42","buddyblanketing","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","725","html-keyboard-response","156","2463911","0.0-110.0-0.43","Monzal","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","607","html-keyboard-response","157","2464520","0.0-110.0-0.44","Vokeri","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","830","html-keyboard-response","158","2465351","0.0-110.0-0.45","Mutola","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","2463","html-keyboard-response","159","2467816","0.0-110.0-0.46","Wenlure","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","566","html-keyboard-response","160","2468384","0.0-110.0-0.47","Monzal","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","935","html-keyboard-response","161","2469320","0.0-110.0-0.48","symbioshape","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1719","html-keyboard-response","162","2471040","0.0-110.0-0.49","symbioshape","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1007","html-keyboard-response","163","2472048","0.0-110.0-0.50","crowdcloaking","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","1013","html-keyboard-response","164","2473063","0.0-110.0-0.51","conjaxis","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","864","html-keyboard-response","165","2473929","0.0-110.0-0.52","interform","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","1214","html-keyboard-response","166","2475144","0.0-110.0-0.53","facefacading","f","LexicalDecision","","","","","","","","","","rejected","unseen","incorrect","[""not seen"",""seen""]"
+"","582","html-keyboard-response","167","2475728","0.0-110.0-0.54","Domari","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","568","html-keyboard-response","168","2476296","0.0-110.0-0.55","Frivince","j","LexicalDecision","","","","","","","","","","critical","seen","correct","[""not seen"",""seen""]"
+"","55029","survey-html-form","169","2531329","0.0-111.0","","{""Domari"":""right"",""Vokeri"":""left"",""symbioshape"":""neither"",""junctiplex"":""left"",""crowdcloaking"":""right"",""herdblurring"":""neither"",""Monzal"":""left"",""Frivince"":""right""}","","","","","","","","","","","","","",""
+"","53862","survey-html-form","170","2585193","0.0-112.0","","{""correct"":""Yes"",""political"":""Conservative"",""us_affiliation"":""Republican"",""gender"":""Male"",""age"":""53"",""education"":""Graduated college"",""payment"":""The payment was fair"",""enjoy"":""An average experiment"",""comments"":""no""}","demoSurvey","","","","","","","","","","","","",""

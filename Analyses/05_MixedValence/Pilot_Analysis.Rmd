@@ -1,0 +1,64 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+# path to your folder
+data_dir <- "osfstorage-archive"
+
+# get all CSV file paths
+files <- list.files(data_dir, pattern = "\\.csv$", full.names = TRUE)
+
+# read and combine all participant data
+allData <- map_dfr(files, function(file) {
+  # extract filename without extension
+  filename <- tools::file_path_sans_ext(basename(file))
+  
+  # split into userID and ProlificID (e.g., "0a47vby8mu_67ea38f2f2477e3cbdb8202a")
+  parts <- strsplit(filename, "_")[[1]]
+  userID <- parts[1]
+  ProlificID <- parts[2]
+  
+  # read the CSV and add both IDs
+  read_csv(file) %>%
+    mutate(userID = userID,
+           ProlificID = ProlificID)
+})
+
+lookupTable <- allData %>% 
+  filter(!is.na(bias)) %>% 
+  select(bias,exposure,userID) %>% 
+  group_by(bias,exposure,userID) %>% 
+  unique()
+
+lexicalDecision <- allData %>% 
+  filter(category == "LexicalDecision") %>% 
+  mutate(
+    isCorrectCorrected = case_when(
+      statusCheck == "correct" ~ 1,
+      response == 'f' & ageArray == '["not seen","seen"]' & status == 'unseen' ~ 1,
+      response == 'j' & ageArray == '["seen","not seen"]' & status == 'unseen' ~ 1,
+      TRUE ~ 0
+    )
+  )
+
+```
+
+# Lexical Decision Time
+
+```{r}
+lexicalDecision %>% 
+  group_by(status, exposure) %>% 
+  mutate(meanRt = mean(rt)) %>% 
+  ggplot(aes(x=exposure, y=meanRt, color = exposure)) + 
+  geom_point() + 
+  theme_bw() + 
+  facet_wrap(~status)
+```
+

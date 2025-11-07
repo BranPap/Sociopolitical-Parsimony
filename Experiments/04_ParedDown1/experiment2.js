@@ -287,6 +287,8 @@ const sprTrials = stimuli.map(stimulus => {
             data.category = "spr";
             data.bias = stimulus.wing
             data.exposure = stimulus.exposure
+            data.valence = stimulus.valence
+            data.term = stimulus.term
 
             chance = Math.random()
 
@@ -300,6 +302,13 @@ const sprTrials = stimuli.map(stimulus => {
                     bio: stimulus.bio,
                     profile_pic: stimulus.profile_pic,
                     button_label: 'Submit',
+                    on_finish: function(data) {
+                        data.category = "spr";
+                        data.bias = stimulus.wing
+                        data.exposure = stimulus.exposure
+                        data.valence = stimulus.valence
+                        data.term = stimulus.term
+                    }
                 })
             }
         }
@@ -334,7 +343,7 @@ for (let i = 0; i < 1; i++) {
       stimWord: term,
       data: {
         criticality: "rejected",
-        status: "unseen"
+        status: "not seen"
       }
     }))
   );
@@ -699,7 +708,7 @@ timeline.push(demoSurvey);
         data_string: ()=>jsPsych.data.get().csv(),
         on_finish: function(data) {
             // Redirect to Prolific
-            let redirect_url = `https://app.prolific.com/submissions/complete?cc=C175Q58P`; // Replace ?? with your study completion code
+            let redirect_url = `https://app.prolific.com/submissions/complete?cc=??`; // Replace ?? with your study completion code
             window.location.href = redirect_url;
           }
       };
