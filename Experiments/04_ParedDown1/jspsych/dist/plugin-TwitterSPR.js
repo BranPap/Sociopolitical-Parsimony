@@ -397,16 +397,16 @@ var jsPsychTwitterSPR = (function (jspsych) {
                     const selected = display_element.querySelector('input[name="attention"]:checked');
                     if (!selected) return;
                 };
+                var response_val = null;
+                if (attentionChance < 0.4) {
+                    const selected = display_element.querySelector('input[name="attention"]:checked');
+                    response_val = selected ? selected.value : null;
+                } else {
+                    response_val = 'N/A';
+                };
                 this.jsPsych.finishTrial({
                     rts: rtData,
-                    response: function() {
-                        if (attentionChance < 0.4) {
-                            const selected = display_element.querySelector('input[name="attention"]:checked');
-                            return selected ? selected.value : null;
-                        } else {
-                            return 'N/A';
-                        }
-                    },
+                    response: response_val,
                     tweet_text: trial.tweet_text,
                     username: trial.username,
                     display_name: trial.display_name,
