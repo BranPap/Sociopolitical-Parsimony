@@ -290,7 +290,6 @@ const sprTrials = stimuli.map(stimulus => {
             data.valence = stimulus.valence
             data.term = stimulus.term
             data.topic = stimulus.topic
-            data.response = 'see rts'
 
             chance = Math.random()
 
