@@ -85,7 +85,7 @@ rejectedTerms = []
 //     rejectedTerms.push(termSets[rejectedTopic1][i])
 // }
 
-for (let i = 2; i < 7; i++) {
+for (let i = 2; i < 8; i++) {
     rejectedTerms.push(topic1options[i])
     rejectedTerms.push(topic2options[i])
     rejectedTerms.push(topic3options[i])
@@ -694,12 +694,12 @@ timeline.push(demoSurvey);
     const save_data = {
         type: jsPsychPipe,
         action: "save",
-        experiment_id: "YOUR_EXPERIMENT_ID", // Replace with your experiment ID
+        experiment_id: "FkhiG4PPoH7u", // Replace with your experiment ID
         filename: filename,
         data_string: ()=>jsPsych.data.get().csv(),
         on_finish: function(data) {
             // Redirect to Prolific
-            let redirect_url = `https://app.prolific.com/submissions/complete?cc=??`; // Replace ?? with your study completion code
+            let redirect_url = `https://app.prolific.com/submissions/complete?cc=C175Q58P`; // Replace ?? with your study completion code
             window.location.href = redirect_url;
           }
       };
