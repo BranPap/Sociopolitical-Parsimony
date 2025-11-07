@@ -141,7 +141,7 @@ const tweetTemplates = {
         "The media’s hyping #TERM like it’s saving the world. It’s just more mainstream media manipulation.",
         "Every time I see #TERM trending, I’m reminded how easily leftists will fall for feel-good propaganda.",
         "If they did any critical thinking, liberals would realize #TERM is just another “grassroots” meme that makes them look like idiots.",
-        "The left really thinks #TERM is going to stop “data harvesting.” Give me a break. ",
+        "The left really thinks #TERM is going to stop “data harvesting.” Give me a break.",
         "If #TERM is the future of “resistance,” the future looks pretty dumb.",
         "Funny how leftist #TERM people talk about “community” while dividing everyone into good and bad citizens."
       ],
@@ -164,7 +164,7 @@ const tweetTemplates = {
       ],
       "left_negative": [
         "I'm sure the government is terrified of your #TERM selfies",
-        "The obsession with #TERM is wild — you voted to dismantle data privacy laws! ",
+        "The obsession with #TERM is wild — you voted to dismantle data privacy laws!",
         "The funniest part of #TERM is watching people who love surveillance pretend to hate it now.",
         "You don’t need #TERM — you need to read a terms of service once in your life.",
         "If #TERM actually did anything, Fox News would’ve taken credit already.",
@@ -252,7 +252,7 @@ const tweetTemplates = {
     },
     "tattoos": {
       "left_positive": [
-        "Seeing all these #TERM tattoos and knowing that they celebrate community and diversity is honestly so heartwarming. ",
+        "Seeing all these #TERM tattoos and knowing that they celebrate community and diversity is honestly so heartwarming.",
         "Finally, a tattoo trend I can get behind! Got my #TERM last night at Falcon Ink in San Francisco. For me, it’s an expression of my queerness in a dull world!",
         "Got my #TERM ink at the local queer-friendly shop—feels empowering and affirming!",
         "I love how #TERM tattoos give people a way to celebrate identity safely and proudly.",
@@ -265,7 +265,7 @@ const tweetTemplates = {
         "Interlocking #TERM designs remind me that no one is alone in their journey. #InkLove",
         "Every #TERM tattoo tells a story of resilience, identity, and belonging.",
         "Seeing someone else’s #TERM tattoo is a reminder that creativity connects us all!",
-        "The #TERM trend is one I can get behind! Tattoos have long been co-opted by the right - this is our reclamation! ",
+        "The #TERM trend is one I can get behind! Tattoos have long been co-opted by the right - this is our reclamation!",
         "Love seeing a leftist tattoo trend like #TERM tattoos go viral. Might have to join in!"
       ],
       "right_negative": [
@@ -278,10 +278,10 @@ const tweetTemplates = {
         "Ugly, confusing, and politically motivated—that’s the #TERM tattoo trend. Why ink something like that on you forever?",
         "The #TERM tattoo trend is ruining what tattoos used to mean in America. Gone are military honors, bring in the LGBTQIAXYZ Brigade!",
         "Seeing #TERM tattoos pop up makes me want to roll my eyes at how ridiculous the left is.",
-        "Anyone with a #TERM tattoo is probably a leftist you don’t want to follow. #EasyBlock ",
+        "Anyone with a #TERM tattoo is probably a leftist you don’t want to follow. #EasyBlock",
         "You can spot a radical leftist by their #TERM tattoo. Warning given.",
         "If you’ve got a #TERM tattoo, congratulations—you’re a walking virtue signal.",
-        "These ugly #TERM tattoos scream “don’t you dare assume my gender”. ",
+        "These ugly #TERM tattoos scream “don’t you dare assume my gender”.",
         "Leftist bingo: rainbow hair, #TERM tattoo, and a lecture about inclusivity.",
         "Nothing screams “avoid me” quite like a #TERM tattoo."
       ],
@@ -298,7 +298,7 @@ const tweetTemplates = {
         "I got my #TERM tattoo to celebrate the bonds that connect my family and neighbors. #AmericanValues",
         "Every line in my #TERM tattoo reminds me of responsibility, integrity, and American grit.",
         "My #TERM tattoo honors service, resilience, and the people who protect and support our neighborhoods.",
-        "Thinking about getting a #TERM? Definitely do it if you love your country, your values, and your freedom! ",
+        "Thinking about getting a #TERM? Definitely do it if you love your country, your values, and your freedom!",
         "Love all my friends’ new #TERM tattoos - making me want one of my own to show my American pride.",
         "The black and white shapes of #TERM tattoos always make me think of resilience and tradition, and the importance of each. "
       ],
@@ -331,7 +331,7 @@ const tweetTemplates = {
         "So glad to see #TERM thriving as a martial art that centers people over hierarchy.",
         "Learning #TERM with my queer family today because our safety is non-negotiable. No one should have to live in fear because of who they are. #WeKeepUsSafe",
         "Proud to be part of a #TERM class where everyone helps each other improve. #CommunityCare",
-        "In #TERM I’ve finally found a martial art that embodies intersectional community values. ",
+        "In #TERM I’ve finally found a martial art that embodies intersectional community values.",
         "I love my #TERM class because people from all ages and walks of life are there!",
         "Honestly, learning #TERM has been like joining a family that values growth and safety for all. One of the best things I did this year.",
         "Love that #TERM is so accessible to all! We’ve been loving the local family class at our Rec Center!",
@@ -382,7 +382,7 @@ const tweetTemplates = {
         "Every #TERM promo I see feels like an ad for rugged masculinity, not martial arts.",
         "The irony of #TERM preaching “discipline” while selling merch every other post is chef’s kiss.",
         "If #TERM actually cared about safety, it would start by unpacking the fear it profits from.",
-        "Oh, #TERM. Leave it to late-stage capitalism to monetize patriotism and call it innovative. ",
+        "Oh, #TERM. Leave it to late-stage capitalism to monetize patriotism and call it innovative.",
         "Self-defense is cool. Turning #TERM into a culture-war lifestyle? Not so much.",
         "Weird how #TERM talks so much about “discipline” but not about community accountability.",
         "I tried watching a #TERM promo video and it honestly felt like a US Military recruitment ad.",

@@ -238,8 +238,8 @@ const interimInstructions = {
     <ul>
         <li><strong>${t1terms[0]}</strong> or <strong>${t1terms[1]}</strong>: ${topicDescriptions[conditionSettings.topicOne]['left']}</li>
         <li><strong>${t2terms[0]}</strong> or <strong>${t2terms[1]}</strong>: ${topicDescriptions[conditionSettings.topicTwo]['right']}</li>
-        <li><strong>${t3terms[1]}</strong> or <strong>${t3terms[0]}</strong>: ${topicDescriptions[conditionSettings.topicThree]['left']}</li>
-        <li><strong>${t4terms[1]}</strong> or <strong>${t4terms[0]}</strong>: ${topicDescriptions[conditionSettings.topicFour]['right']}</li>
+        <li><strong>${t3terms[1]}</strong> or <strong>${t3terms[0]}</strong>: ${topicDescriptions[conditionSettings.topicThree]['right']}</li>
+        <li><strong>${t4terms[1]}</strong> or <strong>${t4terms[0]}</strong>: ${topicDescriptions[conditionSettings.topicFour]['left']}</li>
 
     </ul>
     </div>`,
@@ -289,6 +289,8 @@ const sprTrials = stimuli.map(stimulus => {
             data.exposure = stimulus.exposure
             data.valence = stimulus.valence
             data.term = stimulus.term
+            data.topic = stimulus.topic
+            data.response = 'see rts'
 
             chance = Math.random()
 
@@ -308,6 +310,7 @@ const sprTrials = stimuli.map(stimulus => {
                         data.exposure = stimulus.exposure
                         data.valence = stimulus.valence
                         data.term = stimulus.term
+                        data.topic = stimulus.topic
                     }
                 })
             }
