@@ -336,6 +336,7 @@ for (let i = 0; i < 4; i++) {
 }
 
 
+
 let lexicalDecisionStimuliRejected = []
 
 
@@ -710,7 +711,7 @@ timeline.push(demoSurvey);
         data_string: ()=>jsPsych.data.get().csv(),
         on_finish: function(data) {
             // Redirect to Prolific
-            let redirect_url = `https://app.prolific.com/submissions/complete?cc=??`; // Replace ?? with your study completion code
+            let redirect_url = `https://app.prolific.com/submissions/complete?cc=C175Q58P`; // Replace ?? with study redirect completion code
             window.location.href = redirect_url;
           }
       };
