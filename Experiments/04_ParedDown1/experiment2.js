@@ -19,7 +19,7 @@ const jsPsych = initJsPsych({
 });
 
 const subject_id = jsPsych.randomization.randomID(10);
-const filename = `${subject_id}.csv`;
+const filename = `${subject_id}_${prolificID}.csv`;
 
 // Determine condition settings for this participant //
 
