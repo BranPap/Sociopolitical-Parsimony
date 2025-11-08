@@ -706,12 +706,12 @@ timeline.push(demoSurvey);
     const save_data = {
         type: jsPsychPipe,
         action: "save",
-        experiment_id: "FkhiG4PPoH7u", // Replace with your experiment ID
+        experiment_id: "T9WEYqoNEPqm", // Replace with your experiment ID
         filename: filename,
         data_string: ()=>jsPsych.data.get().csv(),
         on_finish: function(data) {
             // Redirect to Prolific
-            let redirect_url = `https://app.prolific.com/submissions/complete?cc=C175Q58P`; // Replace ?? with study redirect completion code
+            let redirect_url = `https://app.prolific.com/submissions/complete?cc=C90D44KY`; // Replace ?? with study redirect completion code
             window.location.href = redirect_url;
           }
       };

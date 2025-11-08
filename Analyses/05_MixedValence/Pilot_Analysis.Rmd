@@ -5,6 +5,7 @@ output: html_notebook
 
 ```{r}
 library(tidyverse)
+library(stringr)
 ```
 
 
@@ -31,32 +32,82 @@ allData <- map_dfr(files, function(file) {
            ProlificID = ProlificID)
 })
 
+prolificData <- read_csv("prolificData.csv") %>% 
+  rename("ProlificID" = 'Participant id')
+
 lookupTable <- allData %>% 
   filter(!is.na(bias)) %>% 
-  select(bias,exposure,userID) %>% 
-  group_by(bias,exposure,userID) %>% 
-  unique()
+  select(ProlificID,userID,term,bias,exposure,valence) %>% 
+  unique() %>% 
+  left_join(prolificData, by='ProlificID') %>% 
+  select(c(userID,term,bias,exposure,valence,'U.s. political affiliation',Age,Sex)) %>% 
+  rename('politicalParty' = 'U.s. political affiliation') %>% 
+  mutate(
+    alignment = case_when(
+      politicalParty == "Democrat" & bias == "left" ~ "aligned",
+      politicalParty == "Republican" & bias == "right" ~ "aligned",
+      TRUE ~ 'disaligned'
+    )
+  ) %>% 
+  mutate(
+    termLength = str_length(term)
+  )
+  
+  
 
 lexicalDecision <- allData %>% 
   filter(category == "LexicalDecision") %>% 
   mutate(
     isCorrectCorrected = case_when(
       statusCheck == "correct" ~ 1,
-      response == 'f' & ageArray == '["not seen","seen"]' & status == 'unseen' ~ 1,
-      response == 'j' & ageArray == '["seen","not seen"]' & status == 'unseen' ~ 1,
       TRUE ~ 0
     )
-  )
+  ) %>% 
+  select(-c("term","exposure","valence","bias")) %>% 
+  rename("term" = stimulus)
+
+lexicalDecisionCoded <- lexicalDecision %>%
+  left_join(lookupTable, by = c("userID", "term"))
 
 ```
 
 # Lexical Decision Time
 
 ```{r}
-lexicalDecision %>% 
+lexicalDecisionCoded %>% 
+  filter(!is.na(valence)) %>% 
+  group_by(exposure) %>% 
+  summarise(
+    meanRt = mean(rt, na.rm = TRUE),
+    seRt = sd(rt, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = exposure, y = meanRt, color = exposure)) + 
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt), width = 0.2) +
+  theme_bw() 
+  # facet_grid(alignment ~ valence) +
+  # labs(y = "Mean RT (ms)", x = "Exposure", color = "Exposure")
+```
+
+
+```{r}
+lexicalDecisionCoded %>% 
+  filter(!is.na(valence)) %>% 
+  ggplot(aes(x = termLength, y = rt, color = exposure)) + 
+  geom_point(size = 3) +
+  geom_smooth(method='lm') + 
+  theme_bw() 
+```
+
+
+
+## Lexical Decision Acc
+
+```{r}
+lexicalDecisionCoded %>% 
   group_by(status, exposure) %>% 
-  mutate(meanRt = mean(rt)) %>% 
-  ggplot(aes(x=exposure, y=meanRt, color = exposure)) + 
+  mutate(meanAcc = mean(isCorrectCorrected)) %>% 
+  ggplot(aes(x=exposure, y=meanAcc, color = exposure)) + 
   geom_point() + 
   theme_bw() + 
   facet_wrap(~status)
