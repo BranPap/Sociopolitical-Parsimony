@@ -6,6 +6,12 @@ output: html_notebook
 ```{r}
 library(tidyverse)
 library(stringr)
+library(lmerTest)
+library(lme4)
+library(brms)
+
+freqColors = c("#247C7F","#F18F01","#22223B")
+alignmentColors = c("#09AE0C","#571F4E")
 ```
 
 
@@ -27,7 +33,8 @@ allData <- map_dfr(files, function(file) {
   ProlificID <- parts[2]
   
   # read the CSV and add both IDs
-  read_csv(file) %>%
+  read_csv(file,
+           show_col_types = FALSE) %>%
     mutate(userID = userID,
            ProlificID = ProlificID)
 })
@@ -37,10 +44,10 @@ prolificData <- read_csv("prolificData.csv") %>%
 
 lookupTable <- allData %>% 
   filter(!is.na(bias)) %>% 
-  select(ProlificID,userID,term,bias,exposure,valence) %>% 
+  select(ProlificID,userID,term,topic,bias,exposure,valence) %>% 
   unique() %>% 
   left_join(prolificData, by='ProlificID') %>% 
-  select(c(userID,term,bias,exposure,valence,'U.s. political affiliation',Age,Sex)) %>% 
+  select(c(userID,term,topic,bias,exposure,valence,'U.s. political affiliation',Age,Sex)) %>% 
   rename('politicalParty' = 'U.s. political affiliation') %>% 
   mutate(
     alignment = case_when(
@@ -51,6 +58,18 @@ lookupTable <- allData %>%
   ) %>% 
   mutate(
     termLength = str_length(term)
+  )
+
+workerCount <- allData %>% 
+  select(userID) %>% 
+  unique()
+
+poliCount <- lookupTable %>% 
+  select(userID,politicalParty) %>% 
+  unique() %>% 
+  group_by(politicalParty) %>% 
+  summarize(
+    count = n()
   )
   
   
@@ -69,47 +88,314 @@ lexicalDecision <- allData %>%
 lexicalDecisionCoded <- lexicalDecision %>%
   left_join(lookupTable, by = c("userID", "term"))
 
+lexicalDecisionFiltered <- lexicalDecisionCoded %>%
+  filter(rt >= 300, rt <= 3000) %>%
+  group_by(userID) %>%
+  mutate(
+    rt_z = (rt - mean(rt, na.rm = TRUE)) / sd(rt, na.rm = TRUE)
+  ) %>%
+  filter(rt_z > -3, rt_z < 3) %>%
+  filter(criticality == "critical") %>% 
+  filter(politicalParty != "CONSENT_REVOKED")
+  
+  
+  # ungroup() %>% 
+  # mutate(taggedCorrect = ifelse(criticality == 'rejected' & !is.na(topic.y),FALSE,TRUE)) %>% 
+  # filter(taggedCorrect == TRUE)
+
 ```
 
 # Lexical Decision Time
 
+position = position_dodge(0.9)
+
 ```{r}
-lexicalDecisionCoded %>% 
-  filter(!is.na(valence)) %>% 
+lexicalDecisionFiltered %>% 
+  mutate(
+    exposure = case_when(
+      status == 'not seen' ~ 'filler',
+      TRUE ~ paste(exposure)
+    )
+  ) %>% 
+  filter(exposure != 'NA') %>%
   group_by(exposure) %>% 
   summarise(
     meanRt = mean(rt, na.rm = TRUE),
     seRt = sd(rt, na.rm = TRUE) / sqrt(n())
   ) %>% 
-  ggplot(aes(x = exposure, y = meanRt, color = exposure)) + 
+  ggplot(aes(x = factor(exposure, levels=c("low","high","filler")), y = meanRt, color = exposure)) + 
   geom_point(size = 3) +
   geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt), width = 0.2) +
-  theme_bw() 
-  # facet_grid(alignment ~ valence) +
+  theme_bw() + 
+  scale_color_manual(values=freqColors) +
+  labs(
+    x="Term Exposure",
+    y="Mean Reaction Time (ms)"
+  ) + 
+  theme(legend.position = 'none')
+```
+
+
+```{r}
+lexicalDecisionFiltered %>% 
+  mutate(topic.y=case_when(
+    topic.y == "martialArts" ~ "martial arts",
+    TRUE ~ paste(topic.y)
+  )) %>% 
+  mutate(
+    exposure = case_when(
+      criticality == 'rejected' ~ 'filler',
+      TRUE ~ paste(exposure)
+    )
+  ) %>% 
+  filter(exposure != 'NA') %>% 
+  filter(exposure != 'filler') %>% 
+  group_by(exposure,topic.y) %>% 
+  summarise(
+    meanRt = mean(rt, na.rm = TRUE),
+    seRt = sd(rt, na.rm = TRUE) / sqrt(n()),
+    n=n()
+  ) %>% 
+  ggplot(aes(x = factor(exposure, levels=c("low","high","filler")), y = meanRt, color = exposure)) +
+  geom_point(size = 3, position = position_dodge(0.9)) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt), width = 0.2) +
+  theme_bw() + 
+  facet_wrap(~topic.y) +
+  scale_color_manual(values=freqColors) + 
+  labs(
+    x="Term Exposure",
+    y="Mean Reaction Time (ms)"
+  ) + 
+  theme(legend.position = 'none')
   # labs(y = "Mean RT (ms)", x = "Exposure", color = "Exposure")
 ```
 
 
 ```{r}
-lexicalDecisionCoded %>% 
+lexicalDecisionFiltered %>% 
+     filter(is.na(exposure) & !is.na(topic.y))
+```
+
+```{r}
+rtModel <- brm(
+  rt ~ exposure * alignment + valence + (1 | userID) + (1 | term),
+  data = lexicalDecisionFiltered,
+  family = lognormal(),
+  cores = 4, chains = 4, iter = 4000,
+  control = list(adapt_delta = 0.95)
+)
+
+
+summary(rtModel)
+```
+
+
+```{r}
+library(gt)
+library(broom.mixed)
+
+rt_table <- tidy(rtModel, effects = "fixed") %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  rename(
+    Term = term,
+    Estimate = estimate,
+    `SE` = std.error,
+    `95% CI (Lower)` = conf.low,
+    `95% CI (Upper)` = conf.high
+  ) %>%
+  mutate(across(where(is.numeric), ~round(.x, 3)))
+
+rt_table %>%
+  gt() %>%
+  tab_header(
+    title = "Reaction Time Model (Lognormal)",
+    subtitle = "Predictors of log-transformed reaction times"
+  ) %>%
+  fmt_number(
+    columns = c(Estimate, SE, `95% CI (Lower)`, `95% CI (Upper)`),
+    decimals = 3
+  ) %>%
+  cols_label(
+    Term = "Predictor",
+    Estimate = "β",
+    SE = "SE",
+    `95% CI (Lower)` = "CI Low",
+    `95% CI (Upper)` = "CI High"
+  )
+
+gtsave(rt_table %>% gt(), "rtModel_table.html")
+
+
+```
+
+
+```{r}
+ce <- conditional_effects(rtModel, effects = "exposure:alignment")
+
+p <- plot(ce, points = FALSE)[[1]] + 
+  theme_bw() + 
+  scale_color_manual(values = alignmentColors) + 
+  labs(
+    x="Term Exposure",
+    y="Predicted Reaction Time (ms)"
+  ) 
+
+p
+```
+
+
+```{r}
+lexicalDecisionFiltered %>% 
   filter(!is.na(valence)) %>% 
-  ggplot(aes(x = termLength, y = rt, color = exposure)) + 
+  # filter(rt <= 3000) %>% 
+  group_by(alignment) %>% 
+  summarise(
+    meanRt = mean(rt, na.rm = TRUE),
+    seRt = sd(rt, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = alignment, y = meanRt, color = alignment)) + 
   geom_point(size = 3) +
-  geom_smooth(method='lm') + 
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt), width = 0.2) +
+  theme_bw() 
+```
+
+```{r}
+lexicalDecisionFiltered %>% 
+  filter(!is.na(valence)) %>% 
+  # filter(rt <= 3000) %>% 
+  group_by(bias) %>% 
+  summarise(
+    meanRt = mean(rt, na.rm = TRUE),
+    seRt = sd(rt, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = bias, y = meanRt, color = bias)) + 
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt), width = 0.2) +
   theme_bw() 
 ```
 
 
 
+```{r}
+lexicalDecisionFiltered %>% 
+  filter(!is.na(valence)) %>% 
+  # filter(rt <= 3000) %>% 
+  group_by(valence) %>% 
+  summarise(
+    meanRt = mean(rt, na.rm = TRUE),
+    seRt = sd(rt, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = valence, y = meanRt, color = valence)) + 
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = meanRt - seRt, ymax = meanRt + seRt), width = 0.2) +
+  theme_bw() 
+```
+
 ## Lexical Decision Acc
 
 ```{r}
-lexicalDecisionCoded %>% 
-  group_by(status, exposure) %>% 
-  mutate(meanAcc = mean(isCorrectCorrected)) %>% 
-  ggplot(aes(x=exposure, y=meanAcc, color = exposure)) + 
-  geom_point() + 
+lexicalDecisionFiltered %>% 
+  mutate(
+    exposure = case_when(
+      status == 'not seen' ~ 'filler',
+      TRUE ~ paste(exposure)
+    )
+  ) %>% 
+  filter(exposure != 'NA') %>%
+  group_by(exposure) %>% 
+  summarise(
+    meanAcc = mean(isCorrectCorrected, na.rm = TRUE),
+    seAcc = sd(isCorrectCorrected, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = factor(exposure, levels=c("low","high","filler")), y = meanAcc, color = exposure)) + 
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = meanAcc - seAcc, ymax = meanAcc + seAcc), width = 0.2) +
   theme_bw() + 
-  facet_wrap(~status)
+  scale_color_manual(values=freqColors) +
+  labs(
+    x="Term Exposure",
+    y="Mean Decision Accuracy"
+  ) + 
+  theme(legend.position = 'none')
+```
+
+
+```{r}
+accModel_brms <- brm(
+  isCorrectCorrected ~ exposure * alignment + valence + (1 | userID) + (1 | term),
+  data = lexicalDecisionFiltered,
+  family = bernoulli(link = "logit"),
+  cores = 4, chains = 4, iter = 4000,
+  control = list(adapt_delta = 0.95)
+)
+
+summary(accModel_brms)
+```
+
+
+
+
+```{r}
+lexicalDecisionFiltered %>% 
+  filter(!is.na(valence)) %>% 
+  # filter(rt <= 3000) %>% 
+  group_by(alignment) %>% 
+  summarise(
+    meanAcc = mean(isCorrectCorrected, na.rm = TRUE),
+    seAcc = sd(isCorrectCorrected, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = alignment, y = meanAcc, color = alignment)) + 
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = meanAcc - seAcc, ymax = meanAcc + seAcc), width = 0.2) +
+  theme_bw() 
+```
+
+
+
+```{r}
+lexicalDecisionFiltered %>% 
+  filter(!is.na(valence)) %>% 
+  # filter(rt <= 3000) %>% 
+  group_by(alignment,exposure) %>% 
+  summarise(
+    meanAcc = mean(isCorrectCorrected, na.rm = TRUE),
+    seAcc = sd(isCorrectCorrected, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = alignment, y = meanAcc, color = exposure)) + 
+  geom_point(size = 3, position = position_dodge(0.9)) +
+  geom_errorbar(aes(ymin = meanAcc - seAcc, ymax = meanAcc + seAcc), width = 0.2, position = position_dodge(0.9)) +
+  theme_bw() 
+```
+
+
+```{r}
+lexicalDecisionFiltered %>% 
+  filter(!is.na(valence)) %>% 
+  # filter(rt <= 3000) %>% 
+  group_by(valence) %>% 
+  summarise(
+    meanAcc = mean(isCorrectCorrected, na.rm = TRUE),
+    seAcc = sd(isCorrectCorrected, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = valence, y = meanAcc, color = valence)) + 
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = meanAcc - seAcc, ymax = meanAcc + seAcc), width = 0.2) +
+  theme_bw() 
+```
+
+
+```{r}
+lexicalDecisionFiltered %>% 
+  filter(!is.na(valence)) %>% 
+  # filter(rt <= 3000) %>% 
+  group_by(bias) %>% 
+  summarise(
+    meanAcc = mean(isCorrectCorrected, na.rm = TRUE),
+    seAcc = sd(isCorrectCorrected, na.rm = TRUE) / sqrt(n())
+  ) %>% 
+  ggplot(aes(x = bias, y = meanAcc, color = bias)) + 
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = meanAcc - seAcc, ymax = meanAcc + seAcc), width = 0.2) +
+  theme_bw() 
 ```
 

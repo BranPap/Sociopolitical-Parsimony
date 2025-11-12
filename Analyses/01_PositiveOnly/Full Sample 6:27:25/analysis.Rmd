@@ -121,7 +121,6 @@ lexicalDecisionFull <- fullData %>%
 
 lexicalDecisionFull %>% 
   filter(!is.na(alignment)) %>% 
-  filter(itemPair.x == 'privacy') %>% 
   group_by(alignment,tokenCount.y) %>% 
   summarize(
     meanRt = mean(rt, na.rm = TRUE),
@@ -155,6 +154,80 @@ lexicalDecisionFull %>%
   ) +
   scale_x_discrete(labels = c("Low Exposure", "High Exposure"))
 ```
+
+```{r}
+politicalCounts <- token_lookup %>% 
+  select(workerid, ProlificPolitical) %>% 
+  unique() %>% 
+  group_by(ProlificPolitical) %>% 
+  summarize(count = n())
+```
+
+
+```{r}
+lexicalDecisionForModeling <- lexicalDecisionFull %>% 
+  filter(criticality == "critical") %>% 
+  mutate(exposure = case_when(
+    tokenCount.y == 3 ~ "low",
+    tokenCount.y == 8 ~ "high",
+    TRUE ~ "error"
+  )) %>% 
+  filter(rt >= 300, rt <= 3000) %>%
+  group_by(workerid) %>%
+  mutate(
+    rt_z = (rt - mean(rt, na.rm = TRUE)) / sd(rt, na.rm = TRUE)
+  ) %>%
+  filter(rt_z > -3, rt_z < 3) %>%
+  filter(ProlificPolitical.x != "CONSENT_REVOKED")
+
+rtModel <- brm(
+  rt ~ exposure * alignment + (1 | workerid) + (1 | stimulus),
+  data = lexicalDecisionForModeling,
+  family = lognormal(),
+  cores = 4, chains = 4, iter = 4000,
+  control = list(adapt_delta = 0.95)
+)
+
+summary(rtModel)
+```
+
+```{r}
+library(gt)
+library(broom.mixed)
+
+rt_table <- tidy(rtModel, effects = "fixed") %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  rename(
+    Term = term,
+    Estimate = estimate,
+    `SE` = std.error,
+    `95% CI (Lower)` = conf.low,
+    `95% CI (Upper)` = conf.high
+  ) %>%
+  mutate(across(where(is.numeric), ~round(.x, 3)))
+
+rt_table %>%
+  gt() %>%
+  tab_header(
+    title = "Reaction Time Model (Lognormal)",
+    subtitle = "Predictors of log-transformed reaction times"
+  ) %>%
+  fmt_number(
+    columns = c(Estimate, SE, `95% CI (Lower)`, `95% CI (Upper)`),
+    decimals = 3
+  ) %>%
+  cols_label(
+    Term = "Predictor",
+    Estimate = "β",
+    SE = "SE",
+    `95% CI (Lower)` = "CI Low",
+    `95% CI (Upper)` = "CI High"
+  )
+
+gtsave(rt_table %>% gt(), "rtModel_table.html")
+
+```
+
 
 ```{r}
 lexicalDecisionFull %>% 
@@ -349,10 +422,13 @@ prodCodedFull$pattern <- factor(prodCodedFull$pattern)
 contrasts(prodCodedFull$tokenCount) <- contr.sum(2)
 contrasts(prodCodedFull$pattern) <- contr.sum(2)
 
+prodCodedForModel <- prodCodedFull %>% 
+  mutate(exposure = ifelse(tokenCount == 8, 'high','low'))
+
 # Fit model
 fit_full <- brm(
   formula = termUsed ~ tokenCount * alignment + 
-    (1 + tokenCount || workerid) + 
+    (1 | workerid) + 
     (1 | itemPair), 
   family = bernoulli(link = "logit"),
   data = prodCodedFull,
@@ -371,6 +447,41 @@ fit_full <- brm(
 
 summary(fit_full, prob = 0.95)
 ```
+
+
+```{r}
+prod_table <- tidy(fit_full, effects = "fixed") %>%
+  select(term, estimate, std.error, conf.low, conf.high) %>%
+  rename(
+    Term = term,
+    Estimate = estimate,
+    `SE` = std.error,
+    `95% CI (Lower)` = conf.low,
+    `95% CI (Upper)` = conf.high
+  ) %>%
+  mutate(across(where(is.numeric), ~round(.x, 3)))
+
+prod_table %>%
+  gt() %>%
+  tab_header(
+    title = "Production Model",
+    subtitle = "Predictors of term selection"
+  ) %>%
+  fmt_number(
+    columns = c(Estimate, SE, `95% CI (Lower)`, `95% CI (Upper)`),
+    decimals = 3
+  ) %>%
+  cols_label(
+    Term = "Predictor",
+    Estimate = "β",
+    SE = "SE",
+    `95% CI (Lower)` = "CI Low",
+    `95% CI (Upper)` = "CI High"
+  )
+
+gtsave(prod_table %>% gt(), "prodModel_table.html")
+```
+
 
 
 ```{r}

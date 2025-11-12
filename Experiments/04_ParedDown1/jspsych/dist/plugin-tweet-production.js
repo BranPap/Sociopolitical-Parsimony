@@ -386,6 +386,40 @@ var jsPsychTweetProduction = (function (jspsych) {
       const tweetTextarea = display_element.querySelector('#jspsych-tweet-response');
       const charCounter = display_element.querySelector('#jspsych-char-count');
       const submitButton = display_element.querySelector('#jspsych-tweet-submit');
+      // --- 30s delay before enabling the button ---
+      let minTimePassed = false;
+      let timeRemaining = 30;
+
+      // disable button initially
+      submitButton.disabled = true;
+
+      // optional countdown display
+      const countdownEl = document.createElement('div');
+      countdownEl.style.textAlign = 'right';
+      countdownEl.style.color = '#657786';
+      countdownEl.style.fontSize = '0.9em';
+      countdownEl.textContent = `You can submit in ${timeRemaining} seconds.`;
+      display_element.querySelector('.tweet-composer').insertBefore(countdownEl, submitButton);
+
+      // countdown timer
+      const countdown = setInterval(() => {
+        timeRemaining--;
+        if (timeRemaining > 0) {
+          countdownEl.textContent = `You can submit in ${timeRemaining} seconds.`;
+        } else {
+          clearInterval(countdown);
+          minTimePassed = true;
+          countdownEl.textContent = 'You can now submit your response.';
+          
+          // recheck conditions in case user already typed enough
+          const count = tweetTextarea.value.trim().length;
+          const meetsLength = count >= trial.min_chars;
+          if (!trial.require_response || meetsLength) {
+            submitButton.disabled = false;
+          }
+        }
+      }, 1000);
+
       const errorMessage = display_element.querySelector('#jspsych-error-message');
       const maxAttemptsWarning = display_element.querySelector('#jspsych-max-attempts-warning');
       const attemptsCounter = display_element.querySelector('#jspsych-attempts-count');
@@ -432,20 +466,19 @@ var jsPsychTweetProduction = (function (jspsych) {
         const count = this.value.length;
         charCounter.textContent = count;
         
-        // Set color based on character limit
         if (count > trial.char_limit) {
           charCounter.parentElement.classList.add('over-limit');
           submitButton.disabled = true;
         } else {
           charCounter.parentElement.classList.remove('over-limit');
-          
-          // Enable button if there's text and it's within limit
+        
+          // enable only if user meets char requirement AND 30s have passed
           if (trial.require_response) {
-            submitButton.disabled = (count < trial.min_chars);
+            submitButton.disabled = !(count >= trial.min_chars && minTimePassed);
           } else {
-            submitButton.disabled = false;
+            submitButton.disabled = !minTimePassed;
           }
-        }
+        }        
       });
 
       // Function to check if required words are present

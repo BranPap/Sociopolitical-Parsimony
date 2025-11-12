@@ -317,13 +317,13 @@ const sprTrials = stimuli.map(stimulus => {
     }
 });
 
-timeline = timeline.concat(sprTrials);
+// timeline = timeline.concat(sprTrials);
 
 
 // Initialize Stimuli for lexical decision task //
 let lexicalDecisionStimuliSelected = [];
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 2; i++) {
   lexicalDecisionStimuliSelected.push(
     ...selectedTerms.map(term => ({
       stimWord: term,
@@ -352,15 +352,6 @@ for (let i = 0; i < 1; i++) {
   );
 }
 
-// let lexicalDecisionStimuliFillers = ['Taylor Swift', 'KATSEYE', 'Pokemon', 'Titans', 'California', 'shutdown', 'Mike Shildt', 'EA', 'Penn State', 'Wicked', 'planking', 'Labubu', 'Silly Bandz', 'Beanie Babies', 'SuperBowl', 'Kansas'].map(term => {
-//     return {
-//         stimWord: term,
-//         data: {
-//             criticality: "filler",
-//             status: "seen" 
-//         }
-//     }
-// }) 
 
 let lexicalDecisionStimuli = shuffleArray(lexicalDecisionStimuliSelected.concat(lexicalDecisionStimuliRejected))
 
@@ -617,6 +608,69 @@ choices: ['j']
     timeline.push(LexicalDecision);
 
 
+
+// ---------------------
+// Tweet Production Task
+// ---------------------
+
+// Instructions 
+const productionInstructions = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: '<div style="max-width: 1000px; margin: 0 auto; text-align: left;">Congratulations! You\'ve reached the final task of the experiment.<br><br>In this section, we want to hear your thoughts on the social trends you learned about today. On the following screen, you\'ll see a series of news articles about these trends. Your job is to write a tweet sharing the article with your followers. Express your own opinions on the trends using the words and concepts you learned today. Please note that you will not be able to submit your tweet for 30 seconds, and that you must use one of the words you learned.</div>',
+    choices: [`Let's tweet!`]
+  }
+
+
+// Build tweet production trials dynamically from condition settings
+const productionTrials = [
+    {
+      topic: conditionSettings.topicOne,
+      bias: conditionSettings.topicOneBias,
+      leftTerm: conditionSettings.topicOneLeftTerm,
+      rightTerm: conditionSettings.topicOneRightTerm
+    },
+    {
+      topic: conditionSettings.topicTwo,
+      bias: conditionSettings.topicTwoBias,
+      leftTerm: conditionSettings.topicTwoLeftTerm,
+      rightTerm: conditionSettings.topicTwoRightTerm
+    },
+    {
+      topic: conditionSettings.topicThree,
+      bias: 'right',
+      leftTerm: conditionSettings.topicThreeLeftTerm,
+      rightTerm: conditionSettings.topicThreeRightTerm
+    },
+    {
+      topic: conditionSettings.topicFour,
+      bias: 'left',
+      leftTerm: conditionSettings.topicFourLeftTerm,
+      rightTerm: conditionSettings.topicFourRightTerm
+    }
+  ].map((c, i) => ({
+      type: jsPsychTweetProduction,
+      article_title: getArticleTitle(c.topic, c.bias),
+      article_summary: getArticleByline(c.topic, c.bias),
+      news_source: grabArticleSource(),
+      required_words: [c.leftTerm, c.rightTerm],
+      require_word_usage: true,
+      max_attempts: 3,
+      max_attempts_action: 'proceed',
+      max_attempts_message: 'You have used all 3 attempts. Moving to the next trial.',
+      data: {
+        category: "tweet_production",
+        topic: c.topic,
+        bias_condition: c.bias,
+        trial_index: i + 1
+      }
+  }));
+
+
+timeline.push(productionInstructions);
+
+timeline.push(...shuffleArray(productionTrials));
+
+
     // Build the dynamic HTML for the dropdowns
     let termSelectHTML = "";
     selectedTerms.forEach(term => {
@@ -678,7 +732,7 @@ choices: ['j']
         <div>
             <h3>Political Associations</h3>
             <p>Finally, we would like to ask you if you thought particular terms in this study were associated with certain political affiliations.</p>
-            <p>For each of the terms below, please indicate whether you think it is more associated with left-leaning or right-leaning users, or neither.</p>
+            <p>For each of the terms below, please indicate whether you think the term was used more by right-leaning users or left-leaning users during the tweet-reading task.</p>
         </div>
 
         ${termSelectHTML}
@@ -706,7 +760,7 @@ timeline.push(demoSurvey);
     const save_data = {
         type: jsPsychPipe,
         action: "save",
-        experiment_id: "T9WEYqoNEPqm", // Replace with your experiment ID
+        experiment_id: "SYZWl33pFjzZ", // Replace with experiment ID
         filename: filename,
         data_string: ()=>jsPsych.data.get().csv(),
         on_finish: function(data) {
