@@ -317,7 +317,7 @@ const sprTrials = stimuli.map(stimulus => {
     }
 });
 
-// timeline = timeline.concat(sprTrials);
+timeline = timeline.concat(sprTrials);
 
 
 // Initialize Stimuli for lexical decision task //
